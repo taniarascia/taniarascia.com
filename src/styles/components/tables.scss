@@ -1,0 +1,44 @@
+/* Tables
+  =============== */
+
+// Table expands to full width of containing element
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+// Extra border underneath header
+th {
+  border-bottom: 2px solid $border-color;
+}
+
+// Extra border above footer
+tfoot th {
+  border-top: 1px solid $border-color;
+}
+
+td {
+  border-bottom: 1px solid $border-color;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem !important;
+  hyphens: auto;
+  word-break: break-word;
+}
+
+caption {
+  padding: $padding 0;
+  caption-side: bottom;
+  color: $caption;
+}
+
+tbody tr:nth-child(even) {
+  background-color: $stripes;
+}

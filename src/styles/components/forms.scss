@@ -1,0 +1,107 @@
+/* Forms
+  =============== */
+
+// Display for all input fields (except buttons and checkbox)
+%forms {
+  display: block;
+  border: $form-border;
+  border-radius: $border-radius;
+  padding: 0.75rem;
+  outline: none;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1;
+}
+
+// Input fields on hover
+%forms-hover {
+  background: #f7f7f7;
+  border: $form-border-hover;
+}
+
+// Input fields on focus
+%forms-focus {
+  background: $primary-hover;
+  border: $form-border-focus; //box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($link-color, 30%);
+}
+
+// Variable containing all input fields
+#{$forms} {
+  @extend %forms;
+
+  &:hover {
+    @extend %forms-hover;
+  }
+
+  &:focus,
+  &:active {
+    @extend %forms-focus;
+  }
+}
+
+textarea {
+  overflow: auto;
+  height: auto;
+  line-height: 1.6;
+}
+
+fieldset {
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margins 0;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 500;
+}
+
+// Fix issues with select
+select {
+  color: $font-color;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) right center no-repeat;
+  line-height: 1; // ensures text doesn't get cut off
+}
+
+select::-ms-expand {
+  display: none; // dropdown icon fix for IE
+}
+
+// Make range full width
+[type='range'] {
+  width: 100%;
+}
+
+// Labels
+label {
+  font-weight: 700;
+  font-size: 1rem;
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+
+  [type='text'],
+  [type='email'] {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 0.5rem;
+  }
+}
+
+// Placeholder Text
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: $placeholder;
+}

@@ -1,0 +1,168 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  background: white;
+
+  &.scroll {
+    box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 0.75rem;
+  }
+
+  .nav-container {
+    padding: 0 1.5rem;
+    height: 55px;
+    max-width: $width;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: height 0.3s ease;
+  }
+
+  .brand {
+    a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      margin-right: 0;
+      font-weight: 500;
+      font-size: 1.15rem;
+
+      &:hover,
+      &:focus {
+        color: black;
+      }
+    }
+
+    .text {
+      display: none;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 1.05rem;
+      font-weight: 400;
+      padding: 0.75rem;
+      margin: 0 .25rem;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 1.2;
+      text-align: center;
+      border-radius: $border-radius;
+
+      &:hover,
+      &:active,
+      &.active {
+        color: #111;
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
+
+.favicon {
+  height: 23px;
+  width: 23px;
+  min-width: 23px;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+button.dark-switcher {
+  -webkit-appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0.75rem 0.5rem;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.theme-icon {
+  height: 18px;
+  width: 18px;
+  min-width: 18px;
+  margin-bottom: 0;
+}
+
+@include small-breakpoint {
+  .nav {
+    &.scroll {
+      .nav-container {
+        height: 60px;
+      }
+    }
+
+    .nav-container {
+      height: 160px;
+      padding: 0 2rem;
+    }
+
+    .brand {
+      a {
+        font-size: 1.3rem;
+      }
+
+      .text {
+        display: block;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 100%;
+
+      a {
+        font-size: 1.2rem;
+        margin: 0 0.5rem;
+        padding: 1rem;
+        border-bottom: 2px solid transparent;
+      }
+    }
+
+    .favicon {
+      margin-right: 1rem;
+    }
+
+    button.dark-switcher {
+      margin: 0;
+      font-size: 1.4rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .theme-icon {
+      height: 22px;
+      width: 22px;
+      min-width: 22px;
+      margin-bottom: 0;
+    }
+  }
+
+  @media print {
+    .nav {
+      display: none;
+    }
+  }
+}

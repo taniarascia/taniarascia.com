@@ -1,0 +1,498 @@
+$background: #202020;
+$foreground: #b3b9c5;
+$accent: #303030;
+$dark-border: darken($background, 3%);
+$dark-primary: $tag;
+
+.dark {
+  background: $background;
+  color: $foreground;
+
+  a {
+    color: $dark-primary;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($dark-primary, 15%);
+      background: transparent;
+    }
+  }
+
+  .lead {
+    h1 {
+      color: #eee;
+    }
+
+    a {
+      &:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+        border-bottom: none;
+        background: transparent !important;
+
+        &:hover {
+          color: darken($dark-primary, 15%);
+        }
+      }
+      &.patreon:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+        background: rgba(0, 0, 0, 0.2) !important;
+        color: #f96854;
+        &:hover,
+        &:focus,
+        &:active {
+          background: darken(#f96854, 10%) !important;
+          color: white !important;
+        }
+      }
+    }
+  }
+
+  .front-page {
+    h2 {
+      a.view-all {
+        background: rgba(0, 0, 0, 0.2);
+        color: darken($foreground, 10%);
+        &:hover,
+        &:focus {
+          background: black;
+          color: $foreground;
+        }
+      }
+    }
+  }
+
+  .post,
+  .page {
+    a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+      border-bottom: 2px solid transparent;
+      padding: 1px 2px;
+
+      &:hover {
+        background: darken($dark-primary, 10%);
+        color: white;
+        border-radius: 4px;
+      }
+
+      &:active,
+      &:focus {
+        background: darken($dark-primary, 10%);
+        color: white;
+        border-radius: 4px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      color: $attribute;
+      border: none;
+    }
+  }
+
+  :not(pre) > code {
+    background: rgba(255, 255, 255, 0.1);
+    color: $foreground;
+  }
+
+  .nav {
+    background: $background;
+    border-color: $background;
+
+    &.scroll {
+      background: darken($background, 5%);
+      border-color: darken($background, 5%);
+    }
+
+    .brand a {
+      color: lighten($foreground, 5%);
+
+      &:hover {
+        color: #eee;
+      }
+    }
+
+    .links a {
+      color: darken($foreground, 20%);
+
+      &:hover,
+      &.active {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      &:hover {
+        color: $foreground;
+      }
+
+      &.active {
+        color: $tag;
+      }
+    }
+  }
+
+  .note {
+    .note-container {
+      background: #191919;
+      box-shadow: none;
+      p,
+      button,
+      a {
+        color: white;
+      }
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  li {
+    color: $foreground;
+  }
+
+  h2 {
+    border-color: #303030;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: #eee;
+  }
+
+  .posts {
+    &.simple a .each {
+      border-color: transparent;
+      border-bottom-color: $dark-border;
+
+      h2 {
+        color: lighten($comment, 10%);
+      }
+
+      &:hover {
+        background: $accent;
+      }
+    }
+
+    a {
+      .each {
+        h2 {
+          color: #ccc;
+        }
+
+        border: 1px solid transparent;
+        border-bottom: 1px solid $dark-border;
+
+        &:hover {
+          background: $accent !important;
+          border-color: $accent;
+
+          h2 {
+            color: white;
+          }
+
+          background: transparent;
+        }
+      }
+
+      .datetime {
+        color: $comment;
+      }
+
+      .excerpt {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .simple-posts {
+    a {
+      .each {
+        border-bottom: 1px solid $dark-border;
+        h2 {
+          color: lighten($comment, 10%);
+        }
+
+        &:hover {
+          border: 1px solid $accent;
+          background: $accent;
+
+          h2 {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .tag-container {
+    span {
+      color: $foreground;
+      background: rgba(0, 0, 0, 0.2);
+      border: none;
+
+      .count {
+        color: $secondary-color;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        border: none;
+        background: #111;
+        color: white;
+      }
+    }
+  }
+
+  .projects {
+    .each {
+      border-bottom: 1px solid $dark-border;
+    }
+    h2 {
+      color: $foreground;
+
+      a {
+        color: $foreground;
+      }
+    }
+
+    p {
+      color: $comment;
+    }
+  }
+
+  .post-meta {
+    color: $comment;
+  }
+
+  th {
+    border-bottom: 2px solid darken($background, 5%);
+  }
+
+  // Extra border above footer
+  tfoot th {
+    border-top: 2px solid darken($background, 8%);
+  }
+
+  td {
+    border-bottom: 2px solid darken($background, 8%);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: lighten($background, 5%);
+  }
+
+  pre code {
+    background: #3a3a3a;
+  }
+
+  .gradient-section {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .instruction-manuals {
+    > a {
+      background: lighten($background, 4%);
+      &:hover {
+        background: lighten($background, 8%);
+      }
+    }
+  }
+
+  blockquote {
+    border: 2px solid #393939;
+    background: rgba(0, 0, 0, 0.2);
+
+    p {
+      color: $yellow;
+    }
+
+    a {
+      color: lighten($yellow, 25%) !important;
+      border-bottom: $yellow !important;
+
+      &:hover {
+        color: darken($yellow, 15%) !important;
+        background: #111 !important;
+      }
+    }
+
+    &.quotation {
+      border-color: #3a3a3a;
+      background: rgba(0, 0, 0, 0.2);
+      color: $yellow;
+      box-shadow: none;
+
+      cite {
+        color: white;
+      }
+    }
+  }
+
+  cite {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer {
+    color: $foreground;
+
+    strong {
+      color: $foreground;
+    }
+
+    a {
+      color: darken($foreground, 20%);
+
+      &:hover {
+        color: lighten($foreground, 10%);
+      }
+    }
+  }
+
+  #{$forms} {
+    color: $foreground;
+    border: 2px solid #444;
+    background: #333 !important;
+
+    &:hover {
+      border: 2px solid #505050;
+    }
+
+    &:active,
+    &:focus {
+      border: 2px solid $dark-primary;
+    }
+  }
+
+  #{$buttons} {
+    color: white;
+    border: 2px solid transparent;
+    background: darken($dark-primary, 30%) !important;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 2px solid transparent;
+      background: darken($dark-primary, 20%) !important;
+      color: white;
+    }
+  }
+
+  .donate-button {
+    background: transparent;
+  }
+
+  .new,
+  .popular {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .popular {
+    color: $string;
+  }
+
+  .button.muted-button,
+  a.button.muted-bottom {
+    color: $comment;
+    border: 2px solid $comment;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 2px solid $foreground;
+      background: transparent;
+      color: $foreground;
+    }
+  }
+
+  button.dark-switcher {
+    border: none !important;
+    background: transparent !important;
+  }
+
+  pre.language-terminal code.language-terminal {
+    border: 2px solid #666;
+    background: #111;
+    color: #ccc;
+
+    &::before {
+      background: $accent;
+      color: #888;
+    }
+  }
+
+  .newsletter-section {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    a.button {
+      background: #111 !important;
+      color: $dark-primary !important;
+      &:hover,
+      &:focus,
+      &:active {
+        background: #080808 !important;
+        color: lighten($dark-primary, 10%) !important;
+      }
+    }
+  }
+
+  .category-container {
+    .category-filter {
+      background: rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+      color: $dark-primary;
+      cursor: pointer;
+
+      &.active {
+        background: $dark-primary !important;
+        color: white !important;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: #111;
+        color: lighten($dark-primary, 10%);
+      }
+    }
+  }
+
+  .filter-count {
+    color: $dark-primary;
+  }
+
+  .comments .comment header h2 {
+    color: lighten($foreground, 12%);
+  }
+
+  .comments .comment.reply {
+    border: 2px solid #393939;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  mark {
+    background: darken($dark-primary, 20%);
+    color: white;
+  }
+
+  ::selection {
+    background: $dark-primary;
+    color: white;
+  }
+
+  path {
+    stroke: $keyword;
+  }
+}

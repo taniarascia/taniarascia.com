@@ -1,0 +1,165 @@
+/* Buttons
+  =============== */
+
+// Main button styling
+%buttons {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: $button-border-width $button-border-style $button-border-color;
+  border-radius: $button-border-radius;
+  background: $button-background;
+  color: $button-color;
+  font-weight: $button-font-weight;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 0.5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+// Buttons on hover
+%buttons-hover {
+  border: $button-border-width $button-border-style $button-background-hover;
+  color: white;
+  background: $button-background-hover;
+  text-decoration: none;
+}
+
+// Buttons on focus
+%buttons-focus {
+  border: $button-border-width $button-border-style $button-background-hover;
+  background: $button-background-hover;
+  color: white;
+  text-decoration: none;
+}
+
+// Apply styles to .button class, button element, and button-based inputs
+#{$buttons} {
+  @extend %buttons;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:hover {
+    @extend %buttons-hover;
+  }
+
+  &:focus,
+  &:active {
+    @extend %buttons-focus;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.button.muted-button,
+a.button.muted-bottom {
+  color: $font-color;
+  border: 2px solid darken($light, 5%);
+  background: darken($light, 5%);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $heading-font-color;
+    border: 2px solid darken($light, 10%);
+    background: darken($light, 10%);
+  }
+}
+
+// Secondary button color
+.donate-button,
+a.donate-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: $border-radius;
+  border: none;
+  background: $primary-color;
+  padding: 0.75rem 1rem;
+  color: white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($primary-color, 10%);
+    border: none;
+    color: white;
+  }
+}
+
+.twitter-button,
+a.twitter-button {
+  background: #00aced;
+  border: 2px solid #00aced;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken(#00aced, 5%);
+    border: 2px solid darken(#00aced, 5%);
+    color: white;
+  }
+}
+
+// Secondary button color
+.patreon-button,
+a.patreon-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: $border-radius;
+  border: 2px solid #f96854;
+  background: #f96854;
+  padding: 0 1rem;
+  color: #fff !important;
+  margin: 0 0.5rem;
+
+  img {
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #f96854 !important;
+    border: 2px solid darken(#f96854, 15%);
+    color: #fff !important;
+  }
+}
+
+.patreon {
+  background: #f96854;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border: none !important;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: $border-radius;
+  margin-bottom: 0.5rem;
+  margin-right: 0.75rem;
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken(#f96854, 10%) !important;
+    color: white !important;
+  }
+}
+
+@include small-breakpoint {
+  #{$buttons} {
+    padding: 0.75rem 1.25rem;
+  }
+}

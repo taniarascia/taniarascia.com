@@ -1,0 +1,82 @@
+/* Helpers
+  =============== */
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// Display
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+// Vertical center
+.vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+// Display State
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.green {
+  color: $green;
+}
+
+.pink {
+  color: $secondary-color;
+}
+
+.blue {
+  color: $primary-color;
+}
+
+.yellow {
+  color: darken($yellow, 10%);
+}
+
+.crypto {
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Screen reader text for accessibility
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}

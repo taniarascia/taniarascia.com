@@ -1,0 +1,150 @@
+/* Variables
+ * ===============
+ *
+ * All variables and most of the configuration is defined on this page. */
+
+/* Containers */
+
+$x-small: 720px;
+$small: 800px;
+$medium: 1200px;
+$large: 1300px;
+
+/* Breakpoints */
+
+$mobile: 620px;
+$tablet: $small;
+$desktop: $medium;
+
+$width: 800px;
+
+/* Colors */
+
+$background: #f0f0f0;
+$primary-color: #5183f5;
+$secondary-color: rgb(255, 90, 95);
+$green: #1fc844;
+$yellow: #fed356;
+$accent-color: #cdcdcd;
+$light: #f2f2f2;
+$alternate-background: #f0f0f0;
+$alternate-color: #404040;
+$link-color: $primary-color;
+$link-hover-color: darken($link-color, 10%);
+$highlight: #ffeea8;
+$error: #d33c40;
+$bq-border: 16px solid #f0f0f0;
+$code: Menlo;
+
+/* Typography */
+
+// Body font
+$font-size: 1rem;
+$body-font-size: 1.15rem;
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-color: #454545;
+$light-font-color: rgba(0, 0, 0, 0.6);
+$font-family: Helvetica Neue, 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial,
+  sans-serif;
+$line-height: 1.6;
+
+// Headings
+$heading-font-color: #111;
+$heading-font-weight: 500;
+$heading-font-family: 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial,
+  sans-serif;
+$heading-line-height: 1.3;
+
+// Mobile heading font size
+$h1-mobile: 1.85rem;
+$h2-mobile: 1.7rem;
+$h3-mobile: 1.5rem;
+$h4-mobile: 1.3rem;
+$h5-mobile: 1.2rem;
+
+// Heading font size
+$h1: 2.5rem;
+$h2: 2.1rem;
+$h3: 1.85rem;
+$h4: 1.5rem;
+$h5: 1.4rem;
+
+/* Padding */
+
+$padding: 60px;
+$margins: 2rem;
+$content-padding: 60px 0;
+$content-padding-mobile: 30px 0;
+
+/* Borders */
+
+$border-width: 2px;
+$border-style: solid;
+$border-color: #ccc;
+$border-radius: 6px;
+$borders: $border-width $border-style $border-color;
+$box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+
+/* Buttons */
+
+$primary-hover: lighten($primary-color, 33%);
+$button-background: $primary-color;
+$button-background-hover: darken($primary-color, 15%);
+$button-color: white;
+$button-font-weight: 500;
+$button-font-family: Helvetica Neue, 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial,
+  sans-serif;
+$button-font-size: 1.1rem;
+$button-border-width: 2px;
+$button-border-style: solid;
+$button-border-color: $primary-color;
+$button-border-radius: $border-radius;
+$button-text-transform: none;
+
+// Accent buttons
+$accent-button-background: $secondary-color;
+$accent-button-color: #ffffff;
+$accent-button-color-hover: #ffffff;
+
+/* Forms */
+
+$forms: (
+  '[type=color], [type=date], [type=email], [type=number], [type=search], [type=text], [type=url], select, textarea'
+);
+$buttons: ('.button, a.button, button, [type=submit], [type=button]');
+$input-background: #ffffff;
+$placeholder: darken($accent-color, 20%);
+$form-border: 2px solid $border-color;
+$form-border-hover: 2px solid darken($border-color, 10%);
+$form-border-focus: 2px solid $link-color;
+
+/* Tables */
+
+$stripes: #f8f8f8;
+$caption: #ababab;
+
+/* Code */
+
+$code-color: $font-color;
+$code-size: 14px;
+$code-family: Menlo, monospace;
+$code-background: transparent;
+$code-borders: $borders;
+
+$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+$code-font-color: #b3b9c5;
+$string: #92d192;
+$variable: #f2777a;
+$property: #abb2bf;
+$number: #fca369;
+$operator: #ac8d58;
+$punctuation: #d5d8df;
+$comment: #848991;
+$function: #62cfcf;
+$keyword: #ffeead;
+$attribute: #ffd479;
+$class: #e1a6f2;
+$tag: #6ab0f3;
+$error: #f2777a;
