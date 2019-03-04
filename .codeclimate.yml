@@ -1,9 +1,9 @@
-version: "2"
+version: '2'
 
 plugins:
   eslint:
     enabled: true
-    channel: "eslint-4"
+    channel: 'eslint-4'
     config:
       config: .eslintrc.json
 
@@ -19,14 +19,14 @@ checks:
     enabled: false
 
 ratings:
-   paths:
-    - "**.js"
-    - "**.jsx"
-    - "**.css"
-    - "**.less"
-    - "**.scss"
-    - "**.sss"
+  paths:
+    - '**.js'
+    - '**.jsx'
+    - '**.css'
+    - '**.less'
+    - '**.scss'
+    - '**.sss'
 
 exclude_paths:
-- static/**/*
-- src/templates/b16-tomorrow-dark.css
+  - static/**/*
+  - src/templates/new-moon.scss

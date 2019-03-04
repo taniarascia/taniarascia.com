@@ -1,14 +1,15 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
-import config from "../../data/SiteConfig";
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Layout from '../layout'
+import PostListing from '../components/PostListing'
+import config from '../../data/SiteConfig'
 
-export default class TagTemplate extends React.Component {
+class TagTemplate extends Component {
   render() {
-    const { tag } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const { tag } = this.props.pageContext
+    const postEdges = this.props.data.allMarkdownRemark.edges
+
     return (
       <Layout>
         <div className="tag-container">
@@ -16,9 +17,11 @@ export default class TagTemplate extends React.Component {
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>
-    );
+    )
   }
 }
+
+export default TagTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -40,11 +43,11 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            cover
+            thumbnail
             date
           }
         }
       }
     }
   }
-`;
+`
