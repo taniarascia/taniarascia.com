@@ -1,12 +1,12 @@
 const config = {
   siteTitle: 'Tania Rascia',
   siteTitleShort: 'Tania Rascia',
-  siteTitleAlt: 'Tania Rascia, Web Developer',
+  siteTitleAlt: 'Tania Rascia - Web Developer',
   siteLogo: '/logos/logo-1024.png',
   siteUrl: 'https://taniarascia.github.io',
   pathPrefix: '/',
   siteDescription:
-    'I build open source projects and write the missing instruction manuals of the web.',
+    'Tania Rascia is a web developer, designer, and writer who breaks down complex concepts for all skill levels.',
   siteRss: '/rss.xml',
   googleAnalyticsID: '',
   disqusShortname: 'taniarascia',
