@@ -3,7 +3,7 @@
   "description": "Tania Rascia's personal theme for blogging.",
   "version": "1.0.0",
   "author": "Tania Rascia <taniarascia@gmail.com>",
-  "repository": "git@github.com:taniarascia/taniarascia.github.io",
+  "repository": "git@github.com:taniarascia/cenobyte",
   "dependencies": {
     "gatsby": "2.0.91",
     "gatsby-image": "2.0.26",
@@ -67,7 +67,6 @@
     "serve": "gatsby serve",
     "build": "gatsby build",
     "build:pp": "gatsby build --prefix-paths",
-    "deploy": "gatsby build && gh-pages -d public -b master",
     "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
