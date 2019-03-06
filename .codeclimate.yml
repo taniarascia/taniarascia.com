@@ -29,4 +29,4 @@ ratings:
 
 exclude_paths:
   - static/**/*
-  - src/templates/new-moon.scss
+  - src/styles/new-moon.scss

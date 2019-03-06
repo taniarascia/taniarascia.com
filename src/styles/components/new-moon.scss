@@ -22,6 +22,7 @@ $selector: #F7931E;
 $deleted: #F6BF26;
 $error: #EB4D5C;
 $border-radius: 4px;
+
 code {
   font-size: 14px;
 }
@@ -109,8 +110,7 @@ kbd {
 
 :not(pre)>code[class*="language-"] {
   padding: 3px 5px;
-  background: #333;
-  border: 1px solid #333;
+  color: #111111;
 }
 
 :not(pre)>code {

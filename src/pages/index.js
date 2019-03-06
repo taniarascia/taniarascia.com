@@ -12,10 +12,12 @@ class Index extends Component {
 
     return (
       <Layout>
-        <div className="index-container">
-          <Helmet title={config.siteTitle} />
-          <SEO />
-          <PostListing postEdges={postEdges} />
+        <Helmet title={config.siteTitle} />
+        <SEO />
+        <div id="main-content">
+          <div className="container">
+            <PostListing postEdges={postEdges} />
+          </div>
         </div>
       </Layout>
     )
@@ -39,7 +41,13 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
             date
           }
         }

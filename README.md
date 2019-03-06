@@ -1,7 +1,9 @@
 # Tania Rascia
 
 ```bash
-npm run dev
+git clone git@github.com:taniarascia/cenobyte && cd cenobyte
+yarn
+yarn run dev
 ```
 
 ## Acknowledgements

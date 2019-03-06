@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import ReactDisqusComments from 'react-disqus-comments'
+import Disqus from 'disqus-react'
 import urljoin from 'url-join'
 import config from '../../data/SiteConfig'
 
-class Disqus extends Component {
+class DisqusComments extends Component {
   constructor(props) {
     super(props)
 
@@ -35,18 +35,15 @@ class Disqus extends Component {
 
     const post = postNode.frontmatter
     const url = urljoin(config.siteUrl, config.pathPrefix, postNode.fields.slug)
+    const disqusShortname = config.disqusShortname
+    const disqusConfig = {
+      url,
+      identifier: postNode.fields.slug,
+      title: post.title,
+    }
 
-    return (
-      <ReactDisqusComments
-        shortname={config.disqusShortname}
-        identifier={post.title}
-        title={post.title}
-        url={url}
-        category_id={post.category_id}
-        onNewComment={this.notifyAboutComment}
-      />
-    )
+    return <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
   }
 }
 
-export default Disqus
+export default DisqusComments

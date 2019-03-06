@@ -1,10 +1,11 @@
 {
   "name": "cenobyte",
-  "description": "Tania Rascia's personal theme for blogging.",
+  "description": "Tania Rascia's personal Gatsby theme",
   "version": "1.0.0",
-  "author": "Tania Rascia <taniarascia@gmail.com>",
+  "author": "Tania Rascia <me@taniarascia.com>",
   "repository": "git@github.com:taniarascia/cenobyte",
   "dependencies": {
+    "disqus-react": "^1.0.5",
     "gatsby": "2.0.91",
     "gatsby-image": "2.0.26",
     "gatsby-plugin-catch-links": "2.0.9",
@@ -23,7 +24,6 @@
     "gatsby-remark-copy-linked-files": "2.0.8",
     "gatsby-remark-images": "3.0.1",
     "gatsby-remark-prismjs": "3.2.0",
-    "gatsby-remark-responsive-iframe": "2.0.8",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "2.2.0",
     "gatsby-transformer-sharp": "2.1.10",
@@ -32,11 +32,11 @@
     "node-sass": "^4.11.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.3",
-    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.0",
     "react-share": "^2.4.0",
     "react-twitter-widgets": "^1.7.1",
+    "sharp": "^0.21.3",
     "url-join": "^4.0.0"
   },
   "devDependencies": {
@@ -63,11 +63,11 @@
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
-    "dev": "npm run develop",
+    "dev": "yarn run develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
     "build:pp": "gatsby build --prefix-paths",
-    "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
+    "build:gh": "yarn run clean && yarn run build:pp && gh-pages -d public",
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",

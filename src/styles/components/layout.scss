@@ -1,0 +1,379 @@
+#main-content {
+  margin-top: 60px;
+  padding: 60px 0 0;
+  min-height: calc(100vh - 210px);
+  h1 {
+    text-align: center;
+  }
+}
+
+@include small-breakpoint {
+  #main-content {
+    margin-top: $nav-height;
+    padding: 80px 0 0;
+    h1 {
+      text-align: left;
+    }
+  }
+}
+
+.container,
+.single {
+  max-width: $width;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  &:first-of-type {
+    margin-top: 0;
+  }
+  margin: 40px 0;
+  >h2 {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@include small-breakpoint {
+  .section {
+    margin: 80px 0;
+    &:first-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem;
+  border-radius: 4px;
+  border-bottom: 2px solid $light;
+  &:hover {
+    background: $light;
+    text-decoration: none !important;
+  }
+  &:hover .post-title {
+    color: #111;
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.post-thumbnail {
+  width: 30px;
+  margin-right: 1.3rem;
+  img {
+    display: block;
+  }
+}
+
+.post-description {
+  font-size: .9rem;
+  color: #888;
+  margin: 0 2rem 0 1rem;
+  flex: 8;
+  display: none;
+}
+
+@include small-breakpoint {
+  .post-description {
+    display: block;
+    font-size: 1.1rem;
+  }
+}
+
+.post-title {
+  display: block;
+  flex: 2;
+  font-weight: 500;
+  color: #333;
+}
+
+a.post-title {
+  display: block;
+}
+
+a.post-title:hover {
+  text-decoration: underline;
+  color: $heading-font-color;
+}
+
+.post-date {
+  color: #888;
+  font-size: .9rem;
+  display: none;
+}
+
+.view-all {
+  background: $light;
+  border-radius: 4px;
+  padding: .6rem .8rem;
+  font-size: .85rem;
+  margin-left: .5rem;
+  color: $font-color;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $heading-font-color;
+    background: #dfdfdf;
+  }
+}
+
+@include small-breakpoint {
+  .post-date,
+  .post-description {
+    display: block;
+  }
+  .post-title {
+    margin-right: 2rem;
+  }
+  .view-all {
+    margin-left: 2rem;
+  }
+}
+
+.icon {
+  font-size: 1.6rem;
+}
+
+.laconia-icon {
+  color: #c96645;
+}
+
+.primitive-icon {
+  color: #0366ee;
+}
+
+.single-header {
+  margin-bottom: 60px;
+  text-align: center;
+  h1 {
+    margin: .5rem 0;
+  }
+}
+
+@include small-breakpoint {
+  .single-header {
+    text-align: left;
+  }
+}
+
+.date {
+  font-size: .9rem;
+  color: #888;
+}
+
+.author {
+  margin-top: 60px;
+  padding: 2rem;
+  background: $light;
+  border-radius: 4px;
+}
+
+.newsletter-form {
+  display: flex;
+  [type="text"],
+  [type="email"] {
+    width: 100%;
+    max-width: 400px;
+    margin-right: .5rem;
+    border: 0;
+  }
+}
+
+.tab-container {
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .tab {
+    padding: .4rem .8rem;
+    background: $light;
+    color: $heading-font-color;
+    border-radius: $border-radius;
+    font-size: .8rem;
+    margin-right: .4rem;
+    margin-bottom: .4rem;
+    &:hover,
+    &:active {
+      background: darken($light, 5%);
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.search-enabled {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+@include small-breakpoint {
+  .search-enabled {
+    flex-direction: row;
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: .6rem;
+  top: calc(50% - 0.5em);
+  /* Keep icon in center of input, regardless of the input height */
+}
+
+.search-wrapper {
+  position: relative;
+  [type="search"] {
+    -webkit-appearance: none;
+    padding-right: 2rem;
+  }
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.search-form {
+  [type="search"] {
+    width: auto;
+    background: $light;
+    &:hover {
+      border: 0;
+    }
+    &:active,
+    &:focus {
+      box-shadow: none;
+      border: 0;
+      color: #111;
+      background: #fff6d5;
+    }
+  }
+}
+
+blockquote {
+  color: lighten($font-color, 20%);
+  border-left: 12px solid $background;
+  font-weight: 500;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  line-height: 1.4;
+  font-size: 1rem;
+  p {
+    padding: 0;
+    font-size: 1.1rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  cite {
+    display: block;
+    margin-top: .5rem;
+    font-size: .9rem;
+    text-align: right;
+    font-family: $font-family;
+    color: rgba(0, 0, 0, .4);
+  }
+  &.testimonial {
+    padding-left: 0;
+    border-left: 0;
+  }
+  &.alert,
+  &.info,
+  &.note,
+  &.details,
+  &.success {
+    color: $heading-font-color;
+    font-family: $heading-font-family;
+  }
+  &.alert {
+    background: lighten($secondary-color, 28%);
+    border-color: $secondary-color;
+  }
+  &.info {
+    background: #fff6d5;
+    border-color: #f0d461;
+  }
+  &.success {
+    background: lighten($green, 30%);
+    border-color: $green;
+  }
+  &.note {
+    background: $background;
+    border-color: $border-color;
+  }
+  &.details {
+    background: lighten($primary-color, 33%);
+    border-color: lighten($primary-color, 20%);
+  }
+  code {
+    margin: 1rem 0 0;
+  }
+}
+
+@include small-breakpoint {
+  blockquote {
+    border-left: 16px solid $background;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    padding: 2rem;
+    cite {
+      margin-top: 1rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+    code {
+      font-size: .9rem;
+      margin: 2rem 0 0;
+    }
+  }
+}
+
+.front-page-social {
+  margin-bottom: 1rem;
+}
+
+.newsletter {
+  margin-top: 60px;
+  padding: 2rem;
+  background: $light;
+  border-radius: 4px;
+}
+
+#none-found {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  color: #888;
+  strong {
+    color: #111;
+  }
+}
+
+::selection {
+  background: rgba(255, 245, 20, .8);
+  color: #111;
+}

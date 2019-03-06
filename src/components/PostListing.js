@@ -21,14 +21,14 @@ class PostListing extends Component {
   render() {
     const postList = this.getPostList()
     return (
-      <div>
+      <>
         {/* Your post list here. */
         postList.map(post => (
           <Link to={post.path} key={post.title}>
-            <h1>{post.title}</h1>
+            <a className="post">{post.title}</a>
           </Link>
         ))}
-      </div>
+      </>
     )
   }
 }

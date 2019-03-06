@@ -1,0 +1,174 @@
+/* Scaffolding
+  =============== */
+
+// HTML base
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
+  font-size: $font-size;
+}
+
+// Body base
+body {
+  color: $font-color;
+  font-size: 1rem;
+}
+
+@include small-breakpoint {
+  body {
+    font-size: $body-font-size;
+  }
+}
+
+p,
+ol,
+ul,
+dl,
+table {
+  margin: 0 0 $margins 0;
+}
+
+// Remove extra margin for nested lists
+ul li ul {
+  margin-bottom: 0;
+}
+
+ol li ol {
+  margin-bottom: 0;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 $margins 0;
+  font-weight: $heading-font-weight;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  color: $heading-font-color;
+  &:not(:first-child) {
+    margin: 0 0 1rem 0;
+  }
+}
+
+// Increased margin on additional headings
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child) {
+  margin-top: 2rem;
+}
+
+// Heading individual styles
+h1 {
+  font-size: $h1-mobile;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: $h2-mobile;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: $h3-mobile;
+  font-weight: 700;
+  color: lighten($heading-font-color, 25%);
+}
+
+h4 {
+  font-size: $h4-mobile;
+  font-weight: 700;
+  color: lighten($heading-font-color, 35%);
+}
+
+h5 {
+  font-size: $h5-mobile;
+  font-weight: 600;
+  color: lighten($heading-font-color, 40%);
+}
+
+@include small-breakpoint {
+  h1:not(:first-child),
+  h2:not(:first-child),
+  h3:not(:first-child) {
+    margin-top: 3rem;
+  } // Heading desktop individual styles
+  h1 {
+    font-size: $h1;
+  }
+  h2 {
+    font-size: $h2;
+  }
+  h3 {
+    font-size: $h3;
+  }
+  h4 {
+    font-size: $h4;
+  }
+  h5 {
+    font-size: $h5;
+  }
+}
+
+// Link styling
+a {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: 600;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-hover-color;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Highlight
+mark {
+  background: $highlight;
+  padding: 0 0.2rem;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+// Keyboard input
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: #333;
+  display: inline-block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  text-shadow: 0 1px 0 #fff;
+}
+
+// Line break
+hr {
+  height: 0;
+  border: 0;
+  border-top: $borders;
+}
+
+// Definition list
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+}

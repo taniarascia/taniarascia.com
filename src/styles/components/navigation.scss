@@ -1,0 +1,68 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 3;
+  width: 100%;
+  border-bottom: 2px solid #eee;
+  font-size: .9rem;
+  .nav-container {
+    max-width: $width;
+    margin: auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      border-radius: 4px;
+      color: #666;
+      font-size: 1rem;
+      margin-right: .8rem;
+      &:hover {
+        color: #111;
+        background: #f2f2f2;
+      }
+    }
+    .links {
+      display: flex;
+      width: 100%;
+      order: 2;
+      justify-content: center;
+    }
+  }
+}
+
+@include small-breakpoint {
+  .nav {
+    .nav-container {
+      a {
+        font-size: 1.1rem;
+        padding: .75rem;
+      }
+      .links {
+        justify-content: flex-start;
+        margin: .5rem 0;
+      }
+    }
+  }
+}
+
+@include medium-breakpoint {
+  .nav {
+    height: $nav-height;
+    .nav-container {
+      height: $nav-height;
+      a {
+        margin-right: 0.1rem;
+      }
+      .links {
+        width: auto;
+        order: 0;
+        margin: 0;
+      }
+    }
+  }
+}

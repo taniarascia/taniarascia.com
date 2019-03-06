@@ -3,13 +3,12 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
-import Disqus from '../components/Disqus'
+import DisqusComments from '../components/DisqusComments'
 import PostTags from '../components/PostTags'
 import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
-import './new-moon.scss'
 
 class PostTemplate extends Component {
   render() {
@@ -27,23 +26,23 @@ class PostTemplate extends Component {
 
     return (
       <Layout>
-        <div>
-          <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
-          </Helmet>
-          <SEO postPath={slug} postNode={postNode} postSEO />
-          <div>
+        <Helmet>
+          <title>{`${post.title} | ${config.siteTitle}`}</title>
+        </Helmet>
+        <SEO postPath={slug} postNode={postNode} postSEO />
+        <article className="single">
+          <header>
+            <Img fixed={post.thumbnail.childImageSharp.fixed} />
             <h1>{post.title}</h1>
-            <img src={post.thumbnail} />
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <div className="post-meta">
-              <PostTags tags={post.tags} />
-              <SocialLinks postPath={slug} postNode={postNode} />
-            </div>
-            <UserInfo config={config} />
-            <Disqus postNode={postNode} />
+          </header>
+          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <div className="post-meta">
+            <PostTags tags={post.tags} />
+            <SocialLinks postPath={slug} postNode={postNode} />
           </div>
-        </div>
+          <UserInfo config={config} />
+          <DisqusComments postNode={postNode} />
+        </article>
       </Layout>
     )
   }
@@ -60,7 +59,13 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        thumbnail
+        thumbnail {
+          childImageSharp {
+            fixed(width: 150, height: 150) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         date
         category
         tags
