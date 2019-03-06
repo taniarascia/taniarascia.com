@@ -17,7 +17,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -63,7 +62,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     `gatsby-transformer-sharp`,
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-twitter',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -96,7 +94,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = 'GatsbyJS Advanced Starter'
+          ret.generator = 'Tania Rascia'
           return ret
         },
         query: `
@@ -152,6 +150,7 @@ module.exports = {
                       date
                       category
                       tags
+                      template
                     }
                   }
                 }

@@ -12,12 +12,11 @@ class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={config.siteTitle} />
+        <Helmet title={`${config.siteTitle} | Developer`} />
         <SEO />
-        <div id="main-content">
-          <div className="container">
-            <PostListing postEdges={postEdges} />
-          </div>
+        <div className="container">
+          <h1>Hi, I'm Tania</h1>
+          <PostListing postEdges={postEdges} />
         </div>
       </Layout>
     )
@@ -29,7 +28,7 @@ export default Index
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {
+    allMarkdownRemark(limit: 1, sort: { fields: [fields___date], order: DESC }) {
       edges {
         node {
           fields {
@@ -49,6 +48,7 @@ export const pageQuery = graphql`
               }
             }
             date
+            template
           }
         }
       }

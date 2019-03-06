@@ -3,17 +3,20 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
+import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 
-class TagTemplate extends Component {
+class BlogPage extends Component {
   render() {
-    const { tag } = this.props.pageContext
     const postEdges = this.props.data.allMarkdownRemark.edges
 
     return (
       <Layout>
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-        <div className="tag-container">
+        <Helmet title={`Articles | ${config.siteTitle}`} />
+        <SEO />
+        <div className="container">
+          <h1>Articles</h1>
+
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>
@@ -21,17 +24,12 @@ class TagTemplate extends Component {
   }
 }
 
-export default TagTemplate
+export default BlogPage
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      totalCount
+  query BlogQuery {
+    allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {
       edges {
         node {
           fields {
@@ -51,6 +49,7 @@ export const pageQuery = graphql`
               }
             }
             date
+            template
           }
         }
       }

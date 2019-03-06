@@ -5,7 +5,6 @@ import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
 import DisqusComments from '../components/DisqusComments'
 import PostTags from '../components/PostTags'
-import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
@@ -30,19 +29,21 @@ class PostTemplate extends Component {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <article className="single">
-          <header>
-            <Img fixed={post.thumbnail.childImageSharp.fixed} />
-            <h1>{post.title}</h1>
-          </header>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className="post-meta">
-            <PostTags tags={post.tags} />
-            <SocialLinks postPath={slug} postNode={postNode} />
-          </div>
-          <UserInfo config={config} />
-          <DisqusComments postNode={postNode} />
-        </article>
+        <div className="container">
+          <article className="single">
+            <header className="single-header">
+              <Img fixed={post.thumbnail.childImageSharp.fixed} />
+              <h1>{post.title}</h1>
+              <time>{post.date}</time>
+            </header>
+            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <div className="post-meta">
+              <PostTags tags={post.tags} />
+            </div>
+            <UserInfo config={config} />
+            <DisqusComments postNode={postNode} />
+          </article>
+        </div>
       </Layout>
     )
   }
@@ -69,6 +70,7 @@ export const pageQuery = graphql`
         date
         category
         tags
+        template
       }
       fields {
         nextTitle

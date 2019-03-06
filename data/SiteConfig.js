@@ -1,17 +1,17 @@
 const config = {
   siteTitle: 'Tania Rascia',
   siteTitleShort: 'Tania Rascia',
-  siteTitleAlt: 'Tania Rascia - Web Developer',
+  siteTitleAlt: 'Tania Rascias',
   siteLogo: '/logos/logo-1024.png',
-  siteUrl: 'https://taniarascia.github.io',
-  pathPrefix: '/cenobyte',
+  siteUrl: 'https://tania.dev',
+  pathPrefix: '/',
   siteDescription:
     'Tania Rascia is a web developer, designer, and writer who breaks down complex concepts for all skill levels.',
   siteRss: '/rss.xml',
   googleAnalyticsID: '',
   disqusShortname: 'taniarascia',
   postDefaultCategoryID: 'Tech',
-  dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
+  dateFromFormat: 'DD-MM-YYYY', // Date format used in the frontmatter.
   dateFormat: 'DD/MM/YYYY', // Date format for display.
   userName: 'Tania',
   userEmail: 'me@taniarascia.com',

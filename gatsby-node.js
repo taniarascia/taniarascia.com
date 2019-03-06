@@ -1,17 +1,15 @@
 const path = require('path')
-const _ = require('lodash')
-const moment = require('moment')
-const siteConfig = require('./data/SiteConfig')
+const { kebabCase } = require('./src/utils/global')
 
 const postNodes = []
 
 function addSiblingNodes(createNodeField) {
   postNodes.sort(({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) => {
-    const dateA = moment(date1, siteConfig.dateFromFormat)
-    const dateB = moment(date2, siteConfig.dateFromFormat)
+    const dateA = new Date(date1)
+    const dateB = new Date(date2)
 
-    if (dateA.isBefore(dateB)) return 1
-    if (dateB.isBefore(dateA)) return -1
+    if (dateA < dateB) return 1
+    if (dateB < dateA) return -1
 
     return 0
   })
@@ -61,7 +59,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`
+      slug = `/${kebabCase(node.frontmatter.title)}`
     } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
     } else if (parsedFilePath.dir === '') {
@@ -72,9 +70,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`
+        slug = `/${kebabCase(node.frontmatter.slug)}`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
+        const date = new Date(node.frontmatter.date)
         if (!date.isValid) console.warn(`WARNING: Invalid date.`, node.frontmatter)
 
         createNodeField({
@@ -102,8 +100,10 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const postPage = path.resolve('src/templates/post.js')
+    const pagePage = path.resolve('src/templates/page.js')
     const tagPage = path.resolve('src/templates/tag.js')
     const categoryPage = path.resolve('src/templates/category.js')
+
     resolve(
       graphql(
         `
@@ -114,6 +114,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     tags
                     category
+                    template
                   }
                   fields {
                     slug
@@ -144,19 +145,31 @@ exports.createPages = ({ graphql, actions }) => {
             categorySet.add(edge.node.frontmatter.category)
           }
 
-          createPage({
-            path: edge.node.fields.slug,
-            component: postPage,
-            context: {
-              slug: edge.node.fields.slug,
-            },
-          })
+          if (edge.node.frontmatter.template === 'post') {
+            createPage({
+              path: edge.node.fields.slug,
+              component: postPage,
+              context: {
+                slug: edge.node.fields.slug,
+              },
+            })
+          }
+
+          if (edge.node.frontmatter.template === 'page') {
+            createPage({
+              path: edge.node.fields.slug,
+              component: pagePage,
+              context: {
+                slug: edge.node.fields.slug,
+              },
+            })
+          }
         })
 
         const tagList = Array.from(tagSet)
         tagList.forEach(tag => {
           createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
+            path: `/tags/${kebabCase(tag)}/`,
             component: tagPage,
             context: {
               tag,
@@ -167,7 +180,7 @@ exports.createPages = ({ graphql, actions }) => {
         const categoryList = Array.from(categorySet)
         categoryList.forEach(category => {
           createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
+            path: `/categories/${kebabCase(category)}/`,
             component: categoryPage,
             context: {
               category,
