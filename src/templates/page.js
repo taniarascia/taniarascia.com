@@ -22,11 +22,11 @@ class PageTemplate extends Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div className="container">
-          <article className="page">
+          <article>
             <header className="page-header">
               <h1>{page.title}</h1>
             </header>
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <div className="page" dangerouslySetInnerHTML={{ __html: postNode.html }} />
           </article>
         </div>
       </Layout>

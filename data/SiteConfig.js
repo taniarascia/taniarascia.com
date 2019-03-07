@@ -4,15 +4,13 @@ const config = {
   siteTitleAlt: 'Tania Rascias',
   siteLogo: '/logos/logo-1024.png',
   siteUrl: 'https://tania.dev',
-  pathPrefix: '/',
+  pathPrefix: '',
   siteDescription:
     'Tania Rascia is a web developer, designer, and writer who breaks down complex concepts for all skill levels.',
   siteRss: '/rss.xml',
   googleAnalyticsID: '',
   disqusShortname: 'taniarascia',
   postDefaultCategoryID: 'Tech',
-  dateFromFormat: 'DD-MM-YYYY', // Date format used in the frontmatter.
-  dateFormat: 'DD/MM/YYYY', // Date format for display.
   userName: 'Tania',
   userEmail: 'me@taniarascia.com',
   userTwitter: 'taniarascia',
@@ -51,25 +49,8 @@ const config = {
       link: '/newsletter',
     },
   ],
-  copyright: 'Copyright © 2019. Tania Rascia.', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffffff',
 }
-
-// Validate
-
-// Make sure pathPrefix is empty if not needed
-if (config.pathPrefix === '/') {
-  config.pathPrefix = ''
-} else {
-  // Make sure pathPrefix only contains the first forward slash
-  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, '')}`
-}
-
-// Make sure siteUrl doesn't have an ending forward slash
-if (config.siteUrl.substr(-1) === '/') config.siteUrl = config.siteUrl.slice(0, -1)
-
-// Make sure siteRss has a starting forward slash
-if (config.siteRss && config.siteRss[0] !== '/') config.siteRss = `/${config.siteRss}`
 
 module.exports = config

@@ -17,16 +17,36 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    .brand {
+      a {
+        font-size: 1.3rem;
+      }
+    }
     a {
       border-radius: 4px;
       color: #333;
       font-size: 1.1rem;
-      margin-right: 2rem;
-      font-weight: 500;
+      margin-right: 2.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
     }
     .links {
       display: flex;
-      width: 100%;
+      flex-direction: row;
+      a {
+        font-weight: 500;
+        color: #888;
+        &:hover {
+          color: #111;
+        }
+      }
     }
   }
+}
+
+.favicon {
+  height: 25px;
+  width: 25px;
+  margin-right: .75rem;
 }

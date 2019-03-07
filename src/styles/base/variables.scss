@@ -78,23 +78,23 @@ $content-padding-mobile: 30px 0;
 
 /* Borders */
 
-$border-width: 1px;
+$border-width: 2px;
 $border-style: solid;
-$border-color: #eee;
+$border-color: #ccc;
 $border-radius: 4px;
 $borders: $border-width $border-style $border-color;
 
 /* Buttons */
 
-$button-background: $primary-color;
-$button-background-hover: darken($button-background, 10%);
-$button-color: #ffffff;
+$button-background: white;
+$button-background-hover: lighten($primary-color, 30%);
+$button-color: darken($primary-color, 5%);
 $button-font-weight: 600;
 $button-font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
-$button-font-size: 1.05rem;
-$button-border-width: 1px;
+$button-font-size: 1.1rem;
+$button-border-width: 2px;
 $button-border-style: solid;
-$button-border-color: $button-background;
+$button-border-color: $primary-color;
 $button-border-radius: $border-radius;
 $button-text-transform: none;
 
@@ -107,11 +107,11 @@ $accent-button-color-hover: #ffffff;
 
 $forms: ('[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea');
 $buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]');
-$input-background: $light;
+$input-background: #ffffff;
 $placeholder: darken($accent-color, 20%);
-$form-border: 0px solid $light;
-$form-border-hover: 0px solid darken($light, 5%);
-$form-border-focus: 0px solid $link-color;
+$form-border: 2px solid $border-color;
+$form-border-hover: 2px solid darken($border-color, 5%);
+$form-border-focus: 2px solid $link-color;
 
 /* Tables */
 

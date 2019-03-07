@@ -22,7 +22,6 @@ $selector: #F7931E;
 $deleted: #F6BF26;
 $error: #EB4D5C;
 $border-radius: 4px;
-
 code {
   font-size: 14px;
 }
@@ -51,7 +50,7 @@ code {
     line-height: 0;
     padding: 14px 0;
     text-indent: 4px;
-    letter-spacing: -3px;
+    letter-spacing: -17px;
   }
 }
 
@@ -62,7 +61,8 @@ pre .terminal {
 code[class*="language-"],
 pre[class*="language-"],
 pre code {
-  font-size: 13px;
+  font-family: $code-font-family;
+  font-size: 14px;
   color: $code-font-color;
   direction: ltr;
   text-align: left;

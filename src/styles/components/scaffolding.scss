@@ -64,29 +64,31 @@ h3:not(:first-child) {
 // Heading individual styles
 h1 {
   font-size: $h1-mobile;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
   font-size: $h2-mobile;
-  font-weight: 700;
+  font-weight: 600;
+  border-bottom: 2px solid lighten($border-color, 10%);
+  padding-bottom: .5rem;
 }
 
 h3 {
   font-size: $h3-mobile;
-  font-weight: 700;
+  font-weight: 500;
   color: lighten($heading-font-color, 25%);
 }
 
 h4 {
   font-size: $h4-mobile;
-  font-weight: 700;
+  font-weight: 600;
   color: lighten($heading-font-color, 35%);
 }
 
 h5 {
   font-size: $h5-mobile;
-  font-weight: 600;
+  font-weight: 500;
   color: lighten($heading-font-color, 40%);
 }
 
@@ -125,9 +127,24 @@ a {
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.post,
+.page {
+  a:not(.button):not(.anchor) {
+    padding: .1rem .2rem;
+    border-bottom: 2px solid lighten($primary-color, 33%);
+    &:hover,
+    &:active,
+    &:focus {
+      border-radius: $border-radius;
+      color: $link-hover-color;
+      background: lighten($primary-color, 33%);
+      border-bottom: 2px solid lighten($primary-color, 33%);
+    }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 // Highlight

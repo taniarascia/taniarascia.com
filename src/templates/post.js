@@ -34,12 +34,14 @@ class PostTemplate extends Component {
             <header className="single-header">
               <Img fixed={post.thumbnail.childImageSharp.fixed} />
               <h1>{post.title}</h1>
-              <time>{post.date}</time>
+              <div className="post-meta">
+                <time>{post.date}</time>
+                <PostTags tags={post.tags} />
+              </div>
             </header>
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <div className="post-meta">
-              <PostTags tags={post.tags} />
-            </div>
+
+            <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+
             <UserInfo config={config} />
             <DisqusComments postNode={postNode} />
           </article>
