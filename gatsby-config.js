@@ -11,7 +11,6 @@ module.exports = {
       title: config.siteTitle,
       description: config.siteDescription,
       image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/logos/logo-512.png`,
-      copyright: config.copyright,
     },
   },
   plugins: [
@@ -114,7 +113,6 @@ module.exports = {
                 title
                 description
                 image_url
-                copyright
               }
             }
           }
