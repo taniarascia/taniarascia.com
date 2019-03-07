@@ -50,14 +50,14 @@
           color: #111;
         }
         &.donate-button {
-          border: 2px solid #f0d461;
+          border: 2px solid $yellow;
           padding: .5rem 1rem;
           background: #fff6d5;
-          color: darken(#f0d461, 25%);
+          color: darken($yellow, 25%);
           &:hover {
-            background: lighten(#f0d461, 10%);
+            background: lighten($yellow, 10%);
             border: 2px solid darken(#eedc95, 20%);
-            color: darken(#f0d461, 35%);
+            color: darken($yellow, 35%);
           }
         }
         .emoji {
@@ -73,5 +73,5 @@
 .favicon {
   height: 25px;
   width: 25px;
-  margin-right: 1rem;
+  margin-right: .75rem;
 }

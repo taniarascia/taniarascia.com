@@ -16,8 +16,7 @@ class BlogPage extends Component {
         <SEO />
         <div className="container">
           <h1>Articles</h1>
-
-          <PostListing postEdges={postEdges} />
+          <PostListing excerpt postEdges={postEdges} />
         </div>
       </Layout>
     )
@@ -36,7 +35,7 @@ export const pageQuery = graphql`
             slug
             date
           }
-          excerpt
+          excerpt(pruneLength: 180)
           timeToRead
           frontmatter {
             title

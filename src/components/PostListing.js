@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 class PostListing extends Component {
   getPostList() {
@@ -21,17 +22,24 @@ class PostListing extends Component {
   }
 
   render() {
+    const { simple } = this.props
     const postList = this.getPostList()
 
     return (
-      <>
-        {/* Your post list here. */
-        postList.map(post => (
+      <section className={`posts ${simple ? 'simple' : ''}`}>
+        {postList.map(post => (
           <Link to={post.path} key={post.title}>
-            <div className="post">{post.title}</div>
+            <div className="each">
+              <Img fixed={post.thumbnail.childImageSharp.fixed} />
+              <div>
+                <h2>{post.title}</h2>
+
+                {!simple ? <div className="excerpt">{post.excerpt}</div> : null}
+              </div>
+            </div>
           </Link>
         ))}
-      </>
+      </section>
     )
   }
 }

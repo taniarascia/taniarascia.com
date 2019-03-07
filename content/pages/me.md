@@ -64,7 +64,7 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 
 ## Currently Using
 
-- **Computer:** [MacBook Pro 2015](https://www.apple.com/macbook–pro/specs–2015/)
+- **Computer:** MacBook Pro 2015
 - **Hosting:** [Netlify](https://netlify.com), [AWS](https://aws.amazon.com)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
 - **Static Site Generator:** [Gatsby](https://gatsbyjs.org)

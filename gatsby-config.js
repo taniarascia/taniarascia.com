@@ -143,7 +143,7 @@ module.exports = {
               ) {
                 edges {
                   node {
-                    excerpt
+                    excerpt(pruneLength: 180)
                     html
                     timeToRead
                     fields {

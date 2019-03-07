@@ -50,7 +50,7 @@ code {
     line-height: 0;
     padding: 14px 0;
     text-indent: 4px;
-    letter-spacing: -17px;
+    letter-spacing: -13px;
   }
 }
 
@@ -75,11 +75,6 @@ pre code {
   hyphens: none;
   border-radius: $border-radius;
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-pre code,
-.terminal {
-  margin: 0;
 }
 
 /* Code blocks */

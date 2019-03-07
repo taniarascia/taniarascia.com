@@ -1,7 +1,7 @@
 ---
 title: 'Getting Started with Git'
 thumbnail: './git.png'
-date: '09-24-2015'
+date: '09/24/2015'
 category: 'tutorial'
 tags:
   - git
@@ -151,8 +151,6 @@ Terminal won’t respond, but it was successful. Go ahead and add a file to the 
 
     git status
 
-<pre>
-
 <div class="terminal">On branch master
 Initial commit
 
@@ -163,8 +161,6 @@ Untracked files:
   style.css</span>
 
 nothing added to commit but untracked files present (use "git add" to track)</div>
-
-</pre>
 
 Okay, so now it knows that there are two files in the directory, but they’re not a part of the Git repo. At this point we have to **track** the files with the `add` command.
 

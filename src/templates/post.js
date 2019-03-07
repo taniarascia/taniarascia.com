@@ -29,20 +29,20 @@ class PostTemplate extends Component {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div className="container">
-          <article className="single">
-            <header className="single-header">
-              <Img fixed={post.thumbnail.childImageSharp.fixed} />
+        <article className="single container">
+          <header className="single-header">
+            <Img fixed={post.thumbnail.childImageSharp.fixed} />
+            <div className="post-meta">
+              <time className="date">{post.date}</time>
               <h1>{post.title}</h1>
-              <div className="post-meta">
-                <time>{post.date}</time>
-                <PostTags tags={post.tags} />
-              </div>
-            </header>
-            <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <UserInfo config={config} />
-            <DisqusComments postNode={postNode} />
-          </article>
+              <PostTags tags={post.tags} />
+            </div>
+          </header>
+          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </article>
+        <UserInfo config={config} />
+        <div className="container">
+          <DisqusComments postNode={postNode} />
         </div>
       </Layout>
     )

@@ -4,14 +4,14 @@ import { Link } from 'gatsby'
 
 class PostTags extends Component {
   render() {
-    const { tags } = this.props
+    const { tags, size } = this.props
 
     return (
       <div className="tag-container">
         {tags &&
           tags.map(tag => (
-            <Link key={tag} style={{ textDecoration: 'none' }} to={`/tags/${kebabCase(tag)}`}>
-              <span>{tag}</span>
+            <Link key={tag} style={{ textDecoration: 'none' }} to={`/tags/${kebabCase(tag)}/`}>
+              <span class={size ? size : null}>{tag}</span>
             </Link>
           ))}
       </div>

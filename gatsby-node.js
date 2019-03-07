@@ -59,7 +59,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${kebabCase(node.frontmatter.title)}`
+      slug = `/${kebabCase(node.frontmatter.title)}/`
     } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
     } else if (parsedFilePath.dir === '') {
@@ -70,10 +70,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${kebabCase(node.frontmatter.slug)}`
+        slug = `/${kebabCase(node.frontmatter.slug)}/`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = new Date(node.frontmatter.date)
-        if (!date.isValid) console.warn(`WARNING: Invalid date.`, node.frontmatter)
 
         createNodeField({
           node,

@@ -1,7 +1,7 @@
 ---
 title: 'Everything I Know as a Software Developer Without a Degree'
 thumbnail: './floppy.png'
-date: '02-10-2019'
+date: '02/10/2019'
 category: 'personal'
 tags:
   - lists
