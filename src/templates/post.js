@@ -39,9 +39,7 @@ class PostTemplate extends Component {
                 <PostTags tags={post.tags} />
               </div>
             </header>
-
             <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
-
             <UserInfo config={config} />
             <DisqusComments postNode={postNode} />
           </article>

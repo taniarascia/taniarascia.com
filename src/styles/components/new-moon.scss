@@ -79,7 +79,7 @@ pre code {
 
 pre code,
 .terminal {
-  margin: 0 0 2rem 0;
+  margin: 0;
 }
 
 /* Code blocks */
@@ -89,6 +89,7 @@ pre code {
   padding: 1.5rem;
   overflow: auto;
   background-color: #333;
+  border: 2px solid black;
   box-shadow: 2px 4px 25px rgba(0, 0, 0, .15);
 } // Keyboard input
 kbd {

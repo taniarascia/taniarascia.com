@@ -59,10 +59,10 @@ h1:not(:first-child),
 h2:not(:first-child),
 h3:not(:first-child) {
   margin-top: 2rem;
-}
+} 
 
 // Heading individual styles
-h1 {
+h1 { 
   font-size: $h1-mobile;
   font-weight: 600;
 }
@@ -70,7 +70,7 @@ h1 {
 h2 {
   font-size: $h2-mobile;
   font-weight: 600;
-  border-bottom: 2px solid lighten($border-color, 10%);
+  border-bottom: 2px solid lighten($border-color, 15%);
   padding-bottom: .5rem;
 }
 
@@ -131,7 +131,7 @@ a {
 .page {
   a:not(.button):not(.anchor) {
     padding: .1rem .2rem;
-    border-bottom: 2px solid lighten($primary-color, 33%);
+    // border-bottom: 2px solid lighten($primary-color, 33%);
     &:hover,
     &:active,
     &:focus {

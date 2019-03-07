@@ -1,7 +1,7 @@
 #main-content {
-  margin-top: 60px;
+  margin-top: $nav-height;
   padding: 60px 0 0;
-  min-height: calc(100vh - 210px);
+  min-height: calc(100vh - 220px);
 }
 
 .container {
@@ -55,15 +55,11 @@
     border: 2px solid $border-color;
     border-radius: $border-radius;
     font-size: 1.1rem;
-    margin-right: .4rem;
-    margin-bottom: .4rem;
+    margin-right: .5rem;
     &:hover,
     &:active,
     &:focus {
       background: lighten($border-color, 15%);
-    }
-    &:last-of-type {
-      margin-right: 0;
     }
   }
 }
@@ -128,85 +124,49 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 blockquote {
-  color: lighten($font-color, 20%);
-  border-left: 12px solid $background;
+  color: rgba(0, 0, 0, .7);
+  border: 2px solid #00d287;
+  background: lighten(#00d287, 55%);
+  border-radius: $border-radius;
   font-weight: 500;
   margin: 1.5rem 0;
-  padding: 1rem;
-  line-height: 1.4;
+  padding: 2rem;
+  line-height: 1.6;
   font-size: 1rem;
   p {
     padding: 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     &:last-of-type {
       margin-bottom: 0;
     }
   }
+  a {
+    color: #111;
+    border-bottom: 2px solid #f0d461 !important;
+    &:hover,
+    &:active,
+    &:focus {
+      color: #111 !important;
+      background: #f0d461 !important;
+    }
+  }
   cite {
     display: block;
-    margin-top: .5rem;
+    margin-top: 1rem;
     font-size: .9rem;
     text-align: right;
     font-family: $font-family;
     color: rgba(0, 0, 0, .4);
-  }
-  &.testimonial {
-    padding-left: 0;
-    border-left: 0;
-  }
-  &.alert,
-  &.info,
-  &.note,
-  &.details,
-  &.success {
-    color: $heading-font-color;
-    font-family: $heading-font-family;
-  }
-  &.alert {
-    background: lighten($secondary-color, 28%);
-    border-color: $secondary-color;
-  }
-  &.info {
-    background: #fff6d5;
-    border-color: #f0d461;
-  }
-  &.success {
-    background: lighten($green, 30%);
-    border-color: $green;
-  }
-  &.note {
-    background: $background;
-    border-color: $border-color;
-  }
-  &.details {
-    background: lighten($primary-color, 33%);
-    border-color: lighten($primary-color, 20%);
   }
   code {
     margin: 1rem 0 0;
   }
 }
 
-@include small-breakpoint {
-  blockquote {
-    border-left: 16px solid $background;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    padding: 2rem;
-    cite {
-      margin-top: 1rem;
-    }
-    p {
-      font-size: 1.3rem;
-    }
-    code {
-      font-size: .9rem;
-      margin: 2rem 0 0;
-    }
-  }
-}
-
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   height: 100px;
   color: #888;
 }

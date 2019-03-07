@@ -4,7 +4,7 @@ const config = {
   siteTitleAlt: 'Tania Rascias',
   siteLogo: '/logos/logo-1024.png',
   siteUrl: 'https://tania.dev',
-  pathPrefix: '',
+  pathPrefix: '/',
   siteDescription:
     'Tania Rascia is a web developer, designer, and writer who breaks down complex concepts for all skill levels.',
   siteRss: '/rss.xml',
@@ -38,15 +38,15 @@ const config = {
   menuLinks: [
     {
       name: 'About me',
-      link: '/me',
+      link: '/me/',
     },
     {
       name: 'Articles',
-      link: '/blog',
+      link: '/blog/',
     },
     {
       name: 'Newsletter',
-      link: '/newsletter',
+      link: '/newsletter/',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.

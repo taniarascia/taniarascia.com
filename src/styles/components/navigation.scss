@@ -1,13 +1,20 @@
 .nav {
-  height: $nav-height;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100%;
-  font-size: .9rem;
   background: white;
+  border-bottom: 2px solid white;
+  transition: all .3s ease;
+  &.scroll {
+    border-bottom: 2px solid #f0f0f0;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .03);
+    .nav-container {
+      height: 60px;
+    }
+  }
   .nav-container {
     height: $nav-height;
     max-width: $width;
@@ -17,8 +24,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    transition: all .3s ease;
     .brand {
       a {
+        font-weight: 600;
         font-size: 1.3rem;
       }
     }
@@ -40,6 +49,22 @@
         &:hover {
           color: #111;
         }
+        &.donate-button {
+          border: 2px solid #f0d461;
+          padding: .5rem 1rem;
+          background: #fff6d5;
+          color: darken(#f0d461, 25%);
+          &:hover {
+            background: lighten(#f0d461, 10%);
+            border: 2px solid darken(#eedc95, 20%);
+            color: darken(#f0d461, 35%);
+          }
+        }
+        .emoji {
+          font-size: 1.5rem;
+          line-height: 0;
+          margin-left: .75rem;
+        }
       }
     }
   }
@@ -48,5 +73,5 @@
 .favicon {
   height: 25px;
   width: 25px;
-  margin-right: .75rem;
+  margin-right: 1rem;
 }
