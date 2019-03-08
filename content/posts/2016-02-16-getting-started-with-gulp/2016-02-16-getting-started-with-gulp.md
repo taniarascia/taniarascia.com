@@ -1,5 +1,5 @@
 ---
-date: 2016-02-16 06:35:51+00:00
+date: 2016-02-16 06:35:51
 title: 'Straightforward Guide to Setting Up a Gulp Workflow'
 template: post
 slug: /getting-started-with-gulp/

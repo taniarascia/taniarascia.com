@@ -1,5 +1,5 @@
 ---
-date: 2018-04-05 04:02:52+00:00
+date: 2018-04-05 04:02:52
 title: "Basic Refactoring: Don't Repeat Yourself"
 template: post
 slug: /refactoring-dont-repeat-yourself/

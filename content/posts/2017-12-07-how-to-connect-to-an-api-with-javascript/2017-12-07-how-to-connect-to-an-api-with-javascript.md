@@ -1,5 +1,5 @@
 ---
-date: 2017-12-07 22:03:52+00:00
+date: 2017-12-07 22:03:52
 title: 'How to Connect to an API with JavaScript'
 template: post
 slug: /how-to-connect-to-an-api-with-javascript/

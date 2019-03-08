@@ -1,5 +1,5 @@
 ---
-date: 2018-08-20 03:58:07+00:00
+date: 2018-08-20 03:58:07
 title: 'Getting Started with React - An Overview and Walkthrough'
 template: post
 slug: /getting-started-with-react/

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22 05:14:05+00:00
+date: 2019-01-22 05:14:05
 title: 'Using Content Editable Elements in JavaScript (React)'
 template: post
 slug: /content-editable-elements-in-javascript-react/

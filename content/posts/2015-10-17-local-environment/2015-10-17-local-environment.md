@@ -1,5 +1,5 @@
 ---
-date: 2015-10-17 03:19:43+00:00
+date: 2015-10-17 03:19:43
 title: 'Setting Up a Local Server Environment'
 template: post
 slug: /local-environment/

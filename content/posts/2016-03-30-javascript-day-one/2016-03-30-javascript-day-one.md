@@ -1,5 +1,5 @@
 ---
-date: 2016-03-30 22:55:01+00:00
+date: 2016-03-30 22:55:01
 title: "JavaScript Day One: Comments, Variables, Data Types, and Hello,\
   \ World!"
 template: post

@@ -1,5 +1,5 @@
 ---
-date: 2018-06-12 16:57:04+00:00
+date: 2018-06-12 16:57:04
 title: 'How to Create a Snippet in Visual Studio Code'
 template: post
 slug: /how-to-create-a-snippet-in-visual-studio-code/

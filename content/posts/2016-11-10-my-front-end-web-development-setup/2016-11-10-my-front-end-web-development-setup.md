@@ -1,5 +1,5 @@
 ---
-date: 2016-11-10 22:01:00+00:00
+date: 2016-11-10 22:01:00
 title: 'My Complete Front End Web Development Setup'
 template: post
 slug: /my-front-end-web-development-setup/

@@ -1,5 +1,5 @@
 ---
-date: 2016-07-26 19:41:33+00:00
+date: 2016-07-26 19:41:33
 title: 'How to Build a Responsive Image Gallery with Flexbox'
 template: post
 slug: /how-to-build-a-responsive-image-gallery-with-flexbox/

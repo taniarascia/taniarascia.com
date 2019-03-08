@@ -1,5 +1,5 @@
 ---
-date: 2017-11-13 15:57:16+00:00
+date: 2017-11-13 15:57:16
 title: 'Basic Authentication for an Express Node App (htpasswd)'
 template: post
 slug: /basic-authentication-for-an-express-node-app-htpasswd/

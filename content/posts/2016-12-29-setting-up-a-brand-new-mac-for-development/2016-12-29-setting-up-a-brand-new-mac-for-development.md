@@ -1,5 +1,5 @@
 ---
-date: 2016-12-29 05:25:00+00:00
+date: 2016-12-29 05:25:00
 title: 'Setting up a Brand New Mac for Development'
 template: post
 slug: /setting-up-a-brand-new-mac-for-development/

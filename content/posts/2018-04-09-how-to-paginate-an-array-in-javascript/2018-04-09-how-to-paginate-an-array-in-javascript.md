@@ -1,5 +1,5 @@
 ---
-date: 2018-04-09 15:28:07+00:00
+date: 2018-04-09 15:28:07
 title: 'How to Paginate an Array in JavaScript'
 template: post
 slug: /how-to-paginate-an-array-in-javascript/

@@ -1,5 +1,5 @@
 ---
-date: 2015-11-30 09:02:58+00:00
+date: 2015-11-30 09:02:58
 title: 'Make a Static Website with Jekyll'
 template: post
 slug: /make-a-static-website-with-jekyll/

@@ -1,5 +1,5 @@
 ---
-date: 2017-07-06 19:22:10+00:00
+date: 2017-07-06 19:22:10
 title: 'How I Made a Career Change into Web Development'
 template: post
 slug: /how-i-made-a-career-change-into-web-development/

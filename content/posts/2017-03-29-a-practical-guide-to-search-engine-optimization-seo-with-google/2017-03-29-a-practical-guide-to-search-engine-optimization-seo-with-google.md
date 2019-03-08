@@ -1,5 +1,5 @@
 ---
-date: 2017-03-29 06:24:30+00:00
+date: 2017-03-29 06:24:30
 title: "A Practical Guide to Search Engine Optimization (SEO) with Google\t\
   \t"
 template: post

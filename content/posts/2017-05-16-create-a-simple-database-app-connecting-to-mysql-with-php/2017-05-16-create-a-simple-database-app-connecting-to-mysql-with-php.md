@@ -1,5 +1,5 @@
 ---
-date: 2017-05-16 03:51:00+00:00
+date: 2017-05-16 03:51:00
 title: "Create a Simple CRUD Database App: Connecting to MySQL with PHP\
   \ (Part 1: Create, Read)"
 template: post

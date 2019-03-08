@@ -1,5 +1,5 @@
 ---
-date: 2015-12-12 22:15:27+00:00
+date: 2015-12-12 22:15:27
 title: "Learn Sass Now: A Guide to Installing, Using and Understanding Sass\t\
   \t"
 template: post

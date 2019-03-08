@@ -1,5 +1,5 @@
 ---
-date: 2017-10-12 21:47:50+00:00
+date: 2017-10-12 21:47:50
 title: "Design for Developers: Specific Steps to Improve Your Website Design\t\
   \t"
 template: post

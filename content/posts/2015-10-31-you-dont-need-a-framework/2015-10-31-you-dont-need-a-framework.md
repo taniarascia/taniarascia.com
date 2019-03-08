@@ -1,5 +1,5 @@
 ---
-date: 2015-10-31 08:08:27+00:00
+date: 2015-10-31 08:08:27
 title: "You Don't Need a Framework: Understanding the Fundamentals of Responsive\
   \ Design"
 template: post

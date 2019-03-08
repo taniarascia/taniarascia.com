@@ -1,5 +1,5 @@
 ---
-date: 2017-03-27 21:50:07+00:00
+date: 2017-03-27 21:50:07
 title: 'Crossfade Between Two Images with CSS Animations'
 template: post
 slug: /crossfade-between-two-images-with-css-animations/

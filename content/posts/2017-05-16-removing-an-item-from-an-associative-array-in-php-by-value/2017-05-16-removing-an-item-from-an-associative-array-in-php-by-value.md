@@ -1,5 +1,5 @@
 ---
-date: 2017-05-16 19:10:43+00:00
+date: 2017-05-16 19:10:43
 title: 'Removing an item from an associative array in PHP by value'
 template: post
 slug: /removing-an-item-from-an-associative-array-in-php-by-value/

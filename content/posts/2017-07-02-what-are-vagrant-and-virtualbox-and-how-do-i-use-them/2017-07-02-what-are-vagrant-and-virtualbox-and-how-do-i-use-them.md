@@ -1,5 +1,5 @@
 ---
-date: 2017-07-02 23:37:26+00:00
+date: 2017-07-02 23:37:26
 title: 'What are Vagrant and VirtualBox and How Do I Use Them?'
 template: post
 slug: /what-are-vagrant-and-virtualbox-and-how-do-i-use-them/

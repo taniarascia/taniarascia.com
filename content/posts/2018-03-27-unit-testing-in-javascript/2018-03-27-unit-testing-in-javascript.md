@@ -1,5 +1,5 @@
 ---
-date: 2018-03-27 19:51:24+00:00
+date: 2018-03-27 19:51:24
 title: 'Unit Testing in JavaScript with Mocha'
 template: post
 slug: /unit-testing-in-javascript/

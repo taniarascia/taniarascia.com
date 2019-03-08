@@ -1,5 +1,5 @@
 ---
-date: 2018-08-08 21:51:34+00:00
+date: 2018-08-08 21:51:34
 title: 'How to Promisify an Ajax Call'
 template: post
 slug: /how-to-promisify-an-ajax-call/

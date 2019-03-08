@@ -1,5 +1,5 @@
 ---
-date: 2017-04-05 18:35:40+00:00
+date: 2017-04-05 18:35:40
 title: 'Prevent Mouse Scroll from Zooming on Embedded Google Maps'
 template: post
 slug: /prevent-mouse-scroll-from-zooming-on-embedded-google-maps/

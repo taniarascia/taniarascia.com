@@ -1,5 +1,5 @@
 ---
-date: 2018-04-28 18:19:54+00:00
+date: 2018-04-28 18:19:54
 title: 'How to Upload Files to a Server with Plain JavaScript and PHP'
 template: post
 slug: /how-to-upload-files-to-a-server-with-plain-javascript-and-php/

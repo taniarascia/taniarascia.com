@@ -1,5 +1,5 @@
 ---
-date: 2018-06-21 16:48:39+00:00
+date: 2018-06-21 16:48:39
 title: 'The Simplest PHP Router'
 template: post
 slug: /the-simplest-php-router/

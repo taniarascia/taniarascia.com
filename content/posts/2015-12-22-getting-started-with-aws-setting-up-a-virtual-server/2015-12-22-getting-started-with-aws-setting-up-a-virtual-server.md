@@ -1,5 +1,5 @@
 ---
-date: 2015-12-22 07:09:49+00:00
+date: 2015-12-22 07:09:49
 title: 'Getting Started with AWS - Setting Up a Virtual Server'
 template: post
 slug: /getting-started-with-aws-setting-up-a-virtual-server/

@@ -1,5 +1,5 @@
 ---
-date: 2015-10-02 18:58:30+00:00
+date: 2015-10-02 18:58:30
 title: 'Responsive Dropdown Navigation Bar'
 template: post
 slug: /responsive-dropdown-navigation-bar/

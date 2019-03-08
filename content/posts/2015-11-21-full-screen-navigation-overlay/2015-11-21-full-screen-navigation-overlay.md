@@ -1,5 +1,5 @@
 ---
-date: 2015-11-21 07:27:01+00:00
+date: 2015-11-21 07:27:01
 title: 'Full Screen Navigation Overlay'
 template: post
 slug: /full-screen-navigation-overlay/

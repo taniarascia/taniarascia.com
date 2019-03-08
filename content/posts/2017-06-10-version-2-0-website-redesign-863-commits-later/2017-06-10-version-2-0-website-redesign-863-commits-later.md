@@ -1,5 +1,5 @@
 ---
-date: 2017-06-10 19:55:06+00:00
+date: 2017-06-10 19:55:06
 title: 'Website Redesign: Version 2.0 (863 Commits Later)'
 template: post
 slug: /version-2-0-website-redesign-863-commits-later/

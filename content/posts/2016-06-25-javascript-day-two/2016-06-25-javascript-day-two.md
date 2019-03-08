@@ -1,5 +1,5 @@
 ---
-date: 2016-06-25 23:03:09+00:00
+date: 2016-06-25 23:03:09
 title: 'JavaScript Day Two: Comparisons, Math, and Logic'
 template: post
 slug: /javascript-day-two/

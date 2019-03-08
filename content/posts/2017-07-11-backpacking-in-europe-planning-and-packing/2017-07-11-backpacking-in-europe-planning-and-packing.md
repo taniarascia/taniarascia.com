@@ -1,5 +1,5 @@
 ---
-date: 2017-07-11 22:52:41+00:00
+date: 2017-07-11 22:52:41
 title: 'Backpacking in Europe: Planning and Packing'
 template: post
 slug: /backpacking-in-europe-planning-and-packing/

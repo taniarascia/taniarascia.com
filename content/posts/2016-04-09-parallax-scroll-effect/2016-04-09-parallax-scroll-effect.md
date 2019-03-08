@@ -1,5 +1,5 @@
 ---
-date: 2016-04-09 15:35:52+00:00
+date: 2016-04-09 15:35:52
 title: 'Parallax Scroll Effect'
 template: post
 slug: /parallax-scroll-effect/

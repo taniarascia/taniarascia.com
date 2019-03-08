@@ -1,5 +1,5 @@
 ---
-date: 2015-11-06 16:26:00+00:00
+date: 2015-11-06 16:26:00
 title: 'From Cooking to Coding'
 template: post
 slug: /from-cooking-to-coding/

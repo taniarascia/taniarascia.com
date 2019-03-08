@@ -1,5 +1,5 @@
 ---
-date: 2017-07-03 07:26:51+00:00
+date: 2017-07-03 07:26:51
 title: "How to Install Apache, PHP 7.1, and MySQL on Ubuntu with Vagrant\t\
   \t"
 template: post

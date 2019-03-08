@@ -1,5 +1,5 @@
 ---
-date: 2018-03-04 17:00:24+00:00
+date: 2018-03-04 17:00:24
 title: 'How to Set Up a Cron Job in MAMP'
 template: post
 slug: /how-to-set-up-a-cron-job-in-mamp/

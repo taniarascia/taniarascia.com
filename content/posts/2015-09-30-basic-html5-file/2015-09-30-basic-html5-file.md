@@ -1,5 +1,5 @@
 ---
-date: 2015-09-30 19:32:23+00:00
+date: 2015-09-30 19:32:23
 title: 'Basic HTML5 Skeleton File'
 template: post
 slug: /basic-html5-file/

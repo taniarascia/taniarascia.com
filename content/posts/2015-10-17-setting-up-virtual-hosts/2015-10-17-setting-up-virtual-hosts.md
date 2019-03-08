@@ -1,5 +1,5 @@
 ---
-date: 2015-10-17 03:20:28+00:00
+date: 2015-10-17 03:20:28
 title: 'Setting Up Virtual Hosts'
 template: post
 slug: /setting-up-virtual-hosts/

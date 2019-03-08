@@ -1,5 +1,5 @@
 ---
-date: 2015-11-10 05:03:34+00:00
+date: 2015-11-10 05:03:34
 title: 'What is Bootstrap and How Do I Use It?'
 template: post
 slug: /what-is-bootstrap-and-how-do-i-use-it/

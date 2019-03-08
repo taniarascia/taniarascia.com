@@ -1,5 +1,5 @@
 ---
-date: 2019-01-04 05:32:10+00:00
+date: 2019-01-04 05:32:10
 title: "Understanding Bits, Bytes, Bases, and Writing a Hex Dump in JavaScript\
   \ (Node)"
 template: post

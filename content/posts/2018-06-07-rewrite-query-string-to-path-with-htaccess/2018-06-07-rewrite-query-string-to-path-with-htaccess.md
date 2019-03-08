@@ -1,5 +1,5 @@
 ---
-date: 2018-06-07 19:30:48+00:00
+date: 2018-06-07 19:30:48
 title: 'Rewrite Query String to Path with htaccess'
 template: post
 slug: /rewrite-query-string-to-path-with-htaccess/
