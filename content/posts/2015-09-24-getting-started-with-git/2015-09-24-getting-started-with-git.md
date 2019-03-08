@@ -101,11 +101,6 @@ When you open Terminal, you will start off in your main directory. I will assume
 pwd
 ```
 
-
-
-
-
-
     <div class="terminal">/Users/you</div>
 
 ##### 2. Create a new folder called project-local.
@@ -114,13 +109,11 @@ pwd
 mkdir project-local
 ```
 
-
 ##### 3. List your directories.
 
 ```
 ls
 ```
-
 
 You should see **project-local** in the list of directories. Of course, you could have created the directory through Finder or Explorer, but it's a useful command to know.
 
@@ -129,7 +122,6 @@ You should see **project-local** in the list of directories. Of course, you coul
 ```
 cd project-local
 ```
-
 
 Now you're in the folder where your local project and Git repository will live. From here, we will begin using git commands. There is a [massive amount](http://gitref.org/) of commands for Git, but we only need a few to get started.
 
@@ -152,7 +144,6 @@ git config --global user.name "Firstname Lastname"
     git config --global user.email username@email.com
 ```
 
-
 Make sure you're still in the **project-local** folder, then move on.
 
 ##### 6. Initialize Git repository.
@@ -160,7 +151,6 @@ Make sure you're still in the **project-local** folder, then move on.
 ```
 git init
 ```
-
 
 Initialized empty Git repository in /Users/you/project-local/.git/
 
@@ -172,7 +162,6 @@ Great! Now you have an empty Git repo on your local computer.
 git remote add origin https://github.com/you/project
 ```
 
-
 Terminal won't respond, but it was successful. Go ahead and add a file to the **project-local** directory. You can add as many files as you want, but I will assume you added two files - **index.html** and **style.css**.
 
 ##### 8. Check the status of your local repository.
@@ -180,11 +169,6 @@ Terminal won't respond, but it was successful. Go ahead and add a file to the **
 ```bash
 git status
 ```
-
-
-
-
-
 
     <div class="terminal">On branch master
     Initial commit
@@ -207,7 +191,6 @@ Okay, so now it knows that there are two files in the directory, but they're not
 git add .
 ```
 
-
 Let's check the status again with `git status`.
 
     <div class="terminal">On branch master
@@ -227,11 +210,6 @@ So, what did that do? The files are green now instead of red. Are we ready? Not 
 git commit -am "Initial Commit"
 ```
 
-
-
-
-
-
     <div class="terminal">[master (root-commit)] Initial
      2 files changed, 34 insertions(+)
 
@@ -247,7 +225,6 @@ With this command, I commit all the files (-a), include a message (-m), listed h
 ```bash
 git push origin master
 ```
-
 
 Terminal will prompt you to enter your GitHub username and password. When you type in your password, it might not show that you've typed anything, but it's being entered.
 
@@ -275,7 +252,6 @@ You can do everything through the same Terminal window, but for the sake of clar
 ssh username@ssh.domain.com
 ```
 
-
 You will be prompted to enter your password.
 
 Now you're in!
@@ -296,7 +272,6 @@ I'm ignoring branches for now, since we're only working with one branch - the **
 git --list
 ```
 
-
 You should configure your e-mail and username as you did on your home computer.
 
 ##### 3. Print your working directory to make sure you're in the right location.
@@ -304,7 +279,6 @@ You should configure your e-mail and username as you did on your home computer.
 ```bash
 pwd
 ```
-
 
 Use `cd` and `mkdir` to navigate to the location you want your new Git repo to live. Then...
 
@@ -314,20 +288,17 @@ Use `cd` and `mkdir` to navigate to the location you want your new Git repo to l
 git init
 ```
 
-
 ##### 5. Add remote Git repo to origin master (branch).
 
 ```bash
 git remote add origin https://github.com/you/project.git
 ```
 
-
 ##### 6. Pull (download) from origin master (branch).
 
 ```bash
 git pull origin master
 ```
-
 
 Now, when you go to http://domain.com/project-remote, all the files are there, and the site is live!
 

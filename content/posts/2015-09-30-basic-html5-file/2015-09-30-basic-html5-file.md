@@ -48,26 +48,22 @@ Google generously provides [hosted libraries](https://developers.google.com/spee
 ## Basic index.html
 
 ```html
-<!doctype html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
 
-      <title></title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="images/favicon.png" />
+  </head>
 
-      <link rel="stylesheet" href="css/main.css">
-      <link rel="icon" href="images/favicon.png">
-    </head>
-
-    <body>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="js/scripts.js"></script>
-    </body>
-
-    </html>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
 ```
-

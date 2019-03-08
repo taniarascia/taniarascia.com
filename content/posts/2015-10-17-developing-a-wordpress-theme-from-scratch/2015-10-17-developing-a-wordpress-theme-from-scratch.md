@@ -111,7 +111,6 @@ wp-config.php
     define('DB_PASSWORD', 'password_here');
 ```
 
-
 to this:
 
 wp-config.php
@@ -126,7 +125,6 @@ wp-config.php
     define('DB_PASSWORD', 'root');
 ```
 
-
 Find this:
 
 ```php
@@ -134,14 +132,12 @@ Find this:
 $table_prefix  = 'wp_';
 ```
 
-
 And change it to literally anything else with numbers and letters. For security. `xyz_` or `735hjq9`\_, etc.
 
 ```php
 
 $table_prefix  = 'xyz77_';
 ```
-
 
 Go to [https://api.wordpress.org/secret-key/1.1/salt](https://api.wordpress.org/secret-key/1.1/salt/) and replace the entire 'put your unique phrase here' with that generated code.
 
@@ -177,7 +173,6 @@ style.css
     */
 ```
 
-
 Remember [the Bootstrap blog source code](https://github.com/taniarascia/bootstrapblog) from earlier in the article? Move those two files - `index.html` and `blog.css` - to your custom theme folder. Rename `index.html` to `index.php`.
 
 Your theme has now been created. Go to the WordPress dashboard, and click on `Appearance > Themes`. You'll see the theme in the collection with all the default themes.
@@ -197,9 +192,8 @@ Fortunately, this is easily remedied. There's a few ways to do this, but I'll sh
 Locate where you linked to the CSS stylesheet in the head of **index.php**. This is what it looks like **right now**, but we'll have to change it.
 
 ```html
-<link href="blog.css" rel="stylesheet">
+<link href="blog.css" rel="stylesheet" />
 ```
-
 
 We need to tell it to dynamically link to the themes folder. Replace the above code with the below code.
 
@@ -207,7 +201,6 @@ We need to tell it to dynamically link to the themes folder. Replace the above c
 
 <link href="<?php echo get_bloginfo('template_directory'); ?>/blog.css" rel="stylesheet">
 ```
-
 
 If you reload the page, you'll see that CSS is now loading in. If it is not loading in, please do a hard refresh. The concept will be the same for images, javascript, and most other files you have in the themes folder, except PHP files.
 
@@ -272,7 +265,6 @@ header.php
     		</div>
 ```
 
-
 Same deal for the footer as the header. It will include whatever visible footer you have, your JS links (for now) and `<?php wp_footer(); ?>` right before `</body>`. Since I included the `.container` div in the header, I'm going to close it in the footer.
 
 footer.php
@@ -295,35 +287,37 @@ footer.php
     </html>
 ```
 
-
 Most websites, especially blogs, will have a side area for including content such as archives, tags, category, ads, and whatnot. (Content removed for brevity.)
 
 sidebar.php
 
 ```html
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-    	<div class="sidebar-module sidebar-module-inset">
-    		<h4>About</h4>
-    		<p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-    	</div>
-    	<div class="sidebar-module">
-    		<h4>Archives</h4>
-    		<ol class="list-unstyled">
-    			<li><a href="#">March 2014</a></li>
-    			<!-- More archive examples -->
-    		</ol>
-    	</div>
-    	<div class="sidebar-module">
-    		<h4>Elsewhere</h4>
-    		<ol class="list-unstyled">
-    			<li><a href="#">GitHub</a></li>
-    			<li><a href="#">Twitter</a></li>
-    			<li><a href="#">Facebook</a></li>
-    		</ol>
-    	</div>
-    </div><!-- /.blog-sidebar -->
+  <div class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p>
+      Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit
+      amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+    </p>
+  </div>
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ol class="list-unstyled">
+      <li><a href="#">March 2014</a></li>
+      <!-- More archive examples -->
+    </ol>
+  </div>
+  <div class="sidebar-module">
+    <h4>Elsewhere</h4>
+    <ol class="list-unstyled">
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Facebook</a></li>
+    </ol>
+  </div>
+</div>
+<!-- /.blog-sidebar -->
 ```
-
 
 If the sidebar is where all the secondary information goes, the content is where all the articles and main content of the website go. (Content removed for brevity.)
 
@@ -331,17 +325,19 @@ content.php
 
 ```html
 <div class="blog-post">
-    	<h2 class="blog-post-title">Sample blog post</h2>
-    	<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+  <h2 class="blog-post-title">Sample blog post</h2>
+  <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
 
-    	<p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-    	<hr>
+  <p>
+    This blog post shows a few different types of content that's supported and styled with
+    Bootstrap. Basic typography, images, and code are all supported.
+  </p>
+  <hr />
 
-    <!-- the rest of the content -->
-
-    </div><!-- /.blog-post -->
+  <!-- the rest of the content -->
+</div>
+<!-- /.blog-post -->
 ```
-
 
 ##### Index
 
@@ -349,11 +345,11 @@ The index file should be pretty sparse now. In fact, it should only be this:
 
 ```html
 <div class="row">
-    	<div class="col-sm-8 blog-main">
-    	</div> <!-- /.blog-main -->
-    </div> 	<!-- /.row -->
+  <div class="col-sm-8 blog-main"></div>
+  <!-- /.blog-main -->
+</div>
+<!-- /.row -->
 ```
-
 
 Now we're going to add everything back in. Here's your new `index.php`.
 
@@ -376,9 +372,8 @@ index.php
     	</div> <!-- /.row -->
 
     <?php get_footer(); ?>
-    
-```
 
+```
 
 Even if you've never used PHP before, this code is all very self explanatory. `get_header();`, `get_sidebar();` and `get_footer();` are all functions that look for their respective .php files and insert the code. Of course, they all go inside their own `<?php ?>` tags to let the server know to parse them as HTML. The content function is slightly different, but it does the same thing.
 
@@ -399,7 +394,6 @@ In **header.php**, change the contents of the title tag and main h1 tag to this 
 <?php echo get_bloginfo( 'name' ); ?>
 ```
 
-
 And the description to this one.
 
 ```php
@@ -407,14 +401,12 @@ And the description to this one.
 <?php echo get_bloginfo( 'description' ); ?>
 ```
 
-
 Finally, I want the title to always take me back to the main blog page. `bloginfo('wpurl');` is the code that will do that.
 
 ```php
 
 <a href="<?php echo get_bloginfo( 'wpurl' );?>"><!-- site title --></a>
 ```
-
 
 Here's the full code in case you're confused.
 
@@ -425,7 +417,6 @@ Here's the full code in case you're confused.
     	<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
     </div>
 ```
-
 
 We've _finally_ made the first dynamic change to the page. The front end should reflect what you put in your settings.
 
@@ -449,7 +440,6 @@ The Loop itself is quite simple.
 
     <?php endwhile; endif; ?>
 ```
-
 
 It explains itself - IF there are posts, WHILE there are posts, DISPLAY the post. Anything inside the loop will be repeated. For a blog, this will be the post title, the date, the content, and comments. Where each individual post should end is where the loop will end. We're going to add the loop to `index.php`.
 
@@ -480,9 +470,8 @@ index.php
     	</div> <!-- /.row -->
 
     <?php get_footer(); ?>
-    
-```
 
+```
 
 The only thing inside your loop is **content.php**, which will contain the contents of one single post. So open **content.php** and change the contents to this:
 
@@ -496,7 +485,6 @@ The only thing inside your loop is **content.php**, which will contain the conte
 
     </div><!-- /.blog-post -->
 ```
-
 
 It's amazingly simple! `the_title();` is the title of the blog post, `the_date();` shows the date, `the_author();` the author, and `the_content();` is your post content. I added another post to prove at the loop is working.
 
@@ -516,7 +504,6 @@ sidebar.php
     </ol>
 ```
 
-
 For my description, I'm going to pull in metadata from my user account.
 
 ```php
@@ -524,7 +511,6 @@ For my description, I'm going to pull in metadata from my user account.
 <h4>About</h4>
     <p><?php the_author_meta( 'description' ); ?> </p>
 ```
-
 
 Now this content is being pulled in dynamically as well.
 
@@ -554,7 +540,6 @@ header.php
     </div>
 ```
 
-
 `wp_list_pages();` will list all the pages you have in an unordered list. `'title_li='` is telling the code not to add a "Pages" title before the list. Unfortunately for us, this looks terrible; the original blog.css has the links coded in `a` tags, not `li` tags.
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-10.28.37-PM.png)
@@ -565,16 +550,15 @@ blog.css
 
 ```css
 .blog-nav li {
-        position: relative;
-        display: inline-block;
-        padding: 10px;
-        font-weight: 500;
-    }
-    .blog-nav li a {
-        color: #fff;
-    }
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 500;
+}
+.blog-nav li a {
+  color: #fff;
+}
 ```
-
 
 Now it should show up correctly. However, if the CSS is _not_ applying, please **View the source** of your HTML output and find out what the URL of your CSS is. It should be `startwordpress.dev/wp-content/themes/startwordpress/blog.css`. Make sure to do a **hard refresh**.
 
@@ -608,7 +592,6 @@ page.php
 
     <?php get_footer(); ?>
 ```
-
 
 When I click on my sample page, the layout is now different than the blog post layout.
 

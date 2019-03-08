@@ -71,9 +71,8 @@ I'm going to change my "Hello, world!".
 
 ```php
 <p>Hello, world! The year is <?php echo date('Y'); ?>.</p>
-    
-```
 
+```
 
 The code `<?php echo date('Y'); ?>` uses a date function to find the year. The HTML interpreted is just "2015".
 

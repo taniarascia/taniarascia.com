@@ -1,37 +1,27 @@
 ---
 date: 2018-06-21 16:48:39+00:00
-title: "The Simplest PHP Router"
+title: 'The Simplest PHP Router'
 template: post
 slug: /the-simplest-php-router/
 categories:
-- Programming
-- Tutorials
-- Web
+  - Programming
+  - Tutorials
+  - Web
 tags:
-- mvc
-- php
-- routes
-- routing
+  - mvc
+  - php
+  - routes
+  - routing
 ---
-
 
 I wanted to create the absolute most basic routing code in PHP, so here it is. We will direct ALL traffic to `index.php` and route to the new files from there.
 
-
-
 ## Redirect all requests to index.php
-
-
 
 In the root of your project, create a `.htaccess` file that will redirect all requests to `index.php`.
 
-
-
 .htaccess
 
-
-
-    
 ```apacheconf
 RewriteEngine On
     RewriteBase /
@@ -40,30 +30,18 @@ RewriteEngine On
     RewriteRule ^(.+)$ index.php [QSA,L]
 ```
 
-
-
-
-
-
 ## Create a routing switch
-
-
 
 Get the requested path with `$_SERVER['REDIRECT_URL']`, and require the page you want to display. I have `''` and `'/'` for both _url.com/_ and _url.com_.
 
-
-
 index.php
 
-
-
-    
 ```php
 
     <?php
-    
+
     $request = $_SERVER['REDIRECT_URL'];
-    
+
     switch ($request) {
         case '/' :
             require __DIR__ . '/views/index.php';
@@ -74,65 +52,32 @@ index.php
         case '/about' :
             require __DIR__ . '/views/about.php';
             break;
-        default: 
+        default:
             require __DIR__ . '/views/404.php';
             break;
     }
 ```
 
-
-
-
-
-
 ## Create the views
-
-
 
 Create a `/views` directory and place the files.
 
-
-
 /views/index.php
 
-
-
-    
 ```php
 <h1>Main</h1>
 ```
 
-
-
-
-
-
 /views/about.php
 
-
-
-    
 ```php
 <h1>About</h1>
 ```
 
-
-
-
-
-
 /views/404.php
 
-
-
-    
 ```php
 <h1>404</h1>
 ```
 
-
-
-
 That's it!
-
-		

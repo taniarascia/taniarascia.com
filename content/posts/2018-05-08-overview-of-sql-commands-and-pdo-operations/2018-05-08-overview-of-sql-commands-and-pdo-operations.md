@@ -1,22 +1,21 @@
 ---
 date: 2018-05-08 21:56:30+00:00
-title: "Overview of SQL Commands and PDO Operations"
+title: 'Overview of SQL Commands and PDO Operations'
 template: post
 slug: /overview-of-sql-commands-and-pdo-operations/
 categories:
-- Popular
-- Programming
-- Tutorials
-- Web
+  - Popular
+  - Programming
+  - Tutorials
+  - Web
 tags:
-- database
-- mysql
-- php
-- sql
+  - database
+  - mysql
+  - php
+  - sql
 ---
 
-
-Structured Query Language, or **SQL**, is a widely used language the allows users to query and manage data in a database. 
+Structured Query Language, or **SQL**, is a widely used language the allows users to query and manage data in a database.
 
 Databases such as MySQL, MariaDB, SQLite, PostgreSQL, Oracle, and Microsoft SQL Server are all based on the SQL standard, with some slight variations. This resource uses the MySQL flavor of SQL.
 
@@ -30,73 +29,46 @@ You can view the commands alone without explanations on GitHub through the below
 
 The logo in this article is of [Sequel Pro](https://www.sequelpro.com/), an awesome free MySQL GUI for Mac.
 
-
-
 ## Contents
 
+- Create Database
+- Drop Database
+- Create Table
+  - Datatypes
+  - Constraints
 
+* Alter Table
+* Drop Table
+* Select Rows
+* Select Distinct Rows
+  - Joins
+  - Aggregate Functions
+  - Conditions
 
+- Insert Rows
+- Update Rows
+- Delete Rows
+- PDO: Open Connection
 
+  - PDO Datatypes
 
-
-  * Create Database
-  * Drop Database
-  * Create Table
-    * Datatypes
-    * Constraints
-
-
-  * Alter Table
-  * Drop Table
-  * Select Rows
-  * Select Distinct Rows
-    * Joins
-    * Aggregate Functions
-    * Conditions
-
-
-  * Insert Rows
-  * Update Rows
-  * Delete Rows
-  * PDO: Open Connection
-
-    * PDO Datatypes
-
-
-  * PDO: Select Rows
-  * PDO: Insert Row
-  * PDO: Update Row
-  * PDO: Delete Row
-
-
-
-
+* PDO: Select Rows
+* PDO: Insert Row
+* PDO: Update Row
+* PDO: Delete Row
 
 ## SQL
 
-
-
 Common SQL syntax and statements.
-
-
 
 > Note: There are many accepted styles for formatting SQL. For consistency in these examples, I chose right-aligned keywords.
 
-
-
-
-
-
 ### Create Database
-
-
 
 Create a new database.
 
-
-    
     <code class="sql language-sql">CREATE DATABASE IF NOT EXISTS database_name
-    
+
 ```
 
 
@@ -111,29 +83,20 @@ Create a new database.
 Delete an existing database.
 
 
-    
+
     <code class="sql language-sql">DROP DATABASE IF EXISTS database_name
-    
+
 ```
-
-
-
-
-
 
 ### Create Table
 
-
-
 Creates a new table with corresponding structure. The structure schema consists of a comma separated list of column name, followed by the datatype, followed by any constraints (optional) and a default value (optional).
 
-
-    
     <code class="sql language-sql">CREATE TABLE IF NOT EXISTS table_name (
       column_a Datatype Constraints DEFAULT 'value_1',
       column_b Datatype Constraints
     );
-    
+
 ```
 
 
@@ -145,25 +108,18 @@ Create Table Example
 
 
 
-    
+
     <code class="sql language-sql">CREATE TABLE IF NOT EXISTS users (
       id       INT(11) AUTO_INCREMENT PRIMARY KEY,
-      username VARCHAR(30) NOT NULL, 
+      username VARCHAR(30) NOT NULL,
       location VARCHAR(50) DEFAULT 'Chicago'
     );
-    
+
 ```
-
-
-
 
 The charts below identify some of the most widely used datatypes and constraints in SQL.
 
-
-
 #### Datatypes
-
-
 
 The type of value a column can hold.
 
@@ -171,9 +127,9 @@ The type of value a column can hold.
 
 <tr >
 
-
 **Datatype**
 **Description**
+
 </tr>
 
 <tbody >
@@ -236,11 +192,7 @@ The type of value a column can hold.
 </tbody>
 </table>
 
-
-
 #### Constraints
-
-
 
 Rules applied to a column.
 
@@ -296,22 +248,16 @@ Rules applied to a column.
 </tbody>
 </table>
 
-
-
 ### Alter Table
-
-
 
 Add, modify, rename, or drop a column. Rename a table.
 
-
-    
     <code class="sql language-sql"> ALTER TABLE table_a
              ADD column_a Datatype Constraints
-    ALTER COLUMN column_a Datatype Constraints  
+    ALTER COLUMN column_a Datatype Constraints
             DROP column_a
        RENAME TO table_b
-    
+
 ```
 
 
@@ -326,39 +272,29 @@ Add, modify, rename, or drop a column. Rename a table.
 Delete an existing table.
 
 
-    
+
     <code class="sql language-sql">DROP TABLE IF EXISTS table_name
-    
+
 ```
-
-
-
-
-
 
 ### Select Rows
 
-
-
 Select data from a database. Only `SELECT` and `FROM` are mandatory; the rest of the fields are optional. The order of a `SELECT` statement is as follows:
 
-
-
-
-      * `SELECT` - select `*` (all), specific columns, or aggregate functions. 
-      * `AS` - assign an alias to a column name 
+      * `SELECT` - select `*` (all), specific columns, or aggregate functions.
+      * `AS` - assign an alias to a column name
       * `FROM` - table name to pull data from
-      * `JOIN/LEFT JOIN/RIGHT JOIN/FULL JOIN ... ON` - combine data from tables by a common key 
-      * `WHERE ... AND, OR, NOT` - filter data by conditions  
-      * `GROUP BY` - group a result set by column. 
-      * `HAVING` - filter groups by conditions. 
+      * `JOIN/LEFT JOIN/RIGHT JOIN/FULL JOIN ... ON` - combine data from tables by a common key
+      * `WHERE ... AND, OR, NOT` - filter data by conditions
+      * `GROUP BY` - group a result set by column.
+      * `HAVING` - filter groups by conditions.
       * `ORDER BY` - sort a result set by column in ascending or descending order
       * `LIMIT` - limit number of results
       * `OFFSET` - offset the results
 
 
 
-    
+
     <code class="sql language-sql">   SELECT *, column_a, column_b, AggregateFunction(column_a)
            AS Alias
          FROM table_a
@@ -375,7 +311,7 @@ Select data from a database. Only `SELECT` and `FROM` are mandatory; the rest of
          DESC
         LIMIT Count
        OFFSET Count
-    
+
 ```
 
 
@@ -387,14 +323,14 @@ Select Rows Example
 
 
 
-    
-    <code class="sql language-sql">  SELECT username, 
+
+    <code class="sql language-sql">  SELECT username,
              AVG(age) AS average_age
         FROM users
         JOIN memberships
           ON users.id = memberships.user_id
        WHERE join_date >= '01-01-2010'
-         AND level = 'Paid' 
+         AND level = 'Paid'
     GROUP BY average_age
       HAVING average_age > 21
     ORDER BY join_date DESC
@@ -402,22 +338,13 @@ Select Rows Example
       OFFSET 1
 ```
 
-
-
-
-
-
 ### Select Distinct Rows
-
-
 
 Filter out duplicates to select unique results.
 
-
-    
     <code class="sql language-sql">SELECT DISTINCT column_name
                FROM table_name
-    
+
 ```
 
 
@@ -687,30 +614,21 @@ Filter based on specified conditions with these operators.
 Add new rows into a table.
 
 
-    
+
     <code class="sql language-sql">INSERT INTO table_name (column_a, column_b)
          VALUES ("value_1", "value_2")
-    
+
 ```
-
-
-
-
-
 
 ### Update Rows
 
-
-
 Modify existing rows in a table.
 
-
-    
     <code class="sql language-sql">UPDATE table_name
        SET column_a = "value_1"
            column_b = "value_2"
      WHERE Condition
-    
+
 ```
 
 
@@ -725,33 +643,20 @@ Modify existing rows in a table.
 Delete existing rows from a table.
 
 
-    
+
     <code class="sql language-sql">DELETE FROM table_name
           WHERE Condition
-    
+
 ```
-
-
-
-
-
 
 ## PDO
 
-
-
 Syntax for opening a connecting and running insert, select, update, and delete commands.
-
-
 
 ### Open Connection
 
-
-
 Set connection details.
 
-
-    
 ```php
 $host       = 'localhost';
     $username   = 'root';
@@ -762,19 +667,12 @@ $host       = 'localhost';
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_EMULATE_PREPARES => false
                   ];
-    
+
     $connection = new PDO($dsn, $username, $password, $options);
-    
+
 ```
 
-
-
-
-
-
 #### Datatypes
-
-
 
 Set datatypes for properly prepared statements.
 
@@ -821,126 +719,87 @@ Set datatypes for properly prepared statements.
 </tbody>
 </table>
 
-
 ### Select Rows
-
-
 
 Select rows with optional binded parameters.
 
-
-    
 ```php
-$sql = "SELECT * 
+$sql = "SELECT *
               FROM users
              WHERE location = :location";
-    
+
     $location = 'Chicago';
-    
+
     $statement = $connection->prepare($sql);
     $statement->bindParam(':location', $location, PDO::PARAM_STR);
     $statement->execute();
-    
+
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
+
     foreach ($rows as $row) {
       echo $row['location'];
-    } 
-    
+    }
+
 ```
-
-
-
-
-
 
 ### Insert Row
 
-
-
 Insert rows with binded values.
 
-
-    
 ```php
-$sql = "INSERT INTO users (username, email) 
+$sql = "INSERT INTO users (username, email)
                  VALUES (:username, :email)";
-    
+
     $username = 'Tania';
     $email = 'tania@example.com';
-    
+
     $statement = $connection->$prepare($sql);
     $statement->bindValue(':username', $username, PDO::PARAM_STR);
     $statement->bindValue(':email', $email, PDO::PARAM_STR);
-    
+
     $insert = $statement->execute();
-    
+
 ```
-
-
-
-
-
 
 ### Update Row
 
-
-
 Update rows with an associated array of data.
 
-
-    
 ```php
 $user = [
       'username'  => 'Tania',
       'email'     => 'tania@example.com',
       'location'  => 'Chicago',
     ];
-    
-    $sql = "UPDATE users 
-               SET username = :username, 
-                   email = :email, 
-                   location = :location, 
+
+    $sql = "UPDATE users
+               SET username = :username,
+                   email = :email,
+                   location = :location,
              WHERE id = :id";
-    
+
     $statement = $connection->prepare($sql);
     $statement->execute($user);
-    
+
 ```
-
-
-
-
-
 
 ### Delete Row
 
-
-
 Delete existing rows.
 
-
-    
 ```php
-$sql = "DELETE FROM users 
+$sql = "DELETE FROM users
                   WHERE id = :id";
-    
+
     $statement = $connection->prepare($sql);
     $statement->bindValue(':id', 5, PDO::PARAM_INT);
-    
+
     $delete = $statement->execute();
-    
+
 ```
-
-
-
-
-
 
 ## Conclusion
 
-
-
 Hopefully this helps you out if you need a quick refresher on the order of a `SELECT`, or how to work with PDO. Enjoy!
 
-[View on GitHub](https://github.com/taniarascia/sql)		
+[View on GitHub](https://github.com/taniarascia/sql)

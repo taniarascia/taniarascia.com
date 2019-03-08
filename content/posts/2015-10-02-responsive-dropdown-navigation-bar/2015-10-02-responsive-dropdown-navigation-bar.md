@@ -29,25 +29,25 @@ Let's start with the menu itself. It's a regular list, wrapped in a semantic `na
 
 ```html
 <nav>
-      <div class="nav-mobile">
-        <a id="nav-toggle" href="#!"><span></span></a>
-      </div>
-      <ul class="nav-list">
-        <li><a href="#!">Home</a></li>
-        <li><a href="#!">About</a></li>
-        <li><a href="#!">Services</a>
-          <ul class="nav-dropdown">
-            <li><a href="#!">Web Design</a></li>
-            <li><a href="#!">Web Development</a></li>
-            <li><a href="#!">Graphic Design</a></li>
-          </ul>
-        </li>
-        <li><a href="#!">Pricing</a></li>
-        <li><a href="#!">Contact</a></li>
+  <div class="nav-mobile">
+    <a id="nav-toggle" href="#!"><span></span></a>
+  </div>
+  <ul class="nav-list">
+    <li><a href="#!">Home</a></li>
+    <li><a href="#!">About</a></li>
+    <li>
+      <a href="#!">Services</a>
+      <ul class="nav-dropdown">
+        <li><a href="#!">Web Design</a></li>
+        <li><a href="#!">Web Development</a></li>
+        <li><a href="#!">Graphic Design</a></li>
       </ul>
-    </nav>
+    </li>
+    <li><a href="#!">Pricing</a></li>
+    <li><a href="#!">Contact</a></li>
+  </ul>
+</nav>
 ```
-
 
 A list with no styling applied. Everything in the `nav-mobile` class will not appear until we begin working on the small device view. Setting the links to `#!` will ensure that no action takes place on click.
 
@@ -61,13 +61,12 @@ First, I'm going to set a few variables.
 
 ```scss
 $content-width: 1000px;
-    $breakpoint: 799px;
-    $nav-height: 70px;
-    $nav-background: #262626;
-    $nav-font-color: #ffffff;
-    $link-hover-color: #2581DC;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #262626;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581dc;
 ```
-
 
 `$content-width` will be the max width of the content within the navigation bar. `$breakpoint` determines at which width the media query breakpoint will take effect. Obviously named variables are created for size and colors.
 
@@ -75,37 +74,35 @@ $content-width: 1000px;
 
 ```scss
 nav {
-      ul {
-        li {
-          a {
-            &:hover {
-            }
-            &:not(:only-child):after {
-            }
-          } // Dropdown list
-          ul li {
-            a {
-            }
-          }
+  ul {
+    li {
+      a {
+        &:hover {
+        }
+        &:not(:only-child):after {
+        }
+      } // Dropdown list
+      ul li {
+        a {
         }
       }
     }
+  }
+}
 ```
-
 
 Now we begin filling it in. We'll float the entire nav to the right, remove the bullet points on the list and any pre-determined browser padding.
 
 ```scss
 nav {
-      float: right;
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-    }
+  float: right;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
 ```
-
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-02-at-5.16.24-PM.png)
 
@@ -113,19 +110,18 @@ Now we float the list items to the left and style the `a` tag. The `li` will be 
 
 ```scss
 li {
-      float: left;
-      position: relative;
-      a {
-        display: block;
-        padding: 0 20px;
-        line-height: $nav-height;
-        background: $nav-background;
-        color: $nav-font-color;
-        text-decoration: none;
-      }
-    }
+  float: left;
+  position: relative;
+  a {
+    display: block;
+    padding: 0 20px;
+    line-height: $nav-height;
+    background: $nav-background;
+    color: $nav-font-color;
+    text-decoration: none;
+  }
+}
 ```
-
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-02-at-5.26.56-PM.png)
 
@@ -143,13 +139,11 @@ a {
     }
 ```
 
-
 The hover is simple - I'm just changing the background color of the entire `a` tag. Next, we have some pretty interesting CSS3.
 
 ```css
 &:not(:only-child):after
 ```
-
 
 The full path of this code is `nav ul li a:not(:only-child):after`. This means that the code will apply to any `a` tag in our `nav` list that is NOT an only child, aka any dropdown. The `:after` means it comes after the output of the tag. I've decided that to specify any nav item as a dropdown, it will be followed by a unicode arrow - ▾ (#9662).
 
@@ -165,7 +159,6 @@ The full path of this code is `nav ul li a:not(:only-child):after`. This means t
       }
 ```
 
-
 A small bit of styling is applied to the nested `ul`s. I've given the `li` a minimum width, so that the dropdown width won't vary based on content. I've changed the padding and line-height of the dropdown `a`, because the styling cascades down from the parent.
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-05-at-2.18.09-PM.png)
@@ -178,12 +171,11 @@ We already set the `li` to `position: relative` earlier. Now we're going to add 
 
 ```css
 .nav-dropdown {
-      position: absolute;
-      z-index: 1;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    }
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
 ```
-
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-05-at-2.30.49-PM.png)
 
@@ -196,33 +188,31 @@ Add `display: none;` so that we can toggle it later with JavaScript.
 We'll begin adding jQuery.
 
 ```js
-(function($) { // Begin jQuery
-
-    })(jQuery);
+;(function($) {
+  // Begin jQuery
+})(jQuery)
 ```
-
 
 And tell the function to run on DOM ready.
 
 ```js
-(function($) {
-      $(function() { // DOM Ready
-
-      // Insert all scripts here
-
-      });
-    })(jQuery);
+;(function($) {
+  $(function() {
+    // DOM Ready
+    // Insert all scripts here
+  })
+})(jQuery)
 ```
-
 
 Activating the dropdown is extremely simple. I devised this specific method, and haven't seen it used on any other dropdown nav, and seems to work quite well. I'm going to target any `a` in the menu that has children, and toggle the `.nav-dropdown` class.
 
 ```js
 $('nav ul li > a:not(:only-child)').click(function(e) {
-      $(this).siblings('.nav-dropdown').toggle();
-    });
+  $(this)
+    .siblings('.nav-dropdown')
+    .toggle()
+})
 ```
-
 
 1. When the CSS path `nav ul li > a:not(:only-child)` is clicked on...
 2. Toggle (change the `display` property of) that specific `nav-dropdown` class.
@@ -232,11 +222,11 @@ $('nav ul li > a:not(:only-child)').click(function(e) {
 But what's that `(e)` for? If you happen to have two dropdowns in the nav, and click on both of them, they both open. We want to prevent that behavior, and force only one dropdown to be open at a time. Inside of that same function, add:
 
 ```js
-$('.nav-dropdown').not($(this).siblings()).hide();
-          e.stopPropagation();
-    
+$('.nav-dropdown')
+  .not($(this).siblings())
+  .hide()
+e.stopPropagation()
 ```
-
 
 This hides all of the dropdowns, and `stopPropagation();` prevents that action from taking place. We attach it to `e` and place that `e` in the function.
 
@@ -244,28 +234,30 @@ There's one more thing: I want the dropdown to hide if I click away from it at a
 
 ```js
 $('html').click(function() {
-          $('.nav-dropdown').hide();
-        });
+  $('.nav-dropdown').hide()
+})
 ```
-
 
 Here's the entire jQuery so far.
 
 ```js
-(function($) {
-      $(function() {
-        $('nav ul li > a:not(:only-child)').click(function(e) {
-          $(this).siblings('.nav-dropdown').toggle();
-          $('.nav-dropdown').not($(this).siblings()).hide();
-          e.stopPropagation();
-        });
-        $('html').click(function() {
-          $('.nav-dropdown').hide();
-        });
-      });
-    })(jQuery);
+;(function($) {
+  $(function() {
+    $('nav ul li > a:not(:only-child)').click(function(e) {
+      $(this)
+        .siblings('.nav-dropdown')
+        .toggle()
+      $('.nav-dropdown')
+        .not($(this).siblings())
+        .hide()
+      e.stopPropagation()
+    })
+    $('html').click(function() {
+      $('.nav-dropdown').hide()
+    })
+  })
+})(jQuery)
 ```
-
 
 ## Mobile
 
@@ -273,16 +265,15 @@ Now we have a fully functional dropdown nav. The next step is to turn it into a 
 
 ```scss
 .nav-mobile {
-      //display: none;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: $nav-background;
-      height: $nav-height;
-      width: $nav-height;
-    }
+  //display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $nav-background;
+  height: $nav-height;
+  width: $nav-height;
+}
 ```
-
 
 > `display:none` is commented out so we can work on it right now. Later I will refer back to this.
 
@@ -290,22 +281,19 @@ Create a media query based on the mobile breakpoint.
 
 ```scss
 @media only screen and (max-width: $breakpoint) {
-    // Insert all mobile styles here
-
-    }
+  // Insert all mobile styles here
+}
 ```
-
 
 For now, hide the `ul` and we'll work on the hamburger.
 
 ```scss
 nav {
-      ul {
-        display: none;
-      }
-    }
+  ul {
+    display: none;
+  }
+}
 ```
-
 
 Elijah Manor created a great [CSS animated hamburger icon](http://codepen.io/elijahmanor/pen/Igpoe), and we're going to use that method. You can read his [tutorial](http://elijahmanor.com/css-animated-hamburger-icon/) to learn more about how this works. For my part, I condensed it for Sass.
 
@@ -315,55 +303,53 @@ Finally, the jQuery comes in and adds an `.active` class to the span, which rota
 
 ```scss
 #nav-toggle {
-      position: absolute;
-      left: 18px;
-      top: 22px;
-      cursor: pointer;
-      padding: 10px 35px 16px 0px;
-      span,
-      span:before,
-      span:after {
-        cursor: pointer;
-        border-radius: 1px;
-        height: 5px;
-        width: 35px;
-        background: $nav-font-color;
-        position: absolute;
-        display: block;
-        content: '';
-        transition: all 300ms ease-in-out;
-      }
-      span:before {
-        top: -10px;
-      }
-      span:after {
-        bottom: -10px;
-      }
-      &.active span {
-        background-color: transparent;
-        &:before,
-        &:after {
-          top: 0;
-        }
-        &:before {
-          transform: rotate(45deg);
-        }
-        &:after {
-          transform: rotate(-45deg);
-        }
-      }
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: transparent;
+    &:before,
+    &:after {
+      top: 0;
     }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
 ```
-
 
 Toggle the `.active` span.
 
 ```js
 $('#nav-toggle').on('click', function() {
-      this.classList.toggle('active');
-    });
+  this.classList.toggle('active')
+})
 ```
-
 
 Now you have a hamburger icon that animates on click action, but doesn't do anything yet.
 
@@ -375,10 +361,9 @@ The final addition to our jQuery code will toggle the `nav ul` on click.
 
 ```js
 $('#nav-toggle').click(function() {
-      $('nav ul').toggle();
-    });
+  $('nav ul').toggle()
+})
 ```
-
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-06-at-11.54.07-AM.png)
 
@@ -390,12 +375,11 @@ I've seen many navbars that have a bug that causes the menu to disappear on desk
 
 ```scss
 @media screen and (min-width: $breakpoint) {
-      .nav-list {
-        display: block !important;
-      }
-    }
+  .nav-list {
+    display: block !important;
+  }
+}
 ```
-
 
 > Now is the time to uncomment `display: none;` from the `.nav-mobile` class. We want it to be invisible until mobile collapse.
 
@@ -403,42 +387,39 @@ Now go back to your `@media only screen and (max-width: $breakpoint)` query. Pla
 
 ```scss
 .nav-mobile {
-      display: block;
-    }
+  display: block;
+}
 ```
-
 
 We have to apply some styles to the mobile menu. First, set the `nav` to take up 100% of the viewport. Remove the left float from the list. We'll set some padding and height to the `a` tag, and extra left padding to the nested `ul`s.
 
 ```scss
 nav {
-      width: 100%;
-      padding: $nav-height 0 15px;
-      ul {
-        display: none;
-        li {
-          float: none;
-          a {
-            padding: 15px;
-            line-height: 20px;
-          }
-          ul li a {
-            padding-left: 30px;
-          }
-        }
+  width: 100%;
+  padding: $nav-height 0 15px;
+  ul {
+    display: none;
+    li {
+      float: none;
+      a {
+        padding: 15px;
+        line-height: 20px;
+      }
+      ul li a {
+        padding-left: 30px;
       }
     }
+  }
+}
 ```
-
 
 Set `.nav-dropdown` to static, otherwise it will overflow onto the other list items.
 
 ```scss
 .nav-dropdown {
-      position: static;
-      }
+  position: static;
+}
 ```
-
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-06-at-11.53.04-AM.png)
 
@@ -450,15 +431,14 @@ Go back to your HTML from the beginning of the tutorial. Wrap the entire `nav` i
 
 ```html
 <section class="navigation">
-      <div class="nav-container">
-        <div class="brand">
-          <a href="#!">Logo</a>
-        </div>
-        <!-- <nav></nav> -->
-      </div>
-    </section>
+  <div class="nav-container">
+    <div class="brand">
+      <a href="#!">Logo</a>
+    </div>
+    <!-- <nav></nav> -->
+  </div>
+</section>
 ```
-
 
 There are three layers to this code:
 
@@ -466,40 +446,37 @@ There are three layers to this code:
 
 ```scss
 .navigation {
-      height: $nav-height;
-      background: $nav-background;
-    }
+  height: $nav-height;
+  background: $nav-background;
+}
 ```
-
 
 `.nav-container` - the inner wrapper for the navbar. Defines how far the actual content should stretch.
 
 ```scss
 .nav-container {
-      max-width: $content-width;
-      margin: 0 auto;
-    }
+  max-width: $content-width;
+  margin: 0 auto;
+}
 ```
-
 
 `.brand` - within `.navigation` and `.nav-container`, there are two colums - `.brand` on the left side, and `nav` on the right. The first thing I did with the nav list was float it to the right. Most of this is just styling; the important part is the absolute positioning and left float.
 
 ```scss
 .brand {
-      position: absolute;
-      padding-left: 20px;
-      float: left;
-      line-height: $nav-height;
-      text-transform: uppercase;
-      font-size: 1.4em;
-      a,
-      a:visited {
-        color: $nav-font-color;
-        text-decoration: none;
-      }
-    }
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: $nav-height;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  a,
+  a:visited {
+    color: $nav-font-color;
+    text-decoration: none;
+  }
+}
 ```
-
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-06-at-10.37.29-AM.png)
 

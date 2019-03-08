@@ -1,21 +1,20 @@
 ---
 date: 2018-06-12 16:57:04+00:00
-title: "How to Create a Snippet in Visual Studio Code"
+title: 'How to Create a Snippet in Visual Studio Code'
 template: post
 slug: /how-to-create-a-snippet-in-visual-studio-code/
 categories:
-- Tutorials
-- UI/UX
-- Web
+  - Tutorials
+  - UI/UX
+  - Web
 tags:
-- php
-- setup
+  - php
+  - setup
 ---
-
 
 Here's how you make a custom, global snippet in VSCode.
 
-Press COMMAND + SHIFT + P to open the command palette. 
+Press COMMAND + SHIFT + P to open the command palette.
 
 Find "Preferences: Configure User Snippets".
 
@@ -23,13 +22,8 @@ Click "New Global snippets file". This will open up a file with a `.code-snippet
 
 I made one that will allow me to type `perr` + TAB to print forced PHP errors.
 
-
-
 PHPErrors.code-snippets
 
-
-
-    
 ```js
 {
     	"Show PHP Errors": {
@@ -43,8 +37,4 @@ PHPErrors.code-snippets
     }
 ```
 
-
-
-
 And that's all.
-		
