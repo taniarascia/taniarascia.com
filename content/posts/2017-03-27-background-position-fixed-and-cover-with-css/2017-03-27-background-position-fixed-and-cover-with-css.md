@@ -18,14 +18,17 @@ I wanted to make a section of a website have a div featuring a background image 
 
 
     
-    <code class="language-css">div {
+```css
+div {
     	width: 100%;
     	height: 90vh;
     	background-repeat: no-repeat;
     	background-position: center center;
     	background-size: cover;
     	background-attachment: fixed;
-    }</code>
+    }
+```
+
 
 
 
@@ -33,9 +36,12 @@ You can also write this code in the `background` shorthand:
 
 
     
-    <code class="language-css">div {
+```css
+div {
     	background: url(file.jpg) no-repeat 50% fixed / cover;
-    }</code>
+    }
+```
+
 
 
 
@@ -43,9 +49,12 @@ Then you'd simply add the background image to the div and adjust the `height` pr
 
 
     
-    <code class="language-html"><div style="background-image: url(file.jpg);"></div>
+```html
+<div style="background-image: url(file.jpg);"></div>
     <div style="background-image: url(file.jpg);"></div>
-    <div style="background-image: url(file.jpg);"></div></code>
+    <div style="background-image: url(file.jpg);"></div>
+```
+
 
 
 

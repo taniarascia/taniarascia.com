@@ -115,7 +115,8 @@ Step one is to [download Bootstrap](http://getbootstrap.com/getting-started/#dow
 
 
     
-    <code class="language-html"><!DOCTYPE html>
+```html
+<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="utf-8">
@@ -134,7 +135,9 @@ Step one is to [download Bootstrap](http://getbootstrap.com/getting-started/#dow
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
       </body>
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -144,7 +147,10 @@ Beyond that, we're just adding Bootstrap core CSS in the `<head>`...
 
 
     
-    <code class="language-html"><link href="css/bootstrap.min.css" rel="stylesheet"></code>
+```html
+<link href="css/bootstrap.min.css" rel="stylesheet">
+```
+
 
 
 
@@ -152,7 +158,10 @@ Beyond that, we're just adding Bootstrap core CSS in the `<head>`...
 
 
     
-    <code class="language-html"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script></code>
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+```
+
 
 
 
@@ -160,7 +169,10 @@ and Bootstrap core JavaScript.
 
 
     
-    <code class="language-html"><script src="js/bootstrap.min.js"></script></code>
+```html
+<script src="js/bootstrap.min.js"></script>
+```
+
 
 
 
@@ -187,7 +199,8 @@ Although we have nothing, in no time at all we can get copying and pasting from 
 
 
     
-    <code class="language-html"><nav class="navbar navbar-inverse navbar-static-top">
+```html
+<nav class="navbar navbar-inverse navbar-static-top">
     	<div class="container">
     		<div class="navbar-header">
     			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -213,7 +226,9 @@ Although we have nothing, in no time at all we can get copying and pasting from 
     			</ul>
     		</div>
     	</div>
-    </nav></code>
+    </nav>
+```
+
 
 
 
@@ -224,7 +239,10 @@ It seems like a confusing mess, but it's not so complicated. In the first line, 
 
 
     
-    <code class="language-html"><nav class="navbar navbar-inverse navbar-static-top"></code>
+```html
+<nav class="navbar navbar-inverse navbar-static-top">
+```
+
 
 
 
@@ -232,7 +250,10 @@ A `container` sets a `max-width` on the content within your full-width navbar.
 
 
     
-    <code class="language-html"><div class="container"></code>
+```html
+<div class="container">
+```
+
 
 
 
@@ -242,7 +263,8 @@ The `button` is hidden on desktop, and becomes a dropdown hamburger menu on mobi
 
 
     
-    <code class="language-html"><div class="navbar-header">
+```html
+<div class="navbar-header">
     	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
     		<span class="sr-only">Toggle navigation</span>
     		<span class="icon-bar"></span>
@@ -250,7 +272,9 @@ The `button` is hidden on desktop, and becomes a dropdown hamburger menu on mobi
     		<span class="icon-bar"></span>
     	</button>
     	<a class="navbar-brand" href="#">Balance Web Development</a>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -266,14 +290,17 @@ I decided I want one of those big, space-wasting, attention-grabbing headers, wh
 
 
     
-    <code class="language-html"><div class="jumbotron">
+```html
+<div class="jumbotron">
     	<div class="container">
     		<h1>Ready. Set. Code.</h1>
     		<p>Are you ready to boilerstrap your cross-compatible buzzword? We're Sassy, flat and semantic, so what are you waiting for?</p>
     		<br>
     		<p><a class="btn btn-primary btn-lg" href="#" role="button">Download Free Trial »</a> <a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
     	</div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -292,8 +319,11 @@ The last thing I'll do is add in some main content, which will be be in the form
 
 
     
-    <code class="language-html"><div class="row">
-    </div></code>
+```html
+<div class="row">
+    </div>
+```
+
 
 
 
@@ -301,10 +331,13 @@ that contain columns.
 
 
     
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
       <div class="col-md-6"></div>
       <div class="col-md-6"></div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -312,7 +345,8 @@ Bootstrap works on a 12-column system, so as long as you add up to 12, you're go
 
 
     
-    <code class="language-html"><div class="container">
+```html
+<div class="container">
     	<div class="row">
     		<div class="col-md-4">
     			<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
@@ -330,7 +364,9 @@ Bootstrap works on a 12-column system, so as long as you add up to 12, you're go
     			<p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
     		</div>
     	</div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -346,7 +382,10 @@ I've also added in a few [glyphicons](http://getbootstrap.com/components/#glyphi
 
 
     
-    <code class="language-html"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></code>
+```html
+<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+```
+
 
 
 
@@ -375,9 +414,12 @@ If you know LESS or Sass, you can play around in [Bootstrap's extensive customiz
 
 
     
-    <code class="language-html"><link href="css/bootstrap.min.css" rel="stylesheet">
+```html
+<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'></code>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+```
+
 
 
 
@@ -388,9 +430,12 @@ Now we finally begin styling. In just a few minutes, I'll be able to transform m
 
 
     
-    <code class="language-css">.navbar {
+```css
+.navbar {
     	margin-bottom: 0;
-    }</code>
+    }
+```
+
 
 
 
@@ -398,7 +443,8 @@ A few simple styles to the main tags. I'm loading in the Montserrat font on the 
 
 
     
-    <code class="language-css">body {
+```css
+body {
     	background: #3E4649;
     	color: #f7f7f7;
     	font-family: 'Montserrat', sans-serif;
@@ -410,7 +456,9 @@ A few simple styles to the main tags. I'm loading in the Montserrat font on the 
     p {
     	font-size: 16px;
     	color: #cdcdcd;
-    }</code>
+    }
+```
+
 
 
 
@@ -418,7 +466,8 @@ I'm going to make the jumbotron green and centered.
 
 
     
-    <code class="language-css">.jumbotron {
+```css
+.jumbotron {
     	background: #27A967;
     	color: white;
     	text-align: center;
@@ -426,7 +475,9 @@ I'm going to make the jumbotron green and centered.
     .jumbotron p {
     	color: white;
     	font-size: 26px;
-    }</code>
+    }
+```
+
 
 
 
@@ -434,7 +485,8 @@ I'm going to turn the buttons into "ghost buttons", which are buttons that are t
 
 
     
-    <code class="language-css">.btn-primary {
+```css
+.btn-primary {
     	color: #fff;
     	background-color: transparent;
     	border-color: white;
@@ -444,7 +496,9 @@ I'm going to turn the buttons into "ghost buttons", which are buttons that are t
     	color: #27A967;
     	background-color: white;
     	border-color: white;
-    }</code>
+    }
+```
+
 
 
 
@@ -452,7 +506,8 @@ I'm going to make the navbar a different shade of dark, make the links lighter, 
 
 
     
-    <code class="language-css">.navbar-inverse {
+```css
+.navbar-inverse {
     	background: #2E2F31;
     	border: 0;
     }
@@ -462,7 +517,9 @@ I'm going to make the navbar a different shade of dark, make the links lighter, 
     }
     .navbar-inverse .navbar-nav li a:hover {
     	background: #27A967;
-    }</code>
+    }
+```
+
 
 
 
@@ -470,7 +527,8 @@ The dropdown menu has its own classes, so I'm also going to change the backgroun
 
 
     
-    <code class="language-css">.dropdown-menu {
+```css
+.dropdown-menu {
     	background: #2E2F31;
     	border-radius: 0;
     	border: 0;
@@ -480,7 +538,9 @@ The dropdown menu has its own classes, so I'm also going to change the backgroun
     }
     .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
     	background: #2C463C;
-    }</code>
+    }
+```
+
 
 
 
@@ -488,11 +548,14 @@ Back in my HTML, I'm going to  wrap a `section` tag around my grid, and call it 
 
 
     
-    <code class="language-html"><section class="call-to-action">
+```html
+<section class="call-to-action">
     <!-- .rows and .columns -->
       <span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
     <!-- /.rows and .columns -->
-    </section></code>
+    </section>
+```
+
 
 
 
@@ -500,7 +563,8 @@ The final touches to my code are going to be centering the bottom call-out, addi
 
 
     
-    <code class="language-css">.call-to-action {
+```css
+.call-to-action {
     	text-align: center;
     }
     .call-to-action p {
@@ -509,7 +573,9 @@ The final touches to my code are going to be centering the bottom call-out, addi
     }
     .glyphicon-large {
     	font-size: 100px;
-    }</code>
+    }
+```
+
 
 
 

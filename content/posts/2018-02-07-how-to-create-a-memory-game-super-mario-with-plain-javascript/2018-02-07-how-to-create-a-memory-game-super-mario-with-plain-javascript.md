@@ -89,7 +89,8 @@ index.html
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -110,7 +111,9 @@ index.html
       <script src="js/script.js"></script>
     </body> 
     
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -123,7 +126,8 @@ style.css
 
 
     
-    <code class="language-css">*,
+```css
+*,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -150,7 +154,9 @@ style.css
       background-position: center center;
       height: 150px;
       width: 150px;
-    }</code>
+    }
+```
+
 
 
 
@@ -171,7 +177,8 @@ script.js
 
 
     
-    <code class="language-js">// Card data
+```js
+// Card data
     const cardsArray = [{
         'name': 'shell',
         'img': 'img/blueshell.png',
@@ -220,7 +227,9 @@ script.js
         'name': 'goomba',
         'img': 'img/goomba.png',
       },
-    ];</code>
+    ];
+```
+
 
 
 
@@ -233,7 +242,8 @@ script.js
 
 
     
-    <code class="language-js">// Grab the div with an id of root
+```js
+// Grab the div with an id of root
     const game = document.getElementById('game');
     
     // Create a section with a class of grid
@@ -241,7 +251,9 @@ script.js
     grid.setAttribute('class', 'grid');
     
     // Append the grid section to the game div
-    game.appendChild(grid);</code>
+    game.appendChild(grid);
+```
+
 
 
 
@@ -265,7 +277,8 @@ script.js
 
 
     
-    <code class="language-js">// For each item in the cardsArray array...
+```js
+// For each item in the cardsArray array...
     cardsArray.forEach(item => {
       // Create a div
       const card = document.createElement('div');
@@ -281,7 +294,9 @@ script.js
     
       // Append the div to the grid section
       grid.appendChild(card);
-    });</code>
+    });
+```
+
 
 
 
@@ -292,7 +307,10 @@ Well, that was a lot of work for step one, but now we have it! You will have 12 
 
 
     
-    <code class="language-html"><div class="card" data-name="shell" style="background-image: url("img/blueshell.png");"></div></code>
+```html
+<div class="card" data-name="shell" style="background-image: url("img/blueshell.png");"></div>
+```
+
 
 
 
@@ -319,8 +337,11 @@ script.js
 
 
     
-    <code class="language-js">// Duplicate array to create a match for each card
-    let gameGrid = cardsArray.concat(cardsArray);</code>
+```js
+// Duplicate array to create a match for each card
+    let gameGrid = cardsArray.concat(cardsArray);
+```
+
 
 
 
@@ -333,9 +354,12 @@ script.js
 
 
     
-    <code class="language-js">// For each item in the gameGrid array...
+```js
+// For each item in the gameGrid array...
     gameGrid.forEach(item => {
-      // ...</code>
+      // ...
+```
+
 
 
 
@@ -363,8 +387,11 @@ script.js
 
 
     
-    <code class="language-js">// Randomize game grid on each load
-    gameGrid.sort(() => 0.5 - Math.random());</code>
+```js
+// Randomize game grid on each load
+    gameGrid.sort(() => 0.5 - Math.random());
+```
+
 
 
 
@@ -390,9 +417,12 @@ style.css
 
 
     
-    <code class="language-css">.selected {
+```css
+.selected {
       border: 4px solid blue;
-    }</code>
+    }
+```
+
 
 
 
@@ -405,7 +435,8 @@ script.js
 
 
     
-    <code class="language-js">// Add event listener to grid
+```js
+// Add event listener to grid
     grid.addEventListener('click', function (event) {
       // The event target is our clicked item
       let clicked = event.target;
@@ -415,7 +446,9 @@ script.js
       
       // Add selected class
       clicked.classList.add('selected');
-     });</code>
+     });
+```
+
 
 
 
@@ -441,7 +474,10 @@ script.js
 
 
     
-    <code class="language-js">let count = 0;</code>
+```js
+let count = 0;
+```
+
 
 
 
@@ -454,12 +490,15 @@ script.js
 
 
     
-    <code class="language-js">// ...
+```js
+// ...
     if (count < 2) {
       count++;
       // Add selected class
       clicked.classList.add('selected');
-    }</code>
+    }
+```
+
 
 
 
@@ -483,10 +522,13 @@ style.css
 
 
     
-    <code class="language-css">.match {
+```css
+.match {
       border: 4px solid red;
       background-image: none !important;
-    }</code>
+    }
+```
+
 
 
 
@@ -499,9 +541,12 @@ script.js
 
 
     
-    <code class="language-js">let firstGuess = '';
+```js
+let firstGuess = '';
     let secondGuess = '';
-    let count = 0;</code>
+    let count = 0;
+```
+
 
 
 
@@ -514,13 +559,16 @@ script.js
 
 
     
-    <code class="language-js">// Add match CSS
+```js
+// Add match CSS
     const match = () => {
       var selected = document.querySelectorAll('.selected');
       selected.forEach(card => {
         card.classList.add('match');
       });
-    }</code>
+    }
+```
+
 
 
 
@@ -533,7 +581,8 @@ script.js
 
 
     
-    <code class="language-js">grid.addEventListener('click', function (event) {
+```js
+grid.addEventListener('click', function (event) {
       //...
       if (count < 2) {
         count++;
@@ -555,7 +604,9 @@ script.js
           } 
         }  
       }
-    });</code>
+    });
+```
+
 
 
 
@@ -573,7 +624,10 @@ script.js
 
 
     
-    <code class="language-js">let previousTarget = null;</code>
+```js
+let previousTarget = null;
+```
+
 
 
 
@@ -586,14 +640,17 @@ script.js
 
 
     
-    <code class="language-js">if (firstGuess !== '' && secondGuess !== '') {
+```js
+if (firstGuess !== '' && secondGuess !== '') {
         if (firstGuess === secondGuess) {
           match();
         } 
       }
       // Set previous target to clicked  
       previousTarget = clicked;
-    }</code>
+    }
+```
+
 
 
 
@@ -606,9 +663,12 @@ script.js
 
 
     
-    <code class="language-js">if (clicked.nodeName === 'SECTION' || clicked === previousTarget) {
+```js
+if (clicked.nodeName === 'SECTION' || clicked === previousTarget) {
       return;
-    }</code>
+    }
+```
+
 
 
 
@@ -633,7 +693,8 @@ script.js
 
 
     
-    <code class="language-js">const resetGuesses = () => {
+```js
+const resetGuesses = () => {
       firstGuess = '';
       secondGuess = '';
       count = 0;
@@ -642,7 +703,9 @@ script.js
       selected.forEach(card => {
         card.classList.remove('selected');
       });
-    };</code>
+    };
+```
+
 
 
 
@@ -655,13 +718,16 @@ script.js
 
 
     
-    <code class="language-js">if (firstGuess === secondGuess) {
+```js
+if (firstGuess === secondGuess) {
       match();
       resetGuesses(); 
     } else {
         resetGuesses();
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -689,7 +755,10 @@ script.js
 
 
     
-    <code class="language-js">let delay = 1200;</code>
+```js
+let delay = 1200;
+```
+
 
 
 
@@ -702,12 +771,15 @@ script.js
 
 
     
-    <code class="language-js">if (firstGuess === secondGuess) {
+```js
+if (firstGuess === secondGuess) {
       setTimeout(match, delay);
       setTimeout(resetGuesses, delay);
     } else {
       setTimeout(resetGuesses, delay);
-    }</code>
+    }
+```
+
 
 
 
@@ -742,10 +814,13 @@ First, our cards have all consisted of one div right now. In order to implement 
 
 
     
-    <code class="language-html"><div class="card">
+```html
+<div class="card">
       <div class="front"></div>
       <div class="back"></div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -758,7 +833,8 @@ script.js
 
 
     
-    <code class="language-js">gameGrid.forEach(item => {
+```js
+gameGrid.forEach(item => {
       // Create card element with the name dataset
       const card = document.createElement('div');
       card.classList.add('card');
@@ -777,7 +853,9 @@ script.js
       grid.appendChild(card);
       card.appendChild(front);
       card.appendChild(back);
-    });</code>
+    });
+```
+
 
 
 
@@ -790,7 +868,8 @@ script.js
 
 
     
-    <code class="language-js">if (count === 1) {
+```js
+if (count === 1) {
       firstGuess = clicked.parentNode.dataset.name;
       console.log(firstGuess);
       clicked.parentNode.classList.add('selected');
@@ -798,7 +877,9 @@ script.js
       secondGuess = clicked.parentNode.dataset.name;
       console.log(secondGuess);
       clicked.parentNode.classList.add('selected');
-    }</code>
+    }
+```
+
 
 
 
@@ -811,7 +892,8 @@ style.css
 
 
     
-    <code class="language-css">.card {
+```css
+.card {
       position: relative;
       transition: all .4s linear;
       transform-style: preserve-3d;
@@ -829,7 +911,9 @@ style.css
     .front {
       position: absolute;
       backface-visibility: hidden;
-    }</code>
+    }
+```
+
 
 
 
@@ -842,9 +926,12 @@ style.css
 
 
     
-    <code class="language-css">.front {
+```css
+.front {
       background: #FAB942 url('../img/question.gif') no-repeat center center / contain;
-    }</code>
+    }
+```
+
 
 
 
@@ -857,13 +944,16 @@ style.css
 
 
     
-    <code class="language-css">.back {
+```css
+.back {
       transform: rotateY(180deg);
       background-color: white;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
-    }</code>
+    }
+```
+
 
 
 
@@ -876,13 +966,16 @@ style.css
 
 
     
-    <code class="language-css">.selected {
+```css
+.selected {
       transform: rotateY(180deg);
     }
     
     .match .front {
       background: white !important;
-    }</code>
+    }
+```
+
 
 
 
@@ -908,13 +1001,16 @@ script.js
 
 
     
-    <code class="language-js">if (
+```js
+if (
       clicked.nodeName === 'SECTION' ||
       clicked === previousTarget ||
       clicked.parentNode.classList.contains('selected')
     ) {
       return;
-    }</code>
+    }
+```
+
 
 
 

@@ -161,7 +161,8 @@ index.html
 
 
     
-    <code class="html language-html"><div class="card">
+```html
+<div class="card">
         <div class="card-content">
            <!-- title and content will go here -->
     
@@ -170,7 +171,9 @@ index.html
             </div>
         </div>
     </div>
-    </code>
+    
+```
+
 
 
 
@@ -183,7 +186,8 @@ index.html
 
 
     
-    <code class="html language-html"> <div class="card">
+```html
+ <div class="card">
       <div class="card-content">
     
         <h1>The Second City</h1>
@@ -214,7 +218,9 @@ index.html
         </div>
       </div>
     </div>
-    </code>
+    
+```
+
 
 
 
@@ -239,7 +245,8 @@ Before doing any design, you should figure out structure of the layout first. Th
 
 
     
-    <code class="language-scss">.card {
+```scss
+.card {
       flex: 1 1 50%;
       position: relative;
       border: 1px solid #efefef;
@@ -260,7 +267,9 @@ Before doing any design, you should figure out structure of the layout first. Th
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }</code>
+    }
+```
+
 
 
 
@@ -287,7 +296,8 @@ We're going to add an equal amount of padding around the four sides of the card 
 
 
     
-    <code class="language-scss">.card-content {
+```scss
+.card-content {
       padding: 30px 30px 110px;
     }
     
@@ -295,7 +305,9 @@ We're going to add an equal amount of padding around the four sides of the card 
       border-top: 1px solid #efefef;
       margin: 0 30px;
       padding: 30px 0;
-    }</code>
+    }
+```
+
 
 
 
@@ -303,7 +315,8 @@ I'm also going to remove the top margin of the `<h1>` so it doesn't interfere wi
 
 
     
-    <code class="language-scss">.card h1 {
+```scss
+.card h1 {
       margin: 0;
     }
     
@@ -313,7 +326,9 @@ I'm also going to remove the top margin of the `<h1>` so it doesn't interfere wi
     
     .subtitle {
       margin: 0 0 15px;
-    }</code>
+    }
+```
+
 
 
 
@@ -332,13 +347,16 @@ Headings should have less line height than body text. A good amount is `1.2` for
 
 
     
-    <code class="language-css">html {
+```css
+html {
     	line-height: 1.6;
     }
     
     h1, h2, h3, h4, h5 {
     	line-height: 1.2;
-    }</code>
+    }
+```
+
 
 
 
@@ -376,15 +394,21 @@ Load it in...
 
 
     
-    <code class="language-html"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,700"></code>
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,700">
+```
+
 
 
 
 
     
-    <code class="language-css">html {
+```css
+html {
       font-family: 'Nunito', sans-serif;
-    }</code>
+    }
+```
+
 
 
 
@@ -397,10 +421,13 @@ Another tip: add this code to all your projects to make the text more clear, cri
 
 
     
-    <code class="language-css">html {
+```css
+html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-    }</code>
+    }
+```
+
 
 
 
@@ -408,9 +435,12 @@ The headings are set to bold by default, but I also want my subtitle to be bold.
 
 
     
-    <code class="language-css">.subtitle {
+```css
+.subtitle {
       font-weight: 700;
-    }</code>
+    }
+```
+
 
 
 
@@ -440,7 +470,8 @@ I chose `#E76C67`, a flat reddish-orange for the color of our design. I could ha
 
 
     
-    <code class="language-css">a {
+```css
+a {
       color: #E76C67;
       text-decoration: none;
     }
@@ -450,7 +481,9 @@ I chose `#E76C67`, a flat reddish-orange for the color of our design. I could ha
       font-weight: 700;
       font-size: 1.25rem;
       color: #E76C67;
-    }</code>
+    }
+```
+
 
 
 
@@ -475,7 +508,8 @@ Here's the CSS for our button.
 
 
     
-    <code class="language-css">.button {
+```css
+.button {
       display: block;
       font-size: 1rem;
       background: #E76C67;
@@ -491,7 +525,9 @@ Here's the CSS for our button.
     .button:focus {
       background: darken(#E76C67, 10%);
       border: 1px solid darken(#E76C67, 10%);
-    }</code>
+    }
+```
+
 
 
 
@@ -510,14 +546,17 @@ I'm going to add a subtle box shadow to the card element.
 
 
     
-    <code class="language-css">.card {
+```css
+.card {
       box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
       transition: all .3s ease;
       position: relative;
     }
     .card:hover {
       box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.2);
-    }</code>
+    }
+```
+
 
 
 
@@ -525,7 +564,8 @@ I also prefer the bottom card details to be gray, with a bit more space between 
 
 
     
-    <code class="language-css">.options a {
+```css
+.options a {
       color: #666666;
     }
     
@@ -535,7 +575,9 @@ I also prefer the bottom card details to be gray, with a bit more space between 
     
     .fa {
       margin-right: .25rem;
-    }</code>
+    }
+```
+
 
 
 
@@ -548,12 +590,15 @@ Let's just add in an image really fast.
 
 
     
-    <code class="language-css">.card-image {
+```css
+.card-image {
       height: 200px;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-    }</code>
+    }
+```
+
 
 
 
@@ -561,7 +606,10 @@ The HTML, which is set up to allow the image to load in via CMS.
 
 
     
-    <code class="language-html"><div class="card-image" style="background-image: url(images/chicago.jpg)"></div></code>
+```html
+<div class="card-image" style="background-image: url(images/chicago.jpg)"></div>
+```
+
 
 
 

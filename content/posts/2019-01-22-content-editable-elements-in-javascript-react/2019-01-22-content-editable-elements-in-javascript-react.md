@@ -60,15 +60,21 @@ Here's a [CodeSandbox](https://codesandbox.io/s/ywr1wv41ov) demo of the starting
 I'm going to set up a React project in `ce-app`.
 
     
-    <code class="bash language-bash">npx create-react-app ce-app && cd ce-app
-    </code>
+```bash
+npx create-react-app ce-app && cd ce-app
+    
+```
+
 
 
 Add `react-contenteditable` and `semantic-ui-react` as the dependencies. [react-contenteditable](https://www.npmjs.com/package/react-contenteditable) is a really nice component which makes working with `contenteditable` more bearable.
 
     
-    <code class="bash language-bash">yarn add react-contenteditable semantic-ui-react
-    </code>
+```bash
+yarn add react-contenteditable semantic-ui-react
+    
+```
+
 
 
 
@@ -123,7 +129,9 @@ index.js
     }
     
     ReactDOM.render(<App />, document.getElementById('root'))
-    </code>
+    
+```
+
 
 
 The table has Item, Price, and Action as the headers, and maps through the state for each row. Each cell has a `ContentEditable` component, or an action to delete a row or add a new row.
@@ -178,7 +186,9 @@ The table has Item, Price, and Action as the headers, and maps through the state
         </Table.Row>
       </Table.Body>
     </Table>
-    </code>
+    
+```
+
 
 
 We start with three methods: one to add a row, which will update the store with the new row, and empty the existing row; the other to delete an existing row.
@@ -202,7 +212,9 @@ We start with three methods: one to add a row, which will update the store with 
         store: store.filter(item => id !== item.id),
       })
     }
-    </code>
+    
+```
+
 
 
 Finally, we have the `handleContentEditable` component, which will be invoked every time a change is made to `ContentEditable`, via `onChange`. In order to use one function many possible columns, I added a `data-column` attribute to the component, so I get the key (column) and value of each `ContentEditable`, and set the `row`.
@@ -219,13 +231,16 @@ Finally, we have the `handleContentEditable` component, which will be invoked ev
     
       this.setState({ row: { ...row, [column]: value } })
     }
-    </code>
+    
+```
+
 
 
 And a small bit of CSS to make it look decent.
 
     
-    <code class="css language-css">.App {
+```css
+.App {
       margin: 2rem auto;
       max-width: 800px;
       font-family: sans-serif;
@@ -255,7 +270,9 @@ And a small bit of CSS to make it look decent.
       background: #fcf8e1;
       outline: 0;
     }
-    </code>
+    
+```
+
 
 
 Again, at this point you can see the completed setup [on this demo](https://codesandbox.io/s/ywr1wv41ov) if you got lost anywhere.
@@ -300,7 +317,9 @@ Since obviously we don't want HTML to be submitted here, we need to make a funct
       const text = event.clipboardData.getData('text/plain')
       document.execCommand('insertHTML', false, text)
     }
-    </code>
+    
+```
+
 
 
 We can put it on the `onPaste` of the `ContentEditable`.
@@ -309,7 +328,9 @@ We can put it on the `onPaste` of the `ContentEditable`.
     <code class="jsx language-jsx"><ContentEditable
       onPaste={this.pasteAsPlainText}
     />
-    </code>
+    
+```
+
 
 
 
@@ -341,7 +362,9 @@ So I just made a little find and replace for those characters.
         .replace(/&gt;/g, '>')
         .replace(/&lt;/g, '<')
     }
-    </code>
+    
+```
+
 
 
 If I add it to the `addRow` method, I can fix them before they get submitted.
@@ -368,7 +391,9 @@ If I add it to the `addRow` method, I can fix them before they get submitted.
         row: this.initialState.row,
       })
     }
-    </code>
+    
+```
+
 
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2019-01-21-at-9.07.49-PM.png)
@@ -401,7 +426,9 @@ So we can disable that. `13` is the key code for enter.
         if (event.preventDefault) event.preventDefault()
       }
     }
-    </code>
+    
+```
+
 
 
 This will go on the `onKeyPress` attribute.
@@ -410,7 +437,9 @@ This will go on the `onKeyPress` attribute.
     <code class="jsx language-jsx"><ContentEditable
       onKeyPress={this.disableNewlines}
     />
-    </code>
+    
+```
+
 
 
 
@@ -426,7 +455,9 @@ When we tab through a `contenteditable` element that's already there, the cursor
         document.execCommand('selectAll', false, null)
       }, 0)
     }
-    </code>
+    
+```
+
 
 
 This will go on the `onFocus` attribute.
@@ -435,7 +466,9 @@ This will go on the `onFocus` attribute.
     <code class="jsx language-jsx"><ContentEditable
       onFocus={this.highlightAll}
     />
-    </code>
+    
+```
+
 
 
 
@@ -449,14 +482,19 @@ First, make a `ref` below state.
 
     
     <code class="jsx language-jsx">firstEditable = React.createRef()
-    </code>
+    
+```
+
 
 
 At the end of the `addRow` function, focus on the `firstEditable` current `div`.
 
     
-    <code>this.firstEditable.current.focus()
-    </code>
+```
+this.firstEditable.current.focus()
+    
+```
+
 
 
 `ContentEditable` conveniently has an `innerRef` attribute we can use for this.
@@ -465,7 +503,9 @@ At the end of the `addRow` function, focus on the `firstEditable` current `div`.
     <code class="jsx language-jsx"><ContentEditable
       innerRef={this.firstEditable}
     />
-    </code>
+    
+```
+
 
 
 Now after submitting a row, we're already focused on the next row.
@@ -492,7 +532,9 @@ You might use an `<input type="number">` to only allow numbers on the front end 
         if (event.preventDefault) event.preventDefault()
       }
     }
-    </code>
+    
+```
+
 
 
 Of course, this will still let incorrectly formatted numbers like `1,00,0.00.00` through, but we're only validating the input of a single key press here.
@@ -501,7 +543,9 @@ Of course, this will still let incorrectly formatted numbers like `1,00,0.00.00`
     <code class="jsx language-jsx"><ContentEditable 
       onKeyPress={this.validateNumber}
     />
-    </code>
+    
+```
+
 
 
 
@@ -531,7 +575,9 @@ I'll make a new method just for updating. It's similar to the row, except instea
         store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
       })
     }
-    </code>
+    
+```
+
 
 
 Instead of just displaying the values in the rows, they'll all be `ContentEditable`.
@@ -567,7 +613,9 @@ Instead of just displaying the values in the rows, they'll all be `ContentEditab
           ...
       )
     })}
-    </code>
+    
+```
+
 
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2019-01-21-at-11.04.52-PM.png)
@@ -797,7 +845,9 @@ Here's everything, in case something didn't make sense. Click the demo above for
       }
     }
     
-    ReactDOM.render(<App />, document.getElementById('root'))</code>
+    ReactDOM.render(<App />, document.getElementById('root'))
+```
+
 
 
 

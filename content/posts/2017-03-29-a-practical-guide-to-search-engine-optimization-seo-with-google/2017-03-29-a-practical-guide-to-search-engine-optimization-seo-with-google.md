@@ -118,13 +118,16 @@ In order to provide context to these visual cues, create a `screen-reader-text` 
 
 
     
-    <code class="language-css">.screen-reader-text {
+```css
+.screen-reader-text {
         clip: rect(1px, 1px, 1px, 1px);
         position: absolute !important;
         height: 1px;
         width: 1px;
         overflow: hidden;
-    }</code>
+    }
+```
+
 
 
 
@@ -138,12 +141,15 @@ Using the `screen-reader-text` class, you can add a visually hidden link before 
 
 
     
-    <code class="language-html"><a href="#main-content" class="screen-reader-text">Skip Navigation</a>
+```html
+<a href="#main-content" class="screen-reader-text">Skip Navigation</a>
     <nav>
     ...
     </nav>
     
-    <main id="main-content"></code>
+    <main id="main-content">
+```
+
 
 
 
@@ -157,7 +163,10 @@ Another important way to make your site more accessible is to add `alt` tags to 
 
 
     
-    <code class="language-html"><img src="image.jpg" alt="Alternate text to describe the image."></code>
+```html
+<img src="image.jpg" alt="Alternate text to describe the image.">
+```
+
 
 
 
@@ -259,7 +268,8 @@ Search Console will tell you the search terms people typed to find your site org
 
 
     
-    <code class="language-html"><script type="application/ld+json">
+```html
+<script type="application/ld+json">
         {
           "@context": "http://schema.org",
           "@type": "Person",
@@ -273,7 +283,9 @@ Search Console will tell you the search terms people typed to find your site org
           "https://twitter.com/taniarascia" 
     			]
         }
-    </script></code>
+    </script>
+```
+
 
 
 

@@ -30,7 +30,8 @@ PHPErrors.code-snippets
 
 
     
-    <code class="language-js">{
+```js
+{
     	"Show PHP Errors": {
     		"scope": "php",
     		"prefix": "perr",
@@ -39,7 +40,9 @@ PHPErrors.code-snippets
     		],
     		"description": "Show PHP Errors"
     	}
-    }</code>
+    }
+```
+
 
 
 

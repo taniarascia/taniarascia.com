@@ -118,7 +118,10 @@ Here's what I type.
 
 
     
-    <code class="language-bash">pwd</code>
+```bash
+pwd
+```
+
 
 
 
@@ -138,7 +141,10 @@ It wrote `/Users/taniarascia` as my current working directory, where I "am". But
 
 
     
-    <code class="language-bash">ls</code>
+```bash
+ls
+```
+
 
 
 
@@ -266,9 +272,12 @@ Right now, I'm in my home folder. If I want to move somewhere else, I will use t
 
 
     
-    <code class="language-bash">cd music
+```bash
+cd music
     pwd
-    ls</code>
+    ls
+```
+
 
 
 
@@ -280,7 +289,9 @@ Here is the output.
     NolBook:music taniarascia$ pwd
     /Users/taniarascia/music
     NolBook:music taniarascia$ ls
-    Audio Music Apps GarageBand iTunes</code>
+    Audio Music Apps GarageBand iTunes
+```
+
 
 
 
@@ -292,13 +303,18 @@ I want to go back one directory, back into my home folder.
 
 
     
-    <code class="language-bash">cd ..</code>
+```bash
+cd ..
+```
+
 
 
 
 
     
-    <div class="terminal">NolBook:~ taniarascia$</code>
+    <div class="terminal">NolBook:~ taniarascia$
+```
+
 
 
 
@@ -314,7 +330,10 @@ If you try to move into a directory that has a space, you may encounter an issue
 
 
     
-    <code class="language-bash">cd Audio Music Apps</code>
+```bash
+cd Audio Music Apps
+```
+
 
 
 
@@ -336,7 +355,10 @@ Wrap any file in double quotes to preserve the spaces.
 
 
     
-    <code class="language-bash">cd "Audio Music Apps"</code>
+```bash
+cd "Audio Music Apps"
+```
+
 
 
 
@@ -350,7 +372,10 @@ Type a backslash `\` character before each space. If you press tab, the Terminal
 
 
     
-    <code class="language-bash">cd Audio\ Music\ Apps/</code>
+```bash
+cd Audio\ Music\ Apps/
+```
+
 
 
 
@@ -397,7 +422,10 @@ Let's create a folder for practicing named **Shell** with the `mkdir` (**Make Di
 
 
     
-    <code class="language-bash">mkdir Shell</code>
+```bash
+mkdir Shell
+```
+
 
 
 
@@ -412,7 +440,9 @@ Now you can move into the **Shell** directory by inputting `cd shell`.
     
     <div class="terminal">NolBook:~ taniarascia$ cd shell
     NolBook:shell taniarascia$ pwd
-    /Users/taniarascia/shell</code>
+    /Users/taniarascia/shell
+```
+
 
 
 
@@ -426,7 +456,10 @@ Now let's make a file. You can do this with the `touch` command. I imagine it as
 
 
     
-    <code class="language-bash">touch test.html</code>
+```bash
+touch test.html
+```
+
 
 
 
@@ -438,7 +471,10 @@ You can also create multiple files at the same time.
 
 
     
-    <code class="language-bash">touch one.txt two.txt three.txt</code>
+```bash
+touch one.txt two.txt three.txt
+```
+
 
 
 
@@ -452,7 +488,10 @@ We used `touch` to create an empty file, but we can even create a file on the fl
 
 
     
-    <code class="language-bash">echo "Hello World" > hello.txt</code>
+```bash
+echo "Hello World" > hello.txt
+```
+
 
 
 
@@ -468,14 +507,19 @@ I can check this by opening it from Finder, but I can also see the contents thro
 
 
     
-    <code class="language-bash">cat hello.txt</code>
+```bash
+cat hello.txt
+```
+
 
 
 
 
     
     <div class="terminal">NolBook:shell taniarascia$ cat hello.txt
-    Hello World</code>
+    Hello World
+```
+
 
 
 
@@ -557,7 +601,10 @@ Use the `rm` (**Remove**) command to remove a file.
 
 
     
-    <code class="language-bash">rm hello.txt</code>
+```bash
+rm hello.txt
+```
+
 
 
 
@@ -580,7 +627,9 @@ Now, let's say you create a new directory called **goodbye** with `mkdir goodbye
 
     
     <div class="terminal">NolBook:shell taniarascia$ rm goodbye
-    rm: goodbye: is a directory</code>
+    rm: goodbye: is a directory
+```
+
 
 
 
@@ -588,7 +637,10 @@ No problem, we'll just delete it with `rmdir` (**Remove Directory**).
 
 
     
-    <code class="language-bash">rmdir goodbye</code>
+```bash
+rmdir goodbye
+```
+
 
 
 
@@ -596,7 +648,10 @@ And now it's gone. If you want to remove a folder that has files in it, you'll h
 
 
     
-    <code class="language-bash">rm -r goodbye</code>
+```bash
+rm -r goodbye
+```
+
 
 
 
@@ -604,7 +659,10 @@ Just like with `touch`, we can remove multiple files or folders at the same time
 
 
     
-    <code class="language-bash">rm one.txt two.txt three.txt</code>
+```bash
+rm one.txt two.txt three.txt
+```
+
 
 
 
@@ -648,7 +706,10 @@ We can also copy and paste files through the command line with the `cp` (**Copy*
 
 
     
-    <code class="language-bash">cp source destination</code>
+```bash
+cp source destination
+```
+
 
 
 
@@ -656,7 +717,10 @@ I'm in my **Shell** folder. Let's say I make a new directory called **websites**
 
 
     
-    <code class="language-bash">cp test.html websites</code>
+```bash
+cp test.html websites
+```
+
 
 
 
@@ -666,7 +730,10 @@ To copy an entire directory, use the `-R` option. I can copy the **websites** di
 
 
     
-    <code class="language-bash">cp -R websites websites2</code>
+```bash
+cp -R websites websites2
+```
+
 
 
 
@@ -680,7 +747,10 @@ You can also duplicate a file in the same folder.
 
 
     
-    <code class="language-bash">cp test.html test2.html</code>
+```bash
+cp test.html test2.html
+```
+
 
 
 
@@ -694,7 +764,10 @@ You can move files just as you copy them with the `mv` (**Move**) command.
 
 
     
-    <code class="language-bash">mv source destination</code>
+```bash
+mv source destination
+```
+
 
 
 
@@ -751,7 +824,10 @@ We can run multiple commands with the double ampersand (`&&`) operator. As long 
 
 
     
-    <code class="language-bash">touch newfile.txt && mv newfile.txt websites</code>
+```bash
+touch newfile.txt && mv newfile.txt websites
+```
+
 
 
 
@@ -767,7 +843,10 @@ File permissions aren't often taken into consideration when you're a casual Wind
 
 
     
-    <code class="language-bash">chmod 644 test.html</code>
+```bash
+chmod 644 test.html
+```
+
 
 
 
@@ -786,7 +865,10 @@ The term `sudo` stands for Super User Do. You might encounter a situation in whi
 
 
     
-    <code class="language-bash">sudo chmod 775 directory</code>
+```bash
+sudo chmod 775 directory
+```
+
 
 
 
@@ -794,7 +876,10 @@ You can also switch to the administrator user. This is not something you should 
 
 
     
-    <code class="language-bash">sudo su</code>
+```bash
+sudo su
+```
+
 
 
 
@@ -802,7 +887,9 @@ Now my terminal looks different - it has a `#` instead of a `$` to indicate that
 
 
     
-    <div class="terminal">sh-3.2# </code>
+    <div class="terminal">sh-3.2# 
+```
+
 
 
 
@@ -810,7 +897,10 @@ Since I don't really want to be logged in as admin, I'm going to `exit`, which w
 
 
     
-    <code class="language-bash">exit</code>
+```bash
+exit
+```
+
 
 
 
@@ -826,7 +916,10 @@ You connect to the server with the same information you'd use to connect via a G
 
 
     
-    <code class="language-bash">ssh username@host</code>
+```bash
+ssh username@host
+```
+
 
 
 
@@ -834,7 +927,9 @@ Once you've entered your password, you are now "inside" the other server. Your c
 
 
     
-    <div class="terminal">[username@host ~]$ </code>
+    <div class="terminal">[username@host ~]$ 
+```
+
 
 
 
@@ -850,7 +945,10 @@ Sometimes, when I'm having an existential crisis, I turn to my computer to bring
 
 
     
-    <code class="language-bash">whoami</code>
+```bash
+whoami
+```
+
 
 
 
@@ -865,7 +963,10 @@ I often need to check the IP address of a given domain when I'm migrating a webs
 
 
     
-    <code class="language-bash">dig google.com</code>
+```bash
+dig google.com
+```
+
 
 
 
@@ -883,7 +984,10 @@ If I forget something, I can also check the help guide for the command line with
 
 
     
-    <code class="language-bash">man touch</code>
+```bash
+man touch
+```
+
 
 
 
@@ -910,7 +1014,10 @@ First, I'll create a new file.
 
 
     
-    <code class="language-bash">touch index.html</code>
+```bash
+touch index.html
+```
+
 
 
 
@@ -918,7 +1025,10 @@ Then I'll edit it with `nano`.
 
 
     
-    <code class="language-bash">nano index.html</code>
+```bash
+nano index.html
+```
+
 
 
 

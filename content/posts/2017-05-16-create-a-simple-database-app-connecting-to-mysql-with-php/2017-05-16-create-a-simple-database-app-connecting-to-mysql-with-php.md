@@ -95,7 +95,8 @@ public/index.php
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -117,7 +118,9 @@ public/index.php
     	</ul>
     
     </body>
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -137,7 +140,8 @@ public/templates/header.php
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -151,7 +155,9 @@ public/templates/header.php
     </head>
     
     <body>
-    	<h1>Simple Database App</h1></code>
+    	<h1>Simple Database App</h1>
+```
+
 
 
 
@@ -164,8 +170,11 @@ public/templates/footer.php
 
 
     
-    <code class="language-php"></body>
-    </html></code>
+```php
+</body>
+    </html>
+```
+
 
 
 
@@ -178,10 +187,13 @@ public/index.php
 
 
     
-    <code class="language-html"><ul>
+```html
+<ul>
     	<li><a href="create.php"><strong>Create</strong></a> - add a user</li>
     	<li><a href="read.php"><strong>Read</strong></a> - find a user</li>
-    </ul></code>
+    </ul>
+```
+
 
 
 
@@ -194,14 +206,17 @@ public/index.php
 
 
     
-    <code class="language-html"><?php include "templates/header.php"; ?>
+```html
+<?php include "templates/header.php"; ?>
     
     <ul>
     	<li><a href="create.php"><strong>Create</strong></a> - add a user</li>
     	<li><a href="read.php"><strong>Read</strong></a> - find a user</li>
     </ul>
     
-    <?php include "templates/footer.php"; ?></code>
+    <?php include "templates/footer.php"; ?>
+```
+
 
 
 
@@ -222,8 +237,11 @@ public/create.php
 
 
     
-    <code class="language-php"><?php include "templates/header.php"; ?>
-    <?php include "templates/footer.php"; ?></code>
+```php
+<?php include "templates/header.php"; ?>
+    <?php include "templates/footer.php"; ?>
+```
+
 
 
 
@@ -236,7 +254,8 @@ public/create.php
 
 
     
-    <code class="language-php"><?php include "templates/header.php"; ?><h2>Add a user</h2>
+```php
+<?php include "templates/header.php"; ?><h2>Add a user</h2>
     
     <form method="post">
     	<label for="firstname">First Name</label>
@@ -254,7 +273,9 @@ public/create.php
     
     <a href="index.php">Back to home</a>
     
-    <?php include "templates/footer.php"; ?></code>
+    <?php include "templates/footer.php"; ?>
+```
+
 
 
 
@@ -275,10 +296,13 @@ public/css/style.css
 
 
     
-    <code class="language-css">label {
+```css
+label {
     	display: block;
     	margin: 5px 0;
-    }</code>
+    }
+```
+
 
 
 
@@ -304,8 +328,11 @@ public/read.php
 
 
     
-    <code class="language-php"><?php include "templates/header.php"; ?>
-    <?php include "templates/footer.php"; ?></code>
+```php
+<?php include "templates/header.php"; ?>
+    <?php include "templates/footer.php"; ?>
+```
+
 
 
 
@@ -318,7 +345,8 @@ public/read.php
 
 
     
-    <code class="language-php"><?php include "templates/header.php"; ?>
+```php
+<?php include "templates/header.php"; ?>
     
     <h2>Find user based on location</h2>
     
@@ -330,7 +358,9 @@ public/read.php
     
     <a href="index.php">Back to home</a>
     
-    <?php include "templates/footer.php"; ?></code>
+    <?php include "templates/footer.php"; ?>
+```
+
 
 
 
@@ -391,7 +421,8 @@ data/init.sql
 
 
     
-    <code class="language-sql">CREATE DATABASE test;
+```sql
+CREATE DATABASE test;
     
     use test;
     
@@ -403,7 +434,9 @@ data/init.sql
     	age INT(3),
     	location VARCHAR(50),
     	date TIMESTAMP
-    );</code>
+    );
+```
+
 
 
 
@@ -457,7 +490,10 @@ install.php
 
 
     
-    <code class="language-php">$connection = new PDO();</code>
+```php
+$connection = new PDO();
+```
+
 
 
 
@@ -479,7 +515,10 @@ install.php
 
 
     
-    <code class="language-php">$connection = new PDO(data source name, username, password, options);</code>
+```php
+$connection = new PDO(data source name, username, password, options);
+```
+
 
 
 
@@ -492,11 +531,14 @@ install.php
 
 
     
-    <code class="language-php">new PDO("mysql:host=localhost", "root", "root", 
+```php
+new PDO("mysql:host=localhost", "root", "root", 
       array(
          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
       );
-    );</code>
+    );
+```
+
 
 
 
@@ -509,7 +551,10 @@ install.php
 
 
     
-    <code class="language-php">$connection = new PDO("mysql:host=$host", $username, $password, $options);</code>
+```php
+$connection = new PDO("mysql:host=$host", $username, $password, $options);
+```
+
 
 
 
@@ -522,7 +567,8 @@ config.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Configuration for database connection
@@ -536,7 +582,9 @@ config.php
     $dsn        = "mysql:host=$host;dbname=$dbname"; // will use later
     $options    = array(
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                  );</code>
+                  );
+```
+
 
 
 
@@ -549,9 +597,12 @@ install.php
 
 
     
-    <code class="language-php">require "config.php";
+```php
+require "config.php";
     
-    $connection = new PDO("mysql:host=$host", $username, $password, $options);</code>
+    $connection = new PDO("mysql:host=$host", $username, $password, $options);
+```
+
 
 
 
@@ -559,8 +610,11 @@ Now it's time to put that SQL code we created earlier to use. We'll be placing t
 
 
     
-    <code class="language-php">$sql = file_get_contents("data/init.sql"); 
-    $connection->exec($sql);</code>
+```php
+$sql = file_get_contents("data/init.sql"); 
+    $connection->exec($sql);
+```
+
 
 
 
@@ -568,11 +622,14 @@ At this point, we're going to want to use [Exceptions](http://php.net/manual/en/
 
 
     
-    <code class="language-php">try {
+```php
+try {
     // code to execute
     } catch() {
     // exception
-    }</code>
+    }
+```
+
 
 
 
@@ -585,7 +642,8 @@ install.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Open a connection via PDO to create a
@@ -603,7 +661,9 @@ install.php
     	echo "Database and table users created successfully.";
     } catch(PDOException $error) {
     	echo $sql . "<br>" . $error->getMessage();
-    }</code>
+    }
+```
+
 
 
 
@@ -635,7 +695,10 @@ First, we're going to tell this code only to run if the form has been submitted.
 
 
     
-    <code class="language-php">if (isset($_POST['submit'])) {}</code>
+```php
+if (isset($_POST['submit'])) {}
+```
+
 
 
 
@@ -645,7 +708,8 @@ If you'll notice, in the **install.php** script I was only connecting to `mysql:
 
 
     
-    <code class="language-php">if (isset($_POST['submit'])) {
+```php
+if (isset($_POST['submit'])) {
     	require "../config.php";
     
     	try {
@@ -656,7 +720,9 @@ If you'll notice, in the **install.php** script I was only connecting to `mysql:
     		echo $sql . "<br>" . $error->getMessage();
     	}
     	
-    }</code>
+    }
+```
+
 
 
 
@@ -664,13 +730,16 @@ Let's create an array with all our submitted form values.
 
 
     
-    <code class="language-php">$new_user = array(
+```php
+$new_user = array(
     	"firstname" => $_POST['firstname'],
     	"lastname"  => $_POST['lastname'],
     	"email"     => $_POST['email'],
     	"age"       => $_POST['age'],
     	"location"  => $_POST['location']
-    );</code>
+    );
+```
+
 
 
 
@@ -684,7 +753,10 @@ Now, the SQL code we're going to want to execute will look like this: `INSERT IN
 
 
     
-    <code class="language-sql">INSERT INTO users (firstname, lastname, email, age, location) values (:firstname, :lastname, :email, :age, :location)</code>
+```sql
+INSERT INTO users (firstname, lastname, email, age, location) values (:firstname, :lastname, :email, :age, :location)
+```
+
 
 
 
@@ -694,12 +766,15 @@ We're going to use `sprintf`, which allows us to do the following: `INSERT INTO 
 
 
     
-    <code class="language-php">$sql = sprintf(
+```php
+$sql = sprintf(
     		"INSERT INTO %s (%s) values (%s)",
     		"users",
     		implode(", ", array_keys($new_user)),
     		":" . implode(", :", array_keys($new_user))
-    );</code>
+    );
+```
+
 
 
 
@@ -707,8 +782,11 @@ That code will print out the exact same thing, without having to write it multip
 
 
     
-    <code class="language-php">$statement = $connection->prepare($sql);
-    $statement->execute($new_user);</code>
+```php
+$statement = $connection->prepare($sql);
+    $statement->execute($new_user);
+```
+
 
 
 
@@ -716,7 +794,8 @@ Here is the full code inside our `try` block.
 
 
     
-    <code class="language-php">$connection = new PDO($dsn, $username, $password, $options);
+```php
+$connection = new PDO($dsn, $username, $password, $options);
     
     $new_user = array(
     	"firstname" => $_POST['firstname'],
@@ -734,7 +813,9 @@ Here is the full code inside our `try` block.
     );
     
     $statement = $connection->prepare($sql);
-    $statement->execute($new_user);</code>
+    $statement->execute($new_user);
+```
+
 
 
 
@@ -767,7 +848,8 @@ common.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Escapes HTML for output
@@ -776,7 +858,9 @@ common.php
     
     function escape($html) {
     	return htmlspecialchars($html, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
-    }</code>
+    }
+```
+
 
 
 
@@ -786,9 +870,12 @@ Back in **public/create.php**, add a `require "common.php";`. Now I'm just going
 
 
     
-    <code class="language-php"><?php if (isset($_POST['submit']) && $statement) { ?>
+```php
+<?php if (isset($_POST['submit']) && $statement) { ?>
     	> <?php echo escape($_POST['firstname']); ?> successfully added.
-    <?php } ?></code>
+    <?php } ?>
+```
+
 
 
 
@@ -804,7 +891,8 @@ public/create.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Use an HTML form to create a new entry in the
@@ -868,7 +956,9 @@ public/create.php
     
     <a href="index.php">Back to home</a>
     
-    <?php require "templates/footer.php"; ?></code>
+    <?php require "templates/footer.php"; ?>
+```
+
 
 
 
@@ -889,7 +979,8 @@ public/css/style.css
 
 
     
-    <code class="language-css">table {
+```css
+table {
     	border-collapse: collapse;
     	border-spacing: 0;
     }
@@ -898,7 +989,9 @@ public/css/style.css
     th {
     	padding: 5px;
     	border-bottom: 1px solid #aaa;
-    }</code>
+    }
+```
+
 
 
 
@@ -911,7 +1004,8 @@ public/read.php
 
 
     
-    <code class="language-php">if (isset($_POST['submit'])) {
+```php
+if (isset($_POST['submit'])) {
     	try {
     		require "../config.php";
     		require "../common.php";
@@ -922,7 +1016,9 @@ public/read.php
     		echo $sql . "<br>" . $error->getMessage();
     	}
     }
-    ?></code>
+    ?>
+```
+
 
 
 
@@ -930,9 +1026,12 @@ Now we'll write a `SELECT` SQL query. We're going to select all (`*`) from the u
 
 
     
-    <code class="language-php">$sql = "SELECT * 
+```php
+$sql = "SELECT * 
     FROM users
-    WHERE location = :location";</code>
+    WHERE location = :location";
+```
+
 
 
 
@@ -940,7 +1039,10 @@ Then we'll put our `$_POST` into a varable.
 
 
     
-    <code class="language-php">$location = $_POST['location'];</code>
+```php
+$location = $_POST['location'];
+```
+
 
 
 
@@ -948,9 +1050,12 @@ Prepare, bind, and execute the statement.
 
 
     
-    <code class="language-php">$statement = $connection->prepare($sql);
+```php
+$statement = $connection->prepare($sql);
     $statement->bindParam(':location', $location, PDO::PARAM_STR);
-    $statement->execute();</code>
+    $statement->execute();
+```
+
 
 
 
@@ -958,7 +1063,10 @@ Finally, we'll fetch the result.
 
 
     
-    <code class="language-php">$result = $statement->fetchAll();</code>
+```php
+$result = $statement->fetchAll();
+```
+
 
 
 
@@ -966,7 +1074,8 @@ Here's the full `try` connection code.
 
 
     
-    <code class="language-php">$connection = new PDO($dsn, $username, $password, $options);
+```php
+$connection = new PDO($dsn, $username, $password, $options);
     
     $sql = "SELECT * 
     FROM users
@@ -978,7 +1087,9 @@ Here's the full `try` connection code.
     $statement->bindParam(':location', $location, PDO::PARAM_STR);
     $statement->execute();
     
-    $result = $statement->fetchAll();</code>
+    $result = $statement->fetchAll();
+```
+
 
 
 
@@ -990,7 +1101,8 @@ We'll check - if this is a POST request, and if the result of our query has more
 
 
     
-    <code class="language-php">if (isset($_POST['submit'])) {
+```php
+if (isset($_POST['submit'])) {
     	if ($result && $statement->rowCount() > 0) { 
     		// open table
     		foreach ($result as $row) {
@@ -1000,7 +1112,9 @@ We'll check - if this is a POST request, and if the result of our query has more
     	} else 	{ 
     		// no results
     	} 
-    }</code>
+    }
+```
+
 
 
 
@@ -1013,7 +1127,8 @@ public/read.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Function to query information based on 
@@ -1092,7 +1207,9 @@ public/read.php
     
     <a href="index.php">Back to home</a>
     
-    <?php require "templates/footer.php"; ?></code>
+    <?php require "templates/footer.php"; ?>
+```
+
 
 
 

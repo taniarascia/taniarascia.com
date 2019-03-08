@@ -24,11 +24,14 @@ We'll create a class (an object blueprint) and extend the class (inheritance). I
 
 
     
-    <code class="language-js">// Creating a class
+```js
+// Creating a class
     class Hero {}
     
     // Extending a class
-    class Warrior extends Hero {}</code>
+    class Warrior extends Hero {}
+```
+
 
 
 
@@ -36,7 +39,8 @@ I'll add a `constructor()` function to assign two parameters to the class.
 
 
     
-    <code class="language-js">class Hero {
+```js
+class Hero {
         // Assigning parameters with constructor
         constructor(name, level) {
             this.name = name;
@@ -45,7 +49,9 @@ I'll add a `constructor()` function to assign two parameters to the class.
     }
     
     // Extending a class
-    class Warrior extends Hero {}</code>
+    class Warrior extends Hero {}
+```
+
 
 
 
@@ -53,7 +59,8 @@ I'll add a method as well.
 
 
     
-    <code class="language-js">class Hero {
+```js
+class Hero {
         constructor(name, level) {
             this.name = name;
             this.level = level;
@@ -65,7 +72,9 @@ I'll add a method as well.
         }
     }
     
-    class Warrior extends Hero {}</code>
+    class Warrior extends Hero {}
+```
+
 
 
 
@@ -73,7 +82,8 @@ We'll edit the inherited class now, adding a new parameter. We use `super()` to 
 
 
     
-    <code class="language-js">class Hero { ... }
+```js
+class Hero { ... }
     
     class Warrior extends Hero {
         // Adding a constructor
@@ -83,7 +93,9 @@ We'll edit the inherited class now, adding a new parameter. We use `super()` to 
     
             this.weapon = weapon;
         }
-    }</code>
+    }
+```
+
 
 
 
@@ -91,7 +103,8 @@ Finally, we'll add a method to the extended class.
 
 
     
-    <code class="language-js">class Hero { ... }
+```js
+class Hero { ... }
     
     class Warrior extends Hero {
         constructor(name, level, weapon) {
@@ -104,7 +117,9 @@ Finally, we'll add a method to the extended class.
         attack() {
             return `${this.name} attacks with the ${this.weapon}.`;
         }
-    }</code>
+    }
+```
+
 
 
 
@@ -112,11 +127,14 @@ Now that the class and extended class blueprints are ready, we can create a new 
 
 
     
-    <code class="language-js">// Initialize individual character instance
+```js
+// Initialize individual character instance
     const hero1 = new Warrior('Bjorn', 1, 'axe');
     
     console.log(hero1.attack());
-    console.log(hero1.greet());</code>
+    console.log(hero1.greet());
+```
+
 
 
 
@@ -137,7 +155,8 @@ classes-es6.js
 
 
     
-    <code class="language-js">class Hero {
+```js
+class Hero {
         constructor(name, level) {
             this.name = name;
             this.level = level;
@@ -165,7 +184,9 @@ classes-es6.js
     const hero1 = new Warrior('Bjorn', 1, 'axe');
     
     console.log(hero1.attack());
-    console.log(hero1.greet());</code>
+    console.log(hero1.greet());
+```
+
 
 
 
@@ -198,7 +219,8 @@ constructor-functions-es5.js
 
 
     
-    <code class="language-js">function Hero(name, level) {
+```js
+function Hero(name, level) {
         this.name = name;
         this.level = level;
     }
@@ -225,7 +247,9 @@ constructor-functions-es5.js
     const hero1 = new Warrior('Bjorn', 1, 'axe');
     
     console.log(hero1.attack());
-    console.log(hero1.greet());</code>
+    console.log(hero1.greet());
+```
+
 
 
 
@@ -258,7 +282,9 @@ class-php.php
 
 
     
-    <code class="language-php"><?php
+```php
+
+<?php
     
     class Hero {
         public function __construct($name, $level) {
@@ -287,7 +313,9 @@ class-php.php
     $hero1 = new Warrior('Bjorn', 1, 'axe');
     
     echo $hero1->attack();
-    echo $hero1->greet();</code>
+    echo $hero1->greet();
+```
+
 
 
 

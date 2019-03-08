@@ -50,7 +50,8 @@ First, we can make a simple PHP script to test. I'm going to make a file that se
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     $to = 'me@example.com';
     $message = 'This is the message.';
     $subject = 'Insert Subject Here';
@@ -58,7 +59,9 @@ First, we can make a simple PHP script to test. I'm going to make a file that se
                'Reply-To: me@example.com';
     
     @mail($to, $subject, $message, $headers); 
-    ?></code>
+    ?>
+```
+
 
 
 
@@ -88,7 +91,10 @@ There's a useful site called [Crontab Generator](http://crontab-generator.org/) 
 
 
     
-    <code class="language-bash">* * * * * /usr/bin/php /var/www/html/crontest/cron.php > /dev/null 2>&1</code>
+```bash
+* * * * * /usr/bin/php /var/www/html/crontest/cron.php > /dev/null 2>&1
+```
+
 
 
 
@@ -207,7 +213,10 @@ The cron command is known as `crontab`. We'll set our cron job to send out an em
 
 
     
-    <code class="language-bash">0 0 * * * /usr/bin/php /var/www/html/crontest/cron.php >/dev/null 2>&1</code>
+```bash
+0 0 * * * /usr/bin/php /var/www/html/crontest/cron.php >/dev/null 2>&1
+```
+
 
 
 
@@ -215,7 +224,10 @@ Once you SSH into the server, you can check if there are any current jobs runnin
 
 
     
-    <code class="language-bash">crontab -l</code>
+```bash
+crontab -l
+```
+
 
 
 
@@ -229,7 +241,10 @@ Now, we'll edit the `crontab`.
 
 
     
-    <code class="language-bash">crontab -e</code>
+```bash
+crontab -e
+```
+
 
 
 

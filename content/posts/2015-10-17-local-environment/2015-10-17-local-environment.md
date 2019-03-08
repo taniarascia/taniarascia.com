@@ -69,8 +69,11 @@ The absolute beauty of PHP is that it can be inserted anywhere into HTML. Anythi
 
 I'm going to change my "Hello, world!".
 
-    <code class="language-php"><p>Hello, world! The year is <?php echo date('Y'); ?>.</p>
-    </code>
+```php
+<p>Hello, world! The year is <?php echo date('Y'); ?>.</p>
+    
+```
+
 
 The code `<?php echo date('Y'); ?>` uses a date function to find the year. The HTML interpreted is just "2015".
 

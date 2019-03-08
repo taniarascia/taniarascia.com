@@ -29,7 +29,9 @@ By comparing a simple "Hello, World!" program in both JavaScript and jQuery, we 
 
 
     
-    <code class="language-javascript">document.getElementById("demo").innerHTML = "Hello, World!";</code>
+    <code class="language-javascript">document.getElementById("demo").innerHTML = "Hello, World!";
+```
+
 
 
 
@@ -41,7 +43,9 @@ By comparing a simple "Hello, World!" program in both JavaScript and jQuery, we 
 
 
     
-    <code class="language-javascript">$("#demo").html("Hello, World!");</code>
+    <code class="language-javascript">$("#demo").html("Hello, World!");
+```
+
 
 This short example demonstrates how jQuery can achieve the same end result as plain JavaScript in a succinct manner.
 
@@ -105,13 +109,16 @@ We will begin this exercise by creating a small web project. It will consist of 
     |  |-- style.css
     |-- js/
     |  |-- scripts.js
-    |-- index.html</code>
+    |-- index.html
+```
+
 
 To begin, make an HTML skeleton and save it as `index.html`.
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -122,13 +129,16 @@ To begin, make an HTML skeleton and save it as `index.html`.
     <body>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 Link to the jQuery CDN right before the closing `</body>` tag, followed by your own custom JavaScript file, `scripts.js`.
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -142,7 +152,9 @@ Link to the jQuery CDN right before the closing `</body>` tag, followed by your 
     <script src="js/scripts.js"></script>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 Your JavaScript file (`scripts.js`) must be included _below_ the jQuery library in the document or it will not work.
 
@@ -182,7 +194,9 @@ The outermost layer of the DOM, the layer that wraps the entire `<html>` node, i
     
     <code class="language-javascript">$(document).ready(function() {
         // all custom jQuery will go here
-    });</code>
+    });
+```
+
 
 
 
@@ -192,11 +206,14 @@ In the introduction of this article, you saw a simple "Hello, World!" script. To
 
 
     
-    <code class="language-html">...
+```html
+...
     <body>
     
     <p id="demo"></p>
-    ...</code>
+    ...
+```
+
 
 
 
@@ -204,7 +221,9 @@ jQuery is called with and represented by the dollar sign (`$`). We access the DO
 
 
     
-    <code class="language-javascript">$("selector").method();</code>
+    <code class="language-javascript">$("selector").method();
+```
+
 
 Since an ID is represented by a hash symbol (`#`) in CSS, we will access the demo ID with the selector `#demo`. `html()` is a method that changes the HTML within an element. 
 
@@ -214,7 +233,9 @@ We're now going to put our custom "Hello, World!" program inside the jQuery `rea
     
     <code class="language-javascript">$(document).ready(function() {
         $("#demo").html("Hello, World!");
-    });</code>
+    });
+```
+
 
 
 
@@ -232,7 +253,9 @@ Selectors are how we tell jQuery which elements we want to work on. Most jQuery 
 
 
     
-    <code class="language-javascript">$("selector")</code>
+    <code class="language-javascript">$("selector")
+```
+
 
 Double-quoted strings are preferred by the [jQuery style guide](https://contribute.jquery.org/style-guide/js/), though single-quoted strings are often used as well. Below is a brief overview of some of the most commonly used selectors.
 
@@ -355,11 +378,14 @@ In the "Hello, World!" example, the code ran as soon as the page loaded and the 
 
 
     
-    <code class="language-html">...
+```html
+...
     <body>
     
     <button id="trigger">Click me</button>
-    <p id="demo"></p></code>
+    <p id="demo"></p>
+```
+
 
 We will use the `click()` method to call a function containing our "Hello, World!" code.
 
@@ -367,7 +393,9 @@ We will use the `click()` method to call a function containing our "Hello, World
     
     <code class="language-javascript">$(document).ready(function() {
         $("#trigger").click();
-    });</code>
+    });
+```
+
 
 Our `<button>` element has an ID called `trigger`, which we select with `$("#trigger")`. By adding `click()`, we're telling it to listen for a click event, but we're not done yet. Now we'll invoke a function that contains our code, inside the `click()` method.
 
@@ -375,7 +403,9 @@ Our `<button>` element has an ID called `trigger`, which we select with `$("#tri
     
     <code class="language-javascript">function() {
         $("#demo").html("Hello, World!");
-    }</code>
+    }
+```
+
 
 Here's the final code.
 
@@ -385,7 +415,9 @@ Here's the final code.
         $("#trigger").click(function() {
             $("#demo").html("Hello, World!");
         });
-    });</code>
+    });
+```
+
 
 
 
@@ -485,20 +517,24 @@ Delete the current `<button>`and `<p>` tags from within the body of your `index.
 
 
     
-    <code class="language-html">...
+```html
+...
     <body>
     <button class="trigger">Open</button>
     
     <section class="overlay">
       <button class="trigger">Close</button>
     </section>
-    ...</code>
+    ...
+```
+
 
 In our `style.css` file, we will use a minimal amount of CSS to hide the `overlay` with `display: none` and center it on the screen.
 
 
     
-    <code class="language-css">.overlay {
+```css
+.overlay {
       display: none;
       position: fixed;
       top: 50%;
@@ -507,7 +543,9 @@ In our `style.css` file, we will use a minimal amount of CSS to hide the `overla
       height: 200px;
       width: 200px;
       background: gray;
-    }</code>
+    }
+```
+
 
 Back in the `scripts.js` file, we're going to use the `toggle()` method, which will toggle the CSS `display` property between `none` and `block`, hiding and showing the overlay when clicked.
 
@@ -517,7 +555,9 @@ Back in the `scripts.js` file, we're going to use the `toggle()` method, which w
         $(".trigger").click(function() {
             $(".overlay").toggle();
         });
-    });</code>
+    });
+```
+
 
 Refresh `index.html`. You will now be able to toggle the visibility of the modal by clicking on the buttons. You can change `toggle()` to `fadeToggle()` or `slideToggle()` to see a few other built-in jQuery effects. Below is a brief overview of some of the most commonly used effect methods.
 

@@ -189,7 +189,10 @@ Go to **EC2**, and click on **Key Pairs**. Generate a key pair, and call it what
 
 
     
-    <code class="language-bash">~/.ssh/Your_Key.pem</code>
+```bash
+~/.ssh/Your_Key.pem
+```
+
 
 
 
@@ -313,7 +316,10 @@ The default user for AWS Linux is **ec2-user**. At this point, many people attem
 
 
     
-    <code class="language-bash">ssh ec2-user@PublicDNS</code>
+```bash
+ssh ec2-user@PublicDNS
+```
+
 
 
 
@@ -329,7 +335,10 @@ At this point, you will enter:
 
 
     
-    <code class="language-bash">yes</code>
+```bash
+yes
+```
+
 
 
 
@@ -344,7 +353,10 @@ As I mentioned before, the default settings for Linux require a public and priva
 
 
     
-    <code class="language-bash">chmod 400 ~/.ssh/Your_key.pem</code>
+```bash
+chmod 400 ~/.ssh/Your_key.pem
+```
+
 
 
 
@@ -352,7 +364,10 @@ Permissions need to be set to 400 before you can use the key.
 
 
     
-    <code class="language-bash">ssh -i ~/.ssh/Your_Key.pem ec2-user@PublicDNS</code>
+```bash
+ssh -i ~/.ssh/Your_Key.pem ec2-user@PublicDNS
+```
+
 
 
 
@@ -373,7 +388,10 @@ First thing you can do is update the packages.
 
 
     
-    <code class="language-bash">sudo yum update -y</code>
+```bash
+sudo yum update -y
+```
+
 
 
 
@@ -385,7 +403,10 @@ With one command, you can install Apache, MySQL, and PHP.
 
 
     
-    <code class="language-bash">sudo yum install -y httpd24 php56 mysql55-server php56-mysqlnd</code>
+```bash
+sudo yum install -y httpd24 php56 mysql55-server php56-mysqlnd
+```
+
 
 
 
@@ -397,7 +418,10 @@ Now start Apache.
 
 
     
-    <code class="language-bash">sudo service httpd start</code>
+```bash
+sudo service httpd start
+```
+
 
 
 
@@ -405,7 +429,10 @@ And make sure it starts on each boot.
 
 
     
-    <code class="language-bash">sudo chkconfig httpd on</code>
+```bash
+sudo chkconfig httpd on
+```
+
 
 
 
@@ -418,7 +445,10 @@ I'm also going to install **git** because it will come in handy.
 
 
     
-    <code class="language-bash">sudo yum install git</code>
+```bash
+sudo yum install git
+```
+
 
 
 
@@ -426,7 +456,10 @@ Start MySQL. Later, you might decide to use RDS (_Relational Database Service_) 
 
 
     
-    <code class="language-bash">sudo service mysqld start</code>
+```bash
+sudo service mysqld start
+```
+
 
 
 
@@ -434,7 +467,10 @@ Now we'll configure MySQL safely according to the AWS specifications.
 
 
     
-    <code class="language-bash">sudo mysql_secure_installation</code>
+```bash
+sudo mysql_secure_installation
+```
+
 
 
 
@@ -444,7 +480,10 @@ Prompt MySQL to load on boot.
 
 
     
-    <code class="language-bash">sudo chkconfig mysqld on</code>
+```bash
+sudo chkconfig mysqld on
+```
+
 
 
 
@@ -452,8 +491,11 @@ Install phpMyAdmin.
 
 
     
-    <code class="language-bash">sudo yum-config-manager --enable epel
-    sudo yum install -y phpMyAdmin</code>
+```bash
+sudo yum-config-manager --enable epel
+    sudo yum install -y phpMyAdmin
+```
+
 
 
 
@@ -463,7 +505,8 @@ Find this:
 
 
     
-    <code class="language-apacheconf"><Directory /usr/share/phpMyAdmin/>
+```apacheconf
+<Directory /usr/share/phpMyAdmin/>
       <IfModule !mod_authz_core.c>
         # Apache 2.2
         Order Deny,Allow
@@ -471,7 +514,9 @@ Find this:
         Allow from 127.0.0.1
         Allow from ::1
       </IfModule>
-    </Directory></code>
+    </Directory>
+```
+
 
 
 
@@ -479,8 +524,11 @@ If you want to be able to access phpMyAdmin from any IP, change it to this:
 
 
     
-    <code class="language-apacheconf">Order Allow,Deny
-    Allow from All</code>
+```apacheconf
+Order Allow,Deny
+    Allow from All
+```
+
 
 
 
@@ -488,7 +536,10 @@ The preferred security method would be to add your IP to the bottom of the list 
 
 
     
-    <code class="language-apacheconf">Allow from YOUR_IP</code>
+```apacheconf
+Allow from YOUR_IP
+```
+
 
 
 
@@ -496,11 +547,14 @@ Also modify this configuration.
 
 
     
-    <code class="language-apacheconf"><RequireAny>
+```apacheconf
+<RequireAny>
       #Require ip 127.0.0.1
       #Require ip ::1
       Require all granted
-    </RequireAny></code>
+    </RequireAny>
+```
+
 
 
 
@@ -521,7 +575,10 @@ Let's create a new user so we're not using the default **ec2-user**. Log in as s
 
 
     
-    <code class="language-bash">sudo su</code>
+```bash
+sudo su
+```
+
 
 
 
@@ -529,7 +586,10 @@ Create user. I'll call it **your-user**.
 
 
     
-    <code class="language-bash">useradd your-user</code>
+```bash
+useradd your-user
+```
+
 
 
 
@@ -537,7 +597,10 @@ Set a password for the new user.
 
 
     
-    <code class="language-bash">passwd your-user</code>
+```bash
+passwd your-user
+```
+
 
 
 
@@ -555,7 +618,10 @@ Create a `www` group.
 
 
     
-    <code class="language-bash">groupadd www</code>
+```bash
+groupadd www
+```
+
 
 
 
@@ -563,7 +629,10 @@ Add group to new user.
 
 
     
-    <code class="language-bash">usermod -a -G www your-user</code>
+```bash
+usermod -a -G www your-user
+```
+
 
 
 
@@ -571,13 +640,16 @@ Run the following commands.
 
 
     
-    <code class="language-bash">chown -R root:www /var/www
+```bash
+chown -R root:www /var/www
     
     chmod 2775 /var/www
     
     find /var/www -type d -exec sudo chmod 2775 {} + 
     
-    find /var/www -type f -exec sudo chmod 0664 {} +</code>
+    find /var/www -type f -exec sudo chmod 0664 {} +
+```
+
 
 
 
@@ -593,7 +665,10 @@ Open a new local Terminal window. Run this command to get the public key from yo
 
 
     
-    <code class="language-bash">ssh-keygen -y</code>
+```bash
+ssh-keygen -y
+```
+
 
 
 
@@ -601,7 +676,10 @@ When it prompts you for the URL, `~/ssh/Your_Key.pem` won't work. Instead, write
 
 
     
-    <code class="language-bash">/Users/you/.ssh/Your_Key.pem</code>
+```bash
+/Users/you/.ssh/Your_Key.pem
+```
+
 
 
 
@@ -611,7 +689,10 @@ Back in your AWS Instance Terminal, change users to the new one you created.
 
 
     
-    <code class="language-bash">sudo su - your-user</code>
+```bash
+sudo su - your-user
+```
+
 
 
 
@@ -619,8 +700,11 @@ You'll be in the `/home/your-user` directory. Make a directory for your public k
 
 
     
-    <code class="language-bash">mkdir .ssh
-    chmod 700 .ssh</code>
+```bash
+mkdir .ssh
+    chmod 700 .ssh
+```
+
 
 
 
@@ -628,8 +712,11 @@ Create `authorized_keys` and give it the proper permissions.
 
 
     
-    <code class="language-bash">touch .ssh/authorized_keys
-    chmod 600 .ssh/authorized_keys</code>
+```bash
+touch .ssh/authorized_keys
+    chmod 600 .ssh/authorized_keys
+```
+
 
 
 
@@ -637,7 +724,10 @@ Add the public key to the `authorized_keys` configuration.
 
 
     
-    <code class="language-bash">nano .ssh/authorized_keys</code>
+```bash
+nano .ssh/authorized_keys
+```
+
 
 
 
@@ -655,13 +745,19 @@ An easy way to give your new user sudo access is to run this command as root:
 
 
     
-    <code class="language-bash">sudo usermod -aG wheel your-user</code>
+```bash
+sudo usermod -aG wheel your-user
+```
+
 
 
 
 
     
-    <code class="language-bash">visudo</code>
+```bash
+visudo
+```
+
 
 
 
@@ -705,7 +801,10 @@ Edit the Apache configuration file.
 
 
     
-    <code>nano /etc/httpd/conf/httpd.conf</code>
+```
+nano /etc/httpd/conf/httpd.conf
+```
+
 
 
 
@@ -715,7 +814,8 @@ Add virtual hosts by adding this to the bottom of the file.
 
 
     
-    <code class="language-apacheconf">NameVirtualHost *:80
+```apacheconf
+NameVirtualHost *:80
     
     <VirtualHost *:80>
         ServerName localhost
@@ -726,7 +826,9 @@ Add virtual hosts by adding this to the bottom of the file.
       ServerName www.example.com
       ServerAlias example.com *.example.com
       DocumentRoot /var/www/html/example 
-    </VirtualHost></code>
+    </VirtualHost>
+```
+
 
 
 
@@ -734,7 +836,10 @@ Save and exit. Now edit the hosts file.
 
 
     
-    <code class="language-bash">nano /etc/hosts</code>
+```bash
+nano /etc/hosts
+```
+
 
 
 
@@ -742,8 +847,11 @@ And add as many hosts as you want.
 
 
     
-    <code class="language-js">127.0.0.1    dev.example.com
-    127.0.0.1    example.com</code>
+```js
+127.0.0.1    dev.example.com
+    127.0.0.1    example.com
+```
+
 
 
 
@@ -755,7 +863,11 @@ You can create `index.php` in the `000` folder, and make it something simple to 
 
 
     
-    <code class="language-php"><?php echo '<h1>AWS Linux</h1>'; ?></code>
+```php
+
+<?php echo '<h1>AWS Linux</h1>'; ?>
+```
+
 
 
 
@@ -786,9 +898,12 @@ At this point, I have SFTP set up, so I can transfer files over the old fashione
 
 
     
-    <code class="language-bash">git init
+```bash
+git init
     git remote add origin https://repo.git
-    git pull origin master</code>
+    git pull origin master
+```
+
 
 
 

@@ -50,7 +50,8 @@ See the Pen [Off Canvas Navigation with CSS3 Transitions](http://codepen.io/tani
 
 
     
-    <code class="language-html"><main>
+```html
+<main>
       <header>
         <div class="container">
           <h1>Website Title <span>Subtitle, too!</span></h1>
@@ -61,7 +62,9 @@ See the Pen [Off Canvas Navigation with CSS3 Transitions](http://codepen.io/tani
         <time>November 1st, 2015</time>
         <p>Content</p>
       </article>
-    </main></code>
+    </main>
+```
+
 
 
 
@@ -76,10 +79,13 @@ The header has a full width bottom border, but fixed content width width a verti
 
 
     
-    <code class="language-css">header {
+```css
+header {
       border-bottom: 1px solid #cdcdcd;
       padding: 40px 0;
-    }</code>
+    }
+```
+
 
 
 
@@ -87,11 +93,14 @@ I'll place the header content in a container div.
 
 
     
-    <code class="language-css">.container {
+```css
+.container {
       max-width: 750px;
       margin: 0 auto;
       padding: 0 20px;
-    }</code>
+    }
+```
+
 
 
 
@@ -101,7 +110,8 @@ The website title is centered on mobile, but left-aligned on desktop. I like to 
 
 
     
-    <code class="language-css">h1 {
+```css
+h1 {
       font-size: 1em;
       text-align: center;
       margin: 0;
@@ -113,7 +123,9 @@ The website title is centered on mobile, but left-aligned on desktop. I like to 
         font-size: 1.4em;
         text-align: left;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -121,7 +133,8 @@ The subtitle is hidden on mobile.
 
 
     
-    <code class="language-css">h1 span {
+```css
+h1 span {
       display: none;
     }
     
@@ -131,7 +144,9 @@ The subtitle is hidden on mobile.
         font-size: .6em;
         color: #898989;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -139,11 +154,14 @@ The `article` class is exactly the same as the container div, but it wouldn't ma
 
 
     
-    <code class="language-css">article {
+```css
+article {
       max-width: 750px;
       margin: 0 auto;
       padding: 0 20px;
-    }</code>
+    }
+```
+
 
 
 
@@ -153,7 +171,10 @@ I'll place this code directly below the `main` tag of the HTML.
 
 
     
-    <code class="language-html"><a id="nav-toggle" href="#!" class="position"><span></span></a></code>
+```html
+<a id="nav-toggle" href="#!" class="position"><span></span></a>
+```
+
 
 
 
@@ -161,7 +182,8 @@ I copied the code directly from Elijah's pen, and only changed the color. Here's
 
 
     
-    <code class="language-css">#nav-toggle {
+```css
+#nav-toggle {
       cursor: pointer;
       padding: 10px 35px 16px 0px;
     }
@@ -208,7 +230,9 @@ I copied the code directly from Elijah's pen, and only changed the color. Here's
     
     #nav-toggle.active span:after {
       transform: rotate(-45deg);
-    }</code>
+    }
+```
+
 
 
 
@@ -218,7 +242,8 @@ You'll notice that I added a `.position` class to the icon. I want the icon to b
 
 
     
-    <code class="language-css">.position {
+```css
+.position {
       position: absolute;
       top: 28px;
       left: 20px;
@@ -228,7 +253,9 @@ You'll notice that I added a `.position` class to the icon. I want the icon to b
       .position {
         position: fixed;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -249,13 +276,16 @@ I'm adding an `aside` class, where the slide-out menu will reside.
 
 
     
-    <code class="language-html"><body>
+```html
+<body>
       <aside>
       </aside>
       <main>
         <!-- The rest of the site -->
       </main>
-    </body></code>
+    </body>
+```
+
 
 
 
@@ -263,9 +293,12 @@ We want to prevent horizontal scroll when the the sidebar is toggled.
 
 
     
-    <code class="language-css">body {
+```css
+body {
       overflow-x: hidden;
-    }</code>
+    }
+```
+
 
 
 
@@ -273,12 +306,15 @@ All of our content is contained to `main`. I've placed an easing `transition` to
 
 
     
-    <code class="language-css">main {
+```css
+main {
       width: 100%;
       position: absolute;
       left: 0;
       transition: .3s ease all;
-    }</code>
+    }
+```
+
 
 
 
@@ -286,7 +322,8 @@ We need to make the `aside` fixed, and make sure the `width` and `left` cancel e
 
 
     
-    <code class="language-css">aside {
+```css
+aside {
       width: 300px;
       height: 100%;
       position: fixed;
@@ -294,7 +331,9 @@ We need to make the `aside` fixed, and make sure the `width` and `left` cancel e
       left: -300px;
       background: #343434;
       transition: .3s ease all;
-    }</code>
+    }
+```
+
 
 
 
@@ -302,9 +341,12 @@ I'll also go back and add an easing transition to my `.position` class from earl
 
 
     
-    <code class="language-css">.position { 
+```css
+.position { 
       transition: .3s ease all;
-    }</code>
+    }
+```
+
 
 
 
@@ -312,7 +354,8 @@ Finally, I'm going to add the CSS that will be toggled with JavaScript in just a
 
 
     
-    <code class="language-css">
+```css
+
     .show-nav aside,
     .show-nav .position,
     .show-nav main {
@@ -323,7 +366,9 @@ Finally, I'm going to add the CSS that will be toggled with JavaScript in just a
     }
     .show-nav .position {
       position: fixed;
-    }</code>
+    }
+```
+
 
 
 
@@ -337,13 +382,16 @@ The final step is to animate everything with jQuery. As always, I like to define
 
 
     
-    <code class="language-js">(function($) { // Define jQuery
+```js
+(function($) { // Define jQuery
       $(function() { // DOM Ready
     
         // All scripts go here
     
       });
-    })(jQuery);</code>
+    })(jQuery);
+```
+
 
 
 
@@ -359,9 +407,12 @@ First, we'll animate the menu icon.
 
 
     
-    <code class="language-js">// Toggle navigation
+```js
+// Toggle navigation
       $('#nav-toggle').click(function() {
-        this.classList.toggle("active");</code>
+        this.classList.toggle("active");
+```
+
 
 
 
@@ -369,14 +420,17 @@ Then we'll activate the `.show-nav` class.
 
 
     
-    <code class="language-js">// If sidebar is visible:
+```js
+// If sidebar is visible:
       if ($('body').hasClass('show-nav')) {
         // Hide sidebar
           $('body').removeClass('show-nav');
       } else { // If sidebar is hidden:
           $('body').addClass('show-nav'); // Display sidebar
       }
-    });</code>
+    });
+```
+
 
 
 
@@ -390,7 +444,8 @@ For this entire site, I've been using [HTML Ipsum](http://html-ipsum.com/), whic
 
 
     
-    <code class="language-css">aside {
+```css
+aside {
       /* The rest of the code from above */
       font-size: .8em;
       font-family: sans-serif;
@@ -418,7 +473,9 @@ For this entire site, I've been using [HTML Ipsum](http://html-ipsum.com/), whic
     }
     aside nav ul li a:hover {
       background: #454545;
-    }</code>
+    }
+```
+
 
 
 

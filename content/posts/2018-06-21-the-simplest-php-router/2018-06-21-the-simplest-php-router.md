@@ -32,11 +32,14 @@ In the root of your project, create a `.htaccess` file that will redirect all re
 
 
     
-    <code class="language-apacheconf">RewriteEngine On
+```apacheconf
+RewriteEngine On
     RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.+)$ index.php [QSA,L]</code>
+    RewriteRule ^(.+)$ index.php [QSA,L]
+```
+
 
 
 
@@ -55,7 +58,8 @@ index.php
 
 
     
-    <code class="language-php">
+```php
+
     <?php
     
     $request = $_SERVER['REDIRECT_URL'];
@@ -73,7 +77,9 @@ index.php
         default: 
             require __DIR__ . '/views/404.php';
             break;
-    }</code>
+    }
+```
+
 
 
 
@@ -92,7 +98,10 @@ Create a `/views` directory and place the files.
 
 
     
-    <code class="language-php"><h1>Main</h1></code>
+```php
+<h1>Main</h1>
+```
+
 
 
 
@@ -103,7 +112,10 @@ Create a `/views` directory and place the files.
 
 
     
-    <code class="language-php"><h1>About</h1></code>
+```php
+<h1>About</h1>
+```
+
 
 
 
@@ -114,7 +126,10 @@ Create a `/views` directory and place the files.
 
 
     
-    <code class="language-php"><h1>404</h1></code>
+```php
+<h1>404</h1>
+```
+
 
 
 

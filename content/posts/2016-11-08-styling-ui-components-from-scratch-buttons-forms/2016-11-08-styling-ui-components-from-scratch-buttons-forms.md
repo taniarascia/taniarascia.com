@@ -60,7 +60,10 @@ I'm linking to a CDN of [Normalize](https://necolas.github.io/normalize.css/).
 
 
     
-    <code class="language-html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"></code>
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+```
+
 
 
 
@@ -74,12 +77,15 @@ I'm forcing `border-box` on all elements unless explicity stated otherwise.
 
 
     
-    <code class="language-css">html {
+```css
+html {
       box-sizing: border-box;
     }
     *, *::before, *::after {
       box-sizing: inherit;
-    }</code>
+    }
+```
+
 
 
 
@@ -122,10 +128,13 @@ Here's the HTML for them, side by side:
  
 
     
-    <code class="language-html"><div class="button">Div</div>
+```html
+<div class="button">Div</div>
     <a class="button" href="#!">Link</a>
     <button>Button</button>
-    <input type="button" value="Input"></code>
+    <input type="button" value="Input">
+```
+
 
 
 
@@ -139,13 +148,16 @@ Here's the CSS selector for all these types of buttons:
   
 
     
-    <code class="language-css">.button,
+```css
+.button,
     a.button,
     button,
     [type=button],
     [type=submit] {
        /* styles go here */
-    }</code>
+    }
+```
+
 
 
 
@@ -159,7 +171,8 @@ I'm going to set all the basic styles here.
 
 
     
-    <code class="language-css">(button selectors) {
+```css
+(button selectors) {
       display: inline-block;
       background: #1E6BD6;
       border: 1px solid #1E6BD6;
@@ -169,7 +182,9 @@ I'm going to set all the basic styles here.
       font-size: .95rem;
       font-family: sans-serif;
       padding: .5rem 1rem;
-    }</code>
+    }
+```
+
 
 
 
@@ -189,14 +204,17 @@ Safari might do things like add extra margin on inputs, and Firefox might have t
 
 
     
-    <code class="language-css">(button selectors) {
+```css
+(button selectors) {
     /* previous code */
       vertical-align: middle;
       white-space: nowrap;
       cursor: pointer;
       line-height: 1;
       margin: .25rem 0;
-    }</code>
+    }
+```
+
 
  
 
@@ -204,12 +222,15 @@ I'm setting the [baseline](https://developer.mozilla.org/en-US/docs/Web/CSS/vert
  
 
     
-    <code class="language-css">button::-moz-focus-inner,
+```css
+button::-moz-focus-inner,
     [type="button"]::-moz-focus-inner,
     [type="submit"]::-moz-focus-inner {
       border: 0;
       padding: 0;
-    }</code>
+    }
+```
+
 
 
  
@@ -228,11 +249,14 @@ If you're using Sass, you can put all your button selectors in one variable.
 
   
     
-    <code class="language-scss">$buttons: ('button, 
+```scss
+$buttons: ('button, 
     .button, 
     a.button, 
     [type=submit],
-    [type=button]');</code>
+    [type=button]');
+```
+
 
 
   
@@ -240,9 +264,12 @@ And call the variable like this:
 
   
     
-    <code class="language-scss">#{$buttons} {
+```scss
+#{$buttons} {
       // styles
-    } </code>
+    } 
+```
+
 
 
   
@@ -250,12 +277,15 @@ Which makes it very easy to add hover and focus styles.
 
   
     
-    <code class="language-scss">#{$buttons} { 
+```scss
+#{$buttons} { 
       // styles
       &:hover {
         // hover styles
       } 
-    } </code>
+    } 
+```
+
 
 
 
@@ -294,7 +324,8 @@ Here is the basic HTML for the front end of a form that captures your name, emai
 
 
     
-    <code class="language-html"><form>
+```html
+<form>
       <label for="name">Name</label>
       <input type="text" id="name" placeholder="Name">
       <label for="email">Email</label>
@@ -307,7 +338,9 @@ Here is the basic HTML for the front end of a form that captures your name, emai
       <label for="message">Message</label>
       <textarea id="message" cols="30" rows="10" placeholder="Message"></textarea>
       <input type="submit" value="Submit">
-    </form></code>
+    </form>
+```
+
 
 
 
@@ -323,11 +356,14 @@ If I only wanted to style text fields, selects, and textboxes, I might just use 
 
 
     
-    <code class="language-css">[type=text],
+```css
+[type=text],
     select,
     textarea {
       /* styles go here */
-    }</code>
+    }
+```
+
 
 
 
@@ -335,7 +371,8 @@ If I wanted to include all HTML5 form elements, this would be my selector.
 
 
     
-    <code class="language-css">[type=color], 
+```css
+[type=color], 
     [type=date], 
     [type=datetime], 
     [type=datetime-local], 
@@ -352,7 +389,9 @@ If I wanted to include all HTML5 form elements, this would be my selector.
     select, 
     textarea {
       /* styles go here */
-    }</code>
+    }
+```
+
 
 
 
@@ -370,11 +409,14 @@ It's pretty far from what we're aiming for, but it won't take much work to get t
 
 
     
-    <code class="language-css">.container {
+```css
+.container {
       max-width: 600px;
       margin: 0 auto;
       padding: 0 1rem;
-    }</code>
+    }
+```
+
 
 
 
@@ -385,7 +427,8 @@ It's a little bit better already. Let's add some styles.
 
 
     
-    <code class="language-css">(form element selectors) {
+```css
+(form element selectors) {
       display: block;
       padding: .5rem;
       background: transparent;
@@ -395,7 +438,9 @@ It's a little bit better already. Let's add some styles.
       border: 1px solid #cdcdcd;
       border-radius: 4px;
       font-size: .95rem;
-    }</code>
+    }
+```
+
 
 
 
@@ -408,12 +453,15 @@ Now we have a bit more structure to the form, but the select doesn't play nice a
 
 
     
-    <code class="language-css">select {
+```css
+select {
       -webkit-appearance: none;
       -moz-appearance: none;
       background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) 100% no-repeat;
       line-height: 1;
-    }</code>
+    }
+```
+
 
 
 
@@ -431,12 +479,15 @@ I don't think it's too bad for a fallback. Now all that's left is styling the la
 
 
     
-    <code class="language-css">label {
+```css
+label {
       font-weight: 600;
       font-size: .9rem;
       display: block;
       margin: .5rem 0;
-    }</code>
+    }
+```
+
 
 
 
@@ -453,7 +504,8 @@ Like with the buttons, you can put all your input types into a variable.
 
 
     
-    <code class="language-scss">$input-fields: ('[type=color], 
+```scss
+$input-fields: ('[type=color], 
     [type=date], 
     [type=datetime], 
     [type=datetime-local], 
@@ -472,7 +524,9 @@ Like with the buttons, you can put all your input types into a variable.
     
     #{$input-fields} {
       // styles
-    } </code>
+    } 
+```
+
 
 
 

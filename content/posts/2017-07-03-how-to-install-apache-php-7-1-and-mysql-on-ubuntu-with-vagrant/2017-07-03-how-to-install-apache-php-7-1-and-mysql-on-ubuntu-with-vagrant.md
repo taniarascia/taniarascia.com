@@ -72,7 +72,10 @@ We're beginning this article where [the last one](https://www.taniarascia.com/wh
 
 
     
-    <code class="language-bash">vagrant ssh</code>
+```bash
+vagrant ssh
+```
+
 
 
 
@@ -80,7 +83,10 @@ We're beginning this article where [the last one](https://www.taniarascia.com/wh
 
 
     
-    <code class="language-bash">sudo apt-get update && sudo apt-get upgrade</code>
+```bash
+sudo apt-get update && sudo apt-get upgrade
+```
+
 
 
 
@@ -88,7 +94,10 @@ Now we're going to install the latest version of Apache, which is 2.4.7 at the t
 
 
     
-    <code class="language-bash">sudo apt-get install apache2 -y</code>
+```bash
+sudo apt-get install apache2 -y
+```
+
 
 
 
@@ -106,7 +115,10 @@ Easily fixed. We're just going to set the `ServerName` to `localhost`. Use `nano
 
 
     
-    <code class="language-bash">sudo nano /etc/apache2/apache2.conf</code>
+```bash
+sudo nano /etc/apache2/apache2.conf
+```
+
 
 
 
@@ -120,7 +132,10 @@ Navigate all the way to the end of the file, and insert this line at the bottom.
 
 
     
-    <code class="language-bash">ServerName localhost</code>
+```bash
+ServerName localhost
+```
+
 
 
 
@@ -128,7 +143,10 @@ Save and close `nano` (cntl + o, cntl + x), then restart Apache to apply the cha
 
 
     
-    <code class="language-bash">sudo service apache2 restart</code>
+```bash
+sudo service apache2 restart
+```
+
 
 
 
@@ -142,7 +160,10 @@ You can check to make sure the `ServerName` is correct with the following comman
 
 
     
-    <code class="language-bash">sudo apache2ctl configtest</code>
+```bash
+sudo apache2ctl configtest
+```
+
 
 
 
@@ -156,7 +177,10 @@ I always like to check the version number to see exactly what I'm running.
 
 
     
-    <code class="language-bash">apache2 -v</code>
+```bash
+apache2 -v
+```
+
 
 
 
@@ -181,7 +205,10 @@ I'm running my virtual machine in the following directory.
 
 
     
-    <code class="language-bash">/Users/taniarascia/Dev/VirtualMachines/ubuntu</code>
+```bash
+/Users/taniarascia/Dev/VirtualMachines/ubuntu
+```
+
 
 
 
@@ -191,7 +218,10 @@ Find the "private_network" configuration line, which should look like this.
 
 
     
-    <code class="language-bash"># config.vm.network "private_network", ip: "192.168.33.10"</code>
+```bash
+# config.vm.network "private_network", ip: "192.168.33.10"
+```
+
 
 
 
@@ -199,7 +229,10 @@ And uncomment it.
 
 
     
-    <code class="language-bash">config.vm.network "private_network", ip: "192.168.33.10"</code>
+```bash
+config.vm.network "private_network", ip: "192.168.33.10"
+```
+
 
 
 
@@ -207,7 +240,10 @@ Reboot Ubuntu to make sure the **Vagrantfile** changes take effect. Run the `rel
 
 
     
-    <code class="language-bash">vagrant reload</code>
+```bash
+vagrant reload
+```
+
 
 
 
@@ -215,7 +251,10 @@ We're going to make a custom domain to access this address and view it in our br
 
 
     
-    <code class="language-bash">sudo nano /etc/hosts</code>
+```bash
+sudo nano /etc/hosts
+```
+
 
 
 
@@ -223,7 +262,10 @@ Add a new domain to the bottom with the IP address we were given. I'm calling it
 
 
     
-    <code class="language-bash">192.168.33.10  trusty.dev</code>
+```bash
+192.168.33.10  trusty.dev
+```
+
 
 
 
@@ -246,7 +288,10 @@ Add the [Onrej](https://launchpad.net/~ondrej/+archive/ubuntu/php) PPA to your m
 
 
     
-    <code class="language-bash">sudo apt-add-repository ppa:ondrej/php</code>
+```bash
+sudo apt-add-repository ppa:ondrej/php
+```
+
 
 
 
@@ -254,7 +299,10 @@ Update `apt-get` with the software from the new repository.
 
 
     
-    <code class="language-bash">sudo apt-get update</code>
+```bash
+sudo apt-get update
+```
+
 
 
 
@@ -262,7 +310,10 @@ Now you will be able to install PHP 7.1.
 
 
     
-    <code class="language-bash">sudo apt-get install php7.1</code>
+```bash
+sudo apt-get install php7.1
+```
+
 
 
 
@@ -270,7 +321,10 @@ Confirm successful installation of PHP by checking the version.
 
 
     
-    <code class="language-bash">php -v</code>
+```bash
+php -v
+```
+
 
 
 
@@ -279,7 +333,9 @@ Confirm successful installation of PHP by checking the version.
     <div class="terminal">PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017 05:58:40) ( NTS )
     Copyright (c) 1997-2017 The PHP Group
     Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
-        with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies</code>
+        with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
+```
+
 
 
 
@@ -304,7 +360,10 @@ Let's go back to our **Vagrantfile**. We're going to set up a `synced folder`, f
 
 
     
-    <code class="language-ruby">config.vm.synced_folder "LOCAL", "VIRTUAL"</code>
+```ruby
+config.vm.synced_folder "LOCAL", "VIRTUAL"
+```
+
 
 
 
@@ -312,7 +371,10 @@ We'll set the **www** folder we just made as the local folder, and the public se
 
 
     
-    <code class="language-ruby">config.vm.synced_folder "www/", "/var/www/html"</code>
+```ruby
+config.vm.synced_folder "www/", "/var/www/html"
+```
+
 
 
 
@@ -339,7 +401,10 @@ Finally, we're going to install MySQL for database access.
 
 
     
-    <code class="language-bash">sudo apt-get install mysql-server php7.1-mysql</code>
+```bash
+sudo apt-get install mysql-server php7.1-mysql
+```
+
 
 
 
@@ -347,7 +412,10 @@ You can also set up the mysql secure installation. Follow the instructions on th
 
 
     
-    <code class="language-bash">sudo mysql_secure_installation</code>
+```bash
+sudo mysql_secure_installation
+```
+
 
 
 
@@ -360,7 +428,10 @@ I found some good directions on configuring MySQL with Vagrant [here](https://ww
 
 
     
-    <code class="language-bash">sudo nano /etc/mysql/my.cnf</code>
+```bash
+sudo nano /etc/mysql/my.cnf
+```
+
 
 
 
@@ -368,8 +439,11 @@ Find `skip-external-locking` and `bind-address` and comment them out.
 
 
     
-    <code class="language-bash"># skip-external-locking
-    # bind-address 0.0.0.0</code>
+```bash
+# skip-external-locking
+    # bind-address 0.0.0.0
+```
+
 
 
 
@@ -377,13 +451,19 @@ Once that's all done, I restart Apache and MySQL.
 
 
     
-    <code class="language-bash">sudo service apache2 restart</code>
+```bash
+sudo service apache2 restart
+```
+
 
 
 
 
     
-    <code class="language-bash">sudo service mysql restart</code>
+```bash
+sudo service mysql restart
+```
+
 
 
 
@@ -391,7 +471,10 @@ At this point, you should be able to login to MySQL with root, using password ro
 
 
     
-    <code class="language-bash">mysql -u root -p</code>
+```bash
+mysql -u root -p
+```
+
 
 
 
@@ -401,7 +484,10 @@ While inside the command line `mysql`, create a new user and password. I literal
 
 
     
-    <code class="language-sql">CREATE USER 'user'@'%' IDENTIFIED BY 'password';</code>
+```sql
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+```
+
 
 
 
@@ -409,7 +495,10 @@ Granted all privileges to the new user.
 
 
     
-    <code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code>
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
+```
+
 
 
 
@@ -417,7 +506,10 @@ And flushed privileges.
 
 
     
-    <code class="language-sql">FLUSH PRIVILEGES;</code>
+```sql
+FLUSH PRIVILEGES;
+```
+
 
 
 
@@ -425,13 +517,19 @@ Now to restart Apache and MySQL once again.
 
 
     
-    <code class="language-bash">sudo service apache2 restart</code>
+```bash
+sudo service apache2 restart
+```
+
 
 
 
 
     
-    <code class="language-bash">sudo service mysql restart</code>
+```bash
+sudo service mysql restart
+```
+
 
 
 
@@ -447,7 +545,10 @@ First, edit the **VagrantFile** and add this line to recognize the MySQL port, 3
 
 
     
-    <code class="language-bash">config.vm.network "forwarded_port", guest: 3306, host: 3306 </code>
+```bash
+config.vm.network "forwarded_port", guest: 3306, host: 3306 
+```
+
 
 
 
@@ -455,7 +556,10 @@ You'll need to restart Vagrant for this to take effect.
 
 
     
-    <code class="language-bash">vagrant reload</code>
+```bash
+vagrant reload
+```
+
 
 
 
@@ -485,7 +589,9 @@ Running `vagrant ssh` is the same as running the following:
 
 
 >     
->     <code style="margin-bottom: 0;" class="language-bash">ssh -i ~/.vagrant.d/insecure_private_key vagrant@192.168.33.10</code>
+>     <code style="margin-bottom: 0;" class="language-bash">ssh -i ~/.vagrant.d/insecure_private_key vagrant@192.168.33.10
+```
+
 > 
 > 
 
@@ -520,7 +626,11 @@ In **test.php**, we'll use the `phpinfo()` function to test PHP.
 
 
     
-    <code class="language-php"><?php phpinfo();</code>
+```php
+
+<?php phpinfo();
+```
+
 
 
 
@@ -531,7 +641,9 @@ In **connect.php**, I used a quick [MySQL test script](https://gist.github.com/M
 
 
     
-    <code class="language-php"><?php
+```php
+
+<?php
     
     $dbname = 'test';
     $dbuser = 'user';
@@ -553,7 +665,9 @@ In **connect.php**, I used a quick [MySQL test script](https://gist.github.com/M
       echo "There are no tables<br />\n";
     } else {
       echo "There are $tblCnt tables<br />\n";
-    }</code>
+    }
+```
+
 
 
 

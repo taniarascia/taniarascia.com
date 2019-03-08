@@ -17,11 +17,14 @@ Recently, I was working with some JSON decoded into a PHP array, and I needed to
 
 
     
-    <code class="language-php">foreach($arr['category'] as $key => $value) {
+```php
+foreach($arr['category'] as $key => $value) {
     	if (in_array('item_to_remove', $value)) {
     		unset($arr['category'][$key]);
     	}
-    }</code>
+    }
+```
+
 
 
 		

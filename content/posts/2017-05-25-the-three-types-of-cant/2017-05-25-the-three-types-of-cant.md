@@ -98,8 +98,11 @@ Here's some simple [regex](http://regexr.com/) that will help you rewrite those 
 
 
     
-    <code>s/can't/don't want to
-    </code>
+```
+s/can't/don't want to
+    
+```
+
 
 
 

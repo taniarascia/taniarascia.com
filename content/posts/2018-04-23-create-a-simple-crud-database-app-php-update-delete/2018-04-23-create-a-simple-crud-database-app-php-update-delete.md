@@ -142,7 +142,8 @@ public/index.php
 
 
     
-    <code class="php language-php"><?php include "templates/header.php"; ?>
+```php
+<?php include "templates/header.php"; ?>
     
     <ul>
         <li><a href="create.php"><strong>Create</strong></a> - add a user</li>
@@ -151,7 +152,9 @@ public/index.php
     </ul>
     
     <?php include "templates/footer.php"; ?>
-    </code>
+    
+```
+
 
 
 
@@ -166,7 +169,10 @@ We will use a simple `SELECT` statement to get all users.
 
 
     
-    <code class="language-php">$sql = "SELECT * FROM users";</code>
+```php
+$sql = "SELECT * FROM users";
+```
+
 
 
 
@@ -174,12 +180,15 @@ This is the simplest possible SQL command we can execute with PDO - simply selec
 
 
     
-    <code class="language-php">$sql = "SELECT * FROM users";
+```php
+$sql = "SELECT * FROM users";
     
     $statement = $connection->prepare($sql);
     $statement->execute();
     
-    $result = $statement->fetchAll();</code>
+    $result = $statement->fetchAll();
+```
+
 
 
 
@@ -192,7 +201,8 @@ public/update.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * List all users with a link to edit
@@ -214,7 +224,9 @@ public/update.php
     } catch(PDOException $error) {
       echo $sql . "<br>" . $error->getMessage();
     }
-    ?></code>
+    ?>
+```
+
 
 
 
@@ -227,7 +239,8 @@ public/update.php
 
 
     
-    <code class="language-php"><?php require "templates/header.php"; ?>
+```php
+<?php require "templates/header.php"; ?>
     
     <h2>Update users</h2>
     
@@ -258,7 +271,9 @@ public/update.php
       </tbody>
     </table>
     
-    <a href="index.php">Back to home</a></code>
+    <a href="index.php">Back to home</a>
+```
+
 
 
 
@@ -281,7 +296,10 @@ Below Date in the `thead`, let's add a `th` for Edit.
 
 
     
-    <code class="language-php"><th>Edit</th></code>
+```php
+<th>Edit</th>
+```
+
 
 
 
@@ -295,7 +313,10 @@ If we want to access Dinesh, the user with an `id` of `3`, our url will be **upd
 
 
     
-    <code class="language-php"><td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td></code>
+```php
+<td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+```
+
 
 
 
@@ -308,7 +329,8 @@ public/update.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * List all users with a link to edit
@@ -365,7 +387,9 @@ public/update.php
     
     <a href="index.php">Back to home</a>
     
-    <?php require "templates/footer.php"; ?></code>
+    <?php require "templates/footer.php"; ?>
+```
+
 
 
 
@@ -397,7 +421,8 @@ public/update-single.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Use an HTML form to edit an entry in the
@@ -414,7 +439,9 @@ public/update-single.php
         echo "Something went wrong!";
         exit;
     }
-    ?></code>
+    ?>
+```
+
 
 
 
@@ -434,7 +461,8 @@ public/update-single.php
 
 
     
-    <code class="language-php">if (isset($_GET['id'])) {
+```php
+if (isset($_GET['id'])) {
       try {
         $connection = new PDO($dsn, $username, $password, $options);
         $id = $_GET['id'];
@@ -451,7 +479,9 @@ public/update-single.php
     } else {
       echo "Something went wrong!";
       exit;
-    }</code>
+    }
+```
+
 
 
 
@@ -470,7 +500,8 @@ public/update-single.php
 
 
     
-    <code class="language-php"><?php require "templates/header.php"; ?>
+```php
+<?php require "templates/header.php"; ?>
     
     <h2>Edit a user</h2>
     
@@ -483,7 +514,9 @@ public/update-single.php
     
     <a href="index.php">Back to home</a>
     
-    <?php require "templates/footer.php"; ?></code>
+    <?php require "templates/footer.php"; ?>
+```
+
 
 
 
@@ -491,9 +524,12 @@ Inside the `foreach`, we're making a form which will consist of labels and input
 
 
     
-    <code class="language-php"><label for="<?php echo $key; ?>">
+```php
+<label for="<?php echo $key; ?>">
       <?php echo ucfirst($key); ?>
-    </label></code>
+    </label>
+```
+
 
 
 
@@ -501,12 +537,15 @@ Each value will be the value of an input. We'll be using the key as the `name` a
 
 
     
-    <code class="language-php"><input 
+```php
+<input 
       type="text" 
       name="<?php echo $key; ?>" 
       id="<?php echo $key; ?>" 
       value="<?php echo escape($value); ?>" 
-      <?php echo ($key === 'id' ? 'readonly' : null); ?>></code>
+      <?php echo ($key === 'id' ? 'readonly' : null); ?>>
+```
+
 
 
 
@@ -519,13 +558,16 @@ public/update-single.php
 
 
     
-    <code class="language-php"><form method="post">
+```php
+<form method="post">
         <?php foreach ($user as $key => $value) : ?>
           <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
     	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
         <?php endforeach; ?> 
         <input type="submit" name="submit" value="Submit">
-    </form></code>
+    </form>
+```
+
 
 
 
@@ -540,14 +582,17 @@ At the top of **update-single.php**, right below the two required files, check i
 
 
     
-    <code class="language-php">if (isset($_POST['submit'])) {
+```php
+if (isset($_POST['submit'])) {
       try {
         $connection = new PDO($dsn, $username, $password, $options);  
         // run update query
       } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -555,7 +600,8 @@ We want to use the `UPDATE` clause to `SET` each value to the new value. The lit
 
 
     
-    <code class="language-sql">UPDATE users 
+```sql
+UPDATE users 
       SET id = :id, 
         firstname = :firstname, 
         lastname = :lastname, 
@@ -563,7 +609,9 @@ We want to use the `UPDATE` clause to `SET` each value to the new value. The lit
         age = :age, 
         location = :location, 
         date = :date 
-      WHERE id = :id</code>
+      WHERE id = :id
+```
+
 
 
 
@@ -571,9 +619,12 @@ That's all we need to update the values now! I'm just going to quickly add in so
 
 
     
-    <code class="language-php"><?php if (isset($_POST['submit']) && $statement) : ?>
+```php
+<?php if (isset($_POST['submit']) && $statement) : ?>
     	> <?php echo escape($_POST['firstname']); ?> successfully updated.
-    <?php endif; ?></code>
+    <?php endif; ?>
+```
+
 
 
 
@@ -586,7 +637,8 @@ public/update-single.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     /**
      * Use an HTML form to edit an entry in the
      * users table.
@@ -661,7 +713,9 @@ public/update-single.php
     
     <a href="index.php">Back to home</a>
     
-    <?php require "templates/footer.php"; ?></code>
+    <?php require "templates/footer.php"; ?>
+```
+
 
 
 
@@ -687,12 +741,15 @@ public/index.php
 
 
     
-    <code class="language-html"><ul>
+```html
+<ul>
     	<li><a href="create.php"><strong>Create</strong></a> - add a user</li>
     	<li><a href="read.php"><strong>Read</strong></a> - find a user</li>
     	<li><a href="update.php"><strong>Update</strong></a> - edit a user</li>
     	<li><a href="delete.php"><strong>Delete</strong></a> - delete a user</li>
-    </ul></code>
+    </ul>
+```
+
 
 
 
@@ -700,7 +757,10 @@ There's nothing new to learn with the `DELETE` statement. Let's copy the code fr
 
 
     
-    <code class="language-php"><td><a href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td></code>
+```php
+<td><a href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
+```
+
 
 
 
@@ -713,7 +773,8 @@ public/delete.php
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     /**
      * Delete a user
@@ -790,7 +851,9 @@ public/delete.php
     
     <a href="index.php">Back to home</a>
     
-    <?php require "templates/footer.php"; ?></code>
+    <?php require "templates/footer.php"; ?>
+```
+
 
 
 
@@ -822,7 +885,8 @@ common.php
 
 
     
-    <code class="language-php">session_start();
+```php
+session_start();
     
     if (empty($_SESSION['csrf'])) {
     	if (function_exists('random_bytes')) {
@@ -832,7 +896,9 @@ common.php
     	} else {
     		$_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
     	}
-    }</code>
+    }
+```
+
 
 
 
@@ -840,11 +906,14 @@ Now at the top of all our **public/** files, we'll add the following code in:
 
 
     
-    <code class="language-php">require "../config.php";
+```php
+require "../config.php";
     require "../common.php";
     
     if (isset($_POST['submit'])) {
-      if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();</code>
+      if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+```
+
 
 
 
@@ -852,7 +921,10 @@ Finally, we'll add the value into the input on each form.
 
 
     
-    <code class="language-php"><input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>"></code>
+```php
+<input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
+```
+
 
 
 

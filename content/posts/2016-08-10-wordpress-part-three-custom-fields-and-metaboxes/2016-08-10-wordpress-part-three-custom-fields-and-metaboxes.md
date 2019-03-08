@@ -89,7 +89,9 @@ Here's the code that will go into **functions.php**.
 
 
     
-    <code class="language-php"><?php
+```php
+
+<?php
     
     function create_post_your_post() {
     	register_post_type( 'your_post',
@@ -115,7 +117,9 @@ Here's the code that will go into **functions.php**.
     	register_taxonomy_for_object_type( 'category', 'your_post' );
     	register_taxonomy_for_object_type( 'post_tag', 'your_post' );
     }
-    add_action( 'init', 'create_post_your_post' );</code>
+    add_action( 'init', 'create_post_your_post' );
+```
+
 
 
 
@@ -139,7 +143,9 @@ Now, to display the post on the front end. You can display the contents of a cus
 
 
     
-    <code class="language-php"><?php 
+```php
+
+<?php 
     
     $args = array(
     	'post_type' => 'your_post',
@@ -151,7 +157,9 @@ Now, to display the post on the front end. You can display the contents of a cus
     
     <!-- contents of Your Post -->
     
-    <?php endwhile; endif; wp_reset_postdata(); ?></code>
+    <?php endwhile; endif; wp_reset_postdata(); ?>
+```
+
 
 
 
@@ -178,11 +186,15 @@ Inserting the template codes like normal...
 
 
     
-    <code class="language-php"><h1>Title</h1>
+```php
+
+<h1>Title</h1>
     <?php the_title(); ?>
     
     <h1>Content</h1>
-    <?php the_content(); ?></code>
+    <?php the_content(); ?>
+```
+
 
 
 
@@ -211,7 +223,9 @@ Here's the code to add a meta box.
 
 
     
-    <code class="language-php">function add_your_fields_meta_box() {
+```php
+
+function add_your_fields_meta_box() {
     	add_meta_box(
     		'your_fields_meta_box', // $id
     		'Your Fields', // $title
@@ -221,7 +235,9 @@ Here's the code to add a meta box.
     		'high' // $priority
     	);
     }
-    add_action( 'add_meta_boxes', 'add_your_fields_meta_box' );</code>
+    add_action( 'add_meta_boxes', 'add_your_fields_meta_box' );
+```
+
 
 
 
@@ -249,7 +265,9 @@ First, the function that will display all your custom fields.
 
 
     
-    <code class="language-php">function show_your_fields_meta_box() {
+```php
+
+function show_your_fields_meta_box() {
     	global $post;  
     		$meta = get_post_meta( $post->ID, 'your_fields', true ); ?>
     
@@ -257,7 +275,9 @@ First, the function that will display all your custom fields.
     
         <!-- All fields will go here -->
     
-    	<?php }</code>
+    	<?php }
+```
+
 
 
 
@@ -265,7 +285,9 @@ We'll return to `<!-- All fields will go here -->` in a moment. For now, directl
 
 
     
-    <code class="language-php">function save_your_fields_meta( $post_id ) {   
+```php
+
+function save_your_fields_meta( $post_id ) {   
     	// verify nonce
     	if ( !wp_verify_nonce( $_POST['your_meta_box_nonce'], basename(__FILE__) ) ) {
     		return $post_id; 
@@ -292,7 +314,9 @@ We'll return to `<!-- All fields will go here -->` in a moment. For now, directl
     		delete_post_meta( $post_id, 'your_fields', $old );
     	}
     }
-    add_action( 'save_post', 'save_your_fields_meta' );</code>
+    add_action( 'save_post', 'save_your_fields_meta' );
+```
+
 
 
 
@@ -322,11 +346,15 @@ I'm going to add a regular text input. The `regular-text` class is just a built 
 
 
     
-    <code class="language-php"><p>
+```php
+
+<p>
     	<label for="your_fields[text]">Input Text</label>
     	<br>
     	<input type="text" name="your_fields[text]" id="your_fields[text]" class="regular-text" value="<?php echo $meta['text']; ?>">
-    </p></code>
+    </p>
+```
+
 
 
 
@@ -340,11 +368,15 @@ The code for the text area is almost the same as the input, except the value is 
 
 
     
-    <code class="language-php"><p>
+```php
+
+<p>
     	<label for="your_fields[textarea]">Textarea</label>
     	<br>
     	<textarea name="your_fields[textarea]" id="your_fields[textarea]" rows="5" cols="30" style="width:500px;"><?php echo $meta['textarea']; ?></textarea>
-    </p></code>
+    </p>
+```
+
 
 
 
@@ -358,11 +390,15 @@ There might be several ways to implement the checkbox, but this is one way that 
 
 
     
-    <code class="language-php"><p>
+```php
+
+<p>
     	<label for="your_fields[checkbox]">Checkbox
     		<input type="checkbox" name="your_fields[checkbox]" value="checkbox" <?php if ( $meta['checkbox'] === 'checkbox' ) echo 'checked'; ?>>
     	</label>
-    </p></code>
+    </p>
+```
+
 
 
 
@@ -376,14 +412,18 @@ You can include as many options as you want here, but I'm just doing two for the
 
 
     
-    <code class="language-php"><p>
+```php
+
+<p>
     	<label for="your_fields[select]">Select Menu</label>
     	<br>
     	<select name="your_fields[select]" id="your_fields[select]">
     			<option value="option-one" <?php selected( $meta['select'], 'option-one' ); ?>>Option One</option>
     			<option value="option-two" <?php selected( $meta['select'], 'option-two' ); ?>>Option Two</option>
     	</select>
-    </p></code>
+    </p>
+```
+
 
 
 
@@ -397,12 +437,16 @@ The image upload is going to be the most complicated one. The actual display cod
 
 
     
-    <code class="language-php"><p>
+```php
+
+<p>
     	<label for="your_fields[image]">Image Upload</label><br>
     	<input type="text" name="your_fields[image]" id="your_fields[image]" class="meta-image regular-text" value="<?php echo $meta['image']; ?>">
     	<input type="button" class="button image-upload" value="Browse">
     </p>
-    <div class="image-preview"><img src="<?php echo $meta['image']; ?>" style="max-width: 250px;"></div></code>
+    <div class="image-preview"><img src="<?php echo $meta['image']; ?>" style="max-width: 250px;"></div>
+```
+
 
 
 
@@ -412,7 +456,8 @@ This code will open the built in WordPress media gallery when you click browse, 
 
 
     
-    <code class="language-html"><script>
+```html
+<script>
         jQuery(document).ready(function ($) {
           // Instantiates the variable that holds the media library frame.
           var meta_image_frame;
@@ -447,7 +492,9 @@ This code will open the built in WordPress media gallery when you click browse, 
             meta_image_frame.open();
           });
         });
-      </script></code>
+      </script>
+```
+
 
 
 
@@ -476,8 +523,12 @@ Simple output of the text field.
 
 
     
-    <code class="language-php"><h1>Text Input</h1>
-    <?php echo $meta['text']; ?></code>
+```php
+
+<h1>Text Input</h1>
+    <?php echo $meta['text']; ?>
+```
+
 
 
 
@@ -491,8 +542,12 @@ Simple output of the textarea.
 
 
     
-    <code class="language-php"><h1>Textarea</h1>
-    <?php echo $meta['textarea']; ?></code>
+```php
+
+<h1>Textarea</h1>
+    <?php echo $meta['textarea']; ?>
+```
+
 
 
 
@@ -506,12 +561,16 @@ I'm going to check if the checkbox has been checked or not, and display a messag
 
 
     
-    <code class="language-php"><h1>Checkbox</h1>
+```php
+
+<h1>Checkbox</h1>
     <?php if ( $meta['checkbox'] === 'checkbox') { ?>
     Checkbox is checked.
     <?php } else { ?> 
     Checkbox is not checked. 
-    <?php } ?></code>
+    <?php } ?>
+```
+
 
 
 
@@ -525,9 +584,13 @@ I'll show you two things you can do with the select. The basic output will be th
 
 
     
-    <code class="language-php"><h1>Select Menu</h1>
+```php
+
+<h1>Select Menu</h1>
     <p>The actual value selected.</p>
-    <?php echo $meta['select']; ?></code>
+    <?php echo $meta['select']; ?>
+```
+
 
 
 
@@ -535,7 +598,9 @@ You can also use a [PHP switch statement](http://www.w3schools.com/php/php_switc
 
 
     
-    <code class="language-php"><p>Switch statement for options.</p>
+```php
+
+<p>Switch statement for options.</p>
     <?php 
     	switch ( $meta['select'] ) {
     		case 'option-one':
@@ -548,7 +613,9 @@ You can also use a [PHP switch statement](http://www.w3schools.com/php/php_switc
     			echo 'No option selected';
     			break;
     	} 
-    ?></code>
+    ?>
+```
+
 
 
 
@@ -562,8 +629,12 @@ And finally, displaying the image.
 
 
     
-    <code class="language-php"><h1>Image</h1>
-    <img src="<?php echo $meta['image']; ?>"></code>
+```php
+
+<h1>Image</h1>
+    <img src="<?php echo $meta['image']; ?>">
+```
+
 
 
 
@@ -594,7 +665,11 @@ To get rid of PHP warnings, change any instance of code that looks like this:
 
 
     
-    <code class="language-php"><?php echo $meta['textarea']; ?></code>
+```php
+
+<?php echo $meta['textarea']; ?>
+```
+
 
 
 
@@ -602,6 +677,10 @@ To this:
 
 
     
-    <code class="language-php"><?php  if (is_array($meta) && isset($meta['textarea'])){ echo $meta['textarea']; } ?></code>
+```php
+
+<?php  if (is_array($meta) && isset($meta['textarea'])){ echo $meta['textarea']; } ?>
+```
+
 
 		

@@ -19,8 +19,11 @@ I was recently tasked with creating a simple command line program that would tak
 Since I'm most familiar with JavaScript, I decided to do this in Node. The aim is to write a command like this:
 
     
-    <code class="bash language-bash">node hexdump.js data
-    </code>
+```bash
+node hexdump.js data
+    
+```
+
 
 
 Which will run a `hexdump.js` program on a file (`data`) and output the hex dump.
@@ -38,8 +41,11 @@ This article will consist of two parts: the first, background information explai
 To understand what a hex dump is, we can create a file and view a hex dump of it. I'll make a simple text file consisting of a Bob Ross quote.
 
     
-    <code class="bash language-bash">echo -en "Just make a decision and let it go." > data
-    </code>
+```bash
+echo -en "Just make a decision and let it go." > data
+    
+```
+
 
 
 `-en` here is preventing trailing newlines and allowing interpretation of backslash-escaped characters, which will come in handy in a bit. Also, `data` is just a filename, not any sort of command or keyword.
@@ -47,7 +53,10 @@ To understand what a hex dump is, we can create a file and view a hex dump of it
 Unix systems already have a [hexdump command](http://man7.org/linux/man-pages/man1/hexdump.1.html), and I'll use the canonical (`-C`) flag to format the output.
 
     
-    <code class="bash language-bash">hexdump -C data</code>
+```bash
+hexdump -C data
+```
+
 
 
 Here's what I get.
@@ -135,8 +144,11 @@ Now this hex dump kind of makes sense for viewing ASCII text, but what about dat
 In another example, I'll echo 0-15 represented in base 16/hexidecimal, which will be `00` to `0f`. To escape hexadecimal numbers using `echo`, the number must be preceeded by `\x`.
 
     
-    <code class="bash language-bash">echo -en "\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f" > data2
-    </code>
+```bash
+echo -en "\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f" > data2
+    
+```
+
 
 
 These numbers don't correspond to any ASCII characters, and also cannot be viewed in a regular text editor. If you try opening it in VSCode, for example, you'll see "The file is not displayed in the editor because it is either binary or uses an unsupported text encoding.".
@@ -230,7 +242,8 @@ Starting from the least significant value (the one all the way to the right), yo
 Here's how that looks:
 
     
-    <code class="language-js">  1 * 2**7 
+```js
+  1 * 2**7 
     + 1 * 2**6 
     + 1 * 2**5 
     + 1 * 2**4 
@@ -239,13 +252,16 @@ Here's how that looks:
     + 1 * 2**1 
     + 1 * 2**0 
     = 255
-    </code>
+    
+```
+
 
 
 And after evaluating the exponents, you can write the equation like this:
 
     
-    <code class="language-js">  1 * 128 
+```js
+  1 * 128 
     + 1 * 64 
     + 1 * 32 
     + 1 * 16 
@@ -254,13 +270,16 @@ And after evaluating the exponents, you can write the equation like this:
     + 1 * 2 
     + 1 * 1 
     = 255
-    </code>
+    
+```
+
 
 
 Or simply:
 
     
-    <code class="language-js">  128 
+```js
+  128 
     + 64 
     + 32 
     + 16 
@@ -269,16 +288,21 @@ Or simply:
     + 2 
     + 1 
     = 255
-    </code>
+    
+```
+
 
 
 For a more simplified example, if the number was `101` it would be:
 
     
-    <code class="language-js">  1 * 2**2 
+```js
+  1 * 2**2 
     + 0 * 2**1 
     + 1 * 2**0 
-    = 5</code>
+    = 5
+```
+
 
 
 
@@ -334,31 +358,40 @@ Calculation
 So as we can see, the position of the digit determines the value, and we can use the same calculation to get `255` in decimal.
 
     
-    <code class="language-js">  2 * 10**2 
+```js
+  2 * 10**2 
     + 5 * 10**1 
     + 5 * 10**0 
     = 255
-    </code>
+    
+```
+
 
 
 Or:
 
     
-    <code class="language-js">  2 * 100 
+```js
+  2 * 100 
     + 5 * 10 
     + 5 * 1 
     = 255
-    </code>
+    
+```
+
 
 
 Or:
 
     
-    <code class="language-js">  200 
+```js
+  200 
     + 50 
     + 5 
     = 255
-    </code>
+    
+```
+
 
 
 
@@ -369,28 +402,37 @@ Or:
 This concept applies to any base. Hexadecimal is base 16, and `F` represents the largest value, `15`.
 
     
-    <code class="language-js">  15 * 16**1 
+```js
+  15 * 16**1 
     + 15 * 16**0 
     = 255
-    </code>
+    
+```
+
 
 
 Or:
 
     
-    <code class="language-js">  15 * 16 
+```js
+  15 * 16 
     + 15 * 1 
     = 255
-    </code>
+    
+```
+
 
 
 Or:
 
     
-    <code class="language-js">  240 
+```js
+  240 
     + 15 
     = 255
-    </code>
+    
+```
+
 
 
 
@@ -403,7 +445,8 @@ The important concept to consider here is that `11111111`, `255`, and `FF` all r
 Hexadecimal is a convenient, compact way to represent the value of a byte, as it's always contained in two characters.
 
     
-    <code class="language-js">// Binary - 11111111
+```js
+// Binary - 11111111
     
       1 * 2**7 
     + 1 * 2**6 
@@ -423,7 +466,9 @@ Hexadecimal is a convenient, compact way to represent the value of a byte, as it
     // Hexadecimal - FF
     
       15 * 16**1 
-    + 15 * 16**0</code>
+    + 15 * 16**0
+```
+
 
 
 
@@ -461,8 +506,11 @@ Prefix
 Octal is another base system, base 8, which is represented by just a leading `0` or `0o`.
 
     
-    <code class="js language-js">010 === 8 // true
-    </code>
+```js
+010 === 8 // true
+    
+```
+
 
 
 We're going to mostly ignore octal in this article, though.
@@ -678,15 +726,21 @@ Now back to the original task of writing a hex dump program in Node. We know wha
 Well, we know how we want the program to function. It should be able to use the filename as an argument and `console.log` the hex dump.
 
     
-    <code class="bash language-bash">node hexdump.js data
-    </code>
+```bash
+node hexdump.js data
+    
+```
+
 
 
 So obviously I'll make `hexdump.js` and I'll also make some new data that will contain printable and non-printable ASCII characters.
 
     
-    <code class="bash language-bash">echo -en "<blink>Talent is pursued interest</blink>\x00\xff" > data
-    </code>
+```bash
+echo -en "<blink>Talent is pursued interest</blink>\x00\xff" > data
+    
+```
+
 
 
 And the goal is to make this output:
@@ -707,28 +761,37 @@ And the goal is to make this output:
 The first step is to obtain the data from the file somehow. I'll start by using the [file system module](https://nodejs.org/api/fs.html#fs_file_system).
 
     
-    <code class="js language-js">const fs = require('fs')
-    </code>
+```js
+const fs = require('fs')
+    
+```
+
 
 
 And to get the filename, we'll just get the 3rd command line argument (`0` being the Node binary, `1` being `hexdump.js`, and `2` being `data`).
 
     
-    <code class="js language-js">const filename = process.argv.slice(2)[0]
-    </code>
+```js
+const filename = process.argv.slice(2)[0]
+    
+```
+
 
 
 I'll use [`readFile()`](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) to get the contents of the file. (`readFileSync()` is just the synchronous version.) As the API says, "If no encoding is specified, then the raw buffer is returned", so we're getting a buffer. (`utf8` is what we'd use for a string.)
 
     
-    <code class="js language-js">function hexdump(filename) {
+```js
+function hexdump(filename) {
       let buffer = fs.readFileSync(filename)
     
       return buffer
     }
     
     console.log(hexdump(filename))
-    </code>
+    
+```
+
 
 
 This will log out a `<Buffer>` object (values removed for brevity).
@@ -752,7 +815,8 @@ Okay, this looks familiar. Thanks to all that background knowlege, we can see th
 You can treat the buffer like an array. If you check the length with `buffer.length`, you'll get `43`, which corresponds to the number of bytes. Since we want lines of 16 bytes, we can loop through every 16 and slice them into blocks.
 
     
-    <code class="language-js">function hexdump(filename) {
+```js
+function hexdump(filename) {
       let buffer = fs.readFileSync(filename)
       let lines = []
     
@@ -764,7 +828,9 @@ You can treat the buffer like an array. If you check the length with `buffer.len
     
       return lines
     }
-    </code>
+    
+```
+
 
 
 Now we have an array of smaller buffers.
@@ -784,15 +850,21 @@ Now we have an array of smaller buffers.
 We want to represent the address in hexadecimal, and you can convert a number to a hex string with `toString(16)`. Then I'll just prepend some zeroes so it's always the same length.
 
     
-    <code class="js language-js">let address = i.toString(16).padStart(8, '0')
-    </code>
+```js
+let address = i.toString(16).padStart(8, '0')
+    
+```
+
 
 
 So what would happen if I put the address and block in a template string?
 
     
-    <code class="language-js">lines.push(`${address} ${block}`)
-    </code>
+```js
+lines.push(`${address} ${block}`)
+    
+```
+
 
 
 
@@ -816,7 +888,8 @@ In order to get the ASCII characters, we can test the value based on the printab
 I'll add some space to the line and convert the lines to newline-separated strings.
 
     
-    <code class="language-js">function hexdump(filename) {
+```js
+function hexdump(filename) {
       let buffer = fs.readFileSync(filename)
       let lines = []
     
@@ -839,7 +912,9 @@ I'll add some space to the line and convert the lines to newline-separated strin
     
       return lines.join('\n')
     }
-    </code>
+    
+```
+
 
 
 Now we're almost there.
@@ -866,7 +941,8 @@ hexdump.js
 
 
     
-    <code class="js language-js">const fs = require('fs')
+```js
+const fs = require('fs')
     const filename = process.argv.slice(2)[0]
     
     function hexdump(filename) {
@@ -906,7 +982,9 @@ hexdump.js
     }
     
     console.log(hexdump(filename))
-    </code>
+    
+```
+
 
 
 As I mentioned earlier, you'd want to use a readable stream for a real hex dump program, but this is a good starting example. I might update this article with an improved version later.

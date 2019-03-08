@@ -71,12 +71,15 @@ So, let's begin lesson one.
 
 
     
-    <code class="language-js">// This is a single line comment.
+```js
+// This is a single line comment.
     
     /* This comment
     can span multiple lines. */
     
-    // var firstName; this code has no function, because it has been "commented out". </code>
+    // var firstName; this code has no function, because it has been "commented out". 
+```
+
 
 
 
@@ -109,8 +112,11 @@ Variables are created by typing `var` followed by your unique variable name. A v
 
 
     
-    <code class="language-js">var firstName; // Variable is declared, but not assigned a value.
-    var firstName = "Tania"; // Variable is declared and assigned a value.</code>
+```js
+var firstName; // Variable is declared, but not assigned a value.
+    var firstName = "Tania"; // Variable is declared and assigned a value.
+```
+
 
 
 
@@ -144,11 +150,14 @@ Strings are encased in double quotes `"` or single quotes `'` (not to be confuse
 
 
     
-    <code class="language-js">"Anything within quotes is a string."; // A string.
+```js
+"Anything within quotes is a string."; // A string.
     'It can have single or double quotes, as long as both ends match.'; // Another string.
     
     // Applying that string to a variable named explanation.
-    var explanation = "Anything within quotes is a string.";</code>
+    var explanation = "Anything within quotes is a string.";
+```
+
 
 
 
@@ -156,8 +165,11 @@ Since a string starts and ends with quotes, what if you want quotes within a str
 
 
     
-    <code class="language-js">"I'm using a single quote within a double quoted string."; 
-    'I can also use "double quotes" inside a single quoted string.';</code>
+```js
+"I'm using a single quote within a double quoted string."; 
+    'I can also use "double quotes" inside a single quoted string.';
+```
+
 
 
 
@@ -165,8 +177,11 @@ If you must use the same type of quote as your string, use a backslash `\` to "e
 
 
     
-    <code class="language-js">'I\'m using a single quote within a single quoted string.'; 
-    "I can also use \"double quotes\" inside a double quoted string.";</code>
+```js
+'I\'m using a single quote within a single quoted string.'; 
+    "I can also use \"double quotes\" inside a double quoted string.";
+```
+
 
 
 
@@ -192,9 +207,12 @@ If you must use the same type of quote as your string, use a backslash `\` to "e
 
 
     
-    <code class="language-js">var number = 5;
+```js
+var number = 5;
     var bigNumber = 5555555555;
-    var sum = 1 + 1; // The variable sum now has the number value of 2.</code>
+    var sum = 1 + 1; // The variable sum now has the number value of 2.
+```
+
 
 
 
@@ -208,7 +226,10 @@ If you must use the same type of quote as your string, use a backslash `\` to "e
 
 
     
-    <code class="language-js">var impossibleEquation = 2 / "string"; // Two divided by "string" results in NaN.</code>
+```js
+var impossibleEquation = 2 / "string"; // Two divided by "string" results in NaN.
+```
+
 
 
 
@@ -226,8 +247,11 @@ If you must use the same type of quote as your string, use a backslash `\` to "e
 
 
     
-    <code class="language-js">var happy = true;
-    var sad = false;</code>
+```js
+var happy = true;
+    var sad = false;
+```
+
 
 
 
@@ -245,8 +269,11 @@ If you must use the same type of quote as your string, use a backslash `\` to "e
 
 
     
-    <code class="language-js">var undefinedVariable; // This variable has been declared but not defined.
-    undeclaredVariable; // This variable is undeclared because the var keyword has not been used.</code>
+```js
+var undefinedVariable; // This variable has been declared but not defined.
+    undeclaredVariable; // This variable is undeclared because the var keyword has not been used.
+```
+
 
 
 
@@ -266,7 +293,10 @@ Unlike undefined data types, null is a value that represents "nothing".
 
 
     
-    <code class="language-js">var nonexistent = null; // The variable nonexistent is defined but null. </code>
+```js
+var nonexistent = null; // The variable nonexistent is defined but null. 
+```
+
 
 
 
@@ -286,12 +316,15 @@ Objects have **properties** and **methods**. A property is a characteristic of t
 
 
     
-    <code class="language-js">var exampleObject = {}; // An empty object is initialized with an object literal.
+```js
+var exampleObject = {}; // An empty object is initialized with an object literal.
     
     var person = {
       name: "Tania",
       age: 26
-    };</code>
+    };
+```
+
 
 
 
@@ -301,7 +334,10 @@ Using a dot `.`, you can get the property or method of an object. `person.age` w
 
 
     
-    <code class="language-js">var myAge = person.age; // Applies the number 26 to the variable myAge.</code>
+```js
+var myAge = person.age; // Applies the number 26 to the variable myAge.
+```
+
 
 
 
@@ -321,13 +357,16 @@ An array is an object that can contain multiple different data types in a list. 
 
 
     
-    <code class="language-js">var exampleArray = []; // An empty array is initialized with an array literal.
+```js
+var exampleArray = []; // An empty array is initialized with an array literal.
     
     var beverages = [
       "coffee",
       "tea",
       "juice"
-    ];</code>
+    ];
+```
+
 
 
 
@@ -341,7 +380,10 @@ Each value in an array is represented by a number, beginning with 0. In the abov
 
 
     
-    <code class="language-js">var favoriteBeverage = beverages[0] // Applies the string "coffee" to the variable favoriteBeverage. </code>
+```js
+var favoriteBeverage = beverages[0] // Applies the string "coffee" to the variable favoriteBeverage. 
+```
+
 
 
 

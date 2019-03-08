@@ -19,7 +19,10 @@ To start, install the [basic-auth](https://www.npmjs.com/package/basic-auth) pac
 
 
     
-    <code class="language-shell">npm install basic-auth</code>
+```bash
+npm install basic-auth
+```
+
 
 
 
@@ -27,7 +30,8 @@ Create an **auth.js** with the following code, changing `username` and `password
 
 
     
-    <code class="language-js">const auth = require('basic-auth');
+```js
+const auth = require('basic-auth');
     
     const admins = { 'username': { password: 'password' }, };
     
@@ -38,7 +42,9 @@ Create an **auth.js** with the following code, changing `username` and `password
         return response.status(401).send();
       }
       return next();
-    };</code>
+    };
+```
+
 
 
 
@@ -46,10 +52,13 @@ And in **server.js**, include this at the top of your file.
 
 
     
-    <code class="language-js">const auth = require('./auth');
+```js
+const auth = require('./auth');
     const app = express();
     
-    app.use(auth);</code>
+    app.use(auth);
+```
+
 
 
 

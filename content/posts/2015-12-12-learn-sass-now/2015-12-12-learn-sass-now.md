@@ -53,7 +53,10 @@ A preprocessor is a program that takes a bit of code and compiles it into a diff
 
 
     
-    <code class="language-html"><link href="style.css" rel="stylesheet"></code>
+```html
+<link href="style.css" rel="stylesheet">
+```
+
 
 
 
@@ -88,9 +91,12 @@ SCSS uses all the syntax we're familiar with in CSS: semi-colons and curly brack
 
 
     
-    <code class="language-scss">p {
+```scss
+p {
       font-size: 1em;
-    }</code>
+    }
+```
+
 
 
 
@@ -98,8 +104,11 @@ Sass does away with the syntax, and relies on forced indentation.
 
 
     
-    <code class="language-sass">p
-      font-size: 1em</code>
+```sass
+p
+      font-size: 1em
+```
+
 
 
 
@@ -184,9 +193,12 @@ Play around with moving through directories on your computer for a few minutes s
 
 
     
-    <code class="language-bash">cd "My Documents"
+```bash
+cd "My Documents"
     mkdir cli-test
-    ls</code>
+    ls
+```
+
 
 
 
@@ -212,7 +224,10 @@ Ruby already comes preinstalled on OSX. Check to ensure you're running an up-to-
 
 
     
-    <code class="language-bash">ruby -v</code>
+```bash
+ruby -v
+```
+
 
 
 
@@ -220,7 +235,10 @@ If for some reason the number is lower than 2.0.0, type `sudo gem install ruby` 
 
 
     
-    <code class="language-bash">sudo gem install sass</code>
+```bash
+sudo gem install sass
+```
+
 
 
 
@@ -246,7 +264,10 @@ Be sure to select "Add Ruby executables to your PATH" and continue. I also had a
 
 
     
-    <code class="language-bash">ruby -v</code>
+```bash
+ruby -v
+```
+
 
 
 
@@ -254,7 +275,10 @@ Then install Sass.
 
 
     
-    <code class="language-bash">gem install sass</code>
+```bash
+gem install sass
+```
+
 
 
 
@@ -283,11 +307,14 @@ The **styles.scss** file will be a very simple test to ensure we can compile the
 
 
     
-    <code class="language-scss">$primary-color: #343434;
+```scss
+$primary-color: #343434;
     
     p {
     	font-color: $primary-color;
-    }</code>
+    }
+```
+
 
 
 
@@ -295,7 +322,10 @@ I'm going to navigate to my **startsass** directory in the shell.
 
 
     
-    <code>cd sites/startsass</code>
+```
+cd sites/startsass
+```
+
 
 
 
@@ -303,7 +333,10 @@ And compile the file. This is done by typing `sass` followed by your scss file, 
 
 
     
-    <code>sass style.scss:style.css</code>
+```
+sass style.scss:style.css
+```
+
 
 
 
@@ -318,8 +351,11 @@ The important part here is that **style.css** has been created, and it looks lik
 
 
     
-    <code class="language-css">p {
-      font-color: #343434; }</code>
+```css
+p {
+      font-color: #343434; }
+```
+
 
 
 
@@ -335,7 +371,10 @@ Using `sass --watch`,  we can keep a running process that will notice every time
 
 
     
-    <code class="language-bash">sass --watch style.scss:style.css</code>
+```bash
+sass --watch style.scss:style.css
+```
+
 
 
 
@@ -359,7 +398,10 @@ We can make this even a step better by compressing the compiled CSS file. Compre
 
 
     
-    <code class="language-bash">sass --watch style.scss:style.min.css --style compressed</code>
+```bash
+sass --watch style.scss:style.min.css --style compressed
+```
+
 
 
 
@@ -424,7 +466,8 @@ Here's how the **main.scss** file will look for this particular project.
 
 
     
-    <code class="language-scss">// Base
+```scss
+// Base
     
     @import "base/variables";
     @import "base/mixins";
@@ -436,7 +479,9 @@ Here's how the **main.scss** file will look for this particular project.
     @import "components/grid";
     @import "components/buttons";
     @import "components/navigation";
-    @import "components/sections";</code>
+    @import "components/sections";
+```
+
 
 
 
@@ -444,7 +489,10 @@ Now I can watch this entire project and compile everything into one, minified CS
 
 
     
-    <code class="language-bash">sass --watch sass:css --style compressed</code>
+```bash
+sass --watch sass:css --style compressed
+```
+
 
 
 

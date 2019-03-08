@@ -50,8 +50,11 @@ Install the [Homebrew](http://brew.sh/) package manager. This will allow you to 
 
 
     
-    <code class="language-bash">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    </code>
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+```
+
 
 
 
@@ -65,8 +68,11 @@ The Mac App Store command line interface, or [mas-cli](https://github.com/mas-cl
 
 
     
-    <code class="language-bash">brew install mas
-    </code>
+```bash
+brew install mas
+    
+```
+
 
 
 
@@ -80,8 +86,11 @@ If you haven't already logged into the App Store, you can do so now.
 
 
     
-    <code class="language-bash">mas signin email@email.com
-    </code>
+```bash
+mas signin email@email.com
+    
+```
+
 
 
 
@@ -97,8 +106,11 @@ Open Terminal, which will be in your home folder by default (`/Users/you`). Crea
 
 
     
-    <code class="language-bash">touch Brewfile
-    </code>
+```bash
+touch Brewfile
+    
+```
+
 
 
 
@@ -146,7 +158,8 @@ Below are the entire contents of my `Brewfile`, which will install all the above
 
 
     
-    <code class="language-js">tap 'caskroom/cask'
+```js
+tap 'caskroom/cask'
     
     brew 'git'
     brew 'npm'
@@ -168,7 +181,9 @@ Below are the entire contents of my `Brewfile`, which will install all the above
     mas 'Sip', id: 507257563 
     mas 'Simplenote', id: 692867256 
     mas 'Todoist', id: 585829637
-    </code>
+    
+```
+
 
 
 
@@ -176,7 +191,10 @@ Now simply run this command to install the bundle.
 
 
     
-    <code class="language-bash">brew bundle install</code>
+```bash
+brew bundle install
+```
+
 
 
 
@@ -198,7 +216,10 @@ First, create a `.bash_profile` dotfile in your home folder.
 
 
     
-    <code class="language-bash">touch .bash_profile</code>
+```bash
+touch .bash_profile
+```
+
 
 
 
@@ -206,8 +227,11 @@ We'll create a bash alias to combine all the commands to keep Homebrew clean and
 
 
     
-    <code class="language-bash">alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
-    </code>
+```bash
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+    
+```
+
 
 
 
@@ -215,8 +239,11 @@ Run the following command.
 
 
     
-    <code class="language-bash">source ~/.bash_profile
-    </code>
+```bash
+source ~/.bash_profile
+    
+```
+
 
 
 
@@ -224,7 +251,10 @@ Now you can run `brewup` to update, upgrade, prune, cleanup, and doctor Homebrew
 
 
     
-    <code class="language-bash">brewup</code>
+```bash
+brewup
+```
+
 
 
 
@@ -244,7 +274,10 @@ The first thing you should do with Git is [set your global configuration](https:
 
 
     
-    <code class="language-bash">git config --global user.name "First Last"</code>
+```bash
+git config --global user.name "First Last"
+```
+
 
 
 
@@ -252,7 +285,10 @@ Or we can just create the Git configuration file and input it all ourselves.
 
 
     
-    <code class="language-bash">touch .gitconfig</code>
+```bash
+touch .gitconfig
+```
+
 
 
 
@@ -260,7 +296,8 @@ Here I'll input my name, email, GitHub username, some aliases to be able to type
 
 
     
-    <code class="language-js">[user]
+```js
+[user]
         name = First Last
         email = email@email.com
     [github]
@@ -277,7 +314,9 @@ Here I'll input my name, email, GitHub username, some aliases to be able to type
         cob = checkout -b
     [credential]
         helper = osxkeychain
-    </code>
+    
+```
+
 
 
 
@@ -301,7 +340,10 @@ Create an SSH config file.
 
 
     
-    <code class="language-bash">touch .ssh/config</code>
+```bash
+touch .ssh/config
+```
+
 
 
 
@@ -309,11 +351,14 @@ Add the following contents, changing the variables for any hosts that you connec
 
 
     
-    <code class="language-bash">Host example
+```bash
+Host example
         HostName example.com
         User example-user
         IdentityFile key.pem
-    </code>
+    
+```
+
 
 
 
@@ -321,7 +366,10 @@ Now just run the alias to connect.
 
 
     
-    <code class="language-bash">ssh example</code>
+```bash
+ssh example
+```
+
 
 
 
@@ -335,8 +383,11 @@ You can [generate an SSH key](https://help.github.com/articles/generating-a-new-
 
 
     
-    <code class="language-bash">ssh-keygen -t rsa -b 4096 -C "email@email.com"
-    </code>
+```bash
+ssh-keygen -t rsa -b 4096 -C "email@email.com"
+    
+```
+
 
 
 
@@ -350,7 +401,10 @@ We're going to use [Node Version Manager (nvm)](https://github.com/creationix/nv
 
 
     
-    <code class="language-bash">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash</code>
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+```
+
 
 
 
@@ -358,7 +412,10 @@ Install the latest version.
 
 
     
-    <code class="language-bash">nvm install node</code>
+```bash
+nvm install node
+```
+
 
 
 
@@ -366,7 +423,10 @@ Restart terminal and run the final command.
 
 
     
-    <code class="language-bash">nvm use node</code>
+```bash
+nvm use node
+```
+
 
 
 
@@ -374,7 +434,10 @@ Confirm that you are using the latest version.
 
 
     
-    <code class="language-bash">node -v</code>
+```bash
+node -v
+```
+
 
 
 
@@ -390,9 +453,12 @@ And for later, here's how to update:
 
 
     
-    <code class="language-bash">
+```bash
+
     nvm install node --reinstall-packages-from=node
-    </code>
+    
+```
+
 
 
 
@@ -414,7 +480,10 @@ Install Gulp globally.
 
 
     
-    <code class="language-bash">npm install --global gulp-cli</code>
+```bash
+npm install --global gulp-cli
+```
+
 
 
 
@@ -434,8 +503,11 @@ Ruby is required to run [Jekyll](https://www.taniarascia.com/make-a-static-websi
 
 
     
-    <code class="language-bash">\curl -sSL https://get.rvm.io | bash -s stable
-    </code>
+```bash
+\curl -sSL https://get.rvm.io | bash -s stable
+    
+```
+
 
 
 
@@ -449,7 +521,10 @@ You can look for and install the latest version by number, or by running the bel
 
 
     
-    <code class="language-bash">rvm install ruby-head</code>
+```bash
+rvm install ruby-head
+```
+
 
 
 
@@ -457,7 +532,10 @@ You can run `rvm list` to see the full list of versions available. To use the la
 
 
     
-    <code class="language-bash">rvm --default use 2.4.0</code>
+```bash
+rvm --default use 2.4.0
+```
+
 
 
 
@@ -465,7 +543,10 @@ Confirm that you are using the latest version.
 
 
     
-    <code class="language-bash">rvm -v</code>
+```bash
+rvm -v
+```
+
 
 
 
@@ -487,8 +568,11 @@ Gem is the Ruby package manager that we're going to use to install bundler...a p
 
 
     
-    <code class="language-bash">gem install bundler
-    </code>
+```bash
+gem install bundler
+    
+```
+
 
 
 
@@ -502,7 +586,10 @@ A necessity for modern PHP development.
 
 
     
-    <code class="language-bash">curl -sS https://getcomposer.org/installer | php</code>
+```bash
+curl -sS https://getcomposer.org/installer | php
+```
+
 
 
 
@@ -510,7 +597,10 @@ Add it to the executable path.
 
 
     
-    <code class="language-bash">sudo mv composer.phar /usr/local/bin/composer</code>
+```bash
+sudo mv composer.phar /usr/local/bin/composer
+```
+
 
 
 
@@ -518,7 +608,10 @@ Test it on the command line.
 
 
     
-    <code class="language-bash">composer --version</code>
+```bash
+composer --version
+```
+
 
 
 
@@ -542,12 +635,15 @@ I also added something that will show what Git branch you're on.
 
 
     
-    <code class="language-bash">export CLICOLOR=1
+```bash
+export CLICOLOR=1
     export LSCOLORS=ExFxBxDxCxegedabagacad
     parse_git_branch() {
       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
     }
-    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$ "</code>
+    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$ "
+```
+
 
 
 
@@ -580,8 +676,11 @@ A few more commands to change some defaults.
 
 
     
-    <code class="language-bash">chflags nohidden ~/Library
-    </code>
+```bash
+chflags nohidden ~/Library
+    
+```
+
 
 
 
@@ -593,8 +692,11 @@ A few more commands to change some defaults.
 
 
     
-    <code class="language-bash">defaults write com.apple.finder AppleShowAllFiles YES
-    </code>
+```bash
+defaults write com.apple.finder AppleShowAllFiles YES
+    
+```
+
 
 
 
@@ -606,8 +708,11 @@ A few more commands to change some defaults.
 
 
     
-    <code class="language-bash">defaults write com.apple.finder ShowPathbar -bool true
-    </code>
+```bash
+defaults write com.apple.finder ShowPathbar -bool true
+    
+```
+
 
 
 
@@ -619,8 +724,11 @@ A few more commands to change some defaults.
 
 
     
-    <code class="language-bash">defaults write com.apple.finder ShowStatusBar -bool true
-    </code>
+```bash
+defaults write com.apple.finder ShowStatusBar -bool true
+    
+```
+
 
 
 
@@ -632,8 +740,11 @@ A few more commands to change some defaults.
 
 
     
-    <code class="language-bash">defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
-    </code>
+```bash
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+    
+```
+
 
 
 

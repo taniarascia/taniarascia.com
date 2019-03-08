@@ -90,7 +90,8 @@ I have a regular HTML5 document, linking to a CSS stylesheet and JS script. The 
 
 
     
-    <code class="language-html"><!DOCTYPE html>
+```html
+<!DOCTYPE html>
     <html>
     
     <head>
@@ -110,7 +111,9 @@ I have a regular HTML5 document, linking to a CSS stylesheet and JS script. The 
     	src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -124,7 +127,8 @@ The CSS provided by Google is for a full screen map. I'm putting it in `style.cs
 
 
     
-    <code class="language-css">html,
+```css
+html,
     body {
     	height: 100%;
     	margin: 0;
@@ -132,7 +136,9 @@ The CSS provided by Google is for a full screen map. I'm putting it in `style.cs
     }
     #map {
     	height: 100%;
-    }</code>
+    }
+```
+
 
 
 
@@ -152,7 +158,8 @@ I'm going to insert Google's starting example here in `script.js`.
 
 
     
-    <code class="language-js">var map;
+```js
+var map;
     
     function initMap() {
     	map = new google.maps.Map(document.getElementById('map'), {
@@ -162,7 +169,9 @@ I'm going to insert Google's starting example here in `script.js`.
     		},
     		zoom: 8
     	});
-    }</code>
+    }
+```
+
 
 
 
@@ -236,9 +245,12 @@ Now I have everything I need to build my custom map. First I'll call that initMa
 
 
     
-    <code class="language-js">function initMap() {
+```js
+function initMap() {
     // More
-    }</code>
+    }
+```
+
 
 
 
@@ -246,13 +258,16 @@ Then I'll make an object for each location. Each object is a variable that will 
 
 
     
-    <code class="language-js">	var broadway = {
+```js
+	var broadway = {
     		info: '<strong>Chipotle on Broadway</strong><br>\
     	5224 N Broadway St<br> Chicago, IL 60640<br>\
     	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
     		lat: 41.976816,
     		long: -87.659916
-    	};</code>
+    	};
+```
+
 
 
 
@@ -264,11 +279,14 @@ Now I'm going to create an array in a variable called `location` that contains `
 
 
     
-    <code class="language-js">	var locations = [
+```js
+	var locations = [
           [broadway.info, broadway.lat, broadway.long, 0],
           [belmont.info, belmont.lat, belmont.long, 1],
           [sheridan.info, sheridan.lat, sheridan.long, 2],
-        ];</code>
+        ];
+```
+
 
 
 
@@ -276,11 +294,14 @@ I'm going to call the map the same way as I did in the "Hello, World!" example. 
 
 
     
-    <code class="language-js">	var map = new google.maps.Map(document.getElementById('map'), {
+```js
+	var map = new google.maps.Map(document.getElementById('map'), {
     		zoom: 13,
     		center: new google.maps.LatLng(41.976816, -87.659916),
     		mapTypeId: google.maps.MapTypeId.ROADMAP
-    	});</code>
+    	});
+```
+
 
 
 
@@ -288,7 +309,8 @@ With the final bit of code, the amount of markers and info windows will dynamica
 
 
     
-    <code class="language-js">	var infowindow = new google.maps.InfoWindow({});
+```js
+	var infowindow = new google.maps.InfoWindow({});
     
     	var marker, i;
     
@@ -304,7 +326,9 @@ With the final bit of code, the amount of markers and info windows will dynamica
     infowindow.open(map, marker);
     			}
     		})(marker, i));
-    	}</code>
+    	}
+```
+
 
 
 
@@ -312,7 +336,8 @@ Here is the final, complete JavaScript.
 
 
     
-    <code class="language-js">function initMap() {
+```js
+function initMap() {
     	
     	var broadway = {
     		info: '<strong>Chipotle on Broadway</strong><br>\
@@ -367,7 +392,9 @@ Here is the final, complete JavaScript.
     			}
     		})(marker, i));
     	}
-    }</code>
+    }
+```
+
 
 
 

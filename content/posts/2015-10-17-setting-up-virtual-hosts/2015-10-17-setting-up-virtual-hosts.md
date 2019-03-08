@@ -33,8 +33,11 @@ In Finder, go to `Applications > MAMP > conf > apache > httpd.conf` and open the
 Find this line:
 
     
-    <code class="language-apacheconf"># Virtual hosts
-    #Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf</code>
+```apacheconf
+# Virtual hosts
+    #Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+```
+
 
 
 
@@ -42,8 +45,11 @@ Uncomment the code by removing the [hash symbol](https://en.wiktionary.org/wiki/
 
 
     
-    <code class="language-apacheconf"># Virtual hosts
-    Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf</code>
+```apacheconf
+# Virtual hosts
+    Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+```
+
 
 
 
@@ -57,8 +63,11 @@ In File Explorer, go to **C:/ > MAMP > conf > apache > httpd.conf** and open the
 Find this line:
 
     
-    <code class="language-apacheconf"># Virtual hosts
-    #Include conf/extra/httpd-vhosts.conf</code>
+```apacheconf
+# Virtual hosts
+    #Include conf/extra/httpd-vhosts.conf
+```
+
 
 
 
@@ -66,8 +75,11 @@ Uncomment the code.
 
 
     
-    <code class="language-apacheconf"># Virtual hosts
-    Include conf/extra/httpd-vhosts.conf</code>
+```apacheconf
+# Virtual hosts
+    Include conf/extra/httpd-vhosts.conf
+```
+
 
 
 
@@ -81,20 +93,26 @@ Find this line in that same `httpd.conf` file.
 
 
     
-    <code class="language-apacheconf"><Directory />
+```apacheconf
+<Directory />
         Options Indexes FollowSymLinks
         AllowOverride None
-    </Directory></code>
+    </Directory>
+```
+
 
 
 
 You're going to change **None** to **All**.
 
     
-    <code class="language-apacheconf"><Directory />
+```apacheconf
+<Directory />
         Options Indexes FollowSymLinks
         AllowOverride All
-    </Directory></code>
+    </Directory>
+```
+
 
 
 
@@ -109,10 +127,13 @@ All the way at the end of the **extra/httpd-vhosts.conf** file, you're going to 
 
 
     
-    <code class="language-apacheconf"><VirtualHost *:80>
+```apacheconf
+<VirtualHost *:80>
       ServerName example.dev
       DocumentRoot "/path/to/directory"
-    </VirtualHost></code>
+    </VirtualHost>
+```
+
 
 
 
@@ -131,7 +152,10 @@ Change the `DocumentRoot` to wherever your PHP project is located. This is my pa
 
 
     
-    <code class="language-apacheconf">DocumentRoot "/Users/tania/sites/learnphp"</code>
+```apacheconf
+DocumentRoot "/Users/tania/sites/learnphp"
+```
+
 
 
 
@@ -142,7 +166,10 @@ Change the `DocumentRoot` to wherever your PHP project is located. This is my pa
 
 
     
-    <code class="language-apacheconf">DocumentRoot "C:/Users/tania/sites/learnphp"</code>
+```apacheconf
+DocumentRoot "C:/Users/tania/sites/learnphp"
+```
+
 
 
 
@@ -169,7 +196,10 @@ Type this in Terminal.
 
 
     
-    <code class="language-bash">sudo pico /etc/hosts</code>
+```bash
+sudo pico /etc/hosts
+```
+
 
 
 
@@ -196,7 +226,10 @@ You are actually editing a text based file. At this point, I'm just going to kee
 
 
     
-    <code class="language-bash">127.0.0.1 example.dev</code>
+```bash
+127.0.0.1 example.dev
+```
+
 
 
 
@@ -212,7 +245,10 @@ If Notepad is open, close out of it. This time right click on Notepad and select
 
 
     
-    <code class="language-bash">C:\WINDOWS\system32\drivers\etc\hosts</code>
+```bash
+C:\WINDOWS\system32\drivers\etc\hosts
+```
+
 
 
 
@@ -220,7 +256,10 @@ At the bottom of the file, type the name of your virtual host.
 
 
     
-    <code class="language-bash">127.0.0.1 example.dev</code>
+```bash
+127.0.0.1 example.dev
+```
+
 
 
 
@@ -246,8 +285,11 @@ Back in the **httpd.conf** file, find these two instances (they won't be next to
 
 
     
-    <code class="apacheconf">Listen 8888
-    ServerName localhost:8888</code>
+```apacheconf
+Listen 8888
+    ServerName localhost:8888
+```
+
 
 
 
@@ -255,8 +297,11 @@ And change them to this:
 
 
     
-    <code class="apacheconf">Listen 80
-    ServerName localhost:80</code>
+```apacheconf
+Listen 80
+    ServerName localhost:80
+```
+
 
 
 
@@ -274,7 +319,8 @@ And now it works! You can repeat the code as many times as you want, for as many
 
 
     
-    <code class="language-apacheconf"><VirtualHost *:80>
+```apacheconf
+<VirtualHost *:80>
       ServerName website1.dev
       DocumentRoot "path/to/website1"
     </VirtualHost>
@@ -282,7 +328,9 @@ And now it works! You can repeat the code as many times as you want, for as many
     <VirtualHost *:80>
       ServerName website2.dev
       DocumentRoot "path/to/website2"
-    </VirtualHost></code>
+    </VirtualHost>
+```
+
 
 
 

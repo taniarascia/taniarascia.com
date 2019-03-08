@@ -18,8 +18,11 @@ Here's the HTML code.
 
 
     
-    <code class="language-html"><button id="behind"></button>
-    <button id="forward"></button></code>
+```html
+<button id="behind"></button>
+    <button id="forward"></button>
+```
+
 
 
 
@@ -27,7 +30,8 @@ And the JavaScript, modified from an answer on [this StackOverflow post](https:/
 
 
     
-    <code class="language-js">var host = 'https://' + document.location.hostname;
+```js
+var host = 'https://' + document.location.hostname;
     
     var pages = [
         host + '/index.html',
@@ -62,6 +66,8 @@ And the JavaScript, modified from an answer on [this StackOverflow post](https:/
     forward.addEventListener('click', function () {
         var newUrl = next(host + window.location.pathname, pages);
         window.location.href = newUrl;
-    });</code>
+    });
+```
+
 
 		

@@ -102,7 +102,10 @@ Create a directory for your virtual host to live. I created a **VirtualMachines*
 
 
     
-    <code class="language-bash">/Users/taniarascia/dev/virtualmachines/ubuntu</code>
+```bash
+/Users/taniarascia/dev/virtualmachines/ubuntu
+```
+
 
 
 
@@ -123,7 +126,10 @@ In **Terminal** (Mac) or **Git Bash** (or whatever shell you're using on Windows
 
 
     
-    <code class="language-bash">vagrant box add ubuntu/trusty64</code>
+```bash
+vagrant box add ubuntu/trusty64
+```
+
 
 
 
@@ -134,7 +140,9 @@ After a few moments, this will be the output to let you know it's successful.
     <div class="terminal">==> box: Loading metadata for box 'ubuntu/trusty64'
         box: URL: https://vagrantcloud.com/ubuntu/trusty64
     ==> box: Adding box 'ubuntu/trusty64' (v20170619.0.0) for provider: virtualbox
-        box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!</div></code>
+        box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!</div>
+```
+
 
 
 
@@ -142,7 +150,10 @@ Now initialize the new `vagrant` in your **VirtualMachines/ubuntu** directory wi
 
 
     
-    <code class="language-bash">vagrant init ubuntu/trusty64</code>
+```bash
+vagrant init ubuntu/trusty64
+```
+
 
 
 
@@ -159,7 +170,10 @@ Finally, get Ubuntu up and running with the `vagrant up` command.
 
 
     
-    <code class="language-bash">vagrant up</code>
+```bash
+vagrant up
+```
+
 
 
 
@@ -200,7 +214,10 @@ This might not be a problem, but let's make sure it doesn't become a problem. Fi
 
 
     
-    <code class="language-bash">vagrant halt</code>
+```bash
+vagrant halt
+```
+
 
 
 
@@ -208,7 +225,10 @@ Let's quickly install a plugin called `vbguest` to fix this error.
 
 
     
-    <code class="language-bash">vagrant plugin install vagrant-vbguest</code>
+```bash
+vagrant plugin install vagrant-vbguest
+```
+
 
 
 
@@ -216,7 +236,10 @@ It will run through some more commands, and most likely the above error will sti
 
 
     
-    <code class="language-bash">vagrant reload</code>
+```bash
+vagrant reload
+```
+
 
 
 
@@ -224,7 +247,9 @@ Now the errors will be gone.
 
 
     
-    <div style="color:green" class="terminal">[default] GuestAdditions 5.1.22 running --- OK.</code>
+    <div style="color:green" class="terminal">[default] GuestAdditions 5.1.22 running --- OK.
+```
+
 
 
 
@@ -251,7 +276,10 @@ Now we have this Ubuntu operating system set up on our computer, but how do we a
 
 
     
-    <code class="language-bash">vagrant ssh</code>
+```bash
+vagrant ssh
+```
+
 
 
 
@@ -279,7 +307,9 @@ When you login, you will see something along these lines.
     New release '16.04.2 LTS' available.
     Run 'do-release-upgrade' to upgrade to it.
     
-    vagrant@vagrant-ubuntu-trusty-64:~$ </code>
+    vagrant@vagrant-ubuntu-trusty-64:~$ 
+```
+
 
 
 

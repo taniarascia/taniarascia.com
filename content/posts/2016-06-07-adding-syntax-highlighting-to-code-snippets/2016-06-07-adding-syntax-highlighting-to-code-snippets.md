@@ -18,7 +18,8 @@ I've received a few requests on how to highlight the syntax of snippets of in a 
 
 
     
-    <code class="language-scss">// Variables
+```scss
+// Variables
     $font-stack: Helvetica, sans-serif;
     $primary-color: #333;
     
@@ -36,7 +37,9 @@ I've received a few requests on how to highlight the syntax of snippets of in a 
     
     .box { 
       @include border-radius(10px); 
-    }</code>
+    }
+```
+
 
 
 
@@ -122,7 +125,10 @@ For the sake of simplicity, I'm going to assume you don't need anything special,
 
 
     
-    <code class="language-html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"></code>
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+```
+
 
 
 
@@ -130,7 +136,10 @@ And link to the JS before the closing `<body>` tag.
 
 
     
-    <code class="language-html"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script></code>
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+```
+
 
 
 
@@ -138,7 +147,8 @@ Finally, wrap your desired code in `<pre><code class="language-whatever">`. You'
 
 
     
-    <code class="language-html"><pre><code class="language-css">body {
+```html
+<pre><code class="language-css">body {
       font: 100% Helvetica, sans-serif;
       color: #333;
     }
@@ -148,7 +158,11 @@ Finally, wrap your desired code in `<pre><code class="language-whatever">`. You'
       -moz-border-radius: 10px;
       -ms-border-radius: 10px;
       border-radius: 10px;
-    }</code></pre></code>
+    }
+```
+</pre>
+```
+
 
 
 

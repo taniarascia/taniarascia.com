@@ -86,8 +86,11 @@ Create a new directory called **calc**. In the command prompt, navigate to the d
 
 
     
-    <code class="language-bash language-shell">npm init
-    </code>
+```bash
+npm init
+    
+```
+
 
 
 
@@ -99,8 +102,11 @@ You will be prompted to enter the package name, version, description, and other 
 
 
     
-    <code class="language-bash language-shell">test command: mocha
-    </code>
+```bash
+test command: mocha
+    
+```
+
 
 
 
@@ -117,7 +123,8 @@ package.js
 
 
     
-    <code class="js language-js">{
+```js
+{
       "name": "calc.js",
       "version": "1.0.0",
       "description": "A simple calculator application built with Node.js",
@@ -128,7 +135,9 @@ package.js
       "author": "",
       "license": "ISC"
     }
-    </code>
+    
+```
+
 
 
 
@@ -140,7 +149,10 @@ Our final step for setting up the environment is to install Mocha, the JavaScrip
 
 
     
-    <code class="command language-command">npm install --save-dev mocha</code>
+```bash
+npm install --save-dev mocha
+```
+
 
 
 
@@ -157,9 +169,12 @@ package.json
 
 
     
-    <code class="js language-js">"devDependencies": {
+```js
+"devDependencies": {
         "mocha": "^4.0.1"
-    }</code>
+    }
+```
+
 
 
 
@@ -182,12 +197,15 @@ test.js
 
 
     
-    <code class="js language-js">const assert = require('assert');
+```js
+const assert = require('assert');
     
     it('should return true', () => {
       assert.equal(true, true);
     }); 
-    </code>
+    
+```
+
 
 
 
@@ -199,8 +217,11 @@ Now in the command prompt, run the test.
 
 
     
-    <code class="language-bash">npm test
-    </code>
+```bash
+npm test
+    
+```
+
 
 
 
@@ -229,7 +250,10 @@ test.js
 
 
     
-    <code class="js language-js">const assert = require('assert');</code>
+```js
+const assert = require('assert');
+```
+
 
 
 
@@ -281,11 +305,14 @@ test.js
 
 
     
-    <code class="js language-js">const assert = require('assert');
+```js
+const assert = require('assert');
     
     it('correctly calculates the sum of 1 and 3', () => {
       assert.equal(add(1, 3), 4);
-    });</code>
+    });
+```
+
 
 
 
@@ -331,7 +358,10 @@ operations.js
 
 
     
-    <code class="js language-js">const add = (x, y) => (+x) + (+y);</code>
+```js
+const add = (x, y) => (+x) + (+y);
+```
+
 
 
 
@@ -361,9 +391,12 @@ operations.js
 
 
     
-    <code class="js language-js">const add = (x, y) => (+x) + (+y);
+```js
+const add = (x, y) => (+x) + (+y);
     
-    module.exports = { add }</code>
+    module.exports = { add }
+```
+
 
 
 
@@ -380,12 +413,15 @@ test.js
 
 
     
-    <code class="js language-js">const operations = require('./operations.js');
+```js
+const operations = require('./operations.js');
     const assert = require('assert');
     
     it('correctly calculates the sum of 1 and 3', () => {
       assert.equal(operations.add(1, 3), 4);
-    });</code>
+    });
+```
+
 
 
 
@@ -397,8 +433,11 @@ Run the test.
 
 
     
-    <code class="language-bash">npm test
-    </code>
+```bash
+npm test
+    
+```
+
 
 
 
@@ -427,7 +466,8 @@ test.js
 
 
     
-    <code class="js language-js">it('correctly calculates the sum of 1 and 3', () => {
+```js
+it('correctly calculates the sum of 1 and 3', () => {
       assert.equal(operations.add(1, 3), 4);
     });
     
@@ -445,7 +485,9 @@ test.js
     
     it('correctly calculates the quotient of 10 and 2', () => {
       assert.equal(operations.divide(10, 2), 5);
-    });</code>
+    });
+```
+
 
 
 
@@ -462,7 +504,8 @@ test.js
 
 
     
-    <code class="js language-js">const add = (x, y) => (+x) + (+y);
+```js
+const add = (x, y) => (+x) + (+y);
     const subtract = (x, y) => (+x) - (+y);
     const multiply = (x, y) => (+x) * (+y);
     const divide = (x, y) => (+x) / (+y);
@@ -472,7 +515,9 @@ test.js
       subtract,
       multiply,
       divide,
-    }</code>
+    }
+```
+
 
 
 
@@ -484,7 +529,10 @@ test.js
 
 
     
-    <code class="language-bash">npm test</code>
+```bash
+npm test
+```
+
 
 
 
@@ -541,7 +589,8 @@ test.js
 
 
     
-    <code class="js language-js">it('indicates failure when a string is used instead of a number', () => {
+```js
+it('indicates failure when a string is used instead of a number', () => {
       assert.equal(operations.validateNumbers('sammy', 5), false);
     });
     
@@ -551,7 +600,9 @@ test.js
     
     it('successfully runs when two numbers are used', () => {
       assert.equal(operations.validateNumbers(5, 5), true);
-    });</code>
+    });
+```
+
 
 
 
@@ -568,12 +619,15 @@ operations.js
 
 
     
-    <code class="js language-js">const validateNumbers = (x, y) => {
+```js
+const validateNumbers = (x, y) => {
       if (isNaN(x) && isNaN(y)) {
         return false;
       }
       return true;
-    }</code>
+    }
+```
+
 
 
 
@@ -585,8 +639,11 @@ Make sure to add `validateNumbers` to the `module.exports` at the bottom of the 
 
 
     
-    <code class="language-bash">npm test
-    </code>
+```bash
+npm test
+    
+```
+
 
 
 
@@ -629,12 +686,15 @@ operations.js
 
 
     
-    <code class="js language-js">const validateNumbers = (x, y) => {
+```js
+const validateNumbers = (x, y) => {
       if (isNaN(x) || isNaN(y)) {
         return false;
       }
       return true;
-    }</code>
+    }
+```
+
 
 
 
@@ -685,7 +745,10 @@ calc.js
 
 
     
-    <code class="js language-js">const operations = require('./operations.js');</code>
+```js
+const operations = require('./operations.js');
+```
+
 
 
 
@@ -702,7 +765,10 @@ calc.js
 
 
     
-    <code class="js language-js">const readline = require('readline');</code>
+```js
+const readline = require('readline');
+```
+
 
 
 
@@ -719,11 +785,14 @@ calc.js
 
 
     
-    <code class="js language-js">// Use readline to create command line interface
+```js
+// Use readline to create command line interface
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
-    });</code>
+    });
+```
+
 
 
 
@@ -740,7 +809,8 @@ calc.js
 
 
     
-    <code class="js language-js">console.log(`
+```js
+console.log(`
     Calc.js
     
     Welcome to the Node.js Calculator app! 
@@ -748,7 +818,9 @@ calc.js
     
     Usage: The user will be prompted for two numbers, 
     then asked to select their operation of choice.
-    `);</code>
+    `);
+```
+
 
 
 
@@ -765,7 +837,10 @@ calc.js
 
 
     
-    <code class="js language-js">rl.close();</code>
+```js
+rl.close();
+```
+
 
 
 
@@ -777,7 +852,10 @@ To run a command line application with node, you will type `node` followed by th
 
 
     
-    <code class="language-bash">node calc.js</code>
+```bash
+node calc.js
+```
+
 
 
 
@@ -806,7 +884,8 @@ calc.js
 
 
     
-    <code class="js language-js">rl.question('Enter the first number: ', (x) => {
+```js
+rl.question('Enter the first number: ', (x) => {
       rl.question('Enter the second number: ', (y) => {
         rl.question(`
     Please select from the following options:
@@ -821,7 +900,9 @@ calc.js
           rl.close();
         });
       });
-    });</code>
+    });
+```
+
 
 
 
@@ -844,9 +925,12 @@ calc.js
 
 
     
-    <code class="js language-js">if (!operations.validateNumbers(x, y)) {
+```js
+if (!operations.validateNumbers(x, y)) {
       console.log('Only numbers are allowed! Please restart the program.');
-    }</code>
+    }
+```
+
 
 
 
@@ -863,7 +947,8 @@ calc.js
 
 
     
-    <code class="js language-js">if (!operations.validateNumbers(x, y)) {
+```js
+if (!operations.validateNumbers(x, y)) {
       console.log('Only numbers are allowed! Please restart the program.');
     } else {
       switch (choice) {
@@ -883,7 +968,9 @@ calc.js
           console.log('Please restart the program and select a number between 1 and 4.');
           break;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -903,7 +990,8 @@ calc.js
 
 
     
-    <code class="language-js">/**
+```js
+/**
      * A simple Node.js calculator app that uses
      * the built-in Readline command line interface.
      */
@@ -958,7 +1046,9 @@ calc.js
           rl.close();
         });
       });
-    });</code>
+    });
+```
+
 
 
 
@@ -970,10 +1060,13 @@ Our application is now complete. Let's test the final output. We will input `999
 
 
     
-    <code class="language-bash">node calc.js
+```bash
+node calc.js
     Enter the first number: 999
     Enter the second number: 1
-    Enter your choice: 2</code>
+    Enter your choice: 2
+```
+
 
 
 

@@ -148,7 +148,8 @@ index.html
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -169,7 +170,9 @@ index.html
       <script src="scripts.js"></script>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -182,7 +185,8 @@ style.css
 
 
     
-    <code class="language-css">#root {
+```css
+#root {
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -207,7 +211,9 @@ style.css
       .card {
         flex: 1 1 calc(33% - 2rem);
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -254,7 +260,8 @@ scripts.js
 
 
     
-    <code class="language-js">// Create a request variable and assign a new XMLHttpRequest object to it.
+```js
+// Create a request variable and assign a new XMLHttpRequest object to it.
     var request = new XMLHttpRequest();
     
     // Open a new connection, using the GET request on the URL endpoint
@@ -266,7 +273,9 @@ scripts.js
     }
     
     // Send request
-    request.send();</code>
+    request.send();
+```
+
 
 
 
@@ -287,13 +296,16 @@ scripts.js
 
 
     
-    <code class="language-js">// Begin accessing JSON data here
+```js
+// Begin accessing JSON data here
     var data = JSON.parse(this.response);
     
     data.forEach(movie => {
       // Log each movie's title
       console.log(movie.title);
-    });</code>
+    });
+```
+
 
 
 
@@ -310,7 +322,8 @@ scripts.js
 
 
     
-    <code class="language-js">// Begin accessing JSON data here
+```js
+// Begin accessing JSON data here
     var data = JSON.parse(this.response);
     
     if (request.status >= 200 && request.status < 400) {
@@ -319,7 +332,9 @@ scripts.js
       });
     } else {
       console.log('error');
-    }</code>
+    }
+```
+
 
 
 
@@ -332,7 +347,8 @@ scripts.js
 
 
     
-    <code class="language-js">var request = new XMLHttpRequest();
+```js
+var request = new XMLHttpRequest();
     
     request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
     request.onload = function () {
@@ -349,7 +365,9 @@ scripts.js
       }
     }
     
-    request.send();</code>
+    request.send();
+```
+
 
 
 
@@ -384,7 +402,10 @@ scripts.js
 
 
     
-    <code class="language-js">const app = document.getElementById('root');</code>
+```js
+const app = document.getElementById('root');
+```
+
 
 
 
@@ -394,7 +415,10 @@ The first thing in our website is the logo, which is an `img` element. We'll cre
 
 
     
-    <code class="language-js">const logo = document.createElement('img');</code>
+```js
+const logo = document.createElement('img');
+```
+
 
 
 
@@ -402,7 +426,10 @@ An empty `img` is no good, so we'll set the `src` attribute to `logo.png`. (Foun
 
 
     
-    <code class="language-js">logo.src = 'logo.png';</code>
+```js
+logo.src = 'logo.png';
+```
+
 
 
 
@@ -410,8 +437,11 @@ We'll create another element, a `div` this time, and set the `class` attribute t
 
 
     
-    <code class="language-js">const container = document.createElement('div');
-    container.setAttribute('class', 'container');</code>
+```js
+const container = document.createElement('div');
+    container.setAttribute('class', 'container');
+```
+
 
 
 
@@ -419,8 +449,11 @@ Now we have a logo and a container, and we just need to place them in the websit
 
 
     
-    <code class="language-js">app.appendChild(logo);
-    app.appendChild(container);</code>
+```js
+app.appendChild(logo);
+    app.appendChild(container);
+```
+
 
 
 
@@ -433,7 +466,8 @@ scripts.js
 
 
     
-    <code class="language-js">const app = document.getElementById('root');
+```js
+const app = document.getElementById('root');
     
     const logo = document.createElement('img');
     logo.src = 'logo.png';
@@ -442,7 +476,9 @@ scripts.js
     container.setAttribute('class', 'container');
     
     app.appendChild(logo);
-    app.appendChild(container);</code>
+    app.appendChild(container);
+```
+
 
 
 
@@ -455,11 +491,14 @@ Elements
 
 
     
-    <code class="language-html"><div id="root">
+```html
+<div id="root">
       <img src="logo.png">
       <div class="container">
       </div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -471,10 +510,13 @@ Paste everything back in, but we'll just be looking at what's inside the `forEac
 
 
     
-    <code class="language-js">data.forEach(movie => {
+```js
+data.forEach(movie => {
       console.log(movie.title);
       console.log(movie.description);
-    });</code>
+    });
+```
+
 
 
 
@@ -487,7 +529,8 @@ scripts.js
 
 
     
-    <code class="language-js">data.forEach(movie => {
+```js
+data.forEach(movie => {
       // Create a div with a card class
       const card = document.createElement('div');
       card.setAttribute('class', 'card');
@@ -507,7 +550,9 @@ scripts.js
       // Each card will contain an h1 and a p
       card.appendChild(h1);
       card.appendChild(p);
-    });</code>
+    });
+```
+
 
 
 
@@ -515,9 +560,12 @@ I'll also replace the console'd error with an error on the front end, using the 
 
 
     
-    <code class="language-js">const errorMessage = document.createElement('marquee');
+```js
+const errorMessage = document.createElement('marquee');
     errorMessage.textContent = `Gah, it's not working!`;
-    app.appendChild(errorMessage);</code>
+    app.appendChild(errorMessage);
+```
+
 
 
 
@@ -530,7 +578,8 @@ scripts.js
 
 
     
-    <code class="language-js">const app = document.getElementById('root');
+```js
+const app = document.getElementById('root');
     
     const logo = document.createElement('img');
     logo.src = 'logo.png';
@@ -570,7 +619,9 @@ scripts.js
       }
     }
     
-    request.send();</code>
+    request.send();
+```
+
 
 
 

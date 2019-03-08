@@ -61,11 +61,14 @@ I'm just going to put everything inside a generic container to start.
 
 
     
-    <code class="language-css">.container {
+```css
+.container {
       margin: 0 auto;
       max-width: 1200px;
       padding: 0 1rem;
-    }</code>
+    }
+```
+
 
 
 
@@ -75,9 +78,12 @@ Inside that, I'm going to make a `cell` and place an image inside of that. We'll
 
 
     
-    <code class="language-css">.responsive-image {
+```css
+.responsive-image {
       max-width: 100%;
-    }</code>
+    }
+```
+
 
 
 
@@ -85,9 +91,12 @@ And the image should be a block level element.
 
 
     
-    <code class="language-css">.cell img {
+```css
+.cell img {
       display: block;
-    }</code>
+    }
+```
+
 
 
 
@@ -95,7 +104,8 @@ So here's our whole HTML code.
 
 
     
-    <code class="language-html"><div class="container">
+```html
+<div class="container">
       <div class="grid">
         <div class="cell">
           <img src="http://placehold.it/800x800" class="responsive-image">
@@ -110,7 +120,9 @@ So here's our whole HTML code.
           <img src="http://placehold.it/800x800" class="responsive-image">
         </div>
       </div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -131,7 +143,8 @@ I'm going to choose `600px` as the width to start showing the mid-screen view. W
 
 
     
-    <code class="language-css">@media screen and (min-width: 600px) {
+```css
+@media screen and (min-width: 600px) {
       .grid {
         display: flex;
         flex-wrap: wrap;
@@ -140,7 +153,9 @@ I'm going to choose `600px` as the width to start showing the mid-screen view. W
       .cell {
         width: 50%;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -159,11 +174,14 @@ At `1000px`, I'm going to show the desktop view, which will display the images i
 
 
     
-    <code class="language-css">@media screen and (min-width: 1000px) {
+```css
+@media screen and (min-width: 1000px) {
       .cell {
         width: calc(100% / 3);
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -184,9 +202,12 @@ First, add a margin around the `cell` for all screen sizes.
 
 
     
-    <code class="language-css">.cell {
+```css
+.cell {
       margin: 1rem;
-    }</code>
+    }
+```
+
 
 
 
@@ -194,7 +215,8 @@ Then edit the width of the cells on their respective sizes.
 
 
     
-    <code class="language-css">@media screen and (min-width: 600px) {
+```css
+@media screen and (min-width: 600px) {
       .cell {
         width: calc(50% - 2rem);
       }
@@ -204,7 +226,9 @@ Then edit the width of the cells on their respective sizes.
       .cell {
         width: calc(33.3333% - 2rem);
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -223,11 +247,14 @@ Instead of using a WordPress gallery plugin, you can pull images by category fro
 
 
     
-    <code class="language-php">// Add Categories for Attachments
+```php
+// Add Categories for Attachments
     function add_category_for_attachments() {
         register_taxonomy_for_object_type( 'category', 'attachment' );
     }
-    add_action( 'init' , 'add_category_for_attachments' );</code>
+    add_action( 'init' , 'add_category_for_attachments' );
+```
+
 
 
 
@@ -237,7 +264,8 @@ Here's an example using the flex grid above and pulling all images from the gall
 
 
     
-    <code class="language-php"><div class="container">
+```php
+<div class="container">
     	<div class="grid">
     			<?php 
     			$args = array(
@@ -258,7 +286,9 @@ Here's an example using the flex grid above and pulling all images from the gall
     
     			<?php endwhile; ?>
     	</div>
-    </div></code>
+    </div>
+```
+
 
 
 

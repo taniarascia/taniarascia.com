@@ -88,7 +88,8 @@ index.html
 
 
     
-    <code class="html language-html"><!doctype html>
+```html
+<!doctype html>
     <html>
     
     <head>
@@ -112,7 +113,9 @@ index.html
     </body>
     
     </html>
-    </code>
+    
+```
+
 
 
 I'm loading in the latest stable versions of the libraries as of the time of this writing.
@@ -131,7 +134,9 @@ Now, let's write our first code block of React. We're going to use ES6 classes t
     <code class="jsx language-jsx">class App extends React.Component {
        //...
     }
-    </code>
+    
+```
+
 
 
 Now we'll add the [`render()`](https://reactjs.org/docs/react-component.html#render) method, the only required method in a class component, which is used to render DOM nodes.
@@ -144,7 +149,9 @@ Now we'll add the [`render()`](https://reactjs.org/docs/react-component.html#ren
             ); 
         } 
     }
-    </code>
+    
+```
+
 
 
 Inside the `return`, we're going to put what looks like a simple HTML element. Note that we're not returning a string here, so don't use quotes around the element. This is called `JSX`, and we'll learn more about it soon.
@@ -157,14 +164,18 @@ Inside the `return`, we're going to put what looks like a simple HTML element. N
             ); 
         } 
     }
-    </code>
+    
+```
+
 
 
 Finally, we're going to use the React DOM `render()` method to render the `App` class we created into the `root` div in our HTML.
 
     
     <code class="jsx language-jsx">ReactDOM.render(<App />, document.getElementById('root'));
-    </code>
+    
+```
+
 
 
 Here is the full code for our `index.html`.
@@ -175,7 +186,8 @@ index.html
 
 
     
-    <code class="html language-html"><!doctype html>
+```html
+<!doctype html>
     <html>
     
     <head>
@@ -207,7 +219,9 @@ index.html
     </body>
     
     </html>
-    </code>
+    
+```
+
 
 
 Now if you view your `index.html` in the browser, you'll see the `h1` tag we created rendered to the DOM.
@@ -230,16 +244,22 @@ Fortunately, Facebook has created [Create React App](https://github.com/facebook
 To set up `create-react-app`, run the following code in your terminal, one directory up from where you want the project to live. Make sure you have `5.2` or higher in Node.js.
 
     
-    <code class="bash language-bash">npx create-react-app react-tutorial
-    </code>
+```bash
+npx create-react-app react-tutorial
+    
+```
+
 
 
 Once that finishes installing, move to the newly created directory and start the project.
 
     
-    <code class="bash language-bash">cd react-tutorial
+```bash
+cd react-tutorial
     npm start
-    </code>
+    
+```
+
 
 
 Once you run this command, a new window will popup at `localhost:3000` with your new React app.
@@ -254,8 +274,13 @@ In `/public`, our important file is `index.html`, which is very similar to the s
 To see how the environment automatically compiles and updates your React code, find the line that looks like this in `/src/App.js`:
 
     
-    <code class="html language-html">To get started, edit <code>src/App.js</code> and save to reload.
-    </code>
+```html
+To get started, edit <code>src/App.js
+```
+ and save to reload.
+    
+```
+
 
 
 And replace it with any other text. Once you save the file, you'll notice `localhost:3000` compiles and refreshes with the new data.
@@ -275,7 +300,9 @@ src/index.js
     <code class="jsx language-jsx">import React from 'react';
     import ReactDOM from 'react-dom';
     import './index.css';
-    </code>
+    
+```
+
 
 
 Let's create our `App` component again. Before, we just had an `<h1>`, but now I'm adding in a div element with a class as well. You'll notice that we use `className` instead of `class`. This is our first hint that the code being written here is JavaScript, and not actually HTML.
@@ -290,14 +317,19 @@ Let's create our `App` component again. Before, we just had an `<h1>`, but now I
             );
         }
     }
-    </code>
+    
+```
+
 
 
 Finally, we'll render the `App` to the root as before.
 
     
-    <code class="js language-js">ReactDOM.render(<App />, document.getElementById('root'));
-    </code>
+```js
+ReactDOM.render(<App />, document.getElementById('root'));
+    
+```
+
 
 
 Here's our full `index.js`. This time, we're loading the `Component` as a property of React, so we no longer need to extend `React.Component`.
@@ -323,7 +355,9 @@ src/index.js
     }
     
     ReactDOM.render(<App />, document.getElementById('root'));
-    </code>
+    
+```
+
 
 
 If you go back to `localhost:3000`, you'll see "Hello, React!" just like before. We have the beginnings of a React app now.
@@ -356,7 +390,9 @@ JSX
 
     
     <code class="jsx language-jsx">const heading = <h1 className="site-heading">Hello, React</h1>;
-    </code>
+    
+```
+
 
 
 Using JSX is not mandatory for writing React. Under the hood, it's running `createElement`, which takes the tag, object containing the properties, and children of the component and renders the same information. The below code will have the same output as the JSX above.
@@ -372,7 +408,9 @@ Non-JSX
         {className: 'site-heading'},
         'Hello, React!'
     );
-    </code>
+    
+```
+
 
 
 JSX is actually closer to JavaScript, not HTML, so there are a few key differences to note when writing it.
@@ -388,7 +426,9 @@ JavaScript expressions can also be embedded inside JSX using curly braces, inclu
     
     <code class="jsx language-jsx">const name = 'Tania';
     const heading = <h1>Hello, {name}</h1> ;
-    </code>
+    
+```
+
 
 
 JSX is easier to write and understand than creating and appending many elements in vanilla JavaScript, and is one of the reasons people love React so much.
@@ -415,7 +455,9 @@ src/index.js
     import './index.css';
     
     ReactDOM.render(<App />, document.getElementById('root'));
-    </code>
+    
+```
+
 
 
 We'll create a new file called `App.js` and put the component in there.
@@ -439,7 +481,9 @@ src/App.js
     }
     
     export default App;
-    </code>
+    
+```
+
 
 
 We export the component as `App` and load it in `index.js`. It's not mandatory to separate components into files, but an application will start to get unwieldy and out-of-hand if you don't.
@@ -492,14 +536,18 @@ src/Table.js
     }
     
     export default Table;
-    </code>
+    
+```
+
 
 
 This component we created is a custom class component. We capitalize custom components to differentiate them from regular HTML elements. Back in `App.js`, we can load in the Table, first by importing it in:
 
     
     <code class="jsx language-jsx">import Table from './Table';
-    </code>
+    
+```
+
 
 
 Then by loading it into the `render()` of `App`, where before we had "Hello, React!". I also changed the class of the outer container.
@@ -510,7 +558,9 @@ Then by loading it into the `render()` of `App`, where before we had "Hello, Rea
             <Table />
         </div>
     );
-    </code>
+    
+```
+
 
 
 If you check back on your live environment, you'll see the `Table` loaded in.
@@ -539,7 +589,9 @@ We're going to use ES6 arrow functions to create these simple components. First,
             </thead>
         );
     }
-    </code>
+    
+```
+
 
 
 Then the body.
@@ -567,7 +619,9 @@ Then the body.
             </tbody>
         );
     }
-    </code>
+    
+```
+
 
 
 Now our `Table` class will look like this.
@@ -583,7 +637,9 @@ Now our `Table` class will look like this.
             );
         }
     }
-    </code>
+    
+```
+
 
 
 Everything should appear as it did before. As you can see, components can be nested in other components, and simple and class components can be mixed.
@@ -603,7 +659,9 @@ Simple Component
     <code class="jsx language-jsx">const SimpleComponent = () => { 
         return <div>Example</div>;
     }
-    </code>
+    
+```
+
 
 
 
@@ -618,7 +676,9 @@ Class Component
             return <div>Example</div>;
         }
     }
-    </code>
+    
+```
+
 
 
 Note that if the `return` is contained to one line, it does not need parentheses.
@@ -640,7 +700,9 @@ Table.js
     <code class="jsx language-jsx">const TableBody = () => { 
         return <tbody></tbody>;
     }
-    </code>
+    
+```
+
 
 
 Then let's move all that data to an array of objects, as if we were bringing in a JSON-based API. We'll have to create this array inside our `render()`.
@@ -679,7 +741,9 @@ App.js
             );
         }
     }
-    </code>
+    
+```
+
 
 
 Now, we're going to pass the data through to the child component (`Table`) with properties, kind of how you might pass data through using `data-` attributes. We can call the property whatever we want, as long as it's not a reserved keyword, so I'll go with `characterData`. The data I'm passing through is the `characters` variable, and I'll put curly braces around it as it's a JavaScript expression.
@@ -690,7 +754,9 @@ Now, we're going to pass the data through to the child component (`Table`) with 
             <Table characterData={characters} />
         </div>
     );
-    </code>
+    
+```
+
 
 
 Now that data is being passed through to `Table`, and we have to work on accessing it from the other side.
@@ -713,7 +779,9 @@ Table.js
             );
         }
     }
-    </code>
+    
+```
+
 
 
 If you open up React DevTools and inspect the `Table` component, you'll see the array of data in the property. The data that's stored here is known as the **virtual DOM**, which is a fast and efficient way of syncing data with the actual DOM.
@@ -727,7 +795,9 @@ I'm going to use the ES6 property shorthand to create a variable that contains `
 
     
     <code class="jsx language-jsx">const { characterData } = this.props;
-    </code>
+    
+```
+
 
 
 Since our `Table` component actually consists of two smaller simple components, I'm going to pass it through to the `TableBody`, once again through props.
@@ -750,7 +820,9 @@ Table.js
             );
         }
     }
-    </code>
+    
+```
+
 
 
 Right now, `TableBody` takes no parameters and returns a single tag.
@@ -759,7 +831,9 @@ Right now, `TableBody` takes no parameters and returns a single tag.
     <code class="jsx language-jsx">const TableBody = () => { 
         return <tbody></tbody>;
     }
-    </code>
+    
+```
+
 
 
 We're going to pass the props through as a parameter, and [map through the array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to return a table row for each object in the array. This map will be contained in the `rows` variable, which we'll return as an expression.
@@ -777,7 +851,9 @@ We're going to pass the props through as a parameter, and [map through the array
     
         return <tbody>{rows}</tbody>;
     }
-    </code>
+    
+```
+
 
 
 If you view the front end of the app, all the data is loading in now.
@@ -799,7 +875,9 @@ To start, we're going to create a `state` object.
     
     <code class="jsx language-jsx">class App extends Component {
         state = {};
-    </code>
+    
+```
+
 
 
 The object will contain properties for everything you want to store in the state. For us, it's `characters`.
@@ -809,7 +887,9 @@ The object will contain properties for everything you want to store in the state
         state = {
             characters: []        
          }; 
-    </code>
+    
+```
+
 
 
 Move the entire array of objects we created earlier into `state.characters`.
@@ -823,7 +903,9 @@ Move the entire array of objects we created earlier into `state.characters`.
                     // the rest of the data
             ]        
          };
-    </code>
+    
+```
+
 
 
 Our data is officially contained in the state. Since we want to be able to remove a character from the table, we're going to create a `removeCharacter` method on the parent `App` class.
@@ -850,7 +932,9 @@ App.js
             })
         });
     }
-    </code>
+    
+```
+
 
 
 `filter` does not mutate but rather creates a new array, and is a preferred method for modifying arrays in JavaScript. This particular method is testing an index vs. all the indices in the array, and returning all but the one that is passed through.
@@ -871,7 +955,9 @@ App.js
             />
         </div>
     );
-    </code>
+    
+```
+
 
 
 Don't forget to put `const { characters } = this.state` to pull the correct data from state.
@@ -899,7 +985,9 @@ Table.js
             );
         }
     }
-    </code>
+    
+```
+
 
 
 Here's where that index we defined in the `removeCharacter()` method comes in. In the `TableBody` component, we'll pass the key/index through as a parameter, so the filter function knows which item to remove. We'll create a button with an `onClick` and pass it through.
@@ -915,7 +1003,9 @@ Table.js
         <td>{row.job}</td>
         <td><button onClick={() => props.removeCharacter(index)}>Delete</button></td>
     </tr>
-    </code>
+    
+```
+
 
 
 
@@ -945,7 +1035,9 @@ Before anything else, let's remove all the hard-coded data from `state.character
         state = {
             characters: []
         };
-    </code>
+    
+```
+
 
 
 Now let's go ahead and create a `Form` component in a new file called `Form.js`. We're going to create a class component, and within we'll use a `constructor()`, which we haven't done thus far. We'll need the `constructor()` to use `this`, and to receive the `props` of the parent.
@@ -972,7 +1064,9 @@ Form.js
             this.state = this.initialState;
         }
     }
-    </code>
+    
+```
+
 
 
 Our goal for this form will be to update the state of `Form` every time a field is changed in the form, and when we submit, all that data will pass to the `App` state, which will then update the `Table`.
@@ -987,7 +1081,9 @@ First, we'll make the function that will run every time a change is made to an i
             [name] : value
         });
     }
-    </code>
+    
+```
+
 
 
 Let's get this working before we move on to submitting the form. In the render, let's get our two properties from state, and assign them as the values that correspond to the proper form keys. We'll run the `handleChange()` method as the `onChange` of the input, and finally we'll export the `Form` component.
@@ -1015,7 +1111,9 @@ Let's get this working before we move on to submitting the form. In the render, 
     }
     
     export default Form;
-    </code>
+    
+```
+
 
 
 In `App.js`, we can render the form below the table.
@@ -1035,7 +1133,9 @@ App.js
             <Form />
         </div>
     );
-    </code>
+    
+```
+
 
 
 Now if we go to the front end of our app, we'll see a form that doesn't have a submit yet. Update some fields and you'll see the local state of `Form` being updated.
@@ -1054,14 +1154,18 @@ App.js
     <code class="jsx language-jsx">handleSubmit = character => {
         this.setState({characters: [...this.state.characters, character]});
     }
-    </code>
+    
+```
+
 
 
 Let's make sure we pass that through as a parameter on `Form`.
 
     
     <code class="jsx language-jsx"><Form handleSubmit={this.handleSubmit} />
-    </code>
+    
+```
+
 
 
 Now in `Form`, we'll create a method called `submitForm()` that will call that function, and pass the `Form` state through as the `character` parameter we defined earlier. It will also reset the state to the initial state, to clear the form after submit.
@@ -1076,7 +1180,9 @@ Form.js
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
     }
-    </code>
+    
+```
+
 
 
 Finally, we'll add a submit button to submit the form. We're using an `onClick` instead of an `onSubmit` since we're not using the standard submit functionality. The click will call the `submitForm` we just made.
@@ -1086,7 +1192,9 @@ Finally, we'll add a submit button to submit the form. We're using an `onClick` 
         type="button" 
         value="Submit" 
         onClick={this.submitForm} />
-    </code>
+    
+```
+
 
 
 And that's it! The app is complete. We can create, add, and remove users from our table. Since the `Table` and `TableBody` were already pulling from the state, it will display properly.
@@ -1148,7 +1256,9 @@ Api.js
     }
     
     export default App;
-    </code>
+    
+```
+
 
 
 Once you save and run this file in the local server, you'll see the Wikipedia API data displayed in the DOM.
@@ -1169,8 +1279,11 @@ Everything we've done so far has been in a development environment. We've been c
 Now, if you just want to compile all the React code and place it in the root of a directory somewhere, all you need to do is run the following line:
 
     
-    <code class="bash language-bash">npm run build
-    </code>
+```bash
+npm run build
+    
+```
+
 
 
 This will create a `build` folder which will contain your app. Put the contents of that folder anywhere, and you're done!
@@ -1185,40 +1298,55 @@ package.json
 
 
     
-    <code class="js language-js">  "homepage": "https://taniarascia.github.io/react-tutorial",
-    </code>
+```js
+  "homepage": "https://taniarascia.github.io/react-tutorial",
+    
+```
+
 
 
 We'll also add these two lines to the `scripts` property.
 
     
-    <code class="js language-js">"scripts": {
+```js
+"scripts": {
       // ...
       "predeploy": "npm run build",
       "deploy": "gh-pages -d build"
     }
-    </code>
+    
+```
+
 
 
 In your project, you'll add `gh-pages` to the devDependencies.
 
     
-    <code class="bash language-bash">npm install --save-dev gh-pages
-    </code>
+```bash
+npm install --save-dev gh-pages
+    
+```
+
 
 
 We'll create the `build`, which will have all the compiled, static files.
 
     
-    <code class="bash language-bash">npm run build
-    </code>
+```bash
+npm run build
+    
+```
+
 
 
 Finally, we'll deploy to `gh-pages`.
 
     
-    <code class="bash language-bash">npm run deploy
-    </code>
+```bash
+npm run deploy
+    
+```
+
 
 
 And we're done! The app is now available live at [https://taniarascia.github.io/react-tutorial](https://taniarascia.github.io/react-tutorial).

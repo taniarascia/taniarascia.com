@@ -19,7 +19,8 @@ The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a
 
 
     
-    <code class="language-js">// Replace ./data.json with your JSON feed
+```js
+// Replace ./data.json with your JSON feed
     fetch('./data.json').then(response => {
       return response.json();
     }).then(data => {
@@ -27,7 +28,9 @@ The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a
       console.log(data);
     }).catch(err => {
       // Do something for an error here
-    });</code>
+    });
+```
+
 
 
 

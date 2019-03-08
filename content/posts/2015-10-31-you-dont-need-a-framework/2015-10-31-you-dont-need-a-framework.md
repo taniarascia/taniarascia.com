@@ -53,7 +53,10 @@ Before you do anything else, you have to define the width of the viewport in you
 
 
     
-    <code class="language-html"><meta name="viewport" content="width=device-width, initial-scale=1"></code>
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
 
 
 
@@ -68,7 +71,10 @@ Every browser renders content a little differently. Also, some people use out of
 
 
     
-    <code class="language-html"><link rel="stylesheet" href="css/normalize.min.css"></code>
+```html
+<link rel="stylesheet" href="css/normalize.min.css">
+```
+
 
 
 
@@ -82,12 +88,15 @@ This is something that's left out of the reset that I would strongly recommend i
 
 
     
-    <code class="language-css">html {
+```css
+html {
       box-sizing: border-box;
     }
     *, *:before, *:after {
       box-sizing: inherit;
-    }</code>
+    }
+```
+
 
 
 
@@ -103,7 +112,10 @@ Writing vanilla JavaScript can be tedious. Include jQuery if you'd like.
 
 
     
-    <code class="language-html"><script src="js/jquery.min.js"></script></code>
+```html
+<script src="js/jquery.min.js"></script>
+```
+
 
 
 
@@ -129,11 +141,14 @@ I like to keep things simple, and have only one breakpoint. All of my phone, pha
 
 
     
-    <code class="language-css">/* Mobile first styles go here */
+```css
+/* Mobile first styles go here */
     
     @media screen and (min-width: 800px) {
       /* Desktop styles go here */
-    }</code>
+    }
+```
+
 
 
 
@@ -141,7 +156,8 @@ The best way to lay this out is to include all of your `@media` queries next to 
 
 
     
-    <code class="language-css">h1 {
+```css
+h1 {
       font-size: 1.5rem;
     }
     
@@ -149,7 +165,9 @@ The best way to lay this out is to include all of your `@media` queries next to 
       h1 {
         font-size: 2rem;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -177,12 +195,15 @@ You may be familiar with [Bootstrap's grid](http://getbootstrap.com/css/#grid), 
 
 
     
-    <code class="language-html"><div class="container">
+```html
+<div class="container">
       <div class="row">
         <div class="col-md-8">.col-md-8</div>
         <div class="col-md-4">.col-md-4</div>
       </div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -190,10 +211,13 @@ You may be familiar with [Bootstrap's grid](http://getbootstrap.com/css/#grid), 
 
 
     
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
       <div class="medium-2 columns">2 columns</div>
       <div class="medium-10 columns">10 columns</div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -220,11 +244,14 @@ We want background colors and styles to span the width of the entire viewport, b
 
 
     
-    <code class="language-css">.container {
+```css
+.container {
       margin: 0 auto;
       padding: 0 10px;
       max-width: 1000px;
-    }</code>
+    }
+```
+
 
 
 
@@ -232,12 +259,15 @@ The `.row` class is created. The row is basically a [clearfix hack](https://css-
 
 
     
-    <code class="language-css">.row::before,
+```css
+.row::before,
     .row::after {
       display: table;
       content: " ";
       clear: both;
-    }</code>
+    }
+```
+
 
 
 
@@ -245,13 +275,16 @@ All the columns are full width on mobile.
 
 
     
-    <code class="language-css">.one,
+```css
+.one,
     .one-third,
     .two-thirds,
     .one-fourth,
     .half {
       width: 100%;
-    }</code>
+    }
+```
+
 
 
 
@@ -259,7 +292,8 @@ No crazy calculations or margins here. Thanks to our `border-box` property from 
 
 
     
-    <code class="language-css">@media only screen and (min-width: 800px) {
+```css
+@media only screen and (min-width: 800px) {
       .one {
         width: 100%;
       }
@@ -278,7 +312,9 @@ No crazy calculations or margins here. Thanks to our `border-box` property from 
       .column {
         float: left;
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -286,7 +322,8 @@ And that's the entirety of the grid.
 
 
     
-    <code class="language-html"><div class="container">
+```html
+<div class="container">
       <div class="row">
         <div class="one column">Column</div>
       </div>
@@ -294,7 +331,9 @@ And that's the entirety of the grid.
         <div class="half column">Half column</div>
         <div class="half column">Half column</div>
       </div>
-    </div></code>
+    </div>
+```
+
 
 
 
@@ -306,14 +345,17 @@ And that's the entirety of the grid.
 
 
     
-    <code class="language-html"><main>
+```html
+<main>
       <section>
     	  <article class="content column">
     		</article>
     		<aside class="sidebar column">
         </aside>
     	</section>
-    </main></code>
+    </main>
+```
+
 
 
 

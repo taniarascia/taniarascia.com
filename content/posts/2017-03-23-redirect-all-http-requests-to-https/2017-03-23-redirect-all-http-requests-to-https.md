@@ -16,9 +16,12 @@ If you have SSL/TLS set up on your server, you might need to force the site to r
 
 
     
-    <code class="language-apacheconf">RewriteEngine on
+```apacheconf
+RewriteEngine on
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]</code>
+    RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]
+```
+
 
 
 

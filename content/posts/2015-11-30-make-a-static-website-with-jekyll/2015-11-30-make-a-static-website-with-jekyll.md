@@ -101,7 +101,10 @@ Open Terminal. Check to see if you have XCode Command Line Tools installed by ty
 
 
     
-    <code class="language-bash">xcode-select --install</code>
+```bash
+xcode-select --install
+```
+
 
 
 
@@ -123,7 +126,10 @@ If for some reason you're running a lower version, you can update.
 
 
     
-    <code class="language-bash">sudo gem install ruby</code>
+```bash
+sudo gem install ruby
+```
+
 
 
 
@@ -143,7 +149,10 @@ Bundler is a package manager that will aid you in installing all the Jekyll depe
 
 
     
-    <code class="language-bash">sudo gem install bundler</code>
+```bash
+sudo gem install bundler
+```
+
 
 
 
@@ -165,8 +174,11 @@ Create a directory, and add a file called **Gemfile**. The file doesn't contain 
 
 
     
-    <code class="language-ruby">gem 'github-pages'
-    source 'https://rubygems.org'</code>
+```ruby
+gem 'github-pages'
+    source 'https://rubygems.org'
+```
+
 
 
 
@@ -174,7 +186,10 @@ In Terminal, run this command in the directory that contains the Gemfile:
 
 
     
-    <code class="language-bash">bundle install</code>
+```bash
+bundle install
+```
+
 
 
 
@@ -196,7 +211,10 @@ Great! Now that that's finished, you can successfully install Jekyll. I'm going 
 
 
     
-    <code class="language-bash">jekyll new startjekyll</code>
+```bash
+jekyll new startjekyll
+```
+
 
 
 
@@ -210,7 +228,10 @@ Move to the new directory.
 
 
     
-    <code class="language-bash">cd startjekyll</code>
+```bash
+cd startjekyll
+```
+
 
 
 
@@ -218,7 +239,10 @@ And initialize a new Git repository.
 
 
     
-    <code class="language-bash">git init</code>
+```bash
+git init
+```
+
 
 
 
@@ -232,7 +256,10 @@ At this point, all the setup is complete. In your project directory, run the fol
 
 
     
-    <code class="language-bash">jekyll serve</code>
+```bash
+jekyll serve
+```
+
 
 
 
@@ -281,7 +308,8 @@ In the main directory, there's a file called **_config.yml**. It looks like this
 
 
     
-    <code class="language-yaml"># Site settings
+```yaml
+# Site settings
     title: Your awesome title
     email: your-email@domain.com
     description: > # this means to ignore newlines until "baseurl:"
@@ -294,7 +322,9 @@ In the main directory, there's a file called **_config.yml**. It looks like this
     github_username:  jekyll
     
     # Build settings
-    markdown: kramdown</code>
+    markdown: kramdown
+```
+
 
 
 
@@ -311,7 +341,8 @@ I'm going to make a few changes to the configuration.
 
 
     
-    <code class="language-yaml"># Site Settings
+```yaml
+# Site Settings
     title: Start Jekyll
     email: taniarascia@gmail.com
     description: >
@@ -325,7 +356,9 @@ I'm going to make a few changes to the configuration.
       sass_dir: _sass
     include: ['_pages']
     kramdown:
-      input: GFM</code>
+      input: GFM
+```
+
 
 
 
@@ -357,9 +390,12 @@ In Jekyll, **_includes** are files that should show up on every page - header, f
 
 
     
-    <code class="language-html"><footer>
+```html
+<footer>
     	<p>By <a href="http://taniarascia.com">Tania</p>
-    </footer></code>
+    </footer>
+```
+
 
 
 
@@ -373,7 +409,8 @@ Any `head` metadata.
 
 
     
-    <code class="language-html"><head>
+```html
+<head>
     	<meta charset="utf-8">
     	<meta http-equiv="x-ua-compatible" content="ie=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -385,7 +422,9 @@ Any `head` metadata.
     	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
     	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     
-    </head> </code>
+    </head> 
+```
+
 
 
 
@@ -399,7 +438,8 @@ Your navigation and header. I will dynamically load all pages into the navigatio
 
 
     
-    <code class="language-html"><aside>
+```html
+<aside>
     	<div class="container">
     		<nav>
     			<ul>
@@ -416,7 +456,9 @@ Your navigation and header. I will dynamically load all pages into the navigatio
     
     <header>
     	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
-    </header></code>
+    </header>
+```
+
 
 
 
@@ -436,7 +478,8 @@ The layout that your content will conform to.
 
 
     
-    <code class="language-html"><!DOCTYPE html>
+```html
+<!DOCTYPE html>
     <html>
     {% include head.html %}
     
@@ -450,7 +493,9 @@ The layout that your content will conform to.
     	</main>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -462,13 +507,16 @@ The layout that your content will conform to.
 
 
     
-    <code class="language-html">---
+```html
+---
     layout: default
     ---
     
     <h2>{{ page.title }}</h2>
        
-        {{ content }}</code>
+        {{ content }}
+```
+
 
 
 
@@ -484,14 +532,17 @@ Same as the page, but with date and author metadata.
 
 
     
-    <code class="language-html">---
+```html
+---
     layout: default
     ---
     
     <h2>{{ page.title }}</h2>
     <time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
     
-    {{ content }}</code>
+    {{ content }}
+```
+
 
 
 
@@ -513,7 +564,8 @@ Now we're creating the markdown files. Prepending them with a number ensures tha
 
 
     
-    <code class="language-markdown">---
+```markdown
+---
     layout: page
     title: About
     permalink: /about/
@@ -522,7 +574,9 @@ Now we're creating the markdown files. Prepending them with a number ensures tha
     About content goes here.
     
     * A list item
-    * Another list item</code>
+    * Another list item
+```
+
 
 
 
@@ -534,7 +588,8 @@ Now we're creating the markdown files. Prepending them with a number ensures tha
 
 
     
-    <code class="language-markdown">---
+```markdown
+---
     layout: page
     title: Contact
     permalink: /contact/
@@ -542,7 +597,9 @@ Now we're creating the markdown files. Prepending them with a number ensures tha
     
     Contact content goes here.
     
-    My e-mail is [email@something.com](mailto:email@something.com).</code>
+    My e-mail is [email@something.com](mailto:email@something.com).
+```
+
 
 
 
@@ -566,13 +623,16 @@ Delete about.md from the main directory, since we've put it in the **_pages** di
 
 
     
-    <code class="language-html">---
+```html
+---
     layout: default
     ---
     
       <h2>Main Page</h2>
     
-      Main content goes here. </code>
+      Main content goes here. 
+```
+
 
 
 
@@ -586,7 +646,8 @@ Create a new directory called **blog**. Inside, create an **index.html**. This w
 
 
     
-    <code class="language-html">---
+```html
+---
     layout: default
     ---
     
@@ -597,7 +658,9 @@ Create a new directory called **blog**. Inside, create an **index.html**. This w
     {% endfor %}
     
     <p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-    </code>
+    
+```
+
 
 
 
@@ -611,13 +674,16 @@ The **css** directory in the root should contain one file - **main.scss**. Edit 
 
 
     
-    <code class="language-scss">---
+```scss
+---
     # Front matter comment to ensure Jekyll properly reads file.
     ---
     @import 
     	"base",
       "layout",
-      "syntax-highlighting"</code>
+      "syntax-highlighting"
+```
+
 
 
 
@@ -641,7 +707,8 @@ Variables, mixins, and resets will go here.
 
 
     
-    <code class="language-scss">$content-width: 800px;
+```scss
+$content-width: 800px;
     $main: #19CCAA;
     $font-style: 'Open Sans', sans-serif;
     $font-color: #262626;
@@ -658,7 +725,9 @@ Variables, mixins, and resets will go here.
     	-webkit-box-sizing: border-box;
     	-moz-box-sizing: border-box;
     	box-sizing: border-box;
-    }</code>
+    }
+```
+
 
 
 
@@ -672,8 +741,11 @@ Simply remove this line from the file:
 
 
     
-    <code class="language-scss">    @extend %vertical-rhythm;
-    </code>
+```scss
+    @extend %vertical-rhythm;
+    
+```
+
 
 
 
@@ -687,7 +759,8 @@ All my styles will go in here. I made a simple, responsive website that doesn't 
 
 
     
-    <code class="language-scss">body {
+```scss
+body {
     	margin: 0;
     	color: $font-color;
     	font-family: $font-style;
@@ -798,7 +871,9 @@ All my styles will go in here. I made a simple, responsive website that doesn't 
     	text-align: center;
     	padding: 40px;
     }
-    </code>
+    
+```
+
 
 
 
@@ -812,7 +887,10 @@ At this point, all the files are ready and jekyll can be served.
 
 
     
-    <code class="language-bash">jekyll serve</code>
+```bash
+jekyll serve
+```
+
 
 
 
@@ -843,7 +921,10 @@ Create an empty repository in GitHub. Mine is **startjekyll**, so the Git repo U
 
 
     
-    <code>http://github.com/taniarascia/startjekyll</code>
+```
+http://github.com/taniarascia/startjekyll
+```
+
 
 
 
@@ -855,8 +936,11 @@ Leave the **_config_dev.yml** as is, and change **_config.yml** for the live sit
 
 
     
-    <code class="language-yaml">baseurl: "/startjekyll"
-    url: "http://taniarascia.github.io"</code>
+```yaml
+baseurl: "/startjekyll"
+    url: "http://taniarascia.github.io"
+```
+
 
 
 
@@ -864,7 +948,10 @@ Now, when you want to work on the site locally, you will run the following comma
 
 
     
-    <code class="language-bash">jekyll serve --config _config.yml,_config_dev.yml</code>
+```bash
+jekyll serve --config _config.yml,_config_dev.yml
+```
+
 
 
 
@@ -874,7 +961,10 @@ Serve your Jekyll one last time to ensure all the final changes have been update
 
 
     
-    <code class="language-bash">git remote add origin https://github.com/taniarascia/startjekyll.git</code>
+```bash
+git remote add origin https://github.com/taniarascia/startjekyll.git
+```
+
 
 
 
@@ -882,7 +972,10 @@ Add the GitHub repository.
 
 
     
-    <code class="language-bash">git checkout -b gh-pages</code>
+```bash
+git checkout -b gh-pages
+```
+
 
 
 
@@ -890,7 +983,10 @@ Ensures that you're on the `gh-pages` branch, not `master`.
 
 
     
-    <code class="language-bash">git add .</code>
+```bash
+git add .
+```
+
 
 
 
@@ -898,7 +994,10 @@ Track all files.
 
 
     
-    <code class="language-bash">git commit -am "Initial commit"</code>
+```bash
+git commit -am "Initial commit"
+```
+
 
 
 
@@ -906,7 +1005,10 @@ Commit all files.
 
 
     
-    <code class="language-bash">git push origin gh-pages</code>
+```bash
+git push origin gh-pages
+```
+
 
 
 

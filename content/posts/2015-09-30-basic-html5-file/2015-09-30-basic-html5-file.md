@@ -47,7 +47,8 @@ Google generously provides [hosted libraries](https://developers.google.com/spee
 
 ## Basic index.html
 
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
 
     <head>
@@ -67,4 +68,6 @@ Google generously provides [hosted libraries](https://developers.google.com/spee
       <script src="js/scripts.js"></script>
     </body>
 
-    </html></code>
+    </html>
+```
+

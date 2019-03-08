@@ -92,9 +92,12 @@ index.html
 
 
     
-    <code class="html language-html"><link href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
+```html
+<link href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
-    </code>
+    
+```
+
 
 
 
@@ -112,8 +115,11 @@ index.html
 
 
     
-    <code class="html language-html"><div id="map"></div>
-    </code>
+```html
+<div id="map"></div>
+    
+```
+
 
 
 
@@ -131,11 +137,14 @@ style.css
 
 
     
-    <code class="css language-css">#map {
+```css
+#map {
         height: 100vh;
         width: 100%;
     }
-    </code>
+    
+```
+
 
 
 
@@ -153,7 +162,8 @@ scripts.js
 
 
     
-    <code class="js language-js">// Set the map variable
+```js
+// Set the map variable
     const myMap = L.map('map');
     
     // Load the basemap
@@ -167,7 +177,9 @@ scripts.js
     
     // Set view of the map
     myMap.setView([41.939948, -87.650673], 12);
-    </code>
+    
+```
+
 
 
 
@@ -210,10 +222,13 @@ scripts.js
 
 
     
-    <code class="js language-js">const elMeson = L.marker([42.002439, -87.672339]).addTo(myMap);
+```js
+const elMeson = L.marker([42.002439, -87.672339]).addTo(myMap);
     const wormhole = L.marker([41.908415, -87.674605]).addTo(myMap);
     const ipsento = L.marker([41.918639, -87.687247]).addTo(myMap);
-    </code>
+    
+```
+
 
 
 
@@ -231,7 +246,8 @@ scripts.js
 
 
     
-    <code class="js language-js">const elMeson = L.marker([42.002439, -87.672339]).bindPopup(`
+```js
+const elMeson = L.marker([42.002439, -87.672339]).bindPopup(`
         <h2>El Meson</h2>
         <p><b>Neighborhood:</b> Rogers Park</p>
         <p><b>Ambiance:</b> Great!</p>
@@ -248,7 +264,9 @@ scripts.js
     `).openPopup().addTo(myMap);
     
     // And so on...
-    </code>
+    
+```
+
 
 
 
@@ -285,7 +303,8 @@ map.json
 
 
     
-    <code class="js language-js">{
+```js
+{
       "cafes": [{
           "name": "El Meson",
           "lat": 42.002439,
@@ -315,7 +334,9 @@ map.json
         }
       ]
     }
-    </code>
+    
+```
+
 
 
 
@@ -339,7 +360,8 @@ scripts.js
 
 
     
-    <code class="language-js">// Make an XMLHttpRequest to the JSON data
+```js
+// Make an XMLHttpRequest to the JSON data
     const request = new XMLHttpRequest();
     request.open('GET', 'map.json', true);
     
@@ -349,7 +371,9 @@ scripts.js
     }  
     
     request.send();
-    </code>
+    
+```
+
 
 
 
@@ -391,8 +415,11 @@ To get the data found inside `cafes` in JSON, we'll use the `map()` method on `d
 
 
     
-    <code class="js language-js">const cafes = data.cafes.map(function(cafe) {});
-    </code>
+```js
+const cafes = data.cafes.map(function(cafe) {});
+    
+```
+
 
 
 
@@ -404,8 +431,11 @@ I'm just going to rewrite that function with an [ES6 arrow function](https://dev
 
 
     
-    <code class="js language-js">const cafes = data.cafes.map(cafe => {});
-    </code>
+```js
+const cafes = data.cafes.map(cafe => {});
+    
+```
+
 
 
 
@@ -423,7 +453,8 @@ scripts.js
 
 
     
-    <code class="js language-js">// Print cafe markers
+```js
+// Print cafe markers
     const cafes = data.cafes.map(cafe => {
     
     L.marker([cafe.lat, cafe.long]).bindPopup(`
@@ -434,7 +465,9 @@ scripts.js
         <p><b>Comments:</b> ${cafe.comments}</p>
     `).openPopup().addTo(myMap);
     });
-    </code>
+    
+```
+
 
 
 
@@ -458,7 +491,8 @@ scripts.js
 
 
     
-    <code class="js language-js">// Set the map variable
+```js
+// Set the map variable
     const myMap = L.map('map');
     
     // Load the basemap
@@ -494,7 +528,9 @@ scripts.js
     }
     
     request.send();
-    </code>
+    
+```
+
 
 
 
@@ -536,8 +572,11 @@ We have all the data we need in the JSON file, but I wasn't sure how to succinct
 
 
     
-    <code class="js language-js">const individualNeighborhood = data.cafes.filter(cafe => {});
-    </code>
+```js
+const individualNeighborhood = data.cafes.filter(cafe => {});
+    
+```
+
 
 
 
@@ -549,14 +588,17 @@ Below, I'm making a test for each neighborhood that will filter out all results 
 
 
     
-    <code class="js language-js">const rogersPark = data.cafes.filter(cafe => {
+```js
+const rogersPark = data.cafes.filter(cafe => {
         return cafe.neighborhood === 'Rogers Park'
     });
     
     const wickerPark = data.cafes.filter(cafe => {
         return cafe.neighborhood === 'Wicker Park'
     });
-    </code>
+    
+```
+
 
 
 
@@ -568,7 +610,8 @@ Using this method, I would have to make an array of objects linking up the strin
 
 
     
-    <code class="js language-js">const neighborhoodsArray = [
+```js
+const neighborhoodsArray = [
         {
           name: "Rogers Park",
           number: rogersPark.length,
@@ -578,7 +621,9 @@ Using this method, I would have to make an array of objects linking up the strin
           number: wickerPark.length,
         }
     ];
-    </code>
+    
+```
+
 
 
 
@@ -590,10 +635,13 @@ And finally I could loop through those values.
 
 
     
-    <code class="js language-js">for (let neighborhood of neighborhoodsArray) {
+```js
+for (let neighborhood of neighborhoodsArray) {
        console.log(neighborhood.name, neighborhood.name);
     }
-    </code>
+    
+```
+
 
 
 
@@ -630,8 +678,11 @@ This technically worked, but now I'm doing what I didn't want to do the first ti
 
 
     
-    <code class="js language-js">const neighborhoodCount = data.cafes.reduce((sums, value) => {}, {});
-    </code>
+```js
+const neighborhoodCount = data.cafes.reduce((sums, value) => {}, {});
+    
+```
+
 
 
 
@@ -643,11 +694,14 @@ I encountered this handy snippet which will create an object containing all our 
 
 
     
-    <code class="js language-js">const neighborhoodCount = data.cafes.reduce((sums, cafe) => {
+```js
+const neighborhoodCount = data.cafes.reduce((sums, cafe) => {
         sums[cafe.neighborhood] = (sums[cafe.neighborhood] || 0) + 1;
         return sums;
     }, {});
-    </code>
+    
+```
+
 
 
 
@@ -659,10 +713,13 @@ Now we'll loop through the object we created with `for...in`, which is used for 
 
 
     
-    <code class="js language-js">for (let neighborhood in neighborhoodCount) {
+```js
+for (let neighborhood in neighborhoodCount) {
         console.log(neighborhood, neighborhoodCount[neighborhood])
     }
-    </code>
+    
+```
+
 
 
 
@@ -693,8 +750,11 @@ Once that was finished, I inserted this into the DOM instead of just printing it
 
 
     
-    <code class="html language-html"><div id="neighborhoods"></div>
-    </code>
+```html
+<div id="neighborhoods"></div>
+    
+```
+
 
 
 
@@ -706,7 +766,8 @@ Then pass the reduced values to the new `div`.
 
 
     
-    <code class="js language-js">// Create a sidebar
+```js
+// Create a sidebar
     const sidebar = document.getElementById('neighborhoods');
     
     // Print all neighborhoods in sidebar
@@ -716,7 +777,9 @@ Then pass the reduced values to the new `div`.
         p.innerHTML = `<b>${neighborhood}</b> : ${neighborhoodCount[neighborhood]}`;
         sidebar.appendChild(p);
     }
-    </code>
+    
+```
+
 
 
 
@@ -753,8 +816,11 @@ Here's a very brief overview of the differences between `map()`, `filter()`, and
 
 
     
-    <code class="js language-js">const numbers = [ 1, 2, 3, 4 ];
-    </code>
+```js
+const numbers = [ 1, 2, 3, 4 ];
+    
+```
+
 
 
 
@@ -772,12 +838,15 @@ Use `map()` to get an array with each value incremented by one.
 
 
     
-    <code class="js language-js">const numbersIncremented = numbers.map(x => {
+```js
+const numbersIncremented = numbers.map(x => {
         return x + 1;
     });
     
     numbersIncremented;
-    </code>
+    
+```
+
 
 
 
@@ -801,12 +870,15 @@ Use `filter()` to get an array of available values greater than 2.
 
 
     
-    <code class="js language-js">const numbersFiltered = numbers.filter(x => {
+```js
+const numbersFiltered = numbers.filter(x => {
         return x > 2;
     })
     
     numbersFiltered;
-    </code>
+    
+```
+
 
 
 
@@ -830,12 +902,15 @@ Use `reduce()` to get the sum of the numbers in the array.
 
 
     
-    <code class="js language-js">const numbersReduced = numbers.reduce((x, y) => {
+```js
+const numbersReduced = numbers.reduce((x, y) => {
         return x + y;
     })
     
     numbersReduced;
-    </code>
+    
+```
+
 
 
 

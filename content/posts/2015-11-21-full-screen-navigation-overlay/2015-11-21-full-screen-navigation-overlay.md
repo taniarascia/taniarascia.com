@@ -27,7 +27,8 @@ The HTML is easy. I have all of my content in a `main` wrapper, and my navigatio
 
 
     
-    <code class="language-html"><aside>
+```html
+<aside>
       <div class="outer-close toggle-overlay">
         <a class="close"><span></span></a>
       </div>
@@ -39,7 +40,9 @@ The HTML is easy. I have all of my content in a `main` wrapper, and my navigatio
           <li><a href="#!">About</a></li>
         </ul>
       </nav>
-    </aside></code>
+    </aside>
+```
+
 
 
 
@@ -58,11 +61,14 @@ The jQuery is even easier. As always, I prefer to define and call jQuery, and wr
 
 
     
-    <code class="language-js">(function($) {
+```js
+(function($) {
       $(function() {
       // The rest of the code
       });
-    })(jQuery);</code>
+    })(jQuery);
+```
+
 
 
 
@@ -70,13 +76,16 @@ After that, I'll just be adding a click event to the `toggle-overlay` class, whi
 
 
     
-    <code class="language-js">(function($) {
+```js
+(function($) {
       $(function() {
         $('.toggle-overlay').click(function() {
           $('aside').toggleClass('open');
         });
       });
-    })(jQuery);</code>
+    })(jQuery);
+```
+
 
 
 
@@ -90,7 +99,8 @@ There's a bit more to the CSS, but the basic functionality is simple enough. Thi
 
 
     
-    <code class="language-css">aside {
+```css
+aside {
     	position: fixed;
     	width: 100%;
     	height: 100%;
@@ -105,7 +115,9 @@ There's a bit more to the CSS, but the basic functionality is simple enough. Thi
     .open {
     	opacity: 1;
     	visibility: visible;
-    }</code>
+    }
+```
+
 
 
 
@@ -148,7 +160,8 @@ I'm using SCSS for these stylings, as nesting makes the code a lot more manageab
 
 
     
-    <code class="language-scss">.close {
+```scss
+.close {
     	position: fixed;
     	top: 40px;
     	right: 60px;
@@ -176,7 +189,9 @@ I'm using SCSS for these stylings, as nesting makes the code a lot more manageab
       span:after {
       transform: rotate(-45deg);
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -192,13 +207,16 @@ I declare a flex container with `display: flex`. By setting the `flex-direction`
 
 
     
-    <code class="language-scss">nav {
+```scss
+nav {
     	text-align: center;
     	height: 95vh;
     	display: flex;
     	flex-direction: column;
     	justify-content: center;
-    </code>
+    
+```
+
 
 
 
@@ -206,10 +224,13 @@ Any time you use an unordered list for a menu, you'll be removing the `list-styl
 
 
     
-    <code class="language-scss">	ul {
+```scss
+	ul {
     		margin: 0;
     		padding: 0;
-    		list-style: none;</code>
+    		list-style: none;
+```
+
 
 
 
@@ -217,12 +238,15 @@ The `li`s inside the navigation are the nested flex items. I've set them to have
 
 
     
-    <code class="language-scss">
+```scss
+
     		li {
     			align-items: center;
     			flex: 1;
     			line-height: 20vh;
-    </code>
+    
+```
+
 
 
 
@@ -230,12 +254,15 @@ The `a` is a block-level element, with a transition. I've set the font-size to 1
 
 
     
-    <code class="language-scss">		a {
+```scss
+		a {
             font-size: 1.5em;
     transition: all 0.5s ease;
     display: block;
     text-decoration: none;
-    color: rgba(255, 255, 255, .5);</code>
+    color: rgba(255, 255, 255, .5);
+```
+
 
 
 
@@ -243,7 +270,8 @@ The final bit of code I have adds an animated underline to the `a` elements. Thi
 
 
     
-    <code class="language-scss">nav {
+```scss
+nav {
     	text-align: center;
     	height: 95vh;
     	display: flex;
@@ -292,7 +320,9 @@ The final bit of code I have adds an animated underline to the `a` elements. Thi
         font-size: 3em;
       }
     }
-    </code>
+    
+```
+
 
 
 
@@ -300,7 +330,8 @@ In order to ensure the span is large enough to register a click event on mobile,
 
 
     
-    <code class="language-css">.outer-close {
+```css
+.outer-close {
         position: absolute;
         right: 0;
         top: 0;
@@ -308,7 +339,9 @@ In order to ensure the span is large enough to register a click event on mobile,
         height: 85px;
         cursor: pointer;
     }
-    </code>
+    
+```
+
 
 
 

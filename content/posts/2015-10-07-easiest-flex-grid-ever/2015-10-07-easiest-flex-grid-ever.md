@@ -27,7 +27,8 @@ We have semantic options for naming the tags and classes, but I'll start off wit
 
 With only two classes - `.row` and `.column` - we can create an infinite, equally spaced grid.
 
-    <code class="language-css">.row {
+```css
+.row {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -41,7 +42,9 @@ With only two classes - `.row` and `.column` - we can create an infinite, equall
       .column {
         flex: 1;
       }
-    }</code>
+    }
+```
+
 
 [A Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) by Chris Coyier explains Flexbox in detail. For this grid, we only use a few flex properties.
 
@@ -60,31 +63,41 @@ In a framework like Bootstrap, the grid is based on 12 columns. A 50% width colu
 
 First, create a row.
 
-    <code class="language-html"><div class="row">
-    </div></code>
+```html
+<div class="row">
+    </div>
+```
+
 
 Inside that row, insert a column.
 
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
       <div class="column">
       <!-- 100% width -->
       </div>
-    </div></code>
+    </div>
+```
+
 
 This will give you one 100% wide column. Add another column.
 
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
       <div class="column">
       <!-- 50% width -->
       </div>
       <div class="column">
       <!-- 50% width -->
       </div>
-    </div></code>
+    </div>
+```
+
 
 The width of each column is 100% divided by the number of columns within the flex container (`.row`). Predictably, adding another with divide once again.
 
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
       <div class="column">
       <!-- 33.33% width -->
       </div>
@@ -94,7 +107,9 @@ The width of each column is 100% divided by the number of columns within the fle
       <div class="column">
       <!-- 33.33% width -->
       </div>
-    </div></code>
+    </div>
+```
+
 
 So far, we have equally dividing columns.
 
@@ -116,7 +131,8 @@ Well, on the small screen view, it's still going to look the same - you still wa
 
 The class names can be anything, but I'm just going to name them after the percents for simplicity.
 
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
       <div class="column _25">
         25% Left Sidebar
       </div>
@@ -126,11 +142,14 @@ The class names can be anything, but I'm just going to name them after the perce
       <div class="column _20">
         20% Right Sidebar
       </div>
-    </div></code>
+    </div>
+```
+
 
 The only thing that needs to be added is the `flex` property inside of your `min-width` media query.
 
-    <code class="language-css">@media screen and (min-width: 800px) {
+```css
+@media screen and (min-width: 800px) {
       ._25 {
         flex: 2.5;
       }
@@ -140,7 +159,9 @@ The only thing that needs to be added is the `flex` property inside of your `min
       ._20 {
         flex: 2;
       }
-    }</code>
+    }
+```
+
 
 ### Large Screen View
 
@@ -152,18 +173,24 @@ The only thing that needs to be added is the `flex` property inside of your `min
 
 Finally, you're going to want to wrap the entire grid inside of a container so your content doesn't stretch to 3000 pixels wide on an iMac.
 
-    <code class="language-html"><div class="container">
+```html
+<div class="container">
       <!-- rows and columns -->
-    </div></code>
+    </div>
+```
 
 
 
 
 
-    <code class="language-css">.container {
+
+```css
+.container {
       max-width: 1200px;
       margin: 0 auto;
-    }</code>
+    }
+```
+
 
 ### Semantics
 
@@ -171,7 +198,8 @@ Everybody loves HTML5 semantics. Why stick with divs upon divs when we have some
 
 ##### HTML
 
-    <code class="language-html"><main>
+```html
+<main>
       <section>
         <article>
           Article
@@ -180,13 +208,16 @@ Everybody loves HTML5 semantics. Why stick with divs upon divs when we have some
           Aside
         </aside>
       </section>
-    </main></code>
+    </main>
+```
+
 
 `main` is the `.container` div. The `main` tag is only meant to be used once in a document. `section` has replaced the `.row`. `article` and `aside` are two different `.column` classes.
 
 ##### CSS
 
-    <code class="language-css">main {
+```css
+main {
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -206,7 +237,9 @@ Everybody loves HTML5 semantics. Why stick with divs upon divs when we have some
       article {
         flex: 7.5;
       }
-    }</code>
+    }
+```
+
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-07-at-5.53.02-PM.png)
 

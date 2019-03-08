@@ -97,7 +97,10 @@ When you open Terminal, you will start off in your main directory. I will assume
 
 ##### 1. Confirm your location.
 
-    <code>pwd</code>
+```
+pwd
+```
+
 
 
 
@@ -107,17 +110,26 @@ When you open Terminal, you will start off in your main directory. I will assume
 
 ##### 2. Create a new folder called project-local.
 
-    <code>mkdir project-local</code>
+```
+mkdir project-local
+```
+
 
 ##### 3. List your directories.
 
-    <code>ls</code>
+```
+ls
+```
+
 
 You should see **project-local** in the list of directories. Of course, you could have created the directory through Finder or Explorer, but it's a useful command to know.
 
 ##### 4. Move into the newly created directory.
 
-    <code>cd project-local</code>
+```
+cd project-local
+```
+
 
 Now you're in the folder where your local project and Git repository will live. From here, we will begin using git commands. There is a [massive amount](http://gitref.org/) of commands for Git, but we only need a few to get started.
 
@@ -135,14 +147,20 @@ All of the future commands we do today will only apply to your local Git environ
 
 ##### 5. Configure your global Git account.
 
-    <code class="language-bash">git config --global user.name "Firstname Lastname"
-    git config --global user.email username@email.com</code>
+```bash
+git config --global user.name "Firstname Lastname"
+    git config --global user.email username@email.com
+```
+
 
 Make sure you're still in the **project-local** folder, then move on.
 
 ##### 6. Initialize Git repository.
 
-    <code>git init</code>
+```
+git init
+```
+
 
 Initialized empty Git repository in /Users/you/project-local/.git/
 
@@ -150,13 +168,19 @@ Great! Now you have an empty Git repo on your local computer.
 
 ##### 7. Hook up local directory with the repo we made at github.com.
 
-    <code class="language-bash">git remote add origin https://github.com/you/project</code>
+```bash
+git remote add origin https://github.com/you/project
+```
+
 
 Terminal won't respond, but it was successful. Go ahead and add a file to the **project-local** directory. You can add as many files as you want, but I will assume you added two files - **index.html** and **style.css**.
 
 ##### 8. Check the status of your local repository.
 
-    <code class="language-bash">git status</code>
+```bash
+git status
+```
+
 
 
 
@@ -179,7 +203,10 @@ Okay, so now it knows that there are two files in the directory, but they're not
 
 (case sensitive command!)
 
-    <code class="language-bash">git add .</code>
+```bash
+git add .
+```
+
 
 Let's check the status again with `git status`.
 
@@ -196,7 +223,10 @@ So, what did that do? The files are green now instead of red. Are we ready? Not 
 
 ##### 10. Commit tracked files to the master branch
 
-    <code class="language-bash">git commit -am "Initial Commit"</code>
+```bash
+git commit -am "Initial Commit"
+```
+
 
 
 
@@ -214,7 +244,10 @@ With this command, I commit all the files (-a), include a message (-m), listed h
 
 ##### 11. Push the files to the Git repo at github.com.
 
-    <code class="language-bash">git push origin master</code>
+```bash
+git push origin master
+```
+
 
 Terminal will prompt you to enter your GitHub username and password. When you type in your password, it might not show that you've typed anything, but it's being entered.
 
@@ -238,7 +271,10 @@ You can do everything through the same Terminal window, but for the sake of clar
 
 ##### 1. SSH into your host.
 
-    <code class="language-bash">ssh username@ssh.domain.com</code>
+```bash
+ssh username@ssh.domain.com
+```
+
 
 You will be prompted to enter your password.
 
@@ -256,27 +292,42 @@ I'm ignoring branches for now, since we're only working with one branch - the **
 
 ##### 2. List your Git settings.
 
-    <code class="language-bash">git --list</code>
+```bash
+git --list
+```
+
 
 You should configure your e-mail and username as you did on your home computer.
 
 ##### 3. Print your working directory to make sure you're in the right location.
 
-    <code class="language-bash">pwd</code>
+```bash
+pwd
+```
+
 
 Use `cd` and `mkdir` to navigate to the location you want your new Git repo to live. Then...
 
 ##### 4. Initialize Git repo.
 
-    <code class="language-bash">git init</code>
+```bash
+git init
+```
+
 
 ##### 5. Add remote Git repo to origin master (branch).
 
-    <code class="language-bash">git remote add origin https://github.com/you/project.git</code>
+```bash
+git remote add origin https://github.com/you/project.git
+```
+
 
 ##### 6. Pull (download) from origin master (branch).
 
-    <code class="language-bash">git pull origin master</code>
+```bash
+git pull origin master
+```
+
 
 Now, when you go to http://domain.com/project-remote, all the files are there, and the site is live!
 

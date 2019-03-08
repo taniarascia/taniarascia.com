@@ -20,7 +20,8 @@ Let's say I have an API call that returns all the users from a database and take
 
 
     
-    <code class="language-js">// First promise returns an array after a delay
+```js
+// First promise returns an array after a delay
     const getUsers = () => {
       return new Promise((resolve, reject) => {
         return setTimeout(
@@ -31,7 +32,9 @@ Let's say I have an API call that returns all the users from a database and take
           600
         )
       })
-    }</code>
+    }
+```
+
 
 
 
@@ -39,12 +42,15 @@ Now there's another call that relies on some information that exists in the enti
 
 
     
-    <code class="language-js">// Second promise relies on the result of first promise
+```js
+// Second promise relies on the result of first promise
     const getIdFromUser = users => {
       return new Promise((resolve, reject) => {
         return setTimeout(() => resolve(users.id), 500)
       })
-    }</code>
+    }
+```
+
 
 
 
@@ -52,12 +58,15 @@ And a third call that modifies the second call.
 
 
     
-    <code class="language-js">// Third promise relies on the result of the second promise
+```js
+// Third promise relies on the result of the second promise
     const capitalizeIds = id => {
       return new Promise((resolve, reject) => {
         return setTimeout(() => resolve(id.toUpperCase()), 200)
       })
-    }</code>
+    }
+```
+
 
 
 
@@ -65,7 +74,8 @@ I might try to run the first call, then use a `for...of` loop to run the subsequ
 
 
     
-    <code class="language-js">const runAsyncFunctions = async () => {
+```js
+const runAsyncFunctions = async () => {
       const users = await getUsers()
     
       for (let user of users) {
@@ -79,7 +89,9 @@ I might try to run the first call, then use a `for...of` loop to run the subsequ
       console.log(users)
     }
     
-    runAsyncFunctions()</code>
+    runAsyncFunctions()
+```
+
 
 
 
@@ -101,7 +113,8 @@ I can use `Promise.all()` instead to run all of the first, then all the second, 
 
 
     
-    <code class="language-js">const runAsyncFunctions = async () => {
+```js
+const runAsyncFunctions = async () => {
       const users = await getUsers()
     
       Promise.all(
@@ -115,7 +128,9 @@ I can use `Promise.all()` instead to run all of the first, then all the second, 
       )
     
       console.log(users)
-    }</code>
+    }
+```
+
 
 
 
@@ -137,7 +152,8 @@ Here's the whole snippet you can run in the console.
 
 
     
-    <code class="language-js">// First promise returns an array 
+```js
+// First promise returns an array 
     const getUsers = () => {
       return new Promise((resolve, reject) => {
         return setTimeout(
@@ -180,6 +196,8 @@ Here's the whole snippet you can run in the console.
       console.log(users)
     }
     
-    runAsyncFunctions()</code>
+    runAsyncFunctions()
+```
+
 
 		

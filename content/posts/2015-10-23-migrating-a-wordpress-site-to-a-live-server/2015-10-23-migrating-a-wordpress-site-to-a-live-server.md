@@ -112,12 +112,15 @@ Before, you created a file called **wp-config.php** in the root of the WordPress
 
 
     
-    <code class="language-php">/** The name of the database for WordPress */
+```php
+/** The name of the database for WordPress */
     define('DB_NAME', 'startwordpress');
     /** MySQL database username */
     define('DB_USER', 'root');
     /** MySQL database password */
-    define('DB_PASSWORD', 'root');</code>
+    define('DB_PASSWORD', 'root');
+```
+
 
 
 
@@ -125,12 +128,15 @@ On your live server, change these three options to match your live server databa
 
 
     
-    <code class="language-php">/** The name of the database for WordPress */
+```php
+/** The name of the database for WordPress */
     define('DB_NAME', 'startwordpress');
     /** MySQL database username */
     define('DB_USER', 'dbusername');
     /** MySQL database password */
-    define('DB_PASSWORD', 'dbpassword');</code>
+    define('DB_PASSWORD', 'dbpassword');
+```
+
 
 
 

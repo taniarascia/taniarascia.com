@@ -18,7 +18,10 @@ Let's say I have this URL:
 
 
     
-    <code>http://example.com/users.php?name=tania</code>
+```
+http://example.com/users.php?name=tania
+```
+
 
 
 
@@ -26,7 +29,10 @@ And I want this URL:
 
 
     
-    <code>http://example.com/users/tania</code>
+```
+http://example.com/users/tania
+```
+
 
 
 
@@ -39,13 +45,16 @@ I can do so with the following `.htaccess`:
 
 
     
-    <code class="language-apacheconf">RewriteEngine On
+```apacheconf
+RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^/?users/(.*?)/?$ /users.php?name=$1 [L]
     
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /users\.php\?name=([^\&\ ]+)
-    RewriteRule ^/?users\.php$ /users/%1? [L,R=301]</code>
+    RewriteRule ^/?users\.php$ /users/%1? [L,R=301]
+```
+
 
 
 
@@ -58,11 +67,14 @@ users.php
 
 
     
-    <code class="language-apacheconf"><?php
+```apacheconf
+<?php
     
     echo $_SERVER['REQUEST_URI'] . '<br>';
     
-    print_r($_GET);</code>
+    print_r($_GET);
+```
+
 
 
 
@@ -77,8 +89,11 @@ Alternatively, you could redirect everything to `index.php` and route it that wa
 
 
     
-    <code class="language-apacheconf">RewriteEngine On
-    RewriteRule ^([a-zA-Z0-9]+)$ index.php?url=$1</code>
+```apacheconf
+RewriteEngine On
+    RewriteRule ^([a-zA-Z0-9]+)$ index.php?url=$1
+```
+
 
 
 

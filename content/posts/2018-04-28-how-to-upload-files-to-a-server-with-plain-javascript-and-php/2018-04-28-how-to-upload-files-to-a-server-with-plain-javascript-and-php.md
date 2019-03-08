@@ -95,8 +95,11 @@ test.php
 
 
     
-    <code class="php language-php"><?php echo 'This is only a test.';
-    </code>
+```php
+<?php echo 'This is only a test.';
+    
+```
+
 
 
 
@@ -108,15 +111,21 @@ In the Terminal application, which I'll open by pressing `SPACEBAR` + `COMMAND` 
 
 
     
-    <code>cd server
-    </code>
+```
+cd server
+    
+```
+
 
 
 
 
     
-    <code class="bash language-bash">php -S localhost:8888
-    </code>
+```bash
+php -S localhost:8888
+    
+```
+
 
 
 
@@ -153,7 +162,8 @@ In the root of your local server, create an **index.html** file. We'll just crea
 
 
     
-    <code class="html language-html"><!DOCTYPE html>
+```html
+<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -170,7 +180,9 @@ In the root of your local server, create an **index.html** file. We'll just crea
     </body>
     
     </html>
-    </code>
+    
+```
+
 
 
 
@@ -182,11 +194,14 @@ Let's add an HTML web form to the `body`.
 
 
     
-    <code class="html language-html"><form method="post" enctype="multipart/form-data">
+```html
+<form method="post" enctype="multipart/form-data">
         <input type="file" name="files[]" multiple>
         <input type="submit" value="Upload File" name="submit">
     </form>
-    </code>
+    
+```
+
 
 
 
@@ -210,7 +225,10 @@ Finally, we have a submit button. Since the next step will be to add a script, l
 
 
     
-    <code class="html language-html"><script src="upload.js"></script></code>
+```html
+<script src="upload.js"></script>
+```
+
 
 
 
@@ -228,7 +246,8 @@ index.html
 
 
     
-    <code class="html language-html"><!DOCTYPE html>
+```html
+<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -251,7 +270,9 @@ index.html
     </body>
     
     </html>
-    </code>
+    
+```
+
 
 
 
@@ -293,10 +314,13 @@ upload.js
 
 
     
-    <code class="js language-js">// Define processing URL and form element
+```js
+// Define processing URL and form element
     const url = 'process.php';
     const form = document.querySelector('form');
-    </code>
+    
+```
+
 
 
 
@@ -308,13 +332,16 @@ We're going to add an event listener to watch for the form being submitted, but 
 
 
     
-    <code class="js language-js">// Listen for form submit
+```js
+// Listen for form submit
     form.addEventListener('submit', e => {
         e.preventDefault();
     
         // ...
     });
-    </code>
+    
+```
+
 
 
 
@@ -326,13 +353,16 @@ Let's gather the files with the `.files` property, and begin a new [`FormData()`
 
 
     
-    <code class="js language-js">    // Gather files and begin FormData
+```js
+    // Gather files and begin FormData
         const files = document.querySelector('[type=file]').files;
         const formData = new FormData();
     });
     
     // ...
-    </code>
+    
+```
+
 
 
 
@@ -344,7 +374,8 @@ For each file that has been submitted, append it to the `files[]` array.
 
 
     
-    <code class="js language-js">// Append files to files array
+```js
+// Append files to files array
     for (let i = 0; i < files.length; i++) {
         let file = files[i];
     
@@ -352,7 +383,9 @@ For each file that has been submitted, append it to the `files[]` array.
     }
     
     // ...
-    </code>
+    
+```
+
 
 
 
@@ -364,13 +397,16 @@ Finally, use the built-in [Fetch API](https://developer.mozilla.org/en-US/docs/W
 
 
     
-    <code class="js language-js">fetch(url, {
+```js
+fetch(url, {
         method: 'POST',
         body: formData
     }).then(response => {
         console.log(response);
     });
-    </code>
+    
+```
+
 
 
 
@@ -387,7 +423,8 @@ upload.js
 
 
     
-    <code class="js language-js">const url = 'process.php';
+```js
+const url = 'process.php';
     const form = document.querySelector('form');
     
     form.addEventListener('submit', e => {
@@ -408,7 +445,9 @@ upload.js
         }).then(response => {
             console.log(response);
         });
-    });</code>
+    });
+```
+
 
 
 
@@ -432,8 +471,11 @@ process.php
 
 
     
-    <code class="php language-php"><?php print_r($_FILES);
-    </code>
+```php
+<?php print_r($_FILES);
+    
+```
+
 
 
 
@@ -456,13 +498,16 @@ Developer Tools -> Console
 
 
     
-    <code class="language-bash">Response {
+```bash
+Response {
       type: "basic", 
       url: "http://localhost:8888/process.php", 
       redirected: false, 
       status: 200, 
       ok: true, …
-    }</code>
+    }
+```
+
 
 
 
@@ -485,7 +530,9 @@ Developer Tools -> Network -> Response
 
 
     
-    <code class="language-php">[files] => Array
+```php
+
+[files] => Array
     (
     	[name] => Array
     	(
@@ -516,7 +563,9 @@ Developer Tools -> Network -> Response
     		[0] => 16610
     		[1] => 12
     	)
-    )</code>
+    )
+```
+
 
 
 
@@ -552,12 +601,15 @@ process.js
 
 
     
-    <code class="php language-php"><?php
+```php
+<?php
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
        // ...
     }
-    </code>
+    
+```
+
 
 
 
@@ -569,10 +621,13 @@ We also want to make sure files have gone through.
 
 
     
-    <code class="php language-php">if (isset($_FILES['files'])) {
+```php
+if (isset($_FILES['files'])) {
         // ...
     }
-    </code>
+    
+```
+
 
 
 
@@ -590,10 +645,13 @@ At this point, we'll create an array for errors, set the path of the directory w
 
 
     
-    <code class="php language-php">$errors = [];
+```php
+$errors = [];
     $path = 'uploads/';
     $extensions = ['jpg', 'jpeg', 'png', 'gif'];
-    </code>
+    
+```
+
 
 
 
@@ -605,12 +663,15 @@ Since the user can upload multiple files, we'll create an `$all_files` variable,
 
 
     
-    <code class="php language-php">$all_files = count($_FILES['files']['tmp_name']);
+```php
+$all_files = count($_FILES['files']['tmp_name']);
     
     for ($i = 0; $i < $all_files; $i++) {  
         // ...
     }
-    </code>
+    
+```
+
 
 
 
@@ -622,14 +683,17 @@ Now, for each file we'll get the file name, temporary file data, type, size, and
 
 
     
-    <code class="php language-php">$file_name = $_FILES['files']['name'][$i];
+```php
+$file_name = $_FILES['files']['name'][$i];
     $file_tmp = $_FILES['files']['tmp_name'][$i];
     $file_type = $_FILES['files']['type'][$i];
     $file_size = $_FILES['files']['size'][$i];
     $file_ext = strtolower(end(explode('.', $_FILES['files']['name'][$i])));
     
     $file = $path . $file_name;
-    </code>
+    
+```
+
 
 
 
@@ -641,14 +705,17 @@ Now we can set a few rules for the files. If the file type in not in the approve
 
 
     
-    <code class="php language-php">if (!in_array($file_ext, $extensions)) {
+```php
+if (!in_array($file_ext, $extensions)) {
         $errors[] = 'Extension not allowed: ' . $file_name . ' ' . $file_type;
     }
     
     if ($file_size > 2097152) {
         $errors[] = 'File size exceeds limit: ' . $file_name . ' ' . $file_type;
     }
-    </code>
+    
+```
+
 
 
 
@@ -660,10 +727,13 @@ If there were no errors, we can go ahead and move the file to the **uploads** fo
 
 
     
-    <code class="php language-php">if (empty($errors)) {
+```php
+if (empty($errors)) {
         move_uploaded_file($file_tmp, $file);
     }
-    </code>
+    
+```
+
 
 
 
@@ -675,8 +745,11 @@ Now we can close out the `for` loop, and print out the errors. This will display
 
 
     
-    <code class="php language-php">if ($errors) print_r($errors);
-    </code>
+```php
+if ($errors) print_r($errors);
+    
+```
+
 
 
 
@@ -694,7 +767,8 @@ process.php
 
 
     
-    <code class="php language-php"><?php 
+```php
+<?php 
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_FILES['files'])) {
@@ -729,7 +803,9 @@ process.php
             if ($errors) print_r($errors);
         }
     }
-    </code>
+    
+```
+
 
 
 

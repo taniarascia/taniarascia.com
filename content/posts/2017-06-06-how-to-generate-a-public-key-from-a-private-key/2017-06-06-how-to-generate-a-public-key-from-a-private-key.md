@@ -17,7 +17,10 @@ Recently, I needed to find the corresponding public key from a private key (`.pe
 
 
     
-    <code class="language-bash">ssh-keygen -y -f privatekey > publickey</code>
+```bash
+ssh-keygen -y -f privatekey > publickey
+```
+
 
 
 
@@ -25,6 +28,9 @@ This code generates an OpenSSL key, which wasn't what I needed in that specific 
 
 
     
-    <code class="language-bash">openssl rsa -in privatekey -pubout > publickey</code>
+```bash
+openssl rsa -in privatekey -pubout > publickey
+```
+
 
 		

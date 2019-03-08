@@ -113,7 +113,10 @@ You can test out what's in local storage by going to the JavaScript console and 
 
 
     
-    <code class="language-js">localStorage</code>
+```js
+localStorage
+```
+
 
 
 
@@ -127,7 +130,10 @@ Adding some data to `localStorage` is as easy as using the `setItem()` method. I
 
 
     
-    <code class="language-js">localStorage.setItem('key', 'value');</code>
+```js
+localStorage.setItem('key', 'value');
+```
+
 
 
 
@@ -143,7 +149,10 @@ If you want to get the value for a particular key, you'll use the `getItem()` me
 
 
     
-    <code class="language-js">localStorage.getItem('key');</code>
+```js
+localStorage.getItem('key');
+```
+
 
 
 
@@ -157,7 +166,10 @@ Finally, you can remove the data with `removeItem()`.
 
 
     
-    <code class="language-js">localStorage.removeItem('key');</code>
+```js
+localStorage.removeItem('key');
+```
+
 
 
 
@@ -165,7 +177,10 @@ Using `clear()` will clear all local storage.
 
 
     
-    <code class="language-js">localStorage.clear();</code>
+```js
+localStorage.clear();
+```
+
 
 
 
@@ -186,7 +201,8 @@ index.html
 
 
     
-    <code class="language-html"><!doctype html>
+```html
+<!doctype html>
     <html lang="en">
     
     <head>
@@ -210,7 +226,9 @@ index.html
       <script src="js/scripts.js"></script>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -233,14 +251,17 @@ index.html
 
 
     
-    <code class="language-html"><form>
+```html
+<form>
       <input id="item" type="text" placeholder="New" required>
     </form>
     
     <h2>Items</h2>
     <ul></ul>
     
-    <button>Clear All</button></code>
+    <button>Clear All</button>
+```
+
 
 
 
@@ -274,10 +295,13 @@ scripts.js
 
 
     
-    <code class="language-js">const form = document.querySelector('form');
+```js
+const form = document.querySelector('form');
     const ul = document.querySelector('ul');
     const button = document.querySelector('button');
-    const input = document.getElementById('item');</code>
+    const input = document.getElementById('item');
+```
+
 
 
 
@@ -290,11 +314,14 @@ scripts.js
 
 
     
-    <code class="language-js">const liMaker = (text) => {
+```js
+const liMaker = (text) => {
       const li = document.createElement('li');
       li.textContent = text;
       ul.appendChild(li);
-    }</code>
+    }
+```
+
 
 
 
@@ -309,12 +336,15 @@ scripts.js
 
 
     
-    <code class="language-js">form.addEventListener('submit', function (e) {
+```js
+form.addEventListener('submit', function (e) {
       e.preventDefault();
     
       liMaker(input.value);
       input.value = "";
-    });</code>
+    });
+```
+
 
 
 
@@ -344,12 +374,15 @@ scripts.js
 
 
     
-    <code class="language-js">// other constant declarations here
+```js
+// other constant declarations here
     ...
     let itemsArray = [];
     
     localStorage.setItem('items', JSON.stringify(itemsArray));
-    const data = JSON.parse(localStorage.getItem('items'));</code>
+    const data = JSON.parse(localStorage.getItem('items'));
+```
+
 
 
 
@@ -362,12 +395,15 @@ scripts.js
 
 
     
-    <code class="language-js">// form event listener here
+```js
+// form event listener here
     ...
     e.preventDefault();
     
     itemsArray.push(input.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));</code>
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+```
+
 
 
 
@@ -380,9 +416,12 @@ scripts.js
 
 
     
-    <code class="language-js">data.forEach(item => {
+```js
+data.forEach(item => {
       liMaker(item);
-    });</code>
+    });
+```
+
 
 
 
@@ -395,12 +434,15 @@ scripts.js
 
 
     
-    <code class="language-js">button.addEventListener('click', function () {
+```js
+button.addEventListener('click', function () {
       localStorage.clear();
       while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
       }
-    });</code>
+    });
+```
+
 
 
 
@@ -425,13 +467,16 @@ scripts.js
 
 
     
-    <code class="language-js">let items;
+```js
+let items;
     
     if (localStorage.getItem('items')) {
       items = JSON.parse(localStorage.getItem('items'));
     } else {
       items = [];
-    }</code>
+    }
+```
+
 
 
 
@@ -444,7 +489,10 @@ scripts.js
 
 
     
-    <code class="language-js">let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];</code>
+```js
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+```
+
 
 
 
@@ -457,7 +505,8 @@ scripts.js
 
 
     
-    <code class="language-js">const form = document.querySelector('form');
+```js
+const form = document.querySelector('form');
     const ul = document.querySelector('ul');
     const button = document.querySelector('button');
     const input = document.getElementById('item');
@@ -490,7 +539,9 @@ scripts.js
       while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
       }
-    });</code>
+    });
+```
+
 
 
 

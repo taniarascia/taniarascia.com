@@ -18,12 +18,15 @@ Here's a quick snippet of jQuery code I use often when I need to smoothly scroll
 
 
     
-    <code class="language-js">$('a[href*="#"]').on('click', function (e) {
+```js
+$('a[href*="#"]').on('click', function (e) {
     	e.preventDefault();
     
     	$('html, body').animate({
     		scrollTop: $($(this).attr('href')).offset().top
     	}, 500, 'linear');
-    });</code>
+    });
+```
+
 
 		

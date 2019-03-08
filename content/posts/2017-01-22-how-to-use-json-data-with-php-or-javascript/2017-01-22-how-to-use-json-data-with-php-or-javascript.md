@@ -19,12 +19,15 @@ tags:
 
 
     
-    <code class="language-js">{
+```js
+{
       "name": "Tania",
       "title": "Web Developer",
       "website": "https://www.taniarascia.com"
     }
-    </code>
+    
+```
+
 
 
 
@@ -61,7 +64,10 @@ JSON stands for **J**ava**S**cript **O**bject **N**otation. It is data saved in 
 
 
     
-    <code class="language-js">{ "key": "value" }</code>
+```js
+{ "key": "value" }
+```
+
 
 
 
@@ -79,10 +85,13 @@ First, to drill in that JSON is simply a string, we're going to write JSON into 
 
 
     
-    <code class="language-php">$data = '{
+```php
+$data = '{
     	"name": "Aragorn",
     	"race": "Human"
-    }';</code>
+    }';
+```
+
 
 
 
@@ -90,7 +99,10 @@ Then we'll use the `json_decode()` function to convert the JSON string into a PH
 
 
     
-    <code class="language-php">$character = json_decode($data);</code>
+```php
+$character = json_decode($data);
+```
+
 
 
 
@@ -98,7 +110,10 @@ Now we can access it as a PHP object.
 
 
     
-    <code class="language-php">echo $character->name;</code>
+```php
+echo $character->name;
+```
+
 
 
 
@@ -106,7 +121,8 @@ Here's the whole file.
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     $data = '{
     	"name": "Aragorn",
@@ -114,7 +130,9 @@ Here's the whole file.
     }';
     
     $character = json_decode($data);
-    echo $character->name;</code>
+    echo $character->name;
+```
+
 
 
 
@@ -138,7 +156,8 @@ Here's what **data.json** will look like.
 
 
     
-    <code class="language-js">[
+```js
+[
     	{
     		"name": "Aragorn",
     		"race": "Human"
@@ -151,7 +170,9 @@ Here's what **data.json** will look like.
     		"name": "Gimli",
     		"race": "Dwarf"
     	}
-    ]</code>
+    ]
+```
+
 
 
 
@@ -159,9 +180,12 @@ And here's how we'll extract that data in PHP.
 
 
     
-    <code class="language-php">$url = 'data.json'; // path to your JSON file
+```php
+$url = 'data.json'; // path to your JSON file
     $data = file_get_contents($url); // put the contents of the file into a variable
-    $characters = json_decode($data); // decode the JSON feed</code>
+    $characters = json_decode($data); // decode the JSON feed
+```
+
 
 
 
@@ -169,7 +193,10 @@ In order to get one entry, we'll have to access the appropriate array number. Re
 
 
     
-    <code class="language-php">echo $characters[0]->name;</code>
+```php
+echo $characters[0]->name;
+```
+
 
 
 
@@ -183,9 +210,12 @@ I can access all the data in the array with a `foreach` loop.
 
 
     
-    <code class="language-php">foreach ($characters as $character) {
+```php
+foreach ($characters as $character) {
     	echo $character->name . '<br>';
-    }</code>
+    }
+```
+
 
 
 
@@ -201,7 +231,8 @@ Here is the full PHP file.
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
     $url = 'data.json'; // path to your JSON file
     $data = file_get_contents($url); // put the contents of the file into a variable
@@ -211,7 +242,9 @@ Here is the full PHP file.
     
     foreach ($characters as $character) {
     	echo $character->name . '<br>';
-    }</code>
+    }
+```
+
 
 
 
@@ -219,7 +252,8 @@ We can display the data in a table, for an example.
 
 
     
-    <code class="language-php"><table>
+```php
+<table>
     	<tbody>
     		<tr>
     			<th>Name</th>
@@ -232,7 +266,9 @@ We can display the data in a table, for an example.
             </tr>
     		<?php endforeach; ?>
     	</tbody>
-    </table></code>
+    </table>
+```
+
 
 
 
@@ -273,7 +309,10 @@ There's another way we can access the data in PHP. If you pass `true` as the arg
 
 
     
-    <code class="language-php">$characters = json_decode($data, true); // decode the JSON feed and make an associative array</code>
+```php
+$characters = json_decode($data, true); // decode the JSON feed and make an associative array
+```
+
 
 
 
@@ -281,7 +320,10 @@ Instead of `->race`, we will access the value with `['race']`.
 
 
     
-    <code class="language-php">echo $characters[0]['race'];</code>
+```php
+echo $characters[0]['race'];
+```
+
 
 
 
@@ -295,9 +337,12 @@ And here's how to access the loop.
 
 
     
-    <code class="language-php">foreach ($characters as $character) {
+```php
+foreach ($characters as $character) {
     	echo $character['race'] . "\n";
-    }</code>
+    }
+```
+
 
 
 
@@ -319,7 +364,8 @@ So far, we've only used JSON feeds with key/value pairs, but it's common to enco
 
 
     
-    <code class="language-php">[
+```php
+[
     	{
     		"name": "Harry Potter",
     		"wand": [
@@ -340,7 +386,9 @@ So far, we've only used JSON feeds with key/value pairs, but it's common to enco
     			}
     		]
     	}
-    ]</code>
+    ]
+```
+
 
 
 
@@ -348,9 +396,12 @@ Decoding the feed.
 
 
     
-    <code class="language-php">$url = 'wizards.json'; 
+```php
+$url = 'wizards.json'; 
     $data = file_get_contents($url); 
-    $wizards = json_decode($data, true);</code>
+    $wizards = json_decode($data, true);
+```
+
 
 
 
@@ -358,12 +409,15 @@ We'll be able to access the nested array using `$wizard['key'][0]['key']` in a l
 
 
     
-    <code class="language-php">foreach ($wizards as $wizard) {
+```php
+foreach ($wizards as $wizard) {
     	echo $wizard['name'] . '\'s wand is ' . 
     			 $wizard['wand'][0]['wood'] . ', ' . 
     		   $wizard['wand'][0]['length'] . ', with a ' . 
     		   $wizard['wand'][0]['core'] . ' core. <br>' ;
-    }</code>
+    }
+```
+
 
 
 
@@ -384,12 +438,15 @@ Just as you use `json_decode()` to turn JSON into PHP, you can turn PHP into JSO
 
 
     
-    <code class="language-php">$data = [
+```php
+$data = [
     	'name' => 'Aragorn',
     	'race' => 'Human'
     ];
     
-    echo json_encode($data);</code>
+    echo json_encode($data);
+```
+
 
 
 
@@ -397,7 +454,9 @@ We made a PHP array and encoded it. Here's the output:
 
 
     
-    <div class="terminal">{"name":"Aragorn","race":"Human"}</code>
+    <div class="terminal">{"name":"Aragorn","race":"Human"}
+```
+
 
 
 
@@ -411,7 +470,10 @@ We're going to create a JavaScript variable called `data` and apply the JSON str
 
 
     
-    <code class="language-js">var data = '[ { "name": "Aragorn", "race": "Human" }, { "name": "Gimli", "race": "Dwarf" } ]'; </code>
+```js
+var data = '[ { "name": "Aragorn", "race": "Human" }, { "name": "Gimli", "race": "Dwarf" } ]'; 
+```
+
 
 
 
@@ -419,7 +481,10 @@ Now we'll use JavaScript built in `JSON.parse()` function to decode the string.
 
 
     
-    <code class="language-php">data = JSON.parse(data);</code>
+```php
+data = JSON.parse(data);
+```
+
 
 
 
@@ -427,7 +492,10 @@ From here we can access the data like a regular JavaScript object.
 
 
     
-    <code class="language-js">console.log(data[1].name);</code>
+```js
+console.log(data[1].name);
+```
+
 
 
 
@@ -441,16 +509,21 @@ And we can loop through each iteration with a `for` loop.
 
 
     
-    <code class="language-js">for (var i = 0; i < data.length; i++) {
+```js
+for (var i = 0; i < data.length; i++) {
     	console.log(data[i].name + ' is a ' + data[i].race + '.');
-    }</code>
+    }
+```
+
 
 
 
 
     
     <div class="terminal">Aragorn is a Human.
-    Gimli is a Dwarf.</code>
+    Gimli is a Dwarf.
+```
+
 
 
 
@@ -458,7 +531,8 @@ That was easy! Now, we'll probably need to access JSON from a URL. There's an ex
 
 
     
-    <code class="language-js">[
+```js
+[
     	{
     		"name": "Aragorn",
     		"race": "Human"
@@ -467,7 +541,9 @@ That was easy! Now, we'll probably need to access JSON from a URL. There's an ex
     		"name": "Gimli",
     		"race": "Dwarf"
     	}
-    ]</code>
+    ]
+```
+
 
 
 
@@ -475,7 +551,10 @@ Now we'll make an `XMLHttpRequest()`.
 
 
     
-    <code class="language-js">var request = new XMLHttpRequest();</code>
+```js
+var request = new XMLHttpRequest();
+```
+
 
 
 
@@ -483,7 +562,10 @@ We'll open the file (**data.json**) via GET (URL) request.
 
 
     
-    <code class="language-js">request.open('GET', 'data.json', true);</code>
+```js
+request.open('GET', 'data.json', true);
+```
+
 
 
 
@@ -491,9 +573,12 @@ From here, we'll parse and work with all our JSON data within the `onload` funct
 
 
     
-    <code class="language-js">request.onload = function () {
+```js
+request.onload = function () {
     	// begin accessing JSON data here
-    }</code>
+    }
+```
+
 
 
 
@@ -501,7 +586,10 @@ Then finally, submit the request.
 
 
     
-    <code class="language-js">request.send();</code>
+```js
+request.send();
+```
+
 
 
 
@@ -509,7 +597,8 @@ Here's the final code.
 
 
     
-    <code class="language-js">var request = new XMLHttpRequest();
+```js
+var request = new XMLHttpRequest();
     
     request.open('GET', 'data.json', true);
     
@@ -522,7 +611,9 @@ Here's the final code.
     	}
     }
     
-    request.send();</code>
+    request.send();
+```
+
 
 
 
@@ -531,7 +622,9 @@ And the output.
 
     
     <div class="terminal">Aragorn is a Human.
-    Gimli is a Dwarf.</code>
+    Gimli is a Dwarf.
+```
+
 
 
 
@@ -545,7 +638,8 @@ Now you can also use the Fetch API to do the same thing. Read [How to Use the Ja
 
 
     
-    <code class="language-js">// Replace ./data.json with your JSON feed
+```js
+// Replace ./data.json with your JSON feed
     fetch('./data.json').then(response => {
       return response.json();
     }).then(data => {
@@ -553,7 +647,9 @@ Now you can also use the Fetch API to do the same thing. Read [How to Use the Ja
       console.log(data);
     }).catch(err => {
       // Do something for an error here
-    });</code>
+    });
+```
+
 
 
 
@@ -567,12 +663,15 @@ As you can see, it's not too difficult to retrieve a JSON feed with plain JavaSc
 
 
     
-    <code class="language-js">$(document).ready(function () {
+```js
+$(document).ready(function () {
     	$.getJSON('data.json', function (data) {
     		// begin accessing JSON data here
     			console.log(data[0].name);
     	});
-    });</code>
+    });
+```
+
 
 
 
@@ -580,7 +679,8 @@ You might also see jQuery access JSON via an AJAX request, which is a little mor
 
 
     
-    <code class="language-js">	$(document).ready(function () {
+```js
+	$(document).ready(function () {
     		var data;
     		$.ajax({
     			dataType: "json",
@@ -591,7 +691,9 @@ You might also see jQuery access JSON via an AJAX request, which is a little mor
     console.log(data[0].name);
     			}
     		});
-    	});</code>
+    	});
+```
+
 
 
 

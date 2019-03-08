@@ -247,7 +247,8 @@ All extensions are installed by going to `File > Extension Manager`.
 
 
     
-    <code class="language-js"> {
+```js
+ {
         "styleActiveLine": true,
         "themes.theme": "new-moon",
         "brackets-indent-guides.enabled": true,
@@ -261,7 +262,9 @@ All extensions are installed by going to `File > Extension Manager`.
         },
         "fonts.fontSize": "14.5px",
         "fonts.fontFamily": "'Menlo', monospace"
-     }</code>
+     }
+```
+
 
 
 
@@ -469,7 +472,10 @@ Encrypted websites are becoming the standard, and there's no reason not to encry
 
 
     
-    <code class="language-apacheconf">openssl req -new -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.csr</code>
+```apacheconf
+openssl req -new -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.csr
+```
+
 
 
 
@@ -487,8 +493,12 @@ Encrypted websites are becoming the standard, and there's no reason not to encry
 
 
     
-    <code class="language-php">$_SERVER['HTTPS'] = 'on';
-    define('FORCE_SSL_ADMIN', true);</code>
+```php
+
+$_SERVER['HTTPS'] = 'on';
+    define('FORCE_SSL_ADMIN', true);
+```
+
 
 
 
@@ -500,9 +510,12 @@ Encrypted websites are becoming the standard, and there's no reason not to encry
 
 
     
-    <code class="language-apacheconf">RewriteEngine On
+```apacheconf
+RewriteEngine On
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code>
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+```
+
 
 
 

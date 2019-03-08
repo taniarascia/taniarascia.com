@@ -18,7 +18,10 @@ Recently I wanted to set up a cron job on MAMP, and could not find any resources
 
 
     
-    <code class="language-bash">*/1 * * * * /Applications/MAMP/bin/php/php5.6.32/bin/php /Users/tania/cron.php > /dev/null 2>&1</code>
+```bash
+*/1 * * * * /Applications/MAMP/bin/php/php5.6.32/bin/php /Users/tania/cron.php > /dev/null 2>&1
+```
+
 
 
 

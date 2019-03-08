@@ -23,10 +23,13 @@ Put the two images in an outer block element.
 
 
     
-    <code class="language-html"><section>
+```html
+<section>
     	<img class="bottom" src="img.png">
     	<img class="top" src="img-2.png">
-    </section></code>
+    </section>
+```
+
 
 
 
@@ -34,13 +37,16 @@ The outer will be `relative` and the inner will be `absolute`.
 
 
     
-    <code class="language-css">section {
+```css
+section {
       position: relative;
     }
     
     section img {
     	position: absolute;
-    }</code>
+    }
+```
+
 
 
 
@@ -48,7 +54,8 @@ Create the animation and apply it to the top element.
 
 
     
-    <code class="language-css">.top {
+```css
+.top {
     	animation-name: fade;
     	animation-timing-function: ease-in-out;
     	animation-iteration-count: infinite;
@@ -69,6 +76,8 @@ Create the animation and apply it to the top element.
     	100% {
     		opacity: 0;
     	}
-    }</code>
+    }
+```
+
 
 		

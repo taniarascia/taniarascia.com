@@ -21,7 +21,8 @@ Here's the AJAX function.
 
 
     
-    <code class="language-js">function doTheThing() {
+```js
+function doTheThing() {
         $.ajax({
             url: window.location.href,
             type: 'POST',
@@ -35,7 +36,9 @@ Here's the AJAX function.
                 console.log(error);
             }
         });
-    }</code>
+    }
+```
+
 
 
 
@@ -43,8 +46,11 @@ And you might call the two functions in succession, and find that the second fun
 
 
     
-    <code class="language-js">doTheThing();
-    doSomethingElse();</code>
+```js
+doTheThing();
+    doSomethingElse();
+```
+
 
 
 
@@ -52,7 +58,8 @@ We can quickly and easily rewrite this with a `Promise`
 
 
     
-    <code class="language-js">function doTheThing() {
+```js
+function doTheThing() {
         return new Promise((resolve, reject) => {
             $.ajax({
                 url: window.location.href,
@@ -68,7 +75,9 @@ We can quickly and easily rewrite this with a `Promise`
                 }
             });
         });
-    }</code>
+    }
+```
+
 
 
 
@@ -76,14 +85,17 @@ Now we can do the AJAX call, run the success function, and follow it up with any
 
 
     
-    <code class="language-js">doTheThing()
+```js
+doTheThing()
     .then(data => {
         console.log(data);
         doSomethingElse();
     })
     .catch(error => {
         console.log(error);
-    });</code>
+    });
+```
+
 
 
 

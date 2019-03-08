@@ -58,9 +58,12 @@ You can make sure you're in the main user directory by navigating to `~` (which 
 Create `bin` in that folder, or wherever you want your bash scripts to live.
 
     
-    <code class="bash language-bash">cd ~      # this takes us to /Users/tania
+```bash
+cd ~      # this takes us to /Users/tania
     mkdir bin # this creates /Users/tania/bin
-    </code>
+    
+```
+
 
 
 
@@ -71,8 +74,11 @@ Create `bin` in that folder, or wherever you want your bash scripts to live.
 Open `.bash_profile`, which will be located at `/Users/tania/.bash_profile`, and add this line to the file. If `.bash_profile` doesn't exist, create it.
 
     
-    <code class="bash language-bash">export PATH=$PATH:/Users/tania/bin
-    </code>
+```bash
+export PATH=$PATH:/Users/tania/bin
+    
+```
+
 
 
 If you don't see hidden files and directories, or those that begin with a `.`, press Command + SHIFT + ..
@@ -84,15 +90,21 @@ If you don't see hidden files and directories, or those that begin with a `.`, p
 Go to your `bin` folder located in `/Users/tania`.
 
     
-    <code class="bash language-bash">cd bin
-    </code>
+```bash
+cd bin
+    
+```
+
 
 
 Create a file called `hello-world` (no extension) in this folder.
 
     
-    <code class="bash language-bash">touch hello-world
-    </code>
+```bash
+touch hello-world
+    
+```
+
 
 
 Open the file in your text editor of choice and type the following.
@@ -103,15 +115,21 @@ hello-world
 
 
     
-    <code class="bash language-bash">#!/bin/bash
-    </code>
+```bash
+#!/bin/bash
+    
+```
+
 
 
 A bash script must always begin with `#!/bin/bash` to signify that the script should run with bash as opposed to any other shell. This is called a "shebang". You can confirm where the bash interpreter is located with `which bash`.
 
     
-    <code class="bash language-bash">which bash
-    /bin/bash</code>
+```bash
+which bash
+    /bin/bash
+```
+
 
 
 As is tradition, we'll make a "Hello, World!" example to get this working.
@@ -122,17 +140,23 @@ hello-world
 
 
     
-    <code class="bash language-bash">#!/bin/bash
+```bash
+#!/bin/bash
     
     echo Hello, World!
-    </code>
+    
+```
+
 
 
 Now, you can try to run the file in the terminal.
 
     
-    <code class="bash language-bash">hello-world
-    </code>
+```bash
+hello-world
+    
+```
+
 
 
 But it won't work.
@@ -145,8 +169,11 @@ But it won't work.
 We have to make it an executable file by changing the permissions.
 
     
-    <code class="bash language-bash">chmod u+x hello-world
-    </code>
+```bash
+chmod u+x hello-world
+    
+```
+
 
 
 Now when you run the command, it will output the contents of the `echo`.
@@ -176,12 +203,15 @@ hello-world
 
 
     
-    <code class="bash language-bash">#!/bin/bash
+```bash
+#!/bin/bash
     
     who="World"
     
     echo Hello, $who!
-    </code>
+    
+```
+
 
 
 
@@ -205,14 +235,17 @@ hello-world
 
 
     
-    <code class="bash language-bash">#!/bin/bash
+```bash
+#!/bin/bash
     
     echo Who are you?
     
     read who
     
     echo Hello, $who!
-    </code>
+    
+```
+
 
 
 
@@ -237,7 +270,8 @@ check-id
 
 
     
-    <code class="bash language-bash">#!/bin/bash
+```bash
+#!/bin/bash
     
     echo How old are you?
     
@@ -249,7 +283,9 @@ check-id
     else 
         echo You are too young to drink.
     fi
-    </code>
+    
+```
+
 
 
 
@@ -358,7 +394,8 @@ Description
 Bash uses `for`, `while`, and `until` loops. In this example, I'll use the `for...in` loop to get all the files in a directory and list them.
 
     
-    <code class="bash language-bash">#!/bin/bash
+```bash
+#!/bin/bash
     
     FILES=/Users/tania/dev/*
     
@@ -366,7 +403,9 @@ Bash uses `for`, `while`, and `until` loops. In this example, I'll use the `for.
     do
       echo $(basename $file)
     done
-    </code>
+    
+```
+
 
 
 
@@ -382,14 +421,17 @@ git-deploy
 
 
     
-    <code class="bash language-bash">#!/bin/bash
+```bash
+#!/bin/bash
     
     read -r -p 'Commit message: ' desc  # prompt user for commit message
     git add .                           # track all files 
     git add -u                          # track deletes
     git commit -m "$desc"               # commit with message
     git push origin master              # push to origin
-    </code>
+    
+```
+
 
 
 

@@ -23,9 +23,12 @@ Simple component
 
 
     
-    <code class="language-jsx">const Example = () => {
+```jsx
+const Example = () => {
       return <div>I'm a simple component</div>
-    }</code>
+    }
+```
+
 
 
 
@@ -35,11 +38,14 @@ Class component
 
 
     
-    <code class="language-jsx">class Example extends Component {
+```jsx
+class Example extends Component {
       render() {
         return <div>I'm a class component</div>
       }
-    }</code>
+    }
+```
+
 
 
 Many of the features available to classes - such as **lifecycle methods** and **state** - have not been available to simple components, until now. The new Hooks proposal adds all that functionality and more.
@@ -69,13 +75,19 @@ In this tutorial, we'll make a [simple CRUD app](https://taniarascia.github.io/r
 We'll start by installing the project with **create-react-app** (CRA).
 
     
-    <code class="language-bash">npx create-react-app react-hooks</code>
+```bash
+npx create-react-app react-hooks
+```
+
 
 
 CRA will install React with the latest stable version.
 
     
-    <code class="language-bash">brew install yarn --without-node</code>
+```bash
+brew install yarn --without-node
+```
+
 
 
 In `package.json`, ensure `react` and `react-dom` are `16.7.0`.
@@ -86,10 +98,13 @@ package.json
 
 
     
-    <code class="language-json">"dependencies": {
+```json
+"dependencies": {
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
-    </code>
+    
+```
+
 
 
 Then run `yarn`.
@@ -112,12 +127,15 @@ index.js
 
 
     
-    <code class="language-jsx">import React from 'react';
+```jsx
+import React from 'react';
     import ReactDOM from 'react-dom';
     import './index.css';
     import App from './App';
     
-    ReactDOM.render(<App />, document.getElementById('root'));</code>
+    ReactDOM.render(<App />, document.getElementById('root'));
+```
+
 
 
 And in `App.js`, I'll make a simple, functional component for `App` instead of a class.
@@ -128,7 +146,8 @@ App.js
 
 
     
-    <code class="language-jsx">import React from 'react'
+```jsx
+import React from 'react'
     
     const App = () => {
     	return (
@@ -147,7 +166,9 @@ App.js
     }
     
     export default App
-    </code>
+    
+```
+
 
 
 Now we have the initial setup and skeleton for the app.
@@ -169,7 +190,8 @@ Class Component State Example
 
 
     
-    <code class="language-jsx">class App extends Component {
+```jsx
+class App extends Component {
       initialState = {
         title: '',
         available: false,
@@ -180,7 +202,9 @@ Class Component State Example
       updateBook = book => {
         this.setState({ title: book.title, available: book.available })
       }
-    }</code>
+    }
+```
+
 
 
 With Hook state, there's a getter and setter for each type of state (you can have as many as you want), and we obviously create functions instead of methods.
@@ -191,7 +215,8 @@ Hook State Example
 
 
     
-    <code class="language-jsx">const App = () => {
+```jsx
+const App = () => {
       const initialBookState = {
         title: '',
         available: false,
@@ -202,7 +227,9 @@ Hook State Example
       const updateBook = book => {
         setBook({ title: book.title, available: book.available })
       }
-    }</code>
+    }
+```
+
 
 
 I'm not going to get deep into the rationale behind hooks vs. class components, as you can read [all about it on React's Hooks introduction](https://reactjs.org/docs/hooks-intro.html). I'm just going to show you how to work with them to create a functional app.
@@ -219,7 +246,8 @@ tables/UserTable.js
 
 
     
-    <code class="language-jsx">import React from 'react'
+```jsx
+import React from 'react'
     
     const UserTable = () => (
       <table>
@@ -243,7 +271,9 @@ tables/UserTable.js
       </table>
     )
     
-    export default UserTable</code>
+    export default UserTable
+```
+
 
 
 Now just import the file and add in the new component.
@@ -254,7 +284,8 @@ App.js
 
 
     
-    <code class="language-jsx">import React from 'react'
+```jsx
+import React from 'react'
     import UserTable from './tables/UserTable'
     
     const App = () => {
@@ -274,7 +305,9 @@ App.js
       )
     }
     
-    export default App</code>
+    export default App
+```
+
 
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-02-at-12.53.54-PM-1024x515.png)
@@ -288,7 +321,8 @@ App.js
 
 
     
-    <code class="language-jsx">import React, { useState } from 'react'
+```jsx
+import React, { useState } from 'react'
     import UserTable from './tables/UserTable'
     
     const App = () => {
@@ -314,7 +348,9 @@ App.js
           </div>
         </div>
       )
-    }</code>
+    }
+```
+
 
 
 Props works just as it did before. We'll map through the user data we sent through and display the properties for each user, or display a message if there are no users. The edit and delete buttons aren't hooked up to anything yet, so they won't do anything.
@@ -325,7 +361,8 @@ UserTable.js
 
 
     
-    <code class="language-jsx">import React from 'react'
+```jsx
+import React from 'react'
     
     const UserTable = props => (
     	<table>
@@ -357,7 +394,9 @@ UserTable.js
     	</table>
     )
     
-    export default UserTable</code>
+    export default UserTable
+```
+
 
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-02-at-1.07.09-PM-1024x581.png)
@@ -381,10 +420,13 @@ App.js
 
 
     
-    <code class="language-jsx">const addUser = user => {
+```jsx
+const addUser = user => {
       user.id = users.length + 1
       setUsers([ ...users, user ])
-    }</code>
+    }
+```
+
 
 
 We're going to make a component for this, so I'll just go ahead and add the reference to the component at the top, and insert the component below the "Add user" header. We can pass the `addUser()` through as a prop. Make sure not to include the parentheses when we pass it through as a reference - `<AddUserForm addUser={addUser} />`, not `<AddUserForm addUser={addUser()} />`.
@@ -395,7 +437,8 @@ App.js
 
 
     
-    <code class="language-jsx">import React, { useState } from 'react'
+```jsx
+import React, { useState } from 'react'
     import UserTable from './tables/UserTable'
     import AddUserForm from './forms/AddUserForm'
     
@@ -430,7 +473,9 @@ App.js
       )
     }
     
-    export default App</code>
+    export default App
+```
+
 
 
 Now we have to create a form that you can use to add the new user. Let's create a `forms` subdirectory with a file inside called `AddUserForm.js`.
@@ -441,7 +486,8 @@ App.js
 
 
     
-    <code class="language-jsx">import React, { useState } from 'react'
+```jsx
+import React, { useState } from 'react'
     
     const AddUserForm = props => {
     	return (
@@ -455,7 +501,9 @@ App.js
     	)
     }
     
-    export default AddUserForm</code>
+    export default AddUserForm
+```
+
 
 
 Right now, the form is empty, and you cannot add any values to it due to our empty value strings, nor does the submit button do anything.
@@ -470,18 +518,24 @@ AddUserForm.js
 
 
     
-    <code class="language-jsx">const initialFormState = { id: null, name: '', username: '' }
-    const [ user, setUser ] = useState(initialFormState)</code>
+```jsx
+const initialFormState = { id: null, name: '', username: '' }
+    const [ user, setUser ] = useState(initialFormState)
+```
+
 
 
 Now we'll create a function to update the state within the form. `event` always gets passed through to any `on` event in the DOM, so you'll see that as the parameter of the function. Object destructuring will allow us to easily get the `name` (key) and `value` from the form. Finally, we'll set the user much like we did on the `App` component, except this time we're using computed property names to dynamically set the name (using `[name]`) and value.
 
     
-    <code class="language-jsx">const handleInputChange = event => {
+```jsx
+const handleInputChange = event => {
       const { name, value } = event.target
     
       setUser({ ...user, [name]: value })
-    }</code>
+    }
+```
+
 
 
 
@@ -492,19 +546,23 @@ Now we'll create a function to update the state within the form. `event` always 
 Now we extract the values from the state object, and reference our function in the `onChange` event.
 
     
-    <code class="language-jsx"><form>
+```jsx
+<form>
       <label>Name</label>
       <input type="text" name="name" value={user.name} onChange={handleInputChange} />
       <label>Username</label>
       <input type="text" name="username" value={user.username} onChange={handleInputChange} />
       <button>Add new user</button>
-    </form></code>
+    </form>
+```
+
 
 
 The last thing to take care of is actually submitting the form back to the `App` component. As we passed the function down with `props`, we're going to use props to access the function. I'm going to write an `onSubmit` function, and we'll prevent the default form submission from firing. I added a small bit of validation to make sure empty values cannot be submitted, and sent the user through to the add function. Finally, I'm using the setter to reset the form to its initial value after successful submission.
 
     
-    <code class="language-jsx"><form
+```jsx
+<form
       onSubmit={event => {
         event.preventDefault()
         if (!user.name || !user.username) return
@@ -512,7 +570,9 @@ The last thing to take care of is actually submitting the form back to the `App`
         props.addUser(user)
         setUser(initialFormState)
       }}
-    ></code>
+    >
+```
+
 
 
 Fortunately this code is pretty simple, as we don't have to worry about asynchronous API calls.
@@ -525,7 +585,8 @@ AddUserForm.js
 
 
     
-    <code class="language-jsx">import React, { useState } from 'react'
+```jsx
+import React, { useState } from 'react'
     
     const AddUserForm = props => {
     	const initialFormState = { id: null, name: '', username: '' }
@@ -556,7 +617,9 @@ AddUserForm.js
     	)
     }
     
-    export default AddUserForm</code>
+    export default AddUserForm
+```
+
 
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-06-at-9.35.57-PM.png)
@@ -573,26 +636,35 @@ The next one we'll tackle is deleting a user, which is the easiest functionality
 Below `addUser` in `App.js`, we'll create `deleteUser`, which will take the ID of the user and filter them out of the user array.
 
     
-    <code class="language-jsx">const deleteUser = id => {
+```jsx
+const deleteUser = id => {
       setUsers(users.filter(user => user.id !== id))
-    }</code>
+    }
+```
+
 
 
 We pass that function through props to `UserTable`.
 
     
-    <code class="language-jsx"><UserTable users={users} deleteUser={deleteUser} /></code>
+```jsx
+<UserTable users={users} deleteUser={deleteUser} />
+```
+
 
 
 Now all we need to do in `UserTable.js` is make sure the delete button calls that function.
 
     
-    <code class="language-jsx"><button
+```jsx
+<button
       onClick={() => props.deleteUser(user.id)}
       className="button muted-button"
     >
       Delete
-    </button></code>
+    </button>
+```
+
 
 
 Now you can delete some or all of the users.
@@ -616,35 +688,50 @@ App.js
 
 
     
-    <code class="language-jsx">const [ editing, setEditing ] = useState(false)</code>
+```jsx
+const [ editing, setEditing ] = useState(false)
+```
+
 
 
 Since we don't know who is being edited until it's selected, we'll create initial empty state for the form, like we did with the add form.
 
     
-    <code class="language-jsx">const initialFormState = { id: null, name: '', username: '' }</code>
+```jsx
+const initialFormState = { id: null, name: '', username: '' }
+```
+
 
 
 We'll want a way to see and update who the current user being edited is, so we'll apply that empty user to a `currentUser` state.
 
     
-    <code class="language-jsx">const [ currentUser, setCurrentUser ] = useState(initialFormState)</code>
+```jsx
+const [ currentUser, setCurrentUser ] = useState(initialFormState)
+```
+
 
 
 When Edit is selected on a user, it should turn on edit mode, and set the current user, which we'll do in this `editRow` function.
 
     
-    <code class="language-jsx">const editRow = user => {
+```jsx
+const editRow = user => {
       setEditing(true)
     
       setCurrentUser({ id: user.id, name: user.name, username: user.username })
-    }</code>
+    }
+```
+
 
 
 Now just pass that function to `UserTable` like we did with `deleteUser`.
 
     
-    <code class="language-jsx"><UserTable users={users} editRow={editRow} deleteUser={deleteUser} /></code>
+```jsx
+<UserTable users={users} editRow={editRow} deleteUser={deleteUser} />
+```
+
 
 
 Over in `UserTable.js`, we send the `user` object over.
@@ -655,14 +742,17 @@ UserTable.js
 
 
     
-    <code class="language-jsx"><button
+```jsx
+<button
       onClick={() => {
         props.editRow(user)
       }}
       className="button muted-button"
     >
       Edit
-    </button></code>
+    </button>
+```
+
 
 
 Now we've got all the setup - there's a switch for edit mode, and a button that will pass the current user into state while flipping the edit mode switch.
@@ -677,11 +767,14 @@ App.js
 
 
     
-    <code class="language-jsx">const updateUser = (id, updatedUser) => {
+```jsx
+const updateUser = (id, updatedUser) => {
       setEditing(false)
     
       setUsers(users.map(user => (user.id === id ? updatedUser : user)))
-    }</code>
+    }
+```
+
 
 
 We just need to make the edit form itself.
@@ -694,7 +787,8 @@ EditUserForm.js
 
 
     
-    <code class="language-jsx">import React, { useState } from 'react'
+```jsx
+import React, { useState } from 'react'
     
     const EditUserForm = props => {
     	const [ user, setUser ] = useState(props.currentUser)
@@ -725,7 +819,9 @@ EditUserForm.js
     	)
     }
     
-    export default EditUserForm</code>
+    export default EditUserForm
+```
+
 
 
 Now we have to bring the edit form into `App.js`, as well as creating a toggle for displaying the add or edit form.
@@ -738,7 +834,10 @@ App.js
 
 
     
-    <code class="language-jsx">import EditUserForm from './forms/EditUserForm'</code>
+```jsx
+import EditUserForm from './forms/EditUserForm'
+```
+
 
 
 Then create the toggle. We'll use a ternary operation to check if the `editing` state is true or not. If true, show the edit form. If false, show the add form. Make sure to pass all the functions we created down to the editing component.
@@ -749,7 +848,8 @@ App.js
 
 
     
-    <code class="language-jsx"><div className="flex-large">
+```jsx
+<div className="flex-large">
       {editing ? (
         <div>
           <h2>Edit user</h2>
@@ -766,7 +866,9 @@ App.js
           <AddUserForm addUser={addUser} />
         </div>
       )}
-    </div></code>
+    </div>
+```
+
 
 
 Okay, so at this point clicking on the Edit button should toggle edit mode, and you should be able to update a user. But are we done?
@@ -790,7 +892,10 @@ EditUserForm.js
 
 
     
-    <code class="language-jsx">import React, { useState, useEffect } from 'react'</code>
+```jsx
+import React, { useState, useEffect } from 'react'
+```
+
 
 
 
@@ -800,12 +905,15 @@ EditUserForm.js
 
 
     
-    <code class="language-jsx">useEffect(
+```jsx
+useEffect(
       () => {
         setUser(props.currentUser)
       },
       [ props ]
-    )</code>
+    )
+```
+
 
 
 In the Effect Hook, we create a callback function that updates the `user` state with the new prop thats being sent through. Before, we needed to compare `if (prevProps.currentUser !== this.state.currentUser)`, but with the Effect Hook we can just pass `[props]` through to let it know we're watching props.

@@ -96,7 +96,9 @@ Create a new database.
 
     
     <code class="sql language-sql">CREATE DATABASE IF NOT EXISTS database_name
-    </code>
+    
+```
+
 
 
 
@@ -111,7 +113,9 @@ Delete an existing database.
 
     
     <code class="sql language-sql">DROP DATABASE IF EXISTS database_name
-    </code>
+    
+```
+
 
 
 
@@ -129,7 +133,9 @@ Creates a new table with corresponding structure. The structure schema consists 
       column_a Datatype Constraints DEFAULT 'value_1',
       column_b Datatype Constraints
     );
-    </code>
+    
+```
+
 
 
 
@@ -145,7 +151,9 @@ Create Table Example
       username VARCHAR(30) NOT NULL, 
       location VARCHAR(50) DEFAULT 'Chicago'
     );
-    </code>
+    
+```
+
 
 
 
@@ -303,7 +311,9 @@ Add, modify, rename, or drop a column. Rename a table.
     ALTER COLUMN column_a Datatype Constraints  
             DROP column_a
        RENAME TO table_b
-    </code>
+    
+```
+
 
 
 
@@ -318,7 +328,9 @@ Delete an existing table.
 
     
     <code class="sql language-sql">DROP TABLE IF EXISTS table_name
-    </code>
+    
+```
+
 
 
 
@@ -363,7 +375,9 @@ Select data from a database. Only `SELECT` and `FROM` are mandatory; the rest of
          DESC
         LIMIT Count
        OFFSET Count
-    </code>
+    
+```
+
 
 
 
@@ -385,7 +399,9 @@ Select Rows Example
       HAVING average_age > 21
     ORDER BY join_date DESC
        LIMIT 100
-      OFFSET 1</code>
+      OFFSET 1
+```
+
 
 
 
@@ -401,7 +417,9 @@ Filter out duplicates to select unique results.
     
     <code class="sql language-sql">SELECT DISTINCT column_name
                FROM table_name
-    </code>
+    
+```
+
 
 
 
@@ -672,7 +690,9 @@ Add new rows into a table.
     
     <code class="sql language-sql">INSERT INTO table_name (column_a, column_b)
          VALUES ("value_1", "value_2")
-    </code>
+    
+```
+
 
 
 
@@ -690,7 +710,9 @@ Modify existing rows in a table.
        SET column_a = "value_1"
            column_b = "value_2"
      WHERE Condition
-    </code>
+    
+```
+
 
 
 
@@ -706,7 +728,9 @@ Delete existing rows from a table.
     
     <code class="sql language-sql">DELETE FROM table_name
           WHERE Condition
-    </code>
+    
+```
+
 
 
 
@@ -728,7 +752,8 @@ Set connection details.
 
 
     
-    <code class="php language-php">$host       = 'localhost';
+```php
+$host       = 'localhost';
     $username   = 'root';
     $password   = 'root';
     $dbname     = 'pdo';
@@ -739,7 +764,9 @@ Set connection details.
                   ];
     
     $connection = new PDO($dsn, $username, $password, $options);
-    </code>
+    
+```
+
 
 
 
@@ -803,7 +830,8 @@ Select rows with optional binded parameters.
 
 
     
-    <code class="php language-php">$sql = "SELECT * 
+```php
+$sql = "SELECT * 
               FROM users
              WHERE location = :location";
     
@@ -818,7 +846,9 @@ Select rows with optional binded parameters.
     foreach ($rows as $row) {
       echo $row['location'];
     } 
-    </code>
+    
+```
+
 
 
 
@@ -832,7 +862,8 @@ Insert rows with binded values.
 
 
     
-    <code class="php language-php">$sql = "INSERT INTO users (username, email) 
+```php
+$sql = "INSERT INTO users (username, email) 
                  VALUES (:username, :email)";
     
     $username = 'Tania';
@@ -843,7 +874,9 @@ Insert rows with binded values.
     $statement->bindValue(':email', $email, PDO::PARAM_STR);
     
     $insert = $statement->execute();
-    </code>
+    
+```
+
 
 
 
@@ -857,7 +890,8 @@ Update rows with an associated array of data.
 
 
     
-    <code class="php language-php">$user = [
+```php
+$user = [
       'username'  => 'Tania',
       'email'     => 'tania@example.com',
       'location'  => 'Chicago',
@@ -871,7 +905,9 @@ Update rows with an associated array of data.
     
     $statement = $connection->prepare($sql);
     $statement->execute($user);
-    </code>
+    
+```
+
 
 
 
@@ -885,14 +921,17 @@ Delete existing rows.
 
 
     
-    <code class="php language-php">$sql = "DELETE FROM users 
+```php
+$sql = "DELETE FROM users 
                   WHERE id = :id";
     
     $statement = $connection->prepare($sql);
     $statement->bindValue(':id', 5, PDO::PARAM_INT);
     
     $delete = $statement->execute();
-    </code>
+    
+```
+
 
 
 

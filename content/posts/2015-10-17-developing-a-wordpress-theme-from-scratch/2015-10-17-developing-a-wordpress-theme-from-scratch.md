@@ -101,31 +101,47 @@ Don't be nervous. Change the database name, username, and password, from this:
 
 wp-config.php
 
-    <code class="language-php">/** The name of the database for WordPress */
+```php
+
+/** The name of the database for WordPress */
     define('DB_NAME', 'database_name_here');
     /** MySQL database username */
     define('DB_USER', 'username_here');
     /** MySQL database password */
-    define('DB_PASSWORD', 'password_here');</code>
+    define('DB_PASSWORD', 'password_here');
+```
+
 
 to this:
 
 wp-config.php
 
-    <code class="language-php">/** The name of the database for WordPress */
+```php
+
+/** The name of the database for WordPress */
     define('DB_NAME', 'startwordpress');
     /** MySQL database username */
     define('DB_USER', 'root');
     /** MySQL database password */
-    define('DB_PASSWORD', 'root');</code>
+    define('DB_PASSWORD', 'root');
+```
+
 
 Find this:
 
-    <code class="language-php">$table_prefix  = 'wp_';</code>
+```php
+
+$table_prefix  = 'wp_';
+```
+
 
 And change it to literally anything else with numbers and letters. For security. `xyz_` or `735hjq9`\_, etc.
 
-    <code class="language-php">$table_prefix  = 'xyz77_';</code>
+```php
+
+$table_prefix  = 'xyz77_';
+```
+
 
 Go to [https://api.wordpress.org/secret-key/1.1/salt](https://api.wordpress.org/secret-key/1.1/salt/) and replace the entire 'put your unique phrase here' with that generated code.
 
@@ -151,13 +167,16 @@ In your custom theme folder, create **style.css**. It simply contains a comment 
 
 style.css
 
-    <code class="language-css">/*
+```css
+/*
     Theme Name: Start WordPress
     Author: Tania Rascia
     Description: Bootstrap Blog template converted to WordPress
     Version: 0.0.1
     Tags: bootstrap
-    */</code>
+    */
+```
+
 
 Remember [the Bootstrap blog source code](https://github.com/taniarascia/bootstrapblog) from earlier in the article? Move those two files - `index.html` and `blog.css` - to your custom theme folder. Rename `index.html` to `index.php`.
 
@@ -177,11 +196,18 @@ Fortunately, this is easily remedied. There's a few ways to do this, but I'll sh
 
 Locate where you linked to the CSS stylesheet in the head of **index.php**. This is what it looks like **right now**, but we'll have to change it.
 
-    <code class="language-html"><link href="blog.css" rel="stylesheet"></code>
+```html
+<link href="blog.css" rel="stylesheet">
+```
+
 
 We need to tell it to dynamically link to the themes folder. Replace the above code with the below code.
 
-    <code class="language-php"><link href="<?php echo get_bloginfo('template_directory'); ?>/blog.css" rel="stylesheet"></code>
+```php
+
+<link href="<?php echo get_bloginfo('template_directory'); ?>/blog.css" rel="stylesheet">
+```
+
 
 If you reload the page, you'll see that CSS is now loading in. If it is not loading in, please do a hard refresh. The concept will be the same for images, javascript, and most other files you have in the themes folder, except PHP files.
 
@@ -201,7 +227,9 @@ Everything from `<!DOCTYPE html>` to the main blog header will be in the header 
 
 header.php
 
-    <code class="language-php"><!DOCTYPE html>
+```php
+
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -241,13 +269,17 @@ header.php
     		<div class="blog-header">
     			<h1 class="blog-title">The Bootstrap Blog</h1>
     			<p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-    		</div></code>
+    		</div>
+```
+
 
 Same deal for the footer as the header. It will include whatever visible footer you have, your JS links (for now) and `<?php wp_footer(); ?>` right before `</body>`. Since I included the `.container` div in the header, I'm going to close it in the footer.
 
 footer.php
 
-    <code class="language-php">    </div> <!-- /.container -->
+```php
+
+    </div> <!-- /.container -->
 
     		<footer class="blog-footer">
           <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
@@ -260,13 +292,16 @@ footer.php
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <?php wp_footer(); ?>
       </body>
-    </html></code>
+    </html>
+```
+
 
 Most websites, especially blogs, will have a side area for including content such as archives, tags, category, ads, and whatnot. (Content removed for brevity.)
 
 sidebar.php
 
-    <code class="language-html"><div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+```html
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
     	<div class="sidebar-module sidebar-module-inset">
     		<h4>About</h4>
     		<p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -286,13 +321,16 @@ sidebar.php
     			<li><a href="#">Facebook</a></li>
     		</ol>
     	</div>
-    </div><!-- /.blog-sidebar --></code>
+    </div><!-- /.blog-sidebar -->
+```
+
 
 If the sidebar is where all the secondary information goes, the content is where all the articles and main content of the website go. (Content removed for brevity.)
 
 content.php
 
-    <code class="language-html"><div class="blog-post">
+```html
+<div class="blog-post">
     	<h2 class="blog-post-title">Sample blog post</h2>
     	<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
 
@@ -301,22 +339,29 @@ content.php
 
     <!-- the rest of the content -->
 
-    </div><!-- /.blog-post --></code>
+    </div><!-- /.blog-post -->
+```
+
 
 ##### Index
 
 The index file should be pretty sparse now. In fact, it should only be this:
 
-    <code class="language-html"><div class="row">
+```html
+<div class="row">
     	<div class="col-sm-8 blog-main">
     	</div> <!-- /.blog-main -->
-    </div> 	<!-- /.row --></code>
+    </div> 	<!-- /.row -->
+```
+
 
 Now we're going to add everything back in. Here's your new `index.php`.
 
 index.php
 
-    <code class="language-php"><?php get_header(); ?>
+```php
+
+<?php get_header(); ?>
 
     	<div class="row">
 
@@ -331,7 +376,9 @@ index.php
     	</div> <!-- /.row -->
 
     <?php get_footer(); ?>
-    </code>
+    
+```
+
 
 Even if you've never used PHP before, this code is all very self explanatory. `get_header();`, `get_sidebar();` and `get_footer();` are all functions that look for their respective .php files and insert the code. Of course, they all go inside their own `<?php ?>` tags to let the server know to parse them as HTML. The content function is slightly different, but it does the same thing.
 
@@ -347,22 +394,38 @@ In your dashboard, go to `Settings > General`. Set your title.
 
 In **header.php**, change the contents of the title tag and main h1 tag to this code:
 
-    <code class="language-php"><?php echo get_bloginfo( 'name' ); ?></code>
+```php
+
+<?php echo get_bloginfo( 'name' ); ?>
+```
+
 
 And the description to this one.
 
-    <code class="language-php"><?php echo get_bloginfo( 'description' ); ?></code>
+```php
+
+<?php echo get_bloginfo( 'description' ); ?>
+```
+
 
 Finally, I want the title to always take me back to the main blog page. `bloginfo('wpurl');` is the code that will do that.
 
-    <code class="language-php"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><!-- site title --></a></code>
+```php
+
+<a href="<?php echo get_bloginfo( 'wpurl' );?>"><!-- site title --></a>
+```
+
 
 Here's the full code in case you're confused.
 
-    <code class="language-php"><div class="blog-header">
+```php
+
+<div class="blog-header">
     	<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
     	<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
-    </div></code>
+    </div>
+```
+
 
 We've _finally_ made the first dynamic change to the page. The front end should reflect what you put in your settings.
 
@@ -378,11 +441,15 @@ In the dashboard, if you click on Posts, you will see a "Hello, world!" post in 
 
 The Loop itself is quite simple.
 
-    <code class="language-php"><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+```php
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <!-- contents of the loop -->
 
-    <?php endwhile; endif; ?></code>
+    <?php endwhile; endif; ?>
+```
+
 
 It explains itself - IF there are posts, WHILE there are posts, DISPLAY the post. Anything inside the loop will be repeated. For a blog, this will be the post title, the date, the content, and comments. Where each individual post should end is where the loop will end. We're going to add the loop to `index.php`.
 
@@ -390,7 +457,9 @@ Here's your new index file.
 
 index.php
 
-    <code class="language-php"><?php get_header(); ?>
+```php
+
+<?php get_header(); ?>
 
     	<div class="row">
 
@@ -411,17 +480,23 @@ index.php
     	</div> <!-- /.row -->
 
     <?php get_footer(); ?>
-    </code>
+    
+```
+
 
 The only thing inside your loop is **content.php**, which will contain the contents of one single post. So open **content.php** and change the contents to this:
 
-    <code class="language-php"><div class="blog-post">
+```php
+
+<div class="blog-post">
     	<h2 class="blog-post-title"><?php the_title(); ?></h2>
     	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
 
      <?php the_content(); ?>
 
-    </div><!-- /.blog-post --></code>
+    </div><!-- /.blog-post -->
+```
+
 
 It's amazingly simple! `the_title();` is the title of the blog post, `the_date();` shows the date, `the_author();` the author, and `the_content();` is your post content. I added another post to prove at the loop is working.
 
@@ -433,15 +508,23 @@ Delete all the `<li>`s under **Archives** and change it to this code.
 
 sidebar.php
 
-    <code class="language-php"><h4>Archives</h4>
+```php
+
+<h4>Archives</h4>
     <ol class="list-unstyled">
     	<?php wp_get_archives( 'type=monthly' ); ?>
-    </ol></code>
+    </ol>
+```
+
 
 For my description, I'm going to pull in metadata from my user account.
 
-    <code class="language-php"><h4>About</h4>
-    <p><?php the_author_meta( 'description' ); ?> </p></code>
+```php
+
+<h4>About</h4>
+    <p><?php the_author_meta( 'description' ); ?> </p>
+```
+
 
 Now this content is being pulled in dynamically as well.
 
@@ -459,14 +542,18 @@ In the dashboard, I added a page so we can see two. First, we're going to edit t
 
 header.php
 
-    <code class="language-php"><div class="blog-masthead">
+```php
+
+<div class="blog-masthead">
     	<div class="container">
     		<nav class="blog-nav">
     			<a class="blog-nav-item active" href="#">Home</a>
     			<?php wp_list_pages( '&title_li=' ); ?>
     		</nav>
     	</div>
-    </div></code>
+    </div>
+```
+
 
 `wp_list_pages();` will list all the pages you have in an unordered list. `'title_li='` is telling the code not to add a "Pages" title before the list. Unfortunately for us, this looks terrible; the original blog.css has the links coded in `a` tags, not `li` tags.
 
@@ -476,7 +563,8 @@ Fortunately, this is a very easy fix. I'm just going to apply the style from one
 
 blog.css
 
-    <code class="language-css">.blog-nav li {
+```css
+.blog-nav li {
         position: relative;
         display: inline-block;
         padding: 10px;
@@ -484,7 +572,9 @@ blog.css
     }
     .blog-nav li a {
         color: #fff;
-    }</code>
+    }
+```
+
 
 Now it should show up correctly. However, if the CSS is _not_ applying, please **View the source** of your HTML output and find out what the URL of your CSS is. It should be `startwordpress.dev/wp-content/themes/startwordpress/blog.css`. Make sure to do a **hard refresh**.
 
@@ -498,7 +588,9 @@ I want the pages to have a different layout than the blog posts; I don't want si
 
 page.php
 
-    <code class="language-php"><?php get_header(); ?>
+```php
+
+<?php get_header(); ?>
 
     	<div class="row">
     		<div class="col-sm-12">
@@ -514,7 +606,9 @@ page.php
     		</div> <!-- /.col -->
     	</div> <!-- /.row -->
 
-    <?php get_footer(); ?></code>
+    <?php get_footer(); ?>
+```
+
 
 When I click on my sample page, the layout is now different than the blog post layout.
 

@@ -38,12 +38,15 @@ See the Pen [Accordion Styled](http://codepen.io/taniarascia/pen/BpwOKZ/) by Tan
 
 
     
-    <code class="language-js">// Clicking on the accordion header title...
+```js
+// Clicking on the accordion header title...
     	$(".accordion").on("click", ".accordion-header", function() {
     	
     	// will (slide) toggle the related panel.
      	$(this).toggleClass("active").next().slideToggle();
-     });</code>
+     });
+```
+
 
 
 
@@ -66,7 +69,8 @@ See the Pen [Tabs Styled](http://codepen.io/taniarascia/pen/EZwdNg/) by Tania ([
 
 
     
-    <code class="language-js">// Clicking on the tab...
+```js
+// Clicking on the tab...
     $(".tab-list").on("click", ".tab", function(e) {
     	e.preventDefault();
     	
@@ -78,7 +82,9 @@ See the Pen [Tabs Styled](http://codepen.io/taniarascia/pen/EZwdNg/) by Tania ([
     	// and will activate the current tab and content.
     	$(this).addClass("active");
     	$($(this).attr("href")).addClass("show");
-    });</code>
+    });
+```
+
 
 
 
@@ -101,7 +107,8 @@ See the Pen [Dropdown Styled](http://codepen.io/taniarascia/pen/VPraQy/) by Tani
 
 
     
-    <code class="language-js">// Clicking away from the dropdown will collapse it.
+```js
+// Clicking away from the dropdown will collapse it.
     $("html").click(function() {
     	$(".dropdown").hide();
     });
@@ -115,7 +122,9 @@ See the Pen [Dropdown Styled](http://codepen.io/taniarascia/pen/VPraQy/) by Tani
     	$(".dropdown").not($(this).siblings()).hide();
     	
     	e.stopPropagation(); 
-    });</code>
+    });
+```
+
 
 
 
@@ -138,7 +147,8 @@ See the Pen [Modal Styled](http://codepen.io/taniarascia/pen/qRVRjy/) by Tania (
 
 
     
-    <code class="language-js">// Clicking the open class will open the modal.
+```js
+// Clicking the open class will open the modal.
     $(".open").on("click", function(){
       $(".overlay, .modal").addClass("active");
     });
@@ -153,7 +163,9 @@ See the Pen [Modal Styled](http://codepen.io/taniarascia/pen/qRVRjy/) by Tania (
       if (e.keyCode === 27) {
         $(".overlay, .modal").removeClass("active");
       }
-    });</code>
+    });
+```
+
 
 
 
@@ -176,7 +188,8 @@ See the Pen [Scroll Styled](http://codepen.io/taniarascia/pen/jyGepE/) by Tania 
 
 
     
-    <code class="language-js">// Activates when you scroll.
+```js
+// Activates when you scroll.
     $(window).on("scroll", function() {
     	var position = $("#begin").offset();
     
@@ -188,7 +201,9 @@ See the Pen [Scroll Styled](http://codepen.io/taniarascia/pen/jyGepE/) by Tania 
     		// otherwise remove it.
     		$("nav").removeClass("active");
     	};
-    });</code>
+    });
+```
+
 
 
 

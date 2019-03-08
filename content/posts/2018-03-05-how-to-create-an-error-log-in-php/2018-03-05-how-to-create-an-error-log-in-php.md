@@ -15,8 +15,11 @@ It was only recently that I realized you could send custom error logs to whateve
 
 
     
-    <code class="language-php"><?php
+```php
+<?php
     
-    error_log("Error message\n", 3, "/Users/tania/logs/error.log");</code>
+    error_log("Error message\n", 3, "/Users/tania/logs/error.log");
+```
+
 
 		

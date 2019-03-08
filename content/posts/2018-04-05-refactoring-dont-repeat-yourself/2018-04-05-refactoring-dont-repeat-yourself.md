@@ -24,11 +24,14 @@ data
 
 
     
-    <code class="language-js">var sessions = {
+```js
+var sessions = {
         "mobile": [1, 2, 3],
         "tablet": [3, 4, 5],
         "desktop": [6, 7, 8]
-    };</code>
+    };
+```
+
 
 
 
@@ -41,12 +44,15 @@ function
 
 
     
-    <code class="language-js">function printData(id, name, sessions) {
+```js
+function printData(id, name, sessions) {
       var div = document.createElement('div');
       div.id = id;
       div.textContent = name + ' : ' + sessions;
       document.querySelector('body').appendChild(div);
-    }</code>
+    }
+```
+
 
 
 
@@ -54,7 +60,8 @@ So there's my common code: data and a function.
 
 
     
-    <code class="language-js">var sessions = {
+```js
+var sessions = {
         "mobile": [1, 2, 3],
         "tablet": [3, 4, 5],
         "desktop": [6, 7, 8]
@@ -65,7 +72,9 @@ So there's my common code: data and a function.
       div.id = id;
       div.textContent = name + ' : ' + sessions;
       document.querySelector('body').appendChild(div);
-    }</code>
+    }
+```
+
 
 
 
@@ -79,7 +88,8 @@ So for my first try, I'm just going to run the data through the code manually. I
 
 
     
-    <code class="language-js">// collapsing for brevity
+```js
+// collapsing for brevity
     var sessions = { ... }                   
     function printData(id, name, sessions) { ... }
     
@@ -100,7 +110,9 @@ So for my first try, I'm just going to run the data through the code manually. I
         id: 'desktop-container',
         name: 'desktop',
         sessions: sessions['desktop']
-    };</code>
+    };
+```
+
 
 
 
@@ -108,10 +120,13 @@ And I invoke the function using the properties of each object.
 
 
     
-    <code class="language-js">// Manually invoke function
+```js
+// Manually invoke function
     printData(mobileData.id, mobileData.name, mobileData.sessions);
     printData(tabletData.id, tabletData.name, tabletData.sessions);
-    printData(desktopData.id, desktopData.name, desktopData.sessions);</code>
+    printData(desktopData.id, desktopData.name, desktopData.sessions);
+```
+
 
 
 
@@ -127,10 +142,13 @@ First, I'll create an array that contains all the key values with `Object.keys`.
 
 
     
-    <code class="language-js">var sessions = { ... }                   
+```js
+var sessions = { ... }                   
     function printData(id, name, sessions) { ... }
     
-    var devices = Object.keys(sessions); // returns [ "mobile", "tablet" ... ]</code>
+    var devices = Object.keys(sessions); // returns [ "mobile", "tablet" ... ]
+```
+
 
 
 
@@ -138,7 +156,8 @@ Then I'll make an array of objects, containing all the properties I need. I'll d
 
 
     
-    <code class="language-js">var sessions = { ... }                   
+```js
+var sessions = { ... }                   
     function printData(id, name, sessions) { ... }
     
     var devices = Object.keys(sessions);
@@ -150,7 +169,9 @@ Then I'll make an array of objects, containing all the properties I need. I'll d
             name: device,
             sessions: sessions[device],
         }
-    });</code>
+    });
+```
+
 
 
 
@@ -158,9 +179,12 @@ Finally, I'll do a `forEach()` loop to run the function once for each object.
 
 
     
-    <code class="language-js">data.forEach(function(device) {
+```js
+data.forEach(function(device) {
         printData(device.id, device.sessions);
-    });</code>
+    });
+```
+
 
 
 
@@ -173,7 +197,8 @@ fullCode.js
 
 
     
-    <code class="language-js">var sessions = {
+```js
+var sessions = {
         "mobile": [1, 2, 3],
         "tablet": [3, 4, 5],
         "desktop": [6, 7, 8]
@@ -198,7 +223,9 @@ fullCode.js
     
     data.forEach(function(device) {
         printData(device.id, device.name, device.sessions);
-    });</code>
+    });
+```
+
 
 
 
@@ -211,7 +238,8 @@ fullCodeES6.js
 
 
     
-    <code class="language-js">const sessions = {
+```js
+const sessions = {
         "mobile": [1, 2, 3],
         "tablet": [3, 4, 5],
         "desktop": [6, 7, 8]
@@ -236,7 +264,9 @@ fullCodeES6.js
     
     data.forEach(device => {
         printData(device.id, device.name, device.sessions);
-    });</code>
+    });
+```
+
 
 
 

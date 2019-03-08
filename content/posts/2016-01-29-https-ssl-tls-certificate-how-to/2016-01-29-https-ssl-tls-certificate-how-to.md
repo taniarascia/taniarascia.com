@@ -87,7 +87,10 @@ SSH into the server, migrate to somewhere that isn't a public directory, and pas
 
 
     
-    <code>openssl req -new -newkey rsa:2048 -nodes -keyout YOURDOMAIN.COM.key -out YOURDOMAIN.COM.csr</code>
+```
+openssl req -new -newkey rsa:2048 -nodes -keyout YOURDOMAIN.COM.key -out YOURDOMAIN.COM.csr
+```
+
 
 
 
@@ -206,7 +209,10 @@ Place this in **wp-config.php**.
 
 
     
-    <code class="language-php">$_SERVER['HTTPS'] = 'on';</code>
+```php
+$_SERVER['HTTPS'] = 'on';
+```
+
 
 
 
@@ -220,7 +226,10 @@ This one will also go in **wp-config.php**.
 
 
     
-    <code class="language-php">define('FORCE_SSL_ADMIN', true);</code>
+```php
+define('FORCE_SSL_ADMIN', true);
+```
+
 
 
 
@@ -242,9 +251,12 @@ Force https on all files.
 
 
     
-    <code class="language-httpd">RewriteEngine On
+```apacheconf
+RewriteEngine On
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</code>
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+```
+
 
 
 

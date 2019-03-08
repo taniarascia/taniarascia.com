@@ -125,7 +125,8 @@ Assume we've defined a variable called `x` and assigned it a value of `5`. Assum
 
 
     
-    <code class="language-js">var x = 5; // assigning the number 5 to x.
+```js
+var x = 5; // assigning the number 5 to x.
     x == 5; // true: 5 is equal to 5.
     x == "5"; // true: "5" is equal to 5 in value, but not in type ("5" is a string, not a number).
     x === 5; // true.
@@ -137,7 +138,9 @@ Assume we've defined a variable called `x` and assigned it a value of `5`. Assum
     x < 6; // true: 5 is less than 6.
     x > 4; // true: 5 is greater than 4.
     x <= 4; // true: 5 is less than or equal to 5
-    x >= 4;// false: 4 is neither greater than nor equal to 5.</code>
+    x >= 4;// false: 4 is neither greater than nor equal to 5.
+```
+
 
 
 
@@ -238,14 +241,17 @@ The **increment operator** increments by one, and the **decrement operator** dec
 
 
     
-    <code class="language-js">var x = 5; // assigning the number 5 to x.
+```js
+var x = 5; // assigning the number 5 to x.
     x + 5; // returns 10.
     x - 5; // returns 0.
     x / 5; // returns 1.
     x * 5; // returns 25.
     x % 3; // returns 2.
     ++x; // returns 6.
-    --x; // returns 4.</code>
+    --x; // returns 4.
+```
+
 
 
 
@@ -253,11 +259,14 @@ If you try to add a string and a number, it will convert into a string. `5 + "5"
 
 
     
-    <code class="language-js">var x = 5; // assigning the number 5 to x.
+```js
+var x = 5; // assigning the number 5 to x.
     
     x + "5"; // returns the string "55".
     
-    x / "Five"; // returns NaN (Not a Number).</code>
+    x / "Five"; // returns NaN (Not a Number).
+```
+
 
 
 
@@ -324,11 +333,14 @@ There are three keywords that you can use in an **if statement** - `if`, `else`,
 
 
     
-    <code class="language-js">if (condition) {
+```js
+if (condition) {
       // do something.
     } else {
       // do something else.
-    }</code>
+    }
+```
+
 
 
 
@@ -346,13 +358,16 @@ Using some of what we've already learned, we can execute some code. Imagine an a
 
 
     
-    <code class="language-js">var doorIsLocked = true; // the door is locked
+```js
+var doorIsLocked = true; // the door is locked
     
     if (doorIsLocked) {
       document.write("The door is locked!");
     } else {
       document.write("The door is not locked. You open the door.");
-    }</code>
+    }
+```
+
 
 
 
@@ -360,7 +375,8 @@ Since `doorIsLocked` is a true statement, "The door is locked!" will print to th
 
 
     
-    <code class="language-js">var doorIsLocked = true; // the door is locked.
+```js
+var doorIsLocked = true; // the door is locked.
     var hasKey = true; // you have the key.
     
     if (doorIsLocked && hasKey) {
@@ -371,7 +387,9 @@ Since `doorIsLocked` is a true statement, "The door is locked!" will print to th
       document.write("The door is locked.");
     } else {
       document.write("The door is not locked. You open the door.");
-    }</code>
+    }
+```
+
 
 
 
@@ -383,14 +401,17 @@ Conditional statements don't just check for true and false - you can use any of 
 
 
     
-    <code class="language-js">var money = 1000; // you have 1000 in your inventory
+```js
+var money = 1000; // you have 1000 in your inventory
     var swordCost = 1200; // the sword costs 1200
     
     if (money < swordCost) {
       document.write("You don't have enough money to buy this sword!");
     } else {
       document.write("You buy the sword!")
-    }</code>
+    }
+```
+
 
 
 
@@ -409,7 +430,8 @@ A **switch statement** becomes useful when we have many expressions to evaluate.
 
 
     
-    <code class="language-js">switch (expression) {
+```js
+switch (expression) {
       case x:
         // do something
         break;
@@ -422,7 +444,9 @@ A **switch statement** becomes useful when we have many expressions to evaluate.
       default:
         // default code block
         break;
-    }</code>
+    }
+```
+
 
 
 
@@ -430,7 +454,8 @@ As an example, let's print some activities you might do based on the season.
 
 
     
-    <code class="language-js">var season = "Autumn";
+```js
+var season = "Autumn";
     
     switch (season) {
       case "Winter":
@@ -448,7 +473,9 @@ As an example, let's print some activities you might do based on the season.
       default:
         document.write("Study JavaScript.");
         break;
-    }</code>
+    }
+```
+
 
 
 

@@ -180,8 +180,11 @@ We’re going to use [Node Version Manager (nvm)](https://github.com/creationix/
 
 
     
-    <code class="bash language-bash">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
-    </code>
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+    
+```
+
 
 
 
@@ -199,8 +202,11 @@ Run the install command.
 
 
     
-    <code class="bash language-bash">nvm install node
-    </code>
+```bash
+nvm install node
+    
+```
+
 
 
 
@@ -212,8 +218,11 @@ Run the use command.
 
 
     
-    <code class="bash language-bash">nvm use node
-    </code>
+```bash
+nvm use node
+    
+```
+
 
 
 
@@ -268,8 +277,11 @@ Navigate to the directory in which you want your project to exist - in my case, 
 
 
     
-    <code class="bash language-bash">cd sites/node-test
-    </code>
+```bash
+cd sites/node-test
+    
+```
+
 
 
 
@@ -281,8 +293,11 @@ Now initalize a new project with npm.
 
 
     
-    <code class="bash language-bash">npm init
-    </code>
+```bash
+npm init
+    
+```
+
 
 
 
@@ -313,8 +328,11 @@ First, it will ask for a package name.
 
 
     
-    <code class="bash language-bash">node-test
-    </code>
+```bash
+node-test
+    
+```
+
 
 
 
@@ -326,8 +344,11 @@ Version number.
 
 
     
-    <code>1.0.0
-    </code>
+```
+1.0.0
+    
+```
+
 
 
 
@@ -339,8 +360,11 @@ Description.
 
 
     
-    <code>Creating my first "Hello, World!" Node project.
-    </code>
+```
+Creating my first "Hello, World!" Node project.
+    
+```
+
 
 
 
@@ -358,7 +382,8 @@ package.json
 
 
     
-    <code class="js language-js">{
+```js
+{
       "name": "node-test",
       "version": "1.0.0",
       "description": "Creating my first \"Hello, World!\" Node project.",
@@ -369,7 +394,9 @@ package.json
       "author": "Tania Rascia",
       "license": "ISC"
     }
-    </code>
+    
+```
+
 
 
 
@@ -393,8 +420,11 @@ For example, writing this:
 
 
     
-    <code class="js language-js">leftPad("String", 10)
-    </code>
+```js
+leftPad("String", 10)
+    
+```
+
 
 
 
@@ -412,8 +442,11 @@ console
 
 
     
-    <code class="js language-js">     String
-    </code>
+```js
+     String
+    
+```
+
 
 
 
@@ -437,8 +470,11 @@ To install a dependency with npm, we use the command `npm install dependency-nam
 
 
     
-    <code class="bash language-bash">npm install left-pad --save
-    </code>
+```bash
+npm install left-pad --save
+    
+```
+
 
 
 
@@ -450,10 +486,13 @@ As long as you ran this command inside the project directory, it will successful
 
 
     
-    <code class="js language-js">"dependencies": {
+```js
+"dependencies": {
         "left-pad": "^1.1.3"
     }
-    </code>
+    
+```
+
 
 
 
@@ -502,8 +541,11 @@ In order to use a dependency, we use `require()` and put it in a variable, like 
 
 
     
-    <code class="js language-js">const leftPad = require('left-pad');
-    </code>
+```js
+const leftPad = require('left-pad');
+    
+```
+
 
 
 
@@ -521,12 +563,15 @@ index.js
 
 
     
-    <code class="js language-js">const leftPad = require('left-pad');         // Require left pad
+```js
+const leftPad = require('left-pad');         // Require left pad
     const output = leftPad('Hello, World!', 15); // Define output
     
     // Send output to the console
     console.log(output);
-    </code>
+    
+```
+
 
 
 
@@ -538,8 +583,11 @@ Since Node.js is not recognized by the browser, we'll be testing this in the con
 
 
     
-    <code class="bash language-bash">node index.js
-    </code>
+```bash
+node index.js
+    
+```
+
 
 
 

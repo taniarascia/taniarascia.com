@@ -17,14 +17,17 @@ If you embed a Google Map into a website, they'll give you some HTML that looks 
 
 
     
-    <code class="language-html"><iframe 
+```html
+<iframe 
       src="https://www.google.com/maps/embed?xxx"
       width="600"
       height="450"
       frameborder="0"
       style="border:0"
       allowfullscreen>
-    </iframe></code>
+    </iframe>
+```
+
 
 
 
@@ -38,7 +41,8 @@ We can prevent this by creating an overlay div with `pointerEvents='none'`.
 
 
     
-    <code class="language-html"><div class="overlay" onclick="style.pointerEvents='none'"></div>
+```html
+<div class="overlay" onclick="style.pointerEvents='none'"></div>
     <iframe 
       src="https://www.google.com/maps/embed?xxx"
       width="100%"
@@ -46,7 +50,9 @@ We can prevent this by creating an overlay div with `pointerEvents='none'`.
       frameborder="0"
       style="border:0"
       allowfullscreen>
-    </iframe></code>
+    </iframe>
+```
+
 
 
 
@@ -54,14 +60,17 @@ And an `.overlay` class that will cover the element.
 
 
     
-    <code class="language-css">.overlay {
+```css
+.overlay {
     	position: relative;
     	width: 100%;
     	height: 450px;
     	top: 450px;
     	margin-top: -450px;
     	z-index: 1;
-    }</code>
+    }
+```
+
 
 
 

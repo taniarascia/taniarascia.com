@@ -44,11 +44,14 @@ We’re going to create a outer element and call it `.parallax-container`. This 
 
  
     
-    <code class="language-css">.parallax-container {
+```css
+.parallax-container {
       position: relative;
       height: 500px;
     }
-    </code>
+    
+```
+
 
 
 
@@ -62,13 +65,16 @@ Now we’re going to create an inner div that will contain the actual parallax b
 
  
     
-    <code class="language-css">.parallax {
+```css
+.parallax {
       position: absolute;
       height: 200%;
       width: 100%;
       z-index: -1;
     }
-    </code>
+    
+```
+
 
 
 
@@ -84,13 +90,16 @@ All HTML layout elements have a transparent background by default. If you choose
 
 
     
-    <code class="language-css">.content {
+```css
+.content {
       background: #fff;
       height: 600px /* This height is only for 
       demonstration purposes since I have no content. 
       It's not necessary for the code to work. */
     }
-    </code>
+    
+```
+
 
 
 
@@ -104,7 +113,10 @@ I’m going to create a top and bottom empty section to create scroll for demons
 
 
     
-    <code class="language-html"><section class="content"></section></code>
+```html
+<section class="content"></section>
+```
+
 
 
 
@@ -112,9 +124,12 @@ On the `.parallax` div, I edit the style attribute and add a background image.
 
 
     
-    <code class="language-html"><section class="parallax-container"> 
+```html
+<section class="parallax-container"> 
       <div class="parallax" style="background: url(image.jpg) center center / cover no-repeat;"></div> 
-    </section></code>
+    </section>
+```
+
 
 
 
@@ -124,14 +139,17 @@ Here’s the final HTML:
 
 
     
-    <code class="language-html"><section class="content"></section>
+```html
+<section class="content"></section>
     
     <section class="parallax-container">
       <div class="parallax" style="background: url(image.jpg) center center / cover no-repeat;"></div>
     </section>
     
     <section class="content"></section>
-    </code>
+    
+```
+
 
 
 
@@ -145,7 +163,10 @@ First, I’m utilizing jQuery, so we’ll link to it.
 
 
     
-    <code class="language-html"><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script></code>
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+```
+
 
 
 
@@ -153,10 +174,13 @@ We're going to create a variable for the `parallax` class, and count all instanc
 
  
     
-    <code class="language-js">var parallaxElements = $('.parallax'),
+```js
+var parallaxElements = $('.parallax'),
         parallaxQuantity = parallaxElements.length;
         // more...  
-    </code>
+    
+```
+
 
 
 
@@ -164,12 +188,15 @@ Next, we'll create a `scroll` function.
 
   
     
-    <code class="language-js">var parallaxElements = $('.parallax'),
+```js
+var parallaxElements = $('.parallax'),
         parallaxQuantity = parallaxElements.length;
     
     $(window).on('scroll', function () {
       // more...
-    });</code>
+    });
+```
+
 
 
 
@@ -177,7 +204,8 @@ Let the browser know that we're going to do an animation with [requestAnimationF
 
  
     
-    <code class="language-js">var parallaxElements = $('.parallax'),
+```js
+var parallaxElements = $('.parallax'),
         parallaxQuantity = parallaxElements.length;
     
     $(window).on('scroll', function () {
@@ -186,7 +214,9 @@ Let the browser know that we're going to do an animation with [requestAnimationF
       // more...
       });
     
-    });</code>
+    });
+```
+
 
 
 
@@ -194,7 +224,8 @@ Create a for loop, capturing each parallax element in `currentElement`, and how 
 
 
     
-    <code class="language-js">var parallaxElements = $('.parallax'),
+```js
+var parallaxElements = $('.parallax'),
         parallaxQuantity = parallaxElements.length;
     
     $(window).on('scroll', function () {
@@ -208,7 +239,9 @@ Create a for loop, capturing each parallax element in `currentElement`, and how 
         }
       });
     
-    });</code>
+    });
+```
+
 
 
 
@@ -216,7 +249,8 @@ Finally, multiply how much has been scrolled with a negative pixel value, and ap
 
 
     
-    <code class="language-js">var parallaxElements = $('.parallax'),
+```js
+var parallaxElements = $('.parallax'),
         parallaxQuantity = parallaxElements.length;
     
     $(window).on('scroll', function () {
@@ -233,7 +267,9 @@ Finally, multiply how much has been scrolled with a negative pixel value, and ap
         }
       });
     
-    });</code>
+    });
+```
+
 
 
 

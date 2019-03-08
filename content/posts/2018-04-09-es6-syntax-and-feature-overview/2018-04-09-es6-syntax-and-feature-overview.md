@@ -191,8 +191,11 @@ ES5
 
 
     
-    <code class="js language-js">var x = 0;
-    </code>
+```js
+var x = 0;
+    
+```
+
 
 
 
@@ -203,8 +206,11 @@ ES6
 
 
     
-    <code class="js language-js">let x = 0;
-    </code>
+```js
+let x = 0;
+    
+```
+
 
 
 
@@ -233,8 +239,11 @@ ES6
 
 
     
-    <code class="js language-js">const CONST_IDENTIFIER = 0; // constants are uppercase by convention
-    </code>
+```js
+const CONST_IDENTIFIER = 0; // constants are uppercase by convention
+    
+```
+
 
 
 
@@ -263,9 +272,12 @@ ES5
 
 
     
-    <code class="js language-js">function func(a, b, c) {}        // function declaration
+```js
+function func(a, b, c) {}        // function declaration
     var func = function(a, b, c) {}  // function expression
-    </code>
+    
+```
+
 
 
 
@@ -276,9 +288,12 @@ ES6
 
 
     
-    <code class="js language-js">let func = a => {}         // parentheses optional with one parameter
+```js
+let func = a => {}         // parentheses optional with one parameter
     let func = (a, b, c) => {} // parentheses required with multiple parameters
-    </code>
+    
+```
+
 
 
 
@@ -313,8 +328,11 @@ ES5
 
 
     
-    <code class="js language-js">var str = 'Release date: ' + date;
-    </code>
+```js
+var str = 'Release date: ' + date;
+    
+```
+
 
 
 
@@ -325,8 +343,11 @@ ES6
 
 
     
-    <code class="js language-js">let str = `Release Date: ${date}`;
-    </code>
+```js
+let str = `Release Date: ${date}`;
+    
+```
+
 
 
 
@@ -355,10 +376,13 @@ ES5
 
 
     
-    <code class="js language-js">var str = 'This text ' +
+```js
+var str = 'This text ' +
               'is on ' +
               'multiple lines';
-    </code>
+    
+```
+
 
 
 
@@ -369,10 +393,13 @@ ES6
 
 
     
-    <code class="js language-js">let str = `This text
+```js
+let str = `This text
                is on
                multiple lines`;        
-    </code>
+    
+```
+
 
 
 
@@ -403,8 +430,11 @@ ES5
 
 
     
-    <code class="js language-js">function func(a, b, c) { return a + b + c; } 
-    </code>
+```js
+function func(a, b, c) { return a + b + c; } 
+    
+```
+
 
 
 
@@ -415,8 +445,11 @@ ES6
 
 
     
-    <code class="js language-js">let func = (a, b, c) => a + b + c; // curly brackets must be omitted
-    </code>
+```js
+let func = (a, b, c) => a + b + c; // curly brackets must be omitted
+    
+```
+
 
 
 
@@ -445,11 +478,14 @@ ES5
 
 
     
-    <code class="js language-js">var obj = { 
+```js
+var obj = { 
         a: a, 
         b: b
     }
-    </code>
+    
+```
+
 
 
 
@@ -460,11 +496,14 @@ ES6
 
 
     
-    <code class="js language-js">let obj = { 
+```js
+let obj = { 
         a, 
         b
     }
-    </code>
+    
+```
+
 
 
 
@@ -493,11 +532,14 @@ ES5
 
 
     
-    <code class="js language-js">var obj = {
+```js
+var obj = {
         a: function(c, d) {},
         b: function(e, f) {}
     };
-    </code>
+    
+```
+
 
 
 
@@ -508,18 +550,24 @@ ES6
 
 
     
-    <code class="js language-js">let obj = {
+```js
+let obj = {
         a(c, d) {},
         b(e, f) {}
     }
-    </code>
+    
+```
+
 
 
 
 
     
-    <code class="js language-js">obj.a(); // call method a
-    </code>
+```js
+obj.a(); // call method a
+    
+```
+
 
 
 
@@ -543,8 +591,11 @@ Use curly brackets to assign properties of an object to their own variable.
 
 
     
-    <code class="js language-js">var obj = { a: 1, b: 2, c: 3 };
-    </code>
+```js
+var obj = { a: 1, b: 2, c: 3 };
+    
+```
+
 
 
 
@@ -555,10 +606,13 @@ ES5
 
 
     
-    <code class="js language-js">var a = obj.a;
+```js
+var a = obj.a;
     var b = obj.b;
     var c = obj.c;
-    </code>
+    
+```
+
 
 
 
@@ -569,8 +623,11 @@ ES6
 
 
     
-    <code class="js language-js">let {a, b, c} = obj;
-    </code>
+```js
+let {a, b, c} = obj;
+    
+```
+
 
 
 
@@ -594,8 +651,11 @@ A more concise syntax has been introduced for iteration through arrays and other
 
 
     
-    <code class="js language-js">var arr = ['a', 'b', 'c'];
-    </code>
+```js
+var arr = ['a', 'b', 'c'];
+    
+```
+
 
 
 
@@ -606,10 +666,13 @@ ES5
 
 
     
-    <code class="js language-js">for (var i = 0; i < arr.length; i++) {
+```js
+for (var i = 0; i < arr.length; i++) {
         console.log(arr[i]);
     }
-    </code>
+    
+```
+
 
 
 
@@ -620,10 +683,13 @@ ES6
 
 
     
-    <code class="js language-js">for (let i of arr) {
+```js
+for (let i of arr) {
         console.log(i);
     }
-    </code>
+    
+```
+
 
 
 
@@ -652,11 +718,14 @@ ES5
 
 
     
-    <code class="js language-js">var func = function(a, b) {
+```js
+var func = function(a, b) {
         b = (b === undefined) ? 2 : b;
         return a + b;
     }
-    </code>
+    
+```
+
 
 
 
@@ -667,18 +736,24 @@ ES6
 
 
     
-    <code class="js language-js">let func = (a, b = 2) => {
+```js
+let func = (a, b = 2) => {
         return a + b;
     }
-    </code>
+    
+```
+
 
 
 
 
     
-    <code class="js language-js">func(10);   // returns 12
+```js
+func(10);   // returns 12
     func(10, 5) // returns 15
-    </code>
+    
+```
+
 
 
 
@@ -707,12 +782,15 @@ ES6
 
 
     
-    <code class="js language-js">let arr1 = [1, 2, 3];
+```js
+let arr1 = [1, 2, 3];
     let arr2 = ['a', 'b', 'c'];
     let arr3 = [...arr1, ...arr2];
     
     console.log(arr3); // [1, 2, 3, "a", "b", "c"]
-    </code>
+    
+```
+
 
 
 
@@ -729,11 +807,14 @@ ES6
 
 
     
-    <code class="js language-js">let arr1 = [1, 2, 3];
+```js
+let arr1 = [1, 2, 3];
     let func = (a, b, c) => a + b + c;
     
     console.log(func(...arr1)); // 6 
-    </code>
+    
+```
+
 
 
 
@@ -762,7 +843,8 @@ ES5
 
 
     
-    <code class="js language-js">function Func(a, b) {
+```js
+function Func(a, b) {
         this.a = a;
         this.b = b;
     }
@@ -772,7 +854,9 @@ ES5
     }
     
     var x = new Func(3, 4);
-    </code>
+    
+```
+
 
 
 
@@ -783,7 +867,8 @@ ES6
 
 
     
-    <code class="js language-js">class Func {
+```js
+class Func {
         constructor(a, b) {
             this.a = a;
             this.b = b;
@@ -795,14 +880,19 @@ ES6
     }
     
     let x = new Func(3, 4);
-    </code>
+    
+```
+
 
 
 
 
     
-    <code class="js language-js">x.getSum(); // returns 7
-    </code>
+```js
+x.getSum(); // returns 7
+    
+```
+
 
 
 
@@ -831,7 +921,8 @@ ES5
 
 
     
-    <code class="js language-js">function Inheritance(a, b, c) {
+```js
+function Inheritance(a, b, c) {
         Func.call(this, a, b);
     
         this.c = c;
@@ -843,7 +934,9 @@ ES5
     }
     
     var y = new Inheritance(3, 4, 5);
-    </code>
+    
+```
+
 
 
 
@@ -854,7 +947,8 @@ ES6
 
 
     
-    <code class="js language-js">class Inheritance extends Func {
+```js
+class Inheritance extends Func {
         constructor(a, b, c) {
             super(a, b);
     
@@ -867,14 +961,19 @@ ES6
     }
     
     let y = new Inheritance(3, 4, 5);
-    </code>
+    
+```
+
 
 
 
 
     
-    <code class="js language-js">y.getProduct(); // 60
-    </code>
+```js
+y.getProduct(); // 60
+    
+```
+
 
 
 
@@ -903,9 +1002,12 @@ index.html
 
 
     
-    <code class="html language-html"><script src="export.js"></script>
+```html
+<script src="export.js"></script>
     <script type="module" src="import.js"></script>
-    </code>
+    
+```
+
 
 
 
@@ -916,12 +1018,15 @@ export.js
 
 
     
-    <code class="js language-js">let func = a => a + a;
+```js
+let func = a => a + a;
     let obj = {};
     let x = 0;
     
     export { func, obj, x };
-    </code>
+    
+```
+
 
 
 
@@ -932,10 +1037,13 @@ import.js
 
 
     
-    <code class="js language-js">import { func, obj, x } from './export.js';
+```js
+import { func, obj, x } from './export.js';
     
     console.log(func(3), obj, x);
-    </code>
+    
+```
+
 
 
 
@@ -966,7 +1074,8 @@ ES5 callback
 
 
     
-    <code class="js language-js">function doSecond() {
+```js
+function doSecond() {
         console.log('Do second.');
     }
     
@@ -979,7 +1088,9 @@ ES5 callback
     }
     
     doFirst(doSecond);
-    </code>
+    
+```
+
 
 
 
@@ -990,7 +1101,8 @@ ES6 Promise
 
 
     
-    <code class="js language-js">let doSecond = () => {
+```js
+let doSecond = () => {
         console.log('Do second.');
     }
     
@@ -1003,7 +1115,9 @@ ES6 Promise
     });
     
     doFirst.then(doSecond);
-    </code>
+    
+```
+
 
 
 
@@ -1020,7 +1134,8 @@ ES5 callback
 
 
     
-    <code class="js language-js">function makeRequest(method, url, callback) {
+```js
+function makeRequest(method, url, callback) {
         var request = new XMLHttpRequest();
     
         request.open(method, url);
@@ -1041,7 +1156,9 @@ ES5 callback
             }
         }
     );
-    </code>
+    
+```
+
 
 
 
@@ -1052,7 +1169,8 @@ ES6 Promise
 
 
     
-    <code class="js language-js">function makeRequest(method, url) {
+```js
+function makeRequest(method, url) {
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
     
@@ -1070,7 +1188,9 @@ ES6 Promise
     .catch(err => {
         throw new Error(err);
     });
-    </code>
+    
+```
+
 
 
 

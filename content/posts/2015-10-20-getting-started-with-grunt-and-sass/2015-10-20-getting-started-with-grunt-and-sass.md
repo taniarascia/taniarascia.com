@@ -107,7 +107,10 @@ Sass runs on Ruby, so we need to have that installed. The [Ruby programming lang
 
 
     
-    <code>ruby -v</code>
+```
+ruby -v
+```
+
 
 
 
@@ -132,7 +135,10 @@ You can also run `sass -v` to see if you have Sass installed already. If not, in
 
 
     
-    <code class="language-bash">sudo gem install sass</code>
+```bash
+sudo gem install sass
+```
+
 
 
 
@@ -162,8 +168,11 @@ XCode is a free download from the app store. You can check if you have XCode ins
 
 
     
-    <code class="language-bash">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    </code>
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+```
+
 
 
 
@@ -178,7 +187,10 @@ We're going to use Homebrew to install Node.js.
 
 
     
-    <code class="language-bash">brew install node</code>
+```bash
+brew install node
+```
+
 
 
 
@@ -191,7 +203,10 @@ Finally, we can install Grunt. We're not actually installing Grunt, but the Grun
 
 
     
-    <code class="language-bash">npm install -g grunt-cli</code>
+```bash
+npm install -g grunt-cli
+```
+
 
 
 
@@ -212,7 +227,10 @@ Go to your local directory. Mine is `Users/tania/sites/startgrunt`. Here's the T
 
 
     
-    <code class="language-bash">cd sites/startgrunt</code>
+```bash
+cd sites/startgrunt
+```
+
 
 
 
@@ -220,7 +238,8 @@ Create a file and save it as package.json.
 
 
     
-    <code class="language-js">{
+```js
+{
       "name": "startgrunt",
       "version": "0.0.1",
       "description": "Learning Grunt and Sass",
@@ -234,7 +253,9 @@ Create a file and save it as package.json.
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest"
       }
-    }</code>
+    }
+```
+
 
 
 
@@ -258,7 +279,10 @@ So, what if I created my package.json and installed npm but forgot to include po
 
 
     
-    <code class="language-bash">npm install --save-dev grunt-postcss</code>
+```bash
+npm install --save-dev grunt-postcss
+```
+
 
 
 
@@ -271,7 +295,10 @@ Now you'll create your local npm install, which will create a folder called `nod
 
 
     
-    <code class="language-bash">npm install</code>
+```bash
+npm install
+```
+
 
 
 
@@ -286,10 +313,13 @@ This might come up, which doesn't matter. Grunt wants you to have a README.md an
 
 
     
-    <code class="language-js">  "repository": {
+```js
+  "repository": {
         "type": "git",
         "url": "https://github.com/taniarascia/startgrunt.git"
-      }</code>
+      }
+```
+
 
 
 
@@ -314,10 +344,13 @@ First, load Grunt. You don't even have to think about this one; just paste it at
 
 
     
-    <code class="language-js">module.exports = function (grunt) {
+```js
+module.exports = function (grunt) {
     	grunt.initConfig({
     		pkg: grunt.file.readJSON('package.json'),
-    	});</code>
+    	});
+```
+
 
 
 
@@ -337,12 +370,15 @@ With the loadNpmTasks functions, we'll be loading in all the plugins we installe
 
 
     
-    <code class="language-js">// Load Grunt plugins
+```js
+// Load Grunt plugins
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');</code>
+    grunt.loadNpmTasks('grunt-contrib-watch');
+```
+
 
 
 
@@ -355,9 +391,12 @@ Finally, register your task. The `'default'` task is what will run when you type
 
 
     
-    <code class="language-js">	// Register Grunt tasks
+```js
+	// Register Grunt tasks
     	grunt.registerTask('default', ['watch']);
-    };</code>
+    };
+```
+
 
 
 
@@ -365,7 +404,8 @@ Here is your compiled `Gruntfile.js` skeleton.
 
 
     
-    <code class="language-js">// Load Grunt
+```js
+// Load Grunt
     module.exports = function (grunt) {
     	grunt.initConfig({
     		pkg: grunt.file.readJSON('package.json'),
@@ -381,7 +421,9 @@ Here is your compiled `Gruntfile.js` skeleton.
     	// Register Grunt tasks
     	grunt.registerTask('default', ['watch']);
     };
-    </code>
+    
+```
+
 
 
 
@@ -406,11 +448,14 @@ In my **sass** directory, I'm going to make these two files.
 
 
     
-    <code class="language-scss">// Variables
+```scss
+// Variables
     
     $header-size: 2em;
     $font-color: #343434;
-    $content-width: 1200px;</code>
+    $content-width: 1200px;
+```
+
 
 
 
@@ -418,7 +463,8 @@ In my **sass** directory, I'm going to make these two files.
 
 
     
-    <code class="language-scss">@import 'base';
+```scss
+@import 'base';
     
     main {
     	max-width: $content-width;
@@ -428,7 +474,9 @@ In my **sass** directory, I'm going to make these two files.
     	h1 {
     		font-size: $header-size;
     	}
-    }</code>
+    }
+```
+
 
 
 
@@ -436,13 +484,16 @@ In my **sass** directory, I'm going to make these two files.
 
 
     
-    <code class="language-js">(function ($) {
+```js
+(function ($) {
     	$(function () {
     		$('button').click(function () {
     			alert("jQuery alert!");
     		});
     	});
-    })(jQuery);</code>
+    })(jQuery);
+```
+
 
 
 
@@ -450,7 +501,8 @@ In my **sass** directory, I'm going to make these two files.
 
 
     
-    <code class="language-html"><!DOCTYPE html>
+```html
+<!DOCTYPE html>
     <html>
     
     <head>
@@ -472,7 +524,9 @@ In my **sass** directory, I'm going to make these two files.
     	<script src="js/script.min.js"></script>
     </body>
     
-    </html></code>
+    </html>
+```
+
 
 
 
@@ -500,7 +554,8 @@ I'm going to tell the Sass plugin to take any file in the **sass** directory, an
 
 
     
-    <code class="language-js">sass: {
+```js
+sass: {
       dist: {
         options: {
           sourcemap: 'none'
@@ -513,7 +568,9 @@ I'm going to tell the Sass plugin to take any file in the **sass** directory, an
           ext: '.css'
       }]
       }
-    },</code>
+    },
+```
+
 
 
 
@@ -526,7 +583,8 @@ I'm going to pull in autoprefixer to add vendor prefixes and minify my CSS. I'm 
 
 
     
-    <code class="language-js">postcss: { // Begin Post CSS Plugin
+```js
+postcss: { // Begin Post CSS Plugin
       options: {
         map: false,
         processors: [
@@ -538,7 +596,9 @@ I'm going to pull in autoprefixer to add vendor prefixes and minify my CSS. I'm 
       dist: {
         src: 'css/style.css'
       }
-    },</code>
+    },
+```
+
 
 
 
@@ -551,7 +611,8 @@ CSSMin to minify CSS files.
 
 
     
-    <code class="language-js">cssmin: { // Begin CSS Minify Plugin
+```js
+cssmin: { // Begin CSS Minify Plugin
       target: {
         files: [{
           expand: true,
@@ -561,7 +622,9 @@ CSSMin to minify CSS files.
           ext: '.min.css'
     }]
       }
-    },</code>
+    },
+```
+
 
 
 
@@ -574,12 +637,15 @@ UglifyJS to minify JavaScript files.
 
 
     
-    <code class="language-js">uglify: { // Begin JS Uglify Plugin
+```js
+uglify: { // Begin JS Uglify Plugin
       build: {
         src: ['src/*.js'],
         dest: 'js/script.min.js'
       }
-    },</code>
+    },
+```
+
 
 
 
@@ -592,7 +658,8 @@ Here's the most important task of all (in my opinion) - the watch task. Everythi
 
 
     
-    <code class="language-js">watch: { // Compile everything into one task with Watch Plugin
+```js
+watch: { // Compile everything into one task with Watch Plugin
           css: {
             files: '**/*.scss',
             tasks: ['sass', 'postcss', 'cssmin']
@@ -601,7 +668,9 @@ Here's the most important task of all (in my opinion) - the watch task. Everythi
             files: '**/*.js',
             tasks: ['uglify']
           }
-        }</code>
+        }
+```
+
 
 
 
@@ -609,7 +678,8 @@ Here's your completed Gruntfile.js.
 
 
     
-    <code class="language-js">// Load Grunt
+```js
+// Load Grunt
     module.exports = function (grunt) {
       grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -679,7 +749,9 @@ Here's your completed Gruntfile.js.
     
       // Register Grunt tasks
       grunt.registerTask('default', ['watch']);
-    };</code>
+    };
+```
+
 
 
 
@@ -692,7 +764,10 @@ In the root of your directory, run this command in Terminal.
 
 
     
-    <code class="language-bash">grunt</code>
+```bash
+grunt
+```
+
 
 
 

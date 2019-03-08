@@ -123,7 +123,10 @@ Open Xcode, and click the following.
 
 
     
-    <code>Preferences > Downloads > Command Line Tools</code>
+```
+Preferences > Downloads > Command Line Tools
+```
+
 
 
 
@@ -137,8 +140,11 @@ Open Xcode, and click the following.
 
 
     
-    <code class="language-bash">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    </code>
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+```
+
 
 
 
@@ -152,7 +158,10 @@ We'll use Homebrew to install [Node.js](https://nodejs.org/en/), which is the se
 
 
     
-    <code class="language-bash">brew install node</code>
+```bash
+brew install node
+```
+
 
 
 
@@ -166,7 +175,10 @@ This will install the Gulp command line, globally. It's the last global step bef
 
 
     
-    <code class="language-bash">npm install --global gulp-cli</code>
+```bash
+npm install --global gulp-cli
+```
+
 
 
 
@@ -186,7 +198,10 @@ From this point, you'll have to navigate to the folder in which you keep your we
 
 
     
-    <code class="language-bash">cd sites</code>
+```bash
+cd sites
+```
+
 
 
 
@@ -194,7 +209,10 @@ Then I'll create a new project directory.
 
 
     
-    <code class="language-bash">mkdir startgulp</code>
+```bash
+mkdir startgulp
+```
+
 
 
 
@@ -202,7 +220,10 @@ And move to the newly created folder.
 
 
     
-    <code class="language-bash">cd startgulp</code>
+```bash
+cd startgulp
+```
+
 
 
 
@@ -210,7 +231,10 @@ In order to install Node locally, you need a **package.json** file. You can eith
 
 
     
-    <code class="language-bash">npm init</code>
+```bash
+npm init
+```
+
 
 
 
@@ -218,7 +242,8 @@ This command will walk you through creating a generic **package.json**. It's pre
 
 
     
-    <code class="language-js">{
+```js
+{
       "name": "startgulp",
       "version": "1.0.0",
       "description": "Getting Started with Gulp",
@@ -232,7 +257,9 @@ This command will walk you through creating a generic **package.json**. It's pre
       ],
       "author": "Tania Rascia",
       "license": "MIT"
-    }</code>
+    }
+```
+
 
 
 
@@ -240,7 +267,10 @@ Now we'll run a command to install Node and Gulp.
 
 
     
-    <code>npm install --save-dev gulp</code>
+```
+npm install --save-dev gulp
+```
+
 
 
 
@@ -257,7 +287,10 @@ Once that's complete, you can list your files:
 
 
     
-    <code>ls</code>
+```
+ls
+```
+
 
 
 
@@ -298,7 +331,10 @@ Here is the code to add all four Gulp plugins.
 
 
     
-    <code>npm install --save-dev gulp-sass gulp-cssnano gulp-sourcemaps gulp-autoprefixer</code>
+```
+npm install --save-dev gulp-sass gulp-cssnano gulp-sourcemaps gulp-autoprefixer
+```
+
 
 
 
@@ -306,13 +342,16 @@ If you check your **package.json**, you'll notice a new section has been added.
 
 
     
-    <code class="language-js">"devDependencies": {
+```js
+"devDependencies": {
       "gulp": "^3.9.1",
       "gulp-autoprefixer": "^3.1.0",
       "gulp-cssnano": "^2.1.1",
       "gulp-sass": "^2.2.0",
       "gulp-sourcemaps": "^1.6.0"
-    }</code>
+    }
+```
+
 
 
 
@@ -347,13 +386,16 @@ We can begin our Gulpfile by defining a variable for each plugin requirement.
 
 
     
-    <code class="language-js">'use strict';
+```js
+'use strict';
     
     var gulp = require('gulp');
     var sass = require('gulp-sass');
     var cssnano = require('gulp-cssnano');
     var sourcemaps = require('gulp-sourcemaps');
-    var autoprefixer = require('gulp-autoprefixer');</code>
+    var autoprefixer = require('gulp-autoprefixer');
+```
+
 
 
 
@@ -363,11 +405,14 @@ So, I'll begin by creating a Gulp task.
 
 
     
-    <code class="language-js">gulp.task('workflow', function () {
+```js
+gulp.task('workflow', function () {
       gulp.src('./src/sass/**/*.scss')
       // Insert tasks here
       .pipe(gulp.dest('./dist/css/'))
-    });</code>
+    });
+```
+
 
 
 
@@ -377,7 +422,8 @@ Inserting all the rest of the plugins is easy.
 
 
     
-    <code class="language-js">gulp.task('workflow', function () {
+```js
+gulp.task('workflow', function () {
       gulp.src('./src/sass/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
@@ -389,7 +435,9 @@ Inserting all the rest of the plugins is easy.
         .pipe(sourcemaps.write('./'))
     
       .pipe(gulp.dest('./dist/css/'))
-    });</code>
+    });
+```
+
 
 
 
@@ -399,9 +447,12 @@ Finally, I'm going to define the default Gulp task as a "watch" task - Gulp will
 
 
     
-    <code class="language-js">gulp.task('default', function () {
+```js
+gulp.task('default', function () {
       gulp.watch('./src/sass/**/*.scss', ['workflow']);
-    });</code>
+    });
+```
+
 
 
 
@@ -409,7 +460,8 @@ Here is the final **gulpfile.js**:
 
 
     
-    <code class="language-js">'use strict';
+```js
+'use strict';
     
     var gulp = require('gulp');
     var sass = require('gulp-sass');
@@ -434,7 +486,9 @@ Here is the final **gulpfile.js**:
     gulp.task('default', function () {
     	gulp.watch('./src/sass/**/*.scss', ['workflow']);
     });
-    </code>
+    
+```
+
 
 
 
@@ -448,13 +502,16 @@ Now to test this code, I'm going to create three simple `.scss` files - **main.s
 
 
     
-    <code class="language-js">/* Main SCSS File */
+```js
+/* Main SCSS File */
     
     // Base
     @import "variables";
     
     // Components
-    @import "scaffolding";</code>
+    @import "scaffolding";
+```
+
 
 
 
@@ -466,7 +523,8 @@ Now to test this code, I'm going to create three simple `.scss` files - **main.s
 
 
     
-    <code class="language-scss">// Typography
+```scss
+// Typography
     
     $font-style: normal;
     $font-variant: normal;
@@ -474,7 +532,9 @@ Now to test this code, I'm going to create three simple `.scss` files - **main.s
     $font-color: #222;
     $font-size: 1rem;
     $line-height: 1.5;
-    $font-family: Helvetica Neue, Helvetica, Arial, sans-serif;</code>
+    $font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+```
+
 
 
 
@@ -486,7 +546,8 @@ Now to test this code, I'm going to create three simple `.scss` files - **main.s
 
 
     
-    <code class="language-scss">// Define typography
+```scss
+// Define typography
     html {
       font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
     }
@@ -496,7 +557,9 @@ Now to test this code, I'm going to create three simple `.scss` files - **main.s
       display: flex;
       align-items: center;
       justify-content: center;
-    }</code>
+    }
+```
+
 
 
 
@@ -509,7 +572,10 @@ All you need to do now is type the `gulp` command at the root of your project di
 
 
     
-    <code>gulp</code>
+```
+gulp
+```
+
 
 
 
@@ -556,17 +622,26 @@ Now that all your global dependencies are installed, and you know how to set eve
 
 
     
-    <code>git clone https://github.com/taniarascia/primitive.git</code>
+```
+git clone https://github.com/taniarascia/primitive.git
+```
 
-
-
-    
-    <code>npm install</code>
 
 
 
     
-    <code>gulp</code>
+```
+npm install
+```
+
+
+
+
+    
+```
+gulp
+```
+
 
 
 

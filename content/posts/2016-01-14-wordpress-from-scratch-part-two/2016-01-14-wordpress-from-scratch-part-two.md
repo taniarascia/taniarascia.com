@@ -85,7 +85,8 @@ In the last article, we made header, footer, sidebar, content, and page files. N
 
 
     
-    <code class="language-php"><?php get_header(); ?>
+```php
+<?php get_header(); ?>
     
     	<div class="row">
     		<div class="col-sm-12">
@@ -99,7 +100,9 @@ In the last article, we made header, footer, sidebar, content, and page files. N
     		</div> <!-- /.col -->
     	</div> <!-- /.row -->
     
-    <?php get_footer(); ?></code>
+    <?php get_footer(); ?>
+```
+
 
 
 
@@ -107,11 +110,14 @@ Now you'll create **content-single.php**, which is a duplicate of **content.php*
 
 
     
-    <code class="language-php"><div class="blog-post">
+```php
+<div class="blog-post">
     	<h2 class="blog-post-title"><?php the_title(); ?></h2>
     	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
      <?php the_content(); ?>
-    </div><!-- /.blog-post --></code>
+    </div><!-- /.blog-post -->
+```
+
 
 
 
@@ -121,7 +127,10 @@ Going back to the original **content.php**, we have the title of each article.
 
 
     
-    <code class="language-php"><h2 class="blog-post-title"><?php the_title(); ?></h2></code>
+```php
+<h2 class="blog-post-title"><?php the_title(); ?></h2>
+```
+
 
 
 
@@ -129,7 +138,10 @@ Using `the_permalink()`, we're going to link to the single page.
 
 
     
-    <code class="language-php"><h2 class="blog-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2></code>
+```php
+<h2 class="blog-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+```
+
 
 
 
@@ -142,7 +154,10 @@ Finally, we'll want to change `the_content()` to `the_excerpt()` on **content.ph
 
 
     
-    <code class="language-php"><?php the_excerpt(); ?></code>
+```php
+<?php the_excerpt(); ?>
+```
+
 
 
 
@@ -161,7 +176,8 @@ Currently, your **index.php** file looks like this.
 
 
     
-    <code class="language-php"><?php get_header(); ?>
+```php
+<?php get_header(); ?>
     
     	<div class="row">
     		<div class="col-sm-8 blog-main">
@@ -175,7 +191,9 @@ Currently, your **index.php** file looks like this.
     		<?php get_sidebar(); ?>
     	</div> 	<!-- /.row -->
     
-    <?php get_footer(); ?></code>
+    <?php get_footer(); ?>
+```
+
 
 
 
@@ -185,8 +203,11 @@ If you'll notice, the loop has `if` and `while`, then later `endif` and `endwhil
 
 
     
-    <code class="language-php"><?php next_posts_link( 'Older posts' ); ?>
-    <?php previous_posts_link( 'Newer posts' ); ?></code>
+```php
+<?php next_posts_link( 'Older posts' ); ?>
+    <?php previous_posts_link( 'Newer posts' ); ?>
+```
+
 
 
 
@@ -194,12 +215,15 @@ In **index.php**, between `endwhile;` and `endif;`, I'm going to place this code
 
 
     
-    <code class="language-php"><nav>
+```php
+<nav>
     	<ul class="pager">
     		<li><?php next_posts_link( 'Previous' ); ?></li>
     		<li><?php previous_posts_link( 'Next' ); ?></li>
     	</ul>
-    </nav></code>
+    </nav>
+```
+
 
 
 
@@ -224,9 +248,12 @@ Right now, the code looks like this.
 
 
     
-    <code class="language-php">if ( have_posts() ) : while ( have_posts() ) : the_post();
+```php
+if ( have_posts() ) : while ( have_posts() ) : the_post();
     	get_template_part( 'content-single', get_post_format() );
-    endwhile; endif; </code>
+    endwhile; endif; 
+```
+
 
 
 
@@ -234,14 +261,17 @@ We're going to change it to look like this.
 
 
     
-    <code class="language-php">if ( have_posts() ) : while ( have_posts() ) : the_post();
+```php
+if ( have_posts() ) : while ( have_posts() ) : the_post();
     	get_template_part( 'content-single', get_post_format() );
     
     	if ( comments_open() || get_comments_number() ) :
     	  comments_template();
     	endif;
     
-    endwhile; endif; </code>
+    endwhile; endif; 
+```
+
 
 
 
@@ -249,7 +279,8 @@ This is just telling the single post to display the comments template. Now we'll
 
 
     
-    <code class="language-php"><?php if ( post_password_required() ) {
+```php
+<?php if ( post_password_required() ) {
     	return;
     } ?>
     	<div id="comments" class="comments-area">
@@ -275,7 +306,9 @@ This is just telling the single post to display the comments template. Now we'll
     			</p>
     		<?php endif; ?>
     		<?php comment_form(); ?>
-    	</div></code>
+    	</div>
+```
+
 
 
 
@@ -294,10 +327,13 @@ Of course, you might want to show how many comments there are or link to the com
 
 
     
-    <code class="language-php"><a href="<?php comments_link(); ?>">
+```php
+<a href="<?php comments_link(); ?>">
     	<?php
     	printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n( 		get_comments_number() ) ); ?>
-    </a></code>
+    </a>
+```
+
 
 
 
@@ -324,10 +360,13 @@ Located in your theme directory, you can create a file called [functions.php](ht
 
 
     
-    <code class="language-php">function custom_function() {
+```php
+function custom_function() {
     	//code
     }
-    add_action( 'action', 'custom_function');</code>
+    add_action( 'action', 'custom_function');
+```
+
 
 
 
@@ -339,7 +378,10 @@ Since it's a PHP file, it needs to be begin with the opening PHP tag. It doesn't
 
 
     
-    <code class="language-php"><?php</code>
+```php
+<?php
+```
+
 
 
 
@@ -378,14 +420,17 @@ Now here's the first code block we're going to put in **functions.php**:
 
 
     
-    <code class="language-php">// Add scripts and stylesheets
+```php
+// Add scripts and stylesheets
     function startwordpress_scripts() {
     	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6' );
     	wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
     	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
     }
     
-    add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );</code>
+    add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
+```
+
 
 
 
@@ -405,13 +450,16 @@ The function to include the Google Fonts stylesheets is slightly different, base
 
 
     
-    <code class="language-php">// Add Google Fonts
+```php
+// Add Google Fonts
     function startwordpress_google_fonts() {
     wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
     wp_enqueue_style( 'OpenSans');
     		}
     
-    add_action('wp_print_styles', 'startwordpress_google_fonts');</code>
+    add_action('wp_print_styles', 'startwordpress_google_fonts');
+```
+
 
 
 
@@ -427,7 +475,10 @@ If you'll notice, we're currently pulling in the title for the website with this
 
 
     
-    <code class="language-php"><title><?php echo get_bloginfo( 'name' ); ?></title></code>
+```php
+<title><?php echo get_bloginfo( 'name' ); ?></title>
+```
+
 
 
 
@@ -437,8 +488,11 @@ Introduced in WordPress 4.1 is the ability to simply have WordPress take care of
 
 
     
-    <code class="language-php">// WordPress Titles
-    add_theme_support( 'title-tag' );</code>
+```php
+// WordPress Titles
+    add_theme_support( 'title-tag' );
+```
+
 
 
 
@@ -459,11 +513,14 @@ First, we're going to add a section on the left hand menu called **Custom Settin
 
 
     
-    <code class="language-php">// Custom settings
+```php
+// Custom settings
     function custom_settings_add_menu() {
       add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options', 'custom-settings', 'custom_settings_page', null, 99 );
     }
-    add_action( 'admin_menu', 'custom_settings_add_menu' );</code>
+    add_action( 'admin_menu', 'custom_settings_add_menu' );
+```
+
 
 
 
@@ -474,7 +531,8 @@ Then we're going to create a basic page.
 
 
     
-    <code class="language-php">// Create Custom Global Settings
+```php
+// Create Custom Global Settings
     function custom_settings_page() { ?>
       <div class="wrap">
         <h1>Custom Settings</h1>
@@ -486,7 +544,9 @@ Then we're going to create a basic page.
            ?>          
         </form>
       </div>
-    <?php }</code>
+    <?php }
+```
+
 
 
 
@@ -499,10 +559,13 @@ Now we're going to create an input field for Twitter.
 
 
     
-    <code class="language-php">// Twitter
+```php
+// Twitter
     function setting_twitter() { ?>
       <input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
-    <?php }</code>
+    <?php }
+```
+
 
 
 
@@ -510,13 +573,16 @@ Finally, we're going to set up the page to show, accept and save the option fiel
 
 
     
-    <code class="language-php">function custom_settings_page_setup() {
+```php
+function custom_settings_page_setup() {
       add_settings_section( 'section', 'All Settings', null, 'theme-options' );
       add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
     
       register_setting('section', 'twitter');
     }
-    add_action( 'admin_init', 'custom_settings_page_setup' );</code>
+    add_action( 'admin_init', 'custom_settings_page_setup' );
+```
+
 
 
 
@@ -529,9 +595,12 @@ For good measure, I'm going to add another example, this time for GitHub.
 
 
     
-    <code class="language-php">function setting_github() { ?>
+```php
+function setting_github() { ?>
       <input type="text" name="github" id="github" value="<?php echo get_option('github'); ?>" />
-    <?php }</code>
+    <?php }
+```
+
 
 
 
@@ -539,11 +608,14 @@ Now you'll just duplicate the fields in `custom_settings_page_setup`.
 
 
     
-    <code class="language-php">  add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
+```php
+  add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
       add_settings_field( 'github', 'GitHub URL', 'setting_github', 'theme-options', 'section' );
       
     	register_setting( 'section', 'twitter' );
-      register_setting( 'section', 'github' );</code>
+      register_setting( 'section', 'github' );
+```
+
 
 
 
@@ -551,8 +623,11 @@ Now back in **sidebar.php**, I'm going to change the links from this:
 
 
     
-    <code class="language-php"><li><a href="#">GitHub</a></li>
-    <li><a href="#">Twitter</a></li></code>
+```php
+<li><a href="#">GitHub</a></li>
+    <li><a href="#">Twitter</a></li>
+```
+
 
 
 
@@ -560,8 +635,11 @@ To this:
 
 
     
-    <code class="language-php"><li><a href="<?php echo get_option('github'); ?>">GitHub</a></li>
-    <li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li></code>
+```php
+<li><a href="<?php echo get_option('github'); ?>">GitHub</a></li>
+    <li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li>
+```
+
 
 
 
@@ -577,8 +655,11 @@ You might want to have a featured image for each blog post. This functionality i
 
 
     
-    <code class="language-php">// Support Featured Images
-    add_theme_support( 'post-thumbnails' );</code>
+```php
+// Support Featured Images
+    add_theme_support( 'post-thumbnails' );
+```
+
 
 
 
@@ -591,9 +672,12 @@ I'm just going to upload something I drew in there for an example. Now, display 
 
 
     
-    <code class="language-php"><?php if ( has_post_thumbnail() ) {
+```php
+<?php if ( has_post_thumbnail() ) {
       the_post_thumbnail();
-    } ?></code>
+    } ?>
+```
+
 
 
 
@@ -604,7 +688,8 @@ Now you have an image on your individual post pages! If you wanted the thumbnail
 
 
     
-    <code class="language-php"><?php if ( has_post_thumbnail() ) {?>
+```php
+<?php if ( has_post_thumbnail() ) {?>
     	<div class="row">
     		<div class="col-md-4">
     			<?php	the_post_thumbnail('thumbnail'); ?>
@@ -615,7 +700,9 @@ Now you have an image on your individual post pages! If you wanted the thumbnail
     	</div>
     	<?php } else { ?>
     	<?php the_excerpt(); ?>
-    	<?php } ?></code>
+    	<?php } ?>
+```
+
 
 
 
@@ -640,7 +727,8 @@ In **functions.php**, I'm going to create the custom post type called **My Custo
 
 
     
-    <code class="language-php">// Custom Post Type
+```php
+// Custom Post Type
     function create_my_custom_post() {
     	register_post_type( 'my-custom-post',
     			array(
@@ -658,7 +746,9 @@ In **functions.php**, I'm going to create the custom post type called **My Custo
     			)
     	));
     }
-    add_action( 'init', 'create_my_custom_post' );</code>
+    add_action( 'init', 'create_my_custom_post' );
+```
+
 
 
 
@@ -685,9 +775,12 @@ The original loop we used looked like this:
 
 
     
-    <code class="language-php">if ( have_posts() ) : while ( have_posts() ) : the_post();
+```php
+if ( have_posts() ) : while ( have_posts() ) : the_post();
     	// Contents of the Loop
-    endwhile; endif; </code>
+    endwhile; endif; 
+```
+
 
 
 
@@ -695,11 +788,14 @@ A custom post type loop will look like this:
 
 
     
-    <code class="language-php">$custom_query = new WP_Query( $args );
+```php
+$custom_query = new WP_Query( $args );
     while ($custom_query->have_posts()) : $custom_query->the_post();
       // Contents of the custom Loop
     endwhile;
-    </code>
+    
+```
+
 
 
 
@@ -709,11 +805,14 @@ I'll have to define the `$args` or arguments, before the loop.
 
 
     
-    <code class="language-php">$args =  array( 
+```php
+$args =  array( 
     	'post_type' => 'my-custom-post',
     	'orderby' => 'menu_order',
     	'order' => 'ASC'
-    );</code>
+    );
+```
+
 
 
 
@@ -723,7 +822,8 @@ So here's the entire code for **page-custom.php**.
 
 
     
-    <code class="language-php"><?php get_header(); ?>
+```php
+<?php get_header(); ?>
     
     	<div class="row">
     		<div class="col-sm-12">
@@ -747,7 +847,9 @@ So here's the entire code for **page-custom.php**.
     	</div> <!-- /.row -->
     
     	<?php get_footer(); ?>
-    </code>
+    
+```
+
 
 
 
