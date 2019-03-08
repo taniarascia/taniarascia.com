@@ -16,39 +16,35 @@ I often like to start my projects from scratch and stray away from using framewo
 
 A minimal index.html file should always contain a few things, though.
 
-##### Declare the document type
+### Declare the document type
 
-`<!doctype html>` - [HTML5](https://en.wikipedia.org/wiki/HTML5).
+- `<!doctype html>` - [HTML5](https://en.wikipedia.org/wiki/HTML5).
 
-##### Define the character coding
+### Define the character coding
 
-`<meta charset="utf-8">` - [ UTF8](https://en.wikipedia.org/wiki/UTF-8).
+- `<meta charset="utf-8">` - [ UTF8](https://en.wikipedia.org/wiki/UTF-8).
 
-##### Define the width of the viewport
+### Define the width of the viewport
 
-`<meta name="viewport" content="width=device-width, initial-scale=1">`
+- `<meta name="viewport" content="width=device-width, initial-scale=1">`
 [Optimize for mobile](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) and prevent zoom/horizontal scroll.
 
-##### Make browsers render elements consistently with a CSS reset.
+### Make browsers render elements consistently with a CSS reset.
 
-[Normalize.css](https://necolas.github.io/normalize.css/) is a good option.
+- [Normalize.css](https://necolas.github.io/normalize.css/) is a good option.
 
-##### Include jQuery library (optional)
+### Include links to Custom CSS and JavaScript
 
-Google generously provides [hosted libraries](https://developers.google.com/speed/libraries/)
+- `css/style.css` and `js/scripts.js` are acceptable paths.
 
-##### Include links to Custom CSS and JavaScript
+### Use the latest Internet Explorer rendering mode (optional)
 
-`css/style.css` and `js/scripts.js` are acceptable paths.
+- `<meta http-equiv="x-ua-compatible" content="ie=edge">` - [Not mandatory, but might be helpful.](<https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx>)
 
-##### Use the latest Internet Explorer rendering mode (optional)
-
-`<meta http-equiv="x-ua-compatible" content="ie=edge">` - [Not mandatory, but might be helpful.](<https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx>)
-
-## Basic index.html
+### Basic index.html
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -62,7 +58,6 @@ Google generously provides [hosted libraries](https://developers.google.com/spee
   </head>
 
   <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
