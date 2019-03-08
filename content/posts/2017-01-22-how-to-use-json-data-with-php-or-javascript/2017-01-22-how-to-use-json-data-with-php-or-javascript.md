@@ -1,5 +1,5 @@
 ---
-date: 2017-01-22 04:42:45
+date: 2017-01-22
 title: 'How to Use JSON Data with PHP or JavaScript'
 template: post
 slug: /how-to-use-json-data-with-php-or-javascript/

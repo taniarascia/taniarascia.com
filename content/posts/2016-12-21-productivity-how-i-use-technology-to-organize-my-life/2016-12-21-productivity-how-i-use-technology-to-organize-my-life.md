@@ -1,5 +1,5 @@
 ---
-date: 2016-12-21 00:08:11
+date: 2016-12-21
 title: 'Productivity: How I Use Technology to Organize My Life'
 template: post
 slug: /productivity-how-i-use-technology-to-organize-my-life/

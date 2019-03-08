@@ -1,5 +1,5 @@
 ---
-date: 2018-03-06 03:56:20
+date: 2018-03-06
 title: 'How to Use the JavaScript Fetch API to Get JSON Data'
 template: post
 slug: /how-to-use-the-javascript-fetch-api-to-get-json-data/

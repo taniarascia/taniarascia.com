@@ -1,5 +1,5 @@
 ---
-date: 2018-04-09 21:53:45
+date: 2018-04-09
 title: 'ES6 Syntax and Feature Overview'
 template: post
 slug: /es6-syntax-and-feature-overview/

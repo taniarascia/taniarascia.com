@@ -1,5 +1,5 @@
 ---
-date: 2016-10-14 22:11:08
+date: 2016-10-14
 title: 'Setting Up a Basic Cron Job in Linux'
 template: post
 slug: /setting-up-a-basic-cron-job-in-linux/

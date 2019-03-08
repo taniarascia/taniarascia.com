@@ -1,5 +1,5 @@
 ---
-date: 2016-01-29 04:37:55
+date: 2016-01-29
 title: 'Obtain a TLS/SSL Certificate and Enable HTTPS Encryption'
 template: post
 slug: /https-ssl-tls-certificate-how-to/

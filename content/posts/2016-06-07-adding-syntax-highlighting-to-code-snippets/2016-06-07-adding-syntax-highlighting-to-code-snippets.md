@@ -1,5 +1,5 @@
 ---
-date: 2016-06-07 00:51:25
+date: 2016-06-07
 title: "Adding Syntax Highlighting to Code Snippets in a Blog or Website\t\
   \t"
 template: post

@@ -1,5 +1,5 @@
 ---
-date: 2018-05-29 03:49:25
+date: 2018-05-29
 title: 'How to Create and Use Bash Scripts'
 template: post
 slug: /how-to-create-and-use-bash-scripts/

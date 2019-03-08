@@ -1,5 +1,5 @@
 ---
-date: 2018-10-04 16:47:56
+date: 2018-10-04
 title: 'Promise.all with Async/Await'
 template: post
 slug: /promise-all-with-async-await/

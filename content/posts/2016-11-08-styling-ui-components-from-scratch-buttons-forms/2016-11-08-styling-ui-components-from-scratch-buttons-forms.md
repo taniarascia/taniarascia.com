@@ -1,5 +1,5 @@
 ---
-date: 2016-11-08 03:35:03
+date: 2016-11-08
 title: 'Styling UI Components from Scratch: Buttons & Forms'
 template: post
 slug: /styling-ui-components-from-scratch-buttons-forms/

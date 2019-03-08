@@ -1,5 +1,5 @@
 ---
-date: 2017-01-09 06:38:11
+date: 2017-01-09
 title: 'How to Use the Command Line for Apple macOS and Linux'
 template: post
 slug: /how-to-use-the-command-line-for-apple-macos-and-linux/

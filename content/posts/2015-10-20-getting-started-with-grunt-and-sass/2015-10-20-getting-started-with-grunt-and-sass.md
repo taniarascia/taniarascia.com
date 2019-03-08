@@ -1,5 +1,5 @@
 ---
-date: 2015-10-20 01:55:13
+date: 2015-10-20
 title: 'Getting Started with Grunt and Sass'
 template: post
 slug: /getting-started-with-grunt-and-sass/

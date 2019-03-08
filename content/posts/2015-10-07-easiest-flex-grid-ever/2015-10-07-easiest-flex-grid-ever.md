@@ -1,5 +1,5 @@
 ---
-date: 2015-10-07 17:22:31
+date: 2015-10-07
 title: 'How to Create a Flexbox Grid'
 template: post
 slug: /easiest-flex-grid-ever/

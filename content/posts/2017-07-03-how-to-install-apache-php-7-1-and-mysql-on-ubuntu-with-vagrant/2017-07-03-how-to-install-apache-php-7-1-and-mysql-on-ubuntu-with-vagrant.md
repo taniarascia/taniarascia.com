@@ -1,5 +1,5 @@
 ---
-date: 2017-07-03 07:26:51
+date: 2017-07-03
 title: "How to Install Apache, PHP 7.1, and MySQL on Ubuntu with Vagrant\t\
   \t"
 template: post
@@ -104,7 +104,7 @@ apache2 -v
 ```
 
     <div class="terminal">Server version: Apache/2.4.7 (Ubuntu)
-    Server built:   Jun 26 2017 13:53:34</div>
+    Server built:   Jun 26 2017</div>
 
 Great, Apache is up and running properly! But now we want confirmation of this.
 
@@ -184,7 +184,7 @@ Confirm successful installation of PHP by checking the version.
 php -v
 ```
 
-    <div class="terminal">PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017 05:58:40) ( NTS )
+    <div class="terminal">PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017) ( NTS )
     Copyright (c) 1997-2017 The PHP Group
     Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
         with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies

@@ -1,5 +1,5 @@
 ---
-date: 2016-08-10 18:18:23
+date: 2016-08-10
 title: "WordPress Theme Development: Creating Custom Fields and Meta Boxes\t\
   \t"
 template: post

@@ -1,5 +1,5 @@
 ---
-date: 2015-10-17 22:30:59
+date: 2015-10-17
 title: 'Developing a Wordpress Theme from Scratch'
 template: post
 slug: /developing-a-wordpress-theme-from-scratch/

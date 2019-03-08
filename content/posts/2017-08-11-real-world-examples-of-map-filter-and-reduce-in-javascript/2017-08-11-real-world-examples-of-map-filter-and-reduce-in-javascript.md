@@ -1,5 +1,5 @@
 ---
-date: 2017-08-11 04:09:07
+date: 2017-08-11
 title: 'Real World Examples of Map, Filter and Reduce in JavaScript'
 template: post
 slug: /real-world-examples-of-map-filter-and-reduce-in-javascript/

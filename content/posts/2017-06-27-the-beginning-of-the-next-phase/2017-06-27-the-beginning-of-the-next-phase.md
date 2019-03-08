@@ -1,5 +1,5 @@
 ---
-date: 2017-06-27 20:08:29
+date: 2017-06-27
 title: 'The Beginning of the Next Phase'
 template: post
 slug: /the-beginning-of-the-next-phase/

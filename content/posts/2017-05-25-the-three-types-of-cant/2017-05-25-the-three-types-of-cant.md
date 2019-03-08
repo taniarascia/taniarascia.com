@@ -1,5 +1,5 @@
 ---
-date: 2017-05-25 19:25:21
+date: 2017-05-25
 title: "The Three Types of Can't"
 template: post
 slug: /the-three-types-of-cant/

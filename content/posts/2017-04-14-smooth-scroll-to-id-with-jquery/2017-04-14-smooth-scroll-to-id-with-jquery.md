@@ -1,5 +1,5 @@
 ---
-date: 2017-04-14 15:12:07
+date: 2017-04-14
 title: 'Smooth Scroll to ID with jQuery'
 template: post
 slug: /smooth-scroll-to-id-with-jquery/

@@ -1,5 +1,5 @@
 ---
-date: 2015-11-02 07:44:39
+date: 2015-11-02
 title: 'Off Canvas Navigation'
 template: post
 slug: /off-canvas-navigation/

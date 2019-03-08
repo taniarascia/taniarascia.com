@@ -1,5 +1,5 @@
 ---
-date: 2017-07-02 23:37:26
+date: 2017-07-02
 title: 'What are Vagrant and VirtualBox and How Do I Use Them?'
 template: post
 slug: /what-are-vagrant-and-virtualbox-and-how-do-i-use-them/
@@ -195,7 +195,7 @@ When you login, you will see something along these lines.
 
      * Documentation:  https://help.ubuntu.com/
 
-      System information as of Sun Jul  2 21:30:05 UTC 2017
+      System information as of Sun Jul  2 UTC 2017
 
       System load:  0.15              Processes:           84
       Usage of /:   3.6% of 39.34GB   Users logged in:     0

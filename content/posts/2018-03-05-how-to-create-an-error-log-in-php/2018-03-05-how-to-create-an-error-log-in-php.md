@@ -1,5 +1,5 @@
 ---
-date: 2018-03-05 00:56:05
+date: 2018-03-05
 title: 'How to Create an Error Log in PHP'
 template: post
 slug: /how-to-create-an-error-log-in-php/

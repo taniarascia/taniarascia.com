@@ -1,5 +1,5 @@
 ---
-date: 2015-11-14 20:50:12
+date: 2015-11-14
 title: 'Google Maps APIs for Multiple Locations'
 template: post
 slug: /google-maps-apis-for-multiple-locations/

@@ -1,5 +1,5 @@
 ---
-date: 2017-06-30 00:40:42
+date: 2017-06-30
 title: 'Web Developers and Bloggers I Follow (2017)'
 template: post
 slug: /web-developers-and-bloggers-i-follow-2017/

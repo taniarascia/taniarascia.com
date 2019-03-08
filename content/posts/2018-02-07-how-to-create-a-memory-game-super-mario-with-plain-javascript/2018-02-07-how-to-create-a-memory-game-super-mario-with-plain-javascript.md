@@ -1,5 +1,5 @@
 ---
-date: 2018-02-07 21:35:45
+date: 2018-02-07
 title: "How to Create a Memory Game (ala Super Mario 3) with Plain JavaScript\t\
   \t"
 template: post

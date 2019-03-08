@@ -1,5 +1,5 @@
 ---
-date: 2018-10-22 03:53:56
+date: 2018-10-22
 title: 'Website Redesign: Version 4.0'
 template: post
 slug: /website-redesign-version-4-0/

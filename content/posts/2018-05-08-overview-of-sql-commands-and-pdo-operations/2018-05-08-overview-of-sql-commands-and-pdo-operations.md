@@ -1,5 +1,5 @@
 ---
-date: 2018-05-08 21:56:30
+date: 2018-05-08
 title: 'Overview of SQL Commands and PDO Operations'
 template: post
 slug: /overview-of-sql-commands-and-pdo-operations/

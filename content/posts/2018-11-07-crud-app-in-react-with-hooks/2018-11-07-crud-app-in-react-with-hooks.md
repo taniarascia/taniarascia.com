@@ -1,5 +1,5 @@
 ---
-date: 2018-11-07 05:36:13
+date: 2018-11-07
 title: 'Build a CRUD App in React with Hooks'
 template: post
 slug: /crud-app-in-react-with-hooks/

@@ -1,5 +1,5 @@
 ---
-date: 2017-02-08 19:53:31
+date: 2017-02-08
 title: 'How to Use jQuery, a JavaScript Library'
 template: post
 slug: /how-to-use-jquery-a-javascript-library/

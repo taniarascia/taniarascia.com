@@ -1,5 +1,5 @@
 ---
-date: 2017-12-19 00:39:33
+date: 2017-12-19
 title: 'How to Use Local Storage with JavaScript'
 template: post
 slug: /how-to-use-local-storage-with-javascript/

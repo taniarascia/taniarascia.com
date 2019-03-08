@@ -1,5 +1,5 @@
 ---
-date: 2017-02-23 22:17:10
+date: 2017-02-23
 title: 'Simple jQuery Examples with Code and Demos'
 template: post
 slug: /simple-jquery-examples-with-code-and-demos/

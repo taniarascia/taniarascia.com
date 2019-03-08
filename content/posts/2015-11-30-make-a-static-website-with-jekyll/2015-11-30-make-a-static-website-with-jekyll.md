@@ -1,5 +1,5 @@
 ---
-date: 2015-11-30 09:02:58
+date: 2015-11-30
 title: 'Make a Static Website with Jekyll'
 template: post
 slug: /make-a-static-website-with-jekyll/
@@ -596,8 +596,8 @@ Server running... press ctrl-c to stop.
 
 If I make a change to any of the sass files, they should compile.
 
-     Regenerating: 1 file(s) changed at 2015-11-30 02:54:11 ...done in 0.090263 seconds.
-      Regenerating: 1 file(s) changed at 2015-11-30 02:54:11 ...done in 0.120487 seconds.
+     Regenerating: 1 file(s) changed at 2015-11-30 ...done in 0.090263 seconds.
+      Regenerating: 1 file(s) changed at 2015-11-30 ...done in 0.120487 seconds.
 
 ## Pushing Jekyll site to GitHub pages
 

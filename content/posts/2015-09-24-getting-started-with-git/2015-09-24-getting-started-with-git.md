@@ -1,5 +1,5 @@
 ---
-date: 2015-09-24 08:43:03
+date: 2015-09-24
 title: 'Getting Started with Git'
 template: post
 slug: /getting-started-with-git/

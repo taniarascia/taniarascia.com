@@ -1,5 +1,5 @@
 ---
-date: 2017-07-21 22:47:38
+date: 2017-07-21
 title: 'How to Install and Use Node.js and npm (Mac, Windows, Linux)'
 template: post
 slug: /how-to-install-and-use-node-js-and-npm-mac-and-windows/

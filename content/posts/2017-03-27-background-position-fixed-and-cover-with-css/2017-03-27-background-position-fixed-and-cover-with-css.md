@@ -1,5 +1,5 @@
 ---
-date: 2017-03-27 20:40:29
+date: 2017-03-27
 title: 'Background Position Fixed and Cover with CSS'
 template: post
 slug: /background-position-fixed-and-cover-with-css/

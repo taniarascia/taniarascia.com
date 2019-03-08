@@ -1,5 +1,5 @@
 ---
-date: 2015-10-23 03:02:36
+date: 2015-10-23
 title: 'Migrating a WordPress Site to a Live Server'
 template: post
 slug: /migrating-a-wordpress-site-to-a-live-server/

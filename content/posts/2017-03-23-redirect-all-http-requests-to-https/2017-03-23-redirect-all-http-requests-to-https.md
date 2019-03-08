@@ -1,5 +1,5 @@
 ---
-date: 2017-03-23 15:15:59
+date: 2017-03-23
 title: 'Redirect all HTTP requests to HTTPS'
 template: post
 slug: /redirect-all-http-requests-to-https/

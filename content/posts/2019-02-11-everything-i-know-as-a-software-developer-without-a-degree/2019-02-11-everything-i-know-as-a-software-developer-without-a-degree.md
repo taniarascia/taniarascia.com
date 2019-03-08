@@ -1,5 +1,5 @@
 ---
-date: 2019-02-11 04:13:18
+date: 2019-02-11
 title: 'Everything I Know as a Software Developer Without a Degree'
 template: post
 thumbnail: './floppy.png'
