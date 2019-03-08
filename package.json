@@ -1,9 +1,9 @@
 {
-  "name": "cenobyte",
-  "description": "Tania Rascia's personal Gatsby theme",
+  "name": "taniarascia",
+  "description": "Tania Rascia's personal theme for Gatsby.",
   "version": "1.0.0",
   "author": "Tania Rascia <me@taniarascia.com>",
-  "repository": "git@github.com:taniarascia/cenobyte",
+  "repository": "git@github.com:taniarascia/taniarascia.com",
   "dependencies": {
     "disqus-react": "^1.0.5",
     "gatsby": "2.1.23",

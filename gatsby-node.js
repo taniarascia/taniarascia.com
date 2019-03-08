@@ -112,7 +112,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   frontmatter {
                     tags
-                    category
+                    categories
                     template
                   }
                   fields {
@@ -140,8 +140,10 @@ exports.createPages = ({ graphql, actions }) => {
             })
           }
 
-          if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category)
+          if (edge.node.frontmatter.categories) {
+            edge.node.frontmatter.categories.forEach(category => {
+              categorySet.add(category)
+            })
           }
 
           if (edge.node.frontmatter.template === 'post') {

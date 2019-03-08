@@ -14,6 +14,7 @@ class PostTemplate extends Component {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
+    let thumbnail
 
     if (!post.id) {
       post.id = slug
@@ -21,6 +22,10 @@ class PostTemplate extends Component {
 
     if (!post.category_id) {
       post.category_id = config.postDefaultCategoryID
+    }
+
+    if (post.thumbnail) {
+      thumbnail = post.thumbnail.childImageSharp.fixed
     }
 
     return (
@@ -31,7 +36,7 @@ class PostTemplate extends Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">
           <header className="single-header">
-            <Img fixed={post.thumbnail.childImageSharp.fixed} />
+            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
             <div className="post-meta">
               <time className="date">{post.date}</time>
               <h1>{post.title}</h1>
@@ -68,7 +73,7 @@ export const pageQuery = graphql`
           }
         }
         date
-        category
+        categories
         tags
         template
       }

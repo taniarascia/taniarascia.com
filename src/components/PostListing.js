@@ -27,18 +27,24 @@ class PostListing extends Component {
 
     return (
       <section className={`posts ${simple ? 'simple' : ''}`}>
-        {postList.map(post => (
-          <Link to={post.path} key={post.title}>
-            <div className="each">
-              <Img fixed={post.thumbnail.childImageSharp.fixed} />
-              <div>
-                <h2>{post.title}</h2>
+        {postList.map(post => {
+          let thumbnail
+          if (post.thumbnail) {
+            thumbnail = post.thumbnail.childImageSharp.fixed
+          }
+          return (
+            <Link to={post.path} key={post.title}>
+              <div className="each">
+                {thumbnail ? <Img fixed={thumbnail} /> : <div />}
+                <div>
+                  <h2>{post.title}</h2>
 
-                {!simple ? <div className="excerpt">{post.excerpt}</div> : null}
+                  {!simple ? <div className="excerpt">{post.excerpt}</div> : null}
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          )
+        })}
       </section>
     )
   }

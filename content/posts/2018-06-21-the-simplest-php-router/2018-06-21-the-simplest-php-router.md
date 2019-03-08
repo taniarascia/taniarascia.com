@@ -1,0 +1,123 @@
+---
+date: 2018-06-21 16:48:39+00:00
+title: "The Simplest PHP Router"
+template: post
+slug: /the-simplest-php-router/
+categories:
+- Programming
+- Tutorials
+- Web
+tags:
+- mvc
+- php
+- routes
+- routing
+---
+
+
+I wanted to create the absolute most basic routing code in PHP, so here it is. We will direct ALL traffic to `index.php` and route to the new files from there.
+
+
+
+## Redirect all requests to index.php
+
+
+
+In the root of your project, create a `.htaccess` file that will redirect all requests to `index.php`.
+
+
+
+.htaccess
+
+
+
+    
+    <code class="language-apacheconf">RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)$ index.php [QSA,L]</code>
+
+
+
+
+
+## Create a routing switch
+
+
+
+Get the requested path with `$_SERVER['REDIRECT_URL']`, and require the page you want to display. I have `''` and `'/'` for both _url.com/_ and _url.com_.
+
+
+
+index.php
+
+
+
+    
+    <code class="language-php">
+    <?php
+    
+    $request = $_SERVER['REDIRECT_URL'];
+    
+    switch ($request) {
+        case '/' :
+            require __DIR__ . '/views/index.php';
+            break;
+        case '' :
+            require __DIR__ . '/views/index.php';
+            break;
+        case '/about' :
+            require __DIR__ . '/views/about.php';
+            break;
+        default: 
+            require __DIR__ . '/views/404.php';
+            break;
+    }</code>
+
+
+
+
+
+## Create the views
+
+
+
+Create a `/views` directory and place the files.
+
+
+
+/views/index.php
+
+
+
+    
+    <code class="language-php"><h1>Main</h1></code>
+
+
+
+
+
+/views/about.php
+
+
+
+    
+    <code class="language-php"><h1>About</h1></code>
+
+
+
+
+
+/views/404.php
+
+
+
+    
+    <code class="language-php"><h1>404</h1></code>
+
+
+
+That's it!
+
+		

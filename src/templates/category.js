@@ -13,7 +13,8 @@ class CategoryTemplate extends Component {
     return (
       <Layout>
         <Helmet title={`Posts in category "${category}" | ${config.siteTitle}`} />
-        <div className="category-container">
+        <div className="container">
+          <h1>Posts tagged as "{category}"</h1>
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>
@@ -25,11 +26,11 @@ export default CategoryTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CategoryPage($category: String) {
+  query CategoryPage($categories: String) {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { frontmatter: { categories: { eq: $categories } } }
     ) {
       totalCount
       edges {

@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-sitemap: https://taniarascia.github.io/cenobyte/sitemap.xml
+sitemap: https://tania.dev/sitemap.xml
