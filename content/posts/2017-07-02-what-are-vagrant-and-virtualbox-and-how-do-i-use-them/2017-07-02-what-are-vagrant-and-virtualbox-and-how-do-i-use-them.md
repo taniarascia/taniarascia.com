@@ -85,10 +85,12 @@ vagrant box add ubuntu/trusty64
 
 After a few moments, this will be the output to let you know it's successful.
 
-<div class="terminal">==> box: Loading metadata for box 'ubuntu/trusty64'
+```terminal
+==> box: Loading metadata for box 'ubuntu/trusty64'
         box: URL: https://vagrantcloud.com/ubuntu/trusty64
     ==> box: Adding box 'ubuntu/trusty64' (v20170619.0.0) for provider: virtualbox
-        box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!</div>
+        box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!
+```
 
 ````
 
@@ -103,10 +105,12 @@ Now initialize the new `vagrant` in your **VirtualMachines/ubuntu** directory wi
 vagrant init ubuntu/trusty64
 ````
 
-<div class="terminal">`Vagrantfile` has been placed in this directory. You are now
+```terminal
+`Vagrantfile` has been placed in this directory. You are now
     ready to `vagrant up` your first virtual environment! Please read
     the comments in the Vagrantfile as well as documentation on
-    `vagrantup.com` for more information on using Vagrant.</div>
+    `vagrantup.com` for more information on using Vagrant.
+```
 
 Finally, get Ubuntu up and running with the `vagrant up` command.
 
@@ -114,12 +118,14 @@ Finally, get Ubuntu up and running with the `vagrant up` command.
 vagrant up
 ```
 
-<div class="terminal">Bringing machine 'default' up with 'virtualbox' provider...
+```terminal
+Bringing machine 'default' up with 'virtualbox' provider...
     ==> default: Importing base box 'ubuntu/trusty64'...
 
     ...
 
-    ==> default: Machine booted and ready!</div>
+    ==> default: Machine booted and ready!
+```
 
 When you see "Machine booted and ready!", everything is good to go!
 
@@ -127,13 +133,15 @@ When you see "Machine booted and ready!", everything is good to go!
 
 This is great, and all set up. However, you may have gotten this error:
 
-<div class="terminal">==> default: Checking for guest additions in VM...
+```terminal
+==> default: Checking for guest additions in VM...
         default: The guest additions on this VM do not match the installed version of
         default: VirtualBox! In most cases this is fine, but in rare cases it can
         default: prevent things such as shared folders from working properly. If you see
         default: shared folder errors, please make sure the guest additions within the
         default: virtual machine match the version of VirtualBox you have installed on
-        default: your host and reload your VM.</div>
+        default: your host and reload your VM.
+```
 
 This might not be a problem, but let's make sure it doesn't become a problem. First, use the `halt` method to shut down your currently running Vagrant.
 
@@ -191,7 +199,8 @@ vagrant ssh
 
 When you login, you will see something along these lines.
 
-<div class="terminal">Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-123-generic x86_64)
+```terminal
+Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-123-generic x86_64)
 
      * Documentation:  https://help.ubuntu.com/
 

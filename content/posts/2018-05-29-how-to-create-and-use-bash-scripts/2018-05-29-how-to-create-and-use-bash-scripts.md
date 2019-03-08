@@ -112,7 +112,9 @@ hello-world
 
 But it won't work.
 
-<div class="terminal">-bash: hello-world: command not found</div>
+```terminal
+-bash: hello-world: command not found
+```
 
 We have to make it an executable file by changing the permissions.
 
@@ -123,8 +125,10 @@ chmod u+x hello-world
 
 Now when you run the command, it will output the contents of the `echo`.
 
-<div class="terminal">tania@computer:~$ hello-world
-    Hello, World!</div>
+```terminal
+tania@computer:~$ hello-world
+    Hello, World!
+```
 
 Congrats, you just got your first bash script up and running. You can also run this script from anywhere on the computer, not just in the `bin` directory.
 
@@ -145,8 +149,10 @@ hello-world
 
 ```
 
-<div class="terminal">tania@computer:~$ hello-world
-    Hello, World!</div>
+```terminal
+tania@computer:~$ hello-world
+    Hello, World!
+```
 
 Note that `who = "World"` is not valid - there must not be a space between variable and value.
 
@@ -167,10 +173,12 @@ hello-world
 
 ```
 
-<div class="terminal">tania@computer:~$ hello-world
+```terminal
+tania@computer:~$ hello-world
     Who are you?
     Tania
-    Hello, Tania!</div>
+    Hello, Tania!
+```
 
 ## Conditionals
 
@@ -194,10 +202,12 @@ check-id
 
 ```
 
-<div class="terminal">tania@computer:~$ check-id
+```terminal
+tania@computer:~$ check-id
     How old are you?
     28
-    You can drink.</div>
+    You can drink.
+```
 
 Operators are slightly different in bash than what you might be used to.
 
@@ -327,7 +337,8 @@ git-deploy
 
 Then just run the command.
 
-<div class="terminal">tania@computer:$ git-deploy
+```terminal
+tania@computer:$ git-deploy
     Commit message: Making some vague updates
     [master 0b0caaa] Making some vague updates
      3 files changed, 44 insertions(+), 1 deletion(-)
@@ -340,7 +351,8 @@ Then just run the command.
     Total 5 (delta 2), reused 0 (delta 0)
     remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
     To https://github.com/me/repo.git
-       79f061b..0b0caaa  master -> master</div>
+       79f061b..0b0caaa  master -> master
+```
 
 ## Conclusion
 

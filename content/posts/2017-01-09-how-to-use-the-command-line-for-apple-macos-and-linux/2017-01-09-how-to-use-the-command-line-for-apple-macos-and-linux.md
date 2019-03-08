@@ -82,8 +82,10 @@ pwd
 
 And here's what is written (printed) to the screen.
 
-<div class="terminal">NolBook:~ taniarascia$ pwd
-    /Users/taniarascia</div>
+```terminal
+NolBook:~ taniarascia$ pwd
+    /Users/taniarascia
+```
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-01-07-at-3.07.35-PM-1024x700.png)
 
@@ -93,9 +95,11 @@ It wrote `/Users/taniarascia` as my current working directory, where I "am". But
 ls
 ```
 
-<div class="terminal">NolBook:~ taniarascia$ ls
+```terminal
+NolBook:~ taniarascia$ ls
     Desktop   Documents Library   Music     Private   Sites
-    Dev       Downloads Movies    Pictures  Public    Songs</div>
+    Dev       Downloads Movies    Pictures  Public    Songs
+```
 
 And now I see exactly what I see in Finder and Chrome/a web browser!
 
@@ -107,11 +111,15 @@ Now you should understand that you're accessing the same files and folders from 
 
 When I open terminal, I see this.
 
-<div class="terminal">NolBook:~ taniarascia$ </div>
+```terminal
+NolBook:~ taniarascia$ 
+```
 
 You'll probably see something else, but the `~` and `$` will remain. Here's what's going on, which you can look back on for reference:
 
-<div class="terminal">Computer Name:Directory UsernameREADY</div>
+```terminal
+Computer Name:Directory UsernameREADY
+```
 
 - **Computer Name** (NolBook) - That's just the name I gave my computer.
 - **Directory** (`~` ) - Directly next to the computer name is the current directory you're working in. `~` stands for home directory, which is my `taniarascia` folder.
@@ -183,7 +191,8 @@ cd music
 
 Here is the output.
 
-<div class="terminal">NolBook:~ taniarascia$ cd music
+```terminal
+NolBook:~ taniarascia$ cd music
     NolBook:music taniarascia$ pwd
     /Users/taniarascia/music
     NolBook:music taniarascia$ ls
@@ -206,7 +215,8 @@ I want to go back one directory, back into my home folder.
 cd ..
 ````
 
-<div class="terminal">NolBook:~ taniarascia$
+```terminal
+NolBook:~ taniarascia$
 
 ````
 
@@ -229,7 +239,9 @@ If you try to move into a directory that has a space, you may encounter an issue
 cd Audio Music Apps
 ````
 
-<div class="terminal">-bash: cd: Audio: No such file or directory</div>
+```terminal
+-bash: cd: Audio: No such file or directory
+```
 
 The shell thinks I'm trying to move into **Audio** instead of **Audio Music Apps** because it does not recognize the space. There are two ways to remedy this.
 
@@ -288,7 +300,8 @@ Congratulations, you created a directory! If I type `ls`, I'll see my newly crea
 
 Now you can move into the **Shell** directory by inputting `cd shell`.
 
-<div class="terminal">NolBook:~ taniarascia$ cd shell
+```terminal
+NolBook:~ taniarascia$ cd shell
     NolBook:shell taniarascia$ pwd
     /Users/taniarascia/shell
 
@@ -339,7 +352,8 @@ I can check this by opening it from Finder, but I can also see the contents thro
 cat hello.txt
 ```
 
-<div class="terminal">NolBook:shell taniarascia$ cat hello.txt
+```terminal
+NolBook:shell taniarascia$ cat hello.txt
     Hello World
 
 ````
@@ -437,7 +451,8 @@ Note that this will permanently delete the file - it won't send to the Trash/Rec
 
 Now, let's say you create a new directory called **goodbye** with `mkdir goodbye`, and you try to delete it with `rm goodbye`. You'll get this error.
 
-<div class="terminal">NolBook:shell taniarascia$ rm goodbye
+```terminal
+NolBook:shell taniarascia$ rm goodbye
     rm: goodbye: is a directory
 
 ````
@@ -615,7 +630,8 @@ sudo su
 
 Now my terminal looks different - it has a `#` instead of a `$` to indicate that I'm logged in as the super user.
 
-<div class="terminal">sh-3.2#
+```terminal
+sh-3.2#
 
 ````
 
@@ -642,7 +658,8 @@ ssh username@host
 
 Once you've entered your password, you are now "inside" the other server. Your console will most likely look something like this:
 
-<div class="terminal">[username@host ~]$
+```terminal
+[username@host ~]$
 
 ````
 
@@ -665,8 +682,10 @@ Sometimes, when I'm having an existential crisis, I turn to my computer to bring
 whoami
 ````
 
-<div class="terminal">NolBook:~ taniarascia$ whoami
-    taniarascia</div>
+```terminal
+NolBook:~ taniarascia$ whoami
+    taniarascia
+```
 
 I often need to check the IP address of a given domain when I'm migrating a website. I can do this with the `dig` (**DNS Lookup**) command.
 
@@ -674,11 +693,13 @@ I often need to check the IP address of a given domain when I'm migrating a webs
 dig google.com
 ```
 
-<div class="terminal">;; QUESTION SECTION:
+```terminal
+;; QUESTION SECTION:
     ;google.com.			IN	A
 
     ;; ANSWER SECTION:
-    google.com.		279	IN	A	216.58.192.238</div>
+    google.com.		279	IN	A	216.58.192.238
+```
 
 If I forget something, I can also check the help guide for the command line with `man` (**Manual**).
 
@@ -686,8 +707,10 @@ If I forget something, I can also check the help guide for the command line with
 man touch
 ```
 
-<div class="terminal">NAME
-         touch -- change file access and modification times</div>
+```terminal
+NAME
+         touch -- change file access and modification times
+```
 
 To exit the manual pages, simply press q.
 
@@ -723,7 +746,8 @@ Now to save my file, I'll press control + O (the letter), and enter to confirm. 
 
 Now I can check the contents of **index.html** with `cat` to make sure it all worked properly.
 
-<div class="terminal">NolBook:shell taniarascia$ cat index.html
+```terminal
+NolBook:shell taniarascia$ cat index.html
     <html>
       <head>
         <title>Hello, World!</title>
@@ -731,7 +755,8 @@ Now I can check the contents of **index.html** with `cat` to make sure it all wo
       <body>
         <h1>Hello, World!</h1>
       </body>
-    </html></div>
+    </html>
+```
 
 ## Recap
 

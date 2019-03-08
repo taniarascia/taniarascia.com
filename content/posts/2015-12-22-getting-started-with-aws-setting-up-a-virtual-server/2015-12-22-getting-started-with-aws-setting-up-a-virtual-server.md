@@ -228,12 +228,14 @@ ssh -i ~/.ssh/Your_Key.pem ec2-user@PublicDNS
 
 And you're in!
 
-<div class="terminal">
+```terminal
+
            __|  __|_  )
            _|  (     /   Amazon Linux AMI
           ___|\___|___|
 
-    https://aws.amazon.com/amazon-linux-ami/2015.09-release-notes/</div>
+    https://aws.amazon.com/amazon-linux-ami/2015.09-release-notes/
+```
 
 First thing you can do is update the packages.
 

@@ -70,13 +70,15 @@ runAsyncFunctions()
 
 However, this will be my output:
 
-<div class="terminal">jon
+```terminal
+jon
     JON
     andrey
     ANDREY
     tania
     TANIA
-    (3) [{…}, {…}, {…}]</div>
+    (3) [{…}, {…}, {…}]
+```
 
 I can use `Promise.all()` instead to run all of the first, then all the second, then all the third functions.
 
@@ -98,13 +100,15 @@ const runAsyncFunctions = async () => {
 }
 ```
 
-<div class="terminal">(3) [{…}, {…}, {…}]
+```terminal
+(3) [{…}, {…}, {…}]
     jon
     andrey
     tania
     JON
     ANDREY
-    TANIA</div>
+    TANIA
+```
 
 Hope that helps someone.
 

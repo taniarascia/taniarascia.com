@@ -155,8 +155,10 @@ npm install --save-dev gulp
 
 You'll get a few warnings about deprecations and missing files, but don't worry too much.
 
-<div class="terminal">npm WARN package.json startgulp@1.0.0 No repository field.
-    npm WARN package.json startgulp@1.0.0 No README data</div>
+```terminal
+npm WARN package.json startgulp@1.0.0 No repository field.
+    npm WARN package.json startgulp@1.0.0 No README data
+```
 
 Once that's complete, you can list your files:
 
@@ -358,14 +360,18 @@ All you need to do now is type the `gulp` command at the root of your project di
 gulp
 ```
 
-<div class="terminal">[00:12:04] Using gulpfile ~/Sites/startgulp/gulpfile.js
+```terminal
+[00:12:04] Using gulpfile ~/Sites/startgulp/gulpfile.js
     [00:12:04] Starting 'default'...
-    [00:12:04] Finished 'default' after 16 ms</div>
+    [00:12:04] Finished 'default' after 16 ms
+```
 
 Now, if I save any of the **.scss** files that I've created...
 
-<div class="terminal">[00:12:39] Starting 'workflow'...
-    [00:12:39] Finished 'workflow' after 32 ms</div>
+```terminal
+[00:12:39] Starting 'workflow'...
+    [00:12:39] Finished 'workflow' after 32 ms
+```
 
 With lightning fast speed, Gulp has created dist, my main CSS file, and a sourcemap to go along with it.
 

@@ -92,7 +92,9 @@ nvm use node
 
 ```
 
-<div class="terminal">Now using node v8.2.0 (npm v5.3.0)</div>
+```terminal
+Now using node v8.2.0 (npm v5.3.0)
+```
 
 Now that Node.js and npm are installed, test them by typing `node -v` and `npm -v`.
 
@@ -122,14 +124,16 @@ npm init
 
 The following will pop up in the terminal, and prompt you for a few
 
-<div class="terminal">This utility will walk you through creating a package.json file.
+```terminal
+This utility will walk you through creating a package.json file.
     It only covers the most common items, and tries to guess sensible defaults.
 
     See `npm help json` for definitive documentation on these fields
     and exactly what they do.
 
     Use `npm install <pkg>` afterwards to install a package and
-    save it as a dependency in the package.json file.</div>
+    save it as a dependency in the package.json file.
+```
 
 First, it will ask for a package name.
 
@@ -248,7 +252,9 @@ node index.js
 
 If everything went well, you should have printed `Hello, World!` to the console, with two spaces on the left.
 
-<div class="terminal">  Hello, World!</div>
+```terminal
+  Hello, World!
+```
 
 ## Conclusion
 

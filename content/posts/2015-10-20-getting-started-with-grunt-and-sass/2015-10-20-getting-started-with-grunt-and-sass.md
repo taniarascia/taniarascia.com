@@ -68,7 +68,9 @@ Sass runs on Ruby, so we need to have that installed. The [Ruby programming lang
 ruby -v
 ```
 
-<div class="terminal">Ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]</div>
+```terminal
+Ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
+```
 
 > If you use a lot of Ruby, [RVM (Ruby Version Manager)](https://rvm.io/) is recommended. I don't, so I don't care. You probably don't need to, either.
 
@@ -80,11 +82,13 @@ You can also run `sass -v` to see if you have Sass installed already. If not, in
 sudo gem install sass
 ```
 
-<div class="terminal">Fetching: sass-3.4.19.gem (100%)
+```terminal
+Fetching: sass-3.4.19.gem (100%)
     Successfully installed sass-3.4.19
     Parsing documentation for sass-3.4.19
     Installing ri documentation for sass-3.4.19
-    1 gem installed</div>
+    1 gem installed
+```
 
 ### 3. Install XCode
 
@@ -180,8 +184,10 @@ Now you'll create your local npm install, which will create a folder called `nod
 npm install
 ```
 
-<div class="terminal">npm WARN package.json startgrunt@0.0.1 No repository field.
-    npm WARN package.json startgrunt@0.0.1 No README data</div>
+```terminal
+npm WARN package.json startgrunt@0.0.1 No repository field.
+    npm WARN package.json startgrunt@0.0.1 No README data
+```
 
 This might come up, which doesn't matter. Grunt wants you to have a README.md and a repository set. You can choose to create one and add it to your package.json, but it's not required. Here's the code for that.
 
@@ -526,12 +532,15 @@ grunt
 
 You'll get this response.
 
-<div class="terminal">Running "watch" task
-    Waiting...</div>
+```terminal
+Running "watch" task
+    Waiting...
+```
 
 Now save a file in your **sass** directory.
 
-<div class="terminal">>> File "sass/_base.scss" changed.
+```terminal
+>> File "sass/_base.scss" changed.
     Running "sass:dist" (sass) task
 
     Running "postcss:dist" (postcss) task
@@ -540,13 +549,16 @@ Now save a file in your **sass** directory.
     Running "cssmin:target" (cssmin) task
     >> 1 file created. 100 B ? 72 B
 
-    Done, without errors.</div>
+    Done, without errors.
+```
 
 And save the JavaScript file in your **src** directory.
 
-<div class="terminal">>> File "src/script.js" changed.
+```terminal
+>> File "src/script.js" changed.
     Running "uglify:build" (uglify) task
-    >> 1 file created.</div>
+    >> 1 file created.
+```
 
 That was a lot of steps. No wonder you didn't want to do this before.
 

@@ -78,7 +78,8 @@ index.html
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+```
 
     <script type="text/babel">
       // React code will go here
@@ -157,7 +158,8 @@ index.html
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+```
 
     <script type="text/babel">
       class App extends React.Component {

@@ -87,7 +87,9 @@ Here's the whole file.
 
 Here is the output.
 
-<div class="terminal">Aragorn</div>
+```terminal
+Aragorn
+```
 
 ### Accessing a JSON feed from a URL
 
@@ -126,7 +128,9 @@ In order to get one entry, we'll have to access the appropriate array number. Re
 echo $characters[0]->name;
 ```
 
-<div class="terminal">Aragorn</div>
+```terminal
+Aragorn
+```
 
 I can access all the data in the array with a `foreach` loop.
 
@@ -136,9 +140,11 @@ foreach ($characters as $character) {
     }
 ```
 
-<div class="terminal">Aragorn
+```terminal
+Aragorn
     Legolas
-    Gimli</div>
+    Gimli
+```
 
 Here is the full PHP file.
 
@@ -212,7 +218,9 @@ Instead of `->race`, we will access the value with `['race']`.
 echo $characters[0]['race'];
 ```
 
-<div class="terminal">Human</div>
+```terminal
+Human
+```
 
 And here's how to access the loop.
 
@@ -222,9 +230,11 @@ foreach ($characters as $character) {
     }
 ```
 
-<div class="terminal">Human
+```terminal
+Human
     Elf
-    Dwarf</div>
+    Dwarf
+```
 
 ### Getting data from nested arrays
 
@@ -274,8 +284,10 @@ foreach ($wizards as $wizard) {
     }
 ```
 
-<div class="terminal">Harry Potter's wand is holly, 11 inches, with a phoenix feather core.
-    Hermione Granger's wand is vine, 10 and 3/4 inches, with a dragon heartstring core. </div>
+```terminal
+Harry Potter's wand is holly, 11 inches, with a phoenix feather core.
+    Hermione Granger's wand is vine, 10 and 3/4 inches, with a dragon heartstring core. 
+```
 
 ### Converting a PHP object or array into JSON
 
@@ -292,7 +304,8 @@ $data = [
 
 We made a PHP array and encoded it. Here's the output:
 
-<div class="terminal">{"name":"Aragorn","race":"Human"}
+```terminal
+{"name":"Aragorn","race":"Human"}
 
 ````
 
@@ -325,7 +338,9 @@ From here we can access the data like a regular JavaScript object.
 console.log(data[1].name)
 ```
 
-<div class="terminal">Gimli</div>
+```terminal
+Gimli
+```
 
 And we can loop through each iteration with a `for` loop.
 
@@ -335,7 +350,8 @@ for (var i = 0; i < data.length; i++) {
 }
 ```
 
-<div class="terminal">Aragorn is a Human.
+```terminal
+Aragorn is a Human.
     Gimli is a Dwarf.
 
 ````
@@ -407,7 +423,8 @@ request.send()
 
 And the output.
 
-<div class="terminal">Aragorn is a Human.
+```terminal
+Aragorn is a Human.
     Gimli is a Dwarf.
 
 ````
@@ -469,7 +486,9 @@ $(document).ready(function() {
 
 Both will have the same output.
 
-<div class="terminal">Aragorn</div>
+```terminal
+Aragorn
+```
 
 ## Conclusion
 

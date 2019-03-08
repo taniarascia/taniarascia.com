@@ -149,9 +149,11 @@ console.log(hero1.greet())
 
 ##### Output
 
-<div class="terminal">Bjorn attacks with the axe.
+```terminal
+Bjorn attacks with the axe.
     Bjorn says hello.
-    </div>
+    
+```
 
 ## JavaScript ES5 Constructor Function
 
@@ -192,9 +194,11 @@ console.log(hero1.greet())
 
 ##### Output
 
-<div class="terminal">Bjorn attacks with the axe.
+```terminal
+Bjorn attacks with the axe.
     Bjorn says hello.
-    </div>
+    
+```
 
 ## PHP Class
 
@@ -238,9 +242,11 @@ class-php.php
 
 ##### Output
 
-<div class="terminal">Bjorn attacks with the axe.
+```terminal
+Bjorn attacks with the axe.
     Bjorn says hello.
-    </div>
+    
+```
 
 Of course, [JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) are "syntactic sugar" (ugh) over prototypes, which means under the hood, ES6 classes are not actually running on an object-oriented inheritance model. However, popular libraries like [React](https://reactjs.org) tend to make a lot of use of classes, so they're good to know. The PHP example shows an actual class from a traditional object-oriented system, but with this simple example, we can get the same output either way.
 

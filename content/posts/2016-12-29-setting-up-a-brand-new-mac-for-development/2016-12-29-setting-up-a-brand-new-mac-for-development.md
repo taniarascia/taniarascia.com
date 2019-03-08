@@ -269,7 +269,9 @@ node -v
 
 You can also test with `which node`, which will output your Node path and version number.
 
-<div class="terminal">/Users/yourusername/.nvm/versions/node/v7.8.0/bin/node</div>
+```terminal
+/Users/yourusername/.nvm/versions/node/v7.8.0/bin/node
+```
 
 And for later, here's how to update:
 
@@ -324,7 +326,9 @@ rvm -v
 
 You can also test with `which ruby`, which will output your Ruby path and version number.
 
-<div class="terminal">/Users/yourusername/.rvm/rubies/ruby-2.4.0/bin/ruby</div>
+```terminal
+/Users/yourusername/.rvm/rubies/ruby-2.4.0/bin/ruby
+```
 
 #### Install bundler
 

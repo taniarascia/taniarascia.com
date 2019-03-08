@@ -73,7 +73,8 @@ I have a regular HTML5 document, linking to a CSS stylesheet and JS script. The 
   </head>
 
   <body>
-    <div id="map"></div>
+    <div id="map">
+```
 
     <script src="script.js"></script>
     <script

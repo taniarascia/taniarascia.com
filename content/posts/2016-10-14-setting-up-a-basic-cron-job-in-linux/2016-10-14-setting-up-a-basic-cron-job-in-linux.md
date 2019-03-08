@@ -163,7 +163,9 @@ Once you SSH into the server, you can check if there are any current jobs runnin
 crontab -l
 ```
 
-<div class="terminal">crontab: no crontab for user</div>
+```terminal
+crontab: no crontab for user
+```
 
 Now, we'll edit the `crontab`.
 

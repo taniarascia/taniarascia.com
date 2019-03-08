@@ -119,7 +119,8 @@ sudo pico /etc/hosts
 
 You will be prompted for your password. Then a scary screen will come up that looks like this.
 
-<div class="terminal">##
+```terminal
+##
     # Host Database
     #
     # localhost is used to configure the loopback interface
@@ -130,7 +131,8 @@ You will be prompted for your password. Then a scary screen will come up that lo
     ::1             localhost
     fe80::1%lo0     localhost
 
-    127.0.0.1       example.dev</div>
+    127.0.0.1       example.dev
+```
 
 You are actually editing a text based file. At this point, I'm just going to keep pressing the down arrow until I reach the end of the list. At the next line, I will type my new server name after `127.0.0.1`, which is the computer's local address.
 

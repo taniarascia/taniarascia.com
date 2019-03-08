@@ -147,7 +147,8 @@ index.html
       <h1>New Tab App</h1>
 
       <!-- more will go here -->
-    </div>
+    
+```
 
     <script src="js/scripts.js"></script>
   </body>

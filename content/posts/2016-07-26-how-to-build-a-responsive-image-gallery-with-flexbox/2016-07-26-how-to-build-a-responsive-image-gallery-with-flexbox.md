@@ -192,7 +192,8 @@ Here's an example using the flex grid above and pulling all images from the gall
     			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ); // Thumbnail size
           ?>
 
-    <div class="cell"><a href="<?php echo $image[0]; ?>"><img src="<?php echo $thumb[0]; ?>" class="responsive-image"></a></div>
+    <div class="cell"><a href="<?php echo $image[0]; ?>"><img src="<?php echo $thumb[0]; ?>" class="responsive-image"></a>
+```
 
     			<?php endwhile; ?>
     	</div>

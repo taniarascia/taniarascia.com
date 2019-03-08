@@ -69,7 +69,7 @@ In XCode, install Command Line Tools: `> Preferences > Downloads > Command Line 
 
 Download [Git for Windows](https://git-scm.com/download/win). You will be using the Git Bash program. It will utilize all the same commands as Terminal.
 
-### Step 2: Create an Online Git Repository
+## Step 2: Create an Online Git Repository
 
 [GitHub](http://www.github.com) is the most popular location to host repositories, so go ahead and make an account there if you haven't.
 
@@ -100,7 +100,9 @@ When you open Terminal, you will start off in your main directory. I will assume
 pwd
 ```
 
-<div class="terminal">/Users/you</div>
+```terminal
+/Users/you
+```
 
 ##### 2. Create a new folder called project-local
 
@@ -169,17 +171,18 @@ Terminal won't respond, but it was successful. Go ahead and add a file to the **
 git status
 ```
 
-<div class="terminal">On branch master
-    Initial commit
+```terminal
+On branch master
+Initial commit
 
-    Untracked files:
-    (use "git add ..." to include in what will be committed)
+Untracked files:
+(use "git add ..." to include in what will be committed)
 
-      index.html
-      style.css
+  index.html
+  style.css
 
-    nothing added to commit but untracked files present (use "git add" to track)
-</div>
+nothing added to commit but untracked files present (use "git add" to track)
+```
 
 Okay, so now it knows that there are two files in the directory, but they're not a part of the Git repo. At this point we have to **track** the files with the `add` command.
 
@@ -193,14 +196,16 @@ git add .
 
 Let's check the status again with `git status`.
 
-<div class="terminal">On branch master
-    Initial commit
+```terminal
+On branch master
+Initial commit
 
-    Changes to be committed:
-    (use "git rm --cached ..." to unstage)
+Changes to be committed:
+(use "git rm --cached ..." to unstage)
 
-      <span style="color:green;">new file: index.html
-      new file: style.css</span></div>
+  new file: index.html
+  new file: style.css
+```
 
 So, what did that do? The files are green now instead of red. Are we ready? Not quite yet.
 
@@ -210,11 +215,13 @@ So, what did that do? The files are green now instead of red. Are we ready? Not 
 git commit -am "Initial Commit"
 ```
 
-<div class="terminal">[master (root-commit)] Initial
-     2 files changed, 34 insertions(+)
+```terminal
+[master (root-commit)] Initial
+  2 files changed, 34 insertions(+)
 
-      create mode index.html
-      create mode style.css</div>
+  create mode index.html
+  create mode style.css
+```
 
 With this command, I commit all the files (-a), include a message (-m), listed here ("Initial Commit"). Everything in this line is mandatory.
 

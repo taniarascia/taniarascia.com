@@ -73,7 +73,8 @@ index.html
   </head>
 
   <body>
-    <div id="game"></div>
+    <div id="game">
+```
 
     <script src="js/script.js"></script>
   </body>

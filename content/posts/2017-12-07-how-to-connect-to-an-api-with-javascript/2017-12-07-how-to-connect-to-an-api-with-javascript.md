@@ -127,7 +127,8 @@ index.html
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+```
 
     <script src="scripts.js"></script>
   </body>
