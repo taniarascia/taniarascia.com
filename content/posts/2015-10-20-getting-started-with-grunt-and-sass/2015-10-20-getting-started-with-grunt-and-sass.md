@@ -68,7 +68,7 @@ Sass runs on Ruby, so we need to have that installed. The [Ruby programming lang
 ruby -v
 ```
 
-    <div class="terminal">Ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]</div>
+<div class="terminal">Ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]</div>
 
 > If you use a lot of Ruby, [RVM (Ruby Version Manager)](https://rvm.io/) is recommended. I don't, so I don't care. You probably don't need to, either.
 
@@ -80,7 +80,7 @@ You can also run `sass -v` to see if you have Sass installed already. If not, in
 sudo gem install sass
 ```
 
-    <div class="terminal">Fetching: sass-3.4.19.gem (100%)
+<div class="terminal">Fetching: sass-3.4.19.gem (100%)
     Successfully installed sass-3.4.19
     Parsing documentation for sass-3.4.19
     Installing ri documentation for sass-3.4.19
@@ -180,7 +180,7 @@ Now you'll create your local npm install, which will create a folder called `nod
 npm install
 ```
 
-    <div class="terminal">npm WARN package.json startgrunt@0.0.1 No repository field.
+<div class="terminal">npm WARN package.json startgrunt@0.0.1 No repository field.
     npm WARN package.json startgrunt@0.0.1 No README data</div>
 
 This might come up, which doesn't matter. Grunt wants you to have a README.md and a repository set. You can choose to create one and add it to your package.json, but it's not required. Here's the code for that.
@@ -526,12 +526,12 @@ grunt
 
 You'll get this response.
 
-    <div class="terminal">Running "watch" task
+<div class="terminal">Running "watch" task
     Waiting...</div>
 
 Now save a file in your **sass** directory.
 
-    <div class="terminal">>> File "sass/_base.scss" changed.
+<div class="terminal">>> File "sass/_base.scss" changed.
     Running "sass:dist" (sass) task
 
     Running "postcss:dist" (postcss) task
@@ -544,7 +544,7 @@ Now save a file in your **sass** directory.
 
 And save the JavaScript file in your **src** directory.
 
-    <div class="terminal">>> File "src/script.js" changed.
+<div class="terminal">>> File "src/script.js" changed.
     Running "uglify:build" (uglify) task
     >> 1 file created.</div>
 

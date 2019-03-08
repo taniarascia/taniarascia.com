@@ -112,7 +112,7 @@ hello-world
 
 But it won't work.
 
-    <div class="terminal">-bash: hello-world: command not found</div>
+<div class="terminal">-bash: hello-world: command not found</div>
 
 We have to make it an executable file by changing the permissions.
 
@@ -123,7 +123,7 @@ chmod u+x hello-world
 
 Now when you run the command, it will output the contents of the `echo`.
 
-    <div class="terminal">tania@computer:~$ hello-world
+<div class="terminal">tania@computer:~$ hello-world
     Hello, World!</div>
 
 Congrats, you just got your first bash script up and running. You can also run this script from anywhere on the computer, not just in the `bin` directory.
@@ -145,7 +145,7 @@ hello-world
 
 ```
 
-    <div class="terminal">tania@computer:~$ hello-world
+<div class="terminal">tania@computer:~$ hello-world
     Hello, World!</div>
 
 Note that `who = "World"` is not valid - there must not be a space between variable and value.
@@ -167,7 +167,7 @@ hello-world
 
 ```
 
-    <div class="terminal">tania@computer:~$ hello-world
+<div class="terminal">tania@computer:~$ hello-world
     Who are you?
     Tania
     Hello, Tania!</div>
@@ -194,7 +194,7 @@ check-id
 
 ```
 
-    <div class="terminal">tania@computer:~$ check-id
+<div class="terminal">tania@computer:~$ check-id
     How old are you?
     28
     You can drink.</div>
@@ -327,7 +327,7 @@ git-deploy
 
 Then just run the command.
 
-    <div class="terminal">tania@computer:$ git-deploy
+<div class="terminal">tania@computer:$ git-deploy
     Commit message: Making some vague updates
     [master 0b0caaa] Making some vague updates
      3 files changed, 44 insertions(+), 1 deletion(-)

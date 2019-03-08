@@ -119,7 +119,7 @@ sudo pico /etc/hosts
 
 You will be prompted for your password. Then a scary screen will come up that looks like this.
 
-    <div class="terminal">##
+<div class="terminal">##
     # Host Database
     #
     # localhost is used to configure the loopback interface

@@ -70,7 +70,7 @@ runAsyncFunctions()
 
 However, this will be my output:
 
-    <div class="terminal">jon
+<div class="terminal">jon
     JON
     andrey
     ANDREY
@@ -98,7 +98,7 @@ const runAsyncFunctions = async () => {
 }
 ```
 
-    <div class="terminal">(3) [{…}, {…}, {…}]
+<div class="terminal">(3) [{…}, {…}, {…}]
     jon
     andrey
     tania

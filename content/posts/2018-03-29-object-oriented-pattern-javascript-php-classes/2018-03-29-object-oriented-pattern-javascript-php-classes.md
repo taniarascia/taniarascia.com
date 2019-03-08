@@ -149,7 +149,7 @@ console.log(hero1.greet())
 
 ##### Output
 
-    <div class="terminal">Bjorn attacks with the axe.
+<div class="terminal">Bjorn attacks with the axe.
     Bjorn says hello.
     </div>
 
@@ -192,7 +192,7 @@ console.log(hero1.greet())
 
 ##### Output
 
-    <div class="terminal">Bjorn attacks with the axe.
+<div class="terminal">Bjorn attacks with the axe.
     Bjorn says hello.
     </div>
 
@@ -238,7 +238,7 @@ class-php.php
 
 ##### Output
 
-    <div class="terminal">Bjorn attacks with the axe.
+<div class="terminal">Bjorn attacks with the axe.
     Bjorn says hello.
     </div>
 

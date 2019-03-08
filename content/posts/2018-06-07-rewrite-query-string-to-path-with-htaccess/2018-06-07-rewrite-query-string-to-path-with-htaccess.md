@@ -51,7 +51,7 @@ users.php
     print_r($_GET);
 ```
 
-    <div class="terminal">/users/tania
+<div class="terminal">/users/tania
     Array ( [name] => tania )</div>
 
 Alternatively, you could redirect everything to `index.php` and route it that way.

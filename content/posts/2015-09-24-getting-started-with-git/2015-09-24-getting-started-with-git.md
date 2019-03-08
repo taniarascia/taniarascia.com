@@ -16,8 +16,7 @@ tags:
 Git is a difficult subject to tackle for self-taught web developers who didn't learn to code with a team. If you've always worked alone and want an explanation of how to get started with Git, this tutorial is for you.
 
 > I'm an egotistical bastard, and I name all my projects after myself. First Linux, now Git.
-
-- Linus Torvalds, author of Git
+> <cite>- Linus Torvalds, author of Git</cite>
 
 #### Prerequisites
 
@@ -42,7 +41,7 @@ You may be used to the [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protoco
 
 Local Environment ⇋ FTP Program ⇋ Live Server
 
-_file:///Users/you/project_ ⇋ **Transmit/WinFTP** ⇋ _http://domain.com_
+_file:///Users/you/project_ ⇋ **Transmit/WinFTP** ⇋ _https://example.com_
 
 The way we will use Git today is very similar.
 
@@ -50,7 +49,7 @@ The way we will use Git today is very similar.
 
 Local Environment ⇋ Git Repository ⇋ Live Server
 
-_file:///Users/you/project_ ⇋ **GitHub.com** ⇋ _http://domain.com_
+_file:///Users/you/project_ ⇋ **GitHub.com** ⇋ _https://example.com_
 
 Of course, the arrows can go in any direction for both methods - upload (push) and download (pull).
 
@@ -80,7 +79,7 @@ Once you've made your account, create a repository by clicking **Add New Repo**.
 
 ## Step 3: Create a Local Project
 
-If you're not at all familiar with the command prompt, please read the first chapter or two of the [command line crash course](http://learnpythonthehardway.org/book/appendixa.html).
+If you're not at all familiar with the command prompt, please read the first chapter or two of the [command line tutorial](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/).
 
 Here are the most important commands, and all you need to know to get started.
 
@@ -95,29 +94,29 @@ Here are the most important commands, and all you need to know to get started.
 
 When you open Terminal, you will start off in your main directory. I will assume your computer has the same username as your GitHub account.
 
-##### 1. Confirm your location.
+##### 1. Confirm your location
 
-```
+```bash
 pwd
 ```
 
-    <div class="terminal">/Users/you</div>
+<div class="terminal">/Users/you</div>
 
-##### 2. Create a new folder called project-local.
+##### 2. Create a new folder called project-local
 
-```
+```bash
 mkdir project-local
 ```
 
-##### 3. List your directories.
+##### 3. List your directories
 
-```
+```bash
 ls
 ```
 
 You should see **project-local** in the list of directories. Of course, you could have created the directory through Finder or Explorer, but it's a useful command to know.
 
-##### 4. Move into the newly created directory.
+##### 4. Move into the newly created directory
 
 ```
 cd project-local
@@ -141,7 +140,7 @@ All of the future commands we do today will only apply to your local Git environ
 
 ```bash
 git config --global user.name "Firstname Lastname"
-    git config --global user.email username@email.com
+git config --global user.email username@email.com
 ```
 
 Make sure you're still in the **project-local** folder, then move on.
@@ -170,16 +169,17 @@ Terminal won't respond, but it was successful. Go ahead and add a file to the **
 git status
 ```
 
-    <div class="terminal">On branch master
+<div class="terminal">On branch master
     Initial commit
 
     Untracked files:
     (use "git add ..." to include in what will be committed)
 
-      <span style="color:red;">index.html
-      style.css</span>
+      index.html
+      style.css
 
-    nothing added to commit but untracked files present (use "git add" to track)</div>
+    nothing added to commit but untracked files present (use "git add" to track)
+</div>
 
 Okay, so now it knows that there are two files in the directory, but they're not a part of the Git repo. At this point we have to **track** the files with the `add` command.
 
@@ -193,7 +193,7 @@ git add .
 
 Let's check the status again with `git status`.
 
-    <div class="terminal">On branch master
+<div class="terminal">On branch master
     Initial commit
 
     Changes to be committed:
@@ -210,7 +210,7 @@ So, what did that do? The files are green now instead of red. Are we ready? Not 
 git commit -am "Initial Commit"
 ```
 
-    <div class="terminal">[master (root-commit)] Initial
+<div class="terminal">[master (root-commit)] Initial
      2 files changed, 34 insertions(+)
 
       create mode index.html

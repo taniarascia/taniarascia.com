@@ -63,7 +63,7 @@ sudo apt-get install apache2 -y
 
 After installing it you'll get this warning.
 
-    <div class="terminal">AH00558: apache2: Could not reliably determine the server's
+<div class="terminal">AH00558: apache2: Could not reliably determine the server's
     fully qualified domain name, using 10.0.2.15. Set the 'ServerName'
     directive globally to suppress this message</div>
 
@@ -87,7 +87,7 @@ Save and close `nano` (cntl + o, cntl + x), then restart Apache to apply the cha
 sudo service apache2 restart
 ```
 
-    <div class="terminal">* Restarting web server apache2  [ OK ]</div>
+<div class="terminal">* Restarting web server apache2  [ OK ]</div>
 
 You can check to make sure the `ServerName` is correct with the following command.
 
@@ -95,7 +95,7 @@ You can check to make sure the `ServerName` is correct with the following comman
 sudo apache2ctl configtest
 ```
 
-    <div class="terminal">Syntax OK</div>
+<div class="terminal">Syntax OK</div>
 
 I always like to check the version number to see exactly what I'm running.
 
@@ -103,7 +103,7 @@ I always like to check the version number to see exactly what I'm running.
 apache2 -v
 ```
 
-    <div class="terminal">Server version: Apache/2.4.7 (Ubuntu)
+<div class="terminal">Server version: Apache/2.4.7 (Ubuntu)
     Server built:   Jun 26 2017</div>
 
 Great, Apache is up and running properly! But now we want confirmation of this.
@@ -184,7 +184,7 @@ Confirm successful installation of PHP by checking the version.
 php -v
 ```
 
-    <div class="terminal">PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017) ( NTS )
+<div class="terminal">PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017) ( NTS )
     Copyright (c) 1997-2017 The PHP Group
     Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
         with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies

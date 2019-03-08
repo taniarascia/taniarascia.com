@@ -228,7 +228,7 @@ ssh -i ~/.ssh/Your_Key.pem ec2-user@PublicDNS
 
 And you're in!
 
-    <div class="terminal">
+<div class="terminal">
            __|  __|_  )
            _|  (     /   Amazon Linux AMI
           ___|\___|___|

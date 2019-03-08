@@ -49,7 +49,7 @@ hexdump -C data
 
 Here's what I get.
 
-    <div class="terminal">00000000  4a 75 73 74 20 6d 61 6b  65 20 61 20 64 65 63 69  |Just make a deci|
+<div class="terminal">00000000  4a 75 73 74 20 6d 61 6b  65 20 61 20 64 65 63 69  |Just make a deci|
     00000010  73 69 6f 6e 20 61 6e 64  20 6c 65 74 20 69 74 20  |sion and let it |
     00000020  67 6f 2e                                          |go.|
     00000023</div>
@@ -136,7 +136,7 @@ These numbers don't correspond to any ASCII characters, and also cannot be viewe
 
 If you do decide to open it anyway, you'll probably see what appears to be a question mark. Fortunately, we can view the raw contents with hexdump.
 
-    <div class="terminal">00000000  00 01 02 03 04 05 06 07  08 09 0a 0b 0c 0d 0e 0f  |................|
+<div class="terminal">00000000  00 01 02 03 04 05 06 07  08 09 0a 0b 0c 0d 0e 0f  |................|
     00000010</div>
 
 As you can see, unprintable ASCII characters are represented by a `.`, and the bytes are confirmed hexadecimal. The address has `10` on the second line because it's starting on the 16th byte, and 16 is `10` in hexadecimal.
@@ -652,7 +652,7 @@ echo -en "<blink>Talent is pursued interest</blink>\x00\xff" > data
 
 And the goal is to make this output:
 
-    <div class="terminal">00000000  3c 62 6c 69 6e 6b 3e 54  61 6c 65 6e 74 20 69 73  |<blink>Talent is|
+<div class="terminal">00000000  3c 62 6c 69 6e 6b 3e 54  61 6c 65 6e 74 20 69 73  |<blink>Talent is|
     00000010  20 70 75 72 73 75 65 64  20 69 6e 74 65 72 65 73  | pursued interes|
     00000020  74 3c 2f 62 6c 69 6e 6b  3e 00 ff                 |t</blink>..|
     0000002b</div>
@@ -685,7 +685,7 @@ console.log(hexdump(filename))
 
 This will log out a `<Buffer>` object (values removed for brevity).
 
-    <div class="terminal"><Buffer 3c 62 6c 69 6e 6b 3e 54 ... 69 6e 6b 3e 00 ff></div>
+<div class="terminal"><Buffer 3c 62 6c 69 6e 6b 3e 54 ... 69 6e 6b 3e 00 ff></div>
 
 Okay, this looks familiar. Thanks to all that background knowlege, we can see that the buffer is a bunch of bytes represented in hexadecimal. You can even see that final `00` and `ff` I echoed in there.
 
@@ -712,7 +712,7 @@ function hexdump(filename) {
 
 Now we have an array of smaller buffers.
 
-    <div class="terminal">[ <Buffer 3c 62 6c 69 6e 6b 3e 54 61 6c 65 6e 74 20 69 73>,
+<div class="terminal">[ <Buffer 3c 62 6c 69 6e 6b 3e 54 61 6c 65 6e 74 20 69 73>,
       <Buffer 20 70 75 72 73 75 65 64 20 69 6e 74 65 72 65 73>,
       <Buffer 74 3c 2f 62 6c 69 6e 6b 3e 00 ff> ]</div>
 
@@ -730,7 +730,7 @@ So what would happen if I put the address and block in a template string?
 lines.push(`${address} ${block}`)
 ```
 
-    <div class="terminal">[ '00000000 <blink>Talent is',
+<div class="terminal">[ '00000000 <blink>Talent is',
       '00000010  pursued interes',
       '00000020 t</blink>\u0000?' ]</div>
 
@@ -772,7 +772,7 @@ function hexdump(filename) {
 
 Now we're almost there.
 
-    <div class="terminal">00000000 3c 62 6c 69 6e 6b 3e 54 61 6c 65 6e 74 20 69 73 |<blink>Talent is|
+<div class="terminal">00000000 3c 62 6c 69 6e 6b 3e 54 61 6c 65 6e 74 20 69 73 |<blink>Talent is|
     00000010 20 70 75 72 73 75 65 64 20 69 6e 74 65 72 65 73 | pursued interes|
     00000020 74 3c 2f 62 6c 69 6e 6b 3e 00 ff |t</blink>..|</div>
 
