@@ -198,7 +198,7 @@ NolBook:~ taniarascia$ cd music
     NolBook:music taniarascia$ ls
     Audio Music Apps GarageBand iTunes
 
-````
+```
 
 
 
@@ -213,12 +213,12 @@ I want to go back one directory, back into my home folder.
 
 ```bash
 cd ..
-````
+```
 
 ```terminal
 NolBook:~ taniarascia$
 
-````
+```
 
 
 
@@ -237,7 +237,7 @@ If you try to move into a directory that has a space, you may encounter an issue
 
 ```bash
 cd Audio Music Apps
-````
+```
 
 ```terminal
 -bash: cd: Audio: No such file or directory
@@ -305,7 +305,7 @@ NolBook:~ taniarascia$ cd shell
     NolBook:shell taniarascia$ pwd
     /Users/taniarascia/shell
 
-````
+```
 
 
 
@@ -322,7 +322,7 @@ Now let's make a file. You can do this with the `touch` command. I imagine it as
 
 ```bash
 touch test.html
-````
+```
 
 I'm not very unique with my example names, so I just called it **test.html**. When you input this code, it won't output anything to signify that the command was successful. You can `ls` to see it, or check in Finder that you have created a valid .html file.
 
@@ -356,7 +356,7 @@ cat hello.txt
 NolBook:shell taniarascia$ cat hello.txt
     Hello World
 
-````
+```
 
 
 
@@ -441,7 +441,7 @@ Use the `rm` (**Remove**) command to remove a file.
 
 ```bash
 rm hello.txt
-````
+```
 
 Note that this will permanently delete the file - it won't send to the Trash/Recycling bin.
 
@@ -455,7 +455,7 @@ Now, let's say you create a new directory called **goodbye** with `mkdir goodbye
 NolBook:shell taniarascia$ rm goodbye
     rm: goodbye: is a directory
 
-````
+```
 
 
 
@@ -466,7 +466,7 @@ No problem, we'll just delete it with `rmdir` (**Remove Directory**).
 
 ```bash
 rmdir goodbye
-````
+```
 
 And now it's gone. If you want to remove a folder that has files in it, you'll have to run a slightly different command.
 
@@ -633,7 +633,7 @@ Now my terminal looks different - it has a `#` instead of a `$` to indicate that
 ```terminal
 sh-3.2#
 
-````
+```
 
 
 
@@ -644,7 +644,7 @@ Since I don't really want to be logged in as admin, I'm going to `exit`, which w
 
 ```bash
 exit
-````
+```
 
 ### Connecting to another computer or server
 
@@ -661,7 +661,7 @@ Once you've entered your password, you are now "inside" the other server. Your c
 ```terminal
 [username@host ~]$
 
-````
+```
 
 
 
@@ -680,7 +680,7 @@ Sometimes, when I'm having an existential crisis, I turn to my computer to bring
 
 ```bash
 whoami
-````
+```
 
 ```terminal
 NolBook:~ taniarascia$ whoami

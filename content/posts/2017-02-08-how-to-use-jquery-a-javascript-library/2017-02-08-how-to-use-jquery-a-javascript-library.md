@@ -80,7 +80,7 @@ We will begin this exercise by creating a small web project. It will consist of 
     |  |-- scripts.js
     |-- index.html
 
-````
+```
 
 
 To begin, make an HTML skeleton and save it as `index.html`.
@@ -100,7 +100,7 @@ To begin, make an HTML skeleton and save it as `index.html`.
     </body>
 
     </html>
-````
+```
 
 Link to the jQuery CDN right before the closing `</body>` tag, followed by your own custom JavaScript file, `scripts.js`.
 
@@ -145,7 +145,7 @@ The outermost layer of the DOM, the layer that wraps the entire `<html>` node, i
         // all custom jQuery will go here
     });
 
-````
+```
 
 
 
@@ -162,7 +162,7 @@ In the introduction of this article, you saw a simple "Hello, World!" script. To
 
     <p id="demo"></p>
     ...
-````
+```
 
 jQuery is called with and represented by the dollar sign (`$`). We access the DOM with jQuery using mostly CSS syntax, and apply an action with a method. A basic jQuery example follows this format.
 
@@ -192,7 +192,7 @@ Selectors are how we tell jQuery which elements we want to work on. Most jQuery 
 
     <code class="language-javascript">$("selector")
 
-````
+```
 
 
 Double-quoted strings are preferred by the [jQuery style guide](https://contribute.jquery.org/style-guide/js/), though single-quoted strings are often used as well. Below is a brief overview of some of the most commonly used selectors.
@@ -322,7 +322,7 @@ In the "Hello, World!" example, the code ran as soon as the page loaded and the 
 
     <button id="trigger">Click me</button>
     <p id="demo"></p>
-````
+```
 
 We will use the `click()` method to call a function containing our "Hello, World!" code.
 
@@ -350,7 +350,7 @@ Here's the final code.
         });
     });
 
-````
+```
 
 
 
@@ -460,7 +460,7 @@ Delete the current `<button>`and `<p>` tags from within the body of your `index.
       <button class="trigger">Close</button>
     </section>
     ...
-````
+```
 
 In our `style.css` file, we will use a minimal amount of CSS to hide the `overlay` with `display: none` and center it on the screen.
 

@@ -198,7 +198,7 @@ PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017) ( NTS )
     Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
         with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 
-````
+```
 
 
 
@@ -226,7 +226,7 @@ Let's go back to our **Vagrantfile**. We're going to set up a `synced folder`, f
 
 ```ruby
 config.vm.synced_folder "LOCAL", "VIRTUAL"
-````
+```
 
 We'll set the **www** folder we just made as the local folder, and the public server directory for Ubuntu.
 
@@ -360,7 +360,7 @@ Running `vagrant ssh` is the same as running the following:
 >
 >     <code style="margin-bottom: 0;" class="language-bash">ssh -i ~/.vagrant.d/insecure_private_key vagrant@192.168.33.10
 
-````
+```
 
 >
 >
@@ -399,7 +399,7 @@ In **test.php**, we'll use the `phpinfo()` function to test PHP.
 ```php
 
 <?php phpinfo();
-````
+```
 
 ![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-07-03-at-1.14.23-AM-1024x558.png)
 

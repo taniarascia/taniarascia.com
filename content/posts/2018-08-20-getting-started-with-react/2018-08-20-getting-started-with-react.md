@@ -98,7 +98,8 @@ The entry point for our app will be the `root` div element, which is named by co
 
 Now, let's write our first code block of React. We're going to use ES6 classes to create a React component called `App`.
 
-    <code class="jsx language-jsx">class App extends React.Component {
+```jsx
+class App extends React.Component {
        //...
     }
 
@@ -109,7 +110,8 @@ Now, let's write our first code block of React. We're going to use ES6 classes t
 Now we'll add the [`render()`](https://reactjs.org/docs/react-component.html#render) method, the only required method in a class component, which is used to render DOM nodes.
 
 
-    <code class="jsx language-jsx">class App extends React.Component {
+```jsx
+class App extends React.Component {
         render() {
             return (
                //...
@@ -121,7 +123,8 @@ Now we'll add the [`render()`](https://reactjs.org/docs/react-component.html#ren
 
 Inside the `return`, we're going to put what looks like a simple HTML element. Note that we're not returning a string here, so don't use quotes around the element. This is called `JSX`, and we'll learn more about it soon.
 
-    <code class="jsx language-jsx">class App extends React.Component {
+```jsx
+class App extends React.Component {
         render() {
             return (
                <h1>Hello React!</h1>
@@ -136,7 +139,8 @@ Inside the `return`, we're going to put what looks like a simple HTML element. N
 Finally, we're going to use the React DOM `render()` method to render the `App` class we created into the `root` div in our HTML.
 
 
-    <code class="jsx language-jsx">ReactDOM.render(<App />, document.getElementById('root'));
+```jsx
+ReactDOM.render(<App />, document.getElementById('root'));
 
 ```
 
@@ -237,7 +241,8 @@ src/index.js
 
 
 
-    <code class="jsx language-jsx">import React from 'react';
+```jsx
+import React from 'react';
     import ReactDOM from 'react-dom';
     import './index.css';
 
@@ -245,7 +250,8 @@ src/index.js
 
 Let's create our `App` component again. Before, we just had an `<h1>`, but now I'm adding in a div element with a class as well. You'll notice that we use `className` instead of `class`. This is our first hint that the code being written here is JavaScript, and not actually HTML.
 
-    <code class="jsx language-jsx">class App extends Component {
+```jsx
+class App extends Component {
         render() {
             return (
                 <div className="App">
@@ -255,7 +261,7 @@ Let's create our `App` component again. Before, we just had an `<h1>`, but now I
         }
     }
 
-````
+```
 
 
 
@@ -265,13 +271,14 @@ Finally, we'll render the `App` to the root as before.
 ```js
 ReactDOM.render(<App />, document.getElementById('root'));
 
-````
+```
 
 Here's our full `index.js`. This time, we're loading the `Component` as a property of React, so we no longer need to extend `React.Component`.
 
 src/index.js
 
-    <code class="jsx language-jsx">import React, { Component } from 'react';
+```jsx
+import React, { Component } from 'react';
     import ReactDOM from 'react-dom';
     import './index.css';
 
@@ -320,7 +327,8 @@ JSX
 
 
 
-    <code class="jsx language-jsx">const heading = <h1 className="site-heading">Hello, React</h1>;
+```jsx
+const heading = <h1 className="site-heading">Hello, React</h1>;
 
 ```
 
@@ -328,7 +336,8 @@ Using JSX is not mandatory for writing React. Under the hood, it's running `crea
 
 Non-JSX
 
-    <code class="jsx language-jsx">const heading = React.createElement(
+```jsx
+const heading = React.createElement(
         'h1',
         {className: 'site-heading'},
         'Hello, React!'
@@ -349,7 +358,8 @@ JSX is actually closer to JavaScript, not HTML, so there are a few key differenc
 JavaScript expressions can also be embedded inside JSX using curly braces, including variables, functions, and properties.
 
 
-    <code class="jsx language-jsx">const name = 'Tania';
+```jsx
+const name = 'Tania';
     const heading = <h1>Hello, {name}</h1> ;
 
 ```
@@ -366,7 +376,8 @@ Remove the `App` class from `index.js`, so it looks like this.
 
 src/index.js
 
-    <code class="jsx language-jsx">import React from 'react';
+```jsx
+import React from 'react';
     import ReactDOM from 'react-dom';
     import App from './App';
     import './index.css';
@@ -385,7 +396,8 @@ src/App.js
 
 
 
-    <code class="jsx language-jsx">import React, {Component} from 'react';
+```jsx
+import React, {Component} from 'react';
 
     class App extends Component {
         render() {
@@ -409,7 +421,8 @@ Let's create another component. We're going to create a table. Make `Table.js`, 
 
 src/Table.js
 
-    <code class="jsx language-jsx">import React, {Component} from 'react';
+```jsx
+import React, {Component} from 'react';
 
     class Table extends Component {
         render() {
@@ -453,13 +466,15 @@ src/Table.js
 This component we created is a custom class component. We capitalize custom components to differentiate them from regular HTML elements. Back in `App.js`, we can load in the Table, first by importing it in:
 
 
-    <code class="jsx language-jsx">import Table from './Table';
+```jsx
+import Table from './Table';
 
 ```
 
 Then by loading it into the `render()` of `App`, where before we had "Hello, React!". I also changed the class of the outer container.
 
-    <code class="jsx language-jsx">return (
+```jsx
+return (
         <div className="container">
             <Table />
         </div>
@@ -485,7 +500,8 @@ The other type of component in React is the **simple component**, which is a fun
 We're going to use ES6 arrow functions to create these simple components. First, the table header.
 
 
-    <code class="jsx language-jsx">const TableHeader = () => {
+```jsx
+const TableHeader = () => {
         return (
             <thead>
                 <tr>
@@ -500,7 +516,8 @@ We're going to use ES6 arrow functions to create these simple components. First,
 
 Then the body.
 
-    <code class="jsx language-jsx">const TableBody = () => {
+```jsx
+const TableBody = () => {
         return (
             <tbody>
                 <tr>
@@ -530,7 +547,8 @@ Then the body.
 Now our `Table` class will look like this.
 
 
-    <code class="jsx language-jsx">class Table extends Component {
+```jsx
+class Table extends Component {
         render() {
             return (
                 <table>
@@ -551,7 +569,8 @@ As a wrap up, let's compare a simple component with a class component.
 
 Simple Component
 
-    <code class="jsx language-jsx">const SimpleComponent = () => {
+```jsx
+const SimpleComponent = () => {
         return <div>Example</div>;
     }
 
@@ -566,7 +585,8 @@ Class Component
 
 
 
-    <code class="jsx language-jsx">class ClassComponent extends Component {
+```jsx
+class ClassComponent extends Component {
         render() {
             return <div>Example</div>;
         }
@@ -584,7 +604,8 @@ First, let's remove all the data from our `TableBody` component.
 
 Table.js
 
-    <code class="jsx language-jsx">const TableBody = () => {
+```jsx
+const TableBody = () => {
         return <tbody></tbody>;
     }
 
@@ -600,7 +621,8 @@ App.js
 
 
 
-    <code class="jsx language-jsx">class App extends Component {
+```jsx
+class App extends Component {
         render() {
             const characters = [
                 {
@@ -633,7 +655,8 @@ App.js
 
 Now, we're going to pass the data through to the child component (`Table`) with properties, kind of how you might pass data through using `data-` attributes. We can call the property whatever we want, as long as it's not a reserved keyword, so I'll go with `characterData`. The data I'm passing through is the `characters` variable, and I'll put curly braces around it as it's a JavaScript expression.
 
-    <code class="jsx language-jsx">return (
+```jsx
+return (
         <div className="container">
             <Table characterData={characters} />
         </div>
@@ -651,7 +674,8 @@ Table.js
 
 
 
-    <code class="jsx language-jsx">class Table extends Component {
+```jsx
+class Table extends Component {
         render() {
             const { characterData } = this.props;
 
@@ -674,7 +698,8 @@ This data is not in the actual DOM yet, though. In `Table`, we can access all pr
 
 I'm going to use the ES6 property shorthand to create a variable that contains `this.props.characterData`.
 
-    <code class="jsx language-jsx">const { characterData } = this.props;
+```jsx
+const { characterData } = this.props;
 
 ```
 
@@ -688,7 +713,8 @@ Table.js
 
 
 
-    <code class="jsx language-jsx">class Table extends Component {
+```jsx
+class Table extends Component {
         render() {
             const { characterData } = this.props;
 
@@ -705,7 +731,8 @@ Table.js
 
 Right now, `TableBody` takes no parameters and returns a single tag.
 
-    <code class="jsx language-jsx">const TableBody = () => {
+```jsx
+const TableBody = () => {
         return <tbody></tbody>;
     }
 
@@ -716,7 +743,8 @@ Right now, `TableBody` takes no parameters and returns a single tag.
 We're going to pass the props through as a parameter, and [map through the array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to return a table row for each object in the array. This map will be contained in the `rows` variable, which we'll return as an expression.
 
 
-    <code class="jsx language-jsx">const TableBody = props => {
+```jsx
+const TableBody = props => {
         const rows = props.characterData.map((row, index) => {
             return (
                 <tr key={index}>
@@ -745,7 +773,8 @@ You can think of state as any data that should be saved and modified without nec
 
 To start, we're going to create a `state` object.
 
-    <code class="jsx language-jsx">class App extends Component {
+```jsx
+class App extends Component {
         state = {};
 
 ```
@@ -755,7 +784,8 @@ To start, we're going to create a `state` object.
 The object will contain properties for everything you want to store in the state. For us, it's `characters`.
 
 
-    <code class="jsx language-jsx">class App extends Component {
+```jsx
+class App extends Component {
         state = {
             characters: []
          };
@@ -764,7 +794,8 @@ The object will contain properties for everything you want to store in the state
 
 Move the entire array of objects we created earlier into `state.characters`.
 
-    <code class="jsx language-jsx">class App extends Component {
+```jsx
+class App extends Component {
         state = {
             characters: [
                 {
@@ -792,7 +823,8 @@ App.js
 
 
 
-    <code class="jsx language-jsx">removeCharacter = index => {
+```jsx
+removeCharacter = index => {
         const { characters } = this.state;
 
         this.setState({
@@ -810,7 +842,8 @@ Now we have to pass that function through to the component, and render a button 
 
 App.js
 
-    <code class="jsx language-jsx">return (
+```jsx
+return (
         <div className="container">
             <Table
                 characterData={characters}
@@ -833,7 +866,8 @@ Table.js
 
 
 
-    <code class="jsx language-jsx">class Table extends Component {
+```jsx
+class Table extends Component {
         render() {
             const { characterData, removeCharacter } = this.props;
 
@@ -855,7 +889,8 @@ Here's where that index we defined in the `removeCharacter()` method comes in. I
 
 Table.js
 
-    <code class="jsx language-jsx"> <tr key={index}>
+```jsx
+ <tr key={index}>
         <td>{row.name}</td>
         <td>{row.job}</td>
         <td><button onClick={() => props.removeCharacter(index)}>Delete</button></td>
@@ -888,7 +923,8 @@ Now we have data stored in state, and we can remove any item from the state. How
 Before anything else, let's remove all the hard-coded data from `state.characters`, as we'll be updating that through the form now.
 
 
-    <code class="jsx language-jsx">class App extends Component {
+```jsx
+class App extends Component {
         state = {
             characters: []
         };
@@ -901,7 +937,8 @@ We're going to set the initial state of the `Form` to be an object with some emp
 
 Form.js
 
-    <code class="jsx language-jsx">import React, { Component } from 'react';
+```jsx
+import React, { Component } from 'react';
 
     class Form extends Component {
         constructor(props) {
@@ -925,7 +962,8 @@ Our goal for this form will be to update the state of `Form` every time a field 
 First, we'll make the function that will run every time a change is made to an input. The `event` will be passed through, and we'll set the state of `Form` to have the `name` (key) and `value` of the inputs.
 
 
-    <code class="jsx language-jsx">handleChange = event => {
+```jsx
+handleChange = event => {
         const {name, value} = event.target;
 
         this.setState({
@@ -937,7 +975,8 @@ First, we'll make the function that will run every time a change is made to an i
 
 Let's get this working before we move on to submitting the form. In the render, let's get our two properties from state, and assign them as the values that correspond to the proper form keys. We'll run the `handleChange()` method as the `onChange` of the input, and finally we'll export the `Form` component.
 
-    <code class="jsx language-jsx">render() {
+```jsx
+render() {
         const { name, job } = this.state;
 
         return (
@@ -972,7 +1011,8 @@ App.js
 
 
 
-    <code class="jsx language-jsx">return (
+```jsx
+return (
         <div className="container">
             <Table
                 characterData={characters}
@@ -992,7 +1032,8 @@ Cool. Last step is to allow us to actually submit that data and update the paren
 
 App.js
 
-    <code class="jsx language-jsx">handleSubmit = character => {
+```jsx
+handleSubmit = character => {
         this.setState({characters: [...this.state.characters, character]});
     }
 
@@ -1003,7 +1044,8 @@ App.js
 Let's make sure we pass that through as a parameter on `Form`.
 
 
-    <code class="jsx language-jsx"><Form handleSubmit={this.handleSubmit} />
+```jsx
+<Form handleSubmit={this.handleSubmit} />
 
 ```
 
@@ -1011,7 +1053,8 @@ Now in `Form`, we'll create a method called `submitForm()` that will call that f
 
 Form.js
 
-    <code class="jsx language-jsx">submitForm = () => {
+```jsx
+submitForm = () => {
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
     }
@@ -1023,7 +1066,8 @@ Form.js
 Finally, we'll add a submit button to submit the form. We're using an `onClick` instead of an `onSubmit` since we're not using the standard submit functionality. The click will call the `submitForm` we just made.
 
 
-    <code class="jsx language-jsx"> <input
+```jsx
+ <input
         type="button"
         value="Submit"
         onClick={this.submitForm} />
@@ -1050,7 +1094,8 @@ When we pull in API data, we want to use `componentDidMount`, because we want to
 
 Api.js
 
-    <code class="jsx language-jsx">import React, { Component } from 'react';
+```jsx
+import React, { Component } from 'react';
 
     class App extends Component {
         state = {
@@ -1083,7 +1128,7 @@ Api.js
 
     export default App;
 
-````
+```
 
 
 
@@ -1108,7 +1153,7 @@ Now, if you just want to compile all the React code and place it in the root of 
 ```bash
 npm run build
 
-````
+```
 
 This will create a `build` folder which will contain your app. Put the contents of that folder anywhere, and you're done!
 

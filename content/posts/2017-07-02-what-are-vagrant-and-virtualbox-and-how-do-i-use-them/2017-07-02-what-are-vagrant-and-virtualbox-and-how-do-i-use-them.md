@@ -92,7 +92,7 @@ After a few moments, this will be the output to let you know it's successful.
         box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!
 ```
 
-````
+```
 
 
 
@@ -103,7 +103,7 @@ Now initialize the new `vagrant` in your **VirtualMachines/ubuntu** directory wi
 
 ```bash
 vagrant init ubuntu/trusty64
-````
+```
 
 ```terminal
 `Vagrantfile` has been placed in this directory. You are now
@@ -165,7 +165,7 @@ Now the errors will be gone.
 
     <div style="color:green" class="terminal">[default] GuestAdditions 5.1.22 running --- OK.
 
-````
+```
 
 
 
@@ -195,7 +195,7 @@ Now we have this Ubuntu operating system set up on our computer, but how do we a
 
 ```bash
 vagrant ssh
-````
+```
 
 When you login, you will see something along these lines.
 

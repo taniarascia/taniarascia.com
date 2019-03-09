@@ -62,7 +62,8 @@ For simplicity's sake, I'm going to put everything in `index.js`. I'm just loadi
 
 index.js
 
-    <code class="jsx language-jsx">import React, { Component } from 'react'
+```jsx
+import React, { Component } from 'react'
     import ReactDOM from 'react-dom'
     import ContentEditable from 'react-contenteditable'
     import { Table, Button } from 'semantic-ui-react'
@@ -109,7 +110,8 @@ index.js
 The table has Item, Price, and Action as the headers, and maps through the state for each row. Each cell has a `ContentEditable` component, or an action to delete a row or add a new row.
 
 
-    <code class="jsx language-jsx"><Table celled>
+```jsx
+<Table celled>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Item</Table.HeaderCell>
@@ -163,7 +165,8 @@ The table has Item, Price, and Action as the headers, and maps through the state
 
 We start with three methods: one to add a row, which will update the store with the new row, and empty the existing row; the other to delete an existing row.
 
-    <code class="jsx language-jsx">addRow = () => {
+```jsx
+addRow = () => {
       const { store, row } = this.state
 
       row.id = store.length + 1
@@ -266,7 +269,8 @@ Uh, what? `contenteditable` elements retain the formatting style of the text. Ev
 
 Since obviously we don't want HTML to be submitted here, we need to make a function to only paste the text and not the formatting.
 
-    <code class="jsx language-jsx">pasteAsPlainText = event => {
+```jsx
+pasteAsPlainText = event => {
       event.preventDefault()
 
       const text = event.clipboardData.getData('text/plain')
@@ -280,7 +284,8 @@ Since obviously we don't want HTML to be submitted here, we need to make a funct
 We can put it on the `onPaste` of the `ContentEditable`.
 
 
-    <code class="jsx language-jsx"><ContentEditable
+```jsx
+<ContentEditable
       onPaste={this.pasteAsPlainText}
     />
 
@@ -302,7 +307,8 @@ Great. `&nsbp;`, the non-breaking space you used to format your website in 1998 
 
 So I just made a little find and replace for those characters.
 
-    <code class="jsx language-jsx">const trimSpaces = string => {
+```jsx
+const trimSpaces = string => {
       return string
         .replace(/&nbsp;/g, '')
         .replace(/&amp;/g, '&')
@@ -317,7 +323,8 @@ So I just made a little find and replace for those characters.
 If I add it to the `addRow` method, I can fix them before they get submitted.
 
 
-    <code class="jsx language-jsx">addRow = () => {
+```jsx
+addRow = () => {
       const { store, row } = this.state
       const trimSpaces = string => {
         return string
@@ -357,7 +364,8 @@ Which will be taken literally by `contenteditable`.
 
 So we can disable that. `13` is the key code for enter.
 
-    <code class="jsx language-jsx">disableNewlines = event => {
+```jsx
+disableNewlines = event => {
       const keyCode = event.keyCode || event.which
 
       if (keyCode === 13) {
@@ -373,7 +381,8 @@ So we can disable that. `13` is the key code for enter.
 This will go on the `onKeyPress` attribute.
 
 
-    <code class="jsx language-jsx"><ContentEditable
+```jsx
+<ContentEditable
       onKeyPress={this.disableNewlines}
     />
 
@@ -383,7 +392,8 @@ This will go on the `onKeyPress` attribute.
 
 When we tab through a `contenteditable` element that's already there, the cursor goes back to the beginning of the div. This isn't very helpful. Instead, I'll make a function that highlights the entire element when selected, either by tab or mouse.
 
-    <code class="jsx language-jsx">highlightAll = () => {
+```jsx
+highlightAll = () => {
       setTimeout(() => {
         document.execCommand('selectAll', false, null)
       }, 0)
@@ -396,7 +406,8 @@ When we tab through a `contenteditable` element that's already there, the cursor
 This will go on the `onFocus` attribute.
 
 
-    <code class="jsx language-jsx"><ContentEditable
+```jsx
+<ContentEditable
       onFocus={this.highlightAll}
     />
 
@@ -408,7 +419,8 @@ Currently, after submitting a row, the focus is lost, which makes having a nice 
 
 First, make a `ref` below state.
 
-    <code class="jsx language-jsx">firstEditable = React.createRef()
+```jsx
+firstEditable = React.createRef()
 
 ```
 
@@ -428,7 +440,8 @@ this.firstEditable.current.focus()
 `ContentEditable` conveniently has an `innerRef` attribute we can use for this.
 
 
-    <code class="jsx language-jsx"><ContentEditable
+```jsx
+<ContentEditable
       innerRef={this.firstEditable}
     />
 
@@ -444,7 +457,8 @@ This is not quite specific to `contenteditable`, but since I'm using price as on
 
 You might use an `<input type="number">` to only allow numbers on the front end in HTML, but we have to create our own function for `ContentEditable`. For the string, we had to prevent newlines on `keyPress`, but for currency, we'll only allow `.`, `,`, and `0-9`.
 
-    <code class="jsx language-jsx">validateNumber = event => {
+```jsx
+validateNumber = event => {
       const keyCode = event.keyCode || event.which
       const string = String.fromCharCode(keyCode)
       const regex = /[0-9,]|\./
@@ -462,7 +476,8 @@ You might use an `<input type="number">` to only allow numbers on the front end 
 Of course, this will still let incorrectly formatted numbers like `1,00,0.00.00` through, but we're only validating the input of a single key press here.
 
 
-    <code class="jsx language-jsx"><ContentEditable
+```jsx
+<ContentEditable
       onKeyPress={this.validateNumber}
     />
 
@@ -474,7 +489,8 @@ Finally, right now we can only edit the last row - once a row has been added, th
 
 I'll make a new method just for updating. It's similar to the row, except instead of changing the state of the new row, it maps through the store and updates based on the index. I've added one more `data` attribute - the row.
 
-    <code class="jsx language-jsx">handleContentEditableUpdate = event => {
+```jsx
+handleContentEditableUpdate = event => {
       const { store } = this.state
 
       const {
@@ -499,7 +515,8 @@ I'll make a new method just for updating. It's similar to the row, except instea
 Instead of just displaying the values in the rows, they'll all be `ContentEditable`.
 
 
-    <code class="jsx language-jsx">{store.map((row, i) => {
+```jsx
+{store.map((row, i) => {
       return (
         <Table.Row key={row.id}>
           <Table.Cell className="narrow">
@@ -542,7 +559,8 @@ Finally, I'm going to add `disabled={!item || !price}` to the `Button` element t
 
 Here's everything, in case something didn't make sense. Click the demo above for a CodeSandbox source and front end.
 
-    <code class="jsx language-jsx">import React, { Component } from 'react'
+```jsx
+import React, { Component } from 'react'
     import ReactDOM from 'react-dom'
     import ContentEditable from 'react-contenteditable'
     import { Table, Button } from 'semantic-ui-react'

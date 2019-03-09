@@ -307,7 +307,7 @@ We made a PHP array and encoded it. Here's the output:
 ```terminal
 {"name":"Aragorn","race":"Human"}
 
-````
+```
 
 
 
@@ -324,7 +324,7 @@ We're going to create a JavaScript variable called `data` and apply the JSON str
 
 ```js
 var data = '[ { "name": "Aragorn", "race": "Human" }, { "name": "Gimli", "race": "Dwarf" } ]';
-````
+```
 
 Now we'll use JavaScript built in `JSON.parse()` function to decode the string.
 
@@ -354,7 +354,7 @@ for (var i = 0; i < data.length; i++) {
 Aragorn is a Human.
     Gimli is a Dwarf.
 
-````
+```
 
 
 
@@ -374,7 +374,7 @@ That was easy! Now, we'll probably need to access JSON from a URL. There's an ex
     		"race": "Dwarf"
     	}
     ]
-````
+```
 
 Now we'll make an `XMLHttpRequest()`.
 
@@ -427,7 +427,7 @@ And the output.
 Aragorn is a Human.
     Gimli is a Dwarf.
 
-````
+```
 
 
 
@@ -452,7 +452,7 @@ Now you can also use the Fetch API to do the same thing. Read [How to Use the Ja
     }).catch(err => {
       // Do something for an error here
     });
-````
+```
 
 ### Using jQuery
 
