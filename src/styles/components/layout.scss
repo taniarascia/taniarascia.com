@@ -6,7 +6,7 @@
 
 .container {
   max-width: $width;
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -17,7 +17,7 @@
     font-size: 2rem;
   }
   .button {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }
 
@@ -39,7 +39,7 @@
 }
 
 .date {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #888;
 }
 
@@ -48,7 +48,7 @@
     .each {
       grid-template-columns: 50px 2fr;
       align-items: center;
-      padding: .5rem 0;
+      padding: 0.5rem 0;
     }
     a {
       border-bottom: none;
@@ -84,7 +84,7 @@
     margin: 0;
   }
   .gatsby-image-wrapper {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     height: 50px !important;
     width: 50px !important;
   }
@@ -97,22 +97,23 @@
 .tag-container {
   span {
     display: inline-block;
-    padding: .3rem .8rem;
-    color: darken($border-color, 15%);
+    padding: 0.3rem 0.8rem;
+    color: darken($border-color, 20%);
     border: 2px solid $border-color;
     border-radius: $border-radius;
     font-size: 1.1rem;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     &:hover,
     &:active,
     &:focus {
       background: lighten($border-color, 15%);
+      color: darken($border-color, 30%);
     }
   }
 }
 
 blockquote {
-  color: rgba(0, 0, 0, .7);
+  color: rgba(0, 0, 0, 0.7);
   border: 2px solid $green;
   background: lighten($green, 55%);
   border-radius: $border-radius;
@@ -141,10 +142,10 @@ blockquote {
   cite {
     display: block;
     margin-top: 1rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
     text-align: right;
     font-family: $font-family;
-    color: rgba(0, 0, 0, .4);
+    color: rgba(0, 0, 0, 0.4);
   }
   code {
     margin: 1rem 0 0;
@@ -160,6 +161,6 @@ blockquote {
 }
 
 ::selection {
-  background: rgba(255, 245, 20, .8);
+  background: rgba(255, 245, 20, 0.8);
   color: #111;
 }

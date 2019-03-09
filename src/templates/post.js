@@ -8,6 +8,7 @@ import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
+import { formatDate } from '../utils/global'
 
 class PostTemplate extends Component {
   render() {
@@ -38,7 +39,7 @@ class PostTemplate extends Component {
           <header className="single-header">
             {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
             <div className="post-meta">
-              <time className="date">{post.date}</time>
+              <time className="date">{formatDate(post.date)}</time>
               <h1>{post.title}</h1>
               <PostTags tags={post.tags} />
             </div>
