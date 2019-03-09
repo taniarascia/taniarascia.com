@@ -3,6 +3,9 @@
 logs
 *.log
 npm-debug.log*
+.DS_Store
+content/posts/.DS_Store
+**/.DS_Store
 
 # Runtime data
 pids
