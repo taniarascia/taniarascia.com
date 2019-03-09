@@ -26,7 +26,7 @@ We created this theme using [Bootstrap](http://getbootstrap.com), and more speci
 
 Here is what the theme looked like at the end of the last article:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-12-16-at-8.02.45-PM.png)
+![](../../images/Screen-Shot-2015-12-16-at-8.02.45-PM.png)
 
 Very simple, but it effectively demonstrates how to use the WordPress Loop to display content dynamically.
 
@@ -99,7 +99,7 @@ Using `the_permalink()`, we're going to link to the single page.
 
 Now you have a blog posts on the main page that are linking individual blog post page.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-13-at-9.50.32-PM.png)
+![](../../images/Screen-Shot-2016-01-13-at-9.50.32-PM.png)
 
 Finally, we'll want to change `the_content()` to `the_excerpt()` on **content.php**. The excerpt will only show the first 55 words of your post, instead of the entire contents.
 
@@ -111,7 +111,7 @@ Finally, we'll want to change `the_content()` to `the_excerpt()` on **content.ph
 
 [In the original Bootstrap blog example](http://getbootstrap.com/examples/blog/), there is pagination to be able to click through multiple pages if you have many blog posts.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-13-at-9.57.49-PM.png)
+![](../../images/Screen-Shot-2016-01-13-at-9.57.49-PM.png)
 
 Currently, your **index.php** file looks like this.
 
@@ -155,7 +155,7 @@ In **index.php**, between `endwhile;` and `endif;`, I'm going to place this code
 
 By default, 10 posts will show up on a page before it will link to another page. For testing purposes, I'm going to go to **Settings > Reading** and change **Blog pages show at most** to 1.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-13-at-10.43.46-PM.png)
+![](../../images/Screen-Shot-2016-01-13-at-10.43.46-PM.png)
 
 Now we have functioning pagination.
 
@@ -224,7 +224,7 @@ First, we're setting functionality to prevent users from posting comments if you
 
 Without adding any styles, here is how the functioning single blog post looks.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-13-at-11.29.06-PM.png)
+![](../../images/Screen-Shot-2016-01-13-at-11.29.06-PM.png)
 
 Obviously the styles aren't quite there yet, but I don't want to focus on that in this article. Remove the `list-style` on the `ul`s, add some padding and margins and possibly some borders and background colors, and you'll have a much prettier comment setup.
 
@@ -237,7 +237,7 @@ Of course, you might want to show how many comments there are or link to the com
     </a>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-13-at-11.59.43-PM.png)
+![](../../images/Screen-Shot-2016-01-13-at-11.59.43-PM.png)
 
 Now that we have pagination, blog posts, and comments set up, we can move on to functions.
 
@@ -340,7 +340,7 @@ Introduced in WordPress 4.1 is the ability to simply have WordPress take care of
 
 Sometimes, you might have custom settings that you want to be able to set globally. An easy example on this page is the social media links on the sidebar.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-12.28.45-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-12.28.45-AM.png)
 
 Right now these links aren't leading anywhere, but we want to be able to edit it through the admin panel. The source of this code is modified from [this Settings API tutorial](http://www.sitepoint.com/create-a-wordpress-theme-settings-page-with-the-settings-api/).
 
@@ -354,7 +354,7 @@ First, we're going to add a section on the left hand menu called **Custom Settin
     add_action( 'admin_menu', 'custom_settings_add_menu' );
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-12.37.57-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-12.37.57-AM.png)
 
 Then we're going to create a basic page.
 
@@ -374,7 +374,7 @@ Then we're going to create a basic page.
     <?php }
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-12.41.13-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-12.41.13-AM.png)
 
 The code contains a form posting to **options.php**, a section and theme-options, and a submit button.
 
@@ -401,7 +401,7 @@ function custom_settings_page_setup() {
 
 Now I've saved my Twitter URL in the field.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-12.51.48-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-12.51.48-AM.png)
 
 For good measure, I'm going to add another example, this time for GitHub.
 
@@ -448,7 +448,7 @@ You might want to have a featured image for each blog post. This functionality i
 
 Now you'll see an area where you can upload an image on each blog post.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-1.24.12-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-1.24.12-AM.png)
 
 I'm just going to upload something I drew in there for an example. Now, display the image in **content-single.php**.
 
@@ -458,7 +458,7 @@ I'm just going to upload something I drew in there for an example. Now, display 
     } ?>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-1.31.37-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-1.31.37-AM.png)
 
 Now you have an image on your individual post pages! If you wanted the thumbnail to show up on on the main blog page as well, you could do something like this on **content.php** to split the page if a thumbnail is present:
 
@@ -477,7 +477,7 @@ Now you have an image on your individual post pages! If you wanted the thumbnail
     	<?php } ?>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-1.38.44-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-1.38.44-AM.png)
 
 ## Custom Post Types
 
@@ -526,7 +526,7 @@ I've decided I'm going to make a new page for the custom post to loop in. I crea
 
 I'm going to create **page-custom.php**, and copy the code over from **page.php**. According to the [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/), a **page-name.php** will override **page.php**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-2.17.20-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-2.17.20-AM.png)
 
 The original loop we used looked like this:
 
@@ -593,7 +593,7 @@ So here's the entire code for **page-custom.php**.
 
 Now _example.com/custom_ will only pull in posts from the custom post type we created. Right now, the custom post type is set up to only do things that the normal posts can do, but the more you fall down the rabbit hole, the more possibilities you discover. If this isn't working, make sure you've successfully updated permalinks.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-14-at-2.53.29-AM.png)
+![](../../images/Screen-Shot-2016-01-14-at-2.53.29-AM.png)
 
 ## Conclusion
 

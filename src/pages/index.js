@@ -39,7 +39,7 @@ class Index extends Component {
           </section>
           <section className="section">
             <h2>Newsletter</h2>
-            <p>Sign up because you want to get notified when I make awesome new content.</p>
+            <p>Sign up to get notified when I make awesome new content.</p>
             <NewsletterForm />
           </section>
         </div>

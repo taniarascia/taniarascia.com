@@ -14,7 +14,7 @@ tags:
   - framework
 ---
 
-![](https://www.taniarascia.com/wp-content/uploads/vangogh.jpg)
+![](../../images/vangogh.jpg)
 
 If you have any sort of interest in web development, you've likely heard of [Bootstrap](http://getbootstrap.com/). According to the official website, **Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.** Sounds great! Now how do I use it?
 
@@ -61,7 +61,7 @@ Generally, every web project you work on will need to be responsive and work pro
 
 [The grid](https://getbootstrap.com/examples/grid/) is probably one of the most essential aspects of the framework. It's the basis on which the entire layout is created. Beyond that, Bootstrap's [core CSS](https://getbootstrap.com/css/) will also add helpful styling to forms, tables, buttons, lists, and images, as well as fully functioning navigation bars, while the [core JavaScript](https://getbootstrap.com/javascript/) will add helpful code for creating modals, carousels, alerts, popups, dropdowns, and accordions.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-09-at-6.58.42-PM.png)
+![](../../images/Screen-Shot-2015-11-09-at-6.58.42-PM.png)
 
 Let's begin!
 
@@ -120,7 +120,7 @@ and Bootstrap core JavaScript.
 
 Well, that's all you need to get started with Bootstrap! Let's check out our awesome new site.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-09-at-7.32.26-PM.png)
+![](../../images/Screen-Shot-2015-11-09-at-7.32.26-PM.png)
 
 ...great!
 
@@ -172,7 +172,7 @@ Although we have nothing, in no time at all we can get copying and pasting from 
 </nav>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-09-at-7.51.26-PM.png)
+![](../../images/Screen-Shot-2015-11-09-at-7.51.26-PM.png)
 
 It seems like a confusing mess, but it's not so complicated. In the first line, I'm defining the entire bar as a `navbar`, choosing a dark color scheme with `navbar-inverse`, and electing to use `navbar-static-top`, as opposed to a fixed (sticky) header.
 
@@ -233,7 +233,7 @@ I decided I want one of those big, space-wasting, attention-grabbing headers, wh
 
 There's some extra space we don't want, but I want to see how far Bootstrap can get us without overriding styles. As you can see, we already have a pretty nice, adaptable layout without having written a single line of CSS.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-09-at-8.36.49-PM.png)
+![](../../images/Screen-Shot-2015-11-09-at-8.36.49-PM.png)
 
 ### Grid
 
@@ -296,7 +296,7 @@ Using a glyphicon will always be that same code, and only the `glyphicon-floppy-
 
 I am now satisfied with the foundation of my layout.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-09-at-9.21.20-PM.png)
+![](../../images/Screen-Shot-2015-11-09-at-9.21.20-PM.png)
 
 ## Adding Custom Styles to Bootstrap
 
@@ -431,7 +431,7 @@ The final touches to my code are going to be centering the bottom call-out, addi
 }
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-09-at-10.22.22-PM.png)
+![](../../images/Screen-Shot-2015-11-09-at-10.22.22-PM.png)
 
 With one small page worth of code, I've completely transformed my layout. From here, you can be much more creative.
 

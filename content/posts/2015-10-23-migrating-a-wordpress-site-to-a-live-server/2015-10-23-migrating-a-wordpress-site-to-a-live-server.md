@@ -35,25 +35,25 @@ You may have been using phpMyAdmin in MAMP for your database needs. You could al
 
 Open phpMyAdmin in MAMP, and click on the database you have WordPress installed in. Mine was **startwordpress**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-22-at-9.19.23-PM.png)
+![](../../images/Screen-Shot-2015-10-22-at-9.19.23-PM.png)
 
 Click on the \_options table. Your prefix may vary. The default is `wp_options`, but in my case it's `xyz_options`.
 
 At the top, click on **Browse**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-22-at-9.27.25-PM.png)
+![](../../images/Screen-Shot-2015-10-22-at-9.27.25-PM.png)
 
 You will need to change two rows in the table - **siteurl** and **home**. Sometimes they're right next to each other, and sometimes you have to look for them. In this case, they're conveniently located right next to each other.
 
 I had my URL set to **http://startwordpress.dev** while I was working on it in MAMP. Now I'll point it at my server, **http://example.com**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-22-at-9.31.36-PM.png)
+![](../../images/Screen-Shot-2015-10-22-at-9.31.36-PM.png)
 
 Your local site will no longer work at this point. You can change the values back and it will work again. Now that that's set, go back to your database and click **Export** at the top. Select **Custom**, **Save output to a file**.
 
 > Note that if your server is running an old version of MySQL, you might have to change "Database system or older MySQL server to maximize output compatibility with:" and set NONE to MYSQL40.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-22-at-9.42.40-PM.png)
+![](../../images/Screen-Shot-2015-10-22-at-9.42.40-PM.png)
 
 Select **Go** at the bottom, and **yourdatabase.sql** will download.
 
@@ -63,7 +63,7 @@ Find phpMyAdmin in your server. It should look basically the same as the MAMP ve
 
 Where your server lists the information for FTP, it will also list your user and password for MySQL. You need a user to connect to MySQL, so make sure to find this information. If you haven't created a user before, find out where to do this and create one.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-22-at-9.55.28-PM.png)
+![](../../images/Screen-Shot-2015-10-22-at-9.55.28-PM.png)
 
 ### 3. Upload your files to the server
 

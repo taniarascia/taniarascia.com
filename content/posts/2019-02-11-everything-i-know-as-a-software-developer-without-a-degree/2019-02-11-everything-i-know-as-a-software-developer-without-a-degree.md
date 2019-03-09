@@ -179,7 +179,7 @@ My project of 2019 has been creating a [Chip-8 emulator](https://github.com/tani
 - How to write and understand an 8-bit and 16-bit hex dump.
 - How to **disassemble and decode** an opcode into instructions a CPU can use.
 - How a CPU can utilize **memory, stack, program counters, stack pointers, memory addresses, and registers**.
-- How a CPU implements*\* fetch, decode, and execute*\*.
+- How a CPU implements*- fetch, decode, and execute*\*.
 - The importance of **unit testing**.
 
 ## Things I Don't Know, Abridged

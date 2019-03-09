@@ -30,8 +30,8 @@ _ Take an existing HTML website and convert it into a custom WordPress theme
 
 I've made additional tutorials to add on to this one.
 
-_ [**Part 2:**](https://www.taniarascia.com/wordpress-from-scratch-part-two/) Pagination, Comments, Single Post, Functions, & Custom Posts (intermediate)
-_ [**Part 3:**](https://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/) Custom Posts, Custom Fields and Meta Boxes (advanced)
+- [**Part 2:**](https://www.taniarascia.com/wordpress-from-scratch-part-two/) Pagination, Comments, Single Post, Functions, & Custom Posts (intermediate)
+- [**Part 3:**](https://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/) Custom Posts, Custom Fields and Meta Boxes (advanced)
 
 ## What can WordPress do for me?
 
@@ -47,7 +47,7 @@ I can't stress enough how much it doesn't matter what you use for your design - 
 
 I'm going to take an existing simple starter template and convert it into WordPress for this article.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-04-06-at-9.27.33-AM.png)
+![](../../images/Screen-Shot-2016-04-06-at-9.27.33-AM.png)
 
 [Bootstrap Blog Template](http://getbootstrap.com/examples/blog/)
 
@@ -81,15 +81,15 @@ _Update 2017: The latest versions of MAMP do not come with phpMyAdmin preinstall
 
 Now, if you go to your local server in the browser, assuming the servers are on and everything is pointed to the right direction, you'll get this message.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-6.13.53-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-6.13.53-PM.png)
 
 You'll learn to love that message. In MAMP, click `Open WebStart page`. Find this near the top:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-6.17.42-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-6.17.42-PM.png)
 
 Click on phpMyAdmin. Click `Databases > create database`. I'm going to call mine **startwordpress**. That's all you need to do in phpMyAdmin!
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-6.24.30-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-6.24.30-PM.png)
 
 ##### Configure WordPress
 
@@ -145,7 +145,7 @@ Save the file as **wp-config.php** in your directory.
 
 Now, when you go back to your website and refresh, you should see this screen.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-6.28.54-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-6.28.54-PM.png)
 
 You'll have to input a few things - username, password, e-mail address, and then you're done. Congratulations, you have successfully installed WordPress! You will be redirected to **/wp-login.php**, where you can input your credentials to log into the backend. If you go to your main URL, You will see the default WordPress blog and "Hello, World!" post.
 
@@ -177,7 +177,7 @@ Remember [the Bootstrap blog source code](https://github.com/taniarascia/bootstr
 
 Your theme has now been created. Go to the WordPress dashboard, and click on `Appearance > Themes`. You'll see the theme in the collection with all the default themes.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-7.17.24-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-7.17.24-PM.png)
 
 Activate the theme and go back to your main URL. Yep, it's that simple. You've technically created a custom theme already. Of course, it doesn't do anything yet beyond what a static HTML site can do, but you're all set up now.
 
@@ -385,7 +385,7 @@ Before we start pulling in posts and pages, we need to configure some main setti
 
 In your dashboard, go to `Settings > General`. Set your title.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-9.10.41-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-9.10.41-PM.png)
 
 In **header.php**, change the contents of the title tag and main h1 tag to this code:
 
@@ -420,7 +420,7 @@ Here's the full code in case you're confused.
 
 We've _finally_ made the first dynamic change to the page. The front end should reflect what you put in your settings.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-10.38.53-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-10.38.53-PM.png)
 
 Now go to **Settings > Permalinks**. By default, WordPress is set to **Day and name**, which is a really ugly URL structure. Click on **Post name** and apply the changes.
 
@@ -488,7 +488,7 @@ The only thing inside your loop is **content.php**, which will contain the conte
 
 It's amazingly simple! `the_title();` is the title of the blog post, `the_date();` shows the date, `the_author();` the author, and `the_content();` is your post content. I added another post to prove at the loop is working.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-9.52.06-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-9.52.06-PM.png)
 
 Awesome. Let's make the sidebar dynamic, as well. There should be a description and archive list in the sidebar. In the dashboard, I'm going to edit my user description to say "Front end web developer and professional nerd."
 
@@ -514,11 +514,11 @@ For my description, I'm going to pull in metadata from my user account.
 
 Now this content is being pulled in dynamically as well.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-10.14.54-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-10.14.54-PM.png)
 
 Here's my blog so far.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-11.19.34-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-11.19.34-PM.png)
 
 ### Menu and Pages
 
@@ -542,7 +542,7 @@ header.php
 
 `wp_list_pages();` will list all the pages you have in an unordered list. `'title_li='` is telling the code not to add a "Pages" title before the list. Unfortunately for us, this looks terrible; the original blog.css has the links coded in `a` tags, not `li` tags.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-10.28.37-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-10.28.37-PM.png)
 
 Fortunately, this is a very easy fix. I'm just going to apply the style from one to the other. Add this to **blog.css**
 
@@ -562,7 +562,7 @@ blog.css
 
 Now it should show up correctly. However, if the CSS is _not_ applying, please **View the source** of your HTML output and find out what the URL of your CSS is. It should be `startwordpress.dev/wp-content/themes/startwordpress/blog.css`. Make sure to do a **hard refresh**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-10.34.21-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-10.34.21-PM.png)
 
 Much better.
 
@@ -595,7 +595,7 @@ page.php
 
 When I click on my sample page, the layout is now different than the blog post layout.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-17-at-10.46.29-PM.png)
+![](../../images/Screen-Shot-2015-10-17-at-10.46.29-PM.png)
 
 ## Conclusion
 

@@ -141,7 +141,7 @@ If for some reason the number is lower than 2.0.0, type `sudo gem install ruby` 
 sudo gem install sass
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-12-12-at-2.57.29-PM.png)
+![](../../images/Screen-Shot-2015-12-12-at-2.57.29-PM.png)
 
 All set!
 
@@ -151,7 +151,7 @@ Installation for Windows is a bit trickier, since Windows doesn't have Ruby inst
 
 I'm running a 64-bit version of Windows 7, so I chose **Ruby 2.1.7 (x64)**, but it will be the same for Windows 8 or 10.
 
-![](https://www.taniarascia.com/wp-content/uploads/download.jpg)
+![](../../images/download.jpg)
 
 Be sure to select "Add Ruby executables to your PATH" and continue. I also had a Windows Firewall Warning pop up, but I just pressed "Allow Access" to continue everything worked fine. Once you've installed Ruby, open up the Command Prompt and confirm that Ruby is installed.
 
@@ -165,7 +165,7 @@ Then install Sass.
 gem install sass
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/download3.jpg)
+![](../../images/download3.jpg)
 
 All set!
 
@@ -173,11 +173,11 @@ All set!
 
 From here out, the Sass commands are the same for Windows and Mac. I'm going to create a directory called **startsass** in **sites**. I've created a file called **styles.scss**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-12-12-at-2.30.24-PM.png)
+![](../../images/Screen-Shot-2015-12-12-at-2.30.24-PM.png)
 
 I'm doing the same in Windows, so you can see it works the same in any OS.
 
-![](https://www.taniarascia.com/wp-content/uploads/download4.jpg)
+![](../../images/download4.jpg)
 
 The **styles.scss** file will be a very simple test to ensure we can compile the file. If I tried linking to it in the HTML, nothing would happen. We need to compile it to CSS. I'm creating a **variable** that contains a color, and applying that color to the `p` tag.
 
@@ -203,7 +203,7 @@ sass style.scss:style.css
 
 Congratulations, you've successfully compiled a SCSS file! As you can see, a few files were created: a source map (**.css.map**), a regular **.css** file, and a **.sass-cache** directory.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-12-12-at-2.42.22-PM.png)
+![](../../images/Screen-Shot-2015-12-12-at-2.42.22-PM.png)
 
 The source map can help you debug your code in the future. The sass cache mostly exists to speed up compilation, and you don't really have to worry about it.
 
@@ -280,7 +280,7 @@ There is no specific right or wrong way to do this. Look it up and you'll find p
 
 Here is a more visual version of that project layout.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-12-12-at-4.22.39-PM.png)
+![](../../images/Screen-Shot-2015-12-12-at-4.22.39-PM.png)
 
 In this particular project, I'm putting all my global variables and mixins in the **base** directory, along with any resets I might need. In the **components** directory, I'll put all the styles for grid, navigation, typography, etc. I'll use **\_sections.scss** to put my code for individual sections of the page. If your project is very large, you might create a more specific directories. Do what works best for you.
 

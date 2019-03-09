@@ -29,7 +29,7 @@ Any HTML file can be a PHP file. Take any `.html` file you have right now and sa
 
 I just did this with a basic HTML skeleton. If I had saved the file as `index.html`, all I would see is "Hello, world!". However, I saved it as `index.php` and this is what I got.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-16-at-9.27.59-PM.png)
+![](../../images/Screen-Shot-2015-10-16-at-9.27.59-PM.png)
 
 Okay...it looks like the browser is treating my PHP file as a text file. All it's doing is spitting the code right back at me. Well, that's completely useless. How do I get it to start interpreting the code?
 
@@ -47,19 +47,19 @@ Whether you have a PC or a Mac, just [download MAMP](https://www.mamp.info/en/do
 
 Once the installation is complete and you open it, you end up at a screen like this.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-16-at-9.43.43-PM.png)
+![](../../images/Screen-Shot-2015-10-16-at-9.43.43-PM.png)
 
 Now click on `Start Servers`. If you're not in the administrator account, you might be prompted for the admin password. Once it's glowing green, everything is good to go. MAMP should open the WebStart page in a new tab in your browser. If not, you can click on `Open WebStart page` and it should take you to a page like this.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-16-at-9.52.42-PM.png)
+![](../../images/Screen-Shot-2015-10-16-at-9.52.42-PM.png)
 
 If you got a page like this, congratulations. You now have a local server and can run all the PHP you want. Go to `Preferences > Web Server`. Click on the folder next to document root and choose the directory you decided to place your PHP file in from earlier. Mine was `sites/learnphp`.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-16-at-9.49.42-PM.png)
+![](../../images/Screen-Shot-2015-10-16-at-9.49.42-PM.png)
 
 Now I'm going to go to `http://localhost:8888` in my browser. What happens?
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-16-at-9.58.15-PM.png)
+![](../../images/Screen-Shot-2015-10-16-at-9.58.15-PM.png)
 
 It's rendering the code! PHP is being parsed by all that stuff in the LAMP stack, and outputting regular HTML. But, we only had HTML to begin with. I want some sort of proof that this was all worth it. What's something simple that HTML can't do that PHP can?
 
@@ -76,7 +76,7 @@ I'm going to change my "Hello, world!".
 
 The code `<?php echo date('Y'); ?>` uses a date function to find the year. The HTML interpreted is just "2015".
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-10-16-at-10.07.06-PM.png)
+![](../../images/Screen-Shot-2015-10-16-at-10.07.06-PM.png)
 
 That concludes the scope of this article - learning how to set up a local server environment and being able to run PHP.
 

@@ -55,11 +55,11 @@ Installing everything on Windows is a breeze.
 
 Node.js and npm can be installed from a download link. Go to the [Node installation page](https://nodejs.org/en/download/), and download the Node installer. I have a 64-bit Windows 10 OS, so I chose that one.
 
-![](https://www.taniarascia.com/wp-content/uploads/node.jpg)
+![](../../images/node.jpg)
 
 Once it's done, you can test to see both node and npm functioning by opening PowerShell (or any shell) and typing `node -v` and `npm -v`, which will check the version number.
 
-![](https://www.taniarascia.com/wp-content/uploads/powershell.jpg)
+![](../../images/powershell.jpg)
 
 All set.
 
@@ -98,7 +98,7 @@ Now using node v8.2.0 (npm v5.3.0)
 
 Now that Node.js and npm are installed, test them by typing `node -v` and `npm -v`.
 
-![](https://www.taniarascia.com/wp-content/uploads/term-1.png)
+![](../../images/term-1.png)
 
 All set.
 
@@ -221,7 +221,7 @@ Now the project recognizes the left-pad dependency as existing
 
 Let's create **index.js** in the root of our directory. This is everything you should have now:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-07-21-at-5.28.47-PM.png)
+![](../../images/Screen-Shot-2017-07-21-at-5.28.47-PM.png)
 
 For future reference, don't bother looking in the **node_modules** rabbit hole. It will get really overwhelming with bigger projects.
 

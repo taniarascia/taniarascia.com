@@ -852,7 +852,7 @@ _ Binary, decimal, and hexadecimal numbers
 _ Calculating the value of a number in any base system
 _ Printable ASCII characters
 _ Accessing file data in Node.js
-_ Working with buffers of raw data \* Converting numbers to hex and ASCII
+_ Working with buffers of raw data - Converting numbers to hex and ASCII
 
 There is still more I want to write about on this subject, such as creating a 16-bit hex dump, bitwise operators, and endianness, as well as using [Streams](https://nodejs.org/api/stream.html#stream_stream) to improve this hex dump function, so probably more to come in a follow up article.
 

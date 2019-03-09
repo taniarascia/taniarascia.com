@@ -92,7 +92,7 @@ public/index.php
 
 Right now, all we have is a basic HTML skeleton that will link to our **create** and **read** pages. Here's what it looks like:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-1.29.55-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-1.29.55-PM.png)
 
 Since we want to keep our application relatively [DRY (don't repeat yourself)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), we're going to divide our page into layout sections.
 
@@ -220,7 +220,7 @@ label {
 }
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.06.34-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.06.34-PM.png)
 
 We have not specified a form action, so pressing the `submit` button will perform the action on the same page. Since we haven't written any PHP code to process the form yet, it won't do anything.
 
@@ -257,7 +257,7 @@ public/read.php
     <?php include "templates/footer.php"; ?>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.13.47-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.13.47-PM.png)
 
 Now you have all the front end code set up and we can start. Here's everything you should have so far.
 
@@ -273,7 +273,7 @@ Now you have all the front end code set up and we can start. Here's everything y
 
 Here's a more visual representation of that.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.21.55-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.21.55-PM.png)
 
 ## Step 2: Initializing the database
 
@@ -283,11 +283,11 @@ Now that we have a front end, we're going to create the database. We could do th
 
 First, let's get into the database. Here's the login page for the front end of our database.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.26.30-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.26.30-PM.png)
 
 Your host will be `localhost` or `127.0.0.1`, which translate to the same thing for our purposes. Username and password will both be `root`. Entering that information in, you should be able to enter localhost.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.31.30-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.31.30-PM.png)
 
 Create a directory called **data/** and create a file called **init.sql**. This will be our database initializing code.
 
@@ -322,11 +322,11 @@ We're going to create a database called `test`. Then we're going to make sure we
 
 If you really want to see what this code will do before we create the installer, you can paste it into the **Query** section of your database program and **Run Selection**.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.46.52-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.46.52-PM.png)
 
 If you did that, you'll see I now have a `test` database, a `users` table, and all the database structure.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-14-at-2.49.31-PM.png)
+![](../../images/Screen-Shot-2017-05-14-at-2.49.31-PM.png)
 
 So we know our SQL works properly and has no errors. If you did that, delete the database because we're going to start over and do it through the script.
 
@@ -454,11 +454,11 @@ install.php
 
 To run the install, just navigate to your **install.php** file on the front end.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-7.35.49-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-7.35.49-PM.png)
 
 If you didn't delete your database from our test before, you might get this error, in which case you'll need to delete the database for the installer to run.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-7.37.43-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-7.37.43-PM.png)
 
 Congratulations, you just made an installer script to set up a new database and table with structure!
 
@@ -561,11 +561,11 @@ $connection = new PDO($dsn, $username, $password, $options);
 
 Now the form is all ready to send. I'm going to fill out my information and submit it.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-9.28.57-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-9.28.57-PM.png)
 
 Going into my MySQL, if all went well, I can now view my entry in the database!
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-9.30.14-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-9.30.14-PM.png)
 
 Excellent! There's just one more thing I want to do. Right now, after submitting the form, there's nothing letting me know that the user was submitted successfully.
 
@@ -600,7 +600,7 @@ Back in **public/create.php**, add a `require "common.php";`. Now I'm just going
     <?php } ?>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-9.49.39-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-9.49.39-PM.png)
 
 And that's everything! Here's the final code to add a new user.
 
@@ -869,11 +869,11 @@ public/read.php
 
 After adding a few entries, I can play around with it. I input the city.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-10.42.42-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-10.42.42-PM.png)
 
 And view the results.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-05-15-at-10.42.45-PM.png)
+![](../../images/Screen-Shot-2017-05-15-at-10.42.45-PM.png)
 
 Congratulations, you now have the very beginnings of a simple PHP database app without frameworks.
 

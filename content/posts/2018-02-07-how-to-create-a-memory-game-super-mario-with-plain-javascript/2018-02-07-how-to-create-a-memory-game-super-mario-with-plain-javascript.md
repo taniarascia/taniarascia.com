@@ -196,7 +196,7 @@ game.appendChild(grid)
 
 So far all this did was add a section to the DOM.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-11.06.58-AM.png)
+![](../../images/Screen-Shot-2018-02-07-at-11.06.58-AM.png)
 
 > If none of this makes sense, please read [The Introduction to the DOM](https://www.digitalocean.com/community/tutorials/introduction-to-the-dom) article I wrote. You'll learn the difference between the DOM and HTML source code, and how elements and nodes work.
 
@@ -224,7 +224,7 @@ cardsArray.forEach(item => {
 })
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-11.16.16-AM-1024x581.png)
+![](../../images/Screen-Shot-2018-02-07-at-11.16.16-AM-1024x581.png)
 
 Well, that was a lot of work for step one, but now we have it! You will have 12 divs appended to the grid, and each will look something like this.
 
@@ -259,7 +259,7 @@ script.js
 
 And there you have it.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-11.27.02-AM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-11.27.02-AM-1024x812.png)
 
 [Version 0.2 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.2.js)
 
@@ -278,7 +278,7 @@ gameGrid.sort(() => 0.5 - Math.random())
 
 Have fun refreshing the grid over and over again.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-11.32.52-AM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-11.32.52-AM-1024x812.png)
 
 [Version 0.3 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.3.js)
 
@@ -316,7 +316,7 @@ grid.addEventListener('click', function(event) {
 
 Now every selected div will have a blue border, as defined by the `selected` CSS.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-11.42.10-AM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-11.42.10-AM-1024x812.png)
 
 [Version 0.4 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.4.js)
 
@@ -343,7 +343,7 @@ if (count < 2) {
 }
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-1.44.05-PM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-1.44.05-PM-1024x812.png)
 
 [Version 0.5 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.5.js)
 
@@ -416,7 +416,7 @@ grid.addEventListener('click', function(event) {
 
 Now, the guesses don't reset, so we can only select or match one thing at a time. But if we select two elements we know match, the proper CSS will be applied.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-1.03.55-PM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-1.03.55-PM-1024x812.png)
 
 Now there's a problem here - can you guess what it is? If I select the same element twice, it will consider it a match, because they both have the same `data-name` property. I shouldn't be able to select the same element twice, so we'll have to fix this before moving on. First, I'll add a `previousTarget` variable.
 
@@ -492,7 +492,7 @@ if (firstGuess === secondGuess) {
 
 Now you can make multiple matches. You'll notice that the select style will disappear immediately if it's not a match, but this is fine because we haven't set any delays to allow it to display longer.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-2.14.01-PM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-2.14.01-PM-1024x812.png)
 
 [Version 0.7 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.7.js)
 
@@ -523,7 +523,7 @@ if (firstGuess === secondGuess) {
 
 Now we can see selections and matches for 1.2 seconds before they disappear.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-2.43.35-PM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-2.43.35-PM-1024x812.png)
 
 [Version 0.8 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.8.js)
 
@@ -657,7 +657,7 @@ style.css
 
 And that's all the CSS.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-3.16.44-PM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-3.16.44-PM-1024x812.png)
 
 [Version 0.9 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.9.js)
 
@@ -679,7 +679,7 @@ if (
 
 That's the last issue I could find! I added a blue background for a bit of a more Mario-ish style, and now it's done! You could extend this game further by counting and displaying the number of failed attempts, or adding a message upon completion, but I think this is good enough.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-02-07-at-3.38.49-PM-1024x812.png)
+![](../../images/Screen-Shot-2018-02-07-at-3.38.49-PM-1024x812.png)
 
 ## Conclusion
 

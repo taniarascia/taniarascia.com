@@ -81,7 +81,7 @@ public/index.php
 
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-21-at-9.26.37-PM-1024x600.png)
+![](../../images/Screen-Shot-2018-04-21-at-9.26.37-PM-1024x600.png)
 
 Now that the main view of our app links to the **update.php**, let's create the file.
 
@@ -177,7 +177,7 @@ Before anything will show up here, we'll have to go back to **create.php** and a
 
 Here is what we have now in **update.php**:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-21-at-9.27.20-PM-1024x625.png)
+![](../../images/Screen-Shot-2018-04-21-at-9.27.20-PM-1024x625.png)
 
 ### Using HTTP query strings
 
@@ -266,7 +266,7 @@ public/update.php
     <?php require "templates/footer.php"; ?>
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-21-at-9.31.39-PM-1024x625.png)
+![](../../images/Screen-Shot-2018-04-21-at-9.31.39-PM-1024x625.png)
 
 Now we have a list of all users with links to edit them. If you hover over each edit button, you'll see the `id` in the URL change to correspond to each user. However, the links don't go anywhere yet, so that's what we'll work on next.
 
@@ -307,7 +307,7 @@ public/update-single.php
 
 Now if I click on Dinesh...
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-22-at-9.38.49-PM-1024x392.png)
+![](../../images/Screen-Shot-2018-04-22-at-9.38.49-PM-1024x392.png)
 
 The page will print out `3`, as seen in the URL. Great! Now that we know that's working, we can use it to pull the data specifically for user id `3`.
 
@@ -398,7 +398,7 @@ public/update-single.php
 
 Okay, that was quite a bit of work, but now look what we have!
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-22-at-7.36.11-PM-1024x783.png)
+![](../../images/Screen-Shot-2018-04-22-at-7.36.11-PM-1024x783.png)
 
 The single edit page now has editable fields for each value. However, our code at this point is only to display the data - we need to add another section to process the code after the submit button has been pressed.
 
@@ -522,7 +522,7 @@ public/update-single.php
 
 As a test, I updated the age value to make sure it worked.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-22-at-7.36.27-PM-1024x799.png)
+![](../../images/Screen-Shot-2018-04-22-at-7.36.27-PM-1024x799.png)
 
 Now that we've completed the update process, it's time to move on to deleting, which is much simpler.
 
@@ -642,7 +642,7 @@ public/delete.php
 
 Here's the page after I deleted two users.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-04-22-at-10.58.42-PM-1024x534.png)
+![](../../images/Screen-Shot-2018-04-22-at-10.58.42-PM-1024x534.png)
 
 Often, in a real app, data won't be permanently deleted from the database. The users might have a boolean table that defines them as "active" or "inactive" users instead of actually deleting the data. Nonetheless, `DELETE` is important to know, and it can be used along with `SELECT` to delete than insert new data as opposed to updating it with `UPDATE`.
 

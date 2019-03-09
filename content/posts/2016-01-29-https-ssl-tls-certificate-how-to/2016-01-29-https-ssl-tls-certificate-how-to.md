@@ -76,7 +76,7 @@ If you want to read more about the differences between TLS and SSL, [you may do 
 
 To over simplify, **SSL** (Secure Sockets Layer) is the old and **TLS** (Transport Layer Security) is the new, but it's often still referred to as an SSL certificate. [Here is a website to test your SSL configuration](https://www.ssllabs.com/ssltest/), which will show you which TLS or SSL you're configured with, and how all browsers are responding (sadly, you will lose IE6 support...).
 
-![Good Job, Tania](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-01-28-at-9.09.18-PM.png)
+![Good Job, Tania](../../images/Screen-Shot-2016-01-28-at-9.09.18-PM.png)
 
 Look how well I did!
 

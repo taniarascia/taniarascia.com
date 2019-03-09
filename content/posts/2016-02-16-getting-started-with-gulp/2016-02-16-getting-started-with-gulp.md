@@ -211,7 +211,7 @@ The last thing we need to do is set up a file named **gulpfile.js**, which is a 
 
 Create a **gulpfile.js**. Now we have all the pieces of the Gulp puzzle. Here is a graphical representation of how your project should look so far:
 
-![Screen Shot 2016-02-15 at 11.41.14 PM](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-02-15-at-11.41.14-PM.png)
+![Screen Shot 2016-02-15 at 11.41.14 PM](../../images/Screen-Shot-2016-02-15-at-11.41.14-PM.png)
 
 > _Edit 4/3/2017_ - you will see many more directories in the **node_modules** folder now, due to npm changing the way they handle dependencies, so don't worry, everything still works the same.
 
@@ -350,7 +350,7 @@ html {
 }
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-02-16-at-12.10.25-AM.png)
+![](../../images/Screen-Shot-2016-02-16-at-12.10.25-AM.png)
 
 Alright, that should be enough to get set up and prove that autoprefixer and cssnano are functioning properly. Note that I didn't create a **dist/** folder - Gulp will do that for me.
 
@@ -375,11 +375,11 @@ Now, if I save any of the **.scss** files that I've created...
 
 With lightning fast speed, Gulp has created dist, my main CSS file, and a sourcemap to go along with it.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-02-16-at-12.15.14-AM.png)
+![](../../images/Screen-Shot-2016-02-16-at-12.15.14-AM.png)
 
 And here's what the output looks like.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-02-16-at-12.18.01-AM.png)
+![](../../images/Screen-Shot-2016-02-16-at-12.18.01-AM.png)
 
 You did it!
 

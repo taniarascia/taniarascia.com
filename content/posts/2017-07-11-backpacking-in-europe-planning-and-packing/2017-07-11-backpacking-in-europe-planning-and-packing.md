@@ -62,7 +62,7 @@ I don't have much stuff laying around, so there were a few things I needed to ma
 
 ### Backpack
 
-![](https://www.taniarascia.com/wp-content/uploads/deuter.jpg)
+![](../../images/deuter.jpg)
 
 I already had a backpack from last year's stint in Sweden. It was fine for two weeks, so it should be fine for two months. I love this backpack! Fits my 5'6" self perfectly. Big enough to fit clothes, toiletries, and a few extra things, small enough to not be a bother. I got this at REI.
 
@@ -70,7 +70,7 @@ I already had a backpack from last year's stint in Sweden. It was fine for two w
 
 ### Daypack
 
-![](https://www.taniarascia.com/wp-content/uploads/daypack.jpg)
+![](../../images/daypack.jpg)
 
 I needed something that would fit a 13" laptop, and a few small things. I hate carrying a purse or anything in my hands. I also needed it to be small enough to be considered a purse or personal item on planes, because I do not want to have to check baggage. This was actually insanely difficult to find, until I found this lovely backpack from MANLY HANDBAGS DOT COM. I guess I'm a man now.
 

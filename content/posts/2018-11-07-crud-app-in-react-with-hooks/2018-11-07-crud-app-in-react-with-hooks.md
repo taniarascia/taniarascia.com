@@ -126,7 +126,7 @@ export default App
 
 Now we have the initial setup and skeleton for the app.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-02-at-12.29.49-PM-1024x515.png)
+![](../../images/Screen-Shot-2018-11-02-at-12.29.49-PM-1024x515.png)
 
 ## State vs. Hook State
 
@@ -234,7 +234,7 @@ const App = () => {
 export default App
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-02-at-12.53.54-PM-1024x515.png)
+![](../../images/Screen-Shot-2018-11-02-at-12.53.54-PM-1024x515.png)
 
 Let's bring in some random dummy data and the `useState` import from React.
 
@@ -310,7 +310,7 @@ const UserTable = props => (
 export default UserTable
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-02-at-1.07.09-PM-1024x581.png)
+![](../../images/Screen-Shot-2018-11-02-at-1.07.09-PM-1024x581.png)
 
 We'll get to the edit and delete buttons in a moment. Now that the basic view is set up, let's get the adding functionality working.
 
@@ -488,7 +488,7 @@ const AddUserForm = props => {
 export default AddUserForm
 ```
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-06-at-9.35.57-PM.png)
+![](../../images/Screen-Shot-2018-11-06-at-9.35.57-PM.png)
 
 Cool.
 
@@ -520,7 +520,7 @@ Now all we need to do in `UserTable.js` is make sure the delete button calls tha
 
 Now you can delete some or all of the users.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-06-at-9.57.23-PM.png)
+![](../../images/Screen-Shot-2018-11-06-at-9.57.23-PM.png)
 
 ## Updating a user
 
@@ -673,7 +673,7 @@ App.js
 
 Okay, so at this point clicking on the Edit button should toggle edit mode, and you should be able to update a user. But are we done?
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2018-11-06-at-11.23.06-PM.png)
+![](../../images/Screen-Shot-2018-11-06-at-11.23.06-PM.png)
 
 ## Using the Effect Hook
 

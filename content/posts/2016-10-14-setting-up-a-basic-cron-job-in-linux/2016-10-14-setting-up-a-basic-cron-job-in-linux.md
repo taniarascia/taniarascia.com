@@ -191,4 +191,4 @@ There are more tutorials that will go into deeper explanation of cron jobs, such
 
 I usually like to get at least one article per month, but I was away from computers on vacation in Sweden, so I haven't had a chance to write anything lately. Don't worry, I still have plenty of ideas for guides and tutorials in the works. Meanwhile, here's a picture from Sweden!
 
-![sweden](https://www.taniarascia.com/wp-content/uploads/sweden.jpg)
+![sweden](../../images/sweden.jpg)

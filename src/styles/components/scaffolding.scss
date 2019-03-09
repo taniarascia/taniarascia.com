@@ -59,10 +59,10 @@ h1:not(:first-child),
 h2:not(:first-child),
 h3:not(:first-child) {
   margin-top: 2rem;
-} 
+}
 
 // Heading individual styles
-h1 { 
+h1 {
   font-size: $h1-mobile;
   font-weight: 600;
 }
@@ -71,7 +71,7 @@ h2 {
   font-size: $h2-mobile;
   font-weight: 600;
   border-bottom: 2px solid lighten($border-color, 15%);
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 h3 {
@@ -116,11 +116,11 @@ h5 {
 }
 
 li {
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
 // Link styling
-a { 
+a {
   color: $link-color;
   text-decoration: none;
   font-weight: 600;
@@ -133,9 +133,8 @@ a {
 
 .post,
 .page {
-  a:not(.button):not(.anchor) {
-    padding: .1rem .2rem;
-    // border-bottom: 2px solid lighten($primary-color, 33%);
+  a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+    padding: 0.1rem 0.2rem;
     &:hover,
     &:active,
     &:focus {

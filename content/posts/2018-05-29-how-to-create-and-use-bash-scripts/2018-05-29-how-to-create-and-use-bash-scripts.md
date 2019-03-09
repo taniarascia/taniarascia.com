@@ -24,7 +24,7 @@ This is not meant to be an extensive guide to bash scripting, but just a straigh
 
 #### Prerequisites
 
-\* A basic command line knowledge is required. Everything you need to know to get started can be found in my [How to Use the Command Line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/) article.
+- A basic command line knowledge is required. Everything you need to know to get started can be found in my [How to Use the Command Line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/) article.
 
 This guide is for macOS. I'll be using `/Users/tania` for all examples, but it will be `/Users/your_username` for you.
 
@@ -32,8 +32,8 @@ This guide is for macOS. I'll be using `/Users/tania` for all examples, but it w
 
 In this tutorial, we're going to:
 
-_ Create a bash script that can be run from any directory on the computer.
-_ Learn about variables, conditions, looping, and user input with bash. \* Create a simple Git deployment script.
+- Create a bash script that can be run from any directory on the computer.
+- Learn about variables, conditions, looping, and user input with bash. - Create a simple Git deployment script.
 
 ## 1. Create a bin directory
 
@@ -73,7 +73,6 @@ Create a file called `hello-world` (no extension) in this folder.
 
 ```bash
 touch hello-world
-
 ```
 
 Open the file in your text editor of choice and type the following.
@@ -82,7 +81,6 @@ hello-world
 
 ```bash
 #!/bin/bash
-
 ```
 
 A bash script must always begin with `#!/bin/bash` to signify that the script should run with bash as opposed to any other shell. This is called a "shebang". You can confirm where the bash interpreter is located with `which bash`.

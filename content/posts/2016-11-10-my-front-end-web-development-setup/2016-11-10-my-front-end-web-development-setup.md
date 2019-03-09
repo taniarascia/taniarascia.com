@@ -40,7 +40,7 @@ It doesn't matter what you use: Mac or Windows. Vim or Emacs. Tabs or spaces. PH
 
 > The software a computer runs on.
 
-![apple](https://www.taniarascia.com/wp-content/uploads/apple.png)
+![apple](../../images/apple.png)
 
 ### **I use:** [macOS (Apple)](http://www.apple.com/macos/sierra/)
 
@@ -58,7 +58,7 @@ _Edit 12/29/2016_ - I wrote an entire article dedicated to setting up a developm
 
 > The program used for navigating the internet.
 
-![Chrome](https://www.taniarascia.com/wp-content/uploads/chrome-1.png)
+![Chrome](../../images/chrome-1.png)
 
 ### **I use:** [Google Chrome](https://www.google.com/chrome/)
 
@@ -79,7 +79,7 @@ As a front end web developer, you should have all the browsers downloaded for te
 
 > A service that allows a website to be viewed on the internet.
 
-![nfs](https://www.taniarascia.com/wp-content/uploads/nfs.gif)
+![nfs](../../images/nfs.gif)
 
 ### **I use:** [NearlyFreeSpeech](https://www.nearlyfreespeech.net/)
 
@@ -93,7 +93,7 @@ I have some experience with both, and NearlyFreeSpeech has been a great middle g
 
 > The software bundle used for web development.
 
-![lamp](https://www.taniarascia.com/wp-content/uploads/lamp-300x129.jpg)
+![lamp](../../images/lamp-300x129.jpg)
 
 ### **I use:** [Linux Apache MySQL PHP (LAMP)](<https://en.wikipedia.org/wiki/LAMP_(software_bundle)>)
 
@@ -112,7 +112,7 @@ For local development, I use [MAMP](https://www.mamp.info/en/) instead of instal
 
 > The program used to write code and edit text files.
 
-![brackets](https://www.taniarascia.com/wp-content/uploads/brackets-150x150.png)
+![brackets](../../images/brackets-150x150.png)
 
 ### **I use:** [Brackets](http://brackets.io/)
 
@@ -155,7 +155,7 @@ All extensions are installed by going to `File > Extension Manager`.
 
 > The Git repository hosting service used for keeping track of revisions and collaboration.
 
-![github](https://www.taniarascia.com/wp-content/uploads/github.png)
+![github](../../images/github.png)
 
 ### **I use:** [GitHub](https://github.com/)
 
@@ -167,7 +167,7 @@ GitHub is easily the most well-known place to host public and private Git reposi
 
 > The software used to create and manage a website through an admin dashboard.
 
-![wp](https://www.taniarascia.com/wp-content/uploads/wp-2-150x150.png)
+![wp](../../images/wp-2-150x150.png)
 
 ### **I use:** [WordPress](https://wordpress.org/)
 
@@ -188,7 +188,7 @@ Currently, I use the WordPress CMS both for professional projects and my persona
 
 > Command line automation for common repetitive tasks.
 
-![gulp](https://www.taniarascia.com/wp-content/uploads/gulp-1-150x150.png)
+![gulp](../../images/gulp-1-150x150.png)
 
 ### **I use:** [Gulp](http://gulpjs.com/)
 
@@ -207,7 +207,7 @@ Task runners like Gulp are useful for watching changes to files and performing t
 
 > Extend the features of CSS and compile it back into CSS.
 
-![](https://www.taniarascia.com/wp-content/uploads/sass-150x150.png)
+![](../../images/sass-150x150.png)
 
 ### **I use:** [Sass](http://sass-lang.com/)
 
@@ -219,7 +219,7 @@ A preprocessor is a program that takes a bit of code and compiles it into a diff
 
 > A base stylesheet used as a starting point for designing a website.
 
-![primitive](https://www.taniarascia.com/wp-content/uploads/primitive.png)
+![primitive](../../images/primitive.png)
 
 ### **I use:** [Primitive](https://taniarascia.github.io/primitive/)
 
@@ -233,7 +233,7 @@ This has been my choice because I have the freedom to do so, but I also feel com
 
 > Protocol that increases the security of data transmitted through the internet.
 
-![ssl](https://www.taniarascia.com/wp-content/uploads/ssl.png)
+![ssl](../../images/ssl.png)
 
 ### **I use:** [ComodoSSL](https://comodosslstore.com/)
 
@@ -273,7 +273,7 @@ RewriteEngine On
 
 > Deliver cached website content to geographically dispersed servers.
 
-![](https://www.taniarascia.com/wp-content/uploads/cf-300x90.png)
+![](../../images/cf-300x90.png)
 
 ### **I use:** [Cloudflare](https://www.cloudflare.com/)
 
@@ -285,7 +285,7 @@ I pay for hosting based on bandwidth usage. Utilizing a CDN was as easy as point
 
 > Improve speed, performance, and search rankings.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2016-11-07-at-5.36.36-PM.png)
+![](../../images/Screen-Shot-2016-11-07-at-5.36.36-PM.png)
 
 I regularly run my site through multiple speed and performance tests to see how well I'm doing and what I can improve. Much of what I've listed above contributes to my positive scores and high search rankings.
 

@@ -39,7 +39,7 @@ We are going to write from scratch [this simple web app](https://taniarascia.git
 
 It will look like this:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-12-07-at-2.57.35-PM-1024x722.png)
+![](../../images/Screen-Shot-2017-12-07-at-2.57.35-PM-1024x722.png)
 
 Let's get started.
 
@@ -279,7 +279,7 @@ In order to display information on the front end of a site, we'll be working wit
 
 By the end, our page will consist of a logo image followed by a container with multiple card elements - one for each film. Each card will have a heading and a paragraph, that contains the title and description of each film. Here's what that looks like, with only essential CSS loaded in:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-12-07-at-3.56.13-PM-1024x633.png)
+![](../../images/Screen-Shot-2017-12-07-at-3.56.13-PM-1024x633.png)
 
 If you remember, our **index.html** just has a root div - `<div id="root">` right now. We'll access it with `getElementById()`. We can briefly remove all the previous code we've written for now, which we'll add back in just a moment.
 
@@ -443,7 +443,7 @@ request.send()
 
 And with the full CSS styles, here is what the final product looks like.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2017-12-07-at-2.57.35-PM-1024x722.png)
+![](../../images/Screen-Shot-2017-12-07-at-2.57.35-PM-1024x722.png)
 
 Again, here is a link to the live app and the source code.
 

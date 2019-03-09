@@ -13,8 +13,8 @@
   font-family: $button-font-family;
   font-size: $button-font-size;
   text-transform: $button-text-transform;
-  padding: .75rem 1.25rem;
-  margin: 0 0 .5rem 0;
+  padding: 0.75rem 1.25rem;
+  margin: 0 0 0.5rem 0;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
@@ -55,36 +55,19 @@
 }
 
 // Secondary button color
-.accent-button,
-a.accent-button {
-  color: $accent-button-color;
-  border: 1px solid $accent-button-background;
-  background: $accent-button-background;
+.donate-button,
+a.donate-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: $border-radius;
+  border: 2px solid $yellow;
+  padding: 0.75rem 1rem;
+  background: #fff6d5;
+  color: #111;
   &:hover,
   &:focus,
   &:active {
-    color: $accent-button-color-hover;
-    border: 1px solid darken($accent-button-background, 10%);
-    background: darken($accent-button-background, 10%);
-  }
-}
-
-// Secondary button color
-.yellow-button,
-a.yellow-button {
-  font-size: 1.1rem;
-  padding: 1.2rem 1.2rem;
-  color: $heading-font-color;
-  border: 1px solid $yellow;
-  background: $yellow;
-  &:hover,
-  &:focus,
-  &:active {
-    color: $heading-font-color;
-    border: 1px solid darken($yellow, 10%);
-    background: darken($yellow, 10%);
-  }
-  i {
-    margin-right: 10px;
+    background: darken(#fff6d5, 10%);
+    border: 2px solid darken(#eedc95, 20%);
   }
 }

@@ -152,6 +152,26 @@ blockquote {
   }
 }
 
+.note {
+  background: $light;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  .note-container {
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 3rem;
+  }
+  h2 {
+    border-bottom: 0;
+  }
+}
+.emoji {
+  line-height: 0;
+  font-size: 1.5rem;
+  margin-left: 0.75rem;
+}
+
 .footer {
   display: flex;
   align-items: center;

@@ -20,7 +20,7 @@ While Jekyll is advertised as a blogging platform, it can be used for static web
 
 This is what the website we make will look like:
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-30-at-2.20.25-AM.png)
+![](../../images/Screen-Shot-2015-11-30-at-2.20.25-AM.png)
 
 [View Demo](http://taniarascia.github.io/startjekyll/) [View on GitHub](http://github.com/taniarascia/startjekyll/)
 
@@ -147,7 +147,7 @@ This command runs a "watch" on the entire server. Changes made to any files (exc
 
 Now go to the url `http://localhost:4000`. You will see this page.
 
-![](https://www.taniarascia.com/wp-content/uploads/Screen-Shot-2015-11-30-at-12.18.39-AM.png)
+![](../../images/Screen-Shot-2015-11-30-at-12.18.39-AM.png)
 
 Congratulations, you've just installed Jekyll! If you type CTRL + C in Terminal, it will end the running process and the site will no longer be served to localhost. Simply run `jekyll serve` again and it will come back up.
 
