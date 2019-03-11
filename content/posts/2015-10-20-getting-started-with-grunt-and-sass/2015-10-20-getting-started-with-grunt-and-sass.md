@@ -2,6 +2,7 @@
 date: 2015-10-20
 title: 'Getting Started with Grunt and Sass'
 template: post
+thumbnail: './thumbnail.png'
 slug: /getting-started-with-grunt-and-sass/
 categories:
   - Tutorials

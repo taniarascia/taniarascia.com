@@ -2,6 +2,7 @@
 date: 2015-10-23
 title: 'Migrating a WordPress Site to a Live Server'
 template: post
+thumbnail: './thumbnail.png'
 slug: /migrating-a-wordpress-site-to-a-live-server/
 categories:
   - Tutorials

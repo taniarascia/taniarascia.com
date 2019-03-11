@@ -4,7 +4,7 @@ const config = {
   siteTitleAlt: 'Tania Rascias',
   siteLogo: '/logos/logo-1024.png',
   siteUrl: 'https://tania.dev',
-  pathPrefix: '/',
+  pathPrefix: '',
   siteDescription:
     'Tania Rascia is a web developer, designer, and writer who breaks down complex concepts for all skill levels.',
   siteRss: '/rss.xml',

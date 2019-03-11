@@ -2,6 +2,7 @@
 date: 2017-01-22
 title: 'How to Use JSON Data with PHP or JavaScript'
 template: post
+thumbnail: './thumbnail.png'
 slug: /how-to-use-json-data-with-php-or-javascript/
 categories:
   - Programming

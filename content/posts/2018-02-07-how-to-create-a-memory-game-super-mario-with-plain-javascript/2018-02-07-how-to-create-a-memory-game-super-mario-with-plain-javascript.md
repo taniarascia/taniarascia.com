@@ -1,8 +1,8 @@
 ---
 date: 2018-02-07
-title: "How to Create a Memory Game (ala Super Mario 3) with Plain JavaScript\t\
-  \t"
+title: "How to Create a Memory Game (ala Super Mario 3) with Plain JavaScript"
 template: post
+thumbnail: './thumbnail.png'
 slug: /how-to-create-a-memory-game-super-mario-with-plain-javascript/
 categories:
   - JavaScript

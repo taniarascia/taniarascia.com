@@ -2,6 +2,7 @@
 date: 2015-10-07
 title: 'How to Create a Flexbox Grid'
 template: post
+thumbnail: './thumbnail.png'
 slug: /easiest-flex-grid-ever/
 categories:
   - Tutorials
@@ -11,7 +12,7 @@ tags:
   - flex
 ---
 
-The Flexbox layout module is good news for web developers everywhere. [The part where all major browsers now support it](http://caniuse.com/#feat=flexbox) is even better news. A lot of fantastic resources, documentation and tutorials have sprung up lately. [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/) is one of my favorites.
+The flexbox layout module is good news for web developers everywhere. [The part where all major browsers now support it](http://caniuse.com/#feat=flexbox) is even better news. A lot of fantastic resources, documentation and tutorials have sprung up lately. [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/) is one of my favorites.
 
 In the past I used very simple CSS float grids for website templating, but Flexbox is even better, and much simpler. In this quick tutorial, I will show you how to create an extremely simple, infinitely scalable responsive grid.
 

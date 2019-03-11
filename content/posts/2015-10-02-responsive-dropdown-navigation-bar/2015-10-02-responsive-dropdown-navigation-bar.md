@@ -2,6 +2,7 @@
 date: 2015-10-02
 title: 'Responsive Dropdown Navigation Bar'
 template: post
+thumbnail: './thumbnail.png'
 slug: /responsive-dropdown-navigation-bar/
 categories:
   - Popular
@@ -129,14 +130,14 @@ I've set the nested `a` tag to `display:block` with some padding, and gave it ou
 
 ```scss
 a {
-      &:hover {
-        background: $link-hover-color;
-        color: $nav-font-color;
-      }
-      &:not(:only-child):after {
-      padding-left: 4px;
-      content: ' ▾';
-    }
+  &:hover {
+    background: $link-hover-color;
+    color: $nav-font-color;
+  }
+  &:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
 ```
 
 The hover is simple - I'm just changing the background color of the entire `a` tag. Next, we have some pretty interesting CSS3.
@@ -151,12 +152,12 @@ The full path of this code is `nav ul li a:not(:only-child):after`. This means t
 
 ```scss
 } // Dropdown list
-    ul li {
-      min-width: 190px;
-      a {
-        padding: 15px;
-        line-height: 20px;
-      }
+  ul li {
+    min-width: 190px;
+    a {
+      padding: 15px;
+      line-height: 20px;
+    }
 ```
 
 A small bit of styling is applied to the nested `ul`s. I've given the `li` a minimum width, so that the dropdown width won't vary based on content. I've changed the padding and line-height of the dropdown `a`, because the styling cascades down from the parent.

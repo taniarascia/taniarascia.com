@@ -1,8 +1,8 @@
 ---
 date: 2018-04-23
-title: "Create a Simple CRUD Database App: Connecting to MySQL with PHP\
-  \ (Part 2: Update, Delete)"
+title: "Create a Simple CRUD Database App: Connecting to MySQL with PHP] (Part 2: Update, Delete)"
 template: post
+thumbnail: './thumbnail.png'
 slug: /create-a-simple-crud-database-app-php-update-delete/
 categories:
   - Programming

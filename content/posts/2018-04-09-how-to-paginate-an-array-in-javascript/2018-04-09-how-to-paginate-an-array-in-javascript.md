@@ -2,6 +2,7 @@
 date: 2018-04-09
 title: 'How to Paginate an Array in JavaScript'
 template: post
+thumbnail: './thumbnail.png'
 slug: /how-to-paginate-an-array-in-javascript/
 categories:
   - JavaScript

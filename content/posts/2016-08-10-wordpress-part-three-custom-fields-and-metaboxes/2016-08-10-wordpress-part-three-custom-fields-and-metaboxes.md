@@ -1,8 +1,8 @@
 ---
 date: 2016-08-10
-title: "WordPress Theme Development: Creating Custom Fields and Meta Boxes\t\
-  \t"
+title: "WordPress Theme Development: Creating Custom Fields and Meta Boxes"
 template: post
+thumbnail: './thumbnail.png'
 slug: /wordpress-part-three-custom-fields-and-metaboxes/
 categories:
   - Tutorials

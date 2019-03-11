@@ -3,6 +3,7 @@ date: 2015-10-31
 title: "You Don't Need a Framework: Understanding the Fundamentals of Responsive\
   \ Design"
 template: post
+thumbnail: './thumbnail.png'
 slug: /you-dont-need-a-framework/
 categories:
   - Tutorials

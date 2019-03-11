@@ -2,6 +2,7 @@
 date: 2015-10-17
 title: 'Developing a Wordpress Theme from Scratch'
 template: post
+thumbnail: './thumbnail.png'
 slug: /developing-a-wordpress-theme-from-scratch/
 categories:
   - Popular
@@ -23,8 +24,8 @@ You _do_ need to know how to set up a local server environment. Fortunately, if 
 
 #### Goals
 
-_ Install WordPress locally
-_ Take an existing HTML website and convert it into a custom WordPress theme
+- Install WordPress locally
+- Take an existing HTML website and convert it into a custom WordPress theme
 
 #### Parts
 
@@ -77,7 +78,7 @@ Unzip WordPress and place the contents of the folder into your directory.
 
 ##### Create a database
 
-_Update 2017: The latest versions of MAMP do not come with phpMyAdmin preinstalled. Instead, you'll download [SequelPro](https://www.sequelpro.com/) on a Mac, or [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) on Windows, both free programs. To enter the database after downloading, login to the host `locahost` (or 127.0.0.1), with username `root` and password `root`. The rest of the instructions will be the same._
+> Update 2017: The latest versions of MAMP do not come with phpMyAdmin preinstalled. Instead, you'll download [SequelPro](https://www.sequelpro.com/) on a Mac, or [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) on Windows, both free programs. To enter the database after downloading, login to the host `locahost` (or 127.0.0.1), with username `root` and password `root`. The rest of the instructions will be the same.
 
 Now, if you go to your local server in the browser, assuming the servers are on and everything is pointed to the right direction, you'll get this message.
 
@@ -99,43 +100,39 @@ Alright, final step. Find `wp-config-sample.php` in your directory.
 
 Don't be nervous. Change the database name, username, and password, from this:
 
-wp-config.php
+<div class="filename">wp-config.php</div>
 
 ```php
-
 /** The name of the database for WordPress */
-    define('DB_NAME', 'database_name_here');
-    /** MySQL database username */
-    define('DB_USER', 'username_here');
-    /** MySQL database password */
-    define('DB_PASSWORD', 'password_here');
+define('DB_NAME', 'database_name_here');
+/** MySQL database username */
+define('DB_USER', 'username_here');
+/** MySQL database password */
+define('DB_PASSWORD', 'password_here');
 ```
 
 to this:
 
-wp-config.php
+<div class="filename">wp-config.php</div>
 
 ```php
-
 /** The name of the database for WordPress */
-    define('DB_NAME', 'startwordpress');
-    /** MySQL database username */
-    define('DB_USER', 'root');
-    /** MySQL database password */
-    define('DB_PASSWORD', 'root');
+define('DB_NAME', 'startwordpress');
+/** MySQL database username */
+define('DB_USER', 'root');
+/** MySQL database password */
+define('DB_PASSWORD', 'root');
 ```
 
 Find this:
 
 ```php
-
 $table_prefix  = 'wp_';
 ```
 
 And change it to literally anything else with numbers and letters. For security. `xyz_` or `735hjq9`\_, etc.
 
 ```php
-
 $table_prefix  = 'xyz77_';
 ```
 
@@ -198,7 +195,6 @@ Locate where you linked to the CSS stylesheet in the head of **index.php**. This
 We need to tell it to dynamically link to the themes folder. Replace the above code with the below code.
 
 ```php
-
 <link href="<?php echo get_bloginfo('template_directory'); ?>/blog.css" rel="stylesheet">
 ```
 
@@ -218,73 +214,71 @@ Here's the original [index.php](https://gist.github.com/taniarascia/9d36fd3de51f
 
 Everything from `<!DOCTYPE html>` to the main blog header will be in the header file. The header usually contains all the necessary head styles and the top navigation to the website. **The only addition I will make to the code is adding `<?php wp_head(); ?>` right before the closing `</head>`**.
 
-header.php
+<div class="filename">header.php</div>
 
 ```php
-
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 
-    <head>
-    	<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<meta name="description" content="">
-    	<meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    	<title>Blog Template for Bootstrap</title>
-    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    	<link href="<?php echo get_bloginfo( 'template_directory' );?>/blog.css" rel="stylesheet">
-    	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    	<!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    	<?php wp_head();?>
-    </head>
+  <title>Blog Template for Bootstrap</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo get_bloginfo( 'template_directory' );?>/blog.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <?php wp_head();?>
+</head>
 
-    <body>
+<body>
 
-    	<div class="blog-masthead">
-    		<div class="container">
-    			<nav class="blog-nav">
-    <a class="blog-nav-item active" href="#">Home</a>
-    <a class="blog-nav-item" href="#">New features</a>
-    <a class="blog-nav-item" href="#">Press</a>
-    <a class="blog-nav-item" href="#">New hires</a>
-    <a class="blog-nav-item" href="#">About</a>
-    			</nav>
-    		</div>
-    	</div>
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="blog-nav">
+<a class="blog-nav-item active" href="#">Home</a>
+<a class="blog-nav-item" href="#">New features</a>
+<a class="blog-nav-item" href="#">Press</a>
+<a class="blog-nav-item" href="#">New hires</a>
+<a class="blog-nav-item" href="#">About</a>
+      </nav>
+    </div>
+  </div>
 
-    	<div class="container">
+  <div class="container">
 
-    		<div class="blog-header">
-    			<h1 class="blog-title">The Bootstrap Blog</h1>
-    			<p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-    		</div>
+    <div class="blog-header">
+      <h1 class="blog-title">The Bootstrap Blog</h1>
+      <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+    </div>
 ```
 
 Same deal for the footer as the header. It will include whatever visible footer you have, your JS links (for now) and `<?php wp_footer(); ?>` right before `</body>`. Since I included the `.container` div in the header, I'm going to close it in the footer.
 
-footer.php
+<div class="filename">footer.php</div>
 
 ```php
+</div> <!-- /.container -->
 
-    </div> <!-- /.container -->
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
 
-    		<footer class="blog-footer">
-          <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-          <p>
-            <a href="#">Back to top</a>
-          </p>
-        </footer>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <?php wp_footer(); ?>
-      </body>
-    </html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<?php wp_footer(); ?>
+  </body>
+</html>
 ```
 
 Most websites, especially blogs, will have a side area for including content such as archives, tags, category, ads, and whatnot. (Content removed for brevity.)
@@ -353,10 +347,9 @@ The index file should be pretty sparse now. In fact, it should only be this:
 
 Now we're going to add everything back in. Here's your new `index.php`.
 
-index.php
+<div class="filename">index.php</div>
 
 ```php
-
 <?php get_header(); ?>
 
     	<div class="row">
@@ -372,7 +365,6 @@ index.php
     	</div> <!-- /.row -->
 
     <?php get_footer(); ?>
-
 ```
 
 Even if you've never used PHP before, this code is all very self explanatory. `get_header();`, `get_sidebar();` and `get_footer();` are all functions that look for their respective .php files and insert the code. Of course, they all go inside their own `<?php ?>` tags to let the server know to parse them as HTML. The content function is slightly different, but it does the same thing.
@@ -390,32 +382,28 @@ In your dashboard, go to `Settings > General`. Set your title.
 In **header.php**, change the contents of the title tag and main h1 tag to this code:
 
 ```php
-
 <?php echo get_bloginfo( 'name' ); ?>
 ```
 
 And the description to this one.
 
 ```php
-
 <?php echo get_bloginfo( 'description' ); ?>
 ```
 
 Finally, I want the title to always take me back to the main blog page. `bloginfo('wpurl');` is the code that will do that.
 
 ```php
-
 <a href="<?php echo get_bloginfo( 'wpurl' );?>"><!-- site title --></a>
 ```
 
 Here's the full code in case you're confused.
 
 ```php
-
 <div class="blog-header">
-    	<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-    	<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
-    </div>
+  <h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+  <p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
+</div>
 ```
 
 We've _finally_ made the first dynamic change to the page. The front end should reflect what you put in your settings.
@@ -433,12 +421,11 @@ In the dashboard, if you click on Posts, you will see a "Hello, world!" post in 
 The Loop itself is quite simple.
 
 ```php
-
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <!-- contents of the loop -->
 
-    <?php endwhile; endif; ?>
+  <?php endwhile; endif; ?>
 ```
 
 It explains itself - IF there are posts, WHILE there are posts, DISPLAY the post. Anything inside the loop will be repeated. For a blog, this will be the post title, the date, the content, and comments. Where each individual post should end is where the loop will end. We're going to add the loop to `index.php`.
@@ -448,11 +435,8 @@ Here's your new index file.
 index.php
 
 ```php
-
 <?php get_header(); ?>
-
     	<div class="row">
-
     		<div class="col-sm-8 blog-main">
 
     			<?php
@@ -466,11 +450,8 @@ index.php
     		</div> <!-- /.blog-main -->
 
     		<?php get_sidebar(); ?>
-
     	</div> <!-- /.row -->
-
     <?php get_footer(); ?>
-
 ```
 
 The only thing inside your loop is **content.php**, which will contain the contents of one single post. So open **content.php** and change the contents to this:

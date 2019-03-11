@@ -34,7 +34,7 @@ class Index extends Component {
             </a>
           </div>
           <section className="section">
-            <h2>Articles</h2>
+            <h2>Latest Articles</h2>
             <PostListing simple postEdges={postEdges} />
           </section>
           <section className="section">

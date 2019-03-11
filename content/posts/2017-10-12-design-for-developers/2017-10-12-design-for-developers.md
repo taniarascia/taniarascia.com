@@ -1,8 +1,8 @@
 ---
 date: 2017-10-12
-title: "Design for Developers: Specific Steps to Improve Your Website Design\t\
-  \t"
+title: "Design for Developers: Specific Steps to Improve Your Website Design"
 template: post
+thumbnail: './thumbnail.png'
 slug: /design-for-developers/
 categories:
   - Popular

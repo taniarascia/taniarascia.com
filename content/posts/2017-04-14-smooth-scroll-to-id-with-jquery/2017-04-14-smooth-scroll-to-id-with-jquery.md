@@ -2,6 +2,7 @@
 date: 2017-04-14
 title: 'Smooth Scroll to ID with jQuery'
 template: post
+thumbnail: './thumbnail.png'
 slug: /smooth-scroll-to-id-with-jquery/
 categories:
   - JavaScript

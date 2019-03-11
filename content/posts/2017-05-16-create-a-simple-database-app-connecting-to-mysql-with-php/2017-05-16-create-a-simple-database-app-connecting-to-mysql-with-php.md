@@ -3,6 +3,7 @@ date: 2017-05-16
 title: "Create a Simple CRUD Database App: Connecting to MySQL with PHP\
   \ (Part 1: Create, Read)"
 template: post
+thumbnail: './thumbnail.png'
 slug: /create-a-simple-database-app-connecting-to-mysql-with-php/
 categories:
   - Popular

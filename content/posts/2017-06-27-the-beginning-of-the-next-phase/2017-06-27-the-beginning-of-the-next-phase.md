@@ -2,6 +2,7 @@
 date: 2017-06-27
 title: 'The Beginning of the Next Phase'
 template: post
+thumbnail: './thumbnail.png'
 slug: /the-beginning-of-the-next-phase/
 categories:
   - Personal

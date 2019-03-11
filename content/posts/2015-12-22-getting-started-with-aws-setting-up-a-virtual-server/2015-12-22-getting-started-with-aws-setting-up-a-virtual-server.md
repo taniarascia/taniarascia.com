@@ -2,6 +2,7 @@
 date: 2015-12-22
 title: 'Getting Started with AWS - Setting Up a Virtual Server'
 template: post
+thumbnail: './thumbnail.png'
 slug: /getting-started-with-aws-setting-up-a-virtual-server/
 categories:
   - DevOps

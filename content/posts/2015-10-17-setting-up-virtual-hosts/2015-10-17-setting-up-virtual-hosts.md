@@ -2,6 +2,7 @@
 date: 2015-10-17
 title: 'Setting Up Virtual Hosts'
 template: post
+thumbnail: './thumbnail.png'
 slug: /setting-up-virtual-hosts/
 categories:
   - DevOps

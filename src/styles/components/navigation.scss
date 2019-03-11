@@ -29,6 +29,9 @@
       a {
         font-weight: 600;
         font-size: 1.3rem;
+        &:hover {
+          color: black;
+        }
       }
     }
     a {
@@ -53,10 +56,12 @@
           border: 2px solid $yellow;
           padding: 0.5rem 1rem;
           background: #fff6d5;
-          color: #111;
+          color: darken($yellow, 30%);
+          font-weight: 600;
           &:hover {
             background: darken(#fff6d5, 10%);
             border: 2px solid darken(#eedc95, 20%);
+            color: #111;
           }
         }
         .emoji {

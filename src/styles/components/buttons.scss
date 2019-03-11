@@ -63,11 +63,12 @@ a.donate-button {
   border: 2px solid $yellow;
   padding: 0.75rem 1rem;
   background: #fff6d5;
-  color: #111;
+  color: darken($yellow, 30%);
   &:hover,
   &:focus,
   &:active {
     background: darken(#fff6d5, 10%);
     border: 2px solid darken(#eedc95, 20%);
+    color: #111;
   }
 }

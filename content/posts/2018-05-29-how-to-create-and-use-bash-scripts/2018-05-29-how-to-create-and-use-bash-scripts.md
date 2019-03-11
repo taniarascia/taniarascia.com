@@ -2,6 +2,7 @@
 date: 2018-05-29
 title: 'How to Create and Use Bash Scripts'
 template: post
+thumbnail: './thumbnail.png'
 slug: /how-to-create-and-use-bash-scripts/
 categories:
   - DevOps
@@ -45,8 +46,7 @@ Create `bin` in that folder, or wherever you want your bash scripts to live.
 
 ```bash
 cd ~      # this takes us to /Users/tania
-    mkdir bin # this creates /Users/tania/bin
-
+mkdir bin # this creates /Users/tania/bin
 ```
 
 ## 2. Export your bin directory to the PATH
@@ -55,7 +55,6 @@ Open `.bash_profile`, which will be located at `/Users/tania/.bash_profile`, and
 
 ```bash
 export PATH=$PATH:/Users/tania/bin
-
 ```
 
 If you don't see hidden files and directories, or those that begin with a `.`, press Command + SHIFT + ..

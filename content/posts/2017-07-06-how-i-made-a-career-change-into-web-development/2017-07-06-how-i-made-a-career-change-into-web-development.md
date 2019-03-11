@@ -2,6 +2,7 @@
 date: 2017-07-06
 title: 'How I Made a Career Change into Web Development'
 template: post
+thumbnail: './thumbnail.jpg'
 slug: /how-i-made-a-career-change-into-web-development/
 categories:
   - Personal

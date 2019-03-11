@@ -2,6 +2,7 @@
 date: 2017-02-23
 title: 'Simple jQuery Examples with Code and Demos'
 template: post
+thumbnail: './thumbnail.png'
 slug: /simple-jquery-examples-with-code-and-demos/
 categories:
   - Tutorials

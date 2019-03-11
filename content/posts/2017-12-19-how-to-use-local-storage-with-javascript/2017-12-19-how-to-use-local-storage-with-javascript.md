@@ -2,6 +2,7 @@
 date: 2017-12-19
 title: 'How to Use Local Storage with JavaScript'
 template: post
+thumbnail: './thumbnail.png'
 slug: /how-to-use-local-storage-with-javascript/
 categories:
   - JavaScript
