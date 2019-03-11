@@ -25,8 +25,6 @@ class PostListing extends Component {
     const { simple } = this.props
     const postList = this.getPostList()
 
-    console.log(postList)
-
     return (
       <section className={`posts ${simple ? 'simple' : ''}`}>
         {postList.map(post => {
