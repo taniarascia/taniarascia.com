@@ -4,7 +4,7 @@ title: "WordPress Theme Development: Pagination, Comments, Functions, &\
   \ Custom Posts"
 template: post
 thumbnail: './thumbnail.png'
-slug: /wordpress-from-scratch-part-two/
+slug: wordpress-from-scratch-part-two/
 categories:
   - Tutorials
   - Web

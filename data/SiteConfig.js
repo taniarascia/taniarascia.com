@@ -1,7 +1,7 @@
 const config = {
   siteTitle: 'Tania Rascia',
   siteTitleShort: 'Tania Rascia',
-  siteTitleAlt: 'Tania Rascias',
+  siteTitleAlt: 'Tania Rascia',
   siteLogo: '/logos/logo-1024.png',
   siteUrl: 'https://tania.dev',
   pathPrefix: '',
@@ -38,22 +38,20 @@ const config = {
   menuLinks: [
     {
       name: 'About me',
-      link: '/me/',
+      link: 'me',
     },
     {
       name: 'Articles',
-      link: '/blog/',
+      link: 'blog',
     },
     {
       name: 'Newsletter',
-      link: '/newsletter/',
+      link: 'newsletter',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffffff',
 }
-
-// Validate
 
 // Make sure pathPrefix is empty if not needed
 if (config.pathPrefix === '/') {

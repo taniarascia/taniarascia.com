@@ -3,7 +3,7 @@ date: 2017-03-27
 title: 'Background Position Fixed and Cover with CSS'
 template: post
 thumbnail: './thumbnail.png'
-slug: /background-position-fixed-and-cover-with-css/
+slug: background-position-fixed-and-cover-with-css/
 categories:
   - Tutorials
   - UI/UX

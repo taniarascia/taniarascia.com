@@ -3,7 +3,7 @@ date: 2018-06-21
 title: 'The Simplest PHP Router'
 template: post
 thumbnail: './thumbnail.png'
-slug: /the-simplest-php-router/
+slug: the-simplest-php-router/
 categories:
   - Programming
   - Tutorials

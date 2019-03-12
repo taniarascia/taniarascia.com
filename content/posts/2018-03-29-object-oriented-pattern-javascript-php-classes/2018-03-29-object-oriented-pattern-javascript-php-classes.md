@@ -3,7 +3,7 @@ date: 2018-03-29
 title: 'Object Oriented Pattern: JavaScript Constructor Functions, ES6 Classes, and PHP Classes'
 template: post
 thumbnail: './thumbnail.png'
-slug: /object-oriented-pattern-javascript-php-classes/
+slug: object-oriented-pattern-javascript-php-classes/
 categories:
   - JavaScript
   - Programming

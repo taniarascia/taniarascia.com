@@ -50,7 +50,6 @@ class Index extends Component {
 
 export default Index
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(limit: 10, sort: { fields: [fields___date], order: DESC }) {

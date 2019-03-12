@@ -3,7 +3,7 @@ date: 2016-06-07
 title: "Adding Syntax Highlighting to Code Snippets in a Blog or Website"
 template: post
 thumbnail: './thumbnail.png'
-slug: /adding-syntax-highlighting-to-code-snippets/
+slug: adding-syntax-highlighting-to-code-snippets/
 categories:
   - Tutorials
   - UI/UX

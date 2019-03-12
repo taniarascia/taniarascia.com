@@ -3,7 +3,7 @@ date: 2018-03-05
 title: 'How to Create an Error Log in PHP'
 template: post
 thumbnail: './thumbnail.png'
-slug: /how-to-create-an-error-log-in-php/
+slug: how-to-create-an-error-log-in-php/
 categories:
   - Programming
   - Tutorials

@@ -3,7 +3,7 @@ date: 2015-11-06
 title: 'From Cooking to Coding'
 template: post
 thumbnail: './thumbnail.png'
-slug: /from-cooking-to-coding/
+slug: from-cooking-to-coding/
 categories:
   - Personal
 tags:

@@ -3,7 +3,7 @@ date: 2018-04-05
 title: "Basic Refactoring: Don't Repeat Yourself"
 template: post
 thumbnail: './thumbnail.png'
-slug: /refactoring-dont-repeat-yourself/
+slug: refactoring-dont-repeat-yourself/
 categories:
   - Tutorials
   - UI/UX

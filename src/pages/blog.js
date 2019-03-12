@@ -25,7 +25,6 @@ class BlogPage extends Component {
 
 export default BlogPage
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogQuery {
     allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {

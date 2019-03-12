@@ -3,7 +3,7 @@ date: 2017-06-10
 title: 'Website Redesign: Version 2.0 (863 Commits Later)'
 template: post
 thumbnail: './thumbnail.png'
-slug: /version-2-0-website-redesign-863-commits-later/
+slug: version-2-0-website-redesign-863-commits-later/
 categories:
   - Personal
 tags:

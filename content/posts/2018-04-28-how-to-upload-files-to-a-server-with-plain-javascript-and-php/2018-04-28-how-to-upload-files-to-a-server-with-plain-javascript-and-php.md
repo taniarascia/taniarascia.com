@@ -3,7 +3,7 @@ date: 2018-04-28
 title: 'How to Upload Files to a Server with Plain JavaScript and PHP'
 template: post
 thumbnail: './thumbnail.png'
-slug: /how-to-upload-files-to-a-server-with-plain-javascript-and-php/
+slug: how-to-upload-files-to-a-server-with-plain-javascript-and-php/
 categories:
   - JavaScript
   - Programming

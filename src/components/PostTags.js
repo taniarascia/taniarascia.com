@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { kebabCase } from '../utils/global'
+const kebabCase = require('lodash.kebabcase')
 import { Link } from 'gatsby'
 
 class PostTags extends Component {

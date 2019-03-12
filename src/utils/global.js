@@ -1,11 +1,3 @@
-const kebabCase = string => {
-  return string
-    .replace(/([A-Z])([A-Z])/g, '$1-$2')
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/[\s_]+/g, '-')
-    .toLowerCase()
-}
-
 const formatDate = date => {
   date = new Date(date)
 
@@ -31,4 +23,4 @@ const formatDate = date => {
   return `${monthNames[monthIndex]} ${day}, ${year}`
 }
 
-module.exports = { kebabCase, formatDate }
+module.exports = { formatDate }

@@ -3,7 +3,7 @@ date: 2017-06-06
 title: 'How to Generate a Public Key from a Private Key'
 template: post
 thumbnail: './thumbnail.png'
-slug: /how-to-generate-a-public-key-from-a-private-key/
+slug: how-to-generate-a-public-key-from-a-private-key/
 categories:
   - DevOps
   - Tutorials

@@ -8,7 +8,7 @@ import '../styles/main.scss'
 
 class MainLayout extends Component {
   render() {
-    const { children } = this.props
+    const { children, template = '' } = this.props
 
     return (
       <>
@@ -16,9 +16,11 @@ class MainLayout extends Component {
           <meta name="description" content={config.siteDescription} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
         </Helmet>
-        <Navigation menuLinks={config.menuLinks} />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <section id={template}>
+          <Navigation menuLinks={config.menuLinks} />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </section>
       </>
     )
   }

@@ -3,7 +3,7 @@ date: 2015-10-02
 title: 'Responsive Dropdown Navigation Bar'
 template: post
 thumbnail: './thumbnail.png'
-slug: /responsive-dropdown-navigation-bar/
+slug: responsive-dropdown-navigation-bar/
 categories:
   - Popular
   - Tutorials

@@ -3,7 +3,7 @@ date: 2017-06-30
 title: 'Web Developers and Bloggers I Follow (2017)'
 template: post
 thumbnail: './thumbnail.png'
-slug: /web-developers-and-bloggers-i-follow-2017/
+slug: web-developers-and-bloggers-i-follow-2017/
 categories:
   - Personal
   - Web

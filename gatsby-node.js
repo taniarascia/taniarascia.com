@@ -1,5 +1,5 @@
 const path = require('path')
-const { kebabCase } = require('./src/utils/global')
+const kebabCase = require('lodash.kebabcase')
 
 const postNodes = []
 
@@ -59,18 +59,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${kebabCase(node.frontmatter.title)}/`
+      slug = `/${kebabCase(node.frontmatter.title)}`
     } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
+      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}`
     } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`
+      slug = `/${parsedFilePath.name}`
     } else {
-      slug = `/${parsedFilePath.dir}/`
+      slug = `/${parsedFilePath.dir}`
     }
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${kebabCase(node.frontmatter.slug)}/`
+        slug = `/${kebabCase(node.frontmatter.slug)}`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = new Date(node.frontmatter.date)
 
@@ -125,7 +125,6 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
-          /* eslint no-console: "off" */
           console.log(result.errors)
           reject(result.errors)
         }
@@ -170,7 +169,7 @@ exports.createPages = ({ graphql, actions }) => {
         const tagList = Array.from(tagSet)
         tagList.forEach(tag => {
           createPage({
-            path: `/tags/${kebabCase(tag)}/`,
+            path: `/tags/${kebabCase(tag)}`,
             component: tagPage,
             context: {
               tag,
@@ -181,7 +180,7 @@ exports.createPages = ({ graphql, actions }) => {
         const categoryList = Array.from(categorySet)
         categoryList.forEach(category => {
           createPage({
-            path: `/categories/${kebabCase(category)}/`,
+            path: `/categories/${kebabCase(category)}`,
             component: categoryPage,
             context: {
               category,

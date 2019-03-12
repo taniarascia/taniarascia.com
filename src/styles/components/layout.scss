@@ -94,7 +94,7 @@
       .each {
         grid-template-columns: 50px 2fr;
         align-items: center;
-        padding: .75rem 1rem;
+        padding: 0.75rem 1rem;
         margin: 0 -1rem;
         border: 2px solid transparent;
         &:hover {
@@ -181,6 +181,8 @@ blockquote {
   background: $light;
   padding: 3rem 0;
   margin: 3rem 0;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
   .note-container {
     background: white;
     border-radius: $border-radius;
