@@ -14,9 +14,6 @@ class Index extends Component {
     const latestPostEdges = this.props.data.latest.edges
     const popularPostEdges = this.props.data.popular.edges
 
-    console.log(latestPostEdges)
-    console.log(popularPostEdges)
-
     return (
       <Layout>
         <Helmet title={`${config.siteTitle} | Developer`} />

@@ -31,9 +31,9 @@ class Navigation extends Component {
           </div>
           <div className="links">
             {menuLinks.map(link => (
-              <a key={link.name} href={link.link}>
+              <Link key={link.name} to={link.link}>
                 {link.name}
-              </a>
+              </Link>
             ))}
             <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
               Donate <span className="emoji">☕</span>

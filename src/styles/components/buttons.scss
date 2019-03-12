@@ -54,6 +54,19 @@
   }
 }
 
+.button.muted-button,
+a.button.muted-bottom {
+  border: 2px solid $border-color;
+  color: #888;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid darken($border-color, 15%);
+    background: #f0f0f0;
+    color: #111;
+  }
+}
+
 // Secondary button color
 .donate-button,
 a.donate-button {

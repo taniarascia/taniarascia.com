@@ -41,7 +41,7 @@
 .date,
 .disqus-comment-count {
   font-size: 0.9rem;
-  color: #888;
+  color: $light-font-color;
   display: inline-block;
   margin: 0 5px;
 }
@@ -60,17 +60,17 @@
       border-bottom-color: #f0f0f0;
       .date {
         margin: 0;
-        color: #bbb;
+        color: rgba(0, 0, 0, 0.4);
         font-weight: 400;
       }
       &:hover {
         border: 2px solid $primary-color;
-        background: lighten($primary-color, 34%);
+        background: $button-background-hover;
         h2 {
           color: black;
         }
         .excerpt {
-          color: #333;
+          color: rgba(0, 0, 0, 0.6);
         }
       }
     }
@@ -86,8 +86,7 @@
   h2 {
     font-size: 1.2rem;
     border-bottom: none;
-    margin: 0;
-    margin-bottom: 1rem;
+    margin: 0 0 0.75rem 0;
   }
   .gatsby-image-wrapper {
     margin-top: 0.5rem;
@@ -95,7 +94,7 @@
     width: 50px !important;
   }
   .excerpt {
-    color: #999;
+    color: rgba(0, 0, 0, 0.5);
     font-weight: 400;
   }
   &.simple {
@@ -108,7 +107,7 @@
         border: 2px solid transparent;
         &:hover {
           border: 2px solid $primary-color;
-          background: lighten($primary-color, 34%);
+          background: $button-background-hover;
         }
       }
     }
@@ -118,13 +117,42 @@
       width: 30px !important;
     }
     h2 {
-      color: #888;
       padding: 0;
       margin: 0;
       &:hover {
         color: #111;
       }
     }
+  }
+}
+
+.projects {
+  .each {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  h2 {
+    font-size: 1.2rem;
+    border-bottom: none;
+    margin: 0 0 0.75rem 0;
+    color: #111;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    flex: 0 0 180px;
+  }
+  p {
+    color: $light-font-color;
+    font-weight: normal;
+    margin: 0 1.5rem 0 0;
+    flex: 1.5;
+  }
+  .buttons {
+    flex: 1;
+  }
+  .button {
+    margin-right: 0.5rem;
   }
 }
 
@@ -218,7 +246,7 @@ blockquote {
   align-items: center;
   justify-content: flex-start;
   height: 100px;
-  color: #888;
+  color: $light-font-color;
 }
 
 ::selection {
