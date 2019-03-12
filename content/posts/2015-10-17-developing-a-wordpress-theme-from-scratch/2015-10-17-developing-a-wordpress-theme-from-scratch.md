@@ -2,7 +2,7 @@
 date: 2015-10-17
 title: 'Developing a Wordpress Theme from Scratch'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnail/wp.png'
 slug: developing-a-wordpress-theme-from-scratch
 categories:
   - Popular

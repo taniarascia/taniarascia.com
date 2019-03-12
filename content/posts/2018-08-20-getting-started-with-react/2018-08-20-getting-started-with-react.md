@@ -2,7 +2,7 @@
 date: 2018-08-20
 title: 'Getting Started with React - An Overview and Walkthrough'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/react.png'
 slug: getting-started-with-react
 categories:
   - JavaScript

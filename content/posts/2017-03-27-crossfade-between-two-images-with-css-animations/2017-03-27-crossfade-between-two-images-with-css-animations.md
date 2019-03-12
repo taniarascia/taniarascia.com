@@ -2,7 +2,7 @@
 date: 2017-03-27
 title: 'Crossfade Between Two Images with CSS Animations'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/css.png'
 slug: crossfade-between-two-images-with-css-animations
 categories:
   - Tutorials

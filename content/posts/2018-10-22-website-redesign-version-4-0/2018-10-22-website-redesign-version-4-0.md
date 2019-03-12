@@ -2,7 +2,7 @@
 date: 2018-10-22
 title: 'Website Redesign: Version 4.0'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/writing.png'
 slug: website-redesign-version-4-0
 categories:
   - Personal

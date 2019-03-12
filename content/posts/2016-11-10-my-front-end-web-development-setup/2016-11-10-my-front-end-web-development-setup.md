@@ -2,7 +2,7 @@
 date: 2016-11-10
 title: 'My Complete Front End Web Development Setup'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/terminal.png'
 slug: my-front-end-web-development-setup
 categories:
   - Tutorials

@@ -2,7 +2,7 @@
 date: 2017-07-02
 title: 'What are Vagrant and VirtualBox and How Do I Use Them?'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/vagrant.png'
 slug: what-are-vagrant-and-virtualbox-and-how-do-i-use-them
 categories:
   - DevOps

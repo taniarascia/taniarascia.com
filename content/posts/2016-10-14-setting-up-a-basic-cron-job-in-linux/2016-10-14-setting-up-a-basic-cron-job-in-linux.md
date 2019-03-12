@@ -2,7 +2,7 @@
 date: 2016-10-14
 title: 'Setting Up a Basic Cron Job in Linux'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/linux.png'
 slug: setting-up-a-basic-cron-job-in-linux
 categories:
   - DevOps

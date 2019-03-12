@@ -2,7 +2,7 @@
 date: 2018-05-08
 title: 'Overview of SQL Commands and PDO Operations'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/sql.png'
 slug: overview-of-sql-commands-and-pdo-operations
 categories:
   - Popular

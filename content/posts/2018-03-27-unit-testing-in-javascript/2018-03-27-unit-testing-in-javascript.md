@@ -2,7 +2,7 @@
 date: 2018-03-27
 title: 'Unit Testing in JavaScript with Mocha'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/mocha.png'
 slug: unit-testing-in-javascript
 categories:
   - JavaScript

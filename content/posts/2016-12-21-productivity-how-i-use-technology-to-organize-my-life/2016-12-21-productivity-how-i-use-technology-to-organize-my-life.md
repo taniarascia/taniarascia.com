@@ -2,7 +2,7 @@
 date: 2016-12-21
 title: 'Productivity: How I Use Technology to Organize My Life'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/floppy.png'
 slug: productivity-how-i-use-technology-to-organize-my-life
 categories:
   - Personal

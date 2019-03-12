@@ -2,7 +2,7 @@
 date: 2016-12-29
 title: 'Setting up a Brand New Mac for Development'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/apple.png'
 slug: setting-up-a-brand-new-mac-for-development
 categories:
   - Tutorials

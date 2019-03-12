@@ -2,7 +2,7 @@
 date: 2018-04-09
 title: 'ES6 Syntax and Feature Overview'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/js.png'
 slug: es6-syntax-and-feature-overview
 categories:
   - JavaScript

@@ -2,7 +2,7 @@
 date: 2018-03-04
 title: 'How to Set Up a Cron Job in MAMP'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/mamp.png'
 slug: how-to-set-up-a-cron-job-in-mamp
 categories:
   - DevOps

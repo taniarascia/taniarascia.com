@@ -2,7 +2,7 @@
 date: 2015-11-14
 title: 'Google Maps APIs for Multiple Locations'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/gmaps.png'
 slug: google-maps-apis-for-multiple-locations
 categories:
   - Tutorials

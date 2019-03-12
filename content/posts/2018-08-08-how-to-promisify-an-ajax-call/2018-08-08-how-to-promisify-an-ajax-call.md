@@ -2,7 +2,7 @@
 date: 2018-08-08
 title: 'How to Promisify an Ajax Call'
 template: post
-thumbnail: './thumbnail.jpg'
+thumbnail: '../thumbnails/js.png'
 slug: how-to-promisify-an-ajax-call
 categories:
   - JavaScript

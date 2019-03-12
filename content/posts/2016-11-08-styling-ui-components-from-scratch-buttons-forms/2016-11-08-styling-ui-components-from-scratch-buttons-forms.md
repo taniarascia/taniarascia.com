@@ -2,7 +2,7 @@
 date: 2016-11-08
 title: 'Styling UI Components from Scratch: Buttons & Forms'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/css.png'
 slug: styling-ui-components-from-scratch-buttons-forms
 categories:
   - Tutorials

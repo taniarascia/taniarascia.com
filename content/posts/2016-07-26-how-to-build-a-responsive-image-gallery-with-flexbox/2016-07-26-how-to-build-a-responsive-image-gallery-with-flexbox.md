@@ -2,7 +2,7 @@
 date: 2016-07-26
 title: 'How to Build a Responsive Image Gallery with Flexbox'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/css.png'
 slug: how-to-build-a-responsive-image-gallery-with-flexbox
 categories:
   - Tutorials

@@ -2,7 +2,7 @@
 date: 2015-09-24
 title: 'Getting Started with Git'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/git.png'
 slug: getting-started-with-git
 categories:
   - Tutorials

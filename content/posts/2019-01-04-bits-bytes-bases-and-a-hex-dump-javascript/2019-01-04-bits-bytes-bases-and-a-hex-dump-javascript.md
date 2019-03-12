@@ -2,7 +2,7 @@
 date: 2019-01-04
 title: 'Understanding Bits, Bytes, Bases, and Writing a Hex Dump in JavaScript (Node)'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/binary.png'
 slug: bits-bytes-bases-and-a-hex-dump-javascript
 categories:
   - JavaScript

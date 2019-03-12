@@ -2,7 +2,7 @@
 date: 2017-04-05
 title: 'Prevent Mouse Scroll from Zooming on Embedded Google Maps'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/gmaps.png'
 slug: prevent-mouse-scroll-from-zooming-on-embedded-google-maps
 categories:
   - Tutorials

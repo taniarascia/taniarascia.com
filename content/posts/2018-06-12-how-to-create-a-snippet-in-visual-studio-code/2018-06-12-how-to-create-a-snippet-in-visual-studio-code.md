@@ -2,7 +2,7 @@
 date: 2018-06-12
 title: 'How to Create a Snippet in Visual Studio Code'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnail/vsc.png'
 slug: how-to-create-a-snippet-in-visual-studio-code
 categories:
   - Tutorials

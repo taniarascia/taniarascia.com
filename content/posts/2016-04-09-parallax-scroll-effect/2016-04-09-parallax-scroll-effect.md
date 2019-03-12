@@ -2,7 +2,7 @@
 date: 2016-04-09
 title: 'Parallax Scroll Effect'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/js.png'
 slug: parallax-scroll-effect
 categories:
   - Tutorials

@@ -2,7 +2,7 @@
 date: 2017-01-09
 title: 'How to Use the Command Line for Apple macOS and Linux'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/terminal.png'
 slug: how-to-use-the-command-line-for-apple-macos-and-linux
 categories:
   - DevOps

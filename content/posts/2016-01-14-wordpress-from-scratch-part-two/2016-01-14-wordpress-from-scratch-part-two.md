@@ -1,9 +1,8 @@
 ---
 date: 2016-01-14
-title: "WordPress Theme Development: Pagination, Comments, Functions, &\
-  \ Custom Posts"
+title: "WordPress Theme Development: Pagination, Comments, Functions, & Custom Posts"
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/wp.png'
 slug: wordpress-from-scratch-part-two
 categories:
   - Tutorials

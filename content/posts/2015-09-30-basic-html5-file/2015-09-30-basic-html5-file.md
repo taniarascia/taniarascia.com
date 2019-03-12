@@ -2,7 +2,7 @@
 date: 2015-09-30
 title: 'Basic HTML5 Skeleton File'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/html.png'
 slug: basic-html5-file
 categories:
   - Snippets

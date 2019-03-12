@@ -2,7 +2,7 @@
 date: 2018-03-06
 title: 'How to Use the JavaScript Fetch API to Get JSON Data'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/js.png'
 slug: how-to-use-the-javascript-fetch-api-to-get-json-data
 categories:
   - JavaScript

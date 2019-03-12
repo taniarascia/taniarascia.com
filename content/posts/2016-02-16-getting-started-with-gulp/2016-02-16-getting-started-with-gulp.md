@@ -2,7 +2,7 @@
 date: 2016-02-16
 title: 'Straightforward Guide to Setting Up a Gulp Workflow'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/gulp.png'
 slug: getting-started-with-gulp
 categories:
   - Tutorials

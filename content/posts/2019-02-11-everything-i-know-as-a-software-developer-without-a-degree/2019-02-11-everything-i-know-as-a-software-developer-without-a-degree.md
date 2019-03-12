@@ -2,7 +2,7 @@
 date: 2019-02-11
 title: 'Everything I Know as a Software Developer Without a Degree'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/floppy.png'
 slug: everything-i-know-as-a-software-developer-without-a-degree
 categories:
   - Personal

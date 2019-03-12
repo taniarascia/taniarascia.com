@@ -2,7 +2,7 @@
 date: 2017-03-23
 title: 'Redirect all HTTP requests to HTTPS'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/ssl.png'
 slug: redirect-all-http-requests-to-https
 categories:
   - DevOps

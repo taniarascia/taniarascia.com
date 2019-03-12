@@ -2,7 +2,7 @@
 date: 2018-06-07
 title: 'Rewrite Query String to Path with htaccess'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/apache.png'
 slug: rewrite-query-string-to-path-with-htaccess
 categories:
   - Programming

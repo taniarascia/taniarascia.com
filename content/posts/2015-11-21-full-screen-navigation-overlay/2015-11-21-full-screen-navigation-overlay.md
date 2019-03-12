@@ -2,7 +2,7 @@
 date: 2015-11-21
 title: 'Full Screen Navigation Overlay'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/css.png'
 slug: full-screen-navigation-overlay
 categories:
   - Tutorials

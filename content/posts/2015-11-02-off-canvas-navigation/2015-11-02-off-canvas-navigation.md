@@ -2,7 +2,7 @@
 date: 2015-11-02
 title: 'Off Canvas Navigation'
 template: post
-thumbnail: './thumbnail.png'
+thumbnail: '../thumbnails/css.png'
 slug: off-canvas-navigation
 categories:
   - Tutorials
