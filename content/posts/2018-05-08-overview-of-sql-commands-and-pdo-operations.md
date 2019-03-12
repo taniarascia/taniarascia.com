@@ -282,16 +282,16 @@ Delete an existing table.
 
 Select data from a database. Only `SELECT` and `FROM` are mandatory; the rest of the fields are optional. The order of a `SELECT` statement is as follows:
 
-      * `SELECT` - select `*` (all), specific columns, or aggregate functions.
-      * `AS` - assign an alias to a column name
-      * `FROM` - table name to pull data from
-      * `JOIN/LEFT JOIN/RIGHT JOIN/FULL JOIN ... ON` - combine data from tables by a common key
-      * `WHERE ... AND, OR, NOT` - filter data by conditions
-      * `GROUP BY` - group a result set by column.
-      * `HAVING` - filter groups by conditions.
-      * `ORDER BY` - sort a result set by column in ascending or descending order
-      * `LIMIT` - limit number of results
-      * `OFFSET` - offset the results
+- `SELECT` - select `*` (all), specific columns, or aggregate functions.
+- `AS` - assign an alias to a column name
+- `FROM` - table name to pull data from
+- `JOIN/LEFT JOIN/RIGHT JOIN/FULL JOIN ... ON` - combine data from tables by a common key
+- `WHERE ... AND, OR, NOT` - filter data by conditions
+- `GROUP BY` - group a result set by column.
+- `HAVING` - filter groups by conditions.
+- `ORDER BY` - sort a result set by column in ascending or descending order
+- `LIMIT` - limit number of results
+- `OFFSET` - offset the results
 
 
 

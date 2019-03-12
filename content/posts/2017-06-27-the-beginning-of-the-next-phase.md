@@ -9,6 +9,7 @@ categories:
   - Web
 tags:
   - life
+  - career
 ---
 
 Today is a pretty big day for me - it's the last day of my first full-time web development job. I began my career change journey about three years ago, and I can't believe how much I've learned, and how many awesome people I've connected with through this industry already. I had no idea the blog I created for the purpose of documenting and keeping track of all the things I've learned would gain so much traction. So thank you all for reading, messaging, connecting, helping, donating, and encouraging. I appreciate all your words and actions so much! And if I don't know you yet, please [feel free to get in touch!](https://www.taniarascia.com/contact)

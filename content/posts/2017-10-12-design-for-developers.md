@@ -55,15 +55,15 @@ Note that the start is not actually bad design, but unstyled. It's easier to mak
 
 ## Design Guidelines
 
-      * Structure layout first
-      * Use more padding
-      * Use more line height on body than headings
-      * Do not use pure black
-      * Use fewer fonts, or be consistent with fonts
-      * Use fewer colors, or complementary colors
-      * Be consistent with borders and corners
-      * Fine details, transitions and animations last
-      * Don’t go overboard with drop shadows, gradients, or animations
+- Structure layout first
+- Use more padding
+- Use more line height on body than headings
+- Do not use pure black
+- Use fewer fonts, or be consistent with fonts
+- Use fewer colors, or complementary colors
+- Be consistent with borders and corners
+- Fine details, transitions and animations last
+- Don’t go overboard with drop shadows, gradients, or animations
 
 So, let's begin!
 

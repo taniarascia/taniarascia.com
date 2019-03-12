@@ -38,9 +38,12 @@
   }
 }
 
-.date {
+.date,
+.disqus-comment-count {
   font-size: 0.9rem;
   color: #888;
+  display: inline-block;
+  margin: 0 5px;
 }
 
 .posts {
@@ -55,6 +58,11 @@
       border-radius: $border-radius;
       border: 2px solid transparent;
       border-bottom-color: #f0f0f0;
+      .date {
+        margin: 0;
+        color: #bbb;
+        font-weight: 400;
+      }
       &:hover {
         border: 2px solid $primary-color;
         background: lighten($primary-color, 34%);
@@ -79,6 +87,7 @@
     font-size: 1.2rem;
     border-bottom: none;
     margin: 0;
+    margin-bottom: 1rem;
   }
   .gatsby-image-wrapper {
     margin-top: 0.5rem;
@@ -127,7 +136,12 @@
     border: 2px solid $border-color;
     border-radius: $border-radius;
     font-size: 1.1rem;
-    margin-right: 0.5rem;
+    margin: 0 0.5rem 0.5rem 0;
+    .count {
+      color: $secondary-color;
+      font-weight: 600;
+      margin-left: 1rem;
+    }
     &:hover,
     &:active,
     &:focus {

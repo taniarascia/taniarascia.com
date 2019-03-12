@@ -24,13 +24,12 @@ class CategoryTemplate extends Component {
 
 export default CategoryTemplate
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CategoryPage($categories: String) {
+  query CategoryPage($category: String) {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: $categories } } }
+      filter: { frontmatter: { categories: { in: [$category] } } }
     ) {
       totalCount
       edges {
@@ -44,6 +43,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            categories
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {
@@ -52,6 +52,7 @@ export const pageQuery = graphql`
               }
             }
             date
+            template
           }
         }
       }

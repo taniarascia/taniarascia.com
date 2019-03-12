@@ -164,12 +164,12 @@ The first several entries are self-explanatory. `name` is the name of your proje
 
 The packages we're installing:
 
-      * [grunt-contrib-**sass**](https://github.com/gruntjs/grunt-contrib-sass) - compile Sass to CSS
-      * [grunt-**postcss**](https://github.com/nDmitry/grunt-postcss) - apply several post-processors to your CSS using PostCSS
+- [grunt-contrib-**sass**](https://github.com/gruntjs/grunt-contrib-sass) - compile Sass to CSS
+- [grunt-**postcss**](https://github.com/nDmitry/grunt-postcss) - apply several post-processors to your CSS using PostCSS
     * [**autoprefixer**](https://github.com/postcss/autoprefixer) - add-on to PostCSS
-      * grunt-contrib-**cssmin** - minify CSS
-      * [grunt-contrib-**uglify**](https://github.com/gruntjs/grunt-contrib-uglify) - minify files with UglifyJS
-      * [grunt-contrib-**watch**](https://github.com/gruntjs/grunt-contrib-watch) - run predefined tasks whenever watched file patterns are added, changed or deleted
+- grunt-contrib-**cssmin** - minify CSS
+- [grunt-contrib-**uglify**](https://github.com/gruntjs/grunt-contrib-uglify) - minify files with UglifyJS
+- [grunt-contrib-**watch**](https://github.com/gruntjs/grunt-contrib-watch) - run predefined tasks whenever watched file patterns are added, changed or deleted
 
 So, what if I created my package.json and installed npm but forgot to include postcss? Or decide later I want to add a new plugin to my project? No problem. This will be the code.
 

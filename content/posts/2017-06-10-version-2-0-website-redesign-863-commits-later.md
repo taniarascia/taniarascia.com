@@ -172,19 +172,19 @@ The redesign isn't drastic in looks, but I rewrote a lot of the code so that the
 
 ### Front page
 
-![](../images/0v2-front-1024x607.png)
+![](../images/0v2-front7.png)
 
 ### Post page
 
-![](../images/0v2-post-1024x607.png)
+![](../images/0v2-post7.png)
 
 ### Embedded code
 
-![](../images/0v2-code-1024x607.png)
+![](../images/0v2-code7.png)
 
 ### Tutorials Page
 
-![](../images/Screen-Shot-2017-06-10-at-3.10.51-PM-1024x607.png)
+![](../images/Screen-Shot-2017-06-10-at-3.10.51-PM7.png)
 
 ## Conclusion
 

@@ -263,20 +263,20 @@ There is no specific right or wrong way to do this. Look it up and you'll find p
 
     * **base**
 
-      * _variables.scss
-      * _mixins.scss
-      * _reset.scss
+- _variables.scss
+- _mixins.scss
+- _reset.scss
 
 
 
 
     * **components**
 
-      * _typography.scss
-      * _grid.scss
-      * _buttons.scss
-      * _navigation.scss
-      * _sections.scss
+- _typography.scss
+- _grid.scss
+- _buttons.scss
+- _navigation.scss
+- _sections.scss
 
 Here is a more visual version of that project layout.
 

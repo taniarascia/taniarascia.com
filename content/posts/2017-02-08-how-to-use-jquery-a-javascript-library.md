@@ -47,24 +47,24 @@ This short example demonstrates how jQuery can achieve the same end result as pl
 
 This guide assumes no prior knowledge of jQuery, and will cover the following topics:
 
-      * How to install jQuery in a web project.
-      * The definitions of important web development concepts such as API, DOM, and CDN.
-      * Common jQuery selectors, events, and effects.
-      * Examples to test the concepts learned throughout the article.
+- How to install jQuery in a web project.
+- The definitions of important web development concepts such as API, DOM, and CDN.
+- Common jQuery selectors, events, and effects.
+- Examples to test the concepts learned throughout the article.
 
 #### Prerequisites
 
 Before you begin this guide you'll need the following:
 
-      * A basic knowledge of HTML and CSS. You should already know how to set up a simple website, and have an understanding of CSS selectors such as ids, classes, and pseudo elements.
-      * An understanding of the fundamentals of programming. While it is possible to begin writing jQuery without an advanced knowledge of JavaScript, familiarity with the concepts of [variables and datatypes](https://www.taniarascia.com/javascript-day-one/) as well as [math and logic](https://www.taniarascia.com/javascript-day-two/) will help significantly.
+- A basic knowledge of HTML and CSS. You should already know how to set up a simple website, and have an understanding of CSS selectors such as ids, classes, and pseudo elements.
+- An understanding of the fundamentals of programming. While it is possible to begin writing jQuery without an advanced knowledge of JavaScript, familiarity with the concepts of [variables and datatypes](https://www.taniarascia.com/javascript-day-one/) as well as [math and logic](https://www.taniarascia.com/javascript-day-two/) will help significantly.
 
 ## Setting Up jQuery
 
 jQuery is a JavaScript file that you will link to in your HTML. There are two ways to include jQuery in a project:
 
-      * Download a local copy.
-      * Link to a file via Content Delivery Network (CDN).
+- Download a local copy.
+- Link to a file via Content Delivery Network (CDN).
 
 >
 

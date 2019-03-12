@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { formatDate } from '../utils/global'
 
 class PostListing extends Component {
   getPostList() {
@@ -37,8 +38,8 @@ class PostListing extends Component {
               <div className="each">
                 {thumbnail ? <Img fixed={thumbnail} /> : <div />}
                 <div>
+                  {!simple ? <time className="date">{formatDate(post.date)}</time> : null}
                   <h2>{post.title}</h2>
-
                   {!simple ? <div className="excerpt">{post.excerpt}</div> : null}
                 </div>
               </div>

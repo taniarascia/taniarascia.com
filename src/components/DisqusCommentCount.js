@@ -3,7 +3,7 @@ import Disqus from 'disqus-react'
 import urljoin from 'url-join'
 import config from '../../data/SiteConfig'
 
-class DisqusComments extends Component {
+class DisqusCommentCount extends Component {
   state = {
     toasts: [],
   }
@@ -35,8 +35,12 @@ class DisqusComments extends Component {
       title: post.title,
     }
 
-    return <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+    return (
+      <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
+        Comments
+      </Disqus.CommentCount>
+    )
   }
 }
 
-export default DisqusComments
+export default DisqusCommentCount

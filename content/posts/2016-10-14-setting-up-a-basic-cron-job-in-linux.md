@@ -18,13 +18,13 @@ Recently, I had to set up a scheduled task on a server, which is a little intimi
 
 #### Prerequisites
 
-      * Basic command line familiarity.
-      * Ability to SSH into a Linux server.
+- Basic command line familiarity.
+- Ability to SSH into a Linux server.
 
 #### Goals
 
-      * Learn how to set a basic scheduled task (cron job) in a Linux server environment.
-      * Set a cronjob to send out an email every day at a specified time.
+- Learn how to set a basic scheduled task (cron job) in a Linux server environment.
+- Set a cronjob to send out an email every day at a specified time.
 
 ## Sending an Email from PHP
 
@@ -87,18 +87,18 @@ There are four main parts to a cron command.
 	</tbody>
 </table>
 
-      * **Timing** - set the minutes, hours, days, months, and weekday settings (more below).
-      * **Execute** - the cron job needs to call upon PHP to run, which is located at `/usr/bin/php`.
-      * **Path to script** - the full path of the file you plan to run.
-      * **Output** - (optional) you can write the output to a file or discard it - `> /dev/null 2>&1` will discard.
+- **Timing** - set the minutes, hours, days, months, and weekday settings (more below).
+- **Execute** - the cron job needs to call upon PHP to run, which is located at `/usr/bin/php`.
+- **Path to script** - the full path of the file you plan to run.
+-    * **Output** - (optional) you can write the output to a file or discard it - `> /dev/null 2>&1` will discard.
 
 In the above example, the cron job is set to send every minute - or more specifically, every minute of every hour of every day of every month, every day of the week. An asterisk is a wildcard that stands for "all".
 
-      * **Minutes** - set the minutes, from 0-59
-      * **Hours** - set the hour, from 0-24
-      * **Days** - set the day, from 1-31
-      * **Months** - set the month, from 1-12 (January - December)
-      * **Week** - set the day of the week, from 0-6 (Sunday - Saturday)
+- **Minutes** - set the minutes, from 0-59
+- **Hours** - set the hour, from 0-24
+- **Days** - set the day, from 1-31
+- **Months** - set the month, from 1-12 (January - December)
+- **Week** - set the day of the week, from 0-6 (Sunday - Saturday)
 
 Here are a few basic examples to get an idea of how it works.
 

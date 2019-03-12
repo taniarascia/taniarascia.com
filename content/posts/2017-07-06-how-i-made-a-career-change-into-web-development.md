@@ -9,17 +9,14 @@ categories:
   - Web
 tags:
   - life
-  - personal
+  - career
 ---
 
 I'm Tania, and I made a career change into web development in 2015. Before that, I worked as a chef. I often get asked how I did it, and if I have any advice for new and aspiring developers. I'll start by sharing my own story:
 
 - A little about myself
-
 - How I fell into the wrong career for me
-
 - How I decided on the right one
-
 - Steps I took to land my first job in the field
 
 Throughout this story you will find the answers to some of the common questions I've received, such as "how did you land your first job?", "what was the technical interview like?", "what technologies did you know starting out?", "how long did it take?" and "what was the hardest part?".
@@ -81,19 +78,12 @@ For my coding test, I had to make a responsive navigation from scratch. This was
 Here's the [tl;dr](https://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn%27t_read) of my story:
 
 - I had a bit of an edge over somebody starting from scratch with web development, because I made websites for fun as a child.
-
 - I went to college for a career that wasn't right for me, but I learned a lot about myself and life, as well as having a great appreciation for what I do now.
-
 - The hardest part of all was doing the necessary soul searching to try to figure out what would be the right career for me, both in natural aptitude and enjoyability.
-
 - While still working my original career, I found odd jobs through Craigslist in the web development industry to begin building up my resume and learning, while still making money.
-
 - I did a three month unpaid internship while working a night job when I became really serious about my career change.
-
 - The biggest thing that helped me was making a blog to document everything I learned, and I would recommend the same to anyone who wants to learn.
-
 - I applied for jobs online while continuing to study, learn, and create, and eventually I was able to land a full-time junior web developer role.
-
 - The seed of an idea for a career change began in August, 2014, and I began my first job in June, 2015, making my career transition 10 months long.
 
 I would not necessarily recommend the way I learned to anyone else, and I'm sure a lot of self-taught developers would say the same.

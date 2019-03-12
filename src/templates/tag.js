@@ -24,7 +24,6 @@ class TagTemplate extends Component {
 
 export default TagTemplate
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query TagPage($tag: String) {
     allMarkdownRemark(
@@ -44,6 +43,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            categories
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {

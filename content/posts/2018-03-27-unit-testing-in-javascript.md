@@ -130,12 +130,12 @@ const assert = require('assert')
 
 **test.js** is the file we will use for testing throughout the creation of our app. Let's create two additional files: **operations.js** for our arithmetic and validation functions, and **calc.js** for our app itself. We want to keep our files separate so they don't get too long and complex. Below is our list of files.
 
-      * calc.js
-      * node_modules
-      * operations.js
-      * package-lock.json
-      * package.json
-      * test.js
+- calc.js
+- node_modules
+- operations.js
+- package-lock.json
+- package.json
+- test.js
 
 From here, we will begin adding our first actual test for the application.
 

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
 import DisqusComments from '../components/DisqusComments'
+import DisqusCommentCount from '../components/DisqusCommentCount'
 import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
@@ -39,7 +40,10 @@ class PostTemplate extends Component {
           <header className="single-header">
             {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
             <div className="post-meta">
-              <time className="date">{formatDate(post.date)}</time>
+              <time className="date">{formatDate(post.date)}</time> /
+              <a href="#disqus-container">
+                <DisqusCommentCount postNode={postNode} />
+              </a>
               <h1>{post.title}</h1>
               <PostTags tags={post.tags} />
             </div>
@@ -47,7 +51,7 @@ class PostTemplate extends Component {
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </article>
         <UserInfo config={config} />
-        <div className="container">
+        <div id="disqus-container" className="container">
           <DisqusComments postNode={postNode} />
         </div>
       </Layout>
