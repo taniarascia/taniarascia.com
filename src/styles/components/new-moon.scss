@@ -21,7 +21,7 @@ $error: #eb4d5c;
 $border-radius: 4px;
 
 code {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 pre.language-terminal code.language-terminal {
@@ -33,7 +33,7 @@ pre.language-terminal code.language-terminal {
   border-radius: 6px;
   padding-top: 45px;
   margin: 2rem 0;
-  font-size: 15px;
+  font-size: 14px;
   background: white;
   color: #333;
   &::before {
@@ -58,7 +58,7 @@ code[class*='language-'],
 pre[class*='language-'],
 pre code {
   font-family: $code-font-family;
-  font-size: 15px;
+  font-size: 14px;
   color: $code-font-color;
   direction: ltr;
   text-align: left;

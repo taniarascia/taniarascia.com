@@ -2,7 +2,7 @@
 date: 2015-10-17
 title: 'Setting Up a Local Server Environment'
 template: post
-thumbnail: '../thumbnail/mamp.png'
+thumbnail: '../thumbnails/mamp.png'
 slug: local-environment
 categories:
   - DevOps

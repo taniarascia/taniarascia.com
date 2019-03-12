@@ -94,7 +94,7 @@ I have some experience with both, and NearlyFreeSpeech has been a great middle g
 
 > The software bundle used for web development.
 
-![lamp](../images/lamp-300x129.jpg)
+![lamp](../images/lamp.jpg)
 
 ### **I use:** [Linux Apache MySQL PHP (LAMP)](<https://en.wikipedia.org/wiki/LAMP_(software_bundle)>)
 
@@ -113,7 +113,7 @@ For local development, I use [MAMP](https://www.mamp.info/en/) instead of instal
 
 > The program used to write code and edit text files.
 
-![brackets](../images/brackets-150x150.png)
+![brackets](../images/brackets.png)
 
 ### **I use:** [Brackets](http://brackets.io/)
 
@@ -168,7 +168,7 @@ GitHub is easily the most well-known place to host public and private Git reposi
 
 > The software used to create and manage a website through an admin dashboard.
 
-![wp](../images/wp-2-150x150.png)
+![wp](../images/wp-2.png)
 
 ### **I use:** [WordPress](https://wordpress.org/)
 
@@ -189,7 +189,7 @@ Currently, I use the WordPress CMS both for professional projects and my persona
 
 > Command line automation for common repetitive tasks.
 
-![gulp](../images/gulp-1-150x150.png)
+![gulp](../images/gulp-1.png)
 
 ### **I use:** [Gulp](http://gulpjs.com/)
 
@@ -208,7 +208,7 @@ Task runners like Gulp are useful for watching changes to files and performing t
 
 > Extend the features of CSS and compile it back into CSS.
 
-![](../images/sass-150x150.png)
+![](../images/sass.png)
 
 ### **I use:** [Sass](http://sass-lang.com/)
 
@@ -274,7 +274,7 @@ RewriteEngine On
 
 > Deliver cached website content to geographically dispersed servers.
 
-![](../images/cf-300x90.png)
+![](../images/cf.png)
 
 ### **I use:** [Cloudflare](https://www.cloudflare.com/)
 

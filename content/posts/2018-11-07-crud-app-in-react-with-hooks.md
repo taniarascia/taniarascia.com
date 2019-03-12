@@ -127,7 +127,7 @@ export default App
 
 Now we have the initial setup and skeleton for the app.
 
-![](../images/Screen-Shot-2018-11-02-at-12.29.49-PM-1024x515.png)
+![](../images/Screen-Shot-2018-11-02-at-12.29.49-PM.png)
 
 ## State vs. Hook State
 
@@ -235,7 +235,7 @@ const App = () => {
 export default App
 ```
 
-![](../images/Screen-Shot-2018-11-02-at-12.53.54-PM-1024x515.png)
+![](../images/Screen-Shot-2018-11-02-at-12.53.54-PM.png)
 
 Let's bring in some random dummy data and the `useState` import from React.
 
@@ -311,7 +311,7 @@ const UserTable = props => (
 export default UserTable
 ```
 
-![](../images/Screen-Shot-2018-11-02-at-1.07.09-PM-1024x581.png)
+![](../images/Screen-Shot-2018-11-02-at-1.07.09-PM.png)
 
 We'll get to the edit and delete buttons in a moment. Now that the basic view is set up, let's get the adding functionality working.
 

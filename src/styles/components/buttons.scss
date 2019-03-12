@@ -25,7 +25,7 @@
 // Buttons on hover
 %buttons-hover {
   border: $button-border-width $button-border-style darken($button-border-color, 10%);
-  color: darken($button-color, 15%);
+  color: darken($button-border-color, 30%);
   background: $button-background-hover;
   text-decoration: none;
 }
@@ -33,7 +33,7 @@
 // Buttons on focus
 %buttons-focus {
   border: $button-border-width $button-border-style darken($button-border-color, 10%);
-  background: darken($button-color, 15%);
+  background: darken($button-color, 10%);
   color: white;
   text-decoration: none;
 }
@@ -75,8 +75,8 @@ a.donate-button {
   border-radius: $border-radius;
   border: 2px solid $yellow;
   padding: 0.75rem 1rem;
-  background: #fff6d5;
-  color: darken($yellow, 30%);
+  background: lighten($yellow, 28%);
+  color: #333;
   &:hover,
   &:focus,
   &:active {

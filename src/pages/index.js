@@ -4,10 +4,12 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import ProjectListing from '../components/ProjectListing'
+import SimpleListing from '../components/SimpleListing'
 import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
+import publications from '../../data/publications'
 
 class Index extends Component {
   render() {
@@ -63,8 +65,8 @@ class Index extends Component {
           </section>
 
           <section className="section">
-            <h2>Contact me</h2>
-            <a href="mailto:me@taniarascia.com">me@taniarascia.com</a>
+            <h2>Publications</h2>
+            <SimpleListing simple data={publications} />
           </section>
 
           <section className="section">

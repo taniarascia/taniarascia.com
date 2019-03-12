@@ -39,7 +39,7 @@ $code: Menlo;
 /* Typography */
 
 // Body font
-$font-size: 16px;
+$font-size: 15px;
 $body-font-size: 1.1rem;
 $font-style: normal;
 $font-variant: normal;
@@ -116,7 +116,7 @@ $buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button
 $input-background: #ffffff;
 $placeholder: darken($accent-color, 20%);
 $form-border: 2px solid $border-color;
-$form-border-hover: 2px solid darken($border-color, 5%);
+$form-border-hover: 2px solid darken($border-color, 10%);
 $form-border-focus: 2px solid $link-color;
 
 /* Tables */

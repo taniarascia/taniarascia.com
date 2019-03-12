@@ -55,8 +55,8 @@
         &.donate-button {
           border: 2px solid $yellow;
           padding: 0.5rem 1rem;
-          background: #fff6d5;
-          color: darken($yellow, 30%);
+          background: lighten($yellow, 28%);
+          color: #333;
           font-weight: 600;
           &:hover {
             background: darken(#fff6d5, 10%);

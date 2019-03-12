@@ -18,23 +18,6 @@ const config = {
   userAvatar: 'https://api.adorable.io/avatars/150/test.png',
   userDescription:
     'I build open source projects and write the missing instruction manuals of the web.',
-  userLinks: [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/taniarascia',
-      iconClassName: 'fa fa-github',
-    },
-    {
-      label: 'Twitter',
-      url: 'https://twitter.com/taniarascia',
-      iconClassName: 'fa fa-twitter',
-    },
-    {
-      label: 'Email',
-      url: 'mailto:me@taniarascia.com',
-      iconClassName: 'fa fa-envelope',
-    },
-  ],
   menuLinks: [
     {
       name: 'About me',

@@ -179,7 +179,7 @@ index.html
 
 Here's what it looks like:
 
-![](../images/Screen-Shot-2017-12-18-at-4.38.00-PM-1024x652.png)
+![](../images/Screen-Shot-2017-12-18-at-4.38.00-PM.png)
 
 And that's all for the front end. From here, we'll focus on adding functionality with JavaScript.
 
@@ -229,7 +229,7 @@ form.addEventListener('submit', function(e) {
 
 Now with paltry few lines of code, we have a little app that adds to-do items to a list.
 
-![](../images/Screen-Shot-2017-12-18-at-5.46.10-PM-1024x652.png)
+![](../images/Screen-Shot-2017-12-18-at-5.46.10-PM.png)
 
 Since we're not saving the items anywhere, when you close or refresh the browser, the items will be gone. The final step is to integrate it into local storage so that the data persists.
 

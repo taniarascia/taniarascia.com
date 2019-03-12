@@ -6,7 +6,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 // Body base
@@ -58,7 +58,7 @@ h5 {
 h1:not(:first-child),
 h2:not(:first-child),
 h3:not(:first-child) {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 // Heading individual styles
@@ -77,19 +77,16 @@ h2 {
 h3 {
   font-size: $h3-mobile;
   font-weight: 500;
-  color: lighten($heading-font-color, 25%);
 }
 
 h4 {
   font-size: $h4-mobile;
   font-weight: 600;
-  color: lighten($heading-font-color, 35%);
 }
 
 h5 {
   font-size: $h5-mobile;
   font-weight: 500;
-  color: lighten($heading-font-color, 40%);
 }
 
 @include small-breakpoint {
@@ -115,8 +112,23 @@ h5 {
   }
 }
 
-li {
-  margin-bottom: 0.3rem;
+ul {
+  padding: 0;
+  li {
+    &:before {
+      content: '\2022 ';
+      position: absolute;
+      left: 0;
+      color: $secondary-color;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+    position: relative;
+    list-style-type: none;
+    margin-bottom: 0.3rem;
+    padding-left: 1.5rem;
+    margin-left: 1.5rem;
+  }
 }
 
 // Link styling

@@ -2,7 +2,7 @@
 date: 2017-05-25
 title: "The Three Types of Can't"
 template: post
-thumbnail: '../thumbnail/floppy.png'
+thumbnail: '../thumbnails/writing.png'
 slug: the-three-types-of-cant
 categories:
   - Personal

@@ -179,7 +179,7 @@ Now the errors will be gone.
 
 Looks like we didn't use VirtualBox for anything at all. But go ahead and open up the VirtualBox application. This is what you will see running:
 
-![](../images/Screen-Shot-2017-07-02-at-4.35.03-PM-1024x639.png)
+![](../images/Screen-Shot-2017-07-02-at-4.35.03-PM.png)
 
 
 As you can see, VirtualBox is letting us know that Ubuntu is running properly. We don't really need to know much more about it at this point.

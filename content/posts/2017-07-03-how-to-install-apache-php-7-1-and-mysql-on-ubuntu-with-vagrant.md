@@ -160,7 +160,7 @@ Add a new domain to the bottom with the IP address we were given. I'm calling it
 
 Save and exit `nano`. Now in Google Chrome or whatever browser you're using, go to **trusty.dev**. Now you should see the default Linux success page. **It works!**
 
-![](../images/Screen-Shot-2017-07-02-at-5.25.07-PM-1024x707.png)
+![](../images/Screen-Shot-2017-07-02-at-5.25.07-PM.png)
 
 You can also navigate to **192.168.33.10** in the browser now, and it will work as well.
 
@@ -217,7 +217,7 @@ Right now, the Ubuntu default page exists on **/var/www/html**, the public facin
 
 Here is how our local directory structure should be set up:
 
-![](../images/Screen-Shot-2017-07-03-at-1.22.54-AM-1024x122.png)
+![](../images/Screen-Shot-2017-07-03-at-1.22.54-AM.png)
 
 
 Let's go back to our **Vagrantfile**. We're going to set up a `synced folder`, first inputting our local path, then inputting our virtual machine's path.
@@ -236,7 +236,7 @@ config.vm.synced_folder "www/", "/var/www/html"
 
 Now `vagrant reload`, or `vagrant halt` and `vagrant up` to restart Ubuntu. Now when you go to your server you should see this.
 
-![](../images/Screen-Shot-2017-07-03-at-1.35.43-AM-1024x653.png)
+![](../images/Screen-Shot-2017-07-03-at-1.35.43-AM.png)
 
 Success! Your local folder has now synced with the Ubuntu server, and every change you make there will be reflected in the server.
 
@@ -256,7 +256,7 @@ You can also set up the mysql secure installation. Follow the instructions on th
 sudo mysql_secure_installation
 ```
 
-![](../images/Screen-Shot-2017-07-02-at-5.19.51-PM-1024x694.png)
+![](../images/Screen-Shot-2017-07-02-at-5.19.51-PM.png)
 
 As far as I can tell, that's a lie. When it came to this point, I just put "root" as the password.
 
@@ -370,12 +370,12 @@ Running `vagrant ssh` is the same as running the following:
 
 Inputting all the following credentials, we will be prompted for a password.
 
-![](../images/Screen-Shot-2017-07-03-at-2.00.02-AM-1024x801.png)
+![](../images/Screen-Shot-2017-07-03-at-2.00.02-AM.png)
 
 
 The password is "vagrant"
 
-![](../images/Screen-Shot-2017-07-03-at-2.11.34-AM-1024x801.png)
+![](../images/Screen-Shot-2017-07-03-at-2.11.34-AM.png)
 
 
 **Update 3/5/2018**: This key may not work in newer versions of Ubuntu. Instead, you will run `vagrant ssh-config` from your local computer, and follow the file path for IdentityFile. Mine was **/Users/my_path/ubuntu/.vagrant/machines/default/virtualbox/private_key**. Use this instead of **~/.vagrant.d/insecure_private_key**.
@@ -401,7 +401,7 @@ In **test.php**, we'll use the `phpinfo()` function to test PHP.
 <?php phpinfo();
 ```
 
-![](../images/Screen-Shot-2017-07-03-at-1.14.23-AM-1024x558.png)
+![](../images/Screen-Shot-2017-07-03-at-1.14.23-AM.png)
 
 In **connect.php**, I used a quick [MySQL test script](https://gist.github.com/M165437/421cd2d23e53a111541a483971f7368b) to make sure everything is connecting.
 
@@ -434,7 +434,7 @@ In **connect.php**, I used a quick [MySQL test script](https://gist.github.com/M
 
 And I can see that MySQL is connecting properly.
 
-![](../images/Screen-Shot-2017-07-03-at-2.18.57-AM-1024x630.png)
+![](../images/Screen-Shot-2017-07-03-at-2.18.57-AM.png)
 
 ## Conclusion
 

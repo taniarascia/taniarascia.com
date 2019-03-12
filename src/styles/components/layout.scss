@@ -67,7 +67,7 @@
         border: 2px solid $primary-color;
         background: $button-background-hover;
         h2 {
-          color: black;
+          color: #111;
         }
         .excerpt {
           color: rgba(0, 0, 0, 0.6);
@@ -117,8 +117,11 @@
       width: 30px !important;
     }
     h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
       padding: 0;
       margin: 0;
+      color: #888;
       &:hover {
         color: #111;
       }
@@ -156,11 +159,35 @@
   }
 }
 
+.simple {
+  .each {
+    padding: .75rem 1rem;
+    margin: 0 -1rem;
+    border: 2px solid transparent;
+    border-radius: $border-radius;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 0;
+      margin: 0;
+      color: #888;
+      border-bottom: none;
+    }
+    &:hover {
+      border: 2px solid $primary-color;
+      background: $button-background-hover;
+      h2 {
+        color: #111;
+      }
+    }
+  }
+}
+
 .tag-container {
   span {
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    color: darken($border-color, 20%);
+    color: darken($border-color, 30%);
     border: 2px solid $border-color;
     border-radius: $border-radius;
     font-size: 1.1rem;
@@ -174,15 +201,15 @@
     &:active,
     &:focus {
       background: lighten($border-color, 15%);
-      color: darken($border-color, 30%);
+      color: darken($border-color, 40%);
     }
   }
 }
 
 blockquote {
   color: rgba(0, 0, 0, 0.7);
-  border: 2px solid $green;
-  background: lighten($green, 55%);
+  border: 2px solid $yellow;
+  background: lighten($yellow, 28%);
   border-radius: $border-radius;
   font-weight: 500;
   margin: 1.5rem 0;
@@ -198,12 +225,12 @@ blockquote {
   }
   a {
     color: #111;
-    border-bottom: 2px solid $green !important;
+    border-bottom: 2px solid $yellow !important;
     &:hover,
     &:active,
     &:focus {
       color: #111 !important;
-      background: $green !important;
+      background: $yellow !important;
     }
   }
   cite {
@@ -221,7 +248,7 @@ blockquote {
 
 .note {
   background: $light;
-  padding: 3rem 0;
+  padding: 4rem 0;
   margin: 3rem 0;
   border-top: 2px solid #f0f0f0;
   border-bottom: 2px solid #f0f0f0;
@@ -235,6 +262,7 @@ blockquote {
     border-bottom: 0;
   }
 }
+
 .emoji {
   line-height: 0;
   font-size: 1.5rem;
