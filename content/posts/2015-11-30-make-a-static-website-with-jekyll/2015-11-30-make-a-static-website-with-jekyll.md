@@ -3,7 +3,7 @@ date: 2015-11-30
 title: 'Make a Static Website with Jekyll'
 template: post
 thumbnail: './thumbnail.png'
-slug: make-a-static-website-with-jekyll/
+slug: make-a-static-website-with-jekyll
 categories:
   - Tutorials
   - UI/UX

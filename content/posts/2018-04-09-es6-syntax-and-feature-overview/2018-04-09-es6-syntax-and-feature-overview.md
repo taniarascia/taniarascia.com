@@ -3,7 +3,7 @@ date: 2018-04-09
 title: 'ES6 Syntax and Feature Overview'
 template: post
 thumbnail: './thumbnail.png'
-slug: es6-syntax-and-feature-overview/
+slug: es6-syntax-and-feature-overview
 categories:
   - JavaScript
   - Popular

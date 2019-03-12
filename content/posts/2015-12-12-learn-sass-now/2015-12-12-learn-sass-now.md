@@ -3,7 +3,7 @@ date: 2015-12-12
 title: "Learn Sass Now: A Guide to Installing, Using and Understanding Sass"
 template: post
 thumbnail: './thumbnail.png'
-slug: learn-sass-now/
+slug: learn-sass-now
 categories:
   - Tutorials
   - Web

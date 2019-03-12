@@ -3,7 +3,7 @@ date: 2017-05-16
 title: 'Removing an item from an associative array in PHP by value'
 template: post
 thumbnail: './thumbnail.png'
-slug: removing-an-item-from-an-associative-array-in-php-by-value/
+slug: removing-an-item-from-an-associative-array-in-php-by-value
 categories:
   - Programming
   - Tutorials

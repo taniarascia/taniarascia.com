@@ -3,7 +3,7 @@ date: 2019-01-22
 title: 'Using Content Editable Elements in JavaScript (React)'
 template: post
 thumbnail: './thumbnail.png'
-slug: content-editable-elements-in-javascript-react/
+slug: content-editable-elements-in-javascript-react
 categories:
   - JavaScript
   - Tutorials

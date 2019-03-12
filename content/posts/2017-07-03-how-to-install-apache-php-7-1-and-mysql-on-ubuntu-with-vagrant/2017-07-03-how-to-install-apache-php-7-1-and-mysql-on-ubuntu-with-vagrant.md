@@ -3,7 +3,7 @@ date: 2017-07-03
 title: "How to Install Apache, PHP 7.1, and MySQL on Ubuntu with Vagrant"
 template: post
 thumbnail: './thumbnail.png'
-slug: how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/
+slug: how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant
 categories:
   - DevOps
   - Tutorials

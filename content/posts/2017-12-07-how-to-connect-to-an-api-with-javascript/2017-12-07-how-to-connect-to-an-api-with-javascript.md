@@ -3,7 +3,7 @@ date: 2017-12-07
 title: 'How to Connect to an API with JavaScript'
 template: post
 thumbnail: './thumbnail.png'
-slug: how-to-connect-to-an-api-with-javascript/
+slug: how-to-connect-to-an-api-with-javascript
 categories:
   - JavaScript
   - Popular

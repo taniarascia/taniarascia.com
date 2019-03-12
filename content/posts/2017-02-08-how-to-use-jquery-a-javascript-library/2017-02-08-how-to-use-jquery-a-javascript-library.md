@@ -3,7 +3,7 @@ date: 2017-02-08
 title: 'How to Use jQuery, a JavaScript Library'
 template: post
 thumbnail: './thumbnail.png'
-slug: how-to-use-jquery-a-javascript-library/
+slug: how-to-use-jquery-a-javascript-library
 categories:
   - JavaScript
   - Tutorials

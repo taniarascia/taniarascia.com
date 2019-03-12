@@ -3,7 +3,7 @@ date: 2015-10-07
 title: 'How to Create a Flexbox Grid'
 template: post
 thumbnail: './thumbnail.png'
-slug: easiest-flex-grid-ever/
+slug: easiest-flex-grid-ever
 categories:
   - Tutorials
   - UI/UX

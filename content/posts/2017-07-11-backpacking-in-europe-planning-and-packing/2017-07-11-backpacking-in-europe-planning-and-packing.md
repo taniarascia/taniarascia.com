@@ -3,7 +3,7 @@ date: 2017-07-11
 title: 'Backpacking in Europe: Planning and Packing'
 template: post
 thumbnail: './thumbnail.png'
-slug: backpacking-in-europe-planning-and-packing/
+slug: backpacking-in-europe-planning-and-packing
 categories:
   - Personal
 tags:

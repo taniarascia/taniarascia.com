@@ -3,7 +3,7 @@ date: 2017-11-13
 title: 'Basic Authentication for an Express Node App (htpasswd)'
 template: post
 thumbnail: './thumbnail.png'
-slug: basic-authentication-for-an-express-node-app-htpasswd/
+slug: basic-authentication-for-an-express-node-app-htpasswd
 categories:
   - Programming
   - Snippets

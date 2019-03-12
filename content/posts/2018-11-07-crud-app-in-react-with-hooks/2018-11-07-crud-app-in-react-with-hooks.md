@@ -3,7 +3,7 @@ date: 2018-11-07
 title: 'Build a CRUD App in React with Hooks'
 template: post
 thumbnail: './thumbnail.png'
-slug: crud-app-in-react-with-hooks/
+slug: crud-app-in-react-with-hooks
 categories:
   - JavaScript
   - Tutorials

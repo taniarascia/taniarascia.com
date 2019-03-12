@@ -3,7 +3,7 @@ date: 2015-11-10
 title: 'What is Bootstrap and How Do I Use It?'
 template: post
 thumbnail: './thumbnail.png'
-slug: what-is-bootstrap-and-how-do-i-use-it/
+slug: what-is-bootstrap-and-how-do-i-use-it
 categories:
   - Popular
   - Tutorials

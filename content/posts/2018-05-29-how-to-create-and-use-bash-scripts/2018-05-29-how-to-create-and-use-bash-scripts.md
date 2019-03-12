@@ -3,7 +3,7 @@ date: 2018-05-29
 title: 'How to Create and Use Bash Scripts'
 template: post
 thumbnail: './thumbnail.png'
-slug: how-to-create-and-use-bash-scripts/
+slug: how-to-create-and-use-bash-scripts
 categories:
   - DevOps
   - Tutorials
