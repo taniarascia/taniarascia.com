@@ -26,15 +26,15 @@ The very first design! Simple and clean. Should have just kept it like this. I'm
 
 ### Front page
 
-![](../../images/v1-front-1024x607.png)
+![](../images/v1-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v1-post-1024x607.png)
+![](../images/v1-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v1-code-1024x607.png)
+![](../images/v1-code-1024x607.png)
 
 ## November, 2015
 
@@ -42,15 +42,15 @@ I changed the heading font to bold Open Sans, and the body font to a slab serif.
 
 ### Front page
 
-![](../../images/v3-front-1024x607.png)
+![](../images/v3-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v3-post-1024x607.png)
+![](../images/v3-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v3-code-1024x607.png)
+![](../images/v3-code-1024x607.png)
 
 ## January, 2016
 
@@ -58,15 +58,15 @@ Added in another link to my nav - [New Moon](https://taniarascia.github.io/new-m
 
 ### Front page
 
-![](../../images/v4-front-1024x607.png)
+![](../images/v4-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v4-post-1024x607.png)
+![](../images/v4-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v4-code-1024x607.png)
+![](../images/v4-code-1024x607.png)
 
 ## May, 2016
 
@@ -74,15 +74,15 @@ I skipped forward a couple months here. There's a navigation now, and I'm using 
 
 ### Front page
 
-![](../../images/v5-front-1024x607.png)
+![](../images/v5-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v5-post-1024x607.png)
+![](../images/v5-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v5-code-1024x607.png)
+![](../images/v5-code-1024x607.png)
 
 ## June, 2016
 
@@ -90,15 +90,15 @@ I started using a serif font for headlines, and simplified the navbar a lot. (St
 
 ### Front page
 
-![](../../images/v6-front-1024x607.png)
+![](../images/v6-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v6-post-1024x607.png)
+![](../images/v6-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v6-code-1024x607.png)
+![](../images/v6-code-1024x607.png)
 
 ## August, 2016
 
@@ -106,15 +106,15 @@ Attempted to make the front page a bit more clear on what it's all about.
 
 ### Front page
 
-![](../../images/v7-front-1024x607.png)
+![](../images/v7-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v7-post-1024x607.png)
+![](../images/v7-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v7-code-1024x607.png)
+![](../images/v7-code-1024x607.png)
 
 ## February, 2017
 
@@ -122,31 +122,31 @@ At some point, I got annoyed by how far away I was getting from minimalism, and 
 
 ### Front page
 
-![](../../images/v8-front-1024x607.png)
+![](../images/v8-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v8-post-1024x607.png)
+![](../images/v8-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v8-code-1024x607.png)
+![](../images/v8-code-1024x607.png)
 
 ## April, 2017
 
-Oh god, remember [that gif](../../images/train.gif)? I also added in a slide out navigation panel, and a search bar to the top right.
+Oh god, remember [that gif](../images/train.gif)? I also added in a slide out navigation panel, and a search bar to the top right.
 
 ### Front page
 
-![](../../images/v9-front-1024x607.png)
+![](../images/v9-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v9-post-1024x607.png)
+![](../images/v9-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v9-code-1024x607.png)
+![](../images/v9-code-1024x607.png)
 
 ## May, 2017
 
@@ -154,15 +154,15 @@ This is where I was right before the redesign. Pretty clean and simple. Everythi
 
 ### Front page
 
-![](../../images/v10-front-1024x607.png)
+![](../images/v10-front-1024x607.png)
 
 ### Post page
 
-![](../../images/v10-post-1024x607.png)
+![](../images/v10-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/v10-code-1024x607.png)
+![](../images/v10-code-1024x607.png)
 
 ## Version 2.0 - June, 2017
 
@@ -172,19 +172,19 @@ The redesign isn't drastic in looks, but I rewrote a lot of the code so that the
 
 ### Front page
 
-![](../../images/0v2-front-1024x607.png)
+![](../images/0v2-front-1024x607.png)
 
 ### Post page
 
-![](../../images/0v2-post-1024x607.png)
+![](../images/0v2-post-1024x607.png)
 
 ### Embedded code
 
-![](../../images/0v2-code-1024x607.png)
+![](../images/0v2-code-1024x607.png)
 
 ### Tutorials Page
 
-![](../../images/Screen-Shot-2017-06-10-at-3.10.51-PM-1024x607.png)
+![](../images/Screen-Shot-2017-06-10-at-3.10.51-PM-1024x607.png)
 
 ## Conclusion
 

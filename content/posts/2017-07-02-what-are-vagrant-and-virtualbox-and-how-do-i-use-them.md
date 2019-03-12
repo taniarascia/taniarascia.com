@@ -52,7 +52,7 @@ Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads),
 
 I clicked OS X and the download started.
 
-![](../../images/Screen-Shot-2017-07-02-at-6.03.49-PM.png)
+![](../images/Screen-Shot-2017-07-02-at-6.03.49-PM.png)
 
 ### Install Vagrant
 
@@ -60,7 +60,7 @@ Go to the [Vagrant download page](https://www.vagrantup.com/downloads.html), cho
 
 Again, I chose Mac OS X.
 
-![](../../images/Screen-Shot-2017-07-02-at-6.05.02-PM.png)
+![](../images/Screen-Shot-2017-07-02-at-6.05.02-PM.png)
 
 ## Step 2 - Install Ubuntu Server with Vagrant
 
@@ -76,7 +76,7 @@ Your path will be slightly different for Windows, using `C:/`, but otherwise wil
 
 You can [Discover Vagrant Boxes](https://app.vagrantup.com/boxes/search) via the Vagrant Cloud. `ubuntu/trusty64` is the most popular box (machine), with nearly 30 million installs and updated within the last day. This is the one we'll be using.
 
-![](../../images/Screen-Shot-2017-07-02-at-6.13.39-PM.png)
+![](../images/Screen-Shot-2017-07-02-at-6.13.39-PM.png)
 
 In **Terminal** (Mac) or **Git Bash** (or whatever shell you're using on Windows), type the following to install Ubuntu Server 14.04.
 
@@ -179,7 +179,7 @@ Now the errors will be gone.
 
 Looks like we didn't use VirtualBox for anything at all. But go ahead and open up the VirtualBox application. This is what you will see running:
 
-![](../../images/Screen-Shot-2017-07-02-at-4.35.03-PM-1024x639.png)
+![](../images/Screen-Shot-2017-07-02-at-4.35.03-PM-1024x639.png)
 
 
 As you can see, VirtualBox is letting us know that Ubuntu is running properly. We don't really need to know much more about it at this point.

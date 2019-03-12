@@ -16,11 +16,11 @@ Most of the traffic to my site comes from organic Google searches. Searching for
 
 Sometimes, the algorithm will even choose my result as the [featured snippet](https://support.google.com/webmasters/answer/6229325?hl=en).
 
-![](../../images/Screen-Shot-2017-03-28-at-5.58.06-PM.png)
+![](../images/Screen-Shot-2017-03-28-at-5.58.06-PM.png)
 
 Here is a graph comparing my analytics data from **March 21, 2016 - March 21, 2017** and the same dates of previous year. March 21, 2015 is the first date I had analytics on my website, so the site's been around for just over two years!
 
-![](../../images/Screen-Shot-2017-03-28-at-6.13.55-PM.png)
+![](../images/Screen-Shot-2017-03-28-at-6.13.55-PM.png)
 
 As a result of this data, many people have asked me what I do for SEO and if I can write an article on the subject. I'm not an expert, but I will share what I do and what I know with you.
 
@@ -42,7 +42,7 @@ If a website's aim is to create as many pages as possible with click-bait titles
 
 Social media does not necessarily factor into search rankings, either. Here is how people found my site (acquisition data) from **February 1st to 28th of 2017**.
 
-![](../../images/Screen-Shot-2017-03-28-at-7.50.58-PM.png)
+![](../images/Screen-Shot-2017-03-28-at-7.50.58-PM.png)
 
 Of all sessions, 80% were organic, 11% direct hits, 4% from referrals, and only 3% from social means (reddit, Twitter, Facebook, etc). I don't post or proselytize often, which may have something to do with the low percent of social media, but it hasn't negatively affected my rankings.
 

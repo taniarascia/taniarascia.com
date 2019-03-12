@@ -40,11 +40,11 @@ The first step is to [ get an API key.](https://developers.google.com/maps/docum
 
 You'll have to agree to their terms and services.
 
-![](../../images/Screen-Shot-2015-11-14-at-11.48.22-AM.png)
+![](../images/Screen-Shot-2015-11-14-at-11.48.22-AM.png)
 
 They'll want you to give it a name and decide on any restrictions. If you place no restrictions on it, anyone can use it and use up your quota. The Maps are only free up to a certain point.
 
-![](../../images/Screen-Shot-2015-11-14-at-11.50.17-AM.png)
+![](../images/Screen-Shot-2015-11-14-at-11.50.17-AM.png)
 
 After that, it'll pop up with some super-secure looking string of characters, and now you have a key.
 
@@ -133,7 +133,7 @@ The `center` is deciding where the map should be centered (Sydney, New South Wal
 
 Now you should have a functioning map.
 
-![](../../images/Screen-Shot-2015-11-14-at-12.54.14-PM.png)
+![](../images/Screen-Shot-2015-11-14-at-12.54.14-PM.png)
 
 ## Customizing the Map
 
@@ -174,7 +174,7 @@ Here are my three locations.
 
 The other thing I want is a URL that leads to getting directions to this location. For that, I simply went to [Google Maps](http://maps.google.com), typed in the address I wanted, and clicked on **Get Directions**. I can now get a link to the map at this point, so I click **Share or Embed Map** and get the URL.
 
-![](../../images/Screen-Shot-2015-11-14-at-2.03.08-PM.png)
+![](../images/Screen-Shot-2015-11-14-at-2.03.08-PM.png)
 
 Now I have everything I need to build my custom map. First I'll call that initMap function.
 
@@ -316,7 +316,7 @@ function initMap() {
 
 Now all of our locations are on the map with their respective info box.
 
-![](../../images/Screen-Shot-2015-11-14-at-2.07.14-PM.png)
+![](../images/Screen-Shot-2015-11-14-at-2.07.14-PM.png)
 
 I've put this project up on GitHub - all you would have to do is insert your own API key.
 

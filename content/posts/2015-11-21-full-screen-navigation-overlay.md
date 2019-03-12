@@ -37,7 +37,7 @@ The HTML is easy. I have all of my content in a `main` wrapper, and my navigatio
 </aside>
 ```
 
-![](../../images/Screen-Shot-2015-11-20-at-11.24.05-PM.png)
+![](../images/Screen-Shot-2015-11-20-at-11.24.05-PM.png)
 
 For now, everything is visible, but we'll be using CSS and jQuery to hide and show the menu.
 

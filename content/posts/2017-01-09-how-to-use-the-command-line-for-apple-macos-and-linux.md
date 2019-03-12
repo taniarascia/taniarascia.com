@@ -61,15 +61,15 @@ I really want to reiterate this. Your _entire_ computer can be accessed through 
 
 On a Mac, if I open Finder, this is my home folder. It's called `taniarascia`.
 
-![](../../images/Screen-Shot-2017-01-07-at-2.46.52-PM-1-1024x665.png)
+![](../images/Screen-Shot-2017-01-07-at-2.46.52-PM-1-1024x665.png)
 
 I can access the same exact files through a web browser. If I open Google Chrome and I type in `/Users/taniarascia`, I'll be in the same place.
 
-![](../../images/Screen-Shot-2017-01-07-at-2.48.38-PM-1-1024x667.png)
+![](../images/Screen-Shot-2017-01-07-at-2.48.38-PM-1-1024x667.png)
 
 The same is true of the command line interface. I'm going to open **Terminal.app** by opening Spotlight search (command + spacebar) and type in **Terminal**.
 
-![](../../images/Screen-Shot-2017-01-07-at-3.00.00-PM-1024x700.png)
+![](../images/Screen-Shot-2017-01-07-at-3.00.00-PM-1024x700.png)
 
 > My terminal background is dark. Yours might be white or blue or different depending on what you're using. This is simply a personal preference, which we can learn to change later.
 
@@ -88,7 +88,7 @@ NolBook:~ taniarascia$ pwd
     /Users/taniarascia
 ```
 
-![](../../images/Screen-Shot-2017-01-07-at-3.07.35-PM-1024x700.png)
+![](../images/Screen-Shot-2017-01-07-at-3.07.35-PM-1024x700.png)
 
 It wrote `/Users/taniarascia` as my current working directory, where I "am". But how do I know what's there? How do I interact with any of those files and directories? I'm going to use the `ls` command, which stands for **List Directory Contents**
 
@@ -297,7 +297,7 @@ mkdir Shell
 
 Congratulations, you created a directory! If I type `ls`, I'll see my newly created directory in the home folder. I can also see this through Finder.
 
-![](../../images/Screen-Shot-2017-01-08-at-9.32.13-PM-162x300.png)
+![](../images/Screen-Shot-2017-01-08-at-9.32.13-PM-162x300.png)
 
 Now you can move into the **Shell** directory by inputting `cd shell`.
 
@@ -614,7 +614,7 @@ I've given `644` (read and write by owner) permissions to test.html, a common pe
 
 ### Run as administrator
 
-[[![](../../images/sandwich.png)
+[[![](../images/sandwich.png)
 ](https://xkcd.com/149/)
 
 The term `sudo` stands for Super User Do. You might encounter a situation in which the current user you're logged in as does not have sufficient permissions to perform a task. You can precede a command with `sudo` to run the command as administrator, as long as you have the admin password. When you type the password, it will _not_ show any asterisks to indicate that you've typed anything.
@@ -735,13 +735,13 @@ nano index.html
 
 Now my Terminal screen will look something like this.
 
-![](../../images/Screen-Shot-2017-01-09-at-12.20.29-AM-1024x678.png)
+![](../images/Screen-Shot-2017-01-09-at-12.20.29-AM-1024x678.png)
 
 At the top, I can see what file I'm editing (**index.html**) and at the bottom are the various commands I can do. `^` stands for control. You won't be able to use your mouse to move around or do anything except copy the contents of the file.
 
 So I'll just type something unique.
 
-![](../../images/Screen-Shot-2017-01-09-at-12.24.39-AM-1024x678.png)
+![](../images/Screen-Shot-2017-01-09-at-12.24.39-AM-1024x678.png)
 
 Now to save my file, I'll press control + O (the letter), and enter to confirm. I can exit **Nano** at this point by typing control + X, and I'll be back where I started.
 

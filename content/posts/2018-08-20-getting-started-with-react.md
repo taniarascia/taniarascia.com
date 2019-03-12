@@ -174,7 +174,7 @@ index.html
 
 Now if you view your `index.html` in the browser, you'll see the `h1` tag we created rendered to the DOM.
 
-![](../../images/Screen-Shot-2018-08-18-at-10.34.09-AM.png)
+![](../images/Screen-Shot-2018-08-18-at-10.34.09-AM.png)
 
 Cool! Now that you've done this, you can see that React isn't so insanely scary to get started with. It's just some JavaScript helper libraries that we can load into our HTML.
 
@@ -203,7 +203,7 @@ cd react-tutorial
 
 Once you run this command, a new window will popup at `localhost:3000` with your new React app.
 
-![](../../images/Screen-Shot-2018-08-18-at-11.37.59-AM.png)
+![](../images/Screen-Shot-2018-08-18-at-11.37.59-AM.png)
 
 If you look into the project structure, you'll see a `/public` and `/src` directory, along with the regular `node_modules`, `.gitignore`, `README.md`, and `package.json`.
 
@@ -283,7 +283,7 @@ There is an extension called React Developer Tools that will make your life much
 
 After you install it, when you open DevTools, you'll see a tab for React. Click on it, and you'll be able to inspect components as they're written. You can still go to the Elements tab to see the actual DOM output. It may not seem like that much of a deal now, but as the app gets more complicated, it will become increasingly necessary to use.
 
-![](../../images/Screen-Shot-2018-08-18-at-3.45.11-PM.png)
+![](../images/Screen-Shot-2018-08-18-at-3.45.11-PM.png)
 
 Now we have all the tools and setup we need to actually begin working with React.
 
@@ -426,7 +426,7 @@ return (
 
 If you check back on your live environment, you'll see the `Table` loaded in.
 
-![](../../images/Screen-Shot-2018-08-18-at-6.10.55-PM.png)
+![](../images/Screen-Shot-2018-08-18-at-6.10.55-PM.png)
 
 Now we've seen what a custom class component is. We could reuse this component over and over. However, since the data is hard-coded into it, it wouldn't be too useful at the moment.
 
@@ -597,7 +597,7 @@ class Table extends Component {
 
 If you open up React DevTools and inspect the `Table` component, you'll see the array of data in the property. The data that's stored here is known as the **virtual DOM**, which is a fast and efficient way of syncing data with the actual DOM.
 
-![](../../images/Screen-Shot-2018-08-19-at-5.43.39-PM.png)
+![](../images/Screen-Shot-2018-08-19-at-5.43.39-PM.png)
 
 This data is not in the actual DOM yet, though. In `Table`, we can access all props through `this.props`. We're only passing one props through, characterData, so we'll use `this.props.characterData` to retrieve that data.
 
@@ -768,7 +768,7 @@ Table.js
 
 Awesome. Now we have delete buttons, and we can modify our state by deleting a character.
 
-![](../../images/Screen-Shot-2018-08-19-at-6.37.09-PM.png)
+![](../images/Screen-Shot-2018-08-19-at-6.37.09-PM.png)
 
 I deleted Mac.
 
@@ -868,7 +868,7 @@ return (
 
 Now if we go to the front end of our app, we'll see a form that doesn't have a submit yet. Update some fields and you'll see the local state of `Form` being updated.
 
-![](../../images/Screen-Shot-2018-08-19-at-7.55.56-PM.png)
+![](../images/Screen-Shot-2018-08-19-at-7.55.56-PM.png)
 
 Cool. Last step is to allow us to actually submit that data and update the parent state. We'll create a function called `handleSubmit()` on `App` that will update the state by taking the existing `this.state.characters` and adding the new `character` parameter, using the [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
 
@@ -905,7 +905,7 @@ Finally, we'll add a submit button to submit the form. We're using an `onClick` 
 
 And that's it! The app is complete. We can create, add, and remove users from our table. Since the `Table` and `TableBody` were already pulling from the state, it will display properly.
 
-![](../../images/Screen-Shot-2018-08-19-at-9.33.59-PM.png)
+![](../images/Screen-Shot-2018-08-19-at-9.33.59-PM.png)
 
 If you got lost anywhere along the way, you can view [the complete source on GitHub](https://github.com/taniarascia/react-tutorial).
 
@@ -961,7 +961,7 @@ export default App
 
 Once you save and run this file in the local server, you'll see the Wikipedia API data displayed in the DOM.
 
-![](../../images/Screen-Shot-2018-08-19-at-10.12.41-PM.png)
+![](../images/Screen-Shot-2018-08-19-at-10.12.41-PM.png)
 
 There are other lifecycle methods, but going over them will be beyond the scope of this article. You can [read more about React components here](https://reactjs.org/docs/react-component.html).
 

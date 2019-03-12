@@ -52,7 +52,7 @@ Let's start with the menu itself. It's a regular list, wrapped in a semantic `na
 
 A list with no styling applied. Everything in the `nav-mobile` class will not appear until we begin working on the small device view. Setting the links to `#!` will ensure that no action takes place on click.
 
-![](../../images/Screen-Shot-2015-10-02-at-3.44.02-PM.png)
+![](../images/Screen-Shot-2015-10-02-at-3.44.02-PM.png)
 
 ## The SCSS
 
@@ -105,7 +105,7 @@ nav {
 }
 ```
 
-![](../../images/Screen-Shot-2015-10-02-at-5.16.24-PM.png)
+![](../images/Screen-Shot-2015-10-02-at-5.16.24-PM.png)
 
 Now we float the list items to the left and style the `a` tag. The `li` will be set to `position: relative`, which doesn't do anything yet, but will be explained a few steps down.
 
@@ -124,7 +124,7 @@ li {
 }
 ```
 
-![](../../images/Screen-Shot-2015-10-02-at-5.26.56-PM.png)
+![](../images/Screen-Shot-2015-10-02-at-5.26.56-PM.png)
 
 I've set the nested `a` tag to `display:block` with some padding, and gave it our previously determined colors. This is a dark navbar, but you can just as easily revert the colors for a light navbar.
 
@@ -148,7 +148,7 @@ The hover is simple - I'm just changing the background color of the entire `a` t
 
 The full path of this code is `nav ul li a:not(:only-child):after`. This means that the code will apply to any `a` tag in our `nav` list that is NOT an only child, aka any dropdown. The `:after` means it comes after the output of the tag. I've decided that to specify any nav item as a dropdown, it will be followed by a unicode arrow - ▾ (#9662).
 
-![](../../images/Screen-Shot-2015-10-05-at-9.46.01-AM.png)
+![](../images/Screen-Shot-2015-10-05-at-9.46.01-AM.png)
 
 ```scss
 } // Dropdown list
@@ -162,7 +162,7 @@ The full path of this code is `nav ul li a:not(:only-child):after`. This means t
 
 A small bit of styling is applied to the nested `ul`s. I've given the `li` a minimum width, so that the dropdown width won't vary based on content. I've changed the padding and line-height of the dropdown `a`, because the styling cascades down from the parent.
 
-![](../../images/Screen-Shot-2015-10-05-at-2.18.09-PM.png)
+![](../images/Screen-Shot-2015-10-05-at-2.18.09-PM.png)
 
 ### Positioning
 
@@ -178,11 +178,11 @@ We already set the `li` to `position: relative` earlier. Now we're going to add 
 }
 ```
 
-![](../../images/Screen-Shot-2015-10-05-at-2.30.49-PM.png)
+![](../images/Screen-Shot-2015-10-05-at-2.30.49-PM.png)
 
 Add `display: none;` so that we can toggle it later with JavaScript.
 
-![](../../images/Screen-Shot-2015-10-05-at-2.31.03-PM.png)
+![](../images/Screen-Shot-2015-10-05-at-2.31.03-PM.png)
 
 ## The jQuery
 
@@ -354,9 +354,9 @@ $('#nav-toggle').on('click', function() {
 
 Now you have a hamburger icon that animates on click action, but doesn't do anything yet.
 
-![](../../images/Screen-Shot-2015-10-05-at-4.42.18-PM.png)
+![](../images/Screen-Shot-2015-10-05-at-4.42.18-PM.png)
 
-![](../../images/Screen-Shot-2015-10-05-at-4.39.06-PM.png)
+![](../images/Screen-Shot-2015-10-05-at-4.39.06-PM.png)
 
 The final addition to our jQuery code will toggle the `nav ul` on click.
 
@@ -366,7 +366,7 @@ $('#nav-toggle').click(function() {
 })
 ```
 
-![](../../images/Screen-Shot-2015-10-06-at-11.54.07-AM.png)
+![](../images/Screen-Shot-2015-10-06-at-11.54.07-AM.png)
 
 Perfect! The hamburger toggles the menu. Our jQuery functionality is complete.
 
@@ -422,7 +422,7 @@ Set `.nav-dropdown` to static, otherwise it will overflow onto the other list it
 }
 ```
 
-![](../../images/Screen-Shot-2015-10-06-at-11.53.04-AM.png)
+![](../images/Screen-Shot-2015-10-06-at-11.53.04-AM.png)
 
 There you have it - a completely responsive navigation menu. It does everything that it needs to do, but it's just floating there. A lot of tutorials just stop at this point, and I used to be confused as to how to incorporate that menu into the navbar. Fortunately, this is the easiest part.
 
@@ -479,9 +479,9 @@ There are three layers to this code:
 }
 ```
 
-![](../../images/Screen-Shot-2015-10-06-at-10.37.29-AM.png)
+![](../images/Screen-Shot-2015-10-06-at-10.37.29-AM.png)
 
-![](../../images/Screen-Shot-2015-10-06-at-10.37.39-AM.png)
+![](../images/Screen-Shot-2015-10-06-at-10.37.39-AM.png)
 
 And that's the end of this tutorial! If you didn't want to read through any of that, here's the complete, fully functional three aspects - HTML, SCSS and JS. If you don't use Sass and just want the CSS, you can very easily [convert it to CSS](http://sassmeister.com/).
 

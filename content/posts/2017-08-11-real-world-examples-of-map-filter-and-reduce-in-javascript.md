@@ -86,7 +86,7 @@ myMap.setView([41.939948, -87.650673], 12)
 
 Once that's all set, here's how your loaded in Leaflet web map will look.
 
-![](../../images/Screen-Shot-2017-08-10-at-3.34.59-PM.png)
+![](../images/Screen-Shot-2017-08-10-at-3.34.59-PM.png)
 
 Again, you can find and fork a working version of the whole thing [right here](https://codepen.io/taniarascia/pen/brRaVE) on CodePen, but you'll have to transfer it to your own server or work on it locally.
 
@@ -138,7 +138,7 @@ const wormhole = L.marker([41.908415, -87.674605])
 
 This is how it looks with the markers and popups loaded in.
 
-![](../../images/Screen-Shot-2017-08-10-at-8.03.38-PM.png)
+![](../images/Screen-Shot-2017-08-10-at-8.03.38-PM.png)
 
 Now it can start becoming a pain to add a new one of those for every single coffee shop I come across. It would be much easier to create a JSON file, and loop through that. If you've never used JSON before, I would strongly suggest [reading this JSON tutorial](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/) to learn all about it from scratch and do some practice.
 
@@ -406,7 +406,7 @@ for (let neighborhood in neighborhoodCount) {
 
 I added some CSS, a coffee cup image as the marker, a different map, and more locations, which I won't go into as they're not the focus of the article. The source for the whole **scripts.js** file that we just created [is right here.](https://github.com/taniarascia/coffee/blob/master/js/scripts.js) Below is what the final version looks like.
 
-![](../../images/Screen-Shot-2017-08-10-at-10.37.30-PM.png)
+![](../images/Screen-Shot-2017-08-10-at-10.37.30-PM.png)
 
 You can [view the final source for the map here](https://github.com/taniarascia/coffee), or [view the completed project here](https://taniarascia.github.io/coffee/) if anything was unclear.
 

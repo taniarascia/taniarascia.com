@@ -68,7 +68,7 @@ php -S localhost:8888
 
 You should now be able to go to **http://localhost:8888/test.php** and see the output of the code.
 
-![](../../images/Screen-Shot-2018-04-26-at-3.50.21-PM.png)
+![](../images/Screen-Shot-2018-04-26-at-3.50.21-PM.png)
 
 If you're on Windows, or you don't want to use the command line, [set up MAMP](https://www.taniarascia.com/local-environment/).
 
@@ -138,7 +138,7 @@ index.html
 </html>
 ```
 
-![](../../images/Screen-Shot-2018-04-26-at-4.12.29-PM.png)
+![](../images/Screen-Shot-2018-04-26-at-4.12.29-PM.png)
 
 ## Sending Form Data via JavaScript
 

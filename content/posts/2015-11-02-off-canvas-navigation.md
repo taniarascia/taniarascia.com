@@ -48,7 +48,7 @@ See the Pen [Off Canvas Navigation with CSS3 Transitions](http://codepen.io/tani
 
 Here's our completely unstyled page, on a base of [Normalize.css](https://necolas.github.io/normalize.css/).
 
-![](../../images/Screen-Shot-2015-11-01-at-9.18.38-PM.png)
+![](../images/Screen-Shot-2015-11-01-at-9.18.38-PM.png)
 
 I created a `main` tag, because all the main content of my website will be contained within that tag, as mandated by HTML5 semantic standards. I also applied some basic styling to the entire document, such as Google's [Droid Serif](https://www.google.com/fonts/specimen/Droid+Serif) font.
 
@@ -198,7 +198,7 @@ You'll notice that I added a `.position` class to the icon. I want the icon to b
 
 At this point, the website's layout is complete, and all that remains is adding in the navigation.
 
-![](../../images/Screen-Shot-2015-11-01-at-9.44.38-PM.png)
+![](../images/Screen-Shot-2015-11-01-at-9.44.38-PM.png)
 
 ## Adding in the Navigation
 
@@ -352,7 +352,7 @@ aside nav ul li a:hover {
 }
 ```
 
-![](../../images/Screen-Shot-2015-11-02-at-1.29.03-AM.png)
+![](../images/Screen-Shot-2015-11-02-at-1.29.03-AM.png)
 
 That concludes the tutorial! The key at this point is to use what you've learned and be creative with it. Also, don't forget to [add vendor prefixes](https://github.com/postcss/autoprefixer) to your code.
 

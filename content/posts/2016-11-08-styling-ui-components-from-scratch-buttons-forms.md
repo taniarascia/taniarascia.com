@@ -64,7 +64,7 @@ And that's it as far as setup goes. I also personally like to put `-webkit-font-
 
 First, we'll style the buttons. Here's our goal:
 
-![](../../images/Screen-Shot-2016-11-02-at-7.19.44-PM.png)
+![](../images/Screen-Shot-2016-11-02-at-7.19.44-PM.png)
 
 What exactly is a button? It can be one of the following:
 
@@ -101,8 +101,8 @@ button,
 
 Here's some examples of how it looks unstyled:
 
-![](../../images/Screen-Shot-2016-11-02-at-6.58.30-PM.png)
-![](../../images/chrome.png)
+![](../images/Screen-Shot-2016-11-02-at-6.58.30-PM.png)
+![](../images/chrome.png)
 
 I'm going to set all the basic styles here.
 
@@ -124,13 +124,13 @@ These styles are somewhat opinionated, but easy to change. I'm setting the displ
 
 If you're using Normalize, it should be relatively consistent across browsers with just this. Here's how Chrome renders it (I've left off the round borders to make it easier to compare):
 
-![](../../images/Screen-Shot-2016-11-02-at-7.55.27-PM.png)
+![](../images/Screen-Shot-2016-11-02-at-7.55.27-PM.png)
 
 Safari might do things like add extra margin on inputs, and Firefox might have the text sit on different baselines or have different line heights, causing little issues like these:
 
-![](../../images/Screen-Shot-2016-11-02-at-7.59.52-PM.png)
+![](../images/Screen-Shot-2016-11-02-at-7.59.52-PM.png)
 
-![](../../images/Screen-Shot-2016-11-02-at-8.00.03-PM.png)
+![](../images/Screen-Shot-2016-11-02-at-8.00.03-PM.png)
 
 ```css
  {
@@ -156,7 +156,7 @@ button::-moz-focus-inner,
 
 Now I'll just add in my round corners with `border-radius: 18px`, and we're set.
 
-![](../../images/Screen-Shot-2016-11-02-at-7.19.44-PM.png)
+![](../images/Screen-Shot-2016-11-02-at-7.19.44-PM.png)
 
 ### Sass Optimization
 
@@ -195,7 +195,7 @@ Which makes it very easy to add hover and focus styles.
 
 Here is an example of the form we're going to make.
 
-![screen-shot-2016-11-07-at-8-20-50-pm](../../images/Screen-Shot-2016-11-07-at-8.20.50-PM.png)
+![screen-shot-2016-11-07-at-8-20-50-pm](../images/Screen-Shot-2016-11-07-at-8.20.50-PM.png)
 
 Forms are a little tricker than buttons, because there are more elements to consider.
 
@@ -268,9 +268,9 @@ So you can kind of pick and choose what you want to style. I don't use them all,
 
 Here's what the unstyled form looks like, before and after Normalize.
 
-![](../../images/Screen-Shot-2016-11-07-at-8.37.42-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-8.37.42-PM.png)
 
-![](../../images/Screen-Shot-2016-11-07-at-8.38.00-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-8.38.00-PM.png)
 
 It's pretty far from what we're aiming for, but it won't take much work to get this looking how we want. First I'm going to put the whole form inside of a `.container` class so it doesn't take up the whole screen, and I'm going to add the `border-box` and `button` styles from earlier in the tutorial.
 
@@ -282,7 +282,7 @@ It's pretty far from what we're aiming for, but it won't take much work to get t
 }
 ```
 
-![](../../images/Screen-Shot-2016-11-07-at-8.43.38-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-8.43.38-PM.png)
 
 It's a little bit better already. Let's add some styles.
 
@@ -302,7 +302,7 @@ It's a little bit better already. Let's add some styles.
 
 First, I'm making all the elements block level, so they take up the full width of the container. I'm going to give them all some padding, and remove the default background color. Just like with the buttons, the text will be vertically aligned. I'm setting the width and max-width to 100%, to make sure it fills the whole container but doesn't exceed it. Finally, I add my opinionated styles, which consist a thin gray border and rounded corners. Most of the personality of the form will come from the border shape and color.
 
-![](../../images/Screen-Shot-2016-11-07-at-8.49.10-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-8.49.10-PM.png)
 
 Now we have a bit more structure to the form, but the select doesn't play nice at all. In it's current state, it's controlled by the browser, and I'm not even able to change the shape of the borders. Here's what I'll do to make it match the other fields.
 
@@ -318,11 +318,11 @@ select {
 
 I've removed the default mozilla and webkit appearance of the `select`, and added an encoded png image for the arrow. You can also use an actual image of an arrow, either png or svg, that you've created, but this way I don't have to load anything extra. This works in modern Chrome, Firefox, Safari, Edge, and Opera. Here's how it looks:
 
-![](../../images/Screen-Shot-2016-11-07-at-9.09.16-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-9.09.16-PM.png)
 
 Internet Explorer 9, 10, and 11 will render it like this: (you can go to [Microsoft's developer page](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/) to generate IE screenshots if you're on a Mac.)
 
-![](../../images/Screen-Shot-2016-11-07-at-8.57.46-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-8.57.46-PM.png)
 
 I don't think it's too bad for a fallback. Now all that's left is styling the labels:
 
@@ -335,7 +335,7 @@ label {
 }
 ```
 
-![](../../images/Screen-Shot-2016-11-07-at-9.16.25-PM.png)
+![](../images/Screen-Shot-2016-11-07-at-9.16.25-PM.png)
 
 ### Sass Optimization
 

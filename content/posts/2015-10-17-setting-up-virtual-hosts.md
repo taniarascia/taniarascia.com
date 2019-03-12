@@ -163,7 +163,7 @@ At the bottom of the file, type the name of your virtual host.
 
 Almost done! After restarting your MAMP server, you can go to `http://example.dev:8888` and it will take you to your path.
 
-![](../../images/Screen-Shot-2015-10-16-at-11.25.27-PM.png)
+![](../images/Screen-Shot-2015-10-16-at-11.25.27-PM.png)
 
 That's pretty good. But, I want to make this perfect. I want to remove the :8888 from the end of the URL.
 
@@ -183,11 +183,11 @@ Listen 80
 
 Save the file. Finally, in MAMP, `Preferences > Ports`, change the ports to 80, 8888, and 3306.
 
-![](../../images/Screen-Shot-2015-10-16-at-11.53.58-PM.png)
+![](../images/Screen-Shot-2015-10-16-at-11.53.58-PM.png)
 
 Restart your servers and try `http://example.dev` in your browser.
 
-![](../../images/Screen-Shot-2015-10-16-at-11.56.08-PM.png)
+![](../images/Screen-Shot-2015-10-16-at-11.56.08-PM.png)
 
 And now it works! You can repeat the code as many times as you want, for as many virtual hosts as you want.
 

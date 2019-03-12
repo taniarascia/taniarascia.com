@@ -41,11 +41,11 @@ We will be creating a website element (a card) from scratch, using the design pr
 
 Here is what we will start with.
 
-![](../../images/d2.png)
+![](../images/d2.png)
 
 Here is what we will end up with. You can view a working, responsive, coded version of it [here](https://taniarascia.github.io/card/).
 
-![](../../images/d1.png)
+![](../images/d1.png)
 
 Why Prague and Chicago? Because I'm from Chicago, and I started writing this article in Prague. (In Munich now...we'll see where I am when I finish).
 
@@ -127,7 +127,7 @@ index.html
 
 Here is where we begin.
 
-![](../../images/d3.png)
+![](../images/d3.png)
 
 There's going to be a typo on this throughout the entire thing, so do me the favor of ignoring it.
 
@@ -160,7 +160,7 @@ Before doing any design, you should figure out structure of the layout first. Th
 }
 ```
 
-![](../../images/d4.png)
+![](../images/d4.png)
 
 Okay, it looks like a whole lot of code for almost no change whatsoever. But here's what's happening:
 
@@ -204,7 +204,7 @@ I'm also going to remove the top margin of the `<h1>` so it doesn't interfere wi
 }
 ```
 
-![](../../images/d5.png)
+![](../images/d5.png)
 
 I think it's starting to look better already. You might notice there seems to be too much space around the bottom details area, but that's only because the "Read Article" link will become a button - otherwise we would use less.
 
@@ -226,7 +226,7 @@ h5 {
 }
 ```
 
-![](../../images/d6.png)
+![](../images/d6.png)
 
 It's getting a little more spaced out and readable now.
 
@@ -236,7 +236,7 @@ Pure black, as in `black` or `#000000`, is particularly harsh and should be avoi
 
 I'm going to use a solid nice gray, `#444444` for the main text, and a muted `#666666` for the card body font.
 
-![](../../images/d7.png)
+![](../images/d7.png)
 
 It's less harsh and more pleasant on the eyes.
 
@@ -260,7 +260,7 @@ html {
 
 And here it is.
 
-![](../../images/d8.png)
+![](../images/d8.png)
 
 Another tip: add this code to all your projects to make the text more clear, crisp and defined on all browsers.
 
@@ -279,7 +279,7 @@ The headings are set to bold by default, but I also want my subtitle to be bold.
 }
 ```
 
-![](../../images/d9.png)
+![](../images/d9.png)
 
 Okay, so maybe you don't like just one font, and you want to use more than one. That makes perfect sense, but at try to follow this rule:** make all headings one font, and all body text the other font**. For example, you can choose to have all headings a serif font (font with tails, such as Times New Roman) and all body text a sans-serif font (font without tails, such as Arial). Or the other way around.
 
@@ -291,7 +291,7 @@ Same advice applies to colors as to fonts when you're new to design: if you don'
 
 Want to use more than one color? That makes sense, but at least use the **complementary color wheel**. Here's one for you to look at.
 
-![](../../images/coloricon.png)
+![](../images/coloricon.png)
 
 If you're not familiar with it from first grade art class, just look at opposite ends of the wheel and match them. Blue and orange. Purple and yellow. Generally more subdued colors look better on the web.
 
@@ -311,7 +311,7 @@ a {
 }
 ```
 
-![](../../images/d10.png)
+![](../images/d10.png)
 
 Now we have some color to the design, and as it's only one, it has nothing to clash with.
 
@@ -345,7 +345,7 @@ Here's the CSS for our button.
 }
 ```
 
-![](../../images/d11.png)
+![](../images/d11.png)
 
 ## Fine details, transitions and animations last
 
@@ -382,7 +382,7 @@ I also prefer the bottom card details to be gray, with a bit more space between 
 
 Here's our final card.
 
-![](../../images/d12.png)
+![](../images/d12.png)
 
 Let's just add in an image really fast.
 
@@ -403,7 +403,7 @@ The HTML, which is set up to allow the image to load in via CMS.
 
 And here we are, the final version!
 
-![](../../images/d1.png)
+![](../images/d1.png)
 
 ## Don't go overboard with drop shadows, gradients, or animations
 
@@ -415,15 +415,15 @@ Also, I just realized I put "City of a Big Shoulders" instead of "City of Big Sh
 
 Maybe you want the "big time San Francisco tech company" look.
 
-![](../../images/d15.png)
+![](../images/d15.png)
 
 Video game?
 
-![](../../images/d16.png)
+![](../images/d16.png)
 
 [New Moon](https://taniarascia.github.io/new-moon/) theme?
 
-![](../../images/d14.png)
+![](../images/d14.png)
 
 Whatever you want!
 

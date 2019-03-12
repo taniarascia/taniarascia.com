@@ -86,7 +86,7 @@ So here's our whole HTML code.
 
 It looks like this.
 
-![mobile](../../images/mobile.png)
+![mobile](../images/mobile.png)
 
 That's all we need for mobile. Now we'll move on to the medium screen devices.
 
@@ -109,7 +109,7 @@ I'm going to choose `600px` as the width to start showing the mid-screen view. W
 
 The `grid` wrapping container is defined as a `flex` element, which will `wrap` in the direction of a `row` (horizontal). Since I now want the images to show up in rows of two columns, I'm going to set the width to `50%`.
 
-![tablet](../../images/tablet.png)
+![tablet](../images/tablet.png)
 
 ### Desktop
 
@@ -125,7 +125,7 @@ At `1000px`, I'm going to show the desktop view, which will display the images i
 
 I write out the width as `calc(100% / 3)` instead of `33.33333%`, because it's easier to make sure it's correct.
 
-![desktop](../../images/desktop.png)
+![desktop](../images/desktop.png)
 
 ## Margins
 
@@ -155,7 +155,7 @@ Then edit the width of the cells on their respective sizes.
 }
 ```
 
-![](../../images/Screen-Shot-2016-07-27-at-10.57.26-AM.png)
+![](../images/Screen-Shot-2016-07-27-at-10.57.26-AM.png)
 
 ## WordPress Gallery
 

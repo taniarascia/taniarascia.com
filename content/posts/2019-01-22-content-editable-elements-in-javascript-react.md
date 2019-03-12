@@ -246,7 +246,7 @@ Again, at this point you can see the completed setup [on this demo](https://code
 
 So with the setup complete, you have a table where you can add a new row using `contenteditable`, as opposed to an `input` or `textarea`, and therefore have complete control over the style of the element.
 
-![](../../images/Screen-Shot-2019-01-21-at-8.26.54-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-8.26.54-PM.png)
 
 ## Issue 1: Pasting
 
@@ -254,19 +254,19 @@ Okay, so now you have your app. The industrious user thinks, oh, I can just copy
 
 Let me just copy the thing...
 
-![](../../images/Screen-Shot-2019-01-21-at-8.30.29-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-8.30.29-PM.png)
 
 Paste it in...
 
-![](../../images/Screen-Shot-2019-01-21-at-8.33.52-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-8.33.52-PM.png)
 
 Looks good. Let's submit that bad boy.
 
-![](../../images/Screen-Shot-2019-01-21-at-8.31.12-PM-1.png)
+![](../images/Screen-Shot-2019-01-21-at-8.31.12-PM-1.png)
 
 Uh, what? `contenteditable` elements retain the formatting style of the text. Even pasting directly from your text editor doesn't paste plain text. Nothing is safe.
 
-![](../../images/Screen-Shot-2019-01-21-at-8.37.41-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-8.37.41-PM.png)
 
 Since obviously we don't want HTML to be submitted here, we need to make a function to only paste the text and not the formatting.
 
@@ -296,13 +296,13 @@ We can put it on the `onPaste` of the `ContentEditable`.
 
 You might type something with some spaces in it, submit it, and it turns out okay.
 
-![](../../images/Screen-Shot-2019-01-21-at-8.43.13-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-8.43.13-PM.png)
 
 Cool, so spaces aren't an issue with `contenteditable`, right?
 
 Let's see what happens when your user pastes it from somewhere and accidentally retains the space before and after the phrase.
 
-![](../../images/Screen-Shot-2019-01-21-at-8.46.00-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-8.46.00-PM.png)
 
 Great. `&nsbp;`, the non-breaking space you used to format your website in 1998 gets retained at the beginning and end. Not just that, but also less than, greater than, and ampersand.
 
@@ -349,7 +349,7 @@ addRow = () => {
 
 ```
 
-![](../../images/Screen-Shot-2019-01-21-at-9.07.49-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-9.07.49-PM.png)
 
 ## Issue 3: Newlines
 
@@ -357,11 +357,11 @@ It's not beyond the realm of possibility to assume your user might try to press 
 
 Which will create a newline.
 
-![](../../images/Screen-Shot-2019-01-21-at-9.12.03-PM-1.png)
+![](../images/Screen-Shot-2019-01-21-at-9.12.03-PM-1.png)
 
 Which will be taken literally by `contenteditable`.
 
-![](../../images/Screen-Shot-2019-01-21-at-9.11.27-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-9.11.27-PM.png)
 
 So we can disable that. `13` is the key code for enter.
 
@@ -450,7 +450,7 @@ this.firstEditable.current.focus()
 
 Now after submitting a row, we're already focused on the next row.
 
-![](../../images/Screen-Shot-2019-01-21-at-9.38.46-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-9.38.46-PM.png)
 
 ## Dealing with Numbers and Currency
 
@@ -550,7 +550,7 @@ Instead of just displaying the values in the rows, they'll all be `ContentEditab
 
 ```
 
-![](../../images/Screen-Shot-2019-01-21-at-11.04.52-PM.png)
+![](../images/Screen-Shot-2019-01-21-at-11.04.52-PM.png)
 
 Finally, I'm going to add `disabled={!item || !price}` to the `Button` element to prevent empty entries from going through. And we're done!
 

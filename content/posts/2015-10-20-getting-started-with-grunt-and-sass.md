@@ -272,7 +272,7 @@ The project setup is going to be very simple. We just want to make sure it _work
 
 Here's the directory setup.
 
-![](../../images/Screen-Shot-2015-10-19-at-11.29.11-PM.png)
+![](../images/Screen-Shot-2015-10-19-at-11.29.11-PM.png)
 
 Any Sass file (which has a **.scss** extension) is valid CSS, you're good to go here even if you don't know any Sass yet. [The Sass Guide](http://sass-lang.com/guide) is a great introduction.
 

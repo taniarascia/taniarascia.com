@@ -118,7 +118,7 @@ The variable `$your_loop` can be anything, I'm just sticking to a common theme o
 
 Updating the title and editor fields like in a regular post...
 
-![Screen Shot 2016-08-09 at 3.16.33 PM](../../images/Screen-Shot-2016-08-09-at-3.16.33-PM.png)
+![Screen Shot 2016-08-09 at 3.16.33 PM](../images/Screen-Shot-2016-08-09-at-3.16.33-PM.png)
 
 ##### Code
 
@@ -137,7 +137,7 @@ Inserting the template codes like normal...
 
 And here we are. I have no styles or anything, because it's not necessary for the point of the article, and I don't like adding unnecessary complexity.
 
-![Screen Shot 2016-08-09 at 3.22.47 PM](../../images/Screen-Shot-2016-08-09-at-3.22.47-PM.png)
+![Screen Shot 2016-08-09 at 3.22.47 PM](../images/Screen-Shot-2016-08-09-at-3.22.47-PM.png)
 
 Alright, so the custom post is all set up now.
 
@@ -166,11 +166,11 @@ More detail on this function can be found [here](https://developer.wordpress.org
 
 Now if you go back into your post, you'll see this below the editor.
 
-![Screen Shot 2016-08-09 at 3.54.09 PM](../../images/Screen-Shot-2016-08-09-at-3.54.09-PM.png)
+![Screen Shot 2016-08-09 at 3.54.09 PM](../images/Screen-Shot-2016-08-09-at-3.54.09-PM.png)
 
 It's an empty meta box! Additionally, if you click on **Screen Options** at the top of the post, you'll see `Your Fields` in the options.
 
-![Screen Shot 2016-08-09 at 3.56.09 PM](../../images/Screen-Shot-2016-08-09-at-3.56.09-PM.png)
+![Screen Shot 2016-08-09 at 3.56.09 PM](../images/Screen-Shot-2016-08-09-at-3.56.09-PM.png)
 
 Neat. Now it's time to start putting stuff in there.
 
@@ -366,7 +366,7 @@ Now, we have all our fields, and they all appear in the `Your Fields` meta box. 
 
 These will all go in the `$your_loop` query. Make sure `$meta = get_post_meta( $post->ID, 'your_fields', true );` is in your loop.
 
-![Screen Shot 2016-08-10 at 12.51.25 PM](../../images/Screen-Shot-2016-08-10-at-12.51.25-PM.png)
+![Screen Shot 2016-08-10 at 12.51.25 PM](../images/Screen-Shot-2016-08-10-at-12.51.25-PM.png)
 
 ##### Text Input
 
@@ -445,7 +445,7 @@ And finally, displaying the image.
 
 Here is the final output of everything I filled out earlier.
 
-![Screen Shot 2016-08-10 at 1.14.30 PM](../../images/Screen-Shot-2016-08-10-at-1.14.30-PM.png)
+![Screen Shot 2016-08-10 at 1.14.30 PM](../images/Screen-Shot-2016-08-10-at-1.14.30-PM.png)
 
 ## Conclusion
 

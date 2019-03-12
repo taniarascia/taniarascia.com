@@ -110,15 +110,15 @@ So far, we have equally dividing columns.
 
 ### Large Screen View
 
-![](../../images/Screen-Shot-2015-10-07-at-4.54.32-PM.png)
+![](../images/Screen-Shot-2015-10-07-at-4.54.32-PM.png)
 
 ### Small Screen View
 
-![](../../images/Screen-Shot-2015-10-07-at-5.21.22-PM.png)
+![](../images/Screen-Shot-2015-10-07-at-5.21.22-PM.png)
 
 Also, the grid is infinitely nestable.
 
-![](../../images/Screen-Shot-2015-10-07-at-5.40.58-PM.png)
+![](../images/Screen-Shot-2015-10-07-at-5.40.58-PM.png)
 
 But that's only so useful. What if you want a [Holy Grail](http://alistapart.com/article/holygrail) layout? Or a main content with a sidebar?
 
@@ -158,11 +158,11 @@ The only thing that needs to be added is the `flex` property inside of your `min
 
 ### Large Screen View
 
-![](../../images/Screen-Shot-2015-10-07-at-5.32.04-PM.png)
+![](../images/Screen-Shot-2015-10-07-at-5.32.04-PM.png)
 
 ### Small Screen View
 
-![](../../images/Screen-Shot-2015-10-07-at-5.32.17-PM.png)
+![](../images/Screen-Shot-2015-10-07-at-5.32.17-PM.png)
 
 Finally, you're going to want to wrap the entire grid inside of a container so your content doesn't stretch to 3000 pixels wide on an iMac.
 
@@ -226,6 +226,6 @@ aside {
 }
 ```
 
-![](../../images/Screen-Shot-2015-10-07-at-5.53.02-PM.png)
+![](../images/Screen-Shot-2015-10-07-at-5.53.02-PM.png)
 
 And now you have a perfectly functional, semantic layout based on Flexbox!

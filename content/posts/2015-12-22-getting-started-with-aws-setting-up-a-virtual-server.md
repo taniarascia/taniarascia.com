@@ -51,21 +51,21 @@ Go to [Amazon Web Services](https://aws.amazon.com/) and sign up for an account.
 
 No opening preamble - here's the dashboard.
 
-![](../../images/awsdashboard.png)
+![](../images/awsdashboard.png)
 
 ## Key AWS Services
 
 There are currently 53 services, with more being added all the time, but you most likely won't even use close to half of them. I'll take a moment to highlight the absolute most essentials.
 
-![](../../images/Screen-Shot-2015-12-21-at-7.48.20-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-7.48.20-PM.png)
 
 An **EC2** instance (_Elastic Compute Cloud_) is a virtual server in the cloud. You have complete control over the server, what gets installed on it, the configuration, and so on. Since we're setting up LAMP, Apache, MySQL and PHP are going to be installed on a Linux EC2 instance.
 
-![](../../images/Screen-Shot-2015-12-21-at-7.48.08-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-7.48.08-PM.png)
 
 Amazon **S3** (_Simple Storage Service_) is a static file storage service. It's like a simple web interface for FTP, in which you can host static files and also host static websites - so images, HTML, CSS, JavaScript, PDFs, mp3s, and so on, but nothing that requires a server. S3 containers are known as buckets.
 
-![](../../images/Screen-Shot-2015-12-21-at-7.47.23-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-7.47.23-PM.png)
 
 **IAM** (_Identity & Access Management_) will contain all the settings and security configuration your for your account.
 
@@ -75,7 +75,7 @@ There are many, many useful services here, but we should be able to get started 
 
 A good idea when first creating your account is adding some additional layers of security. Go to **IAM** on the dashboard.
 
-![](../../images/Screen-Shot-2015-12-21-at-7.54.13-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-7.54.13-PM.png)
 
 ### Activate MFA (Multi Factor Identification) on Your Root Account
 
@@ -97,7 +97,7 @@ At this point, I'm going to go to **Groups**, create a group called **Developer*
 
 In **Account Settings**, you can set a password policy (or leave it as is), and your security setup is complete.
 
-![](../../images/Screen-Shot-2015-12-21-at-8.15.55-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-8.15.55-PM.png)
 
 ### Create an Account Alias
 
@@ -156,7 +156,7 @@ This will launch a quick start guide.
 
 An AMI (_Automated Machine Image_) is a template for an instance. Later you can save your completed instance and launch new ones based on your configuration with an AMI. For now, we're going to use the first option on the list, which is an Amazon Linux AMI.
 
-![Screen Shot 2015-12-21 at 9.02.14 PM](../../images/Screen-Shot-2015-12-21-at-9.02.14-PM.png)
+![Screen Shot 2015-12-21 at 9.02.14 PM](../images/Screen-Shot-2015-12-21-at-9.02.14-PM.png)
 
 ### Choose Instance Type
 
@@ -186,7 +186,7 @@ Back in the **EC2 dashboard**, if you go to **Instances** you'll see the new ins
 
 You can right-click on the empty space under **Name** and set a name to your instance. This is how it will look when it's ready.
 
-![](../../images/Screen-Shot-2015-12-21-at-9.24.47-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-9.24.47-PM.png)
 
 ### Create an Elastic IP
 
@@ -272,7 +272,7 @@ sudo chkconfig httpd on
 
 Paste the URL of the Public DNS into your browser, and you'll get this:
 
-![](../../images/Screen-Shot-2015-12-21-at-10.51.35-PM.png)
+![](../images/Screen-Shot-2015-12-21-at-10.51.35-PM.png)
 
 I'm also going to install **git** because it will come in handy.
 
@@ -348,7 +348,7 @@ Also modify this configuration.
 
 phpMyAdmin should work now when you go to http://PublicDNS/phpmyadmin.
 
-![](../../images/Screen-Shot-2015-12-22-at-12.21.52-AM.png)
+![](../images/Screen-Shot-2015-12-22-at-12.21.52-AM.png)
 
 You can login with **root** and the password you set earlier.
 
@@ -531,7 +531,7 @@ You can create `index.php` in the `000` folder, and make it something simple to 
 <?php echo '<h1>AWS Linux</h1>'; ?>
 ```
 
-![](../../images/Screen-Shot-2015-12-22-at-12.48.17-AM.png)
+![](../images/Screen-Shot-2015-12-22-at-12.48.17-AM.png)
 
 Easy enough.
 
@@ -544,7 +544,7 @@ Maybe you already have a DNS located somewhere that you can make a test with. I'
 
 If you don't have a DNS or host already around that you can play around with, **Route 53** on the AWS dashboard is where they take care of all DNS related entries.
 
-![](../../images/Screen-Shot-2015-12-22-at-12.55.21-AM.png)
+![](../images/Screen-Shot-2015-12-22-at-12.55.21-AM.png)
 
 ## Transferring Files to EC2
 
