@@ -44,7 +44,7 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0 0 $margins 0;
+  margin: 0 0 1rem 0;
   font-weight: $heading-font-weight;
   font-family: $heading-font-family;
   line-height: $heading-line-height;
@@ -95,6 +95,7 @@ h5 {
   h3,
   h4,
   h5 {
+    margin: 0 0 2rem 0;
     &:not(:first-child) {
       margin: 0 0 1.5rem 0;
     }

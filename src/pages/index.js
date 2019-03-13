@@ -10,6 +10,8 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
 import publications from '../../data/publications'
+import speaking from '../../data/speaking'
+import podcasts from '../../data/podcasts'
 
 class Index extends Component {
   render() {
@@ -58,10 +60,12 @@ class Index extends Component {
 
           <section className="section">
             <h2>Podcasts</h2>
+            <SimpleListing simple data={podcasts} />
           </section>
 
           <section className="section">
             <h2>Speaking</h2>
+            <SimpleListing simple data={speaking} />
           </section>
 
           <section className="section">

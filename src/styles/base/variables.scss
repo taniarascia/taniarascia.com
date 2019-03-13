@@ -12,7 +12,7 @@ $large: 1300px;
 
 /* Breakpoints */
 
-$mobile: $x-small;
+$mobile: 900px;
 $tablet: $small;
 $desktop: $medium;
 
@@ -45,7 +45,7 @@ $font-style: normal;
 $font-variant: normal;
 $font-weight: normal;
 $font-color: #404040;
-$light-font-color: #808080;
+$light-font-color: rgba(0, 0, 0, 0.6);
 $font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial,
   sans-serif;
 $line-height: 1.6;

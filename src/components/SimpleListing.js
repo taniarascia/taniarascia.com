@@ -6,14 +6,14 @@ class SimpleListing extends Component {
     const { data } = this.props
 
     return (
-      <section className="simple">
+      <section className="simple-posts">
         {data.map(post => {
           return (
-            <Link to={post.path} key={post.title}>
+            <a href={post.path} key={post.title} target="_blank">
               <div className="each">
                 <h2>{post.title}</h2>
               </div>
-            </Link>
+            </a>
           )
         })}
       </section>
