@@ -22,7 +22,7 @@ I documented everything I did after taking the Mac out of the box. This post wil
 
 I'm a front end web developer, and most of the software I install will pertain to that. I still have much to learn, but this process will setup my Mac to run [Git](https://git-scm.com/), [Jekyll](https://jekyllrb.com/), [Gulp](http://gulpjs.com/), [Sass](http://sass-lang.com/), an [Apache](https://www.apache.org/) server, and more.
 
-[View on GitHub](https://github.com/taniarascia/mac)
+- [View on GitHub](https://github.com/taniarascia/mac)
 
 I've included all the commands from this article without any of the explanation on a GitHub readme. Feel free to fork, modify, and keep for your own future records.
 
@@ -38,7 +38,6 @@ Install the [Homebrew](http://brew.sh/) package manager. This will allow you to 
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 ```
 
 #### Mac App Store
@@ -47,7 +46,6 @@ The Mac App Store command line interface, or [mas-cli](https://github.com/mas-cl
 
 ```bash
 brew install mas
-
 ```
 
 ##### Sign in
@@ -56,7 +54,6 @@ If you haven't already logged into the App Store, you can do so now.
 
 ```bash
 mas signin email@email.com
-
 ```
 
 #### Brewfile
@@ -67,7 +64,6 @@ Open Terminal, which will be in your home folder by default (`/Users/you`). Crea
 
 ```bash
 touch Brewfile
-
 ```
 
 You can edit the file with TextEdit, or by typing `nano Brewfile`. If you choose to edit with nano, you can save the file by typing Control + O to save, and Control + X to exit the file.
@@ -102,28 +98,26 @@ Below are the entire contents of my `Brewfile`, which will install all the above
 
 ```js
 tap 'caskroom/cask'
+  brew 'git'
+  brew 'npm'
 
-    brew 'git'
-    brew 'npm'
+  cask 'brackets'
+  cask 'flux'
+  cask 'firefox'
+  cask 'gimp'
+  cask 'google-chrome'
+  cask 'mamp'
+  cask 'opera'
+  cask 'spectacle'
+  cask 'sequel-pro'
+  cask 'vlc'
 
-    cask 'brackets'
-    cask 'flux'
-    cask 'firefox'
-    cask 'gimp'
-    cask 'google-chrome'
-    cask 'mamp'
-    cask 'opera'
-    cask 'spectacle'
-    cask 'sequel-pro'
-    cask 'vlc'
-
-    mas 'Numbers', id: 409203825
-    mas 'Pages', id: 409201541
-    mas 'Slack', id: 803453959
-    mas 'Sip', id: 507257563
-    mas 'Simplenote', id: 692867256
-    mas 'Todoist', id: 585829637
-
+  mas 'Numbers', id: 409203825
+  mas 'Pages', id: 409201541
+  mas 'Slack', id: 803453959
+  mas 'Sip', id: 507257563
+  mas 'Simplenote', id: 692867256
+  mas 'Todoist', id: 585829637
 ```
 
 Now simply run this command to install the bundle.
@@ -182,25 +176,24 @@ touch .gitconfig
 
 Here I'll input my name, email, GitHub username, some aliases to be able to type less and do more, and connect Git to the OS X Keychain so I don't have to type my username and password every time I want to push to GitHub.
 
-```js
+```bash
 [user]
-        name = First Last
-        email = email@email.com
-    [github]
-        user = username
-    [alias]
-        a = add
-        ca = commit -a
-        cam = commit -am
-        s = status
-        pom = push origin master
-        pog = push origin gh-pages
-        puom = pull origin master
-        puog = pull origin gh-pages
-        cob = checkout -b
-    [credential]
-        helper = osxkeychain
-
+    name = First Last
+    email = email@email.com
+[github]
+    user = username
+[alias]
+    a = add
+    ca = commit -a
+    cam = commit -am
+    s = status
+    pom = push origin master
+    pog = push origin gh-pages
+    puom = pull origin master
+    puog = pull origin gh-pages
+    cob = checkout -b
+[credential]
+    helper = osxkeychain
 ```
 
 With the above aliases, I can run `git s` instead of `git status`, for example. The less I have to type repeatedly, the happier I am.
@@ -221,9 +214,9 @@ Add the following contents, changing the variables for any hosts that you connec
 
 ```bash
 Host example
-        HostName example.com
-        User example-user
-        IdentityFile key.pem
+  HostName example.com
+  User example-user
+  IdentityFile key.pem
 
 ```
 
@@ -239,7 +232,6 @@ You can [generate an SSH key](https://help.github.com/articles/generating-a-new-
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "email@email.com"
-
 ```
 
 ### Node.js
@@ -277,9 +269,7 @@ You can also test with `which node`, which will output your Node path and versio
 And for later, here's how to update:
 
 ```bash
-
-    nvm install node --reinstall-packages-from=node
-
+nvm install node --reinstall-packages-from=node
 ```
 
 ### Node Package Manager
@@ -302,7 +292,6 @@ Ruby is required to run [Jekyll](https://www.taniarascia.com/make-a-static-websi
 
 ```bash
 \curl -sSL https://get.rvm.io | bash -s stable
-
 ```
 
 #### Install Ruby version
@@ -337,7 +326,6 @@ Gem is the Ruby package manager that we're going to use to install bundler...a p
 
 ```bash
 gem install bundler
-
 ```
 
 ### Install Composer
@@ -372,11 +360,11 @@ I also added something that will show what Git branch you're on.
 
 ```bash
 export CLICOLOR=1
-    export LSCOLORS=ExFxBxDxCxegedabagacad
-    parse_git_branch() {
-      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-    }
-    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$ "
+export LSCOLORS=ExFxBxDxCxegedabagacad
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$ "
 ```
 
 ### Preferences
@@ -396,35 +384,30 @@ A few more commands to change some defaults.
 
 ```bash
 chflags nohidden ~/Library
-
 ```
 
 #### Show hidden files
 
 ```bash
 defaults write com.apple.finder AppleShowAllFiles YES
-
 ```
 
 #### Show path bar
 
 ```bash
 defaults write com.apple.finder ShowPathbar -bool true
-
 ```
 
 #### Show status bar
 
 ```bash
 defaults write com.apple.finder ShowStatusBar -bool true
-
 ```
 
 #### Prevent Two Finger Scroll on Chrome
 
 ```bash
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
-
 ```
 
 ## Conclusion

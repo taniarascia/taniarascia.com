@@ -64,7 +64,7 @@ Open the Terminal program. Type `git --version` and press enter. If a version nu
 
 In XCode, install Command Line Tools: `> Preferences > Downloads > Command Line Tools`. You can now use Git through Terminal.
 
-> Although it's not necessary for the rest of this article, now would be a good time to install [Homebrew](http://brew.sh/) - a tool for simplifying the installation and management of dev tools.
+Although it's not necessary for the rest of this article, now would be a good time to install [Homebrew](http://brew.sh/) - a tool for simplifying the installation and management of dev tools.
 
 ### Windows
 
@@ -95,7 +95,7 @@ Here are the most important commands, and all you need to know to get started.
 
 When you open Terminal, you will start off in your main directory. I will assume your computer has the same username as your GitHub account.
 
-##### 1. Confirm your location
+Confirm your location
 
 ```bash
 pwd
@@ -105,13 +105,13 @@ pwd
 /Users/you
 ```
 
-##### 2. Create a new folder called project-local
+Create a new folder called project-local
 
 ```bash
 mkdir project-local
 ```
 
-##### 3. List your directories
+List your directories
 
 ```bash
 ls
@@ -119,7 +119,7 @@ ls
 
 You should see **project-local** in the list of directories. Of course, you could have created the directory through Finder or Explorer, but it's a useful command to know.
 
-##### 4. Move into the newly created directory
+Move into the newly created directory
 
 ```
 cd project-local
@@ -139,7 +139,7 @@ Now you're in the folder where your local project and Git repository will live. 
 
 All of the future commands we do today will only apply to your local Git environment. However, there is one important global step to take before doing anything else - configure your Git account.
 
-##### 5. Configure your global Git account.
+Configure your global Git account.
 
 ```bash
 git config --global user.name "Firstname Lastname"
@@ -148,7 +148,7 @@ git config --global user.email username@email.com
 
 Make sure you're still in the **project-local** folder, then move on.
 
-##### 6. Initialize Git repository.
+Initialize Git repository.
 
 ```
 git init
@@ -158,7 +158,7 @@ Initialized empty Git repository in /Users/you/project-local/.git/
 
 Great! Now you have an empty Git repo on your local computer.
 
-##### 7. Hook up local directory with the repo we made at github.com.
+Hook up local directory with the repo we made at github.com.
 
 ```bash
 git remote add origin https://github.com/you/project
@@ -166,7 +166,7 @@ git remote add origin https://github.com/you/project
 
 Terminal won't respond, but it was successful. Go ahead and add a file to the **project-local** directory. You can add as many files as you want, but I will assume you added two files - **index.html** and **style.css**.
 
-##### 8. Check the status of your local repository.
+Check the status of your local repository.
 
 ```bash
 git status
@@ -187,7 +187,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 Okay, so now it knows that there are two files in the directory, but they're not a part of the Git repo. At this point we have to **track** the files with the `add` command.
 
-##### 9. Add ALL the files to the repo.
+Add ALL the files to the repo.
 
 (case sensitive command!)
 
@@ -210,7 +210,7 @@ Changes to be committed:
 
 So, what did that do? The files are green now instead of red. Are we ready? Not quite yet.
 
-##### 10. Commit tracked files to the master branch
+Commit tracked files to the master branch
 
 ```bash
 git commit -am "Initial Commit"
@@ -228,7 +228,7 @@ With this command, I commit all the files (-a), include a message (-m), listed h
 
 > Do not forget to add a comment when you commit your files. Strategic commenting in Git is as important as commenting code. If you accidentally forget to add a comment and end up in a strange screen where you can no longer enter any commands, press ESC and type `:q!` followed by ENTER.
 
-##### 11. Push the files to the Git repo at github.com.
+Push the files to the Git repo at github.com.
 
 ```bash
 git push origin master
@@ -254,7 +254,7 @@ You enter those credentials into the FTP GUI, and you're in. [SSH](https://en.wi
 
 You can do everything through the same Terminal window, but for the sake of clarity let's open a new Terminal window (Command + N).
 
-##### 1. SSH into your host.
+SSH into your host.
 
 ```bash
 ssh username@ssh.domain.com
@@ -274,7 +274,7 @@ Once you're in, you will follow many of the same steps as before, except this ti
 
 I'm ignoring branches for now, since we're only working with one branch - the **master** branch.
 
-##### 2. List your Git settings.
+List your Git settings.
 
 ```bash
 git --list
@@ -282,7 +282,7 @@ git --list
 
 You should configure your e-mail and username as you did on your home computer.
 
-##### 3. Print your working directory to make sure you're in the right location.
+Print your working directory to make sure you're in the right location.
 
 ```bash
 pwd
@@ -290,19 +290,19 @@ pwd
 
 Use `cd` and `mkdir` to navigate to the location you want your new Git repo to live. Then...
 
-##### 4. Initialize Git repo.
+Initialize Git repo.
 
 ```bash
 git init
 ```
 
-##### 5. Add remote Git repo to origin master (branch).
+Add remote Git repo to origin master (branch).
 
 ```bash
 git remote add origin https://github.com/you/project.git
 ```
 
-##### 6. Pull (download) from origin master (branch).
+Pull (download) from origin master (branch).
 
 ```bash
 git pull origin master

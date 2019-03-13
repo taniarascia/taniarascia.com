@@ -46,7 +46,7 @@ Before you do anything else, you have to define the width of the viewport in you
 
 Every browser renders content a little differently. Also, some people use out of date browsers. Some developers have created stylesheets to combat these issues. The two most widely used are [Reset](http://meyerweb.com/eric/tools/css/reset/) and [Normalize](http://necolas.github.io/normalize.css/). The difference between the two is that Reset completely eradicates all styles, while Normalize attempts to add consistency to the browser styling. I prefer Normalize, because you don't have to go back and re-style every element.
 
-[Normalize CDN](https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css)
+- [Normalize CDN](https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css)
 
 ```html
 <link rel="stylesheet" href="css/normalize.min.css" />

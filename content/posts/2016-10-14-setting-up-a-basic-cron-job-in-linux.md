@@ -32,14 +32,14 @@ First, we can make a simple PHP script to test. I'm going to make a file that se
 
 ```php
 <?php
-    $to = 'me@example.com';
-    $message = 'This is the message.';
-    $subject = 'Insert Subject Here';
-    $headers = 'From: noreply@example.com' . "\r\n" .
-               'Reply-To: me@example.com';
+$to = 'me@example.com';
+$message = 'This is the message.';
+$subject = 'Insert Subject Here';
+$headers = 'From: noreply@example.com' . "\r\n" .
+           'Reply-To: me@example.com';
 
-    @mail($to, $subject, $message, $headers);
-    ?>
+@mail($to, $subject, $message, $headers);
+?>
 ```
 
 If you're not familiar with the `mail()` function in PHP, [here is the official documentation](http://php.net/manual/en/function.mail.php). I'm setting variables for who the e-mail should send to, where it should come from, the subject, a message, and headers. This is not the most up-to-date or secure way to send an email, but it's a script that works so I'm going to use it for testing. I'm just going to save this as **cron.php**.
@@ -52,7 +52,7 @@ The path to your public facing folder will depend on the Linux distro, but for t
 
 There's a useful site called [Crontab Generator](http://crontab-generator.org/) that will calculate the setup of a cron job for you, but first we'll go through a brief overview of what a syntax will look like.
 
-##### Example cron job
+#### Example cron job
 
 ```bash
 * * * * * /usr/bin/php /var/www/html/crontest/cron.php > /dev/null 2>&1
@@ -62,35 +62,15 @@ There's a useful site called [Crontab Generator](http://crontab-generator.org/) 
 
 There are four main parts to a cron command.
 
-<table >
-<tbody >
-	<tr >
-		Timing
-		Execute PHP
-		Path to script
-		Output
-	</tr>
-	<tr >
-		
-<td style="white-space:nowrap" >`* * * * *`
-</td>
-		
-<td >`/usr/bin/php`
-</td>
-		
-<td >`/var/www/html/crontest/cron.php`
-</td>
-		
-<td >`> /dev/null 2>&1`
-</td>
-	</tr>
-	</tbody>
-</table>
+|Timing|Execute PHP|Path to script|Output|
+|--- |--- |--- |--- |
+|`* * * * *`|`/usr/bin/php`|`/var/www/html/crontest/cron.php`|`> /dev/null 2>&1`|
+
 
 - **Timing** - set the minutes, hours, days, months, and weekday settings (more below).
 - **Execute** - the cron job needs to call upon PHP to run, which is located at `/usr/bin/php`.
 - **Path to script** - the full path of the file you plan to run.
--    * **Output** - (optional) you can write the output to a file or discard it - `> /dev/null 2>&1` will discard.
+- **Output** - (optional) you can write the output to a file or discard it - `> /dev/null 2>&1` will discard.
 
 In the above example, the cron job is set to send every minute - or more specifically, every minute of every hour of every day of every month, every day of the week. An asterisk is a wildcard that stands for "all".
 
@@ -102,49 +82,12 @@ In the above example, the cron job is set to send every minute - or more specifi
 
 Here are a few basic examples to get an idea of how it works.
 
-<table >
-
-<tr >
-Syntax
-Explanation
-</tr>
-
-    <tbody >
-    	<tr >
-
-
-<td style="white-space:nowrap" >`0 * * * *`
-</td>
-			
-<td >run once an hour (every hour at minute zero)
-</td>
-		</tr>
-		<tr >
-			
-<td >`0 0 * * *`
-</td>
-			
-<td >run once a day (every day at midnight and minute zero)
-</td>
-		</tr>
-		<tr >
-			
-<td >`0 0 1 * *`
-</td>
-			
-<td >run once a month (on the first day of every month at midnight and minute zero)
-</td>
-		</tr>
-		<tr >
-			
-<td >`0 0 1 1 *`
-</td>
-			
-<td >run once a year (on the first day of the first month every year at midnight and minute zero)
-</td>
-		</tr>
-	</tbody>
-</table>
+Syntax | Explanation
+| ----------- | -------------------------------------------------------------------------------------------- |
+| `0 * * * *` | run once an hour (every hour at minute zero)                                                 |
+| `0 0 * * *` | run once a day (every day at midnight and minute zero)                                       |
+| `0 0 1 * *` | run once a month (on the first day of every month at midnight and minute zero)               |
+| `0 0 1 1 *` | run once a year (on the first day of the first month every year at midnight and minute zero) |
 
 There are all sorts of settings, such as for odd/even days, every 5 minutes, etc, and plenty of resources to find the exact scheduling you're looking for.
 
@@ -176,11 +119,11 @@ crontab -e
 
 At this point, you'll most likely be in the [vi editor](https://www.ccsf.edu/Pub/Fac/vi.html), if you've never changed the default editor for your server. It can be a little confusing and scary the first time you use it, so here's what to do:
 
-      1. press esc.
-      2. press i (for "insert") to begin editing the file.
-      3. paste the cron command in the file.
-      4. press esc again to exit editing mode.
-      5. type :wq to save (`w` - write) and exit (`q` - quit) the file.
+1. press esc.
+2. press i (for "insert") to begin editing the file.
+3. paste the cron command in the file.
+4. press esc again to exit editing mode.
+5. type :wq to save (`w` - write) and exit (`q` - quit) the file.
 
 Now your `crontab` is saved, and an email should send out once per day at midnight. You can set it to `*/5 * * * *` for every 5 minutes for a faster test.
 

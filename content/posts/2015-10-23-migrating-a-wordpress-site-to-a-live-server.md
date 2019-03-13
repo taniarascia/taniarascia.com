@@ -30,7 +30,7 @@ If you already know [how to set up a local server](http://taniarascia.com/local-
 
 So, you already have a WordPress site set up, and you just want to push it to your server. You can do this through [Git and SSH](http://www.taniarascia.com/getting-started-with-git/), but for the sake of simplicity I'm just going to use [(S)FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol).
 
-### 1. Export your database to the live server
+### Export your database to the live server
 
 You may have been using phpMyAdmin in MAMP for your database needs. You could also be using a program such as [SequelPro](http://www.sequelpro.com/) for Mac, or [SQLYog](https://www.webyog.com/) on Windows. Chances are, your host has phpMyAdmin access, or a similar open source GUI, so I would recommend using that to start.
 
@@ -58,7 +58,7 @@ Your local site will no longer work at this point. You can change the values bac
 
 Select **Go** at the bottom, and **yourdatabase.sql** will download.
 
-### 2. Import your database to the live server
+### Import your database to the live server
 
 Find phpMyAdmin in your server. It should look basically the same as the MAMP version. Create a new database, and this time you're going to choose **Import**. Choose file and import **yourdatabase.sql**.
 
@@ -66,11 +66,11 @@ Where your server lists the information for FTP, it will also list your user and
 
 ![](../images/Screen-Shot-2015-10-22-at-9.55.28-PM.png)
 
-### 3. Upload your files to the server
+### Upload your files to the server
 
 This one is easy if you've ever uploaded any sort of file to a server. You'll just use a program like [FileZilla](https://filezilla-project.org/) or [Transmit](https://panic.com/transmit/). Copy all the files over to the directory you want it to show up in. Usually it's called public on a web server.
 
-### 4. Change your WordPress configuration.
+### Change your WordPress configuration.
 
 Before, you created a file called **wp-config.php** in the root of the WordPress install. For your local version, it looked like this:
 
@@ -98,11 +98,11 @@ On your live server, change these three options to match your live server databa
 
 Now if you go to your URL, it should all be loading properly! Load the WordPress backend, click **Settings > Permalinks** and update permalinks.
 
-### 5. Update permissions
+### Update permissions
 
 In FTP, migrate to your **wp-uploads** folder, and change the permissions to "666". This will allow you to upload media.
 
-### 6. Find and replace URLs in database
+### Find and replace URLs in database
 
 If you have some posts where you refer to links by URL, you might have to change them. The [Better Search Replace](https://wordpress.org/plugins/better-search-replace/) plugin is a wonderful tool that allows you to search your entire database for instances of a "string", and replace them.
 

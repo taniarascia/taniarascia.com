@@ -135,14 +135,13 @@ In the **EC2 dashboard**, click on **Security Groups**. You will see one already
 Set a name (such as _username_SG_region_) and apply it to the default VPC (should be the only one).
 
 On **Inboard**, add rule:
-**Type**: HTTP
-**Source**: Anywhere (0.0.0.0/0)
 
-**Type**: HTTPS
-**Source**: Anywhere (0.0.0.0/0)
-
-**Type**: SSH
-**Source**: My IP
+- **Type**: HTTP
+- **Source**: Anywhere (0.0.0.0/0)
+- **Type**: HTTPS
+- **Source**: Anywhere (0.0.0.0/0)
+- **Type**: SSH
+- **Source**: My IP
 
 You can select the **My IP** option, or type "whats my ip" in Google to get your IP and type it in. These rules are telling the EC2 instance to allow inbound access to the internet (0.0.0.0/0) but only allow SSH access from your IP. You can technically set SSH access to the internet as well, just know that it's a reduction in security.
 
@@ -231,11 +230,11 @@ And you're in!
 
 ```terminal
 
-           __|  __|_  )
-           _|  (     /   Amazon Linux AMI
-          ___|\___|___|
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
 
-    https://aws.amazon.com/amazon-linux-ami/2015.09-release-notes/
+https://aws.amazon.com/amazon-linux-ami/2015.09-release-notes/
 ```
 
 First thing you can do is update the packages.
@@ -313,21 +312,21 @@ Find this:
 
 ```apacheconf
 <Directory /usr/share/phpMyAdmin/>
-      <IfModule !mod_authz_core.c>
-        # Apache 2.2
-        Order Deny,Allow
-        Allow from All
-        Allow from 127.0.0.1
-        Allow from ::1
-      </IfModule>
-    </Directory>
+  <IfModule !mod_authz_core.c>
+    # Apache 2.2
+    Order Deny,Allow
+    Allow from All
+    Allow from 127.0.0.1
+    Allow from ::1
+  </IfModule>
+</Directory>
 ```
 
 If you want to be able to access phpMyAdmin from any IP, change it to this:
 
 ```apacheconf
 Order Allow,Deny
-    Allow from All
+Allow from All
 ```
 
 The preferred security method would be to add your IP to the bottom of the list and leave the other settings as is.
@@ -340,10 +339,10 @@ Also modify this configuration.
 
 ```apacheconf
 <RequireAny>
-      #Require ip 127.0.0.1
-      #Require ip ::1
-      Require all granted
-    </RequireAny>
+  #Require ip 127.0.0.1
+  #Require ip ::1
+  Require all granted
+</RequireAny>
 ```
 
 phpMyAdmin should work now when you go to http://PublicDNS/phpmyadmin.
@@ -395,11 +394,11 @@ Run the following commands.
 ```bash
 chown -R root:www /var/www
 
-    chmod 2775 /var/www
+chmod 2775 /var/www
 
-    find /var/www -type d -exec sudo chmod 2775 {} +
+find /var/www -type d -exec sudo chmod 2775 {} +
 
-    find /var/www -type f -exec sudo chmod 0664 {} +
+find /var/www -type f -exec sudo chmod 0664 {} +
 ```
 
 Now user **your-user** will be able to write in the `www` directory.
@@ -430,14 +429,14 @@ You'll be in the `/home/your-user` directory. Make a directory for your public k
 
 ```bash
 mkdir .ssh
-    chmod 700 .ssh
+chmod 700 .ssh
 ```
 
 Create `authorized_keys` and give it the proper permissions.
 
 ```bash
 touch .ssh/authorized_keys
-    chmod 600 .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
 ```
 
 Add the public key to the `authorized_keys` configuration.
@@ -468,7 +467,7 @@ Press i on the keyboard to enter Insert Mode. Find `# %wheel ALL=(ALL) ALL` and 
 
 If you want to SFTP into the instance, you can use the same Server (Public DNS) and username (your-user), and select key instead of password, linking to Your_Key.pem.
 
-> ### So you want SSH and SFTP access without using a keypair?
+### So you want SSH and SFTP access without using a keypair?
 
 It's possible to enter SSH and SFTP with a password instead of a keyfile. This way you can access the server on any computer without special credentials. Obviously, this is usually advised against, but here's how to do it.
 
@@ -484,7 +483,7 @@ Your public html folder is located in `/var/www/html`. Anything that is visible 
 
 Edit the Apache configuration file.
 
-```
+```bash
 nano /etc/httpd/conf/httpd.conf
 ```
 
@@ -495,16 +494,16 @@ Add virtual hosts by adding this to the bottom of the file.
 ```apacheconf
 NameVirtualHost *:80
 
-    <VirtualHost *:80>
-        ServerName localhost
-        DocumentRoot /var/www/html/000
-    </VirtualHost>
+<VirtualHost *:80>
+    ServerName localhost
+    DocumentRoot /var/www/html/000
+</VirtualHost>
 
-    <VirtualHost *:80>
-      ServerName www.example.com
-      ServerAlias example.com *.example.com
-      DocumentRoot /var/www/html/example
-    </VirtualHost>
+<VirtualHost *:80>
+  ServerName www.example.com
+  ServerAlias example.com *.example.com
+  DocumentRoot /var/www/html/example
+</VirtualHost>
 ```
 
 Save and exit. Now edit the hosts file.
@@ -517,7 +516,7 @@ And add as many hosts as you want.
 
 ```js
 127.0.0.1    dev.example.com
-    127.0.0.1    example.com
+127.0.0.1    example.com
 ```
 
 Remember to run `service httpd restart` after any Apache configuration change.
@@ -527,7 +526,6 @@ This will send the Public DNS to the `000` folder, and `example.com` and any rel
 You can create `index.php` in the `000` folder, and make it something simple to ensure php is functioning, and the localhost directive is pointing to the right place.
 
 ```php
-
 <?php echo '<h1>AWS Linux</h1>'; ?>
 ```
 
@@ -537,10 +535,10 @@ Easy enough.
 
 Maybe you already have a DNS located somewhere that you can make a test with. I'm going to make `dev.example.com` point to AWS. I can do this by going to my host, finding the DNS settings, and creating a DNS Resource Record.
 
-**Name**: dev.example.com
-**Type**: CNAME
-**TTL**: 300
-**Target**: PublicDns
+- **Name**: dev.example.com
+- **Type**: CNAME
+- **TTL**: 300
+- **Target**: PublicDns
 
 If you don't have a DNS or host already around that you can play around with, **Route 53** on the AWS dashboard is where they take care of all DNS related entries.
 
@@ -552,8 +550,8 @@ At this point, I have SFTP set up, so I can transfer files over the old fashione
 
 ```bash
 git init
-    git remote add origin https://repo.git
-    git pull origin master
+git remote add origin https://repo.git
+git pull origin master
 ```
 
 Now when I go to my site, all my files are there and the site is live.

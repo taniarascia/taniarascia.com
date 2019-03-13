@@ -19,11 +19,10 @@ tags:
 
 ```js
 {
-      "name": "Tania",
-      "title": "Web Developer",
-      "website": "https://www.taniarascia.com"
-    }
-
+  "name": "Tania",
+  "title": "Web Developer",
+  "website": "https://www.taniarascia.com"
+}
 ```
 
 As you can see, it's a human readable format of data that might traditionally be stored in a table. Some companies might have public `.json` files located that you can access and extract data from (an API you can connect to). You might also save a `.json` file somewhere in your project that you want to extract data from.
@@ -55,9 +54,9 @@ First, to drill in that JSON is simply a string, we're going to write JSON into 
 
 ```php
 $data = '{
-    	"name": "Aragorn",
-    	"race": "Human"
-    }';
+	"name": "Aragorn",
+	"race": "Human"
+}';
 ```
 
 Then we'll use the `json_decode()` function to convert the JSON string into a PHP object.
@@ -77,13 +76,13 @@ Here's the whole file.
 ```php
 <?php
 
-    $data = '{
-    	"name": "Aragorn",
-    	"race": "Human"
-    }';
+$data = '{
+	"name": "Aragorn",
+	"race": "Human"
+}';
 
-    $character = json_decode($data);
-    echo $character->name;
+$character = json_decode($data);
+echo $character->name;
 ```
 
 Here is the output.
@@ -119,8 +118,8 @@ And here's how we'll extract that data in PHP.
 
 ```php
 $url = 'data.json'; // path to your JSON file
-    $data = file_get_contents($url); // put the contents of the file into a variable
-    $characters = json_decode($data); // decode the JSON feed
+$data = file_get_contents($url); // put the contents of the file into a variable
+$characters = json_decode($data); // decode the JSON feed
 ```
 
 In order to get one entry, we'll have to access the appropriate array number. Remember, counting begins with 0 in programming.
@@ -137,14 +136,14 @@ I can access all the data in the array with a `foreach` loop.
 
 ```php
 foreach ($characters as $character) {
-    	echo $character->name . '<br>';
-    }
+	echo $character->name . '<br>';
+}
 ```
 
 ```terminal
 Aragorn
-    Legolas
-    Gimli
+Legolas
+Gimli
 ```
 
 Here is the full PHP file.
@@ -152,56 +151,41 @@ Here is the full PHP file.
 ```php
 <?php
 
-    $url = 'data.json'; // path to your JSON file
-    $data = file_get_contents($url); // put the contents of the file into a variable
-    $characters = json_decode($data); // decode the JSON feed
+$url = 'data.json'; // path to your JSON file
+$data = file_get_contents($url); // put the contents of the file into a variable
+$characters = json_decode($data); // decode the JSON feed
 
-    echo $characters[0]->name;
+echo $characters[0]->name;
 
-    foreach ($characters as $character) {
-    	echo $character->name . '<br>';
-    }
+foreach ($characters as $character) {
+	echo $character->name . '<br>';
+}
 ```
 
 We can display the data in a table, for an example.
 
 ```php
 <table>
-    	<tbody>
-    		<tr>
-    			<th>Name</th>
-    			<th>Race</th>
-    		</tr>
-    		<?php foreach ($characters as $character) : ?>
-            <tr>
-                <td> <?php echo $character->name; ?> </td>
-                <td> <?php echo $character->race; ?> </td>
-            </tr>
-    		<?php endforeach; ?>
-    	</tbody>
-    </table>
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Race</th>
+		</tr>
+		<?php foreach ($characters as $character) : ?>
+        <tr>
+            <td> <?php echo $character->name; ?> </td>
+            <td> <?php echo $character->race; ?> </td>
+        </tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
 ```
 
-<table >
-	<tbody >
-		<tr >
-			Name
-			Race
-		</tr>
-			<tr >
-<td >Aragorn
-</td>
-<td >Human
-</td></tr><tr >
-<td >Gimli
-</td>
-<td >Dwarf
-</td></tr><tr >
-<td >Legolas
-</td>
-<td >Elf
-</td></tr>	</tbody>
-</table>
+|         |       |
+| ------- | ----- |
+| Aragorn | Human |
+| Gimli   | Dwarf |
+| Legolas | Elf   |
 
 > In this example, I'm using the alternate syntax for `foreach`, which looks like `foreach() : /* loop */ endforeach;` instead of `foreach() { /* loop */ }`. This is often preferable when outputting HTML.
 
@@ -227,14 +211,14 @@ And here's how to access the loop.
 
 ```php
 foreach ($characters as $character) {
-    	echo $character['race'] . "\n";
-    }
+	echo $character['race'] . "\n";
+}
 ```
 
 ```terminal
 Human
-    Elf
-    Dwarf
+Elf
+Dwarf
 ```
 
 ### Getting data from nested arrays
@@ -243,51 +227,51 @@ So far, we've only used JSON feeds with key/value pairs, but it's common to enco
 
 ```php
 [
-    	{
-    		"name": "Harry Potter",
-    		"wand": [
-    			{
-    "core": "phoenix feather",
-    "length": "11 inches",
-    "wood": "holly"
-    			}
-    		]
-    	},
-    	{
-    		"name": "Hermione Granger",
-    		"wand": [
-    			{
-    "core": "dragon heartstring",
-    "length": "10 and 3/4 inches",
-    "wood": "vine"
-    			}
-    		]
-    	}
-    ]
+	{
+		"name": "Harry Potter",
+		"wand": [
+			{
+"core": "phoenix feather",
+"length": "11 inches",
+"wood": "holly"
+			}
+		]
+	},
+	{
+		"name": "Hermione Granger",
+		"wand": [
+			{
+"core": "dragon heartstring",
+"length": "10 and 3/4 inches",
+"wood": "vine"
+			}
+		]
+	}
+]
 ```
 
 Decoding the feed.
 
 ```php
 $url = 'wizards.json';
-    $data = file_get_contents($url);
-    $wizards = json_decode($data, true);
+$data = file_get_contents($url);
+$wizards = json_decode($data, true);
 ```
 
 We'll be able to access the nested array using `$wizard['key'][0]['key']` in a loop, or whatever number corresponds correctly if you only want to print one.
 
 ```php
 foreach ($wizards as $wizard) {
-    	echo $wizard['name'] . '\'s wand is ' .
-    			 $wizard['wand'][0]['wood'] . ', ' .
-    		   $wizard['wand'][0]['length'] . ', with a ' .
-    		   $wizard['wand'][0]['core'] . ' core. <br>' ;
-    }
+	echo $wizard['name'] . '\'s wand is ' .
+	$wizard['wand'][0]['wood'] . ', ' .
+	$wizard['wand'][0]['length'] . ', with a ' .
+	$wizard['wand'][0]['core'] . ' core. <br>' ;
+}
 ```
 
 ```terminal
 Harry Potter's wand is holly, 11 inches, with a phoenix feather core.
-    Hermione Granger's wand is vine, 10 and 3/4 inches, with a dragon heartstring core. 
+    Hermione Granger's wand is vine, 10 and 3/4 inches, with a dragon heartstring core.
 ```
 
 ### Converting a PHP object or array into JSON
@@ -296,35 +280,25 @@ Just as you use `json_decode()` to turn JSON into PHP, you can turn PHP into JSO
 
 ```php
 $data = [
-    	'name' => 'Aragorn',
-    	'race' => 'Human'
-    ];
+	'name' => 'Aragorn',
+	'race' => 'Human'
+];
 
-    echo json_encode($data);
+echo json_encode($data);
 ```
 
 We made a PHP array and encoded it. Here's the output:
 
 ```terminal
 {"name":"Aragorn","race":"Human"}
-
 ```
-
-
-
-
-
 
 ## Using data from JSON with JavaScript
 
-
-
 We're going to create a JavaScript variable called `data` and apply the JSON string.
 
-
-
 ```js
-var data = '[ { "name": "Aragorn", "race": "Human" }, { "name": "Gimli", "race": "Dwarf" } ]';
+var data = '[ { "name": "Aragorn", "race": "Human" }, { "name": "Gimli", "race": "Dwarf" } ]'
 ```
 
 Now we'll use JavaScript built in `JSON.parse()` function to decode the string.
@@ -357,24 +331,19 @@ Aragorn is a Human.
 
 ```
 
-
-
-
 That was easy! Now, we'll probably need to access JSON from a URL. There's an extra step involved, where we have to make a request to the file. Let's just take the above JSON string and put it in **data.json**.
 
-
-
 ```js
-[
-    	{
-    		"name": "Aragorn",
-    		"race": "Human"
-    	},
-    	{
-    		"name": "Gimli",
-    		"race": "Dwarf"
-    	}
-    ]
+;[
+  {
+    name: 'Aragorn',
+    race: 'Human',
+  },
+  {
+    name: 'Gimli',
+    race: 'Dwarf',
+  },
+]
 ```
 
 Now we'll make an `XMLHttpRequest()`.
@@ -426,33 +395,26 @@ And the output.
 
 ```terminal
 Aragorn is a Human.
-    Gimli is a Dwarf.
-
+Gimli is a Dwarf.
 ```
-
-
-
-
-
 
 ### Using Fetch
 
-
-
 Now you can also use the Fetch API to do the same thing. Read [How to Use the JavaScript Fetch API to Get JSON Data](https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data/) for an easier method to get this data.
-
-
 
 ```js
 // Replace ./data.json with your JSON feed
-    fetch('./data.json').then(response => {
-      return response.json();
-    }).then(data => {
-      // Work with JSON data here
-      console.log(data);
-    }).catch(err => {
-      // Do something for an error here
-    });
+fetch('./data.json')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    // Work with JSON data here
+    console.log(data)
+  })
+  .catch(err => {
+    // Do something for an error here
+  })
 ```
 
 ### Using jQuery

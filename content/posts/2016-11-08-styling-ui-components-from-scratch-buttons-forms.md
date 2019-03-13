@@ -25,8 +25,8 @@ To make life easy for myself, I've compiled all these into my own framework, [Pr
 
 #### Goals
 
-    * Style buttons, in the form of `div`, link (`a`), `input`, and `button` elements.
-    * Style forms, including HTML5 `input`, `textarea`, and `select` elements.
+- Style buttons, in the form of `div`, link (`a`), `input`, and `button` elements.
+- Style forms, including HTML5 `input`, `textarea`, and `select` elements.
 
 ## Preparation
 
@@ -68,9 +68,9 @@ First, we'll style the buttons. Here's our goal:
 
 What exactly is a button? It can be one of the following:
 
-    * `<button>` - a button element
-    * `<input type="button">` - an input element, with the `type` set to either `button`, `submit`, or `reset`.
-    * `<a class="button">` - a hyperlink, styled to look like a button.
+- `<button>` - a button element
+- `<input type="button">` - an input element, with the `type` set to either `button`, `submit`, or `reset`.
+- `<a class="button">` - a hyperlink, styled to look like a button.
 
 > If you're wondering what the different use-cases are for each type, a hyperlink will go to a URL, a submit `input` will be part of a form, and a `<button>` will often be a JavaScript trigger. A regular `div` with a .button class would simply be for style without functionality.
 
@@ -343,22 +343,22 @@ Like with the buttons, you can put all your input types into a variable.
 
 ```scss
 $input-fields: (
-  '[type=color], 
-    [type=date], 
-    [type=datetime], 
-    [type=datetime-local], 
-    [type=email], 
-    [type=month], 
-    [type=number],
-    [type=password], 
-    [type=search], 
-    [type=tel], 
-    [type=text], 
-    [type=url], 
-    [type=week],
-    [type=time], 
-    select, 
-    textarea'
+	'[type=color], 
+	[type=date], 
+	[type=datetime], 
+	[type=datetime-local], 
+	[type=email], 
+	[type=month], 
+	[type=number],
+	[type=password], 
+	[type=search], 
+	[type=tel], 
+	[type=text], 
+	[type=url], 
+	[type=week],
+	[type=time], 
+	select, 
+	textarea'
 );
 
 #{$input-fields} {
@@ -370,7 +370,8 @@ $input-fields: (
 
 Here's the full code for HTML and CSS for the forms and buttons.
 
-[Forms](http://codepen.io/taniarascia/pen/pNJeGG) [Buttons](http://codepen.io/taniarascia/pen/vyBRXL)
+- [Forms](http://codepen.io/taniarascia/pen/pNJeGG)
+- [Buttons](http://codepen.io/taniarascia/pen/vyBRXL)
 
 ## Conclusion
 

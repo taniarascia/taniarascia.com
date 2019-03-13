@@ -105,7 +105,7 @@ Beyond that, we're just adding Bootstrap core CSS in the `<head>`...
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 ```
 
-    jQuery via Google CDN before the closing `</body>` tag...
+jQuery via Google CDN before the closing `</body>` tag...
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -437,8 +437,6 @@ The final touches to my code are going to be centering the bottom call-out, addi
 With one small page worth of code, I've completely transformed my layout. From here, you can be much more creative.
 
 Of course, I also put the demo up as a [Codepen.](http://codepen.io/taniarascia/pen/yYQYpO#0)
-
-See the Pen [Start Bootstrap](http://codepen.io/taniarascia/pen/yYQYpO/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
 
 ## Conclusion
 

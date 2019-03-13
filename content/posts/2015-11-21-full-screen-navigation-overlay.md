@@ -98,7 +98,7 @@ The next two lines are the only that change between states. `aside` is set to `v
 
 Here is the demo of the code, with additional styles applied.
 
-See the Pen [yYrXRG](http://codepen.io/taniarascia/pen/yYrXRG/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [yYrXRG](http://codepen.io/taniarascia/pen/yYrXRG/).
 
 ## Additional Styles
 
@@ -148,43 +148,42 @@ I declare a flex container with `display: flex`. By setting the `flex-direction`
 
 ```scss
 nav {
-    	text-align: center;
-    	height: 95vh;
-    	display: flex;
-    	flex-direction: column;
-    	justify-content: center;
+	text-align: center;
+	height: 95vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
 ```
 
 Any time you use an unordered list for a menu, you'll be removing the `list-style` and extra space.
 
 ```scss
-	ul {
-    		margin: 0;
-    		padding: 0;
-    		list-style: none;
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 ```
 
 The `li`s inside the navigation are the nested flex items. I've set them to have a `line-height` of `20vh` to ensure they're centered vertically. I set it to 95/20 instead of 100/25 to give a little extra room.
 
 ```scss
-
-    		li {
-    			align-items: center;
-    			flex: 1;
-    			line-height: 20vh;
+li {
+	align-items: center;
+	flex: 1;
+	line-height: 20vh;
 
 ```
 
 The `a` is a block-level element, with a transition. I've set the font-size to 1.5em for mobile, but also added a `min-width` media query to increase the font size on desktop.
 
 ```scss
-		a {
-            font-size: 1.5em;
-    transition: all 0.5s ease;
-    display: block;
-    text-decoration: none;
-    color: rgba(255, 255, 255, .5);
+a {
+	font-size: 1.5em;
+	transition: all 0.5s ease;
+	display: block;
+	text-decoration: none;
+	color: rgba(255, 255, 255, .5);
 ```
 
 The final bit of code I have adds an animated underline to the `a` elements. This effect is inspired by [Tobias Ahlin](http://tobiasahlin.com/blog/css-trick-animating-link-underlines/)'s "Animating Link Underlines" article. Here's the completed menu code.
@@ -256,4 +255,4 @@ In order to ensure the span is large enough to register a click event on mobile,
 
 I hope this simple bit of code inspires some possibilities for creative full screen overlay styles for you.
 
-[View demo](http://codepen.io/taniarascia/pen/yYrXRG)
+- [View demo](http://codepen.io/taniarascia/pen/yYrXRG)

@@ -14,7 +14,7 @@ tags:
 
 I'm a self-taught web developer who has been working professionally in the field since June, 2015. I'm going to write about the setup, programs, and plugins I use on a daily basis with some brief descriptions and alternate options.
 
-[View on GitHub](https://github.com/taniarascia/setup)
+- [View on GitHub](https://github.com/taniarascia/setup)
 
 #### Disclaimer
 
@@ -41,8 +41,6 @@ It doesn't matter what you use: Mac or Windows. Vim or Emacs. Tabs or spaces. PH
 
 > The software a computer runs on.
 
-![apple](../images/apple.png)
-
 ### **I use:** [macOS (Apple)](http://www.apple.com/macos/sierra/)
 
 **Other Options:** [Windows](https://www.microsoft.com/en-us/windows), [Linux](https://en.wikipedia.org/wiki/Linux)
@@ -58,8 +56,6 @@ _Edit 12/29/2016_ - I wrote an entire article dedicated to setting up a developm
 ## Browser
 
 > The program used for navigating the internet.
-
-![Chrome](../images/chrome-1.png)
 
 ### **I use:** [Google Chrome](https://www.google.com/chrome/)
 
@@ -80,8 +76,6 @@ As a front end web developer, you should have all the browsers downloaded for te
 
 > A service that allows a website to be viewed on the internet.
 
-![nfs](../images/nfs.gif)
-
 ### **I use:** [NearlyFreeSpeech](https://www.nearlyfreespeech.net/)
 
 **Other Options:** [Amazon Web Services (AWS)](https://aws.amazon.com/), [Digital Ocean](https://www.digitalocean.com/), [MediaTemple](https://www.mediatemple.net/), [Rackspace](https://www.rackspace.com/)
@@ -93,8 +87,6 @@ I have some experience with both, and NearlyFreeSpeech has been a great middle g
 ## Stack
 
 > The software bundle used for web development.
-
-![lamp](../images/lamp.jpg)
 
 ### **I use:** [Linux Apache MySQL PHP (LAMP)](<https://en.wikipedia.org/wiki/LAMP_(software_bundle)>)
 
@@ -112,8 +104,6 @@ For local development, I use [MAMP](https://www.mamp.info/en/) instead of instal
 ## Text Editor / IDE
 
 > The program used to write code and edit text files.
-
-![brackets](../images/brackets.png)
 
 ### **I use:** [Brackets](http://brackets.io/)
 
@@ -136,27 +126,25 @@ All extensions are installed by going to `File > Extension Manager`.
 
 ```js
  {
-        "styleActiveLine": true,
-        "themes.theme": "new-moon",
-        "brackets-indent-guides.enabled": true,
-        "useTabChar": true,
-        "spaceUnits": 2,
-        "tabSize": 2,
-        "closeTags": {
-            "whenOpening": false,
-            "whenClosing": true,
-            "indentTags": []
-        },
-        "fonts.fontSize": "14.5px",
-        "fonts.fontFamily": "'Menlo', monospace"
-     }
+  "styleActiveLine": true,
+  "themes.theme": "new-moon",
+  "brackets-indent-guides.enabled": true,
+  "useTabChar": true,
+  "spaceUnits": 2,
+  "tabSize": 2,
+  "closeTags": {
+      "whenOpening": false,
+      "whenClosing": true,
+      "indentTags": []
+  },
+  "fonts.fontSize": "14.5px",
+  "fonts.fontFamily": "'Menlo', monospace"
+}
 ```
 
 ## Version Control Hosting
 
 > The Git repository hosting service used for keeping track of revisions and collaboration.
-
-![github](../images/github.png)
 
 ### **I use:** [GitHub](https://github.com/)
 
@@ -167,8 +155,6 @@ GitHub is easily the most well-known place to host public and private Git reposi
 ## Content Management System (CMS)
 
 > The software used to create and manage a website through an admin dashboard.
-
-![wp](../images/wp-2.png)
 
 ### **I use:** [WordPress](https://wordpress.org/)
 
@@ -189,8 +175,6 @@ Currently, I use the WordPress CMS both for professional projects and my persona
 
 > Command line automation for common repetitive tasks.
 
-![gulp](../images/gulp-1.png)
-
 ### **I use:** [Gulp](http://gulpjs.com/)
 
 **Other Options:** [Grunt](http://gruntjs.com/), [Brunch](http://brunch.io/)
@@ -208,8 +192,6 @@ Task runners like Gulp are useful for watching changes to files and performing t
 
 > Extend the features of CSS and compile it back into CSS.
 
-![](../images/sass.png)
-
 ### **I use:** [Sass](http://sass-lang.com/)
 
 **Other Options:** [LESS](http://lesscss.org/), [Stylus](http://stylus-lang.com/)
@@ -219,8 +201,6 @@ A preprocessor is a program that takes a bit of code and compiles it into a diff
 ## CSS Framework
 
 > A base stylesheet used as a starting point for designing a website.
-
-![primitive](../images/primitive.png)
 
 ### **I use:** [Primitive](https://taniarascia.github.io/primitive/)
 
@@ -233,8 +213,6 @@ This has been my choice because I have the freedom to do so, but I also feel com
 ## Encryption (TLS/SSL)
 
 > Protocol that increases the security of data transmitted through the internet.
-
-![ssl](../images/ssl.png)
 
 ### **I use:** [ComodoSSL](https://comodosslstore.com/)
 
@@ -262,8 +240,8 @@ $_SERVER['HTTPS'] = 'on';
 
 ```apacheconf
 RewriteEngine On
-    RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 
 ### Testing
@@ -273,8 +251,6 @@ RewriteEngine On
 ## Content Delivery Network (CDN)
 
 > Deliver cached website content to geographically dispersed servers.
-
-![](../images/cf.png)
 
 ### **I use:** [Cloudflare](https://www.cloudflare.com/)
 

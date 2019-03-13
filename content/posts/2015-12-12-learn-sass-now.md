@@ -63,7 +63,7 @@ Sass does away with the syntax, and relies on forced indentation.
 
 ```sass
 p
-      font-size: 1em
+  font-size: 1em
 ```
 
 It seems cleaner and easier, but as it is much more difficult to implement with existing projects, SCSS is the vastly more popular choice.
@@ -96,11 +96,15 @@ On Windows, you can access the command prompt by clicking **Start**, typing `cmd
 
 You will automatically be located in your main directory.
 
+```terminal
 C:\Users\Tania>
+```
 
 On a Mac, you can access the the terminal by finding **Terminal.app** in your Applications folder, or pressing CMD + Spacebar, typing `Terminal`, and pressing enter. Typing `pwd` will show you your working directory.
 
+```terminal
 /Users/tania
+```
 
 At this point, there are only two commands that you need to know, and they're the same for Windows and Mac.
 
@@ -115,8 +119,8 @@ Play around with moving through directories on your computer for a few minutes s
 
 ```bash
 cd "My Documents"
-    mkdir cli-test
-    ls
+mkdir cli-test
+ls
 ```
 
 You should have moved to **My Documents**, made a new folder called **cli-test**, and viewed all the folders in "My Documents", including the new one we just made.
@@ -225,14 +229,18 @@ Using `sass --watch`, we can keep a running process that will notice every time 
 sass --watch style.scss:style.css
 ```
 
+```terminal
 > > > Sass is watching for changes. Press Ctrl-C to stop.
+```
 
 Any change I make to the file will be automaticaly compiled.
 
+```terminial
 > > > Change detected to: style.scss
 
         write style.css
         write style.css.map
+```
 
 We can make this even a step better by compressing the compiled CSS file. Compressed CSS loads faster than the default, indented CSS. Add `--style compressed` to the end of your command. If you like, you can name the output file **style.min.css** to make it obvious that it's a minified file, but that isn't required.
 
@@ -252,31 +260,20 @@ It's good to organize and separate your content, but I also wouldn't go overboar
 
 There is no specific right or wrong way to do this. Look it up and you'll find plenty of examples. Use the one that works and makes sense to you. The important thing to know is that every file in your project will start with an underscore except for the main scss file.
 
-- **css**
-
+- **css/**
   - main.css
-
-- **sass**
-
+- **sass/**
   - main.scss
-
-
-    * **base**
-
-- _variables.scss
-- _mixins.scss
-- _reset.scss
-
-
-
-
-    * **components**
-
-- _typography.scss
-- _grid.scss
-- _buttons.scss
-- _navigation.scss
-- _sections.scss
+    - **base/**
+      - _variables.scss
+      - _mixins.scss
+      - _reset.scss
+    - **components/**
+      - _typography.scss
+      - _grid.scss
+      - _buttons.scss
+      - _navigation.scss
+      - _sections.scss
 
 Here is a more visual version of that project layout.
 
@@ -312,17 +309,19 @@ sass --watch sass:css --style compressed
 
 With this command, I'm watching the entire **sass** directory for changes, and telling it compile into the **css** directory, and compress the output.
 
+```terminal
 > > > Sass is watching for changes. Press Ctrl-C to stop.
 
-       write css/main.css
-      write css/main.css.map
+  write css/main.css
+  write css/main.css.map
 
 Any change in the directory will be registered.
 
 > > > Change detected to: sass/components/\_grid.scss
 
-       write css/main.css
-      write css/main.css.map
+  write css/main.css
+  write css/main.css.map
+```
 
 ## Conclusion
 

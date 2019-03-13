@@ -23,9 +23,10 @@ If you don't know how to use jQuery at all, please read the Introduction to jQue
 
 An accordion is a list of headers that open and collapse more content when clicked. I chose to make my example have each section stay open when you click, but some versions only have one content panel open at a time. I may have a [slight affinity](https://www.taniarascia.com/music/) for the word accordion in general...
 
-See the Pen [Accordion Styled](http://codepen.io/taniarascia/pen/BpwOKZ/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Accordion Styled](http://codepen.io/taniarascia/pen/BpwOKZ/)
 
-[Style](http://codepen.io/taniarascia/pen/BpwOKZ/) [No Style](http://codepen.io/taniarascia/pen/qRPxwo)
+- [Style](http://codepen.io/taniarascia/pen/BpwOKZ/) 
+- [No Style](http://codepen.io/taniarascia/pen/qRPxwo)
 
 ```js
 // Clicking on the accordion header title...
@@ -42,9 +43,10 @@ $('.accordion').on('click', '.accordion-header', function() {
 
 Tabs are a form of navigation that switches the content inside a panel. I had a little fun with the style in the demo, but usually they resemble the tabs you might see on a Manila folder.
 
-See the Pen [Tabs Styled](http://codepen.io/taniarascia/pen/EZwdNg/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Tabs Styled](http://codepen.io/taniarascia/pen/EZwdNg/)
 
-[Style](http://codepen.io/taniarascia/pen/EZwdNg/) [No Style](http://codepen.io/taniarascia/pen/dNVKbW)
+- [Style](http://codepen.io/taniarascia/pen/EZwdNg/) 
+- [No Style](http://codepen.io/taniarascia/pen/dNVKbW)
 
 ```js
 // Clicking on the tab...
@@ -68,7 +70,8 @@ A dropdown is a menu that toggles when you click on it. It's usually indicated b
 
 See the Pen [Dropdown Styled](http://codepen.io/taniarascia/pen/VPraQy/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
 
-[Style](http://codepen.io/taniarascia/pen/VPraQy/) [No Style](http://codepen.io/taniarascia/pen/JEOGQG)
+- [Style](http://codepen.io/taniarascia/pen/VPraQy/) 
+- [No Style](http://codepen.io/taniarascia/pen/JEOGQG)
 
 ```js
 // Clicking away from the dropdown will collapse it.
@@ -96,9 +99,10 @@ $('nav ul li a:not(:only-child)').click(function(e) {
 
 A modal is a dialog box that pops up on the screen, usually blocking access to rest of the content until you interact with it in some way. This is often used like an updated `alert()` function.
 
-See the Pen [Modal Styled](http://codepen.io/taniarascia/pen/qRVRjy/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Modal Styled](http://codepen.io/taniarascia/pen/qRVRjy/)
 
-[Style](http://codepen.io/taniarascia/pen/qRVRjy/) [No Style](http://codepen.io/taniarascia/pen/ZeEvBM)
+- [Style](http://codepen.io/taniarascia/pen/qRVRjy/) 
+- [No Style](http://codepen.io/taniarascia/pen/ZeEvBM)
 
 ```js
 // Clicking the open class will open the modal.
@@ -123,9 +127,10 @@ $(document).keyup(function(e) {
 
 Sometimes you might want to change an element (in this case, the navigation) after scrolling to a certain point. You might want to change th color, or shrink the nav, or make it stick to the top.
 
-See the Pen [Scroll Styled](http://codepen.io/taniarascia/pen/jyGepE/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Scroll Styled](http://codepen.io/taniarascia/pen/jyGepE/)
 
-[Style](http://codepen.io/taniarascia/pen/jyGepE/) [No Style](http://codepen.io/taniarascia/pen/LxzBqo)
+- [Style](http://codepen.io/taniarascia/pen/jyGepE/) 
+- [No Style](http://codepen.io/taniarascia/pen/LxzBqo)
 
 ```js
 // Activates when you scroll.
@@ -148,7 +153,8 @@ $(window).on('scroll', function() {
 
 Here are two more examples that I was too lazy to stylize.
 
-[Smooth Scroll to an ID](http://codepen.io/taniarascia/pen/MJEXZj) [Simple Image Slider](https://codepen.io/taniarascia/pen/eKzXwr)
+- [Smooth Scroll to an ID](http://codepen.io/taniarascia/pen/MJEXZj)
+- [Simple Image Slider](https://codepen.io/taniarascia/pen/eKzXwr)
 
 ## Conclusion
 

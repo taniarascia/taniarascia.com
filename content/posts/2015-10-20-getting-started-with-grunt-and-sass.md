@@ -14,7 +14,9 @@ tags:
   - sass
 ---
 
-You've probably heard of [Grunt](http://gruntjs.com/), the JavaScript task runner that runs on [Node.js](https://nodejs.org/en/). Maybe you've tried to get it up and running, but got lost or confused during setup. Maybe you know of it, but aren't sure how it can be useful or if it's worth the time invested. I'm going to show you how Grunt can be useful, and I'm not going to throw command lines at you and assume what you might already have installed. I'll let you know exactly what you need to install, and in what order, to start optimizing your workflow.
+You've probably heard of [Grunt](http://gruntjs.com/), the JavaScript task runner that runs on [Node.js](https://nodejs.org/en/). Maybe you've tried to get it up and running, but got lost or confused during setup. Maybe you know of it, but aren't sure how it can be useful or if it's worth the time invested. 
+
+I'm going to show you how Grunt can be useful, and I'm not going to throw command lines at you and assume what you might already have installed. I'll let you know exactly what you need to install, and in what order, to start optimizing your workflow.
 
 #### Prerequisities
 
@@ -61,7 +63,7 @@ The command for local npm is `npm`, and the command for global npm is `npm -g`. 
 
 Here are all the steps to get everything up and running.
 
-### 1. Install Ruby
+### Install Ruby
 
 Sass runs on Ruby, so we need to have that installed. The [Ruby programming language](<https://en.wikipedia.org/wiki/Ruby_(programming_language)>) is already preinstalled on OSX. You can check this by opening Terminal and typing `ruby -v` to check the Ruby version number you have installed.
 
@@ -75,7 +77,7 @@ Ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
 
 > If you use a lot of Ruby, [RVM (Ruby Version Manager)](https://rvm.io/) is recommended. I don't, so I don't care. You probably don't need to, either.
 
-### 2. Install Sass
+### Install Sass
 
 You can also run `sass -v` to see if you have Sass installed already. If not, install it now.
 
@@ -85,28 +87,27 @@ sudo gem install sass
 
 ```terminal
 Fetching: sass-3.4.19.gem (100%)
-    Successfully installed sass-3.4.19
-    Parsing documentation for sass-3.4.19
-    Installing ri documentation for sass-3.4.19
-    1 gem installed
+Successfully installed sass-3.4.19
+Parsing documentation for sass-3.4.19
+Installing ri documentation for sass-3.4.19
+1 gem installed
 ```
 
-### 3. Install XCode
+### Install XCode
 
 XCode is a free download from the app store. You can check if you have XCode installed already by typing `make` in the Terminal. After you download it, install Command Line Tools: **Preferences > Downloads > Command Line Tools**. This is necessary for the next step. (Note: This step is no longer necessary as of 2017 - Homebrew will install XCode Command Line Tools for you.)
 
-### 4. Install Homebrew
+### Install Homebrew
 
 [Homebrew](http://brew.sh/) is a useful program for installing other programs. So meta. Type this into the command line.
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 ```
 
 Follow the steps - you'll have to agree to installing brew and enter your password. You can type `brew doctor` to verify that Homebrew has been successfully installed.
 
-### 5. Install Node.js
+### Install Node.js
 
 We're going to use Homebrew to install Node.js.
 
@@ -114,7 +115,7 @@ We're going to use Homebrew to install Node.js.
 brew install node
 ```
 
-### 6. Install Grunt CLI globally
+### Install Grunt CLI globally
 
 Finally, we can install Grunt. We're not actually installing Grunt, but the Grunt command line interface (CLI). This basically just allows your computer to recognize the `grunt` command at all times. However, without a local install, you can't actually use Grunt.
 
@@ -126,7 +127,7 @@ Here's the good news: everything you just did, you won't have to do again. Node.
 
 Everything from here on out is going to have to be done on a project-by-project basis.
 
-### 7. Create package.json in a local directory
+### Create package.json in a local directory
 
 Alright, now we start learning the Grunt and npm specifics. Any project that runs on Node.js requires a package.json. If you've never seen or used a [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) file before, don't be too concerned. It's basically JavaScript.
 
@@ -142,20 +143,20 @@ Create a file and save it as package.json.
 
 ```js
 {
-      "name": "startgrunt",
-      "version": "0.0.1",
-      "description": "Learning Grunt and Sass",
-      "license": "MIT",
-      "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-sass": "latest",
-        "grunt-postcss": "latest",
-        "autoprefixer": "latest",
-        "grunt-contrib-cssmin": "latest",
-        "grunt-contrib-uglify": "latest",
-        "grunt-contrib-watch": "latest"
-      }
-    }
+  "name": "startgrunt",
+  "version": "0.0.1",
+  "description": "Learning Grunt and Sass",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "latest",
+    "grunt-postcss": "latest",
+    "autoprefixer": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}
 ```
 
 The first several entries are self-explanatory. `name` is the name of your project; you can give it a `version` number, `description` and a `license` to cover all your legal bases.
@@ -166,7 +167,7 @@ The packages we're installing:
 
 - [grunt-contrib-**sass**](https://github.com/gruntjs/grunt-contrib-sass) - compile Sass to CSS
 - [grunt-**postcss**](https://github.com/nDmitry/grunt-postcss) - apply several post-processors to your CSS using PostCSS
-    * [**autoprefixer**](https://github.com/postcss/autoprefixer) - add-on to PostCSS
+- [**autoprefixer**](https://github.com/postcss/autoprefixer) - add-on to PostCSS
 - grunt-contrib-**cssmin** - minify CSS
 - [grunt-contrib-**uglify**](https://github.com/gruntjs/grunt-contrib-uglify) - minify files with UglifyJS
 - [grunt-contrib-**watch**](https://github.com/gruntjs/grunt-contrib-watch) - run predefined tasks whenever watched file patterns are added, changed or deleted
@@ -177,7 +178,7 @@ So, what if I created my package.json and installed npm but forgot to include po
 npm install --save-dev grunt-postcss
 ```
 
-### 8. Create a local npm install in a local directory
+### Create a local npm install in a local directory
 
 Now you'll create your local npm install, which will create a folder called `node_modules` in your directory. That folder will contain Grunt and all the Grunt plugins.
 
@@ -187,16 +188,16 @@ npm install
 
 ```terminal
 npm WARN package.json startgrunt@0.0.1 No repository field.
-    npm WARN package.json startgrunt@0.0.1 No README data
+npm WARN package.json startgrunt@0.0.1 No README data
 ```
 
 This might come up, which doesn't matter. Grunt wants you to have a README.md and a repository set. You can choose to create one and add it to your package.json, but it's not required. Here's the code for that.
 
 ```js
-  "repository": {
-        "type": "git",
-        "url": "https://github.com/taniarascia/startgrunt.git"
-      }
+"repository": {
+    "type": "git",
+    "url": "https://github.com/taniarascia/startgrunt.git"
+}
 ```
 
 Terminal will go through and install all the plugins, and then you'll have your **node_modules** folder all set and ready to go.
@@ -213,9 +214,9 @@ First, load Grunt. You don't even have to think about this one; just paste it at
 
 ```js
 module.exports = function (grunt) {
-    	grunt.initConfig({
-    		pkg: grunt.file.readJSON('package.json'),
-    	});
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+	});
 ```
 
 ## Tasks
@@ -355,19 +356,19 @@ I'm going to tell the Sass plugin to take any file in the **sass** directory, an
 
 ```js
 sass: {
-      dist: {
-        options: {
-          sourcemap: 'none'
-        },
-        files: [{
-          expand: true,
-          cwd: 'sass',
-          src: ['**/*.scss'],
-          dest: 'css',
-          ext: '.css'
-      }]
-      }
+  dist: {
+    options: {
+      sourcemap: 'none'
     },
+    files: [{
+      expand: true,
+      cwd: 'sass',
+      src: ['**/*.scss'],
+      dest: 'css',
+      ext: '.css'
+  }]
+  }
+},
 ```
 
 ### PostCSS
@@ -376,18 +377,18 @@ I'm going to pull in autoprefixer to add vendor prefixes and minify my CSS. I'm 
 
 ```js
 postcss: { // Begin Post CSS Plugin
-      options: {
-        map: false,
-        processors: [
-      require('autoprefixer')({
-            browsers: ['last 2 versions']
-          })
-    ]
-      },
-      dist: {
-        src: 'css/style.css'
-      }
-    },
+  options: {
+    map: false,
+    processors: [
+  require('autoprefixer')({
+        browsers: ['last 2 versions']
+      })
+]
+  },
+  dist: {
+    src: 'css/style.css'
+  }
+},
 ```
 
 ### CSSMin
@@ -396,16 +397,16 @@ CSSMin to minify CSS files.
 
 ```js
 cssmin: { // Begin CSS Minify Plugin
-      target: {
-        files: [{
-          expand: true,
-          cwd: 'css',
-          src: ['*.css', '!*.min.css'],
-          dest: 'css',
-          ext: '.min.css'
-    }]
-      }
-    },
+  target: {
+    files: [{
+      expand: true,
+      cwd: 'css',
+      src: ['*.css', '!*.min.css'],
+      dest: 'css',
+      ext: '.min.css'
+}]
+  }
+},
 ```
 
 ### UglifyJS
@@ -414,11 +415,11 @@ UglifyJS to minify JavaScript files.
 
 ```js
 uglify: { // Begin JS Uglify Plugin
-      build: {
-        src: ['src/*.js'],
-        dest: 'js/script.min.js'
-      }
-    },
+  build: {
+    src: ['src/*.js'],
+    dest: 'js/script.min.js'
+  }
+},
 ```
 
 ### Watch
@@ -427,15 +428,15 @@ Here's the most important task of all (in my opinion) - the watch task. Everythi
 
 ```js
 watch: { // Compile everything into one task with Watch Plugin
-          css: {
-            files: '**/*.scss',
-            tasks: ['sass', 'postcss', 'cssmin']
-          },
-          js: {
-            files: '**/*.js',
-            tasks: ['uglify']
-          }
-        }
+  css: {
+    files: '**/*.scss',
+    tasks: ['sass', 'postcss', 'cssmin']
+  },
+  js: {
+    files: '**/*.js',
+    tasks: ['uglify']
+  }
+}
 ```
 
 Here's your completed Gruntfile.js.
@@ -535,34 +536,34 @@ You'll get this response.
 
 ```terminal
 Running "watch" task
-    Waiting...
+Waiting...
 ```
 
 Now save a file in your **sass** directory.
 
 ```terminal
 >> File "sass/_base.scss" changed.
-    Running "sass:dist" (sass) task
+Running "sass:dist" (sass) task
 
-    Running "postcss:dist" (postcss) task
-    >> 1 processed stylesheet created.
+Running "postcss:dist" (postcss) task
+>> 1 processed stylesheet created.
 
-    Running "cssmin:target" (cssmin) task
-    >> 1 file created. 100 B ? 72 B
+Running "cssmin:target" (cssmin) task
+>> 1 file created. 100 B ? 72 B
 
-    Done, without errors.
+Done, without errors.
 ```
 
 And save the JavaScript file in your **src** directory.
 
 ```terminal
 >> File "src/script.js" changed.
-    Running "uglify:build" (uglify) task
-    >> 1 file created.
+Running "uglify:build" (uglify) task
+>> 1 file created.
 ```
 
 That was a lot of steps. No wonder you didn't want to do this before.
 
 I've [set up a GitHub repository](https://github.com/taniarascia/startgrunt) of the project for you to play with.
 
-[View source on GitHub](https://github.com/taniarascia/startgrunt)
+- [View source on GitHub](https://github.com/taniarascia/startgrunt)

@@ -18,7 +18,7 @@ In the past I used very simple CSS float grids for website templating, but Flexb
 
 ## The Demo
 
-See the Pen [Easiest Flex Grid Ever](http://codepen.io/taniarascia/pen/rOLEGe/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Easiest Flex Grid Ever](http://codepen.io/taniarascia/pen/rOLEGe/).
 
 We have semantic options for naming the tags and classes, but I'll start off with a simple row and column based naming structure, in the vein of [Bootstrap](http://getbootstrap.com/css/#grid), [Foundation](http://foundation.zurb.com/docs/components/grid.html), [Skeleton](http://getskeleton.com), and just about every other CSS framework.
 
@@ -183,7 +183,7 @@ Finally, you're going to want to wrap the entire grid inside of a container so y
 
 Everybody loves HTML5 semantics. Why stick with divs upon divs when we have some semantically named classes we can use instead? Rows and columns are _great_ for quick template design, but once it comes down to the final code, you want something cleaner. [Read all about HTML5 semantic tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) if you're not overly familiar.
 
-##### HTML
+#### HTML
 
 ```html
 <main>
@@ -200,7 +200,7 @@ Everybody loves HTML5 semantics. Why stick with divs upon divs when we have some
 
 `main` is the `.container` div. The `main` tag is only meant to be used once in a document. `section` has replaced the `.row`. `article` and `aside` are two different `.column` classes.
 
-##### CSS
+#### CSS
 
 ```css
 main {
@@ -228,4 +228,4 @@ aside {
 
 ![](../images/Screen-Shot-2015-10-07-at-5.53.02-PM.png)
 
-And now you have a perfectly functional, semantic layout based on Flexbox!
+And now you have a perfectly functional, semantic layout based on flexbox!

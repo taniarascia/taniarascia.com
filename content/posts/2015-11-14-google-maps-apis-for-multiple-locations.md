@@ -160,17 +160,17 @@ For this I'm going to need to know the addresses of the locations as well as the
 
 Here are my three locations.
 
-**Broadway**
-5224 N Broadway St, Chicago, IL 60640
-(41.976816, -87.659916)
+- **Broadway**
+- 5224 N Broadway St, Chicago, IL 60640
+- (41.976816, -87.659916)
 
-**Belmont**
-1025 W Belmont Ave, Chicago, IL 60657
-(41.939670, -87.655167)
+- **Belmont**
+- 1025 W Belmont Ave, Chicago, IL 60657
+- (41.939670, -87.655167)
 
-**Sheridan**
-6600 N Sheridan Rd, Chicago, IL 60626
-(42.002707, -87.661236)
+- **Sheridan**
+- 6600 N Sheridan Rd, Chicago, IL 60626
+- (42.002707, -87.661236)
 
 The other thing I want is a URL that leads to getting directions to this location. For that, I simply went to [Google Maps](http://maps.google.com), typed in the address I wanted, and clicked on **Get Directions**. I can now get a link to the map at this point, so I click **Share or Embed Map** and get the URL.
 
@@ -320,4 +320,4 @@ Now all of our locations are on the map with their respective info box.
 
 I've put this project up on GitHub - all you would have to do is insert your own API key.
 
-[View on GitHub](https://github.com/taniarascia/googlemaps)
+- [View on GitHub](https://github.com/taniarascia/googlemaps)

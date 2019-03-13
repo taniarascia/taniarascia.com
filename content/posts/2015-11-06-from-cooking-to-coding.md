@@ -15,11 +15,13 @@ It's difficult to think of two careers more contrasting than chef and web develo
 
 Just how big are the differences between these two career paths? Looking at some studies of overall job satisfaction, the answer is...pretty big.
 
-**The 100 Best Jobs of 2015**
-[#11 - Web Developer](http://money.usnews.com/careers/best-jobs/web-developer)
+#### The 100 Best Jobs of 2015**
 
-**The 200 Worst Jobs of 2015**
-[#3 - Cook](http://www.careercast.com/slide/worst-jobs-2015-no-197-cook)
+- [#11 - Web Developer](http://money.usnews.com/careers/best-jobs/web-developer)
+
+#### The 200 Worst Jobs of 2015**
+
+- [#3 - Cook](http://www.careercast.com/slide/worst-jobs-2015-no-197-cook)
 
 So, I basically went from having one of the absolute lowest rated jobs of all time to having one of the highest. If you're wondering how much of an impact this change had on my life, know that it was massive.
 
@@ -54,7 +56,7 @@ For me, it was and has always been making websites.
 You might think that figuring that out was the easy part, and the journey from inexperienced chef with no portfolio to web developer was the hard part, but it was very much the opposite. Self-actualization is not easy; taking the time to be honest with yourself and reflect, learn, and improve is a process. Deciding to leave your stable job for the unknown is terrifying. As they say, nothing worth doing is easy.
 
 > "Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty."
-> Theodore Roosevelt
+> - Theodore Roosevelt
 
 ## My Life as a Chef
 

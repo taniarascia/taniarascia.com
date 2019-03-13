@@ -356,4 +356,4 @@ aside nav ul li a:hover {
 
 That concludes the tutorial! The key at this point is to use what you've learned and be creative with it. Also, don't forget to [add vendor prefixes](https://github.com/postcss/autoprefixer) to your code.
 
-[View Demo](http://codepen.io/taniarascia/pen/QjBwpB)
+- [View Demo](http://codepen.io/taniarascia/pen/QjBwpB)

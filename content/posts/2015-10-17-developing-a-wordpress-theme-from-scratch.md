@@ -31,14 +31,14 @@ You _do_ need to know how to set up a local server environment. Fortunately, if 
 
 I've made additional tutorials to add on to this one.
 
-- [**Part 2:**](https://www.taniarascia.com/wordpress-from-scratch-part-two/) Pagination, Comments, Single Post, Functions, & Custom Posts (intermediate)
-- [**Part 3:**](https://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/) Custom Posts, Custom Fields and Meta Boxes (advanced)
+- [**Part 2**](https://www.taniarascia.com/wordpress-from-scratch-part-two/) - Pagination, Comments, Single Post, Functions, & Custom Posts (intermediate)
+- [**Part 3**](https://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/) - Custom Posts, Custom Fields and Meta Boxes (advanced)
 
 ## What can WordPress do for me?
 
 WordPress was originally built as a blogging platform, but is now what is known as a [CMS](https://en.wikipedia.org/wiki/Content_management_system) - Content Management System.
 
-Any website that you intend to make updates to can benefit from a CMS. If it's a blog, you want to be able to add posts. If it's a restaurant website, you want to be able to add and update menus. If it's a company website, you want to be able to update prices, packages, and so on. This website is a custom theme running on WordPress. ([Open source, too!](https://github.com/taniarascia/oblate))
+Any website that you intend to make updates to can benefit from a CMS. If it's a blog, you want to be able to add posts. If it's a restaurant website, you want to be able to add and update menus. If it's a company website, you want to be able to update prices, packages, and so on.
 
 If someone is paying you to make a website, it's because they don't know how or don't have time to deal with code. It needs to be as simple as possible for the client. WordPress can help with all this and more.
 
@@ -64,19 +64,19 @@ There are plenty of articles out there about how to install WordPress. They make
 
 Since we're using a [local server and MAMP](http://www.taniarascia.com/local-environment), I already know you have all the prerequisites to installation, and FTP is not necessary.
 
-##### Create a place for WordPress to live
+#### Create a place for WordPress to live
 
 Make an empty directory on your computer somewhere, and point your localhost or virtual host to that directory.
 
-##### Download WordPress
+#### Download WordPress
 
 Go to [the WordPress download page](https://wordpress.org/download/) and download the latest version of WordPress.
 
-##### Unzip WordPress
+#### Unzip WordPress
 
 Unzip WordPress and place the contents of the folder into your directory.
 
-##### Create a database
+#### Create a database
 
 > Update 2017: The latest versions of MAMP do not come with phpMyAdmin preinstalled. Instead, you'll download [SequelPro](https://www.sequelpro.com/) on a Mac, or [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) on Windows, both free programs. To enter the database after downloading, login to the host `locahost` (or 127.0.0.1), with username `root` and password `root`. The rest of the instructions will be the same.
 
@@ -92,7 +92,7 @@ Click on phpMyAdmin. Click `Databases > create database`. I'm going to call mine
 
 ![](../images/Screen-Shot-2015-10-17-at-6.24.30-PM.png)
 
-##### Configure WordPress
+### Configure WordPress
 
 Alright, final step. Find `wp-config-sample.php` in your directory.
 
@@ -162,12 +162,12 @@ style.css
 
 ```css
 /*
-    Theme Name: Start WordPress
-    Author: Tania Rascia
-    Description: Bootstrap Blog template converted to WordPress
-    Version: 0.0.1
-    Tags: bootstrap
-    */
+Theme Name: Start WordPress
+Author: Tania Rascia
+Description: Bootstrap Blog template converted to WordPress
+Version: 0.0.1
+Tags: bootstrap
+*/
 ```
 
 Remember [the Bootstrap blog source code](https://github.com/taniarascia/bootstrapblog) from earlier in the article? Move those two files - `index.html` and `blog.css` - to your custom theme folder. Rename `index.html` to `index.php`.
@@ -180,7 +180,7 @@ Activate the theme and go back to your main URL. Yep, it's that simple. You've t
 
 There is one thing you might notice - `blog.css` is not being loaded. Bootstrap's main CSS and JS files are loading via [CDN](https://en.wikipedia.org/wiki/Content_delivery_network), but my local css file isn't loading. Why?
 
-My local URL may be **startwordpress.dev**, but it's really pulling from **wp-content/themes/startwordpress**. If I link to blog.css with `<link href="blog.css">`, it tries to load **startwordpress.dev/blog.css**, which does not exist. **Learn right now that you can never link to anything in a WordPress page without some PHP.**
+My local URL may be `startwordpress.dev`, but it's really pulling from `wp-content/themes/startwordpress`. If I link to blog.css with `<link href="blog.css">`, it tries to load `startwordpress.dev/blog.css`, which does not exist. **Learn right now that you can never link to anything in a WordPress page without some PHP.**
 
 > Note: Chrome no longer allows `.dev` local URLs. This example will use `.dev`, but you can use `.test` or something else of your choice.
 
@@ -276,14 +276,14 @@ Same deal for the footer as the header. It will include whatever visible footer 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<?php wp_footer(); ?>
+  <?php wp_footer(); ?>
   </body>
 </html>
 ```
 
 Most websites, especially blogs, will have a side area for including content such as archives, tags, category, ads, and whatnot. (Content removed for brevity.)
 
-sidebar.php
+<div class="filename">sidebar.php</div>
 
 ```html
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
@@ -315,7 +315,7 @@ sidebar.php
 
 If the sidebar is where all the secondary information goes, the content is where all the articles and main content of the website go. (Content removed for brevity.)
 
-content.php
+<div class="filename">content.php</div>
 
 ```html
 <div class="blog-post">
@@ -333,7 +333,7 @@ content.php
 <!-- /.blog-post -->
 ```
 
-##### Index
+#### Index
 
 The index file should be pretty sparse now. In fact, it should only be this:
 
@@ -352,19 +352,19 @@ Now we're going to add everything back in. Here's your new `index.php`.
 ```php
 <?php get_header(); ?>
 
-    	<div class="row">
+	<div class="row">
 
-    		<div class="col-sm-8 blog-main">
+		<div class="col-sm-8 blog-main">
 
-    			<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
 
-    		</div> <!-- /.blog-main -->
+		</div> <!-- /.blog-main -->
 
-    		<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 
-    	</div> <!-- /.row -->
+	</div> <!-- /.row -->
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
 ```
 
 Even if you've never used PHP before, this code is all very self explanatory. `get_header();`, `get_sidebar();` and `get_footer();` are all functions that look for their respective .php files and insert the code. Of course, they all go inside their own `<?php ?>` tags to let the server know to parse them as HTML. The content function is slightly different, but it does the same thing.
@@ -423,9 +423,9 @@ The Loop itself is quite simple.
 ```php
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <!-- contents of the loop -->
+  <!-- contents of the loop -->
 
-  <?php endwhile; endif; ?>
+<?php endwhile; endif; ?>
 ```
 
 It explains itself - IF there are posts, WHILE there are posts, DISPLAY the post. Anything inside the loop will be repeated. For a blog, this will be the post title, the date, the content, and comments. Where each individual post should end is where the loop will end. We're going to add the loop to `index.php`.
@@ -436,22 +436,22 @@ index.php
 
 ```php
 <?php get_header(); ?>
-    	<div class="row">
-    		<div class="col-sm-8 blog-main">
+	<div class="row">
+		<div class="col-sm-8 blog-main">
 
-    			<?php
-    			if ( have_posts() ) : while ( have_posts() ) : the_post();
+			<?php
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-    get_template_part( 'content', get_post_format() );
+get_template_part( 'content', get_post_format() );
 
-    			endwhile; endif;
-    			?>
+			endwhile; endif;
+			?>
 
-    		</div> <!-- /.blog-main -->
+		</div> <!-- /.blog-main -->
 
-    		<?php get_sidebar(); ?>
-    	</div> <!-- /.row -->
-    <?php get_footer(); ?>
+		<?php get_sidebar(); ?>
+	</div> <!-- /.row -->
+<?php get_footer(); ?>
 ```
 
 The only thing inside your loop is **content.php**, which will contain the contents of one single post. So open **content.php** and change the contents to this:
@@ -459,12 +459,12 @@ The only thing inside your loop is **content.php**, which will contain the conte
 ```php
 
 <div class="blog-post">
-    	<h2 class="blog-post-title"><?php the_title(); ?></h2>
-    	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
+	<h2 class="blog-post-title"><?php the_title(); ?></h2>
+	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
 
-     <?php the_content(); ?>
+ <?php the_content(); ?>
 
-    </div><!-- /.blog-post -->
+</div><!-- /.blog-post -->
 ```
 
 It's amazingly simple! `the_title();` is the title of the blog post, `the_date();` shows the date, `the_author();` the author, and `the_content();` is your post content. I added another post to prove at the loop is working.
@@ -475,22 +475,20 @@ Awesome. Let's make the sidebar dynamic, as well. There should be a description 
 
 Delete all the `<li>`s under **Archives** and change it to this code.
 
-sidebar.php
+<div class="filename">sidebar.php</div>
 
 ```php
-
 <h4>Archives</h4>
-    <ol class="list-unstyled">
-    	<?php wp_get_archives( 'type=monthly' ); ?>
-    </ol>
+<ol class="list-unstyled">
+	<?php wp_get_archives( 'type=monthly' ); ?>
+</ol>
 ```
 
 For my description, I'm going to pull in metadata from my user account.
 
 ```php
-
 <h4>About</h4>
-    <p><?php the_author_meta( 'description' ); ?> </p>
+<p><?php the_author_meta( 'description' ); ?> </p>
 ```
 
 Now this content is being pulled in dynamically as well.
@@ -510,15 +508,14 @@ In the dashboard, I added a page so we can see two. First, we're going to edit t
 header.php
 
 ```php
-
 <div class="blog-masthead">
-    	<div class="container">
-    		<nav class="blog-nav">
-    			<a class="blog-nav-item active" href="#">Home</a>
-    			<?php wp_list_pages( '&title_li=' ); ?>
-    		</nav>
-    	</div>
-    </div>
+	<div class="container">
+		<nav class="blog-nav">
+			<a class="blog-nav-item active" href="#">Home</a>
+			<?php wp_list_pages( '&title_li=' ); ?>
+		</nav>
+	</div>
+</div>
 ```
 
 `wp_list_pages();` will list all the pages you have in an unordered list. `'title_li='` is telling the code not to add a "Pages" title before the list. Unfortunately for us, this looks terrible; the original blog.css has the links coded in `a` tags, not `li` tags.
@@ -557,21 +554,21 @@ page.php
 
 <?php get_header(); ?>
 
-    	<div class="row">
-    		<div class="col-sm-12">
+	<div class="row">
+		<div class="col-sm-12">
 
-    			<?php
-    if ( have_posts() ) : while ( have_posts() ) : the_post();
+			<?php
+if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-    	get_template_part( 'content', get_post_format() );
+	get_template_part( 'content', get_post_format() );
 
-    endwhile; endif;
-    			?>
+endwhile; endif;
+			?>
 
-    		</div> <!-- /.col -->
-    	</div> <!-- /.row -->
+		</div> <!-- /.col -->
+	</div> <!-- /.row -->
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
 ```
 
 When I click on my sample page, the layout is now different than the blog post layout.
@@ -586,8 +583,5 @@ If something was unclear, please let me know. If I've posted any blatantly incor
 
 If you would like to know how to migrate this local instance to a live server, view this small tutorial:
 
-[Migrating WordPress](http://www.taniarascia.com/migrating-a-wordpress-site-to-a-live-server/)
-
-_Last updated: 4/16/2018_
-
-[In part two](http://www.taniarascia.com/wordpress-from-scratch-part-two), I discuss additional functionality for WordPress, such as paginaton, comments, functions, custom post types, and more. [In part three](http://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/), I go over how to create custom fields and metaboxes.
+- [Migrating WordPress](http://www.taniarascia.com/migrating-a-wordpress-site-to-a-live-server/)
+- [In part two](http://www.taniarascia.com/wordpress-from-scratch-part-two), I discuss additional functionality for WordPress, such as paginaton, comments, functions, custom post types, and more. [In part three](http://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/), I go over how to create custom fields and metaboxes.

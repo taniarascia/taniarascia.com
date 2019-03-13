@@ -51,8 +51,6 @@ That's it. Nothing else bothers me.
 
 ## To-dos ([Todoist](https://todoist.com))
 
-![](../images/todoist.png)
-
 I couldn't figure out where to put my to-do lists. In notes? In calendar events? In a Chrome extension? On a piece of paper by my bed? I didn't have any effective way to organize my to-dos, and there's nothing more useless than a completely out-of-date or disorganized to-do list.
 
 Todoist is absolutely fantastic for separating different levels of to-dos, and it has a really pleasant interface. I tried it once before and ended up being frustrated because I couldn't use it as a note-taking or list-making program the way I liked. If you use it just for to-dos and lists that can be _accomplished_ and aren't intended to be saved, then it's great.
@@ -66,8 +64,6 @@ Additionally, I have other little lists - if someone recommends a movie, book, o
 ![](../images/Screen-Shot-2016-12-20-at-5.00.50-PM.png)
 
 ## Notes ([Simplenote](https://simplenote.com))
-
-![](../images/simplenote.png)
 
 I tried using Evernote. I tried it for my phone, I tried it for my computer, I tried it for web. I read articles on how to organize it, whether through tagging or notebooks. Everyone loves it, it's everywhere. I didn't know what I apparently wasn't getting. I finally realized Evernote is just not for me. I don't like it. It's extremely slow and bulky, the formatting always messes up, it has no clear-cut way to organize notes, they're constantly reducing what you get with the free version, reducing your privacy, and so on. So I realized I needed something else.
 
@@ -83,8 +79,6 @@ Here's a screenshot of how I have it organized currently.
 
 ## Goals ([Strides](http://www.stridesapp.com/))
 
-![](../images/strides.png)
-
 It's really easy to take on too many goals and get overwhelmed. The best way for me to accomplish a goal is to track just a few things every day or week. Strides is perfect for that. Like Todoist, Strides has a premium version, but I haven't found a need for it.
 
 The concept of Strides is to set trackers. I'm only using it for fitness related goals right now, so I have a weight tracker that I have set for once a week, and various exercises that I either do daily or weekly. They conveniently have a lot of pre-set trackers that you define, so it's also great for budgeting, waking up early, and so on. Still, my main recommendation would be to track as few things as possible, and slightly less then what you actually want to do.
@@ -97,15 +91,11 @@ There will be a progress bar for your goal that's either red or green depending 
 
 ## Code Snippets ([Gistbox](http://www.gistboxapp.com))
 
-![](../images/gistbox.png)
-
 As a web developer, I'm constantly learning new things, and most of it I document here. However, not everything deserves its own blog post or tutorial, so I need a place to store all the little bits of code I write or find useful. [GitHub Gist](https://gist.github.com/) is great for storing these (and privately), but it's not very organized. GistboxApp integrates with your GitHub account to allow you to categorize your gists.
 
 ![](../images/Screen-Shot-2016-12-20-at-5.14.15-PM.png)
 
 ## Email ([Gmail](https://www.google.com/gmail))
-
-![](../images/gmail.png)
 
 I've been using email for nearly 20 years, but it was only this year, when I actually started getting emails on a regular basis (through this website) that I realized how bad I was at it. I didn't have any unread emails or spam, but I also didn't have any method of responding to or keeping track of my inbox. When I realized I had over a hundred emails floating around randomly in my inbox that I had never responded to, I knew something had to change. I reduced my inbox from over 5,000 messages to zero, with about 300 archived, and devised a method for labelling and keeping track of everything in the future.
 
@@ -167,8 +157,6 @@ One handy label I have is setting a **Personal** label to `from:(myemail)`, so a
 - Sort all emails immediately - either **delete**, **archive**, or **reply/star**.
 
 ## Calendar ([Google Calendar](https://www.google.com/calendar) & [TinyCalendar](http://www.appxy.com/tinycalendar/))
-
-![](../images/calendar.png)
 
 For a long time, I didn't use any calendar at all. Naturally, I would either double-book myself or completely forget about events. I realized if I take the slight effort to mark down every time I have a doctor's appointment, birthday party, get-together, concert, or any event coming up, I'll never have to worry about forgetting. It's not like I didn't try to use a calendar before, but I would always get so confused about how to sync them properly, and I'd have all these holidays and Facebook events filling it up and making it busy and overwhelming, so I would always give up.
 

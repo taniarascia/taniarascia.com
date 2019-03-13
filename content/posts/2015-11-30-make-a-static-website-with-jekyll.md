@@ -23,7 +23,8 @@ This is what the website we make will look like:
 
 ![](../images/Screen-Shot-2015-11-30-at-2.20.25-AM.png)
 
-[View Demo](http://taniarascia.github.io/startjekyll/) [View on GitHub](http://github.com/taniarascia/startjekyll/)
+- [View Demo](http://taniarascia.github.io/startjekyll/) 
+- [View on GitHub](http://github.com/taniarascia/startjekyll/)
 
 #### Prerequisites
 
@@ -101,7 +102,7 @@ Create a directory, and add a file called **Gemfile**. The file doesn't contain 
 
 ```ruby
 gem 'github-pages'
-    source 'https://rubygems.org'
+source 'https://rubygems.org'
 ```
 
 In Terminal, run this command in the directory that contains the Gemfile:
@@ -122,7 +123,9 @@ Great! Now that that's finished, you can successfully install Jekyll. I'm going 
 jekyll new startjekyll
 ```
 
+```terminal
 New jekyll site installed in /Users/tania/Sites/startjekyll.
+```
 
 Move to the new directory.
 
@@ -136,7 +139,9 @@ And initialize a new Git repository.
 git init
 ```
 
+```terminal
 Initialized empty Git repository in /Users/tania/Sites/startjekyll/.git/
+```
 
 At this point, all the setup is complete. In your project directory, run the following code:
 
@@ -224,15 +229,15 @@ I'm using my own name as an example, but obviously change everything to match yo
 
 In Jekyll, **\_includes** are files that should show up on every page - header, footer, etc.
 
-##### footer.html
+#### footer.html
 
 ```html
 <footer>
-    	<p>By <a href="http://taniarascia.com">Tania</p>
-    </footer>
+	<p>By <a href="http://taniarascia.com">Tania</p>
+</footer>
 ```
 
-##### head.html
+#### head.html
 
 Any `head` metadata.
 
@@ -262,36 +267,36 @@ Any `head` metadata.
 </head>
 ```
 
-##### header.html
+#### header.html
 
 Your navigation and header. I will dynamically load all pages into the navigation bar, except for the blog page, which I will load manually.
 
 ```html
 <aside>
-    	<div class="container">
-    		<nav>
-    			<ul>
-    {% for page in site.pages %} {% if page.title %}
-    <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-    {% endif %} {% endfor %}
-    <li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
-    			</ul>
-    			</li>
-    			</ul>
-    		</nav>
-    	</div>
-    </aside>
+	<div class="container">
+		<nav>
+			<ul>
+{% for page in site.pages %} {% if page.title %}
+<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+{% endif %} {% endfor %}
+<li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
+			</ul>
+			</li>
+			</ul>
+		</nav>
+	</div>
+</aside>
 
-    <header>
-    	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
-    </header>
+<header>
+	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+</header>
 ```
 
 ### \_layouts
 
 The layout that your content will conform to.
 
-##### default.html
+#### default.html
 
 ```html
 <!DOCTYPE html>
@@ -310,10 +315,12 @@ The layout that your content will conform to.
 </html>
 ```
 
-##### page.html
+#### page.html
 
 ```html
---- layout: default ---
+--- 
+layout: default 
+---
 
 <h2>{{ page.title }}</h2>
 
@@ -322,12 +329,14 @@ The layout that your content will conform to.
 
 All the dashes at the top are **mandatory**. If you don't include them, the website won't work properly. For pages and posts, the default layout gets loaded, plus any additional layout information you desire.
 
-##### post.html
+#### post.html
 
 Same as the page, but with date and author metadata.
 
 ```html
---- layout: default ---
+--- 
+layout: default 
+---
 
 <h2>{{ page.title }}</h2>
 <time
@@ -342,37 +351,37 @@ Same as the page, but with date and author metadata.
 
 The default Jekyll website does not come with a **\_pages** directory, but I like to include it so the main directory stays clean.
 
-##### 01_about.md
+#### 01_about.md
 
 Now we're creating the markdown files. Prepending them with a number ensures that they appear in the order you specify.
 
 ```markdown
 ---
 
-    layout: page
-    title: About
-    permalink: /about/
-    ---
+layout: page
+title: About
+permalink: /about/
+---
 
-    About content goes here.
+About content goes here.
 
-    * A list item
-    * Another list item
+* A list item
+* Another list item
 ```
 
-##### 02_contact.md
+#### 02_contact.md
 
 ```markdown
 ---
 
-    layout: page
-    title: Contact
-    permalink: /contact/
-    ---
+layout: page
+title: Contact
+permalink: /contact/
+---
 
-    Contact content goes here.
+Contact content goes here.
 
-    My e-mail is [email@something.com](mailto:email@something.com).
+My e-mail is [email@something.com](mailto:email@something.com).
 ```
 
 ### \_posts
@@ -386,7 +395,9 @@ Delete about.md from the main directory, since we've put it in the **\_pages** d
 **index.html** in the main directory will be the main page of the site.
 
 ```html
---- layout: default ---
+--- 
+layout: default 
+---
 
 <h2>Main Page</h2>
 
@@ -399,17 +410,16 @@ Create a new directory called **blog**. Inside, create an **index.html**. This w
 
 ```html
 ---
-    layout: default
-    ---
+layout: default
+---
 
-    <h4>blog</h4>
-    {% for post in site.posts %}
-    		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-    		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-    {% endfor %}
+<h4>blog</h4>
+{% for post in site.posts %}
+		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+{% endfor %}
 
-    <p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 ```
 
 ### css
@@ -418,12 +428,12 @@ The **css** directory in the root should contain one file - **main.scss**. Edit 
 
 ```scss
 ---
-    # Front matter comment to ensure Jekyll properly reads file.
-    ---
-    @import
-    	"base",
-      "layout",
-      "syntax-highlighting"
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@import
+	"base",
+  "layout",
+  "syntax-highlighting"
 ```
 
 Leave the top part exactly as is.
@@ -432,7 +442,7 @@ Leave the top part exactly as is.
 
 The absolute last directory that we need to edit - the sass partials. Create each of these files in the `_sass` directory.
 
-##### \_base.scss
+#### \_base.scss
 
 Variables, mixins, and resets will go here.
 
@@ -457,7 +467,7 @@ $header: #1d1425;
 }
 ```
 
-##### \_syntax-highlighting.scss
+#### \_syntax-highlighting.scss
 
 Simply remove this line from the file:
 
@@ -465,7 +475,7 @@ Simply remove this line from the file:
 @extend %vertical-rhythm;
 ```
 
-##### \_layout.scss
+#### \_layout.scss
 
 All my styles will go in here. I made a simple, responsive website that doesn't rely on any frameworks.
 
@@ -597,16 +607,14 @@ Server running... press ctrl-c to stop.
 
 If I make a change to any of the sass files, they should compile.
 
-     Regenerating: 1 file(s) changed at 2015-11-30 ...done in 0.090263 seconds.
-      Regenerating: 1 file(s) changed at 2015-11-30 ...done in 0.120487 seconds.
+```terminal
+Regenerating: 1 file(s) changed at 2015-11-30 ...done in 0.090263 seconds.
+Regenerating: 1 file(s) changed at 2015-11-30 ...done in 0.120487 seconds.
+```
 
 ## Pushing Jekyll site to GitHub pages
 
-Create an empty repository in GitHub. Mine is **startjekyll**, so the Git repo URL is this:
-
-```
-http://github.com/taniarascia/startjekyll
-```
+Create an empty repository in GitHub. Mine is **startjekyll**, so the Git repo URL is `https://github.com/taniarascia/startjekyll`.
 
 There is one change that needs to be made in order to have one site for both your local Jekyll and the live GitHub pages.
 
@@ -616,7 +624,7 @@ Leave the **\_config_dev.yml** as is, and change **\_config.yml** for the live s
 
 ```yaml
 baseurl: "/startjekyll"
-    url: "http://taniarascia.github.io"
+url: "https://taniarascia.github.io"
 ```
 
 Now, when you want to work on the site locally, you will run the following command:

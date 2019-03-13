@@ -41,15 +41,15 @@ If you've never used the command line, this article will be extremely helpful to
   - Write text to a file
   - View contents of a file
 
-* Deleting files and directories
-* Copying and pasting files and directories
-* Moving/cutting files and directories
-* Running multiple commands
-* Changing permissions
-* Run as administrator
-* Connecting to another computer or server
-* A few more useful commands
-* Using a basic text editor
+- Deleting files and directories
+- Copying and pasting files and directories
+- Moving/cutting files and directories
+- Running multiple commands
+- Changing permissions
+- Run as administrator
+- Connecting to another computer or server
+- A few more useful commands
+- Using a basic text editor
 
 ## What is the command line?
 
@@ -85,7 +85,7 @@ And here's what is written (printed) to the screen.
 
 ```terminal
 NolBook:~ taniarascia$ pwd
-    /Users/taniarascia
+/Users/taniarascia
 ```
 
 ![](../images/Screen-Shot-2017-01-07-at-3.07.35-PM.png)
@@ -98,8 +98,8 @@ ls
 
 ```terminal
 NolBook:~ taniarascia$ ls
-    Desktop   Documents Library   Music     Private   Sites
-    Dev       Downloads Movies    Pictures  Public    Songs
+  Desktop   Documents Library   Music     Private   Sites
+  Dev       Downloads Movies    Pictures  Public    Songs
 ```
 
 And now I see exactly what I see in Finder and Chrome/a web browser!
@@ -113,7 +113,7 @@ Now you should understand that you're accessing the same files and folders from 
 When I open terminal, I see this.
 
 ```terminal
-NolBook:~ taniarascia$ 
+NolBook:~ taniarascia$
 ```
 
 You'll probably see something else, but the `~` and `$` will remain. Here's what's going on, which you can look back on for reference:
@@ -135,46 +135,11 @@ We're going to learn how to do a lot of the regular things you do on a computer 
 
 So far, we've learned three things.
 
-<table >
-<tr >
-Command
-Meaning
-Description
-</tr>
-<tr >
-
-<td >`pwd`
-</td>
-
-<td >**Print Working Directory**
-</td>
-
-<td >find out where you are
-</td>
-</tr>
-<tr >
-
-<td >`ls`
-</td>
-
-<td >**List Directory Contents**
-</td>
-
-<td >see what files and directories are in your current location
-</td>
-</tr>
-<tr >
-
-<td >`clear`
-</td>
-
-<td >**Clear**
-</td>
-
-<td >clear the terminal screen
-</td>
-</tr>
-</table>
+| Command | Meaning                     | Description                                                 |
+| ------- | --------------------------- | ----------------------------------------------------------- |
+| `pwd`   | **Print Working Directory** | find out where you are                                      |
+| `ls`    | **List Directory Contents** | see what files and directories are in your current location |
+| `clear` | **Clear**                   | clear the terminal screen                                   |
 
 Always remember to type `pwd` before writing any commands to make sure you know where you are.
 
@@ -186,31 +151,25 @@ Right now, I'm in my home folder. If I want to move somewhere else, I will use t
 
 ```bash
 cd music
-    pwd
-    ls
+pwd
+ls
 ```
 
 Here is the output.
 
 ```terminal
 NolBook:~ taniarascia$ cd music
-    NolBook:music taniarascia$ pwd
-    /Users/taniarascia/music
-    NolBook:music taniarascia$ ls
-    Audio Music Apps GarageBand iTunes
-
+NolBook:music taniarascia$ pwd
+/Users/taniarascia/music
+NolBook:music taniarascia$ ls
+Audio Music Apps GarageBand iTunes
 ```
 
-
-
-
-First, I moved to the **Music** folder. The terminal will understand a directory regardless of case, so I can write **music** or **Music**.  As you can see, it says `NolBook:music` instead of `NolBook:~`, so I know I'm in a different directory now. I printed out my current location to make sure, then listed the contents.
+First, I moved to the **Music** folder. The terminal will understand a directory regardless of case, so I can write **music** or **Music**. As you can see, it says `NolBook:music` instead of `NolBook:~`, so I know I'm in a different directory now. I printed out my current location to make sure, then listed the contents.
 
 That's great, but I don't really want to do anything in the **Music** folder. How do I go back? In the terminal, one dot (`.`) represents the current directory, and two dots (`..`) represents one directory backwards, or closer to the root.
 
 I want to go back one directory, back into my home folder.
-
-
 
 ```bash
 cd ..
@@ -218,23 +177,13 @@ cd ..
 
 ```terminal
 NolBook:~ taniarascia$
-
 ```
-
-
-
 
 By typing `cd ..` I've told the shell to take me back one directory, and now I'm back in home/`~`. Right now would be a good time to practice moving between directories. `../..` will take you back two directories, and so on.
 
-
-
 #### Spaces in directory and file names
 
-
-
 If you try to move into a directory that has a space, you may encounter an issue. For example, in my **Music** folder, there was a directory called **Audio Music Apps**. However, if I try to simply type that..
-
-
 
 ```bash
 cd Audio Music Apps
@@ -246,7 +195,7 @@ cd Audio Music Apps
 
 The shell thinks I'm trying to move into **Audio** instead of **Audio Music Apps** because it does not recognize the space. There are two ways to remedy this.
 
-##### Using Quotations
+#### Using Quotations
 
 Wrap any file in double quotes to preserve the spaces.
 
@@ -254,7 +203,7 @@ Wrap any file in double quotes to preserve the spaces.
 cd "Audio Music Apps"
 ```
 
-##### Escaping
+#### Escaping
 
 Type a backslash `\` character before each space. If you press tab, the Terminal will do this for you! Simply type `cd A` and press tab and the shell will automatically assume what you want to type.
 
@@ -262,24 +211,9 @@ Type a backslash `\` character before each space. If you press tab, the Terminal
 cd Audio\ Music\ Apps/
 ```
 
-<table >
-<tr >
-Command
-Meaning
-Description
-</tr>
-<tr >
-
-<td >`cd`
-</td>
-
-<td >**Change Directory**
-</td>
-
-<td >move between directories
-</td>
-</tr>
-</table>
+| Command | Meaning              | Description              |
+| ------- | -------------------- | ------------------------ |
+| `cd`    | **Change Directory** | move between directories |
 
 > You can end a command at any point by pressing control + C
 
@@ -303,23 +237,14 @@ Now you can move into the **Shell** directory by inputting `cd shell`.
 
 ```terminal
 NolBook:~ taniarascia$ cd shell
-    NolBook:shell taniarascia$ pwd
-    /Users/taniarascia/shell
+NolBook:shell taniarascia$ pwd
+/Users/taniarascia/shell
 
 ```
 
-
-
-
-
-
 #### Create file
 
-
-
 Now let's make a file. You can do this with the `touch` command. I imagine it as Merlin tapping a wand and creating something out of thin air.
-
-
 
 ```bash
 touch test.html
@@ -355,90 +280,27 @@ cat hello.txt
 
 ```terminal
 NolBook:shell taniarascia$ cat hello.txt
-    Hello World
-
+Hello World
 ```
-
-
-
 
 At this point, I would recommend creating some more files and directories and moving between them to get more familiarized with the commands.
 
-
-
 > These commands - `touch`, `cat`, and `echo` - can do much more than what I've shown in these quick examples.
 
-
-
-<table >
-<tr >
-Command
-Meaning
-Description
-</tr>
-<tr >
-
-<td >`mkdir`
-</td>
-
-<td >**Make Directory**
-</td>
-
-<td > create a new directory
-</td>
-</tr>
-<tr >
-
-<td >`touch`
-</td>
-
-<td >**Touch**
-</td>
-
-<td >create a new file
-</td>
-</tr>
-<tr >
-
-<td >`cat`
-</td>
-
-<td >**Concatenate**
-</td>
-
-<td >view the contents of a file
-</td>
-</tr>
-<tr >
-
-<td >`echo "x" >`
-</td>
-
-<td >**Echo**
-</td>
-
-<td >quickly print text to a file
-</td>
-</tr>
-</table>
-
-
+| Command      | Meaning            | Description                  |
+| ------------ | ------------------ | ---------------------------- |
+| `mkdir`      | **Make Directory** | create a new directory       |
+| `touch`      | **Touch**          | create a new file            |
+| `cat`        | **Concatenate**    | view the contents of a file  |
+| `echo "x" >` | **Echo**           | quickly print text to a file |
 
 ### Deleting files and directories
 
-
-
 Now hopefully you've make a big mess of files and directories in your testing folder, so we can start cleaning it up.
-
-
 
 #### Delete a file
 
-
-
 Use the `rm` (**Remove**) command to remove a file.
-
-
 
 ```bash
 rm hello.txt
@@ -454,16 +316,10 @@ Now, let's say you create a new directory called **goodbye** with `mkdir goodbye
 
 ```terminal
 NolBook:shell taniarascia$ rm goodbye
-    rm: goodbye: is a directory
-
+rm: goodbye: is a directory
 ```
 
-
-
-
 No problem, we'll just delete it with `rmdir` (**Remove Directory**).
-
-
 
 ```bash
 rmdir goodbye
@@ -481,35 +337,10 @@ Just like with `touch`, we can remove multiple files or folders at the same time
 rm one.txt two.txt three.txt
 ```
 
-<table >
-<tr >
-Command
-Meaning
-Description
-</tr>
-<tr >
-
-<td >`rm`
-</td>
-
-<td >**Remove**
-</td>
-
-<td >remove directory entries
-</td>
-</tr>
-<tr >
-
-<td >`rmdir`
-</td>
-
-<td >**Remove Directory**
-</td>
-
-<td >remove directories
-</td>
-</tr>
-</table>
+| Command | Meaning              | Description              |
+| ------- | -------------------- | ------------------------ |
+| `rm`    | **Remove**           | remove directory entries |
+| `rmdir` | **Remove Directory** | remove directories       |
 
 ### Copying files and directories
 
@@ -551,46 +382,11 @@ mv source destination
 
 This is similar to cutting and pasting (command + X).
 
-<table >
-<tr >
-Command
-Meaning
-Description
-</tr>
-<tr >
-
-<td >`cp`
-</td>
-
-<td >**Copy**
-</td>
-
-<td >copy files
-</td>
-</tr>
-<tr >
-
-<td >`cp -R`
-</td>
-
-<td >**Copy Recursively**
-</td>
-
-<td >copy a directory and all its contents
-</td>
-</tr>
-<tr >
-
-<td >`mv`
-</td>
-
-<td >**Move**
-</td>
-
-<td >move (cut and paste) files and directories
-</td>
-</tr>
-</table>
+| Command | Meaning              | Description                                |
+| ------- | -------------------- | ------------------------------------------ |
+| `cp`    | **Copy**             | copy files                                 |
+| `cp -R` | **Copy Recursively** | copy a directory and all its contents      |
+| `mv`    | **Move**             | move (cut and paste) files and directories |
 
 ### Running multiple commands
 
@@ -633,15 +429,9 @@ Now my terminal looks different - it has a `#` instead of a `$` to indicate that
 
 ```terminal
 sh-3.2#
-
 ```
 
-
-
-
 Since I don't really want to be logged in as admin, I'm going to `exit`, which will return me to my regular user account.
-
-
 
 ```bash
 exit
@@ -661,23 +451,13 @@ Once you've entered your password, you are now "inside" the other server. Your c
 
 ```terminal
 [username@host ~]$
-
 ```
-
-
-
 
 All the commands we've already learned will work on your web host as well. You can exit the server and return to your own computer with the `exit` command.
 
-
-
 ### A few useful commands
 
-
-
 Sometimes, when I'm having an existential crisis, I turn to my computer to bring me back to reality.
-
-
 
 ```bash
 whoami
@@ -685,7 +465,7 @@ whoami
 
 ```terminal
 NolBook:~ taniarascia$ whoami
-    taniarascia
+taniarascia
 ```
 
 I often need to check the IP address of a given domain when I'm migrating a website. I can do this with the `dig` (**DNS Lookup**) command.
@@ -696,10 +476,10 @@ dig google.com
 
 ```terminal
 ;; QUESTION SECTION:
-    ;google.com.			IN	A
+;google.com.			IN	A
 
-    ;; ANSWER SECTION:
-    google.com.		279	IN	A	216.58.192.238
+;; ANSWER SECTION:
+google.com.		279	IN	A	216.58.192.238
 ```
 
 If I forget something, I can also check the help guide for the command line with `man` (**Manual**).
@@ -710,7 +490,7 @@ man touch
 
 ```terminal
 NAME
-         touch -- change file access and modification times
+touch -- change file access and modification times
 ```
 
 To exit the manual pages, simply press q.
@@ -749,235 +529,50 @@ Now I can check the contents of **index.html** with `cat` to make sure it all wo
 
 ```terminal
 NolBook:shell taniarascia$ cat index.html
-    <html>
-      <head>
-        <title>Hello, World!</title>
-      </head>
-      <body>
-        <h1>Hello, World!</h1>
-      </body>
-    </html>
+  <html>
+    <head>
+      <title>Hello, World!</title>
+    </head>
+    <body>
+      <h1>Hello, World!</h1>
+    </body>
+  </html>
 ```
 
 ## Recap
 
 Here's a recap of all the commands I went over today.
 
-<table >
-<tr >
-Command
-Meaning
-Description
-</tr>
-<tr >
-
-<td >`pwd`
-</td>
-
-<td >**Print Working Directory**
-</td>
-
-<td >find out where you are
-</td>
-</tr>
-<tr >
-
-<td >`ls`
-</td>
-
-<td >**List Directory Contents**
-</td>
-
-<td >see what files and directories are in your current location
-</td>
-</tr>
-<tr >
-
-<td >`clear`
-</td>
-
-<td >**Clear**
-</td>
-
-<td >clear the terminal screen
-</td>
-</tr>
-<tr >
-
-<td >`cd`
-</td>
-
-<td >**Change Directory**
-</td>
-
-<td >move between directories
-</td>
-</tr>
-<tr >
-
-<td >`mkdir`
-</td>
-
-<td >**Make Directory**
-</td>
-
-<td > create a new directory
-</td>
-</tr>
-<tr >
-
-<td >`touch`
-</td>
-
-<td >**Touch**
-</td>
-
-<td >create a new file
-</td>
-</tr>
-<tr >
-
-<td >`cat`
-</td>
-
-<td >**Concatenate**
-</td>
-
-<td >view the contents of a file
-</td>
-</tr>
-<tr >
-
-<td >`echo "x" >`
-</td>
-
-<td >**Echo**
-</td>
-
-<td >quickly print text to a file
-</td>
-</tr>
-<tr >
-
-<td >`rm`
-</td>
-
-<td >**Remove**
-</td>
-
-<td >remove directory entries
-</td>
-</tr>
-<tr >
-
-<td >`rmdir`
-</td>
-
-<td >**Remove Directory**
-</td>
-
-<td >remove directories
-</td>
-</tr>
-<tr >
-
-<td >`cp`
-</td>
-
-<td >**Copy**
-</td>
-
-<td >copy files
-</td>
-</tr>
-<tr >
-
-<td >`cp -R`
-</td>
-
-<td >**Copy Recursively**
-</td>
-
-<td >copy a directory and all its contents
-</td>
-</tr>
-<tr >
-
-<td >`mv`
-</td>
-
-<td >**Move**
-</td>
-
-<td >move (cut and paste) files and directories
-</td>
-</tr>
-<tr >
-
-<td >`&&`
-</td>
-
-<td >**And**
-</td>
-
-<td >run multiple commands
-</td>
-</tr>
-<tr >
-
-<td >`whoami`
-</td>
-
-<td >**Who Am I**
-</td>
-
-<td >display current user id
-</td>
-</tr>
-<tr >
-
-<td >`dig`
-</td>
-
-<td >**Dig**
-</td>
-
-<td >DNS lookup
-</td>
-</tr>
-<tr >
-
-<td >`man`
-</td>
-
-<td >**Manual**
-</td>
-
-<td >open manual (help) pages
-</td>
-</tr>
-<tr >
-
-<td >`nano`
-</td>
-
-<td >**Nano's ANOther editor**
-</td>
-
-<td >free text editing program
-</td>
-</tr>
-</table>
+| Command      | Meaning                     | Description                                                 |
+| ------------ | --------------------------- | ----------------------------------------------------------- |
+| `pwd`        | **Print Working Directory** | find out where you are                                      |
+| `ls`         | **List Directory Contents** | see what files and directories are in your current location |
+| `clear`      | **Clear**                   | clear the terminal screen                                   |
+| `cd`         | **Change Directory**        | move between directories                                    |
+| `mkdir`      | **Make Directory**          | create a new directory                                      |
+| `touch`      | **Touch**                   | create a new file                                           |
+| `cat`        | **Concatenate**             | view the contents of a file                                 |
+| `echo "x" >` | **Echo**                    | quickly print text to a file                                |
+| `rm`         | **Remove**                  | remove directory entries                                    |
+| `rmdir`      | **Remove Directory**        | remove directories                                          |
+| `cp`         | **Copy**                    | copy files                                                  |
+| `cp -R`      | **Copy Recursively**        | copy a directory and all its contents                       |
+| `mv`         | **Move**                    | move (cut and paste) files and directories                  |
+| `&&`         | **And**                     | run multiple commands                                       |
+| `whoami`     | **Who Am I**                | display current user id                                     |
+| `dig`        | **Dig**                     | DNS lookup                                                  |
+| `man`        | **Manual**                  | open manual (help) pages                                    |
+| `nano`       | **Nano's ANOther editor**   | free text editing program                                   |
 
 ## Conclusion
 
 Now that you know how to use the command line, you can do a few things like...
 
-- [Use Git from the command line
+- Use Git from the command line
 - [Run Sass from the command line](https://www.taniarascia.com/learn-sass-now/)
 - [Set up a workflow with Gulp](https://www.taniarascia.com/getting-started-with-gulp/)
 - [Or Grunt](https://www.taniarascia.com/getting-started-with-grunt-and-sass/)
-- [Set up a Jekyll site
+- Set up a Jekyll site]
 - [Download all your programs with a single command](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/)
 - [Set up a Linux server (AWS)](https://www.taniarascia.com/getting-started-with-aws-setting-up-a-virtual-server/)
 - [Set up a cron job](https://www.taniarascia.com/setting-up-a-basic-cron-job-in-linux/)

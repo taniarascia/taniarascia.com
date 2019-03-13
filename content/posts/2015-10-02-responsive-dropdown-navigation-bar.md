@@ -487,4 +487,5 @@ And that's the end of this tutorial! If you didn't want to read through any of t
 
 > If you're copying the code in CodePen, make sure to include the jQuery library or it won't work!
 
-[View Source](https://gist.github.com/taniarascia/56893ff29f64038dca91) [View Demo](http://codepen.io/taniarascia/pen/dYvvYv)
+- [View Source](https://gist.github.com/taniarascia/56893ff29f64038dca91) 
+- [View Demo](http://codepen.io/taniarascia/pen/dYvvYv)
