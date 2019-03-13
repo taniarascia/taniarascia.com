@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
+import kebabCase from 'lodash.kebabcase'
 
 class BlogPage extends Component {
   render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges
+    const postEdges = this.props.data.posts.edges
+    const categories = this.props.data.categories.group.filter(
+      category => category.fieldValue !== 'Popular'
+    )
 
     return (
       <Layout>
@@ -16,6 +20,15 @@ class BlogPage extends Component {
         <SEO />
         <div className="container">
           <h1>Articles</h1>
+          <div className="tag-container articles-page-tags">
+            {categories.map(category => (
+              <Link to={`/categories/${kebabCase(category.fieldValue)}`} key={category.fieldValue}>
+                <span key={category.fieldValue}>
+                  {category.fieldValue} <strong className="count">{category.totalCount}</strong>
+                </span>
+              </Link>
+            ))}
+          </div>
           <PostListing excerpt postEdges={postEdges} />
         </div>
       </Layout>
@@ -27,7 +40,7 @@ export default BlogPage
 
 export const pageQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {
+    posts: allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {
       edges {
         node {
           fields {
@@ -50,6 +63,12 @@ export const pageQuery = graphql`
             template
           }
         }
+      }
+    }
+    categories: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___categories) {
+        fieldValue
+        totalCount
       }
     }
   }

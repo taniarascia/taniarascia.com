@@ -26,7 +26,7 @@ class Navigation extends Component {
         <div className="nav-container">
           <div className="brand">
             <Link to="/">
-              <img src={floppy} className="favicon" /> Tania Rascia
+              <img src={floppy} className="favicon" /> <span className="text">Tania Rascia</span>
             </Link>
           </div>
           <div className="links">
@@ -36,7 +36,7 @@ class Navigation extends Component {
               </Link>
             ))}
             <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
-              Donate <span className="emoji">☕</span>
+              <span className="text">Donate</span> <span className="emoji">☕</span>
             </a>
           </div>
         </div>

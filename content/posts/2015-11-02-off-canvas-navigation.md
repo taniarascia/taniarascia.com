@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: off-canvas-navigation
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - css
   - navigation
@@ -29,7 +27,7 @@ This will only take me a few minutes to recreate. It's not going to be exactly t
 
 ### The Demo
 
-See the Pen [Off Canvas Navigation with CSS3 Transitions](http://codepen.io/taniarascia/pen/QjBwpB/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Off Canvas Navigation with CSS3 Transitions](http://codepen.io/taniarascia/pen/QjBwpB/)
 
 ```html
 <main>

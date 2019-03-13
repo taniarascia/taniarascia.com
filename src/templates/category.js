@@ -14,7 +14,7 @@ class CategoryTemplate extends Component {
       <Layout>
         <Helmet title={`Posts in category "${category}" | ${config.siteTitle}`} />
         <div className="container">
-          <h1>Posts tagged as "{category}"</h1>
+          <h1>{category}</h1>
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>

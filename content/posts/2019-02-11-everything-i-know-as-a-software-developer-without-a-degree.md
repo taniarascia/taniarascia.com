@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/floppy.png'
 slug: everything-i-know-as-a-software-developer-without-a-degree
 categories:
   - Personal
-  - Web
 tags:
   - career
   - life

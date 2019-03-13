@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/newmoon.png'
 slug: adding-syntax-highlighting-to-code-snippets
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - code
   - syntax highlighting
@@ -62,7 +60,7 @@ Here is an example of the above code embedded as a GitHub gist:
 
 And here is the above code embedded as a CodePen pen.
 
-See the Pen [mEerjX](http://codepen.io/taniarascia/pen/mEerjX/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [mEerjX](http://codepen.io/taniarascia/pen/mEerjX/)
 
 The advantage to embedding is that it's quick and easy. CodePen in specific is excellent for demos because you can show the code and the result.
 
@@ -114,7 +112,7 @@ Finally, wrap your desired code in `<pre><code class="language-whatever">`. You'
 
 Now here's what that ends up looking like.
 
-See the Pen [Prism Syntax Highlighting](http://codepen.io/taniarascia/pen/wWKzQQ/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Prism Syntax Highlighting](http://codepen.io/taniarascia/pen/wWKzQQ/)
 
 Now you override the styles with whatever you want in the CSS file. On this blog, I use [New Moon](http://taniarascia.github.io/new-moon/), my own personal coding theme that I made available as an open-source package on Brackets, Atom, and Sublime because I'm that much of a dork. I encourage you to make your own as well.
 

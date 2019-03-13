@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/ssl.png'
 slug: https-ssl-tls-certificate-how-to
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - security
   - ssl

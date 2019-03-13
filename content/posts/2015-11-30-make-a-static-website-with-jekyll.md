@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/jekyll.png'
 slug: make-a-static-website-with-jekyll
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - git
   - jekyll

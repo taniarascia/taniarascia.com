@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/writing.png'
 slug: website-redesign-version-4-0
 categories:
   - Personal
-  - Web
 tags:
   - design
 ---

@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/apache.png'
 slug: rewrite-query-string-to-path-with-htaccess
 categories:
   - Programming
-  - Tutorials
-  - Web
 tags:
   - apache
   - htaccess

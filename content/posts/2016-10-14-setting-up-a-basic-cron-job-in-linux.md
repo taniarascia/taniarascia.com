@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/linux.png'
 slug: setting-up-a-basic-cron-job-in-linux
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - cron
   - linux

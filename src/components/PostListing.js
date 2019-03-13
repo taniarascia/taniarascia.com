@@ -29,6 +29,8 @@ class PostListing extends Component {
     return (
       <section className={`posts ${simple ? 'simple' : ''}`}>
         {postList.map(post => {
+          const date = formatDate(post.date)
+
           let thumbnail
           if (post.thumbnail) {
             thumbnail = post.thumbnail.childImageSharp.fixed
@@ -38,7 +40,7 @@ class PostListing extends Component {
               <div className="each">
                 {thumbnail ? <Img fixed={thumbnail} /> : <div />}
                 <div>
-                  {!simple ? <time className="date">{formatDate(post.date)}</time> : null}
+                  {!simple ? <time className="date">{date}</time> : null}
                   <h2>{post.title}</h2>
                   {!simple ? <div className="excerpt">{post.excerpt}</div> : null}
                 </div>

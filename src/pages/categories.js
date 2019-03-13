@@ -18,7 +18,7 @@ class CategoriesPage extends Component {
           <h1>Categories</h1>
           <div className="tag-container">
             {group.map(category => (
-              <Link to={`/categories/${kebabCase(category.fieldValue)}`}>
+              <Link to={`/categories/${kebabCase(category.fieldValue)}`} key={category.fieldValue}>
                 <span key={category.fieldValue}>
                   {category.fieldValue} <strong className="count">{category.totalCount}</strong>
                 </span>

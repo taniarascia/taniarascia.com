@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: you-dont-need-a-framework
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - css
   - fundamentals
@@ -143,7 +141,7 @@ There is some controversy surrounding grids, in that they're usually not [semant
 
 > Want to use the Flexbox layout model instead of a CSS float grid? [Here is a tutorial](http://www.taniarascia.com/easiest-flex-grid-ever/) on how to make the same grid in Flexbox.
 
-See the Pen [CSS Float Grid](http://codepen.io/taniarascia/pen/GpGdyy/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [CSS Float Grid](http://codepen.io/taniarascia/pen/GpGdyy/)
 
 I prefer not to use a fixed column amount for my grids. Foundation, Bootstrap, and [Skeleton](http://getskeleton.com) all run on 12 column grids. If you only plan to use 5, or need 15, these systems would be hard to modify.
 
@@ -240,7 +238,7 @@ It's important to think about your content when designing your layout. Just beca
 
 Earlier, I wrote an article [on how to make a responsive dropdown navigation bar](http://www.taniarascia.com/responsive-dropdown-navigation-bar/) from scratch. If you want a complete understanding of how it works from start to finish, I would recommend reading that article.
 
-See the Pen [Responsive Dropdown Navigation Bar](http://codepen.io/taniarascia/pen/dYvvYv/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Responsive Dropdown Navigation Bar](http://codepen.io/taniarascia/pen/dYvvYv/)
 
 I have also created a simplified version without dropdowns and written in vanilla CSS. [Click here to view the simplified pen](http://codepen.io/taniarascia/pen/epKrPm).
 

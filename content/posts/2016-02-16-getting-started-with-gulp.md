@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/gulp.png'
 slug: getting-started-with-gulp
 categories:
-  - Tutorials
-  - Web
   - Workflow
 tags:
   - gulp

@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: styling-ui-components-from-scratch-buttons-forms
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - buttons
   - css

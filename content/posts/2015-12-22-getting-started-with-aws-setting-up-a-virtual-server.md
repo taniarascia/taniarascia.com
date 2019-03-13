@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/aws.png'
 slug: getting-started-with-aws-setting-up-a-virtual-server
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - aws
   - linux

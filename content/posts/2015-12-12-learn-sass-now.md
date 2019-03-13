@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/sass.png'
 slug: learn-sass-now
 categories:
-  - Tutorials
-  - Web
   - Workflow
 tags:
   - css
@@ -264,16 +262,16 @@ There is no specific right or wrong way to do this. Look it up and you'll find p
   - main.css
 - **sass/**
   - main.scss
-    - **base/**
-      - _variables.scss
-      - _mixins.scss
-      - _reset.scss
-    - **components/**
-      - _typography.scss
-      - _grid.scss
-      - _buttons.scss
-      - _navigation.scss
-      - _sections.scss
+  - **base/**
+    - _variables.scss
+    - _mixins.scss
+    - _reset.scss
+  - **components/**
+    - _typography.scss
+    - _grid.scss
+    - _buttons.scss
+    - _navigation.scss
+    - _sections.scss
 
 Here is a more visual version of that project layout.
 

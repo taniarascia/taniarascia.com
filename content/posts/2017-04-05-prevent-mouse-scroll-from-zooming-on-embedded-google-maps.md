@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/gmaps.png'
 slug: prevent-mouse-scroll-from-zooming-on-embedded-google-maps
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - css
   - google-maps

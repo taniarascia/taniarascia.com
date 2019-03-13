@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/computer.png'
 slug: how-i-made-a-career-change-into-web-development
 categories:
   - Personal
-  - Web
 tags:
   - life
   - career

@@ -38,14 +38,6 @@
   }
 }
 
-.date,
-.disqus-comment-count {
-  font-size: 0.9rem;
-  color: $light-font-color;
-  display: inline-block;
-  margin: 0 5px;
-}
-
 .posts {
   a {
     display: block;
@@ -60,6 +52,7 @@
       border-bottom-color: #f0f0f0;
       .date {
         margin: 0;
+        font-size: .9rem; 
         color: rgba(0, 0, 0, 0.4);
         font-weight: 400;
       }
@@ -121,7 +114,7 @@
       font-weight: 500;
       padding: 0;
       margin: 0;
-      color: #888;
+      color: $light-font-color;
       &:hover {
         color: #111;
       }
@@ -161,7 +154,7 @@
 
 .simple {
   .each {
-    padding: .75rem 1rem;
+    padding: 0.75rem 1rem;
     margin: 0 -1rem;
     border: 2px solid transparent;
     border-radius: $border-radius;
@@ -170,7 +163,7 @@
       font-weight: 500;
       padding: 0;
       margin: 0;
-      color: #888;
+      color: $light-font-color;
       border-bottom: none;
     }
     &:hover {
@@ -190,18 +183,44 @@
     color: darken($border-color, 30%);
     border: 2px solid $border-color;
     border-radius: $border-radius;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 0 0.5rem 0.5rem 0;
     .count {
       color: $secondary-color;
-      font-weight: 600;
-      margin-left: 1rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
     }
     &:hover,
     &:active,
     &:focus {
+      border: 2px solid darken($border-color, 10%);
       background: lighten($border-color, 15%);
       color: darken($border-color, 40%);
+    }
+  }
+  &.articles-page-tags {
+    margin-bottom: 2rem;
+  }
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: $light-font-color;
+  display: inline-block;
+  .date {
+    margin-right: 0.5rem;
+  }
+  a {
+    color: $light-font-color;
+    &.comment-link,
+    &.github-link {
+      margin: 0 0.5rem;
+    }
+    &.comment-link {
+      text-transform: lowercase;
+    }
+    &:hover {
+      color: $primary-color;
     }
   }
 }
@@ -263,7 +282,7 @@ blockquote {
   }
 }
 
-.emoji {
+.emoji-in-button {
   line-height: 0;
   font-size: 1.5rem;
   margin-left: 0.75rem;

@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/linux.png'
 slug: how-to-generate-a-public-key-from-a-private-key
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - server
   - sysadmin

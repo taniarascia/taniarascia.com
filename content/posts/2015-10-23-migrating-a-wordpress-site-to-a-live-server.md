@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/wp.png'
 slug: migrating-a-wordpress-site-to-a-live-server
 categories:
-  - Tutorials
-  - Web
   - WordPress
 tags:
   - php

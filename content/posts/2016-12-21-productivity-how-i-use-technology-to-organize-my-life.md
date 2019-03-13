@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/floppy.png'
 slug: productivity-how-i-use-technology-to-organize-my-life
 categories:
   - Personal
-  - Web
 tags:
   - organization
   - productivity

@@ -37,7 +37,7 @@ class DisqusCommentCount extends Component {
 
     return (
       <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
-        Comments
+        comments
       </Disqus.CommentCount>
     )
   }

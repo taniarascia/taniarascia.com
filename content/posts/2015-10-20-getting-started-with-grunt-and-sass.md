@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/grunt.png'
 slug: getting-started-with-grunt-and-sass
 categories:
-  - Tutorials
-  - Web
   - Workflow
 tags:
   - grunt

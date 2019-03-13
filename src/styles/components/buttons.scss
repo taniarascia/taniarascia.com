@@ -56,14 +56,14 @@
 
 .button.muted-button,
 a.button.muted-bottom {
+  color: darken($border-color, 30%);
   border: 2px solid $border-color;
-  color: #888;
   &:hover,
   &:focus,
   &:active {
-    border: 2px solid darken($border-color, 15%);
-    background: #f0f0f0;
-    color: #111;
+    border: 2px solid darken($border-color, 10%);
+    background: lighten($border-color, 15%);
+    color: darken($border-color, 40%);
   }
 }
 
@@ -80,8 +80,8 @@ a.donate-button {
   &:hover,
   &:focus,
   &:active {
-    background: darken(#fff6d5, 10%);
-    border: 2px solid darken(#eedc95, 20%);
+    background: lighten($yellow, 20%);
+    border: 2px solid darken($yellow, 10%);
     color: #111;
   }
 }

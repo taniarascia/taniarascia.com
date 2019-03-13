@@ -90,10 +90,19 @@ h5 {
 }
 
 @include small-breakpoint {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &:not(:first-child) {
+      margin: 0 0 1.5rem 0;
+    }
+  }
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child) {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
   } // Heading desktop individual styles
   h1 {
     font-size: $h1;

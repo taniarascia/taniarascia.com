@@ -5,12 +5,10 @@ template: post
 thumbnail: '../thumbnails/binary.png'
 slug: bits-bytes-bases-and-a-hex-dump-javascript
 categories:
-  - JavaScript
   - Programming
-  - Tutorials
-  - Web
 tags:
   - javascript
+  - node
 ---
 
 I was recently tasked with creating a simple command line program that would take an input of a file of unknown contents and print a hex dump as the output. However, I didn't really know how I could access the data of the file to begin with, and I didn't know what a hex dump was. So I'm going to share with you what I learned and what I wrote to accomplish this task.

@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/db.png'
 slug: create-a-simple-crud-database-app-php-update-delete
 categories:
   - Programming
-  - Tutorials
-  - Web
 tags:
   - database
   - mysql

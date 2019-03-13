@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/vagrant.png'
 slug: what-are-vagrant-and-virtualbox-and-how-do-i-use-them
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - lamp
   - server

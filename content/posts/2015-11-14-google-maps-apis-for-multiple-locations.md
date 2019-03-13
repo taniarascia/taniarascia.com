@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/gmaps.png'
 slug: google-maps-apis-for-multiple-locations
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - api
   - google-maps

@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/git.png'
 slug: getting-started-with-git
 categories:
-  - Tutorials
-  - Web
   - Workflow
 tags:
   - git

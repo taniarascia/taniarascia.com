@@ -5,10 +5,8 @@ template: post
 thumbnail: '../thumbnails/react.png'
 slug: crud-app-in-react-with-hooks
 categories:
-  - JavaScript
-  - Tutorials
+  - Programming
   - UI/UX
-  - Web
 tags:
   - hooks
   - javascript

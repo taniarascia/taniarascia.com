@@ -6,12 +6,12 @@ thumbnail: '../thumbnails/css.png'
 slug: responsive-dropdown-navigation-bar
 categories:
   - Popular
-  - Tutorials
   - UI/UX
 tags:
   - css
   - jQuery
   - navigation
+  - sass
 ---
 
 [Bootstrap](http://getbootstrap.com) and [Foundation](http://foundation.zurb.com) have fantastic navbars that you can use if you choose to base your layout on their framework. For my own projects, I chose to make a customizable responsive dropdown navbar with an animated hamburger menu. The navigation is built on [Sass](http://sass-lang.com), adaptable, and requires very little jQuery. It was inspired by [Flaunt.js](http://toddmotto.com/flaunt-js-for-stylish-responsive-navigations-with-nested-click-to-reveal/) by [Todd Motto](http://toddmotto.com/).
@@ -20,7 +20,7 @@ There's a lot that goes into building a navbar like this, so I'll go over the sp
 
 ## The Demo
 
-See the Pen [Responsive Dropdown Navigation Bar](http://codepen.io/taniarascia/pen/dYvvYv/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Responsive Dropdown Navigation Bar](http://codepen.io/taniarascia/pen/dYvvYv/)
 
 I would suggest opening a new pen on [Codepen](http://codepen.io) and doing this tutorial step by step to see how it works.
 

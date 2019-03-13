@@ -5,10 +5,7 @@ template: post
 thumbnail: '../thumbnails/html.png'
 slug: basic-html5-file
 categories:
-  - Snippets
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - html
 ---

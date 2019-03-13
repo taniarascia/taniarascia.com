@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/ssl.png'
 slug: redirect-all-http-requests-to-https
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - htaccess
 ---

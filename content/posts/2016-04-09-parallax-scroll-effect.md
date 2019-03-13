@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: parallax-scroll-effect
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - jQuery
   - parallax
@@ -23,7 +21,7 @@ Create a simple parallax effect using CSS and JavaScript and no plugins.
 
 [View the Demo](http://codepen.io/taniarascia/full/mPpZZM/)
 
-See the Pen [Parallax Scroll Effect](http://codepen.io/taniarascia/pen/mPpZZM/) by Tania ([@taniarascia](http://codepen.io/taniarascia)) on [CodePen](http://codepen.io).
+See the Pen [Parallax Scroll Effect](http://codepen.io/taniarascia/pen/mPpZZM/)
 
 ## Container
 

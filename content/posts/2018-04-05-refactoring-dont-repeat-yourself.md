@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: refactoring-dont-repeat-yourself
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - javascript
   - refactoring

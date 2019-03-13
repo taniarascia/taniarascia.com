@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/writing.png'
 slug: the-beginning-of-the-next-phase
 categories:
   - Personal
-  - Web
 tags:
   - life
   - career

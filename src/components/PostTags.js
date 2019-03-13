@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-const kebabCase = require('lodash.kebabcase')
+import kebabCase from 'lodash.kebabcase'
 import { Link } from 'gatsby'
 
 class PostTags extends Component {
@@ -11,7 +11,7 @@ class PostTags extends Component {
         {tags &&
           tags.map(tag => (
             <Link key={tag} style={{ textDecoration: 'none' }} to={`/tags/${kebabCase(tag)}/`}>
-              <span class={size ? size : null}>{tag}</span>
+              <span className={size ? size : null}>{tag}</span>
             </Link>
           ))}
       </div>

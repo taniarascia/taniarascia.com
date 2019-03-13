@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/mocha.png'
 slug: unit-testing-in-javascript
 categories:
-  - JavaScript
-  - Tutorials
-  - Web
+  - Programming
 tags:
   - javascript
   - mocha

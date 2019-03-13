@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/mamp.png'
 slug: local-environment
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - php
   - setup

@@ -7,8 +7,6 @@ slug: overview-of-sql-commands-and-pdo-operations
 categories:
   - Popular
   - Programming
-  - Tutorials
-  - Web
 tags:
   - database
   - mysql

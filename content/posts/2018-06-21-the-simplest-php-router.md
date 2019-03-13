@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/php.png'
 slug: the-simplest-php-router
 categories:
   - Programming
-  - Tutorials
-  - Web
 tags:
   - mvc
   - php

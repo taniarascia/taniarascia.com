@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/wp.png'
 slug: wordpress-part-three-custom-fields-and-metaboxes
 categories:
-  - Tutorials
-  - Web
   - WordPress
 tags:
   - php

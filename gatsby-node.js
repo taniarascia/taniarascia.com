@@ -1,15 +1,17 @@
 const path = require('path')
 const kebabCase = require('lodash.kebabcase')
+const moment = require('moment')
+const siteConfig = require('./data/SiteConfig')
 
 const postNodes = []
 
 function addSiblingNodes(createNodeField) {
   postNodes.sort(({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) => {
-    const dateA = new Date(date1)
-    const dateB = new Date(date2)
+    const dateA = moment(date1, siteConfig.dateFromFormat)
+    const dateB = moment(date2, siteConfig.dateFromFormat)
 
-    if (dateA < dateB) return 1
-    if (dateB < dateA) return -1
+    if (dateA.isBefore(dateB)) return 1
+    if (dateB.isBefore(dateA)) return -1
 
     return 0
   })

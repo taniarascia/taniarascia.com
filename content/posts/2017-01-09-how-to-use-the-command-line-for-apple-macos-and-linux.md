@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/terminal.png'
 slug: how-to-use-the-command-line-for-apple-macos-and-linux
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - command line
   - linux

@@ -1,26 +1,12 @@
-const formatDate = date => {
-  date = new Date(date)
+import urljoin from 'url-join'
+import config from '../../data/SiteConfig'
+import moment from 'moment'
 
-  const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
+const formatDate = date => moment.utc(date).format(config.dateFormat)
 
-  const day = date.getDate()
-  const monthIndex = date.getMonth()
-  const year = date.getFullYear()
-
-  return `${monthNames[monthIndex]} ${day}, ${year}`
+const editOnGithub = post => {
+  const date = moment.utc(post.date).format(config.dateFromFormat)
+  return urljoin(config.repo, '/blob/master/content/posts', `${date}-${post.slug}.md`)
 }
 
-module.exports = { formatDate }
+export { formatDate, editOnGithub }

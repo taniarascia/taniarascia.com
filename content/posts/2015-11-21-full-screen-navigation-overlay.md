@@ -5,9 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: full-screen-navigation-overlay
 categories:
-  - Tutorials
   - UI/UX
-  - Web
 tags:
   - css
   - jQuery

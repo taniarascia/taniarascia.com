@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/rss.png'
 slug: web-developers-and-bloggers-i-follow-2017
 categories:
   - Personal
-  - Web
 tags:
   - writing
 ---

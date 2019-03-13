@@ -7,8 +7,6 @@ slug: create-a-simple-database-app-connecting-to-mysql-with-php
 categories:
   - Popular
   - Programming
-  - Tutorials
-  - Web
 tags:
   - app
   - mysql

@@ -9,7 +9,7 @@ import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
-import { formatDate } from '../utils/global'
+import { formatDate, editOnGithub } from '../utils/global'
 
 class PostTemplate extends Component {
   render() {
@@ -30,6 +30,9 @@ class PostTemplate extends Component {
       thumbnail = post.thumbnail.childImageSharp.fixed
     }
 
+    const date = formatDate(date)
+    const githubLink = editOnGithub(post)
+
     return (
       <Layout>
         <Helmet>
@@ -40,9 +43,13 @@ class PostTemplate extends Component {
           <header className="single-header">
             {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
             <div className="post-meta">
-              <time className="date">{formatDate(post.date)}</time> /
-              <a href="#disqus-container">
+              <time className="date">{date}</time>/
+              <a className="comment-link" href="#disqus-container">
                 <DisqusCommentCount postNode={postNode} />
+              </a>
+              /
+              <a className="github-link" href={githubLink} target="_blank">
+                Edit on Github ✏️
               </a>
               <h1>{post.title}</h1>
               <PostTags tags={post.tags} />
@@ -77,6 +84,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        slug
         date
         categories
         tags

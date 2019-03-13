@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/bash.png'
 slug: how-to-create-and-use-bash-scripts
 categories:
   - DevOps
-  - Tutorials
-  - Web
 tags:
   - bash
   - command line

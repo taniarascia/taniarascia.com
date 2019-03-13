@@ -6,8 +6,6 @@ thumbnail: '../thumbnails/json.png'
 slug: how-to-use-json-data-with-php-or-javascript
 categories:
   - Programming
-  - Tutorials
-  - Web
 tags:
   - data
   - javascript

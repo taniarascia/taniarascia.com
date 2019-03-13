@@ -19,12 +19,12 @@ class NotFound extends Component {
             A fatal exception 0E has occurred at <span className="tania">0x74616e6961</span> in 404:
             page not found.
           </p>
-          <div class="list">
+          <div className="list">
             <p>
-              <span class="bullet">*</span> Click any link to terminate the current application.
+              <span className="bullet">*</span> Click any link to terminate the current application.
             </p>
             <p>
-              <span class="bullet">*</span> Press ALT + F4 again to restart your browser. You will
+              <span className="bullet">*</span> Press ALT + F4 again to restart your browser. You will
               lose any unsaved information in all tabs.
             </p>
           </div>

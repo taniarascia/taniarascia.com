@@ -5,8 +5,6 @@ template: post
 thumbnail: '../thumbnails/wp.png'
 slug: wordpress-from-scratch-part-two
 categories:
-  - Tutorials
-  - Web
   - WordPress
 tags:
   - php

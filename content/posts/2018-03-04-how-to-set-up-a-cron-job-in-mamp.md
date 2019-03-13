@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/mamp.png'
 slug: how-to-set-up-a-cron-job-in-mamp
 categories:
   - DevOps
-  - Tutorials
 tags:
   - cron
   - mamp
