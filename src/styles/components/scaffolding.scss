@@ -26,7 +26,17 @@ ol,
 ul,
 dl,
 table {
-  margin: 0 0 $margins 0;
+  margin: 0 0 1.5rem 0;
+}
+
+@include small-breakpoint {
+  p,
+  ol,
+  ul,
+  dl,
+  table {
+    margin: 0 0 2rem 0;
+  }
 }
 
 // Remove extra margin for nested lists
@@ -137,7 +147,16 @@ ul {
     list-style-type: none;
     margin-bottom: 0.3rem;
     padding-left: 1.5rem;
-    margin-left: 1.5rem;
+    margin-left: .5rem;
+  }
+}
+
+@include small-breakpoint {
+  ul {
+    li {
+      padding-left: 1.5rem;
+      margin-left: 1.5rem;
+    }
   }
 }
 

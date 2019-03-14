@@ -12,7 +12,7 @@ tags:
 
 Over the past few years, my RSS feed has begun to fill up with a number of amazing and inspiring web developers, entrepreneurs, and bloggers. I encountered most of them while researching a question or issue I've had, and they provided me with a clean website and a succinct answer. I've learned so much from them that thought it would be nice to share a list of them with you today.
 
-If you've seen that familiar RSS symbol on blogs around the internet but are not familiar with how to utilize it, I [wrote an article](https://www.taniarascia.com/rss-feeds/) about what RSS feeds are, and how to follow someone with an RSS feed reader. I find it's the easiest and least annoying way to follow a blog, though you can also choose to sign up for email newsletters or bookmark them.
+If you've seen that familiar RSS symbol on blogs around the internet but are not familiar with how to utilize it, I [wrote an article](/rss-feeds/) about what RSS feeds are, and how to follow someone with an RSS feed reader. I find it's the easiest and least annoying way to follow a blog, though you can also choose to sign up for email newsletters or bookmark them.
 
 This is by no means an extensive list, and I'm sure I've forgotten plenty of people that have helped or inspire me, but I'll keep a look out and make another post like this next year.
 

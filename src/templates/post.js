@@ -42,16 +42,18 @@ class PostTemplate extends Component {
         <article className="single container">
           <header className="single-header">
             {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
-            <div className="post-meta">
-              <time className="date">{date}</time>/
-              <a className="comment-link" href="#disqus-container">
-                <DisqusCommentCount postNode={postNode} />
-              </a>
-              /
-              <a className="github-link" href={githubLink} target="_blank">
-                Edit on Github ✏️
-              </a>
+            <div className="flex">
               <h1>{post.title}</h1>
+              <div className="post-meta">
+                <time className="date">{date}</time>/
+                <a className="comment-link" href="#disqus-container">
+                  <DisqusCommentCount postNode={postNode} />
+                </a>
+                /
+                <a className="github-link" href={githubLink} target="_blank">
+                  Edit on Github ✏️
+                </a>
+              </div>
               <PostTags tags={post.tags} />
             </div>
           </header>

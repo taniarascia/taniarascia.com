@@ -56,7 +56,7 @@ Google also has [strong opinions](<a href=) on this matter:
 
 You can run your site through the [Mobile-Friendly Test](https://search.google.com/search-console/mobile-friendly) to check.
 
-As a web developer, the biggest part of this is making sure your website is responsive/adaptive to multiple screen sizes. I wrote an article about [understanding the fundamentals of responsive design](https://www.taniarascia.com/you-dont-need-a-framework/) previously. Frameworks such as [Bootstrap](https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/) also make this achievable.
+As a web developer, the biggest part of this is making sure your website is responsive/adaptive to multiple screen sizes. I wrote an article about [understanding the fundamentals of responsive design](/you-dont-need-a-framework/) previously. Frameworks such as [Bootstrap](/what-is-bootstrap-and-how-do-i-use-it/) also make this achievable.
 
 ## Make your site accessible
 
@@ -129,7 +129,7 @@ You can connect to a CDN provider, such as [CloudFlare](https://www.cloudflare.c
 
 ### Minify JavaScript and CSS
 
-Using a task runner such as [Gulp](https://www.taniarascia.com/getting-started-with-gulp/) or [Grunt](https://www.taniarascia.com/getting-started-with-grunt-and-sass/), you can set your JavaScript and CSS to automatically minify, which means reducing all whitespace and unnecessary characters. This reduces the size of your script and stylesheet assets
+Using a task runner such as [Gulp](/getting-started-with-gulp/) or [Grunt](/getting-started-with-grunt-and-sass/), you can set your JavaScript and CSS to automatically minify, which means reducing all whitespace and unnecessary characters. This reduces the size of your script and stylesheet assets
 
 ### Optimize images
 
@@ -170,7 +170,7 @@ Search Console will tell you the search terms people typed to find your site org
     "jobTitle": "Web developer",
     "name": "Tania Rascia",
     "gender": "female",
-    "url": "https://www.taniarascia.com",
+    "url": "",
     "sameAs": ["https://github.com/taniarascia", "https://twitter.com/taniarascia"]
   }
 </script>
@@ -188,7 +188,7 @@ A sitemap helps the search engine crawlers index and understand your website. Yo
 
 In an effort to improve internet security, Google made HTTPS encryption via SSL/TLS a [ranking factor](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html) in 2014.
 
-You can use [Let's Encrypt](https://letsencrypt.org/) to set up a valid HTTPS connection. Otherwise, I [wrote this guide](https://www.taniarascia.com/https-ssl-tls-certificate-how-to/) on how to use one of the standard certificate services.
+You can use [Let's Encrypt](https://letsencrypt.org/) to set up a valid HTTPS connection. Otherwise, I [wrote this guide](/https-ssl-tls-certificate-how-to/) on how to use one of the standard certificate services.
 
 ## Conclusion
 

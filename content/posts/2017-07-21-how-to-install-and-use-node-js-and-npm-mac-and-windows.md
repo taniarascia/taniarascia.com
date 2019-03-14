@@ -12,7 +12,7 @@ tags:
   - npm
 ---
 
-In order to use almost any development tools based in JavaScript, you'll need to know how to use npm and Node.js. [Gulp](https://www.taniarascia.com/getting-started-with-gulp/), [Grunt](https://www.taniarascia.com/getting-started-with-grunt-and-sass/), and Webpack are a few examples of popular technologies you may have heard of that require a knowledge of the Node ecosystem.
+In order to use almost any development tools based in JavaScript, you'll need to know how to use npm and Node.js. [Gulp](/getting-started-with-gulp/), [Grunt](/getting-started-with-grunt-and-sass/), and Webpack are a few examples of popular technologies you may have heard of that require a knowledge of the Node ecosystem.
 
 I find myself writing about this over and over again in the prerequisites of an article I've begun to write. I'd prefer to write one definitive guide to refer to in the future, so here it is.
 
@@ -20,7 +20,7 @@ I find myself writing about this over and over again in the prerequisites of an 
 
 #### Prerequisites
 
-- [Basic command line proficiency](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/). Don't skip this step! If you don't know how to use the command line, you'll be fighting an uphill battle. The provided tutorial has everything you need to know.
+- [Basic command line proficiency](/how-to-use-the-command-line-for-apple-macos-and-linux/). Don't skip this step! If you don't know how to use the command line, you'll be fighting an uphill battle. The provided tutorial has everything you need to know.
 
 #### Goals
 

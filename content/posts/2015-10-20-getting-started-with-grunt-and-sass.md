@@ -19,7 +19,7 @@ I'm going to show you how Grunt can be useful, and I'm not going to throw comman
 #### Prerequisities
 
 - Ability to make a website with HTML, CSS, and JavaScript.
-- A very basic knowledge of the [command line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/).
+- A very basic knowledge of the [command line](/how-to-use-the-command-line-for-apple-macos-and-linux/).
 
 If you think you can follow along without reading that, here are the most important commands, and all you need to know to get started.
 

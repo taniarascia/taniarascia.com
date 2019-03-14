@@ -30,7 +30,7 @@ This guide assumes no prior knowlegde of jQuery, will cover the following topics
 Before you begin this guide you'll need the following:
 
 - A basic knowledge of HTML and CSS. You should already know how to set up a simple website, and have an understanding of CSS selectors such as ids, classes, and pseudo elements.
-- An understanding of the fundamentals of programming. While it is possible to begin writing jQuery without an advanced knowledge of JavaScript, familiarity with the concepts of [variables and datatypes](https://www.taniarascia.com/javascript-day-one/) as well as [math and logic](https://www.taniarascia.com/javascript-day-two/) will help significantly.
+- An understanding of the fundamentals of programming. While it is possible to begin writing jQuery without an advanced knowledge of JavaScript, familiarity with the concepts of [variables and datatypes](/javascript-day-one/) as well as [math and logic](/javascript-day-two/) will help significantly.
 
 ## Installing jQuery
 

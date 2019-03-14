@@ -23,7 +23,7 @@ This is not meant to be an extensive guide to bash scripting, but just a straigh
 
 #### Prerequisites
 
-- A basic command line knowledge is required. Everything you need to know to get started can be found in my [How to Use the Command Line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/) article.
+- A basic command line knowledge is required. Everything you need to know to get started can be found in my [How to Use the Command Line](/how-to-use-the-command-line-for-apple-macos-and-linux/) article.
 
 This guide is for macOS. I'll be using `/Users/tania` for all examples, but it will be `/Users/your_username` for you.
 
@@ -328,7 +328,7 @@ git-deploy
 
 ```
 
-> If you've never used Git, check out [Getting Started with Git](https://www.taniarascia.com/getting-started-with-git/) for a primer.
+> If you've never used Git, check out [Getting Started with Git](/getting-started-with-git/) for a primer.
 
 Then just run the command.
 

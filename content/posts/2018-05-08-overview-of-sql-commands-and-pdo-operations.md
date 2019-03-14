@@ -20,7 +20,7 @@ Databases such as MySQL, MariaDB, SQLite, PostgreSQL, Oracle, and Microsoft SQL 
 
 I've created an overview resource to quickly be able to reference the appropriate syntax for the most popular SQL commands, and code to use the PDO class in PHP to securely connect to and work with a database.
 
-To see PHP and MySQL in action, view the Creating a Simple Database Application from Scratch tutorial - [Part One: Create and Read](https://www.taniarascia.com/create-a-simple-database-app-connecting-to-mysql-with-php/) and [Part Two: Update and Delete](https://www.taniarascia.com/create-a-simple-crud-database-app-php-update-delete/).
+To see PHP and MySQL in action, view the Creating a Simple Database Application from Scratch tutorial - [Part One: Create and Read](/create-a-simple-database-app-connecting-to-mysql-with-php/) and [Part Two: Update and Delete](/create-a-simple-crud-database-app-php-update-delete/).
 
 You can view the commands alone without explanations on GitHub through the below link.
 

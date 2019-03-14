@@ -25,7 +25,7 @@ So that's what we're going to learn to do today.
 
 - Basic knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/).
 - Basic knowledge of [JavaScript syntax and datatypes](https://www.sitepoint.com/beginners-guide-javascript-variables-and-datatypes/).
-- Basic knowledge of working with the DOM (optional). The [How to Connect to an API](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/) article will teach you how to make a simple web app, otherwise you can learn with this small tutorial as well.
+- Basic knowledge of working with the DOM (optional). The [How to Connect to an API](/how-to-connect-to-an-api-with-javascript/) article will teach you how to make a simple web app, otherwise you can learn with this small tutorial as well.
 
 #### Goals
 

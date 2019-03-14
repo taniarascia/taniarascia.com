@@ -54,7 +54,7 @@
           top: 0.75rem;
           right: 0.75rem;
           border: 2px solid $yellow;
-          padding: 1rem;
+          padding: 1rem .5rem;
           background: lighten($yellow, 28%);
           color: #333;
           font-weight: 600;
@@ -76,7 +76,6 @@
 .favicon {
   height: 20px;
   width: 20px;
-  margin-right: 0.5rem;
 }
 
 @include small-breakpoint {

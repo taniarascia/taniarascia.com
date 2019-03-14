@@ -12,7 +12,7 @@ tags:
   - gallery
 ---
 
-You may have noticed I've updated the site to include a [front page with a grid listing all the tutorials](https://www.taniarascia.com/). As you resize the screen, it goes from three columns, to two columns, to a single column on mobile. Another great example of that is [this really weird musical side project of mine](https://www.taniarascia.com/music/), where I arrange all the songs as if they're a Spotify album listing. The only real difference between those two is that one has margins, and the other doesn't.
+You may have noticed I've updated the site to include a [front page with a grid listing all the tutorials](/). As you resize the screen, it goes from three columns, to two columns, to a single column on mobile. Another great example of that is [this really weird musical side project of mine](/music/), where I arrange all the songs as if they're a Spotify album listing. The only real difference between those two is that one has margins, and the other doesn't.
 
 In this quick article, I'm going to go over how to create a responsive grid of images like that with flexbox.
 
@@ -27,7 +27,7 @@ In this quick article, I'm going to go over how to create a responsive grid of i
 
 ## Grid
 
-Make sure before starting to include some sort of reset, or at least set `box-sizing: border-box` and `margin: 0` to the body. [(More about all that, if you're not sure.)](https://www.taniarascia.com/you-dont-need-a-framework/) Now we can get started on the grid.
+Make sure before starting to include some sort of reset, or at least set `box-sizing: border-box` and `margin: 0` to the body. [(More about all that, if you're not sure.)](/you-dont-need-a-framework/) Now we can get started on the grid.
 
 ### Mobile
 
@@ -157,7 +157,7 @@ Then edit the width of the cells on their respective sizes.
 
 ## WordPress Gallery
 
-The best part about this grid is it can be easily looped. If you're not familiar with WordPress, [here's the article to get you started.](https://www.taniarascia.com/developing-a-wordpress-theme-from-scratch/)
+The best part about this grid is it can be easily looped. If you're not familiar with WordPress, [here's the article to get you started.](/developing-a-wordpress-theme-from-scratch/)
 
 Instead of using a WordPress gallery plugin, you can pull images by category from the media gallery. The prerequisite to this is allowing category for attachments, which you can do by adding this code to **functions.php**.
 

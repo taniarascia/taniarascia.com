@@ -43,7 +43,7 @@ If you don't know how to make a simple CRUD app in React, regardless of whether 
 
 #### Prerequisites
 
-In order to follow along with this tutorial, you'll need a basic knowledge of HTML, CSS, and JavaScript/ES6. You should also know the fundamentals of React, which you can learn by reading [Getting Started with React](https://www.taniarascia.com/getting-started-with-react/).
+In order to follow along with this tutorial, you'll need a basic knowledge of HTML, CSS, and JavaScript/ES6. You should also know the fundamentals of React, which you can learn by reading [Getting Started with React](/getting-started-with-react/).
 
 #### Goals
 

@@ -19,7 +19,7 @@ To make life easy for myself, I've compiled all these into my own framework, [Pr
 #### Prerequisites
 
 - Basic knowledge of HTML and CSS
-- (Optional) Having some knowledge of the [basics of setting up a responsive website without a framework](https://www.taniarascia.com/you-dont-need-a-framework/) will be helpful.
+- (Optional) Having some knowledge of the [basics of setting up a responsive website without a framework](/you-dont-need-a-framework/) will be helpful.
 
 #### Goals
 
@@ -28,7 +28,7 @@ To make life easy for myself, I've compiled all these into my own framework, [Pr
 
 ## Preparation
 
-I referenced my [fundamentals](https://www.taniarascia.com/you-dont-need-a-framework/) article from before because it includes a few things I like all my web projects to have: a CSS reset, and `border-box` reset. Basically, these two things will allow you to have a little more consistency and control over your layout.
+I referenced my [fundamentals](/you-dont-need-a-framework/) article from before because it includes a few things I like all my web projects to have: a CSS reset, and `border-box` reset. Basically, these two things will allow you to have a little more consistency and control over your layout.
 
 ### CSS Reset
 

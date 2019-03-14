@@ -26,7 +26,7 @@ Note that this is not meant to be fully functional, secure, validated, productio
 
 - A basic knowledge of PHP syntax and code structure
 
-- An understanding of local PHP environments. If you don't know what that means, please read this guide on [how to set up a MAMP environment](https://www.taniarascia.com/local-environment/).
+- An understanding of local PHP environments. If you don't know what that means, please read this guide on [how to set up a MAMP environment](/local-environment/).
 
 #### Goals
 
@@ -67,7 +67,7 @@ You should now be able to go to **http://localhost:8888/test.php** and see the o
 
 ![](../images/Screen-Shot-2018-04-26-at-3.50.21-PM.png)
 
-If you're on Windows, or you don't want to use the command line, [set up MAMP](https://www.taniarascia.com/local-environment/).
+If you're on Windows, or you don't want to use the command line, [set up MAMP](/local-environment/).
 
 ## Building an Upload Form in HTML
 

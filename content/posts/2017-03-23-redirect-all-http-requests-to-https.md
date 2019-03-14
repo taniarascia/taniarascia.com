@@ -10,7 +10,7 @@ tags:
   - htaccess
 ---
 
-If you have SSL/TLS set up on your server, you might need to force the site to redirect to the secure HTTPS version. If you need to know how to obtain the certificate, [read about that here](https://www.taniarascia.com/https-ssl-tls-certificate-how-to/). Otherwise, create an **.htaccess** file in the root of your server with the following code.
+If you have SSL/TLS set up on your server, you might need to force the site to redirect to the secure HTTPS version. If you need to know how to obtain the certificate, [read about that here](/https-ssl-tls-certificate-how-to/). Otherwise, create an **.htaccess** file in the root of your server with the following code.
 
 ```apacheconf
 RewriteEngine on

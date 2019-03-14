@@ -49,7 +49,7 @@ I used Windows exclusively from 1994 to 2015. Now I work on a Mac, currently run
 
 _Edit 12/29/2016_ - I wrote an entire article dedicated to setting up a development environment for macOS.
 
-[Set up a Mac](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/)
+[Set up a Mac](/setting-up-a-brand-new-mac-for-development/)
 
 ## Browser
 

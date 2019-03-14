@@ -620,4 +620,4 @@ _Update 8/11/16_
 
 In part three, I discuss how to add custom fields and meta boxes to a post!
 
-[Go to Part 3](https://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/)
+[Go to Part 3](/wordpress-part-three-custom-fields-and-metaboxes/)

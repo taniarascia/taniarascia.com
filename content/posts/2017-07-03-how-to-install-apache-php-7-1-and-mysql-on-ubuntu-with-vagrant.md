@@ -15,18 +15,18 @@ tags:
   - virtual machine
 ---
 
-In order to run a server locally, we need to set up an environment for the stack, or server, database, and language, to run in. An easy way for beginners to do that is to set up [MAMP](https://www.taniarascia.com/local-environment/) on Mac or Windows, which sets up the environment for you.
+In order to run a server locally, we need to set up an environment for the stack, or server, database, and language, to run in. An easy way for beginners to do that is to set up [MAMP](/local-environment/) on Mac or Windows, which sets up the environment for you.
 
 As you become a more advanced developer, you might need to create a local environment that matches your production server more closely. If you're working locally on Windows or Mac, and your server is on a Linux distribution, you may encounter bugs and errors that are specific to the operating system the server is running and you won't be able to troubleshoot them properly.
 
-Fortunately, we have tools like [Vagrant and VirtualBox](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) that allow us to set up a virtual machine locally that can match the production environment. In this tutorial, we'll take an Ubuntu Server operating system that has been set up on Vagrant and install a LAMP stack on it.
+Fortunately, we have tools like [Vagrant and VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) that allow us to set up a virtual machine locally that can match the production environment. In this tutorial, we'll take an Ubuntu Server operating system that has been set up on Vagrant and install a LAMP stack on it.
 
 #### Prerequisites
 
 There are two prerequisites to complete before reading this tutorial.
 
-- **Knowledge of the command line.** Please read [How to Use the Command Line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/) to get yourself acquainted if you're not already familiar.
-- **A Vagrant/VirtualBox setup with an Ubuntu virtual machine.** You will find instructions on how to do that in this guide to [setting up VirtualBox and Vagrant with Ubuntu Server](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/).
+- **Knowledge of the command line.** Please read [How to Use the Command Line](/how-to-use-the-command-line-for-apple-macos-and-linux/) to get yourself acquainted if you're not already familiar.
+- **A Vagrant/VirtualBox setup with an Ubuntu virtual machine.** You will find instructions on how to do that in this guide to [setting up VirtualBox and Vagrant with Ubuntu Server](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/).
 
 #### Goals
 
@@ -41,7 +41,7 @@ In this tutorial, we're going to accomplish the following:
 
 > The examples in this article use the `.dev` suffix for custom domains. This suffix is no longer allowed. You can use `.test` in place of `.dev` throughout this article.
 
-We're beginning this article where [the last one](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) left off - with a brand new Ubuntu virtual machine set up. Navigate to the directory you have your Ubuntu set up in, and `ssh` into the machine.
+We're beginning this article where [the last one](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) left off - with a brand new Ubuntu virtual machine set up. Navigate to the directory you have your Ubuntu set up in, and `ssh` into the machine.
 
 ```bash
 vagrant ssh
@@ -73,7 +73,7 @@ Easily fixed. We're just going to set the `ServerName` to `localhost`. Use `nano
 sudo nano /etc/apache2/apache2.conf
 ```
 
-> If you're not familiar with `nano`, or editing files through the Terminal, please review the [command line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/) article.
+> If you're not familiar with `nano`, or editing files through the Terminal, please review the [command line](/how-to-use-the-command-line-for-apple-macos-and-linux/) article.
 
 Navigate all the way to the end of the file, and insert this line at the bottom.
 

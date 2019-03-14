@@ -11,7 +11,7 @@ tags:
   - javascript
 ---
 
-In [How to Use JSON Data with PHP or JavaScript](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/), I discussed how to use `XMLHttpRequest()` to get data from a JSON feed.
+In [How to Use JSON Data with PHP or JavaScript](/how-to-use-json-data-with-php-or-javascript/), I discussed how to use `XMLHttpRequest()` to get data from a JSON feed.
 
 The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a newer built-in feature of JavaScript that makes working with requests and responses easier.
 

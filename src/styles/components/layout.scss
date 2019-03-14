@@ -20,9 +20,11 @@
 }
 
 .lead {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   h1 {
+    font-weight: 500;
     font-size: 1.4rem;
+    margin-bottom: 1.5rem;
   }
   .button {
     margin-right: 0.5rem;
@@ -73,19 +75,25 @@
 .single-header {
   display: grid;
   margin-bottom: 30px;
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
   h1 {
-    margin: 0 0 1rem 0;
+    margin: .5rem 0;
+  }
+  .post-meta {
+    margin-bottom: 1rem;
   }
 }
 
 @include small-breakpoint {
   .single-header {
     display: grid;
-    align-items: center;
     grid-template-columns: 180px 1fr;
     margin-bottom: 80px;
     h1 {
-      margin: 0 0 1rem 0;
+      margin: 0 0 .5rem 0;
     }
   }
 }
@@ -177,14 +185,14 @@
       .each {
         grid-template-columns: 80px 1fr;
         align-items: start;
-        padding: 2rem;
+        padding: 3rem 2rem;
         margin: 0 -2rem;
         h2 {
           font-size: 1.2rem;
           margin: 0 0 0.75rem 0;
         }
         .gatsby-image-wrapper {
-          margin-top: 0.5rem;
+          margin-top: 0;
           height: 50px !important;
           width: 50px !important;
         }
@@ -198,8 +206,10 @@
         .each {
           padding: 0.75rem 1rem;
           margin: 0 -1rem;
+          h2 {
+            margin: 0;
+          }
           .gatsby-image-wrapper {
-            margin-top: 0;
             height: 30px !important;
             width: 30px !important;
           }
@@ -252,6 +262,7 @@
 .projects {
   .each {
     display: grid;
+    grid-gap: 0.5rem;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
@@ -268,13 +279,15 @@
   p {
     color: $light-font-color;
     font-weight: normal;
-    margin: 0 1.5rem 0 0;
+    margin: 0;
     grid-row-start: 2;
     grid-column-start: 1;
     grid-column-end: 3;
   }
   .button {
     margin-right: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -285,9 +298,14 @@
       grid-template-rows: none;
     }
     p {
+      margin: 0 1.5rem 0 0;
       grid-row-start: initial;
       grid-column-start: initial;
       grid-column-end: initial;
+    }
+    .button {
+      padding: 0.75rem 1.25rem;
+      font-size: 1.1rem;
     }
   }
 }
@@ -303,12 +321,13 @@
     color: darken($border-color, 30%);
     border: 2px solid $border-color;
     border-radius: $border-radius;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 400;
     margin: 0 0.5rem 0.5rem 0;
     .count {
       color: $secondary-color;
       font-weight: 700;
-      margin-left: 0.5rem;
+      margin-left: 0.25rem;
     }
     &:hover,
     &:active,
@@ -319,7 +338,7 @@
     }
   }
   &.articles-page-tags {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -327,7 +346,14 @@
   .tag-container {
     span {
       font-size: 1rem;
+      font-weight: 500;
       padding: 0.3rem 0.8rem;
+      .count {
+        margin-left: 0.5rem;
+      }
+    }
+    &.articles-page-tags {
+      margin-bottom: 2rem;
     }
   }
 }
@@ -434,6 +460,11 @@ blockquote {
       padding: 3rem;
     }
   }
+}
+
+.view-all {
+  margin-left: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .emoji-in-button {

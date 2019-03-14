@@ -10,7 +10,7 @@ tags:
   - design
 ---
 
-Back in July 2017, I posted about [all the redesigns of taniarascia.com](https://www.taniarascia.com/version-2-0-website-redesign-863-commits-later/) that happened up to version 2.0. I made many small, incremental changes to the design over the course of two years, because I'm obsessed with tweaking my site's design and always trying to make it better. After making version 2.0, I decided to stop making tiny tweaks to the site and do full-blown redesigns instead. This way I can focus on writing more, and still have fun designing every now and then.
+Back in July 2017, I posted about [all the redesigns of taniarascia.com](/version-2-0-website-redesign-863-commits-later/) that happened up to version 2.0. I made many small, incremental changes to the design over the course of two years, because I'm obsessed with tweaking my site's design and always trying to make it better. After making version 2.0, I decided to stop making tiny tweaks to the site and do full-blown redesigns instead. This way I can focus on writing more, and still have fun designing every now and then.
 
 A few months ago, I created version 3.0, which is where it was at until today. Below are the screenshots of how it used to look.
 

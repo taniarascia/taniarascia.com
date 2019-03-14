@@ -25,8 +25,8 @@ That being said, I leave you with the disclaimer that this tutorial is meant for
 
 - **A basic knowledge of HTML** - We'll be using [HTML forms](http://marksheet.io/html-forms.html).
 - **A basic knowledge of PHP** - I'm going to do my best to simplify as much as possible, but you should already have an idea of how variables and strings work. [Here's a basic guide to some of the fundamentals](https://www.w3schools.com/php/).
-- **A local PHP and MySQL environment** - [Click on the link](https://www.taniarascia.com/local-environment) for a mini-tutorial on how to set one up. You will be using [MAMP](https://www.mamp.info/en/) to install PHP and MySQL on a Windows or Apple computer.
-- Alternatively: you can use [Vagrant](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) to set up [LAMP on Ubuntu](https://www.taniarascia.com/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) if you're more advanced.
+- **A local PHP and MySQL environment** - [Click on the link](/local-environment) for a mini-tutorial on how to set one up. You will be using [MAMP](https://www.mamp.info/en/) to install PHP and MySQL on a Windows or Apple computer.
+- Alternatively: you can use [Vagrant](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) to set up [LAMP on Ubuntu](/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) if you're more advanced.
 - **A database management app** - You can use [Sequel Pro](https://www.sequelpro.com/) on a Mac, and [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads) on Windows. These are graphical user interfaces (GUI) to view the content of your database.
 
 #### Goals
@@ -42,7 +42,7 @@ All the code throughout this article can be found on GitHub.
 
 **Update 2018: Part Two is here! Learn how to update and delete entries.**
 
-[Part 2: Update and Delete](https://www.taniarascia.com/create-a-simple-crud-database-app-php-update-delete/)
+[Part 2: Update and Delete](/create-a-simple-crud-database-app-php-update-delete/)
 
 ## Step 1: Building the front end
 
@@ -879,7 +879,7 @@ Congratulations, you now have the very beginnings of a simple PHP database app w
 
 Now that you've learned how to create and read entries, check out part two!
 
-[Onto Part 2: Update and Delete](https://www.taniarascia.com/create-a-simple-crud-database-app-php-update-delete/)
+[Onto Part 2: Update and Delete](/create-a-simple-crud-database-app-php-update-delete/)
 
 We went over a lot of valuable lessons in this tutorial, including but not limited to: connecting to a MySQL database with PDO, creating an installer script, inserting users into a database, selecting and printing out users from a database, and escaping printed HTML.
 

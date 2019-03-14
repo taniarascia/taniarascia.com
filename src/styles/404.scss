@@ -8,10 +8,10 @@
   color: #bbb;
   font-family: 'PerfectDOS', 'Courier New', monospace;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 16px;
   height: 100vh;
   #main-content {
-    padding-top: 160px;
+    padding-top: 80px;
     margin: 0;
   }
   h1 {
@@ -25,7 +25,7 @@
     margin-bottom: 40px;
   }
   p {
-    font-size: 24px;
+    font-size: 16px;
   }
   .list p:not(:last-of-type) {
     margin-bottom: 5px;
@@ -46,9 +46,6 @@
       .brand {
         display: flex;
         align-items: center;
-        img {
-          display: none;
-        }
         a {
           height: 30px;
         }
@@ -60,10 +57,10 @@
           border-radius: 0;
           color: #000;
           font-weight: 600;
-          padding: 0 20px;
+          padding: 0 10px;
           margin: 0;
           line-height: 0;
-          font-size: 24px;
+          font-size: 16px;
           &:hover,
           &:active,
           &:focus {
@@ -71,6 +68,7 @@
             color: #bbb;
           }
           &.donate-button {
+            display: none;
             background: #00aaaa;
             border: none;
             color: #eee;
@@ -81,9 +79,6 @@
               border: none;
               color: white;
             }
-          }
-          .emoji {
-            display: none;
           }
         }
       }
@@ -104,6 +99,38 @@
     }
     50% {
       opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  #notFound {
+    font-size: 24px;
+    #main-content {
+      padding-top: 160px;
+    }
+    .nav {
+      .nav-container {
+        .links,
+        .brand {
+          a {
+            padding: 0 20px;
+            font-size: 24px;
+            &.donate-button {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+    p {
+      font-size: 24px;
+    }
+    img {
+      display: none;
+    }
+    .emoji {
+      display: none;
     }
   }
 }

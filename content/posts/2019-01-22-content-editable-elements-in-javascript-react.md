@@ -20,9 +20,9 @@ I'm going to share a bunch of stuff I figured out while using `contenteditable`,
 
 #### Prerequisites
 
-You may find something useful in this article if you're doing any sort of JavaScript work with `contenteditable`, but I'm going to use my examples with React. You should already know JavaScript, know about [Node](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/), setting up a React project with `create-react-app`, etc.
+You may find something useful in this article if you're doing any sort of JavaScript work with `contenteditable`, but I'm going to use my examples with React. You should already know JavaScript, know about [Node](/how-to-install-and-use-node-js-and-npm-mac-and-windows/), setting up a React project with `create-react-app`, etc.
 
-- [Getting Started with React - an Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/) - if you've never used React.
+- [Getting Started with React - an Overview and Walkthrough](/getting-started-with-react/) - if you've never used React.
 
 As ever, I don't care about UI/design when it comes to articles about functionality, so I'm going to use [Semantic UI React](https://react.semantic-ui.com/) elements to plug in simple default styles.
 

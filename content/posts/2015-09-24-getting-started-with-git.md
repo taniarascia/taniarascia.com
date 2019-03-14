@@ -78,7 +78,7 @@ Once you've made your account, create a repository by clicking **Add New Repo**.
 
 ## Step 3: Create a Local Project
 
-If you're not at all familiar with the command prompt, please read the first chapter or two of the [command line tutorial](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/).
+If you're not at all familiar with the command prompt, please read the first chapter or two of the [command line tutorial](/how-to-use-the-command-line-for-apple-macos-and-linux/).
 
 Here are the most important commands, and all you need to know to get started.
 

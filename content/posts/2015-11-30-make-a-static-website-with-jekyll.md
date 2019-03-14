@@ -27,7 +27,7 @@ This is what the website we make will look like:
 #### Prerequisites
 
 - Basic knowledge of HTML and CSS
-- [Basic command line knowledge](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/)
+- [Basic command line knowledge](/how-to-use-the-command-line-for-apple-macos-and-linux/)
 - A GitHub account
 
 If you don't have a basic knowledge of command lines and Git, please read [the getting started with Git](http://www.taniarascia.com/getting-started-with-git/) article. This will cover everything you need to know to get started with using Git and the command line.

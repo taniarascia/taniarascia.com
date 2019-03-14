@@ -23,7 +23,7 @@ This guide was also made on a Mac. A few steps will vary for Windows.
 #### Prerequisites
 
 - **Basic knowledge of HTML, CSS, and JavaScript**
-- **[Basic knowledge of using the command line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/)**
+- **[Basic knowledge of using the command line](/how-to-use-the-command-line-for-apple-macos-and-linux/)**
 
 #### Goals
 
@@ -180,7 +180,7 @@ At this point, in our **node_modules** directory, the only devDependency we have
 
 This makes a nice workflow - you can write SCSS without worrying about adding prefixes or manually minifying the code, and sourcemaps will help you find where the CSS originates in your `.scss` files.
 
-> If you have no experience with Sass, I recommend reading [Learn Sass Now: A Guide to Installing, Using and Understanding Sass](https://www.taniarascia.com/learn-sass-now/) to get a better idea of how it works.
+> If you have no experience with Sass, I recommend reading [Learn Sass Now: A Guide to Installing, Using and Understanding Sass](/learn-sass-now/) to get a better idea of how it works.
 
 Here is the code to add all four Gulp plugins.
 
@@ -402,7 +402,7 @@ npm install
 gulp
 ```
 
-(Obviously, you need to [have a basic knowledge of using Git](https://www.taniarascia.com/getting-started-with-git/) to use this method.)
+(Obviously, you need to [have a basic knowledge of using Git](/getting-started-with-git/) to use this method.)
 
 I encourage you to play around with creating your own framework/boilerplate to learn how the fundamentals work, or integrating with an established framework like [Foundation](http://foundation.zurb.com/sites/docs/installation.html).
 

@@ -14,7 +14,7 @@ tags:
 
 **Test-driven development** (TDD) is an approach to development that consists of writing tests, followed by production code, and refactoring as needed. The tests are written to fail initially, and the developer writes code to fulfill the requirements of the test so they pass.
 
-In this tutorial, we'll learn how to implement the TDD process by developing a simple command line calculator app from scratch with Node.js. In case you're unfamiliar, **Node.js** allows the use of JavaScript on the server side. [Read the getting started article](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/) to get up to speed with Node.js. We're going to set up tests with [Mocha](https://mochajs.org/), a testing framework, for this app.
+In this tutorial, we'll learn how to implement the TDD process by developing a simple command line calculator app from scratch with Node.js. In case you're unfamiliar, **Node.js** allows the use of JavaScript on the server side. [Read the getting started article](/how-to-install-and-use-node-js-and-npm-mac-and-windows/) to get up to speed with Node.js. We're going to set up tests with [Mocha](https://mochajs.org/), a testing framework, for this app.
 
 You'll also learn how to use the built-in readline module in Node.js to send commands to the program via the command line.
 
@@ -32,7 +32,7 @@ Now that we know what app should do, we can begin setting up the environment for
 
 #### Prerequisites
 
-- In order to follow along with this tutorial, you should have a Node.js server environment and npm installed on your computer. [Learn about Node.js and npm](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/) and how to install them on Mac/Windows.
+- In order to follow along with this tutorial, you should have a Node.js server environment and npm installed on your computer. [Learn about Node.js and npm](/how-to-install-and-use-node-js-and-npm-mac-and-windows/) and how to install them on Mac/Windows.
 
 - You will need to have a working knowledge of JavaScript [syntax and code structure](https://www.digitalocean.com/community/tutorials/understanding-syntax-and-code-structure-in-javascript), [data types](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-javascript), [mathematical operations](https://www.digitalocean.com/community/tutorials/how-to-do-math-in-javascript-with-operators) and [conditional statements](https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript).
 

@@ -6,7 +6,7 @@ class Newsletter extends Component {
     return (
       <>
         <h1>Newsletter</h1>
-        <p>Sign up to get notified when I make awesome new content.</p>
+        <p>Sign up to get notified about new content.</p>
         <NewsletterForm />
       </>
     )

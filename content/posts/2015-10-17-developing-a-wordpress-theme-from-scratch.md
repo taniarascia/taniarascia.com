@@ -29,8 +29,8 @@ You _do_ need to know how to set up a local server environment. Fortunately, if 
 
 I've made additional tutorials to add on to this one.
 
-- [**Part 2**](https://www.taniarascia.com/wordpress-from-scratch-part-two/) - Pagination, Comments, Single Post, Functions, & Custom Posts (intermediate)
-- [**Part 3**](https://www.taniarascia.com/wordpress-part-three-custom-fields-and-metaboxes/) - Custom Posts, Custom Fields and Meta Boxes (advanced)
+- [**Part 2**](/wordpress-from-scratch-part-two/) - Pagination, Comments, Single Post, Functions, & Custom Posts (intermediate)
+- [**Part 3**](/wordpress-part-three-custom-fields-and-metaboxes/) - Custom Posts, Custom Fields and Meta Boxes (advanced)
 
 ## What can WordPress do for me?
 

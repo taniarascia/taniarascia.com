@@ -108,7 +108,7 @@ DocumentRoot "C:/Users/tania/sites/learnphp"
 
 ### Mac
 
-Open the Terminal application. It doesn't matter if you don't know how to use Terminal or the command line; you only need to follow strict commands right now. (However, please read [this guide](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/) when you decide to learn it!)
+Open the Terminal application. It doesn't matter if you don't know how to use Terminal or the command line; you only need to follow strict commands right now. (However, please read [this guide](/how-to-use-the-command-line-for-apple-macos-and-linux/) when you decide to learn it!)
 
 Type this in Terminal.
 

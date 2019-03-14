@@ -19,7 +19,7 @@ Now that I've finally used them, I can see how fun and useful they are, and sinc
 
 #### Prerequisites
 
-The only prerequisite to this article is **command line knowledge**, and it is mandatory. This article that I wrote, [How to Use the Command Line](https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/), will tell you everything you need to know, from moving around directories, creating files, and `ssh`ing into servers. If you're not familiar with any of that, please read the aforementioned article.
+The only prerequisite to this article is **command line knowledge**, and it is mandatory. This article that I wrote, [How to Use the Command Line](/how-to-use-the-command-line-for-apple-macos-and-linux/), will tell you everything you need to know, from moving around directories, creating files, and `ssh`ing into servers. If you're not familiar with any of that, please read the aforementioned article.
 
 #### Goals
 
@@ -40,7 +40,7 @@ Using VirtualBox and Vagrant, you can simulate the production environment of you
 
 In this tutorial, we're going to install Vagrant and VirtualBox, and install [Ubuntu](http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/) Server. We're going to connect to the Ubuntu server though `ssh` to confirm that everything is running properly.
 
-After this tutorial, learn to [install a LAMP server](https://www.taniarascia.com/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) on the environment we create.
+After this tutorial, learn to [install a LAMP server](/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) on the environment we create.
 
 ## Step 1 - Install Virtual Box and Vagrant
 
@@ -304,5 +304,5 @@ As a review, VirtualBox is the software that runs the operating system, and vagr
 
 Vagrant and VirtualBox can be used to create a local environment that matches the production environment of your server.
 
-Move on to Part 2: [Setting up LAMP (Linux, Apache, MySQL, and PHP)](https://www.taniarascia.com/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) from the Ubuntu Server environment we created, and how to access it from your local computer.
+Move on to Part 2: [Setting up LAMP (Linux, Apache, MySQL, and PHP)](/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) from the Ubuntu Server environment we created, and how to access it from your local computer.
 ```

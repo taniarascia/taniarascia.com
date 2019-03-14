@@ -17,10 +17,11 @@ class Index extends Component {
   render() {
     const latestPostEdges = this.props.data.latest.edges
     const popularPostEdges = this.props.data.popular.edges
+    const published = publications.filter((article, i) => i < 6)
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} | Developer`} />
+        <Helmet title={`${config.siteTitle} | Developer, designer, writer`} />
         <SEO />
         <div className="container">
           <div className="lead">
@@ -29,9 +30,9 @@ class Index extends Component {
               of the web.
             </h1>
             <p>
-              I'm <strong>developer, designer, writer, and former chef</strong> from Chicago. I
-              created this site to document everything I learn, and share a bit of myself with the
-              world.
+              I'm <strong>developer, designer,</strong> and <strong>writer</strong>. I created this
+              site to document everything I learn, and share a bit of myself with the world. My site
+              is free and has no ads, affiliate links, or sponsored posts.
             </p>
             <Link className="button" to="/me" target="_blank">
               About me
@@ -43,6 +44,34 @@ class Index extends Component {
               Twitter
             </a>
           </div>
+        </div>
+
+        <section className="note">
+          <div className="container note-container">
+            <h3>Updates</h3>
+            <p>
+              <small>
+                <em>March 13, 2019</em>
+              </small>
+              <br />
+              After a long and arduous journey, I've migrated the site from WordPress to Gatsby, a
+              React/Node.js static site generator.{' '}
+              <a href="https://github.com/taniarascia/taniarascia.com" target="_blank">
+                View the source
+              </a>{' '}
+              of the new website! If you see any formatting errors on a post, feel free to make a
+              pull request and fix it on GitHub.
+            </p>
+            <h4>Todos</h4>
+            <ul>
+              <li>Add night mode option</li>
+              <li>Add improved sorting and filtering for posts</li>
+              <li>Add logos for projects, podcasts, speaking, publications</li>
+            </ul>
+          </div>
+        </section>
+
+        <div className="container">
           <section className="section">
             <h2>Latest Articles</h2>
             <PostListing simple postEdges={latestPostEdges} />
@@ -59,6 +88,16 @@ class Index extends Component {
           </section>
 
           <section className="section">
+            <h2>
+              Published Articles{' '}
+              <Link className="view-all" to="/publications">
+                View all
+              </Link>
+            </h2>
+            <SimpleListing simple data={published} />
+          </section>
+
+          <section className="section">
             <h2>Podcasts</h2>
             <SimpleListing simple data={podcasts} />
           </section>
@@ -69,13 +108,8 @@ class Index extends Component {
           </section>
 
           <section className="section">
-            <h2>Publications</h2>
-            <SimpleListing simple data={publications} />
-          </section>
-
-          <section className="section">
             <h2>Newsletter</h2>
-            <p>Sign up to get notified when I make awesome new content.</p>
+            <p>Sign up to get notified about new content.</p>
             <NewsletterForm />
           </section>
         </div>

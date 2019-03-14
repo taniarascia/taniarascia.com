@@ -19,7 +19,7 @@ If you don't know how to use jQuery at all, please read the Introduction to jQue
 
 ## Accordion
 
-An accordion is a list of headers that open and collapse more content when clicked. I chose to make my example have each section stay open when you click, but some versions only have one content panel open at a time. I may have a [slight affinity](https://www.taniarascia.com/music/) for the word accordion in general...
+An accordion is a list of headers that open and collapse more content when clicked. I chose to make my example have each section stay open when you click, but some versions only have one content panel open at a time. I may have a [slight affinity](/music/) for the word accordion in general...
 
 - [Style](http://codepen.io/taniarascia/pen/BpwOKZ/)
 - [No Style](http://codepen.io/taniarascia/pen/qRPxwo)

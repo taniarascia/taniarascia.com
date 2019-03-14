@@ -24,7 +24,7 @@ We're going to make a very simple web app with plain JavaScript that will retrie
 
 - Basic knowledge of [HTML and CSS](https://internetingishard.com/html-and-css/).
 - Basic knowledge of [JavaScript syntax and datatypes](https://www.sitepoint.com/beginners-guide-javascript-variables-and-datatypes/).
-- Basic knowledge of working with [JSON and JavaScript objects](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/). This brief article will clear it up completely.
+- Basic knowledge of working with [JSON and JavaScript objects](/how-to-use-json-data-with-php-or-javascript/). This brief article will clear it up completely.
 
 Everything else we'll cover along the way.
 
@@ -179,7 +179,7 @@ We can see from this documentation that it tells us we can make requests with `c
 
 To get started, let's scroll to the [films section](https://ghibliapi.herokuapp.com/#tag/Films). On the right you'll see `GET /films`. It will show us the URL of our API endpoint, [https://ghibliapi.herokuapp.com/films](https://ghibliapi.herokuapp.com/films). Clicking on that link will display an array of objects in JSON.
 
-> If you do not have an extension on your browser for viewing JSON files, add one now, such as [JSON View](https://chrome.google.com/webstore/category/extensions?hl=en). This will make reading JSON much, much easier. Remember, if you've never worked with JSON, [read this prerequisite article](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/).
+> If you do not have an extension on your browser for viewing JSON files, add one now, such as [JSON View](https://chrome.google.com/webstore/category/extensions?hl=en). This will make reading JSON much, much easier. Remember, if you've never worked with JSON, [read this prerequisite article](/how-to-use-json-data-with-php-or-javascript/).
 
 ### Retrieving the data with an HTTP request
 

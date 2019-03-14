@@ -12,7 +12,7 @@ tags:
   - setup
 ---
 
-I just got a new MacBook Pro, and I decided to research the fastest, most efficient method to set up a clean, organized, and up-to-date development environment for my new computer. I wrote about some of these steps in my [front end web development setup](https://www.taniarascia.com/my-front-end-web-development-setup/) post, and now I'm going to go into more detail.
+I just got a new MacBook Pro, and I decided to research the fastest, most efficient method to set up a clean, organized, and up-to-date development environment for my new computer. I wrote about some of these steps in my [front end web development setup](/my-front-end-web-development-setup/) post, and now I'm going to go into more detail.
 
 I documented everything I did after taking the Mac out of the box. This post will be useful to anyone setting up a new Mac, whatever your preferred apps and settings are. Simply change variables as necessary.
 
@@ -284,7 +284,7 @@ npm install --global gulp-cli
 
 ### Ruby
 
-Ruby is required to run [Jekyll](https://www.taniarascia.com/make-a-static-website-with-jekyll/), a popular static site generator. I'm going to download [Ruby Version Manager (rvm)](https://rvm.io/) to make sure I have the updated version of Ruby without messing with the built-in system Ruby.
+Ruby is required to run [Jekyll](/make-a-static-website-with-jekyll/), a popular static site generator. I'm going to download [Ruby Version Manager (rvm)](https://rvm.io/) to make sure I have the updated version of Ruby without messing with the built-in system Ruby.
 
 #### Download rvm
 
@@ -348,7 +348,7 @@ composer --version
 
 ### Virtual Hosts
 
-If you're using MAMP like I am to set up an Apache/MySQL/PHP/Python/Ruby environment, [here is a mini-tutorial](https://www.taniarascia.com/setting-up-virtual-hosts) on setting up virtual hosts.
+If you're using MAMP like I am to set up an Apache/MySQL/PHP/Python/Ruby environment, [here is a mini-tutorial](/setting-up-virtual-hosts) on setting up virtual hosts.
 
 ### Terminal Colors
 

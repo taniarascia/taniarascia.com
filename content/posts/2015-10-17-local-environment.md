@@ -20,7 +20,7 @@ The best way to get used to working on a server is to set up a local environment
 - Set up a local "LAMP Stack" style environment - `http://localhost:8888`
 - Be able to run multiple servers, or "virtual hosts" - `http://custom-host.dev`
 
-> If you would like to learn how to set up a local environment with Vagrant and VirtualBox instead, [visit this article](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/).
+> If you would like to learn how to set up a local environment with Vagrant and VirtualBox instead, [visit this article](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/).
 
 ## A Little About PHP
 

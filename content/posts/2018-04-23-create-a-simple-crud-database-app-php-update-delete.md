@@ -12,7 +12,7 @@ tags:
   - php
 ---
 
-In [the first part of this tutorial series](https://www.taniarascia.com/create-a-simple-database-app-connecting-to-mysql-with-php/), I taught you how to connect to a MySQL database with PHP using the modern PDO method. We accomplished this by developing the first half of a _very_ simple [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) app. CRUD stands for **C**reate, **R**ead, **U**pdate, **D**elete, and it is a common way to store, view, and modify data.
+In [the first part of this tutorial series](/create-a-simple-database-app-connecting-to-mysql-with-php/), I taught you how to connect to a MySQL database with PHP using the modern PDO method. We accomplished this by developing the first half of a _very_ simple [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) app. CRUD stands for **C**reate, **R**ead, **U**pdate, **D**elete, and it is a common way to store, view, and modify data.
 
 The goals we completed in part one:
 
@@ -30,7 +30,7 @@ If you haven't read part one but you're interested in learning how to manipulate
 
 #### Prerequisites
 
-Everything you need to know to use and understand this tutorial is in [Create a Simple CRUD Database App: Connecting to MySQL with PHP (Part 1: Create, Read)](https://www.taniarascia.com/create-a-simple-database-app-connecting-to-mysql-with-php/). To reiterate, you must have:
+Everything you need to know to use and understand this tutorial is in [Create a Simple CRUD Database App: Connecting to MySQL with PHP (Part 1: Create, Read)](/create-a-simple-database-app-connecting-to-mysql-with-php/). To reiterate, you must have:
 
 - A basic knowledge of HTML
 

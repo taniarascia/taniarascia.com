@@ -19,7 +19,7 @@ tags:
 {
   "name": "Tania",
   "title": "Web Developer",
-  "website": "https://www.taniarascia.com"
+  "website": ""
 }
 ```
 
@@ -31,8 +31,8 @@ JSON data can be accessed and utilized with many programming languages. In this 
 
 #### Prerequisites
 
-- You must either have [a local server](https://www.taniarascia.com/local-environment/) set up, or a host that runs PHP and some basic PHP knowledge.
-- Basic [knowledge of programming concepts](https://www.taniarascia.com/javascript-day-one/) (arrays and variables) and using JavaScript.
+- You must either have [a local server](/local-environment/) set up, or a host that runs PHP and some basic PHP knowledge.
+- Basic [knowledge of programming concepts](/javascript-day-one/) (arrays and variables) and using JavaScript.
 
 ## What is JSON?
 
@@ -398,7 +398,7 @@ Gimli is a Dwarf.
 
 ### Using Fetch
 
-Now you can also use the Fetch API to do the same thing. Read [How to Use the JavaScript Fetch API to Get JSON Data](https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data/) for an easier method to get this data.
+Now you can also use the Fetch API to do the same thing. Read [How to Use the JavaScript Fetch API to Get JSON Data](/how-to-use-the-javascript-fetch-api-to-get-json-data/) for an easier method to get this data.
 
 ```js
 // Replace ./data.json with your JSON feed

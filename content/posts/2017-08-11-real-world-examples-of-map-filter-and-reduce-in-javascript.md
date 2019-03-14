@@ -15,7 +15,7 @@ I don't know about you, but it doesn't help me very much to peruse through endle
 
 Recently, I've been exploring Chicago and visiting various local coffeeshops to write with a gentle, pleasant ambiance, à la J.K. Rowling. After I accidentally visited one I didn't like very much but forgot about, I thought it might be a fun little project to map out all the cafes I write at in a web map.
 
-On another occasion, I used Google Maps API to [map out multiple store locations](https://www.taniarascia.com/google-maps-apis-for-multiple-locations/) for restaurant concepts at my last job. For this project, I decided to use [Leaflet](http://leafletjs.com/), a JavaScript library for interactive maps.
+On another occasion, I used Google Maps API to [map out multiple store locations](/google-maps-apis-for-multiple-locations/) for restaurant concepts at my last job. For this project, I decided to use [Leaflet](http://leafletjs.com/), a JavaScript library for interactive maps.
 
 Here's the final map project that I created: [Cafétography](https://taniarascia.github.io/coffee/)
 
@@ -138,7 +138,7 @@ This is how it looks with the markers and popups loaded in.
 
 ![](../images/Screen-Shot-2017-08-10-at-8.03.38-PM.png)
 
-Now it can start becoming a pain to add a new one of those for every single coffee shop I come across. It would be much easier to create a JSON file, and loop through that. If you've never used JSON before, I would strongly suggest [reading this JSON tutorial](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/) to learn all about it from scratch and do some practice.
+Now it can start becoming a pain to add a new one of those for every single coffee shop I come across. It would be much easier to create a JSON file, and loop through that. If you've never used JSON before, I would strongly suggest [reading this JSON tutorial](/how-to-use-json-data-with-php-or-javascript/) to learn all about it from scratch and do some practice.
 
 At this point, I will delete all the marker information from **scripts.js** and make a JSON file with an object containing an array containing objects of all my coffee house locations. It can be a bit tricky to keep track of all the square and curly brackets at first.
 
@@ -180,7 +180,7 @@ map.json
 
 Okay, good. Now we have all the information about each location - name, latitude, longitude, neighborhood, and additional details - placed neatly into a JSON file. Now, how do we get that JSON file onto the page?
 
-We won't be using jQuery - only plain JavaScript - so it's a slightly more involved process. I will refer back to [How to Use JSON Data with PHP or JavaScript](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/) for a further explanation of the code, but here's how we open and access our **map.json** file.
+We won't be using jQuery - only plain JavaScript - so it's a slightly more involved process. I will refer back to [How to Use JSON Data with PHP or JavaScript](/how-to-use-json-data-with-php-or-javascript/) for a further explanation of the code, but here's how we open and access our **map.json** file.
 
 scripts.js
 
@@ -199,7 +199,7 @@ request.send()
 
 Where it says `Begin accessing JSON data here` is where we will begin working with the data from **map.json**, which has been placed in the `data` variable. Make sure **map.json** is not a local file URL. See information below.
 
-> **Warning!** It's not possible to pull an local JSON file in with `XMLHttpRequest`. In other words, if the full URL starts with `file://` or `C:/`, it will not connect properly. You can either [set up a local server with MAMP](https://www.taniarascia.com/local-environment/), use `http-server` [installed through npm](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/), use [Vagrant/VirtualBox](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) to run a server, or use an external host.
+> **Warning!** It's not possible to pull an local JSON file in with `XMLHttpRequest`. In other words, if the full URL starts with `file://` or `C:/`, it will not connect properly. You can either [set up a local server with MAMP](/local-environment/), use `http-server` [installed through npm](/how-to-install-and-use-node-js-and-npm-mac-and-windows/), use [Vagrant/VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) to run a server, or use an external host.
 
 ## Using map() to loop through JSON data
 
@@ -462,4 +462,4 @@ numbersReduced
 
 There you have it. A small project with some problem solving that uses `map()`, `filter()`, and `reduce()` along the way, with succinct snippets for review. Comments and improvements appreciated!
 
-Finally, here is [my musical rendition of Mad World](https://www.taniarascia.com/music/songs/MadWorld.m4a) by Tears for Fears. Feel free to import this unrefined [Ivory and Ivory](https://www.taniarascia.com/music/) classic into your music library.
+Finally, here is [my musical rendition of Mad World](/music/songs/MadWorld.m4a) by Tears for Fears. Feel free to import this unrefined [Ivory and Ivory](/music/) classic into your music library.

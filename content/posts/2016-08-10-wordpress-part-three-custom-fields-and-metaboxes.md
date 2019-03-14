@@ -11,14 +11,14 @@ tags:
   - wordpress
 ---
 
-In the [first part](https://www.taniarascia.com/developing-a-wordpress-theme-from-scratch/) of my WordPress tutorial series, we learned **what WordPress is** and **how to create and use a basic theme**. In [part two](https://www.taniarascia.com/wordpress-from-scratch-part-two/), we learned more advanced concepts like adding **comments and images**.
+In the [first part](/developing-a-wordpress-theme-from-scratch/) of my WordPress tutorial series, we learned **what WordPress is** and **how to create and use a basic theme**. In [part two](/wordpress-from-scratch-part-two/), we learned more advanced concepts like adding **comments and images**.
 
 In part three, we're going to learn how to add basic **custom fields** to a post, save them in the database, and show them on the front end of the website, without a plugin. And it's going to be easy, you'll love it.
 
 #### Prerequisites
 
-- [Basic knowledge of WordPress](https://www.taniarascia.com/developing-a-wordpress-theme-from-scratch/) and how to create your own theme.
-- [Basic knowledge of WordPress functions and custom post types.](https://www.taniarascia.com/wordpress-from-scratch-part-two/)
+- [Basic knowledge of WordPress](/developing-a-wordpress-theme-from-scratch/) and how to create your own theme.
+- [Basic knowledge of WordPress functions and custom post types.](/wordpress-from-scratch-part-two/)
 
 #### Goals
 
