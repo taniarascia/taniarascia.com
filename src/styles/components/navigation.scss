@@ -9,73 +9,60 @@
   border-bottom: 2px solid #f0f0f0;
   transition: all 0.3s ease;
   .nav-container {
+    padding: 0 1.5rem;
     height: 55px;
     max-width: $width;
     margin: auto;
-    padding: 0 0.75rem;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     transition: all 0.3s ease;
     .brand {
       a {
+        display: flex;
+        align-items: center;
+        color: #333;
+        margin-right: 0;
         font-weight: 600;
         font-size: 1.1rem;
         &:hover {
           color: black;
         }
       }
-    }
-    a {
-      border-radius: 4px;
-      color: #333;
-      font-size: 1rem;
-      margin-right: 1.25rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-    }
-    .text {
-      display: none;
+      .text {
+        display: none;
+      }
     }
     .links {
       display: flex;
       flex-direction: row;
       a {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
         font-weight: 500;
         color: #888;
+        margin: 0 .5rem;
         &:hover {
           color: #111;
         }
-        &.donate-button {
-          margin-right: 0;
-          position: fixed;
-          top: 0.75rem;
-          right: 0.75rem;
-          border: 2px solid $yellow;
-          padding: 1rem .5rem;
-          background: lighten($yellow, 28%);
-          color: #333;
-          font-weight: 600;
-          &:hover {
-            background: lighten($yellow, 20%);
-            border: 2px solid darken($yellow, 10%);
-            color: #111;
-          }
-          .emoji {
-            font-size: 1.5rem;
-            line-height: 0;
-          }
-        }
+      }
+    }
+    a.donate-button {
+      padding: 1rem .5rem;
+      .text {
+        display: none;
+      }
+      .emoji-in-button {
+        margin: 0;
       }
     }
   }
 }
 
 .favicon {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
 @include small-breakpoint {
@@ -90,38 +77,39 @@
     }
     .nav-container {
       height: $nav-height;
-      justify-content: space-between;
-      padding: 0 0.75rem;
+      padding: 0 2rem;
       .brand {
         a {
           font-size: 1.3rem;
         }
-      }
-      .text {
-        display: block;
-      }
-      a {
-        font-size: 1.1rem;
-        margin-right: 2.5rem;
+        .text {
+          display: block;
+        }
       }
       .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         a {
-          &.donate-button {
-            position: initial;
-            padding: 0.5rem 1rem;
-            .emoji {
-              font-size: 1.5rem;
-              line-height: 0;
-              margin-left: 0.75rem;
-            }
-          }
+          font-size: 1.1rem;
+          margin: 0 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+      a.donate-button {
+        padding: 0.5rem 1.25rem;
+        .text {
+          display: block;
+        }
+        .emoji-in-button {
+          margin: 0.25rem 0 0 0.75rem;
         }
       }
     }
   }
   .favicon {
-    height: 25px;
-    width: 25px;
-    margin-right: 0.75rem;
+    margin-right: 1rem;
   }
 }

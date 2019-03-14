@@ -35,8 +35,10 @@ class Navigation extends Component {
                 {link.name}
               </Link>
             ))}
+          </div>
+          <div class="cta">
             <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
-              <span className="text">Donate</span> <span className="emoji">☕</span>
+              <span className="text">Donate</span> <span className="emoji-in-button">☕</span>
             </a>
           </div>
         </div>

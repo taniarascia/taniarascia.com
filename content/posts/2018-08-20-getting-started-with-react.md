@@ -289,7 +289,7 @@ As you've seen, we've been using what looks like HTML in our React code, but it'
 
 With JSX, we can write what looks like HTML, and also we can create and use our own XML-like tags. Here's what JSX looks like assigned to a variable.
 
-JSX
+<div class="filename">JSX</div>
 
 ```jsx
 const heading = <h1 className="site-heading">Hello, React</h1>
@@ -297,7 +297,7 @@ const heading = <h1 className="site-heading">Hello, React</h1>
 
 Using JSX is not mandatory for writing React. Under the hood, it's running `createElement`, which takes the tag, object containing the properties, and children of the component and renders the same information. The below code will have the same output as the JSX above.
 
-Non-JSX
+<div class="filename">Non-JSX</div>
 
 ```jsx
 const heading = React.createElement('h1', { className: 'site-heading' }, 'Hello, React!')

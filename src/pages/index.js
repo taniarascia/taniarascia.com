@@ -26,13 +26,13 @@ class Index extends Component {
         <div className="container">
           <div className="lead">
             <h1>
-              Hi, I'm Tania. I build open source projects and write the missing instruction manuals
-              of the web.
+              Hi, I'm Tania. I build <strong className="pink">open source projects</strong> and
+              write the <strong className="pink">missing instruction manuals</strong> of the web.
             </h1>
             <p>
               I'm <strong>developer, designer,</strong> and <strong>writer</strong>. I created this
               site to document everything I learn, and share a bit of myself with the world. My site
-              is free and has no ads, affiliate links, or sponsored posts.
+              is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
             </p>
             <Link className="button" to="/me" target="_blank">
               About me
