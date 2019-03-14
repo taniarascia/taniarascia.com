@@ -39,6 +39,10 @@ table {
   }
 }
 
+ul li p {
+  margin: 0;
+}
+
 // Remove extra margin for nested lists
 ul li ul {
   margin-bottom: 0;
@@ -175,7 +179,6 @@ a {
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-    padding: 0.1rem 0.2rem;
     &:hover,
     &:active,
     &:focus {

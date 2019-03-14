@@ -18,7 +18,8 @@ A big part of working with JavaScript is knowing how to connect to APIs. As a fl
 
 We're going to make a very simple web app with plain JavaScript that will retrieve information from an API and display it on the page. There will be no server, dependencies, build tools, or anything else to further muddy the waters on an already difficult and confusing topic for beginners.
 
-[View Demo App](https://taniarascia.github.io/sandbox/ghibli/) [Source Code on GitHub](https://github.com/taniarascia/sandbox/tree/master/ghibli)
+- [View Demo App](https://taniarascia.github.io/sandbox/ghibli/)
+- [Source Code on GitHub](https://github.com/taniarascia/sandbox/tree/master/ghibli)
 
 #### Prerequisites
 
@@ -50,57 +51,12 @@ We'll be focusing specifically on Web APIs, which allow a web server to interact
 
 You may be familiar with the concept of a **CRUD** app, which stands for Create, Read, Update, Delete. Any programming language can be used to make a CRUD app with various methods. A web API uses HTTP requests that correspond to the CRUD verbs.
 
-<table >
-    <tr >
-        Action
-        HTTP Method
-        Definition
-    </tr>
-    <tr >
-        
-<td >Create
-</td>
-        
-<td >`POST`
-</td>
-        
-<td >Creates a new resource
-</td>
-    </tr>
-    <tr >
-        
-<td >Read
-</td>
-        
-<td >`GET`
-</td>
-        
-<td >Retrieves a resource
-</td>
-    </tr>
-    <tr >
-        
-<td >Update
-</td>
-        
-<td >`PUT`/`PATCH`
-</td>
-        
-<td >Updates an existing resource
-</td>
-    </tr>
-    <tr >
-        
-<td >Delete
-</td>
-        
-<td >`DELETE`
-</td>
-        
-<td >Deletes a resource
-</td>
-    </tr>
-</table>
+| Action | HTTP Method   | Description                  |
+| ------ | ------------- | ---------------------------- |
+| Create | `POST`        | Creates a new resource       |
+| Read   | `GET`         | Retrieves a resource         |
+| Update | `PUT`/`PATCH` | Updates an existing resource |
+| Delete | `DELETE`      | Deletes a resource           |
 
 > If you've heard **REST** and RESTful APIs, that is simply referring to a set of standards that conform to a specific architectural style. Most web apps do, or aim to conform to REST standards. Overall, there are a _lot_ of terms, acronyms and concepts to understand - HTTP, API, REST - so it's normal to feel confused and frustrated, especially when API documentation assumes you already know what to do.
 
@@ -110,7 +66,7 @@ What is our objective? We want to get the data for all Studio Ghibli films and d
 
 We're going to start by creating an **index.html** file in a new directory. The project will only consist of **index.html**, **style.css**, and **scripts.js** at the end. This HTML skeleton just links to a CSS and JavaScript file, loads in a font, and contains a div with a `root` id. This file is complete and will not change. We'll be using JavaScript to add everything from here out.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <!DOCTYPE html>
@@ -126,17 +82,19 @@ index.html
   </head>
 
   <body>
-    <div id="root">
-```
+    <div id="root"></div>
+  </body>
+</html>
 
     <script src="scripts.js"></script>
+
   </body>
 </html>
 ```
 
 Since this article is focused on the concepts of APIs and JavaScript, I will not be explaining how the CSS works. We will create a **style.css** that will be used to create a grid. For brevity's sake, I only included the most pertinent **structural** CSS below, but you can copy the [full CSS code here](https://raw.githubusercontent.com/taniarascia/sandbox/master/ghibli/style.css).
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 #root {
@@ -187,22 +145,22 @@ Before we try to put anything on the front end of the website, let's open a conn
 
 We'll create a `request` variable and assign a new `XMLHttpRequest` object to it. Then we'll open a new connection with the `open()` method - in the arguments we'll specify the type of request as `GET` as well as the URL of the API endpoint. The request completes and we can access the data inside the `onload` function. When we're done, we'll send the request.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Create a request variable and assign a new XMLHttpRequest object to it.
-    var request = new XMLHttpRequest();
+var request = new XMLHttpRequest()
 
-    // Open a new connection, using the GET request on the URL endpoint
-    request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
 
-    request.onload = function () {
-      // Begin accessing JSON data here
-      }
-    }
+request.onload = function () {
+  // Begin accessing JSON data here
+  }
+}
 
-    // Send request
-    request.send();
+// Send request
+request.send()
 ```
 
 ### Working with the JSON response
@@ -211,7 +169,7 @@ Now we've received a response from our HTTP request, and we can work with it. Ho
 
 We're going to use `JSON.parse()` to parse the response, and create a `data` variable that contains all the JSON as an array of JavaScript objects. Using `forEach()`, we'll console log out the title of each film to ensure it's working properly.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Begin accessing JSON data here
@@ -229,7 +187,7 @@ The only thing we're missing here is some way to deal with errors. What if the w
 
 Let's just wrap our code in an `if` statement, succeeding on any response in the 200-300 range, and log out an error if the request fails. You can mess up the URL to test the error.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Begin accessing JSON data here
@@ -282,7 +240,7 @@ By the end, our page will consist of a logo image followed by a container with m
 
 If you remember, our **index.html** just has a root div - `<div id="root">` right now. We'll access it with `getElementById()`. We can briefly remove all the previous code we've written for now, which we'll add back in just a moment.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const app = document.getElementById('root')
@@ -318,7 +276,7 @@ app.appendChild(container)
 
 Here is the full code for that.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const app = document.getElementById('root')
@@ -335,7 +293,7 @@ app.appendChild(container)
 
 After saving, on the front end of the website, you'll see the following.
 
-Elements
+<div class="filename">Elements</div>
 
 ```html
 <div id="root">
@@ -359,7 +317,7 @@ data.forEach(movie => {
 
 Instead of `console.log`, we'll use `textContent` to set the text of an HTML element to the data from the API. I'm using `substring()` on the `p` element to limit the description and keep each card equal length.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 data.forEach(movie => {
@@ -395,7 +353,7 @@ app.appendChild(errorMessage)
 
 And we're done! Here is the final **scripts.js** code.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const app = document.getElementById('root')
@@ -446,7 +404,8 @@ And with the full CSS styles, here is what the final product looks like.
 
 Again, here is a link to the live app and the source code.
 
-[View Demo App](https://taniarascia.github.io/sandbox/ghibli/) [Source Code on GitHub](https://github.com/taniarascia/sandbox/tree/master/ghibli)
+- [View Demo App](https://taniarascia.github.io/sandbox/ghibli/)
+- [Source Code on GitHub](https://github.com/taniarascia/sandbox/tree/master/ghibli)
 
 ## Conclusion
 

@@ -172,19 +172,19 @@ The redesign isn't drastic in looks, but I rewrote a lot of the code so that the
 
 ### Front page
 
-![](../images/0v2-front7.png)
+![](../images/0v2-front.png)
 
 ### Post page
 
-![](../images/0v2-post7.png)
+![](../images/0v2-post.png)
 
 ### Embedded code
 
-![](../images/0v2-code7.png)
+![](../images/0v2-code.png)
 
 ### Tutorials Page
 
-![](../images/Screen-Shot-2017-06-10-at-3.10.51-PM7.png)
+![](../images/Screen-Shot-2017-06-10-at-3.10.51-PM.png)
 
 ## Conclusion
 
@@ -192,4 +192,4 @@ What do you think of the newest layout, design, and structure? Is it fast and ea
 
 My takeaway from all this is that I wouldn't recommend constant website tweaks, but rather a more in-depth redesign, less often, in which you think about your content and the best way to present it. Fortunately, I think everyone else knows this, and I'm the only person who has that problem. I think some of you like checking in every now and then to see what wacky thing I've done next, though.
 
-Moving forward, I'm going to spend more time on writing and less time on designing. Since I have no ads and no sponsored posts, I make no money from this site. My biggest task is working on discovering what type of content people need/want and would be willing to contribute money to so that I could pay my server fees as well as make a passive income through the site.
+Moving forward, I'm going to spend more time on writing and less time on designing. Since I have no ads and no sponsored posts, I make no money from this site. My biggest task is working on discovering what type of content people need and want and would be willing to contribute money to so that I could pay my server fees as well as make a passive income through the site.

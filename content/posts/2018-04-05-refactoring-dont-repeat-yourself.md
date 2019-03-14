@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: refactoring-dont-repeat-yourself
 categories:
-  - UI/UX
+  - Programming
 tags:
   - javascript
   - refactoring
@@ -15,7 +15,7 @@ Refactoring is the process of editing code to improve efficiency and readability
 
 Let's say I have some data in the form of a JavaScript/JSON object or array. The data and how it's formatted doesn't matter much here, it could be much more complex, but I'm leaving it simple for example's sake. (It could come from an API, but I'm going to leave out the step of fetching data for this example as it's irrelevant.) Here’s our data:
 
-data
+<div class="filename">data</div>
 
 ```js
 var sessions = {
@@ -27,7 +27,7 @@ var sessions = {
 
 Now let's say I have a function that I need to run that data through multiple times. Maybe I'm sending it through an API to map out a chart. In this case, I'm printing the data to a website (the DOM).
 
-function
+<div class="filename">function</div>
 
 ```js
 function printData(id, name, sessions) {
@@ -61,27 +61,27 @@ So for my first try, I'm just going to run the data through the code manually. I
 
 ```js
 // collapsing for brevity
-    var sessions = { ... }
-    function printData(id, name, sessions) { ... }
+var sessions = { ... }
+function printData(id, name, sessions) { ... }
 
-    // Manually create objects and assign each one to a variable
-    var mobileData = {
-        id: 'mobile-container',
-        name: 'mobile',
-        sessions: sessions['mobile']
-    };
+// Manually create objects and assign each one to a variable
+var mobileData = {
+    id: 'mobile-container',
+    name: 'mobile',
+    sessions: sessions['mobile']
+};
 
-    var tabletData = {
-        id: 'tablet-container',
-        name: 'tablet',
-        sessions: sessions['tablet']
-    };
+var tabletData = {
+    id: 'tablet-container',
+    name: 'tablet',
+    sessions: sessions['tablet']
+};
 
-    var desktopData = {
-        id: 'desktop-container',
-        name: 'desktop',
-        sessions: sessions['desktop']
-    };
+var desktopData = {
+    id: 'desktop-container',
+    name: 'desktop',
+    sessions: sessions['desktop']
+};
 ```
 
 And I invoke the function using the properties of each object.
@@ -101,27 +101,27 @@ First, I'll create an array that contains all the key values with `Object.keys`.
 
 ```js
 var sessions = { ... }
-    function printData(id, name, sessions) { ... }
+function printData(id, name, sessions) { ... }
 
-    var devices = Object.keys(sessions); // returns [ "mobile", "tablet" ... ]
+var devices = Object.keys(sessions); // returns [ "mobile", "tablet" ... ]
 ```
 
 Then I'll make an array of objects, containing all the properties I need. I'll do this with `map()`.
 
 ```js
 var sessions = { ... }
-    function printData(id, name, sessions) { ... }
+function printData(id, name, sessions) { ... }
 
-    var devices = Object.keys(sessions);
+var devices = Object.keys(sessions);
 
-    var data = devices.map(function(device) {
-        // returns [{ ... }, { ... }, { ... }], an array of objects
-        return {
-            id: device + '-container',
-            name: device,
-            sessions: sessions[device],
-        }
-    });
+var data = devices.map(function(device) {
+    // returns [{ ... }, { ... }, { ... }], an array of objects
+    return {
+      id: device + '-container',
+      name: device,
+      sessions: sessions[device],
+    }
+});
 ```
 
 Finally, I'll do a `forEach()` loop to run the function once for each object.
@@ -134,7 +134,7 @@ data.forEach(function(device) {
 
 And that's it! Here it is below.
 
-fullCode.js
+<div class="filename">fullCode.js</div>
 
 ```js
 var sessions = {
@@ -167,7 +167,7 @@ data.forEach(function(device) {
 
 And here it is updated with some ES6 syntax.
 
-fullCodeES6.js
+<div class="filename">fullCodeES6.js</div>
 
 ```js
 const sessions = {
@@ -202,4 +202,4 @@ Now, the code may not be that much shorter now, but imagine if our data had fift
 
 Note that less code or shorter code is not necessarily better code. You shouldn’t sacrifice readability and clarity for brevity.
 
-[Here is a demo](https://codepen.io/taniarascia/pen/pLOLQX) of the code example above.
+- [Here is a demo](https://codepen.io/taniarascia/pen/pLOLQX) of the code example above.

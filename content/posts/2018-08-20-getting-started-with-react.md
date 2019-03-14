@@ -62,7 +62,7 @@ This first method is not a popular way to set up React and is not how we'll be d
 
 Let's start by making a basic `index.html` file. We're going to load in three CDNs in the `head` - React, React DOM, and Babel. We're also going to make a `div` with an id called `root`, and finally we'll create a `script` tag where your custom code will live.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <!DOCTYPE html>
@@ -110,13 +110,12 @@ Now we'll add the [`render()`](https://reactjs.org/docs/react-component.html#ren
 
 ```jsx
 class App extends React.Component {
-        render() {
-            return (
-               //...
-            );
-        }
-    }
-
+  render() {
+      return (
+          //...
+      );
+  }
+}
 ```
 
 Inside the `return`, we're going to put what looks like a simple HTML element. Note that we're not returning a string here, so don't use quotes around the element. This is called `JSX`, and we'll learn more about it soon.
@@ -189,15 +188,13 @@ To set up `create-react-app`, run the following code in your terminal, one direc
 
 ```bash
 npx create-react-app react-tutorial
-
 ```
 
 Once that finishes installing, move to the newly created directory and start the project.
 
 ```bash
 cd react-tutorial
-    npm start
-
+npm start
 ```
 
 Once you run this command, a new window will popup at `localhost:3000` with your new React app.
@@ -224,7 +221,7 @@ For `index.css`, I just copy-and-pasted the contents of [Primitive CSS](https://
 
 Now in `index.js`, we're importing React, ReactDOM, and the CSS file.
 
-src/index.js
+<div class="filename">src/index.js</div>
 
 ```jsx
 import React from 'react'
@@ -254,7 +251,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 Here's our full `index.js`. This time, we're loading the `Component` as a property of React, so we no longer need to extend `React.Component`.
 
-src/index.js
+<div class="filename">src/index.js</div>
 
 ```jsx
 import React, { Component } from 'react'
@@ -329,7 +326,7 @@ Most React apps have many small components, and everything loads into the main `
 
 Remove the `App` class from `index.js`, so it looks like this.
 
-src/index.js
+<div class="filename">src/index.js</div>
 
 ```jsx
 import React from 'react'
@@ -342,7 +339,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 We'll create a new file called `App.js` and put the component in there.
 
-src/App.js
+<div class="filename">src/App.js</div>
 
 ```jsx
 import React, { Component } from 'react'
@@ -366,7 +363,7 @@ We export the component as `App` and load it in `index.js`. It's not mandatory t
 
 Let's create another component. We're going to create a table. Make `Table.js`, and fill it with the following data.
 
-src/Table.js
+<div class="filename">src/Table.js</div>
 
 ```jsx
 import React, { Component } from 'react'
@@ -496,7 +493,7 @@ Everything should appear as it did before. As you can see, components can be nes
 
 As a wrap up, let's compare a simple component with a class component.
 
-Simple Component
+<div class="filename">Simple Component</div>
 
 ```jsx
 const SimpleComponent = () => {
@@ -504,7 +501,7 @@ const SimpleComponent = () => {
 }
 ```
 
-Class Component
+<div class="filename">Class Component</div>
 
 ```jsx
 class ClassComponent extends Component {
@@ -522,7 +519,7 @@ Right now, we have a cool `Table` component, but the data is being hard-coded. O
 
 First, let's remove all the data from our `TableBody` component.
 
-Table.js
+<div class="filename">Table.js</div>
 
 ```jsx
 const TableBody = () => {
@@ -532,7 +529,7 @@ const TableBody = () => {
 
 Then let's move all that data to an array of objects, as if we were bringing in a JSON-based API. We'll have to create this array inside our `render()`.
 
-App.js
+<div class="filename">App.js</div>
 
 ```jsx
 class App extends Component {
@@ -577,7 +574,7 @@ return (
 
 Now that data is being passed through to `Table`, and we have to work on accessing it from the other side.
 
-Table.js
+<div class="filename">Table.js</div>
 
 ```jsx
 class Table extends Component {
@@ -608,7 +605,7 @@ const { characterData } = this.props
 
 Since our `Table` component actually consists of two smaller simple components, I'm going to pass it through to the `TableBody`, once again through props.
 
-Table.js
+<div class="filename">Table.js</div>
 
 ```jsx
 class Table extends Component {
@@ -666,32 +663,29 @@ To start, we're going to create a `state` object.
 
 ```jsx
 class App extends Component {
-        state = {};
-
+  state = {};
 ```
 
 The object will contain properties for everything you want to store in the state. For us, it's `characters`.
 
 ```jsx
 class App extends Component {
-        state = {
-            characters: []
-         };
-
+  state = {
+      characters: []
+    };
 ```
 
 Move the entire array of objects we created earlier into `state.characters`.
 
 ```jsx
 class App extends Component {
-        state = {
-            characters: [
-                {
-                    'name': 'Charlie',
-                    // the rest of the data
-            ]
-         };
-
+  state = {
+    characters: [
+      {
+        'name': 'Charlie',
+        // the rest of the data
+    ]
+  };
 ```
 
 Our data is officially contained in the state. Since we want to be able to remove a character from the table, we're going to create a `removeCharacter` method on the parent `App` class.
@@ -700,7 +694,7 @@ To retrieve the state, we'll get `this.state.characters` using the same ES6 meth
 
 > You must use `this.setState()` to modify an array. Simply applying a new value to `this.state.property` will not work.
 
-App.js
+<div class="filename">App.js</div>
 
 ```jsx
 removeCharacter = index => {
@@ -718,7 +712,7 @@ removeCharacter = index => {
 
 Now we have to pass that function through to the component, and render a button next to each character that can invoke the function. We'll pass the `removeCharacter` function through as a prop to `Table`.
 
-App.js
+<div class="filename">App.js</div>
 
 ```jsx
 return (
@@ -732,7 +726,7 @@ Don't forget to put `const { characters } = this.state` to pull the correct data
 
 Since we're passing it down to `TableBody` from `Table`, we're going to have to pass it through again as a prop, just like we did with the character data.
 
-Table.js
+<div class="filename">Table.js</div>
 
 ```jsx
 class Table extends Component {
@@ -751,7 +745,7 @@ class Table extends Component {
 
 Here's where that index we defined in the `removeCharacter()` method comes in. In the `TableBody` component, we'll pass the key/index through as a parameter, so the filter function knows which item to remove. We'll create a button with an `onClick` and pass it through.
 
-Table.js
+<div class="filename">Table.js</div>
 
 ```jsx
 <tr key={index}>
@@ -781,10 +775,9 @@ Before anything else, let's remove all the hard-coded data from `state.character
 
 ```jsx
 class App extends Component {
-        state = {
-            characters: []
-        };
-
+  state = {
+    characters: []
+  };
 ```
 
 Now let's go ahead and create a `Form` component in a new file called `Form.js`. We're going to create a class component, and within we'll use a `constructor()`, which we haven't done thus far. We'll need the `constructor()` to use `this`, and to receive the `props` of the parent.
@@ -828,33 +821,32 @@ Let's get this working before we move on to submitting the form. In the render, 
 
 ```jsx
 render() {
-        const { name, job } = this.state;
+  const { name, job } = this.state;
 
-        return (
-            <form>
-                <label>Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={this.handleChange} />
-                <label>Job</label>
-                <input
-                    type="text"
-                    name="job"
-                    value={job}
-                    onChange={this.handleChange}/>
-            </form>
-        );
-    }
+  return (
+    <form>
+      <label>Name</label>
+      <input
+        type="text"
+        name="name"
+        value={name}
+        onChange={this.handleChange} />
+      <label>Job</label>
+      <input
+        type="text"
+        name="job"
+        value={job}
+        onChange={this.handleChange} />
+    </form>
+  );
+}
 
-    export default Form;
-
+export default Form;
 ```
 
 In `App.js`, we can render the form below the table.
 
-App.js
+<div class="filename">App.js</div>
 
 ```jsx
 return (
@@ -871,7 +863,7 @@ Now if we go to the front end of our app, we'll see a form that doesn't have a s
 
 Cool. Last step is to allow us to actually submit that data and update the parent state. We'll create a function called `handleSubmit()` on `App` that will update the state by taking the existing `this.state.characters` and adding the new `character` parameter, using the [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
 
-App.js
+<div class="filename">App.js</div>
 
 ```jsx
 handleSubmit = character => {
@@ -887,7 +879,7 @@ Let's make sure we pass that through as a parameter on `Form`.
 
 Now in `Form`, we'll create a method called `submitForm()` that will call that function, and pass the `Form` state through as the `character` parameter we defined earlier. It will also reset the state to the initial state, to clear the form after submit.
 
-Form.js
+<div class="filename">Form.js</div>
 
 ```jsx
 submitForm = () => {
@@ -912,7 +904,7 @@ If you got lost anywhere along the way, you can view [the complete source on Git
 
 One very common usage of React is pulling in data from an API. If you're not familiar with what an API is or how to connect to one, I would recommend reading [How to Connect to an API with JavaScript](/how-to-connect-to-an-api-with-javascript/), which will walk you through what APIs are and how to use them with vanilla JavaScript.
 
-As a little test, we can create an `Api.js` file, and create a new `App` in there. A public API we can test with is the [Wikipedia API](https://en.wikipedia.org/w/api.php), and I have a [URL endpoint right here](https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*) for a random- search. You can go to that link to see the API - and make sure you have [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) installed on your browser.
+As a little test, we can create an `Api.js` file, and create a new `App` in there. A public API we can test with is the [Wikipedia API](https://en.wikipedia.org/w/api.php), and I have a [URL endpoint right here](https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*) for a random* search. You can go to that link to see the API - and make sure you have [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) installed on your browser.
 
 We're going to use [JavaScript's built-in Fetch](/how-to-use-the-javascript-fetch-api-to-get-json-data/) to gather the data from that URL endpoint and display it. You can switch between the app we created and this test file by just changing the URL in `index.js` - `import App from './Api';`.
 
@@ -920,7 +912,7 @@ I'm not going to explain this code line-by-line, as we've already learned about 
 
 When we pull in API data, we want to use `componentDidMount`, because we want to make sure the component has rendered to the DOM before we bring in the data. In the below snippet, you'll see how we bring in data from the Wikipedia API, and display it on the page
 
-Api.js
+<div class="filename">Api.js</div>
 
 ```jsx
 import React, { Component } from 'react'
@@ -964,7 +956,7 @@ Once you save and run this file in the local server, you'll see the Wikipedia AP
 
 There are other lifecycle methods, but going over them will be beyond the scope of this article. You can [read more about React components here](https://reactjs.org/docs/react-component.html).
 
-\*Wikipedia search choice may not be random. It might be an article that I spearheaded back in 2005.
+_\*Wikipedia search choice may not be random. It might be an article that I spearheaded back in 2005._
 
 ## Building and Deploying a React App
 
@@ -974,7 +966,6 @@ Now, if you just want to compile all the React code and place it in the root of 
 
 ```bash
 npm run build
-
 ```
 
 This will create a `build` folder which will contain your app. Put the contents of that folder anywhere, and you're done!
@@ -983,43 +974,38 @@ We can also take it a step further, and have npm deploy for us. We're going to b
 
 Make sure you've exited out of your local React environment, so the code isn't currently running. First, we're going to add a `homepage` field to `package.json`, that has the URL we want our app to live on.
 
-package.json
+<div class="filename">package.json</div>
 
 ```js
-  "homepage": "https://taniarascia.github.io/react-tutorial",
-
+"homepage": "https://taniarascia.github.io/react-tutorial",
 ```
 
 We'll also add these two lines to the `scripts` property.
 
 ```js
 "scripts": {
-      // ...
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
-    }
-
+  // ...
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
 ```
 
 In your project, you'll add `gh-pages` to the devDependencies.
 
 ```bash
 npm install --save-dev gh-pages
-
 ```
 
 We'll create the `build`, which will have all the compiled, static files.
 
 ```bash
 npm run build
-
 ```
 
 Finally, we'll deploy to `gh-pages`.
 
 ```bash
 npm run deploy
-
 ```
 
 And we're done! The app is now available live at [https://taniarascia.github.io/react-tutorial](https://taniarascia.github.io/react-tutorial).
@@ -1028,6 +1014,7 @@ And we're done! The app is now available live at [https://taniarascia.github.io/
 
 This article should have given you a good introduction to React, simple and class components, state, props, working with form data, pulling data in from an API, and deploying an app. There is much more to learn and do with React, but I hope you feel confident delving in and playing around with React yourself now.
 
-[View Source on GitHub](https://github.com/taniarascia/react-tutorial) [View Project](https://taniarascia.github.io/react-tutorial/)
+- [View Source on GitHub](https://github.com/taniarascia/react-tutorial)
+- [View Project](https://taniarascia.github.io/react-tutorial/)
 
 Please let me know if anything was unclear, or if there's anything else you'd like to see in this or a subsequent article.

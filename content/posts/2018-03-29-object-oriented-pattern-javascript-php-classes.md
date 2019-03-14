@@ -65,34 +65,34 @@ We'll edit the inherited class now, adding a new parameter. We use `super()` to 
 ```js
 class Hero { ... }
 
-    class Warrior extends Hero {
-        // Adding a constructor
-        constructor(name, level, weapon) {
-            // Access and call function from parent
-            super(name, level);
+class Warrior extends Hero {
+    // Adding a constructor
+    constructor(name, level, weapon) {
+        // Access and call function from parent
+        super(name, level);
 
-            this.weapon = weapon;
-        }
+        this.weapon = weapon;
     }
+}
 ```
 
 Finally, we'll add a method to the extended class.
 
 ```js
-class Hero { ... }
+class Hero {}
 
-    class Warrior extends Hero {
-        constructor(name, level, weapon) {
-            super(name, level);
+class Warrior extends Hero {
+  constructor(name, level, weapon) {
+    super(name, level)
 
-            this.weapon = weapon;
-        }
+    this.weapon = weapon
+  }
 
-        // Adding a method
-        attack() {
-            return `${this.name} attacks with the ${this.weapon}.`;
-        }
-    }
+  // Adding a method
+  attack() {
+    return `${this.name} attacks with the ${this.weapon}.`
+  }
+}
 ```
 
 Now that the class and extended class blueprints are ready, we can create a new character that has acesss to the parameters and methods of the original class and the extended class.
@@ -111,7 +111,7 @@ The full code and output for JS constructor functions and classes, and PHP class
 
 The `class` keyword was introduced with ES6. [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) are built on prototypes in JavaScript.
 
-classes-es6.js
+<div class="filename">classes-es6.js</div>
 
 ```js
 class Hero {
@@ -149,15 +149,14 @@ console.log(hero1.greet())
 
 ```terminal
 Bjorn attacks with the axe.
-    Bjorn says hello.
-
+Bjorn says hello.
 ```
 
 ## JavaScript ES5 Constructor Function
 
 JavaScript constructor functions were created as an attempt to bring the functionality of traditional object-oriented class design to the JavaScript language.
 
-constructor-functions-es5.js
+<div class="filename">constructor-functions-es5.js</div>
 
 ```js
 function Hero(name, level) {
@@ -194,54 +193,54 @@ console.log(hero1.greet())
 
 ```terminal
 Bjorn attacks with the axe.
-    Bjorn says hello.
+Bjorn says hello.
 ```
 
 ## PHP Class
 
 Here is a simple example of a [PHP class constructor](http://php.net/manual/en/language.oop5.decon.php).
 
-class-php.php
+<div class="filename">class-php.php</div>
 
 ```php
 
 <?php
 
-    class Hero {
-        public function __construct($name, $level) {
-            $this->name = $name;
-            $this->level = $level;
-        }
-        public function greet() {
-            return "{$this->name} says hello.";
-        }
+class Hero {
+    public function __construct($name, $level) {
+        $this->name = $name;
+        $this->level = $level;
+    }
+    public function greet() {
+        return "{$this->name} says hello.";
+    }
+}
+
+class Warrior extends Hero {
+    public function __construct($name, $level, $weapon) {
+        // Access and call function from parent
+        parent::__construct($name, $level, $weapon);
+
+        $this->weapon = $weapon;
     }
 
-    class Warrior extends Hero {
-        public function __construct($name, $level, $weapon) {
-            // Access and call function from parent
-            parent::__construct($name, $level, $weapon);
-
-            $this->weapon = $weapon;
-        }
-
-        public function attack() {
-            return "{$this->name} attacks with the {$this->weapon}.";
-        }
+    public function attack() {
+        return "{$this->name} attacks with the {$this->weapon}.";
     }
+}
 
-    // Initialize individual character instances
-    $hero1 = new Warrior('Bjorn', 1, 'axe');
+// Initialize individual character instances
+$hero1 = new Warrior('Bjorn', 1, 'axe');
 
-    echo $hero1->attack();
-    echo $hero1->greet();
+echo $hero1->attack();
+echo $hero1->greet();
 ```
 
 ##### Output
 
 ```terminal
 Bjorn attacks with the axe.
-    Bjorn says hello.
+Bjorn says hello.
 ```
 
 Of course, [JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) are "syntactic sugar" (ugh) over prototypes, which means under the hood, ES6 classes are not actually running on an object-oriented inheritance model. However, popular libraries like [React](https://reactjs.org) tend to make a lot of use of classes, so they're good to know. The PHP example shows an actual class from a traditional object-oriented system, but with this simple example, we can get the same output either way.

@@ -22,21 +22,13 @@ Otherwise, I plan to do a bit of traveling - I just booked a one way flight to E
 Here are a few articles I've been partially working on that I want to publish as soon as possible.
 
 - My **career change story**, and the journey of getting my first web development job
-
 - A list of bloggers and **web developers I follow** in 2017
-
 - **Node and npm installations** for Mac and Windows
-
 - Create a **Webpack setup to compile ES6** and Sass with hot reload on save
-
 - My habits and methods for **being happy**
-
 - Understanding **CSS positioning** with practical examples
-
 - Working with the **DOM with plain JavaScript** (no jQuery)
-
 - Empathy in the Web Development Industry
-
 - Create a **PHP contact form**
 
 I'll also be doing a lot of writing on JavaScript outside of this website.

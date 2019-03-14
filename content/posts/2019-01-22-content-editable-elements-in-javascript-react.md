@@ -12,9 +12,7 @@ tags:
   - react
 ---
 
-[`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content) is an attribute that can be placed on nearly any HTML element and the contents of that element will be editable by the user. This attribute is used all over the web, such as in Google Sheets.
-
-I'm not going to tell you to use or not to use `contenteditable` elements in your app. If you're choosing to use `contenteditable`, you may find this article useful.
+Any element can be made editable with the addition of the `contenteditable` attribute. This attribute is used all over the web, such as in Google Sheets. I'm not going to tell you to use or not to use [`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content) elements in your app. If you're choosing to use `contenteditable`, you may find this article useful.
 
 I'm going to share a bunch of stuff I figured out while using `contenteditable`, so that someone else can find it all in one place.
 
@@ -32,11 +30,15 @@ I'm going to make a simple CRUD table in React using the `ContentEditable` compo
 
 Here are the issues:
 
-1. Pasting 2. Spaces and Special Characters 3. Newlines 4. Highlighting 5. Focusing
+- Pasting
+- Spaces and Special Characters
+- Newlines
+- Highlighting
+- Focusing
 
 And then some stuff about numbers/currency, and editing existing rows.
 
-[View Completed Demo and Source](https://codesandbox.io/s/5yj50183vl)
+- [View Completed Demo and Source](https://codesandbox.io/s/5yj50183vl)
 
 ## Setup
 
@@ -46,14 +48,12 @@ I'm going to set up a React project in `ce-app`.
 
 ```bash
 npx create-react-app ce-app && cd ce-app
-
 ```
 
 Add `react-contenteditable` and `semantic-ui-react` as the dependencies. [react-contenteditable](https://www.npmjs.com/package/react-contenteditable) is a really nice component which makes working with `contenteditable` more bearable.
 
 ```bash
 yarn add react-contenteditable semantic-ui-react
-
 ```
 
 > `npx` is not a typo. Use `npm install -g npx` to install `npx` if you don't have it. If you're using `npm` instead of `yarn`, use `npm i react-contenteditable semantic-ui-react`.
@@ -64,146 +64,136 @@ index.js
 
 ```jsx
 import React, { Component } from 'react'
-    import ReactDOM from 'react-dom'
-    import ContentEditable from 'react-contenteditable'
-    import { Table, Button } from 'semantic-ui-react'
-    import './styles.css'
+import ReactDOM from 'react-dom'
+import ContentEditable from 'react-contenteditable'
+import { Table, Button } from 'semantic-ui-react'
+import './styles.css'
 
-    class App extends Component {
-      initialState = {
-        store: [
-          { id: 1, item: 'silver', price: 15.41 },
-          { id: 2, item: 'gold', price: 1284.3 },
-          { id: 3, item: 'platinum', price: 834.9 },
-        ],
-        row: {
-          item: '',
-          price: '',
-        },
-      }
+class App extends Component {
+  initialState = {
+    store: [
+      { id: 1, item: 'silver', price: 15.41 },
+      { id: 2, item: 'gold', price: 1284.3 },
+      { id: 3, item: 'platinum', price: 834.9 },
+    ],
+    row: {
+      item: '',
+      price: '',
+    },
+  }
 
-      state = this.initialState
+  state = this.initialState
 
-      // Methods will go here
+  // Methods will go here
+  render() {
+    const {
+      store,
+      row: { item, price },
+    } = this.state
 
-      render() {
-        const {
-          store,
-          row: { item, price },
-        } = this.state
+    return (
+      <div className="App">
+        <h1>React Contenteditable</h1>
+        {/* Table will go here */}
+      </div>
+    )
+  }
+}
 
-        return (
-          <div className="App">
-            <h1>React Contenteditable</h1>
-            {/* Table will go here */}
-          </div>
-        )
-      }
-    }
-
-    ReactDOM.render(<App />, document.getElementById('root'))
-
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
-
-
 
 The table has Item, Price, and Action as the headers, and maps through the state for each row. Each cell has a `ContentEditable` component, or an action to delete a row or add a new row.
 
-
 ```jsx
 <Table celled>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Item</Table.HeaderCell>
-          <Table.HeaderCell>Price</Table.HeaderCell>
-          <Table.HeaderCell>Action</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {store.map(row => {
-          return (
-            <Table.Row key={row.id}>
-              <Table.Cell>{row.item}</Table.Cell>
-              <Table.Cell>{row.price}</Table.Cell>
-              <Table.Cell className="narrow">
-                <Button
-                  onClick={() => {
-                    this.deleteRow(row.id)
-                  }}
-                >
-                  Delete
-                </Button>
-              </Table.Cell>
-            </Table.Row>
-          )
-        })}
-        <Table.Row>
+  <Table.Header>
+    <Table.Row>
+      <Table.HeaderCell>Item</Table.HeaderCell>
+      <Table.HeaderCell>Price</Table.HeaderCell>
+      <Table.HeaderCell>Action</Table.HeaderCell>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    {store.map(row => {
+      return (
+        <Table.Row key={row.id}>
+          <Table.Cell>{row.item}</Table.Cell>
+          <Table.Cell>{row.price}</Table.Cell>
           <Table.Cell className="narrow">
-            <ContentEditable
-              html={item}
-              data-column="item"
-              className="content-editable"
-              onChange={this.handleContentEditable}
-            />
-          </Table.Cell>
-          <Table.Cell className="narrow">
-            <ContentEditable
-              html={price}
-              data-column="price"
-              className="content-editable"
-              onChange={this.handleContentEditable}
-            />
-          </Table.Cell>
-          <Table.Cell className="narrow">
-            <Button onClick={this.addRow}>Add</Button>
+            <Button
+              onClick={() => {
+                this.deleteRow(row.id)
+              }}
+            >
+              Delete
+            </Button>
           </Table.Cell>
         </Table.Row>
-      </Table.Body>
-    </Table>
-
+      )
+    })}
+    <Table.Row>
+      <Table.Cell className="narrow">
+        <ContentEditable
+          html={item}
+          data-column="item"
+          className="content-editable"
+          onChange={this.handleContentEditable}
+        />
+      </Table.Cell>
+      <Table.Cell className="narrow">
+        <ContentEditable
+          html={price}
+          data-column="price"
+          className="content-editable"
+          onChange={this.handleContentEditable}
+        />
+      </Table.Cell>
+      <Table.Cell className="narrow">
+        <Button onClick={this.addRow}>Add</Button>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 ```
 
 We start with three methods: one to add a row, which will update the store with the new row, and empty the existing row; the other to delete an existing row.
 
 ```jsx
 addRow = () => {
-      const { store, row } = this.state
+  const { store, row } = this.state
 
-      row.id = store.length + 1
+  row.id = store.length + 1
 
-      this.setState({
-        store: [...store, row],
-        row: this.initialState.row,
-      })
-    }
+  this.setState({
+    store: [...store, row],
+    row: this.initialState.row,
+  })
+}
 
-    deleteRow = id => {
-      const { store } = this.state
+deleteRow = id => {
+  const { store } = this.state
 
-      this.setState({
-        store: store.filter(item => id !== item.id),
-      })
-    }
-
+  this.setState({
+    store: store.filter(item => id !== item.id),
+  })
+}
 ```
-
-
 
 Finally, we have the `handleContentEditable` component, which will be invoked every time a change is made to `ContentEditable`, via `onChange`. In order to use one function many possible columns, I added a `data-column` attribute to the component, so I get the key (column) and value of each `ContentEditable`, and set the `row`.
 
+```jsx
+handleContentEditable = event => {
+  const { row } = this.state
+  const {
+    currentTarget: {
+      dataset: { column },
+    },
+    target: { value },
+  } = event
 
-    <code class="js   language-js  ">handleContentEditable = event => {
-      const { row } = this.state
-      const {
-        currentTarget: {
-          dataset: { column },
-        },
-        target: { value },
-      } = event
-
-      this.setState({ row: { ...row, [column]: value } })
-    }
-
+  this.setState({ row: { ...row, [column]: value } })
+}
 ```
 
 And a small bit of CSS to make it look decent.
@@ -271,24 +261,17 @@ Since obviously we don't want HTML to be submitted here, we need to make a funct
 
 ```jsx
 pasteAsPlainText = event => {
-      event.preventDefault()
+  event.preventDefault()
 
-      const text = event.clipboardData.getData('text/plain')
-      document.execCommand('insertHTML', false, text)
-    }
-
+  const text = event.clipboardData.getData('text/plain')
+  document.execCommand('insertHTML', false, text)
+}
 ```
-
-
 
 We can put it on the `onPaste` of the `ContentEditable`.
 
-
 ```jsx
-<ContentEditable
-      onPaste={this.pasteAsPlainText}
-    />
-
+<ContentEditable onPaste={this.pasteAsPlainText} />
 ```
 
 ## Issue 2: Spaces and Special Characters
@@ -309,43 +292,38 @@ So I just made a little find and replace for those characters.
 
 ```jsx
 const trimSpaces = string => {
-      return string
-        .replace(/&nbsp;/g, '')
-        .replace(/&amp;/g, '&')
-        .replace(/&gt;/g, '>')
-        .replace(/&lt;/g, '<')
-    }
-
+  return string
+    .replace(/&nbsp;/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&gt;/g, '>')
+    .replace(/&lt;/g, '<')
+}
 ```
-
-
 
 If I add it to the `addRow` method, I can fix them before they get submitted.
 
-
 ```jsx
 addRow = () => {
-      const { store, row } = this.state
-      const trimSpaces = string => {
-        return string
-          .replace(/&nbsp;/g, '')
-          .replace(/&amp;/g, '&')
-          .replace(/&gt;/g, '>')
-          .replace(/&lt;/g, '<')
-      }
-      const trimmedRow = {
-        ...row,
-        item: trimSpaces(row.item),
-      }
+  const { store, row } = this.state
+  const trimSpaces = string => {
+    return string
+      .replace(/&nbsp;/g, '')
+      .replace(/&amp;/g, '&')
+      .replace(/&gt;/g, '>')
+      .replace(/&lt;/g, '<')
+  }
+  const trimmedRow = {
+    ...row,
+    item: trimSpaces(row.item),
+  }
 
-      row.id = store.length + 1
+  row.id = store.length + 1
 
-      this.setState({
-        store: [...store, trimmedRow],
-        row: this.initialState.row,
-      })
-    }
-
+  this.setState({
+    store: [...store, trimmedRow],
+    row: this.initialState.row,
+  })
+}
 ```
 
 ![](../images/Screen-Shot-2019-01-21-at-9.07.49-PM.png)
@@ -366,26 +344,19 @@ So we can disable that. `13` is the key code for enter.
 
 ```jsx
 disableNewlines = event => {
-      const keyCode = event.keyCode || event.which
+  const keyCode = event.keyCode || event.which
 
-      if (keyCode === 13) {
-        event.returnValue = false
-        if (event.preventDefault) event.preventDefault()
-      }
-    }
-
+  if (keyCode === 13) {
+    event.returnValue = false
+    if (event.preventDefault) event.preventDefault()
+  }
+}
 ```
-
-
 
 This will go on the `onKeyPress` attribute.
 
-
 ```jsx
-<ContentEditable
-      onKeyPress={this.disableNewlines}
-    />
-
+<ContentEditable onKeyPress={this.disableNewlines} />
 ```
 
 ## Issue 4: Highlighting
@@ -394,23 +365,16 @@ When we tab through a `contenteditable` element that's already there, the cursor
 
 ```jsx
 highlightAll = () => {
-      setTimeout(() => {
-        document.execCommand('selectAll', false, null)
-      }, 0)
-    }
-
+  setTimeout(() => {
+    document.execCommand('selectAll', false, null)
+  }, 0)
+}
 ```
-
-
 
 This will go on the `onFocus` attribute.
 
-
 ```jsx
-<ContentEditable
-      onFocus={this.highlightAll}
-    />
-
+<ContentEditable onFocus={this.highlightAll} />
 ```
 
 ## Issue 5: Focusing After Submit
@@ -421,13 +385,9 @@ First, make a `ref` below state.
 
 ```jsx
 firstEditable = React.createRef()
-
 ```
 
-
-
 At the end of the `addRow` function, focus on the `firstEditable` current `div`.
-
 
 ```
 
@@ -435,16 +395,10 @@ this.firstEditable.current.focus()
 
 ```
 
-
-
 `ContentEditable` conveniently has an `innerRef` attribute we can use for this.
 
-
 ```jsx
-<ContentEditable
-      innerRef={this.firstEditable}
-    />
-
+<ContentEditable innerRef={this.firstEditable} />
 ```
 
 Now after submitting a row, we're already focused on the next row.
@@ -459,28 +413,21 @@ You might use an `<input type="number">` to only allow numbers on the front end 
 
 ```jsx
 validateNumber = event => {
-      const keyCode = event.keyCode || event.which
-      const string = String.fromCharCode(keyCode)
-      const regex = /[0-9,]|\./
+  const keyCode = event.keyCode || event.which
+  const string = String.fromCharCode(keyCode)
+  const regex = /[0-9,]|\./
 
-      if (!regex.test(string)) {
-        event.returnValue = false
-        if (event.preventDefault) event.preventDefault()
-      }
-    }
-
+  if (!regex.test(string)) {
+    event.returnValue = false
+    if (event.preventDefault) event.preventDefault()
+  }
+}
 ```
-
-
 
 Of course, this will still let incorrectly formatted numbers like `1,00,0.00.00` through, but we're only validating the input of a single key press here.
 
-
 ```jsx
-<ContentEditable
-      onKeyPress={this.validateNumber}
-    />
-
+<ContentEditable onKeyPress={this.validateNumber} />
 ```
 
 ## Editing Existing Rows
@@ -491,62 +438,57 @@ I'll make a new method just for updating. It's similar to the row, except instea
 
 ```jsx
 handleContentEditableUpdate = event => {
-      const { store } = this.state
+  const { store } = this.state
 
-      const {
-        currentTarget: {
-          dataset: { row, column },
-        },
-        target: { value },
-      } = event
+  const {
+    currentTarget: {
+      dataset: { row, column },
+    },
+    target: { value },
+  } = event
 
-      let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
-      updatedRow[column] = value
+  let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
+  updatedRow[column] = value
 
-      this.setState({
-        store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
-      })
-    }
-
+  this.setState({
+    store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
+  })
+}
 ```
-
-
 
 Instead of just displaying the values in the rows, they'll all be `ContentEditable`.
 
-
 ```jsx
 {store.map((row, i) => {
-      return (
-        <Table.Row key={row.id}>
-          <Table.Cell className="narrow">
-            <ContentEditable
-              html={row.item}
-              data-column="item"
-              data-row={i}
-              className="content-editable"
-              onKeyPress={this.disableNewlines}
-              onPaste={this.pasteAsPlainText}
-              onFocus={this.highlightAll}
-              onChange={this.handleContentEditableUpdate}
-            />
-          </Table.Cell>
-          <Table.Cell className="narrow">
-            <ContentEditable
-              html={row.price.toString()}
-              data-column="price"
-              data-row={i}
-              className="content-editable"
-              onKeyPress={this.validateNumber}
-              onPaste={this.pasteAsPlainText}
-              onFocus={this.highlightAll}
-              onChange={this.handleContentEditableUpdate}
-            />
-          </Table.Cell>
-          ...
-      )
-    })}
-
+  return (
+    <Table.Row key={row.id}>
+      <Table.Cell className="narrow">
+        <ContentEditable
+          html={row.item}
+          data-column="item"
+          data-row={i}
+          className="content-editable"
+          onKeyPress={this.disableNewlines}
+          onPaste={this.pasteAsPlainText}
+          onFocus={this.highlightAll}
+          onChange={this.handleContentEditableUpdate}
+        />
+      </Table.Cell>
+      <Table.Cell className="narrow">
+        <ContentEditable
+          html={row.price.toString()}
+          data-column="price"
+          data-row={i}
+          className="content-editable"
+          onKeyPress={this.validateNumber}
+          onPaste={this.pasteAsPlainText}
+          onFocus={this.highlightAll}
+          onChange={this.handleContentEditableUpdate}
+        />
+      </Table.Cell>
+      ...
+  )
+})}
 ```
 
 ![](../images/Screen-Shot-2019-01-21-at-11.04.52-PM.png)
@@ -561,228 +503,220 @@ Here's everything, in case something didn't make sense. Click the demo above for
 
 ```jsx
 import React, { Component } from 'react'
-    import ReactDOM from 'react-dom'
-    import ContentEditable from 'react-contenteditable'
-    import { Table, Button } from 'semantic-ui-react'
-    import './styles.css'
+import ReactDOM from 'react-dom'
+import ContentEditable from 'react-contenteditable'
+import { Table, Button } from 'semantic-ui-react'
+import './styles.css'
 
+class App extends Component {
+  initialState = {
+    store: [
+      { id: 1, item: 'silver', price: 15.41 },
+      { id: 2, item: 'gold', price: 1284.3 },
+      { id: 3, item: 'platinum', price: 834.9 },
+    ],
+    row: {
+      item: '',
+      price: '',
+    },
+  }
 
-    class App extends Component {
-      initialState = {
-        store: [
-          { id: 1, item: 'silver', price: 15.41 },
-          { id: 2, item: 'gold', price: 1284.3 },
-          { id: 3, item: 'platinum', price: 834.9 },
-        ],
-        row: {
-          item: '',
-          price: '',
-        },
-      }
+  state = this.initialState
+  firstEditable = React.createRef()
 
-      state = this.initialState
-      firstEditable = React.createRef()
+  addRow = () => {
+    const { store, row } = this.state
+    const trimSpaces = string => {
+      return string
+        .replace(/&nbsp;/g, '')
+        .replace(/&amp;/g, '&')
+        .replace(/&gt;/g, '>')
+        .replace(/&lt;/g, '<')
+    }
+    const trimmedRow = {
+      ...row,
+      item: trimSpaces(row.item),
+    }
 
-      addRow = () => {
-        const { store, row } = this.state
-        const trimSpaces = string => {
-          return string
-            .replace(/&nbsp;/g, '')
-            .replace(/&amp;/g, '&')
-            .replace(/&gt;/g, '>')
-            .replace(/&lt;/g, '<')
-        }
-        const trimmedRow = {
-          ...row,
-          item: trimSpaces(row.item),
-        }
+    row.id = store.length + 1
 
-        row.id = store.length + 1
+    this.setState({
+      store: [...store, trimmedRow],
+      row: this.initialState.row,
+    })
 
-        this.setState({
-          store: [...store, trimmedRow],
-          row: this.initialState.row,
-        })
+    this.firstEditable.current.focus()
+  }
 
-        this.firstEditable.current.focus()
-      }
+  deleteRow = id => {
+    const { store } = this.state
 
-      deleteRow = id => {
-        const { store } = this.state
+    this.setState({
+      store: store.filter(item => id !== item.id),
+    })
+  }
 
-        this.setState({
-          store: store.filter(item => id !== item.id),
-        })
-      }
+  disableNewlines = event => {
+    const keyCode = event.keyCode || event.which
 
-      disableNewlines = event => {
-        const keyCode = event.keyCode || event.which
+    if (keyCode === 13) {
+      event.returnValue = false
+      if (event.preventDefault) event.preventDefault()
+    }
+  }
 
-        if (keyCode === 13) {
-          event.returnValue = false
-          if (event.preventDefault) event.preventDefault()
-        }
-      }
+  validateNumber = event => {
+    const keyCode = event.keyCode || event.which
+    const string = String.fromCharCode(keyCode)
+    const regex = /[0-9,]|\./
 
-      validateNumber = event => {
-        const keyCode = event.keyCode || event.which
-        const string = String.fromCharCode(keyCode)
-        const regex = /[0-9,]|\./
+    if (!regex.test(string)) {
+      event.returnValue = false
+      if (event.preventDefault) event.preventDefault()
+    }
+  }
 
-        if (!regex.test(string)) {
-          event.returnValue = false
-          if (event.preventDefault) event.preventDefault()
-        }
-      }
+  pasteAsPlainText = event => {
+    event.preventDefault()
 
-      pasteAsPlainText = event => {
-        event.preventDefault()
+    const text = event.clipboardData.getData('text/plain')
+    document.execCommand('insertHTML', false, text)
+  }
 
-        const text = event.clipboardData.getData('text/plain')
-        document.execCommand('insertHTML', false, text)
-      }
+  highlightAll = () => {
+    setTimeout(() => {
+      document.execCommand('selectAll', false, null)
+    }, 0)
+  }
 
-      highlightAll = () => {
-        setTimeout(() => {
-          document.execCommand('selectAll', false, null)
-        }, 0)
-      }
+  handleContentEditable = event => {
+    const { row } = this.state
+    const {
+      currentTarget: {
+        dataset: { column },
+      },
+      target: { value },
+    } = event
 
-      handleContentEditable = event => {
-        const { row } = this.state
-        const {
-          currentTarget: {
-            dataset: { column },
-          },
-          target: { value },
-        } = event
+    this.setState({ row: { ...row, [column]: value } })
+  }
 
-        this.setState({ row: { ...row, [column]: value } })
-      }
+  handleContentEditableUpdate = event => {
+    const { store } = this.state
 
-      handleContentEditableUpdate = event => {
-        const { store } = this.state
+    const {
+      currentTarget: {
+        dataset: { row, column },
+      },
+      target: { value },
+    } = event
 
-        const {
-          currentTarget: {
-            dataset: { row, column },
-          },
-          target: { value },
-        } = event
+    let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
+    updatedRow[column] = value
 
-        let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
-        updatedRow[column] = value
+    this.setState({
+      store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
+    })
+  }
 
-        this.setState({
-          store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
-        })
-      }
+  render() {
+    const {
+      store,
+      row: { item, price },
+    } = this.state
 
-      render() {
-        const {
-          store,
-          row: { item, price },
-        } = this.state
+    return (
+      <div className="App">
+        <h1>React Contenteditable</h1>
 
-        return (
-          <div className="App">
-            <h1>React Contenteditable</h1>
-
-            <Table celled>
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell>Item</Table.HeaderCell>
-                  <Table.HeaderCell>Price</Table.HeaderCell>
-                  <Table.HeaderCell>Action</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body>
-                {store.map((row, i) => {
-                  return (
-                    <Table.Row key={row.id}>
-                      <Table.Cell className="narrow">
-                        <ContentEditable
-                          html={row.item}
-                          data-column="item"
-                          data-row={i}
-                          className="content-editable"
-                          onKeyPress={this.disableNewlines}
-                          onPaste={this.pasteAsPlainText}
-                          onFocus={this.highlightAll}
-                          onChange={this.handleContentEditableUpdate}
-                        />
-                      </Table.Cell>
-                      <Table.Cell className="narrow">
-                        <ContentEditable
-                          html={row.price.toString()}
-                          data-column="price"
-                          data-row={i}
-                          className="content-editable"
-                          onKeyPress={this.validateNumber}
-                          onPaste={this.pasteAsPlainText}
-                          onFocus={this.highlightAll}
-                          onChange={this.handleContentEditableUpdate}
-                        />
-                      </Table.Cell>
-                      <Table.Cell className="narrow">
-                        <Button
-                          onClick={() => {
-                            this.deleteRow(row.id)
-                          }}
-                        >
-                          Delete
-                        </Button>
-                      </Table.Cell>
-                    </Table.Row>
-                  )
-                })}
-                <Table.Row>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Item</Table.HeaderCell>
+              <Table.HeaderCell>Price</Table.HeaderCell>
+              <Table.HeaderCell>Action</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {store.map((row, i) => {
+              return (
+                <Table.Row key={row.id}>
                   <Table.Cell className="narrow">
                     <ContentEditable
-                      html={item}
+                      html={row.item}
                       data-column="item"
+                      data-row={i}
                       className="content-editable"
-                      innerRef={this.firstEditable}
                       onKeyPress={this.disableNewlines}
                       onPaste={this.pasteAsPlainText}
                       onFocus={this.highlightAll}
-                      onChange={this.handleContentEditable}
+                      onChange={this.handleContentEditableUpdate}
                     />
                   </Table.Cell>
                   <Table.Cell className="narrow">
                     <ContentEditable
-                      html={price}
+                      html={row.price.toString()}
                       data-column="price"
+                      data-row={i}
                       className="content-editable"
                       onKeyPress={this.validateNumber}
                       onPaste={this.pasteAsPlainText}
                       onFocus={this.highlightAll}
-                      onChange={this.handleContentEditable}
+                      onChange={this.handleContentEditableUpdate}
                     />
                   </Table.Cell>
                   <Table.Cell className="narrow">
-                    <Button disabled={!item || !price} onClick={this.addRow}>
-                      Add
+                    <Button
+                      onClick={() => {
+                        this.deleteRow(row.id)
+                      }}
+                    >
+                      Delete
                     </Button>
                   </Table.Cell>
                 </Table.Row>
-              </Table.Body>
-            </Table>
-          </div>
-        )
-      }
-    }
+              )
+            })}
+            <Table.Row>
+              <Table.Cell className="narrow">
+                <ContentEditable
+                  html={item}
+                  data-column="item"
+                  className="content-editable"
+                  innerRef={this.firstEditable}
+                  onKeyPress={this.disableNewlines}
+                  onPaste={this.pasteAsPlainText}
+                  onFocus={this.highlightAll}
+                  onChange={this.handleContentEditable}
+                />
+              </Table.Cell>
+              <Table.Cell className="narrow">
+                <ContentEditable
+                  html={price}
+                  data-column="price"
+                  className="content-editable"
+                  onKeyPress={this.validateNumber}
+                  onPaste={this.pasteAsPlainText}
+                  onFocus={this.highlightAll}
+                  onChange={this.handleContentEditable}
+                />
+              </Table.Cell>
+              <Table.Cell className="narrow">
+                <Button disabled={!item || !price} onClick={this.addRow}>
+                  Add
+                </Button>
+              </Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      </div>
+    )
+  }
+}
 
-    ReactDOM.render(<App />, document.getElementById('root'))
-
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
-
-
-
-
 
 ## Conclusion
 
-
 So, that's what I got. There are some improvements to be made, and I'm sure someone has an improvement or something to say, so feel free to leave it in the comments.
-```

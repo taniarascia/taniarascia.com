@@ -1,6 +1,6 @@
 ---
 date: 2017-05-16
-title: "Create a Simple CRUD Database App: Connecting to MySQL with PHP (Part 1: Create, Read)"
+title: 'Create a Simple CRUD Database App: Connecting to MySQL with PHP (Part 1: Create, Read)'
 template: post
 thumbnail: '../thumbnails/db.png'
 slug: create-a-simple-database-app-connecting-to-mysql-with-php
@@ -38,17 +38,17 @@ That being said, I leave you with the disclaimer that this tutorial is meant for
 
 All the code throughout this article can be found on GitHub.
 
-[View on GitHub](https://github.com/taniarascia/pdo/tree/feba19a43e63c617c95a1f6e68825f6e3086336c)
+- [View on GitHub](https://github.com/taniarascia/pdo/tree/feba19a43e63c617c95a1f6e68825f6e3086336c)
 
-**Update 2018: Part Two is here! Learn how to update and delete entries.**
+### Update: Part Two is here! Learn how to update and delete entries.
 
-[Part 2: Update and Delete](/create-a-simple-crud-database-app-php-update-delete/)
+- [Part 2: Update and Delete](/create-a-simple-crud-database-app-php-update-delete/)
 
 ## Step 1: Building the front end
 
 To start, we have a PHP localhost set up, as mentioned in our prerequisites. I've created one and called it **db.dev**. Let's create a directory called **public/** in the root of our project. This is where I'm going to put all my client-facing code, or what would be pages accessible from the internet.
 
-> As of late 2017, Chrome no longer allows **.dev** localhost domains. I recommend to use **.test** instead of **.dev**. Throughout this article, **.dev** will be used in the examples.
+> Chrome no longer allows **.dev** localhost domains. I recommend to use **.test** instead of **.dev**. Throughout this article, **.dev** will be used in the examples.
 
 Please make sure you read the above note before continuing.
 
@@ -58,7 +58,7 @@ We don't have a database set up or anything, but we're just going to set up the 
 
 Our main/home page will be located at **index.php**, so create that file in your **public/** directory.
 
-public/index.php
+<div class="filename">public/index.php</div>
 
 ```html
 <!DOCTYPE html>
@@ -96,7 +96,7 @@ Since we want to keep our application relatively [DRY (don't repeat yourself)](h
 
 Create a **templates/** directory in public, and make a **header.php** and **footer.php**. You'll take everything from the `<h1>` tag and up and put it in the header.
 
-public/templates/header.php
+<div class="filename">public/templates/header.php</div>
 
 ```html
 <!DOCTYPE html>
@@ -119,16 +119,16 @@ public/templates/header.php
 
 And here's the footer.
 
-public/templates/footer.php
+<div class="filename">public/templates/footer.php</div>
 
 ```php
 </body>
-    </html>
+</html>
 ```
 
 All that remains in **index.php** at this point are the links to our two other pages.
 
-public/index.php
+<div class="filename">public/index.php</div>
 
 ```html
 <ul>
@@ -143,9 +143,9 @@ public/index.php
 
 We want to include the header and footer code in all our front end pages, so we'll be using a [PHP include function](http://php.net/manual/en/function.include.php) to pull that code in.
 
-public/index.php
+<div class="filename">public/index.php</div>
 
-```html
+```php
 <?php include "templates/header.php"; ?>
 
 <ul>
@@ -166,7 +166,7 @@ Now the front end of our index file looks the same as before, but we have the re
 
 Now we're going to make a file called **create.php** back in our **public/** directory. This will be the page we use to add a new user to the database. We'll start the file with our header and footer loaded in.
 
-public/create.php
+<div class="filename">public/create.php</div>
 
 ```php
 <?php include "templates/header.php"; ?>
@@ -175,7 +175,7 @@ public/create.php
 
 I'm going to create a simple form here that gathers the first name, last name, email address, age, and location of a new user.
 
-public/create.php
+<div class="filename">public/create.php</div>
 
 ```php
 <?php include "templates/header.php"; ?><h2>Add a user</h2>
@@ -209,7 +209,7 @@ The `name` attribute is how PHP identifies and utilizes the data of the input, w
 
 Before I display the front end of the **create.php** code, let's quickly create a **css/** folder and make **style.css**. CSS and style is not a focus of this article, but I'm going to add a line of CSS code to make the forms easier to read.
 
-public/css/style.css
+<div class="filename">public/css/style.css</div>
 
 ```css
 label {
@@ -228,7 +228,7 @@ Finally, we're going to create our **read.php** file, which will query the list 
 
 Again, we'll start with the header and footer code.
 
-public/read.php
+<div class="filename">public/read.php</div>
 
 ```php
 <?php include "templates/header.php"; ?>
@@ -237,7 +237,7 @@ public/read.php
 
 Then we'll add a small form for searching for users by location.
 
-public/read.php
+<div class="filename">public/read.php</div>
 
 ```php
 <?php include "templates/header.php"; ?>
@@ -259,15 +259,17 @@ public/read.php
 
 Now you have all the front end code set up and we can start. Here's everything you should have so far.
 
-    public/
-    |-- css/
-    |   |-- style.css
-    |-- templates/
-    |   |-- header.php
-    |   |-- footer.php
-    |-- index.php
-    |-- create.php
-    |-- read.php
+```
+public/
+|-- css/
+|   |-- style.css
+|-- templates/
+|   |-- header.php
+|   |-- footer.php
+|-- index.php
+|-- create.php
+|-- read.php
+```
 
 Here's a more visual representation of that.
 
@@ -289,22 +291,22 @@ Your host will be `localhost` or `127.0.0.1`, which translate to the same thing 
 
 Create a directory called **data/** and create a file called **init.sql**. This will be our database initializing code.
 
-data/init.sql
+<div class="filename">data/init.sql</div>
 
 ```sql
 CREATE DATABASE test;
 
-    use test;
+  use test;
 
-    CREATE TABLE users (
-    	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    	firstname VARCHAR(30) NOT NULL,
-    	lastname VARCHAR(30) NOT NULL,
-    	email VARCHAR(50) NOT NULL,
-    	age INT(3),
-    	location VARCHAR(50),
-    	date TIMESTAMP
-    );
+  CREATE TABLE users (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    age INT(3),
+    location VARCHAR(50),
+    date TIMESTAMP
+  );
 ```
 
 SQL is a relatively straightforward code, so even if you've never seen it before, it should be easy to understand. Here's what the above means in plain English:
@@ -336,7 +338,7 @@ Create a file called **install.php** in the root of your directory.
 
 We'll create a new `PDO()` object and place it into a variable named `$connection`.
 
-install.php
+<div class="filename">install.php</div>
 
 ```php
 $connection = new PDO();
@@ -357,19 +359,19 @@ $connection = new PDO(data source name, username, password, options);
 
 Here's how that ends up looking after we fill in all the parameters.
 
-install.php
+<div class="filename">install.php</div>
 
 ```php
 new PDO("mysql:host=localhost", "root", "root",
-      array(
-         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-      );
-    );
+  array(
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+  );
+);
 ```
 
 Now we're going to organize it a bit more by putting all our database information into variables.
 
-install.php
+<div class="filename">install.php</div>
 
 ```php
 $connection = new PDO("mysql:host=$host", $username, $password, $options);
@@ -377,77 +379,77 @@ $connection = new PDO("mysql:host=$host", $username, $password, $options);
 
 We'll create a **config.php** file that contains all the variables we can refer from.
 
-config.php
+<div class="filename">config.php</div>
 
 ```php
 <?php
 
-    /**
-     * Configuration for database connection
-     *
-     */
+/**
+  * Configuration for database connection
+  *
+  */
 
-    $host       = "localhost";
-    $username   = "root";
-    $password   = "root";
-    $dbname     = "test"; // will use later
-    $dsn        = "mysql:host=$host;dbname=$dbname"; // will use later
-    $options    = array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                  );
+$host       = "localhost";
+$username   = "root";
+$password   = "root";
+$dbname     = "test"; // will use later
+$dsn        = "mysql:host=$host;dbname=$dbname"; // will use later
+$options    = array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+              );
 ```
 
 Here's what we have in our installer so far. We're pulling in the database variables via **config.php** using `require`, which is similar to an `include`, except we're explicitly stating that the file is necessary for the script to run.
 
-install.php
+<div class="filename">install.php</div>
 
 ```php
 require "config.php";
 
-    $connection = new PDO("mysql:host=$host", $username, $password, $options);
+$connection = new PDO("mysql:host=$host", $username, $password, $options);
 ```
 
 Now it's time to put that SQL code we created earlier to use. We'll be placing the contents of the **data/init.sql** file into a variable using the `file_get_contents()` function, and executing it with the `exec()` function.
 
 ```php
 $sql = file_get_contents("data/init.sql");
-    $connection->exec($sql);
+$connection->exec($sql);
 ```
 
 At this point, we're going to want to use [Exceptions](http://php.net/manual/en/language.exceptions.php) to attempt to run the script and catch errors. We'll do this by putting all our code in a `try/catch` block, which looks like this:
 
 ```php
 try {
-    // code to execute
-    } catch() {
-    // exception
-    }
+// code to execute
+} catch() {
+// exception
+}
 ```
 
 Let's put our database code in the `try` block, and show our `PDOException` error message if something goes wrong trying to set up the database. Here's the final code for the installer.
 
-install.php
+<div class="filename">install.php</div>
 
 ```php
 <?php
 
-    /**
-     * Open a connection via PDO to create a
-     * new database and table with structure.
-     *
-     */
+/**
+  * Open a connection via PDO to create a
+  * new database and table with structure.
+  *
+  */
 
-    require "config.php";
+require "config.php";
 
-    try {
-    	$connection = new PDO("mysql:host=$host", $username, $password, $options);
-    	$sql = file_get_contents("data/init.sql");
-    	$connection->exec($sql);
+try {
+  $connection = new PDO("mysql:host=$host", $username, $password, $options);
+  $sql = file_get_contents("data/init.sql");
+  $connection->exec($sql);
 
-    	echo "Database and table users created successfully.";
-    } catch(PDOException $error) {
-    	echo $sql . "<br>" . $error->getMessage();
-    }
+  echo "Database and table users created successfully.";
+} catch(PDOException $error) {
+  echo $sql . "<br>" . $error->getMessage();
+}
 ```
 
 To run the install, just navigate to your **install.php** file on the front end.
@@ -480,29 +482,29 @@ If you'll notice, in the **install.php** script I was only connecting to `mysql:
 
 ```php
 if (isset($_POST['submit'])) {
-    	require "../config.php";
+  require "../config.php";
 
-    	try {
-    		$connection = new PDO($dsn, $username, $password, $options);
-    		// insert new user code will go here
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
+    // insert new user code will go here
 
-    	} catch(PDOException $error) {
-    		echo $sql . "<br>" . $error->getMessage();
-    	}
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
 
-    }
+}
 ```
 
 Let's create an array with all our submitted form values.
 
 ```php
 $new_user = array(
-    	"firstname" => $_POST['firstname'],
-    	"lastname"  => $_POST['lastname'],
-    	"email"     => $_POST['email'],
-    	"age"       => $_POST['age'],
-    	"location"  => $_POST['location']
-    );
+  "firstname" => $_POST['firstname'],
+  "lastname"  => $_POST['lastname'],
+  "email"     => $_POST['email'],
+  "age"       => $_POST['age'],
+  "location"  => $_POST['location']
+);
 ```
 
 > We can use regular `$_POST` variables without further sanitization here because we're submitting to the database with [prepared statements](http://php.net/manual/en/mysqli.quickstart.prepared-statements.php).
@@ -519,18 +521,18 @@ We're going to use `sprintf`, which allows us to do the following: `INSERT INTO 
 
 ```php
 $sql = sprintf(
-    		"INSERT INTO %s (%s) values (%s)",
-    		"users",
-    		implode(", ", array_keys($new_user)),
-    		":" . implode(", :", array_keys($new_user))
-    );
+    "INSERT INTO %s (%s) values (%s)",
+    "users",
+    implode(", ", array_keys($new_user)),
+    ":" . implode(", :", array_keys($new_user))
+);
 ```
 
 That code will print out the exact same thing, without having to write it multiple times. Now we'll just prepare and execute the code.
 
 ```php
 $statement = $connection->prepare($sql);
-    $statement->execute($new_user);
+$statement->execute($new_user);
 ```
 
 Here is the full code inside our `try` block.
@@ -538,23 +540,23 @@ Here is the full code inside our `try` block.
 ```php
 $connection = new PDO($dsn, $username, $password, $options);
 
-    $new_user = array(
-    	"firstname" => $_POST['firstname'],
-    	"lastname"  => $_POST['lastname'],
-    	"email"     => $_POST['email'],
-    	"age"       => $_POST['age'],
-    	"location"  => $_POST['location']
-    );
+$new_user = array(
+  "firstname" => $_POST['firstname'],
+  "lastname"  => $_POST['lastname'],
+  "email"     => $_POST['email'],
+  "age"       => $_POST['age'],
+  "location"  => $_POST['location']
+);
 
-    $sql = sprintf(
-    		"INSERT INTO %s (%s) values (%s)",
-    		"users",
-    		implode(", ", array_keys($new_user)),
-    		":" . implode(", :", array_keys($new_user))
-    );
+$sql = sprintf(
+    "INSERT INTO %s (%s) values (%s)",
+    "users",
+    implode(", ", array_keys($new_user)),
+    ":" . implode(", :", array_keys($new_user))
+);
 
-    $statement = $connection->prepare($sql);
-    $statement->execute($new_user);
+$statement = $connection->prepare($sql);
+$statement->execute($new_user);
 ```
 
 Now the form is all ready to send. I'm going to fill out my information and submit it.
@@ -573,19 +575,19 @@ Since in this case we're going to print out a `$_POST` variable to the HTML, we 
 
 Let's create a new file called **common.php** in the root of your project. Inspiration for this function and filename came from [Jon's PHP blog tutorial](https://ilovephp.jondh.me.uk/en/tutorial/make-your-own-blog). This is a file that can be used to store functions for later use. I'm only going to use it for one function today - an HTML escaping function.
 
-common.php
+<div class="filename">common.php</div>
 
 ```php
 <?php
 
-    /**
-     * Escapes HTML for output
-     *
-     */
+/**
+  * Escapes HTML for output
+  *
+  */
 
-    function escape($html) {
-    	return htmlspecialchars($html, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
-    }
+function escape($html) {
+  return htmlspecialchars($html, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
+}
 ```
 
 With this function, we can wrap any variable in the `escape()` function, and the HTML entities will be protected.
@@ -594,82 +596,82 @@ Back in **public/create.php**, add a `require "common.php";`. Now I'm just going
 
 ```php
 <?php if (isset($_POST['submit']) && $statement) { ?>
-    	> <?php echo escape($_POST['firstname']); ?> successfully added.
-    <?php } ?>
+  <?php echo escape($_POST['firstname']); ?> successfully added.
+<?php } ?>
 ```
 
 ![](../images/Screen-Shot-2017-05-15-at-9.49.39-PM.png)
 
 And that's everything! Here's the final code to add a new user.
 
-public/create.php
+<div class="filename">public/create.php</div>
 
 ```php
 <?php
 
-    /**
-     * Use an HTML form to create a new entry in the
-     * users table.
-     *
-     */
+/**
+  * Use an HTML form to create a new entry in the
+  * users table.
+  *
+  */
 
 
-    if (isset($_POST['submit'])) {
-    	require "../config.php";
-    	require "../common.php";
+if (isset($_POST['submit'])) {
+  require "../config.php";
+  require "../common.php";
 
-    	try {
-    		$connection = new PDO($dsn, $username, $password, $options);
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
 
-    		$new_user = array(
-    			"firstname" => $_POST['firstname'],
-    			"lastname"  => $_POST['lastname'],
-    			"email"     => $_POST['email'],
-    			"age"       => $_POST['age'],
-    			"location"  => $_POST['location']
-    		);
+    $new_user = array(
+      "firstname" => $_POST['firstname'],
+      "lastname"  => $_POST['lastname'],
+      "email"     => $_POST['email'],
+      "age"       => $_POST['age'],
+      "location"  => $_POST['location']
+    );
 
-    		$sql = sprintf(
-    "INSERT INTO %s (%s) values (%s)",
-    "users",
-    implode(", ", array_keys($new_user)),
-    ":" . implode(", :", array_keys($new_user))
-    		);
+    $sql = sprintf(
+"INSERT INTO %s (%s) values (%s)",
+"users",
+implode(", ", array_keys($new_user)),
+":" . implode(", :", array_keys($new_user))
+    );
 
-    		$statement = $connection->prepare($sql);
-    		$statement->execute($new_user);
-    	} catch(PDOException $error) {
-    		echo $sql . "<br>" . $error->getMessage();
-    	}
+    $statement = $connection->prepare($sql);
+    $statement->execute($new_user);
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
 
-    }
-    ?>
+}
+?>
 
-    <?php require "templates/header.php"; ?>
+<?php require "templates/header.php"; ?>
 
-    <?php if (isset($_POST['submit']) && $statement) { ?>
-    	> <?php echo $_POST['firstname']; ?> successfully added.
-    <?php } ?>
+<?php if (isset($_POST['submit']) && $statement) { ?>
+  > <?php echo $_POST['firstname']; ?> successfully added.
+<?php } ?>
 
-    <h2>Add a user</h2>
+<h2>Add a user</h2>
 
-    <form method="post">
-    	<label for="firstname">First Name</label>
-    	<input type="text" name="firstname" id="firstname">
-    	<label for="lastname">Last Name</label>
-    	<input type="text" name="lastname" id="lastname">
-    	<label for="email">Email Address</label>
-    	<input type="text" name="email" id="email">
-    	<label for="age">Age</label>
-    	<input type="text" name="age" id="age">
-    	<label for="location">Location</label>
-    	<input type="text" name="location" id="location">
-    	<input type="submit" name="submit" value="Submit">
-    </form>
+<form method="post">
+  <label for="firstname">First Name</label>
+  <input type="text" name="firstname" id="firstname">
+  <label for="lastname">Last Name</label>
+  <input type="text" name="lastname" id="lastname">
+  <label for="email">Email Address</label>
+  <input type="text" name="email" id="email">
+  <label for="age">Age</label>
+  <input type="text" name="age" id="age">
+  <label for="location">Location</label>
+  <input type="text" name="location" id="location">
+  <input type="submit" name="submit" value="Submit">
+</form>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 
-    <?php require "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
 ```
 
 ## Step 4: Viewing and filtering users
@@ -678,7 +680,7 @@ Here's the last step - the "read" of our CRUD app. We already created the front 
 
 Really quickly, let's add a small amount of CSS to our **public/css/style.css** file to make the tables legible once we create them.
 
-public/css/style.css
+<div class="filename">public/css/style.css</div>
 
 ```css
 table {
@@ -695,29 +697,29 @@ th {
 
 Now we're going to use the same `require`s from our new user page, as well as the `try/catch` block for connecting to the database.
 
-public/read.php
+<div class="filename">public/read.php</div>
 
 ```php
 if (isset($_POST['submit'])) {
-    	try {
-    		require "../config.php";
-    		require "../common.php";
+  try {
+    require "../config.php";
+    require "../common.php";
 
-    		$connection = new PDO($dsn, $username, $password, $options);
-            // fetch data code will go here
-    	} catch(PDOException $error) {
-    		echo $sql . "<br>" . $error->getMessage();
-    	}
-    }
-    ?>
+    $connection = new PDO($dsn, $username, $password, $options);
+        // fetch data code will go here
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
+}
+?>
 ```
 
 Now we'll write a `SELECT` SQL query. We're going to select all (`*`) from the users table, and filter by location.
 
 ```php
 $sql = "SELECT *
-    FROM users
-    WHERE location = :location";
+  FROM users
+  WHERE location = :location";
 ```
 
 Then we'll put our `$_POST` into a varable.
@@ -730,8 +732,8 @@ Prepare, bind, and execute the statement.
 
 ```php
 $statement = $connection->prepare($sql);
-    $statement->bindParam(':location', $location, PDO::PARAM_STR);
-    $statement->execute();
+$statement->bindParam(':location', $location, PDO::PARAM_STR);
+$statement->execute();
 ```
 
 Finally, we'll fetch the result.
@@ -745,17 +747,17 @@ Here's the full `try` connection code.
 ```php
 $connection = new PDO($dsn, $username, $password, $options);
 
-    $sql = "SELECT *
-    FROM users
-    WHERE location = :location";
+$sql = "SELECT *
+FROM users
+WHERE location = :location";
 
-    $location = $_POST['location'];
+$location = $_POST['location'];
 
-    $statement = $connection->prepare($sql);
-    $statement->bindParam(':location', $location, PDO::PARAM_STR);
-    $statement->execute();
+$statement = $connection->prepare($sql);
+$statement->bindParam(':location', $location, PDO::PARAM_STR);
+$statement->execute();
 
-    $result = $statement->fetchAll();
+$result = $statement->fetchAll();
 ```
 
 Great, now we have the whole process to retrieve the filtered data. All that's left is to print out the result.
@@ -780,89 +782,89 @@ if (isset($_POST['submit'])) {
 
 Here is the final code.
 
-public/read.php
+<div class="filename">public/read.php</div>
 
 ```php
 <?php
 
-    /**
-     * Function to query information based on
-     * a parameter: in this case, location.
-     *
-     */
+/**
+  * Function to query information based on
+  * a parameter: in this case, location.
+  *
+  */
 
-    if (isset($_POST['submit'])) {
-    	try {
-    		require "../config.php";
-    		require "../common.php";
+if (isset($_POST['submit'])) {
+  try {
+    require "../config.php";
+    require "../common.php";
 
-    		$connection = new PDO($dsn, $username, $password, $options);
+    $connection = new PDO($dsn, $username, $password, $options);
 
-    		$sql = "SELECT *
-    		FROM users
-    		WHERE location = :location";
+    $sql = "SELECT *
+    FROM users
+    WHERE location = :location";
 
-    		$location = $_POST['location'];
+    $location = $_POST['location'];
 
-    		$statement = $connection->prepare($sql);
-    		$statement->bindParam(':location', $location, PDO::PARAM_STR);
-    		$statement->execute();
+    $statement = $connection->prepare($sql);
+    $statement->bindParam(':location', $location, PDO::PARAM_STR);
+    $statement->execute();
 
-    		$result = $statement->fetchAll();
-    	} catch(PDOException $error) {
-    		echo $sql . "<br>" . $error->getMessage();
-    	}
-    }
-    ?>
-    <?php require "templates/header.php"; ?>
+    $result = $statement->fetchAll();
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
+}
+?>
+<?php require "templates/header.php"; ?>
 
-    <?php
-    if (isset($_POST['submit'])) {
-    	if ($result && $statement->rowCount() > 0) { ?>
-    		<h2>Results</h2>
+<?php
+if (isset($_POST['submit'])) {
+  if ($result && $statement->rowCount() > 0) { ?>
+    <h2>Results</h2>
 
-    		<table>
-    			<thead>
-    <tr>
-    	<th>#</th>
-    	<th>First Name</th>
-    	<th>Last Name</th>
-    	<th>Email Address</th>
-    	<th>Age</th>
-    	<th>Location</th>
-    	<th>Date</th>
-    </tr>
-    			</thead>
-    			<tbody>
-    	<?php foreach ($result as $row) { ?>
-    			<tr>
-    <td><?php echo escape($row["id"]); ?></td>
-    <td><?php echo escape($row["firstname"]); ?></td>
-    <td><?php echo escape($row["lastname"]); ?></td>
-    <td><?php echo escape($row["email"]); ?></td>
-    <td><?php echo escape($row["age"]); ?></td>
-    <td><?php echo escape($row["location"]); ?></td>
-    <td><?php echo escape($row["date"]); ?> </td>
-    			</tr>
-    		<?php } ?>
-    			</tbody>
-    	</table>
-    	<?php } else { ?>
-    		> No results found for <?php echo escape($_POST['location']); ?>.
-    	<?php }
-    } ?>
+    <table>
+      <thead>
+<tr>
+  <th>#</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Email Address</th>
+  <th>Age</th>
+  <th>Location</th>
+  <th>Date</th>
+</tr>
+      </thead>
+      <tbody>
+  <?php foreach ($result as $row) { ?>
+      <tr>
+<td><?php echo escape($row["id"]); ?></td>
+<td><?php echo escape($row["firstname"]); ?></td>
+<td><?php echo escape($row["lastname"]); ?></td>
+<td><?php echo escape($row["email"]); ?></td>
+<td><?php echo escape($row["age"]); ?></td>
+<td><?php echo escape($row["location"]); ?></td>
+<td><?php echo escape($row["date"]); ?> </td>
+      </tr>
+    <?php } ?>
+      </tbody>
+  </table>
+  <?php } else { ?>
+    > No results found for <?php echo escape($_POST['location']); ?>.
+  <?php }
+} ?>
 
-    <h2>Find user based on location</h2>
+<h2>Find user based on location</h2>
 
-    <form method="post">
-    	<label for="location">Location</label>
-    	<input type="text" id="location" name="location">
-    	<input type="submit" name="submit" value="View Results">
-    </form>
+<form method="post">
+  <label for="location">Location</label>
+  <input type="text" id="location" name="location">
+  <input type="submit" name="submit" value="View Results">
+</form>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 
-    <?php require "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
 ```
 
 After adding a few entries, I can play around with it. I input the city.
@@ -889,4 +891,4 @@ You would also add JavaScript validation to the front end of the site to ensure 
 
 Again, all the code from this article is available [on GitHub](https://github.com/taniarascia/pdo/tree/feba19a43e63c617c95a1f6e68825f6e3086336c) if you got lost anywhere along the way. If you have suggestions on how to make the tutorial more clear or more secure, please don't hesitate to share! However, take into account this is meant to be a first look at the underlying code of database management, and not a full-fledged app.
 
-[View on GitHub](https://github.com/taniarascia/pdo/tree/feba19a43e63c617c95a1f6e68825f6e3086336c)
+- [View on GitHub](https://github.com/taniarascia/pdo/tree/feba19a43e63c617c95a1f6e68825f6e3086336c)

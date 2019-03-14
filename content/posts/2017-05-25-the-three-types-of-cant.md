@@ -10,23 +10,17 @@ categories:
 
 It looks like there's just [one definition](https://www.google.com/search?q=define%3Acan%27t) for the word _can't_.
 
->
-
 > **can't** - _cannot_
 
 I've found that there's actually three true meanings behind the word.
 
 - Don't want to
-
 - Don't know how to
-
 - Will never be able to
 
 Let's evaluate an example of each.
 
 ## Don't want to
-
->
 
 > "I **can't** get up in the morning and work out (but I wish I could)."
 
@@ -42,14 +36,11 @@ Here's some simple [regex](http://regexr.com/) that will help you rewrite those 
 
 ```
 s/can't/don't want to
-
 ```
 
 Then ask yourself why you made the statement in the first place.
 
 ## Don't know how to
-
->
 
 > "I **can't** play the guitar (but I wish I could)."
 
@@ -59,8 +50,6 @@ The gun exercise won't help here, because you might be physically or mentally un
 
 ## Will never be able to
 
->
-
 > "I **can't** fly (but I wish I could)."
 
 Unfortunately no, you can't fly. Some things might not be worth the time to try doing or dreaming about, because they're not possible.
@@ -69,4 +58,4 @@ Unfortunately no, you can't fly. Some things might not be worth the time to try 
 
 So what's the takeaway? It's easy to make excuses and find reasons not to do things we keep telling ourselves we want to do - generally, actions that are difficult but improve our lives in some way. At some point, if you say "I can't, I can't, I can't" enough, you believe it, and it starts to feel good to say and complain about.
 
-Next time you say "I can't", try considering what it really means and what you get out of saying it.
+Next time you say "I can't", consider what it means and what you get out of saying it.

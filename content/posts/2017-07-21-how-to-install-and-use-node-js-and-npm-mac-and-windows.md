@@ -16,7 +16,7 @@ In order to use almost any development tools based in JavaScript, you'll need to
 
 I find myself writing about this over and over again in the prerequisites of an article I've begun to write. I'd prefer to write one definitive guide to refer to in the future, so here it is.
 
-[View on GitHub](https://github.com/taniarascia/node-test)
+- [View on GitHub](https://github.com/taniarascia/node-test)
 
 #### Prerequisites
 
@@ -25,7 +25,6 @@ I find myself writing about this over and over again in the prerequisites of an 
 #### Goals
 
 - Learn what Node.js and npm are
-
 - Set up Node.js and npm on Windows and Mac
 
 ## What is Node.js?
@@ -36,7 +35,7 @@ JavaScript is a **client-side** programming language, which means it’s process
 
 [npm](https://www.npmjs.com/) doesn't stand for **Node Package Manager\***, which means it’s the tool to connect to the repository containing all the Node.js programs, plugins, modules and so on.
 
-> \*npm actually does not stand for "Node Package Manager" but essentially that's what it is and does, so most people refer to it that way.
+> *npm actually does not stand for "Node Package Manager" but essentially that's what it is and does, so most people refer to it that way.
 
 ## Local vs. Global
 
@@ -72,7 +71,6 @@ We’re going to use [Node Version Manager (nvm)](https://github.com/creationix/
 
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
-
 ```
 
 Open the `~/.bash_profile` file, and make sure `source ~/.bashrc` is written in there somewhere. Restart the terminal.
@@ -81,14 +79,12 @@ Run the install command.
 
 ```bash
 nvm install node
-
 ```
 
 Run the use command.
 
 ```bash
 nvm use node
-
 ```
 
 ```terminal
@@ -111,67 +107,61 @@ Navigate to the directory in which you want your project to exist - in my case, 
 
 ```bash
 cd sites/node-test
-
 ```
 
 Now initalize a new project with npm.
 
 ```bash
 npm init
-
 ```
 
 The following will pop up in the terminal, and prompt you for a few
 
 ```terminal
 This utility will walk you through creating a package.json file.
-    It only covers the most common items, and tries to guess sensible defaults.
+It only covers the most common items, and tries to guess sensible defaults.
 
-    See `npm help json` for definitive documentation on these fields
-    and exactly what they do.
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
 
-    Use `npm install <pkg>` afterwards to install a package and
-    save it as a dependency in the package.json file.
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
 ```
 
 First, it will ask for a package name.
 
 ```bash
 node-test
-
 ```
 
 Version number.
 
 ```
 1.0.0
-
 ```
 
 Description.
 
 ```
 Creating my first "Hello, World!" Node project.
-
 ```
 
 The rest you can just press enter and skip. Now you'll notice we have a **package.json** file that contains all the information we entered.
 
-package.json
+<div class="filename">package.json</div>
 
 ```js
 {
-      "name": "node-test",
-      "version": "1.0.0",
-      "description": "Creating my first \"Hello, World!\" Node project.",
-      "main": "index.js",
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "author": "Tania Rascia",
-      "license": "ISC"
-    }
-
+  "name": "node-test",
+  "version": "1.0.0",
+  "description": "Creating my first \"Hello, World!\" Node project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tania Rascia",
+  "license": "ISC"
+}
 ```
 
 A **package.json** is a file that contains metadata about the project, and handles the dependencies (additional software and modules) of the project.
@@ -186,7 +176,9 @@ leftPad('String', 10)
 
 Will output this:
 
+```terminal
 console
+```
 
 ```js
 String
@@ -200,16 +192,14 @@ To install a dependency with npm, we use the command `npm install dependency-nam
 
 ```bash
 npm install left-pad --save
-
 ```
 
 As long as you ran this command inside the project directory, it will successfully install the dependency by creating a **node_modules** directory. It will also create a **package-lock.json** file, which we can ignore. Finally, it updated our **package.json** file with a new line.
 
 ```js
 "dependencies": {
-        "left-pad": "^1.1.3"
-    }
-
+  "left-pad": "^1.1.3"
+}
 ```
 
 Now the project recognizes the left-pad dependency as existing
@@ -232,7 +222,7 @@ const leftPad = require('left-pad')
 
 This will be the entirety of our **index.js** file, in which we require left-pad, run a `leftPad()` function, and send it to the console.
 
-index.js
+<div class="filename">index.js</div>
 
 ```js
 const leftPad = require('left-pad') // Require left pad
@@ -246,13 +236,12 @@ Since Node.js is not recognized by the browser, we'll be testing this in the con
 
 ```bash
 node index.js
-
 ```
 
 If everything went well, you should have printed `Hello, World!` to the console, with two spaces on the left.
 
 ```terminal
-  Hello, World!
+Hello, World!
 ```
 
 ## Conclusion
@@ -260,15 +249,10 @@ If everything went well, you should have printed `Hello, World!` to the console,
 In this tutorial, we learned the following:
 
 - What Node.js is
-
 - What npm is
-
 - How to install Node.js and npm on Windows or Mac
-
 - How to make a local project
-
 - How to install a dependency with npm
-
 - How to run a file using a **node_modules** dependency in a shell
 
 If you got lost at any point, [view the source on GitHub](https://github.com/taniarascia/node-test).

@@ -13,6 +13,8 @@ yarn run dev
 
 ## Notes
 
+### Prettier all Markdown files
+
 ```bash
 prettier --print-width 100 --no-semi --single-quote --jsx-single-quote --trailing-comma es5 --arrow-parens avoid --parser "markdown"  "**/*.md"
 ```

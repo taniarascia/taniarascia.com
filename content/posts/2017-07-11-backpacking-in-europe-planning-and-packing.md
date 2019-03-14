@@ -121,23 +121,14 @@ I dunno. I'd like to ideally spend around $75/day, including food and accommodat
 So, tl;dr:
 
 - Google Maps "My Maps" feature to make an itinerary
-
 - Google Trips to consolidate all information
-
 - Google Flights to find a flight to Europe
-
 - Rynair to fly around Europe
-
 - Rome2rio to find trains and buses around Europe
-
 - Large backpack for carrying all the stuff
-
 - Small daypack for carrying some of the stuff
-
 - A few extra items to remember
-
 - Tidy up things back home
-
 - Hostelworld and AirBnb to stay
 
 That's about it.

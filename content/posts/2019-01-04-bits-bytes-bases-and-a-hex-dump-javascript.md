@@ -17,7 +17,6 @@ Since I'm most familiar with JavaScript, I decided to do this in Node. The aim i
 
 ```bash
 node hexdump.js data
-
 ```
 
 Which will run a `hexdump.js` program on a file (`data`) and output the hex dump.
@@ -34,7 +33,6 @@ To understand what a hex dump is, we can create a file and view a hex dump of it
 
 ```bash
 echo -en "Just make a decision and let it go." > data
-
 ```
 
 `-en` here is preventing trailing newlines and allowing interpretation of backslash-escaped characters, which will come in handy in a bit. Also, `data` is just a filename, not any sort of command or keyword.
@@ -49,9 +47,9 @@ Here's what I get.
 
 ```terminal
 00000000  4a 75 73 74 20 6d 61 6b  65 20 61 20 64 65 63 69  |Just make a deci|
-    00000010  73 69 6f 6e 20 61 6e 64  20 6c 65 74 20 69 74 20  |sion and let it |
-    00000020  67 6f 2e                                          |go.|
-    00000023
+00000010  73 69 6f 6e 20 61 6e 64  20 6c 65 74 20 69 74 20  |sion and let it |
+00000020  67 6f 2e                                          |go.|
+00000023
 ```
 
 Okay, so it looks like I have a bunch of numbers, and on the right we can see the text characters from the string I just echoed. The man page tells us that `hexdump` "displays file contents in hexadecimal, decimal, octal, or ascii". The specific format used here (canonical) is further explained:
@@ -62,61 +60,13 @@ Canonical hex+ASCII display. Display the input offset in hexadecimal, followed b
 
 So now we can see that each line is a hexadecimal input offset (address) which is kind of like a line number, followed by 16 hexadecimal bytes, followed by the same bytes in ASCII format between two pipes.
 
-<table class="table table-striped table-bordered" >
+| Address    | Hexadecimal bytes                                 | ASCII                |
+| ---------- | ------------------------------------------------- | -------------------- |
+| `00000000` | `4a 75 73 74 20 6d 61 6b 65 20 61 20 64 65 63 69` | `|Just make a deci|` |
+| `00000010` | `73 69 6f 6e 20 61 6e 64 20 6c 65 74 20 69 74 20` | `|sion and let it |` |
+| `00000020` | `67 6f 2e`                                        | `|go.|`              |
+| `00000023` |                                                   |                      |
 
-<tr >
-Address
-Hexadecimal bytes
-ASCII
-</tr>
-
-<tbody >
-<tr >
-
-<td >`00000000`
-</td>
-
-<td >`4a 75 73 74 20 6d 61 6b  65 20 61 20 64 65 63 69`
-</td>
-
-<td >`|Just make a deci|`
-</td>
-</tr>
-<tr >
-
-<td >`00000010`
-</td>
-
-<td >`73 69 6f 6e 20 61 6e 64  20 6c 65 74 20 69 74 20`
-</td>
-
-<td >`|sion and let it |`
-</td>
-</tr>
-<tr >
-
-<td >`00000020`
-</td>
-
-<td >`67 6f 2e`
-</td>
-
-<td >`|go.|`
-</td>
-</tr>
-<tr >
-
-<td >`00000023`
-</td>
-
-<td >
-</td>
-
-<td >
-</td>
-</tr>
-</tbody>
-</table>
 First, let's take a look at the input offset, also referred to as an address. We can see it has leading zeros and a number. In a text editor, for example, we have lines of code in decimal, incremented by one. Line 1, line 2, all the way down to line 382, or however many lines long the program is.
 
 The address of a hex dump counts tracks the number of bytes in the data and offsets each line by that number. So the first line starts at offset 0, and the second line represents the number 16, which is how many bytes precede the current line. `10` is `16` in hexadecimal, which we'll go into farther along in this article.
@@ -129,7 +79,6 @@ In another example, I'll echo 0-15 represented in base 16/hexidecimal, which wil
 
 ```bash
 echo -en "\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f" > data2
-
 ```
 
 These numbers don't correspond to any ASCII characters, and also cannot be viewed in a regular text editor. If you try opening it in VSCode, for example, you'll see "The file is not displayed in the editor because it is either binary or uses an unsupported text encoding.".
@@ -138,7 +87,7 @@ If you do decide to open it anyway, you'll probably see what appears to be a que
 
 ```terminal
 00000000  00 01 02 03 04 05 06 07  08 09 0a 0b 0c 0d 0e 0f  |................|
-    00000010
+00000010
 ```
 
 As you can see, unprintable ASCII characters are represented by a `.`, and the bytes are confirmed hexadecimal. The address has `10` on the second line because it's starting on the 16th byte, and 16 is `10` in hexadecimal.
@@ -155,40 +104,12 @@ But what exactly is a byte?
 
 A bit is a binary digit, the smallest form of data on a computer, and can be `0` or `1`. Like a Boolean, a bit can represent on/off, true/false, etc. There are four bits in a nibble, and eight bits in a byte.
 
-<table class="table table-striped table-bordered" >
+| Unit   | Storage                   |
+| ------ | ------------------------- |
+| Bit    | Binary digit (`0` or `1`) |
+| Nibble | 4 bits                    |
+| Byte   | 8 bits                    |
 
-<tr >
-Unit
-Storage
-</tr>
-
-<tbody >
-<tr >
-
-<td >Bit
-</td>
-
-<td >Binary digit (`0` or `1`)
-</td>
-</tr>
-<tr >
-
-<td >Nibble
-</td>
-
-<td >4 bits
-</td>
-</tr>
-<tr >
-
-<td >Byte
-</td>
-
-<td >8 bits
-</td>
-</tr>
-</tbody>
-</table>
 Computers manipulate data in bytes.
 
 ## Value of a byte
@@ -213,132 +134,88 @@ Here's how that looks:
 
 ```js
   1 * 2**7
-    + 1 * 2**6
-    + 1 * 2**5
-    + 1 * 2**4
-    + 1 * 2**3
-    + 1 * 2**2
-    + 1 * 2**1
-    + 1 * 2**0
-    = 255
-
++ 1 * 2**6
++ 1 * 2**5
++ 1 * 2**4
++ 1 * 2**3
++ 1 * 2**2
++ 1 * 2**1
++ 1 * 2**0
+= 255
 ```
 
 And after evaluating the exponents, you can write the equation like this:
 
 ```js
   1 * 128
-    + 1 * 64
-    + 1 * 32
-    + 1 * 16
-    + 1 * 8
-    + 1 * 4
-    + 1 * 2
-    + 1 * 1
-    = 255
-
++ 1 * 64
++ 1 * 32
++ 1 * 16
++ 1 * 8
++ 1 * 4
++ 1 * 2
++ 1 * 1
+= 255
 ```
 
 Or simply:
 
 ```js
   128
-    + 64
-    + 32
-    + 16
-    + 8
-    + 4
-    + 2
-    + 1
-    = 255
-
++ 64
++ 32
++ 16
++ 8
++ 4
++ 2
++ 1
+= 255
 ```
 
 For a more simplified example, if the number was `101` it would be:
 
 ```js
   1 * 2**2
-    + 0 * 2**1
-    + 1 * 2**0
-    = 5
++ 0 * 2**1
++ 1 * 2**0
+= 5
 ```
 
 #### Decimal: 25510
 
 If that doesn't make sense, think about it in decimal. You know `007` and `070` and `700` are all very different values (leading zeros have no effect on the value). Seven is `7 * 10^0`, seventy is `7 * 10^1`, and seven hundred is `7 * 10^2`.
 
-<table class="table table-striped table-bordered" >
+| Number        | Decimal Represenation | Calculation             |
+| ------------- | --------------------- | ----------------------- |
+| Seven         | `007`                 | `7 * 10^0` or `7 * 1`   |
+| Seventy       | `070`                 | `7 * 10^1` or `7 * 10`  |
+| Seven hundred | `700`                 | `7 * 10^2` or `7 * 100` |
 
-<tr >
-Number
-Decimal Represenation
-Calculation
-</tr>
-
-<tbody >
-<tr >
-
-<td >Seven
-</td>
-
-<td >`007`
-</td>
-
-<td >`7 * 10^0` or `7 * 1`
-</td>
-</tr>
-<tr >
-
-<td >Seventy
-</td>
-
-<td >`070`
-</td>
-
-<td >`7 * 10^1` or `7 * 10`
-</td>
-</tr>
-<tr >
-
-<td >Seven hundred
-</td>
-
-<td >`700`
-</td>
-
-<td >`7 * 10^2` or `7 * 100`
-</td>
-</tr>
-</tbody>
-</table>
 So as we can see, the position of the digit determines the value, and we can use the same calculation to get `255` in decimal.
 
 ```js
   2 * 10**2
-    + 5 * 10**1
-    + 5 * 10**0
-    = 255
-
++ 5 * 10**1
++ 5 * 10**0
+= 255
 ```
 
 Or:
 
 ```js
   2 * 100
-    + 5 * 10
-    + 5 * 1
-    = 255
-
++ 5 * 10
++ 5 * 1
+= 255
 ```
 
 Or:
 
 ```js
   200
-    + 50
-    + 5
-    = 255
-
++ 50
++ 5
+= 255
 ```
 
 #### Hexadecimal: FF16
@@ -347,27 +224,24 @@ This concept applies to any base. Hexadecimal is base 16, and `F` represents the
 
 ```js
   15 * 16**1
-    + 15 * 16**0
-    = 255
-
++ 15 * 16**0
+= 255
 ```
 
 Or:
 
 ```js
   15 * 16
-    + 15 * 1
-    = 255
-
++ 15 * 1
+= 255
 ```
 
 Or:
 
 ```js
   240
-    + 15
-    = 255
-
++ 15
+= 255
 ```
 
 #### It's all the same number
@@ -378,7 +252,6 @@ Hexadecimal is a convenient, compact way to represent the value of a byte, as it
 
 ```js
 // Binary - 11111111
-
 1 * 2 ** 7 +
   1 * 2 ** 6 +
   1 * 2 ** 5 +
@@ -389,11 +262,9 @@ Hexadecimal is a convenient, compact way to represent the value of a byte, as it
   1 * 2 ** 0
 
 // Decimal - 255
-
 2 * 10 ** 2 + 5 * 10 ** 1 + 5 * 10 ** 0
 
 // Hexadecimal - FF
-
 15 * 16 ** 1 + 15 * 16 ** 0
 ```
 
@@ -401,32 +272,11 @@ Hexadecimal is a convenient, compact way to represent the value of a byte, as it
 
 Programming languages will use a prefix to represent a value outside of base 10. Binary is `0b`, and hexadecimal is `0x`, so you can write `0b1111` or `0xff` in a Node repl, for example, and it will output the value in decimal.
 
-<table class="table table-striped table-bordered" >
+| Base        | Prefix |
+| ----------- | ------ |
+| Binary      | `0b`   |
+| Hexadecimal | `0x`   |
 
-<tr >
-Base
-Prefix
-</tr>
-
-<tbody >
-<tr >
-
-<td >Binary
-</td>
-
-<td >`0b`
-</td>
-</tr>
-<tr >
-
-<td >Hexadecimal
-</td>
-
-<td >`0x`
-</td>
-</tr>
-</tbody>
-</table>
 Octal is another base system, base 8, which is represented by just a leading `0` or `0o`.
 
 ```js
@@ -439,193 +289,25 @@ We're going to mostly ignore octal in this article, though.
 
 The maximum value of a byte is `255`, and the maximum value of a nibble (4 bits) is `15`. Here's a chart counting to `15` in binary, decimal, and hexadecimal.
 
-<table class="table table-striped table-bordered" >
+| Binary (base 2) | Decimal (base 10) | Hexadecimal (base 16) |
+| --------------- | ----------------- | --------------------- |
+| `0000`          | `0`               | `00`                  |
+| `0001`          | `1`               | `01`                  |
+| `0010`          | `2`               | `02`                  |
+| `0011`          | `3`               | `03`                  |
+| `0100`          | `4`               | `04`                  |
+| `0101`          | `5`               | `05`                  |
+| `0110`          | `6`               | `06`                  |
+| `0111`          | `7`               | `07`                  |
+| `1000`          | `8`               | `08`                  |
+| `1001`          | `9`               | `09`                  |
+| `1010`          | `10`              | `0a`                  |
+| `1011`          | `11`              | `0b`                  |
+| `1100`          | `12`              | `0c`                  |
+| `1101`          | `13`              | `0d`                  |
+| `1110`          | `14`              | `0e`                  |
+| `1111`          | `15`              | `0f`                  |
 
-<tr >
-Binary (base 2)
-Decimal (base 10)
-Hexadecimal (base 16)
-</tr>
-
-<tbody >
-<tr >
-
-<td >`0000`
-</td>
-
-<td >`0`
-</td>
-
-<td >`00`
-</td>
-</tr>
-<tr >
-
-<td >`0001`
-</td>
-
-<td >`1`
-</td>
-
-<td >`01`
-</td>
-</tr>
-<tr >
-
-<td >`0010`
-</td>
-
-<td >`2`
-</td>
-
-<td >`02`
-</td>
-</tr>
-<tr >
-
-<td >`0011`
-</td>
-
-<td >`3`
-</td>
-
-<td >`03`
-</td>
-</tr>
-<tr >
-
-<td >`0100`
-</td>
-
-<td >`4`
-</td>
-
-<td >`04`
-</td>
-</tr>
-<tr >
-
-<td >`0101`
-</td>
-
-<td >`5`
-</td>
-
-<td >`05`
-</td>
-</tr>
-<tr >
-
-<td >`0110`
-</td>
-
-<td >`6`
-</td>
-
-<td >`06`
-</td>
-</tr>
-<tr >
-
-<td >`0111`
-</td>
-
-<td >`7`
-</td>
-
-<td >`07`
-</td>
-</tr>
-<tr >
-
-<td >`1000`
-</td>
-
-<td >`8`
-</td>
-
-<td >`08`
-</td>
-</tr>
-<tr >
-
-<td >`1001`
-</td>
-
-<td >`9`
-</td>
-
-<td >`09`
-</td>
-</tr>
-<tr >
-
-<td >`1010`
-</td>
-
-<td >`10`
-</td>
-
-<td >`0a`
-</td>
-</tr>
-<tr >
-
-<td >`1011`
-</td>
-
-<td >`11`
-</td>
-
-<td >`0b`
-</td>
-</tr>
-<tr >
-
-<td >`1100`
-</td>
-
-<td >`12`
-</td>
-
-<td >`0c`
-</td>
-</tr>
-<tr >
-
-<td >`1101`
-</td>
-
-<td >`13`
-</td>
-
-<td >`0d`
-</td>
-</tr>
-<tr >
-
-<td >`1110`
-</td>
-
-<td >`14`
-</td>
-
-<td >`0e`
-</td>
-</tr>
-<tr >
-
-<td >`1111`
-</td>
-
-<td >`15`
-</td>
-
-<td >`0f`
-</td>
-</tr>
-</tbody>
-</table>
 Hexadecimal is often written with leading zeroes, making the representation of a byte always two characters.
 
 So now we should have a good idea of the values represented in the address and bytes of a hex dump.
@@ -642,23 +324,21 @@ Well, we know how we want the program to function. It should be able to use the 
 
 ```bash
 node hexdump.js data
-
 ```
 
 So obviously I'll make `hexdump.js` and I'll also make some new data that will contain printable and non-printable ASCII characters.
 
 ```bash
 echo -en "<blink>Talent is pursued interest</blink>\x00\xff" > data
-
 ```
 
 And the goal is to make this output:
 
 ```terminal
 00000000  3c 62 6c 69 6e 6b 3e 54  61 6c 65 6e 74 20 69 73  |<blink>Talent is|
-    00000010  20 70 75 72 73 75 65 64  20 69 6e 74 65 72 65 73  | pursued interes|
-    00000020  74 3c 2f 62 6c 69 6e 6b  3e 00 ff                 |t</blink>..|
-    0000002b
+00000010  20 70 75 72 73 75 65 64  20 69 6e 74 65 72 65 73  | pursued interes|
+00000020  74 3c 2f 62 6c 69 6e 6b  3e 00 ff                 |t</blink>..|
+0000002b
 ```
 
 ### Getting a raw data buffer of a file
@@ -720,8 +400,8 @@ Now we have an array of smaller buffers.
 
 ```terminal
 [ <Buffer 3c 62 6c 69 6e 6b 3e 54 61 6c 65 6e 74 20 69 73>,
-      <Buffer 20 70 75 72 73 75 65 64 20 69 6e 74 65 72 65 73>,
-      <Buffer 74 3c 2f 62 6c 69 6e 6b 3e 00 ff> ]
+  <Buffer 20 70 75 72 73 75 65 64 20 69 6e 74 65 72 65 73>,
+  <Buffer 74 3c 2f 62 6c 69 6e 6b 3e 00 ff> ]
 ```
 
 ### Calculating the address
@@ -740,8 +420,8 @@ lines.push(`${address} ${block}`)
 
 ```terminal
 [ '00000000 <blink>Talent is',
-      '00000010  pursued interes',
-      '00000020 t</blink>\u0000?' ]
+  '00000010  pursued interes',
+  '00000020 t</blink>\u0000?' ]
 ```
 
 The template tries to convert the buffer to a string. It doesn't interpret the non-printable ASCII characters the way we want though, so we won't be able to do that for the ASCII output. We have the correct addresses now, though.
@@ -784,8 +464,8 @@ Now we're almost there.
 
 ```terminal
 00000000 3c 62 6c 69 6e 6b 3e 54 61 6c 65 6e 74 20 69 73 |<blink>Talent is|
-    00000010 20 70 75 72 73 75 65 64 20 69 6e 74 65 72 65 73 | pursued interes|
-    00000020 74 3c 2f 62 6c 69 6e 6b 3e 00 ff |t</blink>..|
+00000010 20 70 75 72 73 75 65 64 20 69 6e 74 65 72 65 73 | pursued interes|
+00000020 74 3c 2f 62 6c 69 6e 6b 3e 00 ff |t</blink>..|
 ```
 
 ### Full hex dump program
@@ -794,7 +474,7 @@ The only thing that remains at this point is some final formatting - adding padd
 
 [Here's a gist](https://gist.github.com/taniarascia/7ff2e83577d83b85a421ab36ab2ced84) of the final version, or see below.
 
-hexdump.js
+<div class="filename">hexdump.js</div>
 
 ```js
 const fs = require('fs')
@@ -845,12 +525,12 @@ As I mentioned earlier, you'd want to use a readable stream for a real hex dump 
 
 I covered a lot of concepts in this article.
 
-_ Bits, nibbles, and bytes
-_ Binary, decimal, and hexadecimal numbers
-_ Calculating the value of a number in any base system
-_ Printable ASCII characters
-_ Accessing file data in Node.js
-_ Working with buffers of raw data - Converting numbers to hex and ASCII
+- Bits, nibbles, and bytes
+- Binary, decimal, and hexadecimal numbers
+- Calculating the value of a number in any base system
+- Printable ASCII characters
+- Accessing file data in Node.js
+- Working with buffers of raw data - Converting numbers to hex and ASCII
 
 There is still more I want to write about on this subject, such as creating a 16-bit hex dump, bitwise operators, and endianness, as well as using [Streams](https://nodejs.org/api/stream.html#stream_stream) to improve this hex dump function, so probably more to come in a follow up article.
 

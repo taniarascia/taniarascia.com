@@ -17,8 +17,6 @@ ECMAScript 2015, also known as ES6, introduced many changes to JavaScript. Here 
 
 [View on GitHub](https://github.com/taniarascia/es6)
 
->
-
 > **Note:** A commonly accepted practice is to use `const` except in cases of loops and reassignment. However, in this resource I'll be using `let` in place of `var` for all ES6 examples.
 
 ## Legend
@@ -26,129 +24,51 @@ ECMAScript 2015, also known as ES6, introduced many changes to JavaScript. Here 
 I'm not a fan of `foo` `bar` `baz`. Here is a key of most identifier names used throughout this reference.
 
 - Variable: `x`
-
 - Object: `obj`
-
 - Array: `arr`
-
 - Function: `func`
-
 - Parameter, method: `a`, `b`, `c`
-
 - String: `str`
 
 ## Table of contents
 
 - Variable declaration
-
 - Constant declaration
-
 - Arrow function syntax
-
 - Template literals
-
 - Implicit returns
-
 - Key/property shorthand
-
 - Method definition shorthand
-
 - Destructuring (object matching)
-
 - Array iteration (looping)
-
 - Default parameters
-
 - Spread syntax
-
 - Classes/constructor functions
-
 - Inheritance
-
 - Modules - export/import
-
 - Promises/callbacks
 
 ## Variables and constant feature comparison
 
 I explain the concepts of scope and the differences between `let`, `var`, and `const` in the [Understanding Variables, Scope, and Hoisting in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript) resource on DigitalOcean. This table provides a brief overview.
 
-<table >
-
-<tr >
-Keyword
-Scope
-Hoisting
-Can Be Reassigned
-Can Be Redeclared
-</tr>
-
-<tbody >
-<tr >
-
-<td >[`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-</td>
-
-<td >Function scope
-</td>
-
-<td >Yes
-</td>
-
-<td >Yes
-</td>
-
-<td >Yes
-</td>
-</tr>
-<tr >
-
-<td >[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-</td>
-
-<td >Block scope
-</td>
-
-<td >No
-</td>
-
-<td >Yes
-</td>
-
-<td >No
-</td>
-</tr>
-<tr >
-
-<td >[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-</td>
-
-<td >Block scope
-</td>
-
-<td >No
-</td>
-
-<td >No
-</td>
-
-<td >No
-</td>
-</tr>
-</tbody>
-</table>
+| Keyword                                                                                       | Scope          | Hoisting | Can Be Reassigned | Can Be Redeclared |
+| --------------------------------------------------------------------------------------------- | -------------- | -------- | ----------------- | ----------------- |
+| [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)     | Function scope | Yes      | Yes               | Yes               |
+| [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)     | Block scope    | No       | Yes               | No                |
+| [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) | Block scope    | No       | No                | No                |
 
 ## Variable declaration
 
 ES6 introduced the `let` keyword, which allows for block-scoped variables which cannot be hoisted or redeclared.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var x = 0
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let x = 0
@@ -160,7 +80,7 @@ let x = 0
 
 ES6 introduced the `const` keyword, which cannot be redeclared or reassigned, but is not immutable.
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 const CONST_IDENTIFIER = 0 // constants are uppercase by convention
@@ -172,14 +92,14 @@ const CONST_IDENTIFIER = 0 // constants are uppercase by convention
 
 The arrow function expression syntax is a shorter way of creating a function expression. Arrow functions do not have their own `this`, do not have prototypes, cannot be used for constructors, and should not be used as object methods.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 function func(a, b, c) {} // function declaration
 var func = function(a, b, c) {} // function expression
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let func = a => {} // parentheses optional with one parameter
@@ -194,13 +114,13 @@ let func = (a, b, c) => {} // parentheses required with multiple parameters
 
 Expressions can be embedded in template literal strings.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var str = 'Release date: ' + date
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let str = `Release Date: ${date}`
@@ -212,18 +132,18 @@ let str = `Release Date: ${date}`
 
 Using template literal syntax, a JavaScript string can span multiple lines without the need for concatenation.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var str = 'This text ' + 'is on ' + 'multiple lines'
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let str = `This text
-               is on
-               multiple lines`
+            is on
+            multiple lines`
 ```
 
 **Note:** Whitespace is preserved in multi-line template literals. See [Removing leading whitespace in ES6 template strings](https://muffinresearch.co.uk/removing-leading-whitespace-in-es6-template-strings/).
@@ -234,7 +154,7 @@ let str = `This text
 
 The `return` keyword is implied and can be omitted if using arrow functions without a block body.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 function func(a, b, c) {
@@ -242,7 +162,7 @@ function func(a, b, c) {
 }
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let func = (a, b, c) => a + b + c // curly brackets must be omitted
@@ -254,7 +174,7 @@ let func = (a, b, c) => a + b + c // curly brackets must be omitted
 
 ES6 introduces a shorter notation for assigning properties to variables of the same name.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var obj = {
@@ -263,7 +183,7 @@ var obj = {
 }
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let obj = {
@@ -278,7 +198,7 @@ let obj = {
 
 The `function` keyword can be omitted when assigning methods on an object.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var obj = {
@@ -287,7 +207,7 @@ var obj = {
 }
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let obj = {
@@ -310,7 +230,7 @@ Use curly brackets to assign properties of an object to their own variable.
 var obj = { a: 1, b: 2, c: 3 }
 ```
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var a = obj.a
@@ -318,7 +238,7 @@ var b = obj.b
 var c = obj.c
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let { a, b, c } = obj
@@ -334,7 +254,7 @@ A more concise syntax has been introduced for iteration through arrays and other
 var arr = ['a', 'b', 'c']
 ```
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 for (var i = 0; i < arr.length; i++) {
@@ -342,7 +262,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 for (let i of arr) {
@@ -356,7 +276,7 @@ for (let i of arr) {
 
 Functions can be initialized with default parameters, which will be used only if an argument is not invoked through the function.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 var func = function(a, b) {
@@ -365,7 +285,7 @@ var func = function(a, b) {
 }
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let func = (a, b = 2) => {
@@ -384,7 +304,7 @@ func(10, 5) // returns 15
 
 Spread syntax can be used to expand an array.
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let arr1 = [1, 2, 3]
@@ -396,7 +316,7 @@ console.log(arr3) // [1, 2, 3, "a", "b", "c"]
 
 Spread syntax can be used for function arguments.
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 let arr1 = [1, 2, 3]
@@ -411,7 +331,7 @@ console.log(func(...arr1)) // 6
 
 ES6 introducess the `class` syntax on top of the prototype-based constructor function.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 function Func(a, b) {
@@ -426,7 +346,7 @@ Func.prototype.getSum = function() {
 var x = new Func(3, 4)
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 class Func {
@@ -453,7 +373,7 @@ x.getSum() // returns 7
 
 The `extends` keyword creates a subclass.
 
-ES5
+<div class="filename">ES5</div>
 
 ```js
 function Inheritance(a, b, c) {
@@ -470,7 +390,7 @@ Inheritance.prototype.getProduct = function() {
 var y = new Inheritance(3, 4, 5)
 ```
 
-ES6
+<div class="filename">ES6</div>
 
 ```js
 class Inheritance extends Func {
@@ -498,7 +418,7 @@ y.getProduct() // 60
 
 Modules can be created to export and import code between files.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <script src="export.js"></script>
@@ -515,7 +435,7 @@ let x = 0
 export { func, obj, x }
 ```
 
-import.js
+<div class="filename">import.js</div>
 
 ```js
 import { func, obj, x } from './export.js'
@@ -524,14 +444,13 @@ console.log(func(3), obj, x)
 ```
 
 - [MDN Reference: export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
-
 - [MDN Reference: import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
 ## Promises/Callbacks
 
 Promises represent the completion of an asynchronous function. They can be used as an alternative to chaining functions.
 
-ES5 callback
+<div class="filename">ES5 callback</div>
 
 ```js
 function doSecond() {
@@ -549,7 +468,7 @@ function doFirst(callback) {
 doFirst(doSecond)
 ```
 
-ES6 Promise
+<div class="filename">ES6 Promise</div>
 
 ```js
 let doSecond = () => {
@@ -569,7 +488,7 @@ doFirst.then(doSecond)
 
 An example below using `XMLHttpRequest`, for demonstrative purposes only ([Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) would be the proper modern API to use).
 
-ES5 callback
+<div class="filename">ES5 callback</div>
 
 ```js
 function makeRequest(method, url, callback) {
@@ -594,7 +513,7 @@ makeRequest('GET', 'https://url.json', function(err, data) {
 })
 ```
 
-ES6 Promise
+<div class="filename">ES6 Promise</div>
 
 ```js
 function makeRequest(method, url) {
@@ -621,4 +540,4 @@ makeRequest('GET', 'https://url.json')
 
 If you found this useful, please share!
 
-[View on GitHub](https://github.com/taniarascia/es6)
+- [View on GitHub](https://github.com/taniarascia/es6)

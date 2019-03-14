@@ -1,6 +1,6 @@
 ---
 date: 2017-07-03
-title: "How to Install Apache, PHP 7.1, and MySQL on Ubuntu with Vagrant"
+title: 'How to Install Apache, PHP 7.1, and MySQL on Ubuntu with Vagrant'
 template: post
 thumbnail: '../thumbnails/ubuntu.png'
 slug: how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant
@@ -63,8 +63,8 @@ After installing it you'll get this warning.
 
 ```terminal
 AH00558: apache2: Could not reliably determine the server's
-    fully qualified domain name, using 10.0.2.15. Set the 'ServerName'
-    directive globally to suppress this message
+fully qualified domain name, using 10.0.2.15. Set the 'ServerName'
+directive globally to suppress this message
 ```
 
 Easily fixed. We're just going to set the `ServerName` to `localhost`. Use `nano` (or `vi`, or whatever you feel comfortable with) to edit the apache2 configuration file.
@@ -109,7 +109,7 @@ apache2 -v
 
 ```terminal
 Server version: Apache/2.4.7 (Ubuntu)
-    Server built:   Jun 26 2017
+Server built:   Jun 26 2017
 ```
 
 Great, Apache is up and running properly! But now we want confirmation of this.
@@ -192,20 +192,12 @@ php -v
 
 ```terminal
 PHP 7.1.6-2~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jun 14 2017) ( NTS )
-    Copyright (c) 1997-2017 The PHP Group
-    Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
-        with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
-
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
+with Zend OPcache v7.1.6-2~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 ```
 
-
-
-
-
-
 ## Step 4 - Link a local folder with the virtual machine
-
-
 
 Okay, using `nano` or `vi` to edit files is going to start getting tedious. I want to be able to edit the files within the virtual machine from within the comfort of my own computer's environment (currently using [Visual Studio Code](https://code.visualstudio.com/) as a text editor).
 
@@ -217,10 +209,7 @@ Here is how our local directory structure should be set up:
 
 ![](../images/Screen-Shot-2017-07-03-at-1.22.54-AM.png)
 
-
 Let's go back to our **Vagrantfile**. We're going to set up a `synced folder`, first inputting our local path, then inputting our virtual machine's path.
-
-
 
 ```ruby
 config.vm.synced_folder "LOCAL", "VIRTUAL"
@@ -268,7 +257,7 @@ Find `skip-external-locking` and `bind-address` and comment them out.
 
 ```bash
 # skip-external-locking
-    # bind-address 0.0.0.0
+# bind-address 0.0.0.0
 ```
 
 Once that's all done, I restart Apache and MySQL.
@@ -339,42 +328,33 @@ We'll need to use the **SSH** tab of the connection. There are two connections w
 
 For MySQL, the credentials will be:
 
-**Host:** 192.168.33.10
-**Username:** user
-**Password:** password
-**Port:** 3306
+- **Host:** 192.168.33.10
+- **Username:** user
+- **Password:** password
+- **Port:** 3306
 
 For SSH, they will be:
 
-**Host:** 127.0.0.1
-**User:** vagrant
-**Key:** ~/.vagrant.d/insecure_private_key
-**Port:** 2222
+- **Host:** 127.0.0.1
+- **User:** vagrant
+- **Key:** ~/.vagrant.d/insecure_private_key
+- **Port:** 2222
 
 > In your home folder, there will be a hidden directory called `.vagrant.d`. Inside is a file called `insecure_private_key`, which is the key the `vagrant ssh` command uses to connect.
 
 Running `vagrant ssh` is the same as running the following:
 
->
->     <code style="margin-bottom: 0;" class="language-bash">ssh -i ~/.vagrant.d/insecure_private_key vagrant@192.168.33.10
-
+```bash
+ssh -i ~/.vagrant.d/insecure_private_key vagrant@192.168.33.10
 ```
-
->
->
-
-
-
 
 Inputting all the following credentials, we will be prompted for a password.
 
 ![](../images/Screen-Shot-2017-07-03-at-2.00.02-AM.png)
 
-
 The password is "vagrant"
 
 ![](../images/Screen-Shot-2017-07-03-at-2.11.34-AM.png)
-
 
 **Update 3/5/2018**: This key may not work in newer versions of Ubuntu. Instead, you will run `vagrant ssh-config` from your local computer, and follow the file path for IdentityFile. Mine was **/Users/my_path/ubuntu/.vagrant/machines/default/virtualbox/private_key**. Use this instead of **~/.vagrant.d/insecure_private_key**.
 
@@ -382,20 +362,13 @@ Now if everything went well, we'll be in! If you had any issues up to this point
 
 Since I'm in, I'm just going to create a database called `test` and a table called `table1` so I can test MySQL via PHP.
 
-
-
 ## Step 6 - Testing PHP and MySQL
-
-
 
 Using the **connect.php** and **test.php** files we made in **/var/www/html** before, let's test PHP and MySQL from the browser.
 
 In **test.php**, we'll use the `phpinfo()` function to test PHP.
 
-
-
 ```php
-
 <?php phpinfo();
 ```
 
@@ -407,27 +380,27 @@ In **connect.php**, I used a quick [MySQL test script](https://gist.github.com/M
 
 <?php
 
-    $dbname = 'test';
-    $dbuser = 'user';
-    $dbpass = 'password';
-    $dbhost = '192.168.33.10';
+$dbname = 'test';
+$dbuser = 'user';
+$dbpass = 'password';
+$dbhost = '192.168.33.10';
 
-    $link = mysqli_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect to '$dbhost'");
-    mysqli_select_db($link, $dbname) or die("Could not open the db '$dbname'");
+$link = mysqli_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect to '$dbhost'");
+mysqli_select_db($link, $dbname) or die("Could not open the db '$dbname'");
 
-    $test_query = "SHOW TABLES FROM $dbname";
-    $result = mysqli_query($link, $test_query);
-    $tblCnt = 0;
+$test_query = "SHOW TABLES FROM $dbname";
+$result = mysqli_query($link, $test_query);
+$tblCnt = 0;
 
-    while($tbl = mysqli_fetch_array($result)) {
-      $tblCnt++;
-    }
+while($tbl = mysqli_fetch_array($result)) {
+  $tblCnt++;
+}
 
-    if (!$tblCnt) {
-      echo "There are no tables<br />\n";
-    } else {
-      echo "There are $tblCnt tables<br />\n";
-    }
+if (!$tblCnt) {
+  echo "There are no tables<br />\n";
+} else {
+  echo "There are $tblCnt tables<br />\n";
+}
 ```
 
 And I can see that MySQL is connecting properly.

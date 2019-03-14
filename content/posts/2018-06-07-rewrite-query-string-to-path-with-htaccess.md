@@ -26,40 +26,40 @@ http://example.com/users/tania
 
 I can do so with the following `.htaccess`:
 
-.htaccess
+<div class="filename">.htaccess</div>
 
 ```apacheconf
 RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^/?users/(.*?)/?$ /users.php?name=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?users/(.*?)/?$ /users.php?name=$1 [L]
 
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /users\.php\?name=([^\&\ ]+)
-    RewriteRule ^/?users\.php$ /users/%1? [L,R=301]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /users\.php\?name=([^\&\ ]+)
+RewriteRule ^/?users\.php$ /users/%1? [L,R=301]
 ```
 
 I can even still GET the URL query.
 
-users.php
+<div class="filename">users.php</div>
 
 ```apacheconf
 <?php
 
-    echo $_SERVER['REQUEST_URI'] . '<br>';
+echo $_SERVER['REQUEST_URI'] . '<br>';
 
-    print_r($_GET);
+print_r($_GET);
 ```
 
 ```terminal
 /users/tania
-    Array ( [name] => tania )
+Array ( [name] => tania )
 ```
 
 Alternatively, you could redirect everything to `index.php` and route it that way.
 
 ```apacheconf
 RewriteEngine On
-    RewriteRule ^([a-zA-Z0-9]+)$ index.php?url=$1
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?url=$1
 ```
 
 That's all!

@@ -10,7 +10,7 @@ tags:
   - design
 ---
 
-Back in July 2017, I posted about [all the redesigns of taniarascia.com](/version-2-0-website-redesign-863-commits-later/) that happened up to version 2.0. I made many small, incremental changes to the design over the course of two years, because I'm obsessed with tweaking my site's design and always trying to make it better. After making version 2.0, I decided to stop making tiny tweaks to the site and do full-blown redesigns instead. This way I can focus on writing more, and still have fun designing every now and then.
+Back in July 2017, I posted about [all the redesigns of taniarascia.com](/version-2-0-website-redesign-863-commits-later/) that happened up to version 2.0. I made many small, incremental changes to the design over the course of two years, because I'm obsessed with tweaking my site's design and always trying to make it better. After making version 2.0, I decided to stop making tiny tweaks to the site and do full-blown redesigns instead. This way I can focus on writing more and still have fun designing every now and then.
 
 A few months ago, I created version 3.0, which is where it was at until today. Below are the screenshots of how it used to look.
 
@@ -34,4 +34,4 @@ One brand new aspect of this design is night mode, which you can access by click
 
 ![](../images/Screen-Shot-2018-10-21-at-10.55.52-PM.png)
 
-I'd love any input from those of you who regularly use my site, and new visitors as well. Is the site pleasant to use? Is it easy to find what you're looking for? Do you like it? If you have an opinion, let me know!
+I'd love any input from those of you who regularly visit my site, and new visitors as well. Is the site pleasant to use? Is it easy to find what you're looking for? Do you like it? If you have an opinion, let me know!

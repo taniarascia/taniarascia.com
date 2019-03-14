@@ -1,6 +1,6 @@
 ---
 date: 2017-10-12
-title: "Design for Developers: Specific Steps to Improve Your Website Design"
+title: 'Design for Developers: Specific Steps to Improve Your Website Design'
 template: post
 thumbnail: '../thumbnails/writing.png'
 slug: design-for-developers
@@ -30,9 +30,7 @@ We will be creating a website element (a card) from scratch, using the design pr
 #### Goals
 
 - Develop a card element from scratch using the each of the design guidelines we learn here.
-
 - Learn **specific actions** you can take to improve your design and make it look more professional.
-
 - Apply those guidelines to our finished element to show how we can customize and create totally different, creative designs with a few code changes.
 
 ## Finished Product
@@ -69,7 +67,7 @@ So, let's begin!
 
 First, I'm going to set up the HTML here and the rest of the article will only focus on CSS. A basic overview of how the card is structured is here. (I'm leaving out the image as it's not the focus. We'll just add it at the end.)
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <div class="card">
@@ -85,7 +83,7 @@ index.html
 
 Here is the actual, final HTML for one card. It's inside a container to keep the shape, but there are no other styles, normalizers, resets, or any CSS applied yet.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <div class="card">
@@ -433,4 +431,5 @@ You can use these guidelines to critique your own design. Do you need more paddi
 
 Here is the demo and source code.
 
-[View Final Product](https://taniarascia.github.io/card/) [View Source Code](https://github.com/taniarascia/card)
+- [View Final Product](https://taniarascia.github.io/card/) 
+- [View Source Code](https://github.com/taniarascia/card)

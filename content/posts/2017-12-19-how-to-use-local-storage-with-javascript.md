@@ -19,7 +19,8 @@ However, even without any sort of database, we can use the local storage built i
 
 So that's what we're going to learn to do today.
 
-[View Demo](https://taniarascia.github.io/sandbox/tab/) [View Source](https://github.com/taniarascia/sandbox/tree/master/tab)
+- [View Demo](https://taniarascia.github.io/sandbox/tab/)
+- [View Source](https://github.com/taniarascia/sandbox/tree/master/tab)
 
 #### Prerequisites
 
@@ -44,44 +45,12 @@ Previously, [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
 Here is an overview of `localStorage` methods.
 
-<table >
-    <tr >
-        Method
-        Description
-    </tr>
-    <tr >
-        
-<td >`setItem()`
-</td>
-        
-<td >Add key and value to local storage
-</td>
-    </tr>
-    <tr >
-        
-<td >`getItem()`
-</td>
-        
-<td >Retrieve a value by the key
-</td>
-    </tr>
-    <tr >
-        
-<td >`removeItem()`
-</td>
-        
-<td >Remove an item by key
-</td>
-    </tr>
-    <tr >
-        
-<td >`clear()`
-</td>
-        
-<td >Clear all storage
-</td>
-    </tr>
-</table>
+| Method         | Description                        |
+| -------------- | ---------------------------------- |
+| `setItem()`    | Add key and value to local storage |
+| `getItem()`    | Retrieve a value by the key        |
+| `removeItem()` | Remove an item by key              |
+| `clear()`      | Clear all storage                  |
 
 You can test out what's in local storage by going to the JavaScript console and typing it in. Actually do this, don't just read it.
 
@@ -89,7 +58,9 @@ You can test out what's in local storage by going to the JavaScript console and 
 localStorage
 ```
 
-    Storage {length: 0}
+```terminal
+Storage {length: 0}
+```
 
 Adding some data to `localStorage` is as easy as using the `setItem()` method. I'll use a generic key and value for the names, but they can be any strings.
 
@@ -99,7 +70,9 @@ localStorage.setItem('key', 'value')
 
 Now if you test `localStorage` in the console again, you'll find your new key and value.
 
-    Storage {key: "value", length: 1}
+```terminal
+Storage {key: "value", length: 1}
+```
 
 If you want to get the value for a particular key, you'll use the `getItem()` method.
 
@@ -107,7 +80,9 @@ If you want to get the value for a particular key, you'll use the `getItem()` me
 localStorage.getItem('key')
 ```
 
-    value
+```terminal
+value
+```
 
 Finally, you can remove the data with `removeItem()`.
 
@@ -127,7 +102,7 @@ Now we can begin setting up the app.
 
 First, we'll create a simple HTML front end with **index.html**. I'm loading in [Primitive](https://taniarascia.github.io/primitive/) (my minimalist CSS framework) for styles, because that's what I always use when I need a quick front end.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <!DOCTYPE html>
@@ -146,23 +121,25 @@ index.html
       <h1>New Tab App</h1>
 
       <!-- more will go here -->
-    
-```
+    </div>
+  </body>
+</html>
 
     <script src="js/scripts.js"></script>
+
   </body>
 </html>
 ```
 
 We're going to set up with three things:
 
-1. **A text input** - for adding new items.
-2. **A list** - where the items will be added on the front end.
-3. **A button** - to clear all items.
+- **A text input** - for adding new items.
+- **A list** - where the items will be added on the front end.
+- **A button** - to clear all items.
 
 Add this code where the "more will go here" comment is.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <form>
@@ -189,7 +166,7 @@ Before we integrate this into local storage, let's just get the form and list wo
 
 First, I'm just going to set up some variables for the elements on the page - the form, the unordered list, the button, and the text input.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const form = document.querySelector('form')
@@ -200,7 +177,7 @@ const input = document.getElementById('item')
 
 Next, I'm going to make a function that creates an `li` element, since I'll be doing that more than once. I'll call the function `liMaker()`. It just creates an `li` element, sets the text of the element to the parameter, and appends the list item to the `ul`.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const liMaker = text => {
@@ -214,7 +191,7 @@ I'm going to add an event listener to the form that watches for a submit event -
 
 Instead, the form will submit the value of the `input`. We're going to call the `liMaker()` function, which will create the item with the text of the `input` value and append it to the DOM. Finally, we'll set the `input` value to an empty string so you don't have to erase the last item entered manually.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 form.addEventListener('submit', function(e) {
@@ -239,33 +216,31 @@ Let's create an empty array to start, and create a `localStorage` key called "it
 
 We can get around this by using `JSON.stringify()` to convert a data array to a string. We'll use `JSON.parse()` to convert the contents of `localStorage` back into something we can work with later in the `data` variable. Put this code below all the constant declarations we set earlier.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // other constant declarations here
-    ...
-    let itemsArray = [];
+let itemsArray = []
 
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    const data = JSON.parse(localStorage.getItem('items'));
+localStorage.setItem('items', JSON.stringify(itemsArray))
+const data = JSON.parse(localStorage.getItem('items'))
 ```
 
 In the form event listener, let's push any new `input` value into the array, then set the `localStorage` to the new, updated value.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // form event listener here
-    ...
-    e.preventDefault();
+e.preventDefault()
 
-    itemsArray.push(input.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
+itemsArray.push(input.value)
+localStorage.setItem('items', JSON.stringify(itemsArray))
 ```
 
 We're going to loop through everything in our `data` variable above, which contains all the existing `localStorage` data in a form JavaScript can understand and work with, and we'll run the `liMaker()` again. This will display all existing stored information on the front end every time we open the app.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 data.forEach(item => {
@@ -275,7 +250,7 @@ data.forEach(item => {
 
 Last, we'll add a click event to the button that will clear all data from `localStorage`, as well as removing every child node from the `ul`.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 button.addEventListener('click', function() {
@@ -288,15 +263,17 @@ button.addEventListener('click', function() {
 
 If all went well, everything will save to storage as well as appear on the front end, which you can check by testing `localStorage` in the console.
 
-    Storage {items:
-    "["Welcome","to","the","Thunderdome"]",
-     length: 1}
+```terminal
+Storage {items:
+"["Welcome","to","the","Thunderdome"]",
+  length: 1}
+```
 
 There's one final problem: after closing the browser or reloading the page, all the existing information in `localStorage` is gone, and nothing remains on the front end. Why?
 
 Our `itemsArray` is being reset to an empty array every time the script runs. We could fix this by making a conditional statement that checks if `localStorage` already exists, such as in the below example.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 let items
@@ -310,7 +287,7 @@ if (localStorage.getItem('items')) {
 
 A little more concise would be to use a [ternary operator](https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript#ternary-operator) to do the same thing.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
@@ -318,7 +295,7 @@ let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem
 
 With that, our app is complete! Now when you enter in some information and refresh or close the browser window, the data will persist until you manually clear the data in Developer Tools (under Application -> Storage) or by running the `localStorage.clear()` command. Here is the full JavaScript code.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const form = document.querySelector('form')
@@ -359,7 +336,8 @@ button.addEventListener('click', function() {
 
 Here is the demo and source code once again.
 
-[View Demo](https://taniarascia.github.io/sandbox/tab/) [View Source](https://github.com/taniarascia/sandbox/tree/master/tab)
+- [View Demo](https://taniarascia.github.io/sandbox/tab/) 
+- [View Source](https://github.com/taniarascia/sandbox/tree/master/tab)
 
 ## Conclusion
 

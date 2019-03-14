@@ -86,19 +86,12 @@ After a few moments, this will be the output to let you know it's successful.
 
 ```terminal
 ==> box: Loading metadata for box 'ubuntu/trusty64'
-        box: URL: https://vagrantcloud.com/ubuntu/trusty64
-    ==> box: Adding box 'ubuntu/trusty64' (v20170619.0.0) for provider: virtualbox
-        box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!
+    box: URL: https://vagrantcloud.com/ubuntu/trusty64
+==> box: Adding box 'ubuntu/trusty64' (v20170619.0.0) for provider: virtualbox
+    box: Downloading: https://app.vagrantup.com/ubuntu/boxes/trusty64/versions/20170619.0.0/providers/virtualbox.box<div style="color:green;">==> box: Successfully added box 'ubuntu/trusty64' (v20170619.0.0) for 'virtualbox'!
 ```
-
-```
-
-
-
 
 Now initialize the new `vagrant` in your **VirtualMachines/ubuntu** directory with the `init` command.
-
-
 
 ```bash
 vagrant init ubuntu/trusty64
@@ -106,9 +99,9 @@ vagrant init ubuntu/trusty64
 
 ```terminal
 `Vagrantfile` has been placed in this directory. You are now
-    ready to `vagrant up` your first virtual environment! Please read
-    the comments in the Vagrantfile as well as documentation on
-    `vagrantup.com` for more information on using Vagrant.
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
 ```
 
 Finally, get Ubuntu up and running with the `vagrant up` command.
@@ -119,11 +112,11 @@ vagrant up
 
 ```terminal
 Bringing machine 'default' up with 'virtualbox' provider...
-    ==> default: Importing base box 'ubuntu/trusty64'...
+==> default: Importing base box 'ubuntu/trusty64'...
 
-    ...
+...
 
-    ==> default: Machine booted and ready!
+==> default: Machine booted and ready!
 ```
 
 When you see "Machine booted and ready!", everything is good to go!
@@ -134,12 +127,12 @@ This is great, and all set up. However, you may have gotten this error:
 
 ```terminal
 ==> default: Checking for guest additions in VM...
-        default: The guest additions on this VM do not match the installed version of
-        default: VirtualBox! In most cases this is fine, but in rare cases it can
-        default: prevent things such as shared folders from working properly. If you see
-        default: shared folder errors, please make sure the guest additions within the
-        default: virtual machine match the version of VirtualBox you have installed on
-        default: your host and reload your VM.
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
 ```
 
 This might not be a problem, but let's make sure it doesn't become a problem. First, use the `halt` method to shut down your currently running Vagrant.
@@ -162,35 +155,21 @@ vagrant reload
 
 Now the errors will be gone.
 
-    <div style="color:green" class="terminal">[default] GuestAdditions 5.1.22 running --- OK.
-
+```terminal
+[default] GuestAdditions 5.1.22 running --- OK.
 ```
 
-
-
-
-
-
 ### What about VirtualBox?
-
-
 
 Looks like we didn't use VirtualBox for anything at all. But go ahead and open up the VirtualBox application. This is what you will see running:
 
 ![](../images/Screen-Shot-2017-07-02-at-4.35.03-PM.png)
 
-
 As you can see, VirtualBox is letting us know that Ubuntu is running properly. We don't really need to know much more about it at this point.
-
-
 
 ## Step 3 - SSH into Ubuntu
 
-
-
 Now we have this Ubuntu operating system set up on our computer, but how do we access it? Just like you would access any remote Linux server through the command line, you will do the same with Vagrant. Run `vagrant ssh` to securely enter the Ubuntu virtual machine.
-
-
 
 ```bash
 vagrant ssh
@@ -201,108 +180,46 @@ When you login, you will see something along these lines.
 ```terminal
 Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-123-generic x86_64)
 
-     * Documentation:  https://help.ubuntu.com/
+  * Documentation:  https://help.ubuntu.com/
 
-      System information as of Sun Jul  2 UTC 2017
+  System information as of Sun Jul  2 UTC 2017
 
-      System load:  0.15              Processes:           84
-      Usage of /:   3.6% of 39.34GB   Users logged in:     0
-      Memory usage: 24%               IP address for eth0: 10.0.2.15
-      Swap usage:   0%
+  System load:  0.15              Processes:           84
+  Usage of /:   3.6% of 39.34GB   Users logged in:     0
+  Memory usage: 24%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
 
-      Graph this data and manage this system at:
-        https://landscape.canonical.com/
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
 
-      Get cloud support with Ubuntu Advantage Cloud Guest:
-        http://www.ubuntu.com/business/services/cloud
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
 
-    New release '16.04.2 LTS' available.
-    Run 'do-release-upgrade' to upgrade to it.
+New release '16.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
 
-    vagrant@vagrant-ubuntu-trusty-64:~$
-
+vagrant@vagrant-ubuntu-trusty-64:~$
 ```
-
-
-
 
 You're in! You now have a complete Ubuntu Server installation running through VirtualBox on your computer, and you're connected to it. Type `exit` at any time to exit out of the server, and `vagrant halt` to shut it down.
 
-
-
 ## Conclusion
-
-
 
 Here is a review of the commands we used with Vagrant today.
 
-<table >
-
-<tr >
-Command
-Purpose
-
-<tbody >
-<tr >
-
-<td >vagrant box add ORG/BUILD
-</td>
-
-<td >Add a new virtual machine
-</td>
-</tr>
-<tr >
-
-<td >vagrant init ORG/BUILD
-</td>
-
-<td >Initialize virtual machine
-</td>
-</tr>
-<tr >
-
-<td >vagrant up
-</td>
-
-<td >Start up virtual machine
-</td>
-</tr>
-<tr >
-
-<td >vagrant reload
-</td>
-
-<td >Restart virtual machine
-</td>
-</tr>
-<tr >
-
-<td >vagrant halt
-</td>
-
-<td >Shut down virtual machine
-</td>
-</tr>
-<tr >
-
-<td >vagrant ssh
-</td>
-
-<td >SSH into the virtual machine
-</td>
-</tr>
-</tbody>
-</table>
-
-
+| Command                   | Purpose                      |
+| ------------------------- | ---------------------------- |
+| vagrant box add ORG/BUILD | Add a new virtual machine    |
+| vagrant init ORG/BUILD    | Initialize virtual machine   |
+| vagrant up                | Start up virtual machine     |
+| vagrant reload            | Restart virtual machine      |
+| vagrant halt              | Shut down virtual machine    |
+| vagrant ssh               | SSH into the virtual machine |
 
 > **Note:** All these commands must be done locally from the directory in which you want the virtual machine to be installed, except `vagrant box add`.
-
-
 
 As a review, VirtualBox is the software that runs the operating system, and vagrant will give you the methods to manage them. You can also think of vagrant as a package manager that has a repository of different operating systems to use.
 
 Vagrant and VirtualBox can be used to create a local environment that matches the production environment of your server.
 
 Move on to Part 2: [Setting up LAMP (Linux, Apache, MySQL, and PHP)](/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/) from the Ubuntu Server environment we created, and how to access it from your local computer.
-```

@@ -23,7 +23,6 @@ And the JavaScript, modified from an answer on [this StackOverflow post](https:/
 
 ```js
 var host = 'https://' + document.location.hostname
-
 var pages = [host + '/index.html', host + '/index2.html', host + '/index3.html']
 
 var behind = document.getElementById('behind')

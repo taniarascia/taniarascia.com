@@ -1,6 +1,6 @@
 ---
 date: 2018-02-07
-title: "How to Create a Memory Game (ala Super Mario 3) with Plain JavaScript"
+title: 'How to Create a Memory Game (ala Super Mario 3) with Plain JavaScript'
 template: post
 thumbnail: '../thumbnails/mario.png'
 slug: how-to-create-a-memory-game-super-mario-with-plain-javascript
@@ -30,7 +30,8 @@ The premise of the game is to have a grid of 24 face-down cards. The card faces 
 
 Click the demo below to get an understanding of what we'll be creating.
 
-[View Demo](https://taniarascia.github.io/memory/) [View Source](https://github.com/taniarascia/memory)
+- [View Demo](https://taniarascia.github.io/memory/)
+- [View Source](https://github.com/taniarascia/memory)
 
 ## Planning
 
@@ -55,7 +56,7 @@ Each instruction will be a version. Version 0.1, 0.2, 0.3, until reaching versio
 
 First, let's create the setup. We'll create **index.html**, which will just be a regular HTML skeleton putting in JS and CSS. The entirety of the app will be contained in the `game` div, so this file won't change at all.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <!DOCTYPE html>
@@ -71,17 +72,19 @@ index.html
   </head>
 
   <body>
-    <div id="game">
-```
+    <div id="game"></div>
+  </body>
+</html>
 
     <script src="js/script.js"></script>
+
   </body>
 </html>
 ```
 
 We'll add some basic styles, just enough for the app to make sense. No frameworks or unnecessary code here, or even any preprocessors. This is not a CSS tutorial so you should have an idea of what's going on here already, but I'm just creating a flex grid with cards. Each card is 150x150, and has background properties because we'll be adding the card images soon as background images. This CSS will be adjusted as we add a few more complex features to the code, like card flipping, but for now it's fine.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 *,
@@ -116,11 +119,11 @@ body {
 
 Now our HTML and CSS is set up, we'll focus on going through the steps with JavaScript.
 
-### 0.1 - Display 12 cards
+### Display 12 cards
 
 The first step is to display 12 cards, each with a different value. To do this, I'm going to create an array of objects, and put it in the `cardsArray` variable. Each object will contain a name and an image.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // Card data
@@ -178,7 +181,7 @@ const cardsArray = [
 
 Now we have 12 cards, but how do we display them? First, we'll grab the element I said would be the root for the entire app - the div with an id of `game`. We'll create a new `section` element, give it the `grid` class, and append it to the DOM inside our `game` root div.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // Grab the div with an id of root
@@ -200,7 +203,7 @@ So far all this did was add a section to the DOM.
 
 Now we want to get the images to display on the front end. We'll loop through each item in `cardsArray` with `forEach()`, create a new `card` div for each object, and set the `data-name` attribute and `background-image` style property of the div. We will then append that div to the grid. This will give us 12 divs in total.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // For each item in the cardsArray array...
@@ -232,13 +235,13 @@ Well, that was a lot of work for step one, but now we have it! You will have 12 
 
 > So, what's the point of the `data-name` attribute? [Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow us to store extra data in an HTML element. Any non-standard attribute should begin with `data-`.
 
-[Version 0.1 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.1.js)
+- [Version 0.1 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.1.js)
 
-### 0.2 - Duplicate the cards to have 2 sets of 12
+### Duplicate the cards to have 2 sets of 12
 
 Step two is much simpler than step one. Now we're going to duplicate the `cardsArray` array, then loop through that instead. First, below your array, create a `gameGrid` variable, and duplicate the array by using `concat()`.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // Duplicate array to create a match for each card
@@ -247,27 +250,27 @@ let gameGrid = cardsArray.concat(cardsArray)
 
 Then replace `cardsArray` with `gameGrid` in the `forEach()` loop.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // For each item in the gameGrid array...
-    gameGrid.forEach(item => {
-      // ...
+gameGrid.forEach(item => {
+  // ...
 ```
 
 And there you have it.
 
 ![](../images/Screen-Shot-2018-02-07-at-11.27.02-AM.png)
 
-[Version 0.2 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.2.js)
+- [Version 0.2 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.2.js)
 
-### 0.3 - Randomize the display of cards
+### Randomize the display of cards
 
 Shuffle the array using `sort()` and `Math.random()`. Don't get how that works? [Here](https://forum.freecodecamp.org/t/how-does-math-random-work-to-sort-an-array/151540).
 
 Place this code right after the declaration of `gameGrid`.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // Randomize game grid on each load
@@ -278,13 +281,13 @@ Have fun refreshing the grid over and over again.
 
 ![](../images/Screen-Shot-2018-02-07-at-11.32.52-AM.png)
 
-[Version 0.3 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.3.js)
+- [Version 0.3 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.3.js)
 
-### 0.4 - Add selected style for selected cards
+### Add selected style for selected cards
 
 Now we should be able to select cards. I'm just going to add a simple CSS style so we can see selected items easily.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 .selected {
@@ -294,7 +297,7 @@ style.css
 
 We'll add an event listener to the entire grid. Anytime an element is clicked, the `selected` class will be applied to it. Add this code to the bottom of `script.js`
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // Add event listener to grid
@@ -316,13 +319,13 @@ Now every selected div will have a blue border, as defined by the `selected` CSS
 
 ![](../images/Screen-Shot-2018-02-07-at-11.42.10-AM.png)
 
-[Version 0.4 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.4.js)
+- [Version 0.4 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.4.js)
 
-### 0.5 - Only allow two cards to be selected at a time
+### Only allow two cards to be selected at a time
 
 We need to only allow two selections at a time, because we're testing if two selected cards match. In order to do this, we'll need to store the guesses and counter somewhere. First we'll just store the count.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 let count = 0
@@ -330,7 +333,7 @@ let count = 0
 
 Now we'll modify the event listener to have an `if` statement that counts to two, and only adds `selected` to two cards. We'll put our code to add the selected CSS inside the statement.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // ...
@@ -343,13 +346,13 @@ if (count < 2) {
 
 ![](../images/Screen-Shot-2018-02-07-at-1.44.05-PM.png)
 
-[Version 0.5 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.5.js)
+- [Version 0.5 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.5.js)
 
-### 0.6 - Determine if two selected cards are a match and hide them
+### Determine if two selected cards are a match and hide them
 
 Let's create some CSS for matches. I'm going to give them a red border to differentiate them, and remove the background image. Why would I do that instead of just removing them from the DOM? Because we need to preserve the space they used to be - otherwise, all the elements would shift and it would no longer be a proper memory game.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 .match {
@@ -360,7 +363,7 @@ style.css
 
 Where we just had a `count` variable before, we'll add a place to store the first and second guess as well.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 let firstGuess = ''
@@ -370,7 +373,7 @@ let count = 0
 
 I'm going to make a function for matching elements. This will just loop through all `selected` elements when called, then add the `match` class.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 // Add match CSS
@@ -384,7 +387,7 @@ const match = () => {
 
 Now I have to call the `match()` function at the right time in the code. Back in our event listener, I'm going to assign the first and second guess to their respective variables. If they're both not empty and match, the `match()` function will be called.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 grid.addEventListener('click', function(event) {
@@ -418,7 +421,7 @@ Now, the guesses don't reset, so we can only select or match one thing at a time
 
 Now there's a problem here - can you guess what it is? If I select the same element twice, it will consider it a match, because they both have the same `data-name` property. I shouldn't be able to select the same element twice, so we'll have to fix this before moving on. First, I'll add a `previousTarget` variable.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 let previousTarget = null
@@ -426,22 +429,22 @@ let previousTarget = null
 
 I'll assign the clicked value to `prevousTarget` after the first click.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 if (firstGuess !== '' && secondGuess !== '') {
-        if (firstGuess === secondGuess) {
-          match();
-        }
-      }
-      // Set previous target to clicked
-      previousTarget = clicked;
+    if (firstGuess === secondGuess) {
+      match();
     }
+  }
+  // Set previous target to clicked
+  previousTarget = clicked;
+}
 ```
 
 Finally, I'll add that check to our `return` statement at the top of the counter.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 if (clicked.nodeName === 'SECTION' || clicked === previousTarget) {
@@ -451,15 +454,15 @@ if (clicked.nodeName === 'SECTION' || clicked === previousTarget) {
 
 Now a second click on the same element will be ignored.
 
-[Version 0.6 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.6.js)
+- [Version 0.6 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.6.js)
 
-### 0.7 - Reset guess count after 2
+### Reset guess count after 2
 
 Right now, we only get two guesses. If they're a match, the match style will show. If they're not, the regular selected style will show. We want to allow multiple guesses. We'll have to do this by resetting the guess count after two guesses, whether they matched or not.
 
 First, I'll create a function to reset the guesses. This will set all counts and guesses back to their original values, as well as removing the selected CSS.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 const resetGuesses = () => {
@@ -476,31 +479,31 @@ const resetGuesses = () => {
 
 Then I'll add the `resetGuesses()` function to the match checker, on success or fail.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 if (firstGuess === secondGuess) {
-      match();
-      resetGuesses();
-    } else {
-        resetGuesses();
-      }
-    }
+  match();
+  resetGuesses();
+} else {
+    resetGuesses();
+  }
+}
 ```
 
 Now you can make multiple matches. You'll notice that the select style will disappear immediately if it's not a match, but this is fine because we haven't set any delays to allow it to display longer.
 
 ![](../images/Screen-Shot-2018-02-07-at-2.14.01-PM.png)
 
-[Version 0.7 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.7.js)
+- [Version 0.7 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.7.js)
 
-### 0.8 - Add delay to selections
+### Add delay to selections
 
 Right now, everything happens immediately. We want a delay after we make a selection so the user can see what their selection was before the card is hidden again. Right now it doesn't matter because everything is visible, but we can just take care of it before putting the final style touches on the cards.
 
 We're going to use `setTimeout()` to make the delays. First I'll set my delay time, which I'm choosing to be 1200 milliseconds, or 1.2 seconds.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 let delay = 1200
@@ -508,7 +511,7 @@ let delay = 1200
 
 All I'm going to do now is put the functions from before in the `setTimeout()`, with the `delay` variable as the amount of time for the timeout to last. The functions become callbacks now, which are functions used as arguments, and they no longer need the parentheses.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 if (firstGuess === secondGuess) {
@@ -523,9 +526,9 @@ Now we can see selections and matches for 1.2 seconds before they disappear.
 
 ![](../images/Screen-Shot-2018-02-07-at-2.43.35-PM.png)
 
-[Version 0.8 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.8.js)
+- [Version 0.8 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.8.js)
 
-### 0.9 - Show back of card initially and flip on select
+### Show back of card initially and flip on select
 
 When I made this the first time around, I had the cards hidden the whole time, which made testing unnecessarily difficult. This time I decided to hide the cards as one of the last steps, once all the functionality is there.
 
@@ -548,7 +551,7 @@ First, our cards have all consisted of one div right now. In order to implement 
 
 We'll modify the card creation loop to add the front and back elements.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 gameGrid.forEach(item => {
@@ -575,7 +578,7 @@ gameGrid.forEach(item => {
 
 Where we had `clicked.dataset.name` and `clicked.classList.add`, we'll have to add `parentNode` now, since we'll be clicking on an inner div (`front` or `back`) and the data-name is still on the outer div (`card`).
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 if (count === 1) {
@@ -591,7 +594,7 @@ if (count === 1) {
 
 Now we're going to go back to CSS for a moment. To get the flip to work, we're going to set each `card` as relative, and the `back` and `front` as absolute. All three will have the same height and width.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 .card {
@@ -617,7 +620,7 @@ style.css
 
 The front of each card (technically the back if you're thinking like a deck of cards, but I'm calling it the front because it's the default view) will be a question mark box.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 .front {
@@ -627,7 +630,7 @@ style.css
 
 The back will have all the properties for the background image to style property, and it will be rotated for the flip animation.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 .back {
@@ -641,7 +644,7 @@ style.css
 
 Selected items will be rotated, and matched items will become white, which will override the background image applied through JavaScript.
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 .selected {
@@ -657,13 +660,13 @@ And that's all the CSS.
 
 ![](../images/Screen-Shot-2018-02-07-at-3.16.44-PM.png)
 
-[Version 0.9 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.9.js)
+- [Version 0.9 Source](https://gist.githubusercontent.com/taniarascia/a3b550d568f3e6b693e89786eb333988/raw/ee34cc6f77fce6399e954c779b274ffa23327045/memory-0.9.js)
 
-### 1.0 - Finished game!
+### Finished game!
 
 Can you find any problems with the current game? Right now, I see that I can flip over already matched items, so I'm going to disable that in the return statement at the top.
 
-script.js
+<div class="filename">script.js</div>
 
 ```js
 if (

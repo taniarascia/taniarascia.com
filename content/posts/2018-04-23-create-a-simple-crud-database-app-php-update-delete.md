@@ -17,11 +17,8 @@ In [the first part of this tutorial series](/create-a-simple-database-app-connec
 The goals we completed in part one:
 
 - Write an installer script to initialize a new MySQL database and table with structure.
-
 - Connect to a MySQL database with PHP using the PDO (PHP Data Objects) method.
-
 - **Create** - Add new entries to a database through an HTML form with PHP.
-
 - **Read** - View all entries in a database and print them to an HTML document.
 
 I promised a part two, and here it is! In this tutorial, we will learn how to modify existing entries (`update`) and permanently remove existing entires (`delete`).
@@ -33,11 +30,8 @@ If you haven't read part one but you're interested in learning how to manipulate
 Everything you need to know to use and understand this tutorial is in [Create a Simple CRUD Database App: Connecting to MySQL with PHP (Part 1: Create, Read)](/create-a-simple-database-app-connecting-to-mysql-with-php/). To reiterate, you must have:
 
 - A basic knowledge of HTML
-
 - A basic knowledge of PHP syntax and code structure
-
 - A local PHP and MySQL environment (MAMP, XAMPP, Vagrant, or other)
-
 - A database management program (Sequel Pro for Mac, SQLYog for Windows)
 
 - [The codebase](https://github.com/taniarascia/pdo/tree/feba19a43e63c617c95a1f6e68825f6e3086336c) of the PDO App we created. (This link leads to the last commit prior to this article being written)
@@ -45,9 +39,7 @@ Everything you need to know to use and understand this tutorial is in [Create a 
 #### Goals
 
 - Create a page that lists all users with an edit button next to their name
-
 - Dynamically create a unique page for editing any user's data
-
 - Create a page that list all users with a delete button next to their name
 
 ## Step 1: Set up the environment
@@ -64,19 +56,18 @@ We left off in part one with **create.php** and **read.php**. Now we're going to
 
 In **index.php**, add a link to **update.php**.
 
-public/index.php
+<div class="filename">public/index.php</div>
 
 ```php
 <?php include "templates/header.php"; ?>
 
-    <ul>
-        <li><a href="create.php"><strong>Create</strong></a> - add a user</li>
-        <li><a href="read.php"><strong>Read</strong></a> - find a user</li>
-        <li><a href="update.php"><strong>Update</strong></a> - edit a user</li>
-    </ul>
+<ul>
+    <li><a href="create.php"><strong>Create</strong></a> - add a user</li>
+    <li><a href="read.php"><strong>Read</strong></a> - find a user</li>
+    <li><a href="update.php"><strong>Update</strong></a> - edit a user</li>
+</ul>
 
-    <?php include "templates/footer.php"; ?>
-
+<?php include "templates/footer.php"; ?>
 ```
 
 ![](../images/Screen-Shot-2018-04-21-at-9.26.37-PM.png)
@@ -96,79 +87,79 @@ This is the simplest possible SQL command we can execute with PDO - simply selec
 ```php
 $sql = "SELECT * FROM users";
 
-    $statement = $connection->prepare($sql);
-    $statement->execute();
+$statement = $connection->prepare($sql);
+$statement->execute();
 
-    $result = $statement->fetchAll();
+$result = $statement->fetchAll();
 ```
 
 Using that, we can built out our `try/catch` block at the top of **update.php**.
 
-public/update.php
+<div class="filename">public/update.php</div>
 
 ```php
 <?php
 
-    /**
-     * List all users with a link to edit
-     */
+/**
+  * List all users with a link to edit
+  */
 
-    try {
-      require "../config.php";
-      require "../common.php";
+try {
+  require "../config.php";
+  require "../common.php";
 
-      $connection = new PDO($dsn, $username, $password, $options);
+  $connection = new PDO($dsn, $username, $password, $options);
 
-      $sql = "SELECT * FROM users";
+  $sql = "SELECT * FROM users";
 
-      $statement = $connection->prepare($sql);
-      $statement->execute();
+  $statement = $connection->prepare($sql);
+  $statement->execute();
 
-      $result = $statement->fetchAll();
+  $result = $statement->fetchAll();
 
-    } catch(PDOException $error) {
-      echo $sql . "<br>" . $error->getMessage();
-    }
-    ?>
+} catch(PDOException $error) {
+  echo $sql . "<br>" . $error->getMessage();
+}
+?>
 ```
 
 Right below this code, we'll print the HTML table with the data from our `SELECT` statement.
 
-public/update.php
+<div class="filename">public/update.php</div>
 
 ```php
 <?php require "templates/header.php"; ?>
 
-    <h2>Update users</h2>
+<h2>Update users</h2>
 
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email Address</th>
-          <th>Age</th>
-          <th>Location</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach ($result as $row) : ?>
-        <tr>
-          <td><?php echo escape($row["id"]); ?></td>
-          <td><?php echo escape($row["firstname"]); ?></td>
-          <td><?php echo escape($row["lastname"]); ?></td>
-          <td><?php echo escape($row["email"]); ?></td>
-          <td><?php echo escape($row["age"]); ?></td>
-          <td><?php echo escape($row["location"]); ?></td>
-          <td><?php echo escape($row["date"]); ?> </td>
-      </tr>
-      <?php endforeach; ?>
-      </tbody>
-    </table>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Address</th>
+      <th>Age</th>
+      <th>Location</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($result as $row) : ?>
+    <tr>
+      <td><?php echo escape($row["id"]); ?></td>
+      <td><?php echo escape($row["firstname"]); ?></td>
+      <td><?php echo escape($row["lastname"]); ?></td>
+      <td><?php echo escape($row["email"]); ?></td>
+      <td><?php echo escape($row["age"]); ?></td>
+      <td><?php echo escape($row["location"]); ?></td>
+      <td><?php echo escape($row["date"]); ?> </td>
+  </tr>
+  <?php endforeach; ?>
+  </tbody>
+</table>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 ```
 
 Before anything will show up here, we'll have to go back to **create.php** and add a few users, which I just did for this example.
@@ -183,7 +174,7 @@ Up until now, this is all the same stuff we covered in **read.php**. The interes
 
 Below Date in the `thead`, let's add a `th` for Edit.
 
-```php
+```html
 <th>Edit</th>
 ```
 
@@ -201,67 +192,67 @@ If we want to access Dinesh, the user with an `id` of `3`, our url will be **upd
 
 Here is the final code for **update.php**.
 
-public/update.php
+<div class="filename">public/update.php</div>
 
 ```php
 <?php
 
-    /**
-     * List all users with a link to edit
-     */
+/**
+  * List all users with a link to edit
+  */
 
-    try {
-      require "../config.php";
-      require "../common.php";
+try {
+  require "../config.php";
+  require "../common.php";
 
-      $connection = new PDO($dsn, $username, $password, $options);
+  $connection = new PDO($dsn, $username, $password, $options);
 
-      $sql = "SELECT * FROM users";
+  $sql = "SELECT * FROM users";
 
-      $statement = $connection->prepare($sql);
-      $statement->execute();
+  $statement = $connection->prepare($sql);
+  $statement->execute();
 
-      $result = $statement->fetchAll();
-    } catch(PDOException $error) {
-      echo $sql . "<br>" . $error->getMessage();
-    }
-    ?>
-    <?php require "templates/header.php"; ?>
+  $result = $statement->fetchAll();
+} catch(PDOException $error) {
+  echo $sql . "<br>" . $error->getMessage();
+}
+?>
+<?php require "templates/header.php"; ?>
 
-    <h2>Update users</h2>
+<h2>Update users</h2>
 
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email Address</th>
-          <th>Age</th>
-          <th>Location</th>
-          <th>Date</th>
-          <th>Edit</th>
-        </tr>
-      </thead>
-        <tbody>
-        <?php foreach ($result as $row) : ?>
-          <tr>
-            <td><?php echo escape($row["id"]); ?></td>
-            <td><?php echo escape($row["firstname"]); ?></td>
-            <td><?php echo escape($row["lastname"]); ?></td>
-            <td><?php echo escape($row["email"]); ?></td>
-            <td><?php echo escape($row["age"]); ?></td>
-            <td><?php echo escape($row["location"]); ?></td>
-            <td><?php echo escape($row["date"]); ?> </td>
-            <td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
-          </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Address</th>
+      <th>Age</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+    <tbody>
+    <?php foreach ($result as $row) : ?>
+      <tr>
+        <td><?php echo escape($row["id"]); ?></td>
+        <td><?php echo escape($row["firstname"]); ?></td>
+        <td><?php echo escape($row["lastname"]); ?></td>
+        <td><?php echo escape($row["email"]); ?></td>
+        <td><?php echo escape($row["age"]); ?></td>
+        <td><?php echo escape($row["location"]); ?></td>
+        <td><?php echo escape($row["date"]); ?> </td>
+        <td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+      </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 
-    <?php require "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
 ```
 
 ![](../images/Screen-Shot-2018-04-21-at-9.31.39-PM.png)
@@ -280,27 +271,27 @@ Just as we've used the superglobal `$_POST` to detect what data has been posted 
 
 Let's create **update-single.php**, load in the required files, and make an `if/else` statement. We'll check if `id` is found in the URL, otherwise we'll just show a brief error message and close the script.
 
-public/update-single.php
+<div class="filename">public/update-single.php</div>
 
 ```php
 <?php
 
-    /**
-     * Use an HTML form to edit an entry in the
-     * users table.
-     *
-     */
+/**
+  * Use an HTML form to edit an entry in the
+  * users table.
+  *
+  */
 
-    require "../config.php";
-    require "../common.php";
+require "../config.php";
+require "../common.php";
 
-    if (isset($_GET['id'])) {
-      echo $_GET['id']; // for testing purposes
-    } else {
-        echo "Something went wrong!";
-        exit;
-    }
-    ?>
+if (isset($_GET['id'])) {
+  echo $_GET['id']; // for testing purposes
+} else {
+    echo "Something went wrong!";
+    exit;
+}
+?>
 ```
 
 Now if I click on Dinesh...
@@ -311,27 +302,27 @@ The page will print out `3`, as seen in the URL. Great! Now that we know that's 
 
 We're still working with `SELECT` statements here, so we're doing exactly what we did previously with the `location` variable in **read.php**. We'll assign `$_GET['id']` to a variable, bind it to the name of `id`, and look for the id with the `WHERE` clause.
 
-public/update-single.php
+<div class="filename">public/update-single.php</div>
 
 ```php
 if (isset($_GET['id'])) {
-      try {
-        $connection = new PDO($dsn, $username, $password, $options);
-        $id = $_GET['id'];
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
+    $id = $_GET['id'];
 
-        $sql = "SELECT * FROM users WHERE id = :id";
-        $statement = $connection->prepare($sql);
-        $statement->bindValue(':id', $id);
-        $statement->execute();
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $statement = $connection->prepare($sql);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
 
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
-      } catch(PDOException $error) {
-          echo $sql . "<br>" . $error->getMessage();
-      }
-    } else {
-      echo "Something went wrong!";
-      exit;
-    }
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+  } catch(PDOException $error) {
+      echo $sql . "<br>" . $error->getMessage();
+  }
+} else {
+  echo "Something went wrong!";
+  exit;
+}
 ```
 
 Now we want to display the data, but it's going to be a little different than the previous times we printed out data, because we want to be able to update this data as well. How will we update it? With forms and inputs, just like we `INSERT` and `SELECT` data.
@@ -342,56 +333,56 @@ We'll start by writing a `foreach` loop, but instead of returning the entire ass
 
 We're going to put the entire loop inside a form with a submit button.
 
-public/update-single.php
+<div class="filename">public/update-single.php</div>
 
 ```php
 <?php require "templates/header.php"; ?>
 
-    <h2>Edit a user</h2>
+<h2>Edit a user</h2>
 
-    <form method="post">
-      <?php foreach ($user as $key => $value) : ?>
-        // print data here
-      <?php endforeach; ?>
-      <input type="submit" name="submit" value="Submit">
-    </form>
+<form method="post">
+  <?php foreach ($user as $key => $value) : ?>
+    // print data here
+  <?php endforeach; ?>
+  <input type="submit" name="submit" value="Submit">
+</form>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 
-    <?php require "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
 ```
 
 Inside the `foreach`, we're making a form which will consist of labels and inputs. Each label will be a column name from the database.
 
 ```php
 <label for="<?php echo $key; ?>">
-      <?php echo ucfirst($key); ?>
-    </label>
+  <?php echo ucfirst($key); ?>
+</label>
 ```
 
 Each value will be the value of an input. We'll be using the key as the `name` and `id` of the input, and the value as the `value`. I'm also adding a [ternary](http://php.net/manual/en/language.operators.comparison.php) (quick conditional statement) to make the input "readonly" if the key name is `id`, as it should not be editable.
 
 ```php
 <input
-      type="text"
-      name="<?php echo $key; ?>"
-      id="<?php echo $key; ?>"
-      value="<?php echo escape($value); ?>"
-      <?php echo ($key === 'id' ? 'readonly' : null); ?>>
+  type="text"
+  name="<?php echo $key; ?>"
+  id="<?php echo $key; ?>"
+  value="<?php echo escape($value); ?>">
+  <?php echo ($key === 'id' ? 'readonly' : null); ?>>
 ```
 
 Now the entire form looks like this.
 
-public/update-single.php
+<div class="filename">public/update-single.php</div>
 
 ```php
 <form method="post">
-        <?php foreach ($user as $key => $value) : ?>
-          <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
-    	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
-        <?php endforeach; ?>
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <?php foreach ($user as $key => $value) : ?>
+      <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
+      <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
+    <?php endforeach; ?>
+    <input type="submit" name="submit" value="Submit">
+</form>
 ```
 
 Okay, that was quite a bit of work, but now look what we have!
@@ -404,118 +395,118 @@ At the top of **update-single.php**, right below the two required files, check i
 
 ```php
 if (isset($_POST['submit'])) {
-      try {
-        $connection = new PDO($dsn, $username, $password, $options);
-        // run update query
-      } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-      }
-    }
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
+    // run update query
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
+}
 ```
 
 We want to use the `UPDATE` clause to `SET` each value to the new value. The literal code for our case looks like this:
 
 ```sql
-UPDATE users
-      SET id = :id,
-        firstname = :firstname,
-        lastname = :lastname,
-        email = :email,
-        age = :age,
-        location = :location,
-        date = :date
-      WHERE id = :id
+   UPDATE users
+     SET id = :id,
+         firstname = :firstname,
+         lastname = :lastname,
+         email = :email,
+         age = :age,
+         location = :location,
+         date = :date
+   WHERE id = :id
 ```
 
 That's all we need to update the values now! I'm just going to quickly add in some code to display that everything has been updated on the front end.
 
 ```php
 <?php if (isset($_POST['submit']) && $statement) : ?>
-    	> <?php echo escape($_POST['firstname']); ?> successfully updated.
-    <?php endif; ?>
+  <?php echo escape($_POST['firstname']); ?> successfully updated.
+<?php endif; ?>
 ```
 
 Here is the entirety of the file we just created.
 
-public/update-single.php
+<div class="filename">public/update-single.php</div>
 
 ```php
 <?php
-    /**
-     * Use an HTML form to edit an entry in the
-     * users table.
-     *
-     */
-    require "../config.php";
-    require "../common.php";
-    if (isset($_POST['submit'])) {
-      try {
-        $connection = new PDO($dsn, $username, $password, $options);
-        $user =[
-          "id"        => $_POST['id'],
-          "firstname" => $_POST['firstname'],
-          "lastname"  => $_POST['lastname'],
-          "email"     => $_POST['email'],
-          "age"       => $_POST['age'],
-          "location"  => $_POST['location'],
-          "date"      => $_POST['date']
-        ];
+/**
+  * Use an HTML form to edit an entry in the
+  * users table.
+  *
+  */
+require "../config.php";
+require "../common.php";
+if (isset($_POST['submit'])) {
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
+    $user =[
+      "id"        => $_POST['id'],
+      "firstname" => $_POST['firstname'],
+      "lastname"  => $_POST['lastname'],
+      "email"     => $_POST['email'],
+      "age"       => $_POST['age'],
+      "location"  => $_POST['location'],
+      "date"      => $_POST['date']
+    ];
 
-        $sql = "UPDATE users
-                SET id = :id,
-                  firstname = :firstname,
-                  lastname = :lastname,
-                  email = :email,
-                  age = :age,
-                  location = :location,
-                  date = :date
-                WHERE id = :id";
+    $sql = "UPDATE users
+            SET id = :id,
+              firstname = :firstname,
+              lastname = :lastname,
+              email = :email,
+              age = :age,
+              location = :location,
+              date = :date
+            WHERE id = :id";
 
-      $statement = $connection->prepare($sql);
-      $statement->execute($user);
-      } catch(PDOException $error) {
-          echo $sql . "<br>" . $error->getMessage();
-      }
-    }
+  $statement = $connection->prepare($sql);
+  $statement->execute($user);
+  } catch(PDOException $error) {
+      echo $sql . "<br>" . $error->getMessage();
+  }
+}
 
-    if (isset($_GET['id'])) {
-      try {
-        $connection = new PDO($dsn, $username, $password, $options);
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM users WHERE id = :id";
-        $statement = $connection->prepare($sql);
-        $statement->bindValue(':id', $id);
-        $statement->execute();
+if (isset($_GET['id'])) {
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $statement = $connection->prepare($sql);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
 
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
-      } catch(PDOException $error) {
-          echo $sql . "<br>" . $error->getMessage();
-      }
-    } else {
-        echo "Something went wrong!";
-        exit;
-    }
-    ?>
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+  } catch(PDOException $error) {
+      echo $sql . "<br>" . $error->getMessage();
+  }
+} else {
+    echo "Something went wrong!";
+    exit;
+}
+?>
 
-    <?php require "templates/header.php"; ?>
+<?php require "templates/header.php"; ?>
 
-    <?php if (isset($_POST['submit']) && $statement) : ?>
-    	> <?php echo escape($_POST['firstname']); ?> successfully updated.
-    <?php endif; ?>
+<?php if (isset($_POST['submit']) && $statement) : ?>
+  <?php echo escape($_POST['firstname']); ?> successfully updated.
+<?php endif; ?>
 
-    <h2>Edit a user</h2>
+<h2>Edit a user</h2>
 
-    <form method="post">
-        <?php foreach ($user as $key => $value) : ?>
-          <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
-    	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
-        <?php endforeach; ?>
-        <input type="submit" name="submit" value="Submit">
-    </form>
+<form method="post">
+    <?php foreach ($user as $key => $value) : ?>
+      <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
+      <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
+    <?php endforeach; ?>
+    <input type="submit" name="submit" value="Submit">
+</form>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 
-    <?php require "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
 ```
 
 As a test, I updated the age value to make sure it worked.
@@ -528,7 +519,7 @@ Now that we've completed the update process, it's time to move on to deleting, w
 
 Back in **index.php**, let's add an entry for `delete`. We could put this in the update file, but for the sake of continuity and finishing the acronym, let's just make it into a new file.
 
-public/index.php
+<div class="filename">public/index.php</div>
 
 ```html
 <ul>
@@ -560,82 +551,82 @@ public/delete.php
 ```php
 <?php
 
-    /**
-     * Delete a user
-     */
+/**
+  * Delete a user
+  */
 
-    require "../config.php";
-    require "../common.php";
+require "../config.php";
+require "../common.php";
 
-    if (isset($_GET["id"])) {
-      try {
-        $connection = new PDO($dsn, $username, $password, $options);
+if (isset($_GET["id"])) {
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
 
-        $id = $_GET["id"];
+    $id = $_GET["id"];
 
-        $sql = "DELETE FROM users WHERE id = :id";
+    $sql = "DELETE FROM users WHERE id = :id";
 
-        $statement = $connection->prepare($sql);
-        $statement->bindValue(':id', $id);
-        $statement->execute();
+    $statement = $connection->prepare($sql);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
 
-        $success = "User successfully deleted";
-      } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-      }
-    }
+    $success = "User successfully deleted";
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
+}
 
-    try {
-      $connection = new PDO($dsn, $username, $password, $options);
+try {
+  $connection = new PDO($dsn, $username, $password, $options);
 
-      $sql = "SELECT * FROM users";
+  $sql = "SELECT * FROM users";
 
-      $statement = $connection->prepare($sql);
-      $statement->execute();
+  $statement = $connection->prepare($sql);
+  $statement->execute();
 
-      $result = $statement->fetchAll();
-    } catch(PDOException $error) {
-      echo $sql . "<br>" . $error->getMessage();
-    }
-    ?>
-    <?php require "templates/header.php"; ?>
+  $result = $statement->fetchAll();
+} catch(PDOException $error) {
+  echo $sql . "<br>" . $error->getMessage();
+}
+?>
+<?php require "templates/header.php"; ?>
 
-    <h2>Delete users</h2>
+<h2>Delete users</h2>
 
-    <?php if ($success) echo $success; ?>
+<?php if ($success) echo $success; ?>
 
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email Address</th>
-          <th>Age</th>
-          <th>Location</th>
-          <th>Date</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach ($result as $row) : ?>
-        <tr>
-          <td><?php echo escape($row["id"]); ?></td>
-          <td><?php echo escape($row["firstname"]); ?></td>
-          <td><?php echo escape($row["lastname"]); ?></td>
-          <td><?php echo escape($row["email"]); ?></td>
-          <td><?php echo escape($row["age"]); ?></td>
-          <td><?php echo escape($row["location"]); ?></td>
-          <td><?php echo escape($row["date"]); ?> </td>
-          <td><a href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
-        </tr>
-      <?php endforeach; ?>
-      </tbody>
-    </table>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Address</th>
+      <th>Age</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($result as $row) : ?>
+    <tr>
+      <td><?php echo escape($row["id"]); ?></td>
+      <td><?php echo escape($row["firstname"]); ?></td>
+      <td><?php echo escape($row["lastname"]); ?></td>
+      <td><?php echo escape($row["email"]); ?></td>
+      <td><?php echo escape($row["age"]); ?></td>
+      <td><?php echo escape($row["location"]); ?></td>
+      <td><?php echo escape($row["date"]); ?> </td>
+      <td><a href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
+    </tr>
+  <?php endforeach; ?>
+  </tbody>
+</table>
 
-    <a href="index.php">Back to home</a>
+<a href="index.php">Back to home</a>
 
-    <?php require "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
 ```
 
 Here's the page after I deleted two users.
@@ -654,30 +645,30 @@ In order to prevent this, we will test the CSRF token in the session against a v
 
 To add this in, we'll go back to **common.php**, generate the CSRF and assign it to `$_SESSION['csrf']`.
 
-common.php
+<div class="filename">common.php</div>
 
 ```php
 session_start();
 
-    if (empty($_SESSION['csrf'])) {
-    	if (function_exists('random_bytes')) {
-    		$_SESSION['csrf'] = bin2hex(random_bytes(32));
-    	} else if (function_exists('mcrypt_create_iv')) {
-    		$_SESSION['csrf'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-    	} else {
-    		$_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
-    	}
-    }
+if (empty($_SESSION['csrf'])) {
+  if (function_exists('random_bytes')) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(32));
+  } else if (function_exists('mcrypt_create_iv')) {
+    $_SESSION['csrf'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+  } else {
+    $_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
+  }
+}
 ```
 
 Now at the top of all our **public/** files, we'll add the following code in:
 
 ```php
 require "../config.php";
-    require "../common.php";
+require "../common.php";
 
-    if (isset($_POST['submit'])) {
-      if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+if (isset($_POST['submit'])) {
+  if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
 ```
 
 Finally, we'll add the value into the input on each form.
@@ -692,7 +683,7 @@ Contribution by [djhayman](https://github.com/taniarascia/pdo/pull/5).
 
 That was a lot of information. If you got lost somewhere along the way, I don't blame you! There's a reason few tutorials venture into this territory. Fortunately, all the code is up on GitHub. All you have to do is clone or download the entire repository into the root of your server, run the install script, and you're good to go with all the CRUD operations!
 
-[View on GitHub](https://github.com/taniarascia/pdo)
+- [View on GitHub](https://github.com/taniarascia/pdo)
 
 I really hope you enjoyed this article - I think learning how to make your own CRUD program is tons of fun, and a struggle if you've found the wrong resource. Since I know it needs to be said again, this is _not_ meant to be a complete, secure, production app. However, it's a great introduction and minimum viable product to getting PDO, PHP, and MySQL up and running and playing together nicely.
 

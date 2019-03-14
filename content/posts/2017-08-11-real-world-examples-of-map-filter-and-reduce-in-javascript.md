@@ -35,7 +35,7 @@ Let's do some problem solving.
 
 Here is an [example project on CodePen](https://codepen.io/taniarascia/pen/brRaVE) you can use. All it requires is an html file (**index.html**) with the prerequisite CSS and JavaScript Leaflet files loading in:
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <link href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" />
@@ -44,7 +44,7 @@ index.html
 
 An html `div` with an id of `map`:
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <div id="map"></div>
@@ -52,7 +52,7 @@ index.html
 
 Some basic CSS (**style.css**) to display the map:
 
-style.css
+<div class="filename">style.css</div>
 
 ```css
 #map {
@@ -63,7 +63,7 @@ style.css
 
 And this JavaScript (**scripts.js**) to load in the map and map data.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Set the map variable
@@ -92,7 +92,7 @@ Again, you can find and fork a working version of the whole thing [right here](h
 
 Now I want to start adding locations as markers to the map. I can do that easily by making a bunch of variables with the latitute and longitude, and using the `addTo()` method. Let's say I want to add El Meson, Wormhole, and Ipsento to my map. I'll keep it to three to keep it short and simple. Here's how I would do it to start.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const elMeson = L.marker([42.002439, -87.672339]).addTo(myMap)
@@ -102,17 +102,17 @@ const ipsento = L.marker([41.918639, -87.687247]).addTo(myMap)
 
 That doesn't seem too bad - I just have to add a new entry for every new marker. However, it starts to get a little more verbose once I start adding in a popup with more information for each location.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 const elMeson = L.marker([42.002439, -87.672339])
   .bindPopup(
     `
-        <h2>El Meson</h2>
-        <p><b>Neighborhood:</b> Rogers Park</p>
-        <p><b>Ambiance:</b> Great!</p>
-        <p><b>Flavor:</b> Great!</p>
-        <p><b>Comments:</b> Great!</p>
+    <h2>El Meson</h2>
+    <p><b>Neighborhood:</b> Rogers Park</p>
+    <p><b>Ambiance:</b> Great!</p>
+    <p><b>Flavor:</b> Great!</p>
+    <p><b>Comments:</b> Great!</p>
     `
   )
   .openPopup()
@@ -121,11 +121,11 @@ const elMeson = L.marker([42.002439, -87.672339])
 const wormhole = L.marker([41.908415, -87.674605])
   .bindPopup(
     `
-        <h2>Wormhole</h2>
-        <p><b>Neighborhood:</b> Wicker Park</p>
-        <p><b>Ambiance:</b> Great!</p>
-        <p><b>Flavor:</b> Great!</p>
-        <p><b>Comments:</b> Great!</p>
+    <h2>Wormhole</h2>
+    <p><b>Neighborhood:</b> Wicker Park</p>
+    <p><b>Ambiance:</b> Great!</p>
+    <p><b>Flavor:</b> Great!</p>
+    <p><b>Comments:</b> Great!</p>
     `
   )
   .openPopup()
@@ -142,47 +142,46 @@ Now it can start becoming a pain to add a new one of those for every single coff
 
 At this point, I will delete all the marker information from **scripts.js** and make a JSON file with an object containing an array containing objects of all my coffee house locations. It can be a bit tricky to keep track of all the square and curly brackets at first.
 
-map.json
+<div class="filename">map.json</div>
 
 ```js
 {
-      "cafes": [{
-          "name": "El Meson",
-          "lat": 42.002439,
-          "long": -87.672339,
-          "neighborhood": "Rogers Park",
-          "ambiance": "4/5",
-          "flavor": "5/5",
-          "comments": "Best cappuccino and croissant I've ever had."
-        },
-        {
-          "name": "Wormhole",
-          "lat": 41.908415,
-          "long": -87.674605,
-          "neighborhood": "Wicker Park",
-          "ambiance": "5/5",
-          "flavor": "4/5",
-          "comments": "Cute ambiance with a Nintendo that actually works properly and the best games (including FF1!)."
-        },
-        {
-          "name": "Ipsento",
-          "lat": 41.918639,
-          "long": -87.687247,
-          "neighborhood": "Wicker Park",
-          "ambiance": "4/5",
-          "flavor": "5/5",
-          "comments": "Really great spicy latte. Nice ambiance."
-        }
-      ]
+  "cafes": [{
+      "name": "El Meson",
+      "lat": 42.002439,
+      "long": -87.672339,
+      "neighborhood": "Rogers Park",
+      "ambiance": "4/5",
+      "flavor": "5/5",
+      "comments": "Best cappuccino and croissant I've ever had."
+    },
+    {
+      "name": "Wormhole",
+      "lat": 41.908415,
+      "long": -87.674605,
+      "neighborhood": "Wicker Park",
+      "ambiance": "5/5",
+      "flavor": "4/5",
+      "comments": "Cute ambiance with a Nintendo that actually works properly and the best games (including FF1!)."
+    },
+    {
+      "name": "Ipsento",
+      "lat": 41.918639,
+      "long": -87.687247,
+      "neighborhood": "Wicker Park",
+      "ambiance": "4/5",
+      "flavor": "5/5",
+      "comments": "Really great spicy latte. Nice ambiance."
     }
-
+  ]
+}
 ```
 
 Okay, good. Now we have all the information about each location - name, latitude, longitude, neighborhood, and additional details - placed neatly into a JSON file. Now, how do we get that JSON file onto the page?
 
 We won't be using jQuery - only plain JavaScript - so it's a slightly more involved process. I will refer back to [How to Use JSON Data with PHP or JavaScript](/how-to-use-json-data-with-php-or-javascript/) for a further explanation of the code, but here's how we open and access our **map.json** file.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Make an XMLHttpRequest to the JSON data
@@ -221,7 +220,7 @@ const cafes = data.cafes.map(cafe => {})
 
 Now in order to access any property from the JSON feed, we'll use the dot notation on the `cafe` object. So the first iteration of `cafe.name` will return `El Meson`, the second one `Wormhole`, and so on. All I'm doing here is taking the same `L.Marker` function from before, and replacing all the static values with dynamic properties.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Print cafe markers
@@ -245,7 +244,7 @@ This example is using template literal strings, which use backticks and can span
 
 Here is the full **scripts.js** file up to now.
 
-scripts.js
+<div class="filename">scripts.js</div>
 
 ```js
 // Set the map variable
@@ -276,11 +275,11 @@ request.onload = function() {
     L.marker([cafe.lat, cafe.long])
       .bindPopup(
         `
-            <h2>${cafe.name}</h2>
-            <p><b>Neighborhood:</b> ${cafe.neighborhood}</p>
-            <p><b>Ambiance:</b> ${cafe.ambiance}</p>
-            <p><b>Flavor:</b> ${cafe.flavor}</p>
-            <p><b>Comments:</b> ${cafe.comments}</p>
+          <h2>${cafe.name}</h2>
+          <p><b>Neighborhood:</b> ${cafe.neighborhood}</p>
+          <p><b>Ambiance:</b> ${cafe.ambiance}</p>
+          <p><b>Flavor:</b> ${cafe.flavor}</p>
+          <p><b>Comments:</b> ${cafe.comments}</p>
         `
       )
       .openPopup()
@@ -344,8 +343,10 @@ for (let neighborhood of neighborhoodsArray) {
 
 `for...of` is used for iterating through arrays. Here's the output.
 
-    Rogers Park 1
-    Wicker Park 2
+```terminal
+Rogers Park 1
+Wicker Park 2
+```
 
 This technically worked, but now I'm doing what I didn't want to do the first time around - repeating myself. So this turned out to be an inefficient use of the `filter()` method, but that's fine. Not everything you write in your learning journey will be perfect, and now we can refactor it.
 
@@ -376,8 +377,10 @@ for (let neighborhood in neighborhoodCount) {
 
 And here's the output.
 
-    Rogers Park 1
-    Wicker Park 2
+```terminal
+Rogers Park 1
+Wicker Park 2
+```
 
 We got the same result as our inefficient code from before with just a few short lines.
 
@@ -428,7 +431,9 @@ const numbersIncremented = numbers.map(x => {
 numbersIncremented
 ```
 
-    [ 2, 3, 4, 5]
+```
+[ 2, 3, 4, 5]
+```
 
 ### filter()
 
@@ -442,7 +447,9 @@ const numbersFiltered = numbers.filter(x => {
 numbersFiltered
 ```
 
-    [ 3, 4 ]
+```terminal
+[ 3, 4 ]
+```
 
 ### reduce()
 
@@ -456,7 +463,9 @@ const numbersReduced = numbers.reduce((x, y) => {
 numbersReduced
 ```
 
-    10
+```terminal
+10
+```
 
 ## Conclusion
 

@@ -18,14 +18,12 @@ In this tutorial, we'll learn how to implement the TDD process by developing a s
 
 You'll also learn how to use the built-in readline module in Node.js to send commands to the program via the command line.
 
-[View Source on GitHub](https://github.com/taniarascia/calc)
+- [View Source on GitHub](https://github.com/taniarascia/calc)
 
 #### Goals
 
 - The application should **add, subtract, divide, and multiply** any two numbers
-
 - The application should **display a warning and exit** if it receives any input that does not consist of numbers
-
 - The system will provide a **command line interface** that allows the end users to utilize program functionality
 
 Now that we know what app should do, we can begin setting up the environment for testing and developing.
@@ -44,33 +42,30 @@ Create a new directory called **calc**. In the command prompt, navigate to the d
 
 ```bash
 npm init
-
 ```
 
 You will be prompted to enter the package name, version, description, and other common package details. We can enter the name **calc.js**, and continue along pressing `ENTER` for all the default items, giving a description if you'd like. When you reach `test command`, type `mocha`, which is the testing framework we will be using.
 
 ```bash
 test command: mocha
-
 ```
 
 Continue entering the defaults until the walkthrough is complete. The script will create a **package.json** file that looks like this:
 
-package.js
+<div class="filename">package.js</div>
 
 ```js
 {
-      "name": "calc.js",
-      "version": "1.0.0",
-      "description": "A simple calculator application built with Node.js",
-      "main": "index.js",
-      "scripts": {
-        "test": "mocha"
-      },
-      "author": "",
-      "license": "ISC"
-    }
-
+  "name": "calc.js",
+  "version": "1.0.0",
+  "description": "A simple calculator application built with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
 ```
 
 Our final step for setting up the environment is to install Mocha, the JavaScript testing framework we will be using for our app. Input the following command to install Mocha:
@@ -81,12 +76,12 @@ npm install --save-dev mocha
 
 Running this command will add a **node_modules** directory, a **package-lock.json** file, and the following code to your original **package.json**:
 
-package.json
+<div class="filename">package.json</div>
 
 ```js
 "devDependencies": {
-        "mocha": "^4.0.1"
-    }
+  "mocha": "^4.0.1"
+}
 ```
 
 We have our Node project, with the testing script and dependency loaded in. Let's make sure our testing framework is working properly.
@@ -105,22 +100,21 @@ it('should return true', () => {
 
 Now in the command prompt, run the test.
 
-```bash
+````bash
 npm test
 
-```
+```terminal
 
-    > mocha
+> mocha
 
+  ✓ should return true
 
-
-      ✓ should return true
-
-      1 passing (8ms)
+  1 passing (8ms)
+````
 
 The test is passing as expected, so our testing environment setup is complete. Remove everything except the first line from **test.js**.
 
-test.js
+<div class="filename">test.js</div>
 
 ```js
 const assert = require('assert')
@@ -143,7 +137,7 @@ The first requirement for our application is that it should add, subtract, divid
 
 Let's start with addition. We will write a test to calculate the sum of two numbers that we know will be true. The below code is testing if `1` plus `3` equals `4` in the `add()` function.
 
-test.js
+<div class="filename">test.js</div>
 
 ```js
 const assert = require('assert')
@@ -155,24 +149,24 @@ it('correctly calculates the sum of 1 and 3', () => {
 
 After running our test with `npm test`, we will get the following output:
 
-    > mocha
+```terminal
+> mocha
 
+  0 passing (9ms)
+  1 failing
 
+  1) correctly calculates the sum of 1 and 3:
+      ReferenceError: add is not defined
+      at Context.it (test.js:5:16)
 
-      0 passing (9ms)
-      1 failing
-
-      1) correctly calculates the sum of 1 and 3:
-         ReferenceError: add is not defined
-         at Context.it (test.js:5:16)
-
-    npm ERR! Test failed.  See above for more details.
+npm ERR! Test failed.  See above for more details.
+```
 
 The test has failed, giving us the following information: `ReferenceError: add is not defined`. We're testing the `add()` function which does not exist yet, so this error makes perfect sense.
 
 In **operations.js**, we're going to create the `add()` function.
 
-operations.js
+<div class="filename">operations.js</div>
 
 ```js
 const add = (x, y) => +x + +y
@@ -184,7 +178,7 @@ The `add()` function takes two arguments (`x` and `y`) and returns their sum. Yo
 
 Since we're using Node.js and breaking our code into multiple files, we'll need to use `module.exports` to export the code.
 
-operations.js
+<div class="filename">operations.js</div>
 
 ```js
 const add = (x, y) => +x + +y
@@ -194,7 +188,7 @@ module.exports = { add }
 
 At the top of **test.js**, we will import our **operations.js** code with `require()`. Since we're pulling in the function through the `operations` variable, we'll change `add()` to `operations.add()`.
 
-test.js
+<div class="filename">test.js</div>
 
 ```js
 const operations = require('./operations.js')
@@ -209,20 +203,19 @@ Run the test.
 
 ```bash
 npm test
-
 ```
 
-    > mocha
+```terminal
+> mocha
 
+  ✓ correctly calculates the sum of 1 and 3
 
-
-      ✓ correctly calculates the sum of 1 and 3
-
-      1 passing (8ms)
+  1 passing (8ms)
+```
 
 Now we have a working function, and our test passes as expected. Since the other arithmetic functions all follow the same pattern, we can make tests for `subtract()`, `multiply()`, and `divide()`, as well as one to test negative integers.
 
-test.js
+<div class="filename">test.js</div>
 
 ```js
 it('correctly calculates the sum of 1 and 3', () => {
@@ -248,7 +241,7 @@ it('correctly calculates the quotient of 10 and 2', () => {
 
 We will create and export all our functions in **test.js**...
 
-test.js
+<div class="filename">test.js</div>
 
 ```js
 const add = (x, y) => +x + +y
@@ -270,17 +263,17 @@ module.exports = {
 npm test
 ```
 
-    > mocha
+```terminal
+> mocha
 
+  ✓ correctly calculates the sum of 1 and 3
+  ✓ correctly calculates the sum of -1 and -1
+  ✓ correctly calculates the difference of 33 and 3
+  ✓ correctly calculates the product of 12 and 12
+  ✓ correctly calculates the quotient of 10 and 2
 
-
-      ✓ correctly calculates the sum of 1 and 3
-      ✓ correctly calculates the sum of -1 and -1
-      ✓ correctly calculates the difference of 33 and 3
-      ✓ correctly calculates the product of 12 and 12
-      ✓ correctly calculates the quotient of 10 and 2
-
-      5 passing (8ms)
+  5 passing (8ms)
+```
 
 All of our tests are passing, so now we can be sure that the main objectives of our application will function properly. Moving forward, we will add some extra validation.
 
@@ -292,7 +285,7 @@ Instead of just returning strange output, we want to fill the second goal of our
 
 First, we'll have to create a function that tests whether the input is a number or not. The application will take two numbers, so we'll test three things: if both inputs are a number, if only one is a number, and if neither one is a number.
 
-test.js
+<div class="filename">test.js</div>
 
 ```js
 it('indicates failure when a string is used instead of a number', () => {
@@ -310,7 +303,7 @@ it('successfully runs when two numbers are used', () => {
 
 Our `validateNumbers()` function will test both parameters. The `isNaN()` function will check if the parameters are _not_ numbers, and will return `false` if so. Otherwise it will return `true`, and the validation will be successful.
 
-operations.js
+<div class="filename">operations.js</div>
 
 ```js
 const validateNumbers = (x, y) => {
@@ -328,27 +321,29 @@ npm test
 
 ```
 
-      1) indicates failure when a string is used instead of a number
-      ✓ indicates failure when two strings is used instead of numbers
-      ✓ successfully runs when two numbers are used
+```terminal
+1) indicates failure when a string is used instead of a number
+✓ indicates failure when two strings is used instead of numbers
+✓ successfully runs when two numbers are used
 
-      7 passing (12ms)
-      1 failing
+7 passing (12ms)
+1 failing
 
 
-      1) indicates failure when a string is used instead of a number:
+1) indicates failure when a string is used instead of a number:
 
-          AssertionError [ERR_ASSERTION]: true == false
-          + expected - actual
+    AssertionError [ERR_ASSERTION]: true == false
+    + expected - actual
 
-          -true
-          +false
+    -true
+    +false
+```
 
 Two of them passed, but one failed. Testing for success on two numbers passed, as well as testing for failure on two strings. Our first validation test, one string and one number, failed.
 
 Looking back at our function, it requires that _both_ parameters must be `NaN` to fail. We want it to fail even if only one parameter is `NaN`, so we will change `&&` to `||`.
 
-operations.js
+<div class="filename">operations.js</div>
 
 ```js
 const validateNumbers = (x, y) => {
@@ -361,11 +356,13 @@ const validateNumbers = (x, y) => {
 
 Once we make this change and run `npm test`, all eight tests will pass.
 
-      ✓ indicates failure when a string is used instead of a number
-      ✓ indicates failure when two strings is used instead of numbers
-      ✓ successfully runs when two numbers are used
+```terminal
+✓ indicates failure when a string is used instead of a number
+✓ indicates failure when two strings is used instead of numbers
+✓ successfully runs when two numbers are used
 
-      8 passing (9ms)
+8 passing (9ms)
+```
 
 All of the functionality of our application has been tested. The functions have been proven to successfully do mathematical operations and validate input. The final step is creating the interface for the user.
 
@@ -383,7 +380,7 @@ const operations = require('./operations.js')
 
 Our interface itself will use the [Readline](https://nodejs.org/api/readline.html) module, a built-in Node.js CLI.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 const readline = require('readline')
@@ -391,7 +388,7 @@ const readline = require('readline')
 
 Now that we're pulling in all our requirements, we can begin building the app. We will access `readline` through the `rl` variable to create the interface.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 // Use readline to create command line interface
@@ -403,23 +400,23 @@ const rl = readline.createInterface({
 
 The first thing we'll want the user to see when they run the program is the initial welcome screen, which tells them what they've opened, and the instructions for usage. We will do this with a `console.log()`.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 console.log(`
-    Calc.js
-    
-    Welcome to the Node.js Calculator app! 
-    Version: 1.0.0.
-    
-    Usage: The user will be prompted for two numbers, 
-    then asked to select their operation of choice.
-    `)
+Calc.js
+
+Welcome to the Node.js Calculator app! 
+Version: 1.0.0.
+
+Usage: The user will be prompted for two numbers, 
+then asked to select their operation of choice.
+`)
 ```
 
 Before we get started with the actual functionality of the calculator, let's test of our `console.log()` is working properly. We'll make our app print out the message, then exit. `readline` will use the `rl.close()` method to exit.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 rl.close()
@@ -431,17 +428,19 @@ To run a command line application with node, you will type `node` followed by th
 node calc.js
 ```
 
-    Calc.js
+```terminal
+Calc.js
 
-    Welcome to the Node.js Calculator app!
-    Version: 1.0.0.
+Welcome to the Node.js Calculator app!
+Version: 1.0.0.
 
-    Usage: The user will be prompted for two numbers,
-    then asked to select their operation of choice.
+Usage: The user will be prompted for two numbers,
+then asked to select their operation of choice.
+```
 
 Our welcome screen displays, then the program terminates. The next step will be to take some user input. We're going to require three in total: two numbers, and a choice of operation. We will request each input with the `rl.question()` method.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 rl.question('Enter the first number: ', x => {
@@ -469,7 +468,7 @@ Our first number will be entered with the parameter of `x`, the second number wi
 
 After our third question, the first thing we'll want to do is validate the input to ensure only numbers are being entered. We're going to reference the `validateNumbers()` function. Using the [logical NOT](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_NOT) operator, we will test if the parameter values are _not_ numbers, and end the program if so.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 if (!operations.validateNumbers(x, y)) {
@@ -479,7 +478,7 @@ if (!operations.validateNumbers(x, y)) {
 
 If all input is valid and correct, we will want to move forward with the process and run the respective mathematical operations that we created earlier. We will use a [`switch` statement](https://www.digitalocean.com/community/tutorials/how-to-use-the-switch-statement-in-javascript) to execute code based on the four possible choices, and output the result of the operation. If an invalid choice is made, the `default` code block will run, telling the user to start over.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 if (!operations.validateNumbers(x, y)) {
@@ -509,7 +508,7 @@ if (!operations.validateNumbers(x, y)) {
 
 Here's the final code.
 
-calc.js
+<div class="filename">calc.js</div>
 
 ```js
 /**
@@ -577,12 +576,15 @@ Our application is now complete. Let's test the final output. We will input `999
 
 ```bash
 node calc.js
-    Enter the first number: 999
-    Enter the second number: 1
-    Enter your choice: 2
+
+Enter the first number: 999
+Enter the second number: 1
+Enter your choice: 2
 ```
 
-    The difference of 999 and 1 is 998.
+```terminal
+The difference of 999 and 1 is 998.
+```
 
 Everything went through successfully and our output was as expected. Congratulations! You have successfully created a simple calculator application with Node.js, and learned the basics of the test-driven development methodology along the way.
 
@@ -590,7 +592,7 @@ Everything went through successfully and our output was as expected. Congratulat
 
 If you missed anything or got stuck along the way, you can find the source code on GitHub.
 
-[View Source on GitHub](https://github.com/taniarascia/calc)
+- [View Source on GitHub](https://github.com/taniarascia/calc)
 
 We just covered the basics of test-driven development through the creation of a command line calculator app in Node.js. We used the Mocha framework for testing, and the built-in Node.js Readline module for creating a command line interface.
 

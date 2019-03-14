@@ -67,6 +67,7 @@ class Index extends Component {
               <li>Add night mode option</li>
               <li>Add improved sorting and filtering for posts</li>
               <li>Add logos for projects, podcasts, speaking, publications</li>
+              <li>Bring in comments</li>
             </ul>
           </div>
         </section>

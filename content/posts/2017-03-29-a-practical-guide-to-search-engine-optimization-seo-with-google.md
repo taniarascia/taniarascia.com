@@ -1,6 +1,6 @@
 ---
 date: 2017-03-29
-title: "A Practical Guide to Search Engine Optimization (SEO) with Google"
+title: 'A Practical Guide to Search Engine Optimization (SEO) with Google'
 template: post
 thumbnail: '../thumbnails/seo.png'
 slug: a-practical-guide-to-search-engine-optimization-seo-with-google
