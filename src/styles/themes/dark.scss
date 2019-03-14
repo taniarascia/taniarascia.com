@@ -1,0 +1,134 @@
+$background: #2d2d2d;
+$foreground: #b3b9c5;
+.dark {
+  transition: all 0.3s ease !important;
+  background: $background;
+  color: $foreground;
+  .lead h1 {
+    color: $foreground;
+  }
+  a {
+    color: lighten($primary-color, 3%);
+    &:hover,
+    &:active,
+    &:focus {
+      color: lighten($primary-color, 10%);
+      background: transparent;
+    }
+  }
+  .post,
+  .page {
+    a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+      color: lighten($primary-color, 3%);
+      &:hover,
+      &:active,
+      &:focus {
+        color: lighten($primary-color, 10%);
+        background: transparent;
+      }
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  :not(pre)>code {
+    background: rgba(255, 255, 255, 0.1);
+    color: $foreground;
+  }
+  .nav {
+    background: darken($background, 5%);
+    border-color: darken($background, 5%);
+    .brand a {
+      color: lighten($foreground, 5%);
+    }
+    .links a {
+      color: $comment;
+      &:hover {
+        color: $foreground;
+      }
+    }
+  }
+  .note {
+    background: $background;
+    border-color: $background;
+    .note-container {
+      background: darken($background, 5%);
+    }
+  }
+  p,
+  ul,
+  ol,
+  li {
+    color: $foreground;
+  }
+  h2 {
+    border-color: darken($background, 3%);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: #ccc;
+  }
+  .posts {
+    border-color: darken($background, 2%);
+    &.simple a .each {
+      border-color: transparent;
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+    .exerpt {
+      color: $comment;
+    }
+    a {
+      .each {
+        border-bottom-color: darken($background, 2%);
+        h2 {
+          color: $comment;
+        }
+        &:hover {
+          h2 {
+            color: white;
+          }
+          background: transparent;
+        }
+      }
+    }
+  }
+  .projects {
+    h2 {
+      color: $foreground;
+    }
+    p {
+      color: $comment;
+    }
+  }
+  pre code {
+    background: #3a3a3a;
+  }
+  blockquote {
+    background: transparent;
+  }
+  .footer {
+    color: $foreground;
+  }
+  #{$forms} {
+    color: $foreground;
+    background: transparent !important;
+  }
+  #{$buttons} {
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    background: transparent !important;
+  }
+  a.donate-button {
+    background: transparent !important;
+    color: $attribute;
+  }
+  button.dark-switcher {
+    border: none;
+  }
+}

@@ -3,7 +3,7 @@
   src: url('../fonts/PerfectDos.ttf') format('truetype');
 }
 
-#notFound {
+.not-found {
   background: #000084;
   color: #bbb;
   font-family: 'PerfectDOS', 'Courier New', monospace;
@@ -13,6 +13,10 @@
   #main-content {
     padding-top: 80px;
     margin: 0;
+  }
+  footer.footer,
+  button.dark-switcher {
+    display: none;
   }
   h1 {
     color: #000;
@@ -67,44 +71,29 @@
             background: #000;
             color: #bbb;
           }
-          &.donate-button {
-            display: none;
-            background: #00aaaa;
-            border: none;
-            color: #eee;
-            &:hover,
-            &:active,
-            &:focus {
-              background: #000;
-              border: none;
-              color: white;
-            }
-          }
         }
       }
-    }
-  }
-  small {
-    display: none;
-  }
-  blink {
-    animation: blinkingText 0.8s infinite;
-  }
-  @keyframes blinkingText {
-    0% {
-      opacity: 0;
-    }
-    49% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
+      a.donate-button {
+        display: none;
+        background: #00aaaa;
+        border: none;
+        color: #eee;
+        border-radius: 0;
+        height: 30px;
+        &:hover,
+        &:active,
+        &:focus {
+          background: #000;
+          border: none;
+          color: white;
+        }
+      }
     }
   }
 }
 
 @media (min-width: 900px) {
-  #notFound {
+  .not-found {
     font-size: 24px;
     #main-content {
       padding-top: 160px;
@@ -114,12 +103,11 @@
         .links,
         .brand {
           a {
-            padding: 0 20px;
             font-size: 24px;
-            &.donate-button {
-              display: flex;
-            }
           }
+        }
+        a.donate-button {
+          display: flex;
         }
       }
     }
@@ -132,5 +120,21 @@
     .emoji {
       display: none;
     }
+  }
+}
+
+blink {
+  animation: blinkingText 0.8s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }

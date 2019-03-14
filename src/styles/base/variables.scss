@@ -110,9 +110,9 @@ $accent-button-color-hover: #ffffff;
 /* Forms */
 
 $forms: (
-  '[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea'
+  '[type=color], [type=date], [type=email], [type=number], [type=search], [type=tel], [type=text], [type=url], select, textarea'
 );
-$buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]');
+$buttons: ('.button, a.button, button, [type=submit], [type=button]');
 $input-background: #ffffff;
 $placeholder: darken($accent-color, 20%);
 $form-border: 2px solid $border-color;
@@ -135,3 +135,19 @@ $code-borders: $borders;
 /* Nav */
 
 $nav-height: 90px;
+
+$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+$code-font-color: #b3b9c5;
+$string: #92d192;
+$variable: #f2777a;
+$property: #abb2bf;
+$number: #fca369;
+$operator: #ac8d58;
+$punctuation: #d5d8df;
+$comment: #777c85;
+$function: #62cfcf;
+$keyword: #ffeead;
+$attribute: #ffd479;
+$class: #e1a6f2;
+$tag: #6ab0f3;
+$error: #f2777a;

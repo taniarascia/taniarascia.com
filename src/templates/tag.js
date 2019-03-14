@@ -12,7 +12,7 @@ class TagTemplate extends Component {
 
     return (
       <Layout>
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+        <Helmet title={`Posts tagged as "${tag}" – ${config.siteTitle}`} />
         <div className="container">
           <h1>Posts tagged as "{tag}"</h1>
           <PostListing postEdges={postEdges} />

@@ -11,17 +11,40 @@ yarn
 yarn run dev
 ```
 
+## Features
+
+- Posts and pages in Markdown
+- Tags and categories
+- Night mode (starting [New Moon]())
+- DOS mode (404)
+- Theming (staring [Primitive])
+
 ## Notes
 
-### Prettier all Markdown files
+### Format all markdown files
 
 ```bash
-prettier --print-width 100 --no-semi --single-quote --jsx-single-quote --trailing-comma es5 --arrow-parens avoid --parser "markdown"  "**/*.md"
+cd content/posts
+prettier
+  --print-width 100
+  --no-semi
+  --single-quote
+  --jsx-single-quote
+  --trailing-comma es5
+  --arrow-parens avoid
+  --parser "markdown"  "**/*.md"
 ```
+
+## Contributing
+
+If you see any typos or errors in formatting in a post, please to not hesitate to open a pull request and fix it!
 
 ## Acknowledgements
 
-- Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/)
+- Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) the theme I hacked on to create this one.
+- Muhammad Muhsin - [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/) the article I used to implement dark mode with the context API.
+- Thomas Frössman - [ExitWP](https://github.com/thomasf/exitwp) - the converter I used to do half of the work of migrating from WordPress XML to Markdown.
+- [Using Context API in lifecycle methods](https://github.com/facebook/react/issues/12397)
 
 ## License
 

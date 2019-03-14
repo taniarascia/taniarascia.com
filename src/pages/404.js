@@ -1,15 +1,27 @@
 import React, { Component } from 'react'
+import ThemeContext from '../context/ThemeContext'
 import Helmet from 'react-helmet'
 import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import '../styles/404.scss'
 
 class NotFound extends Component {
+  componentDidMount() {
+    const { theme } = this.props
+
+    theme.toggleNotFound()
+  }
+
+  componentWillUnmount() {
+    const { theme } = this.props
+
+    theme.found()
+  }
+
   render() {
     return (
-      <Layout template="notFound">
-        <Helmet title={`Page not found | ${config.siteTitle}`} />
+      <Layout>
+        <Helmet title={`Page not found – ${config.siteTitle}`} />
         <SEO />
         <div className="container">
           <div className="text-center">
@@ -24,8 +36,8 @@ class NotFound extends Component {
               <span className="bullet">*</span> Click any link to terminate the current application.
             </p>
             <p>
-              <span className="bullet">*</span> Press ALT + F4 again to restart your browser. You will
-              lose any unsaved information in all tabs.
+              <span className="bullet">*</span> Press ALT + F4 again to restart your browser. You
+              will lose any unsaved information in all tabs.
             </p>
           </div>
           <p className="text-right">
@@ -37,4 +49,8 @@ class NotFound extends Component {
   }
 }
 
-export default NotFound
+const NotFoundPage = () => (
+  <ThemeContext.Consumer>{theme => <NotFound theme={theme} />}</ThemeContext.Consumer>
+)
+
+export default NotFoundPage

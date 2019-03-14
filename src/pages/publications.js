@@ -9,7 +9,7 @@ class PublicationsPage extends Component {
   render() {
     return (
       <Layout>
-        <Helmet title={`Published Articles | ${config.siteTitle}`} />
+        <Helmet title={`Published Articles – ${config.siteTitle}`} />
         <div className="container">
           <h1>Published Articles</h1>
           <SimpleListing data={publications} />

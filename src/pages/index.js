@@ -21,7 +21,7 @@ class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} | Developer, designer, writer`} />
+        <Helmet title={`${config.siteTitle} – Developer, designer, writer`} />
         <SEO />
         <div className="container">
           <div className="lead">
@@ -64,10 +64,8 @@ class Index extends Component {
             </p>
             <h4>Todos</h4>
             <ul>
-              <li>Add night mode option</li>
               <li>Add improved sorting and filtering for posts</li>
               <li>Add logos for projects, podcasts, speaking, publications</li>
-              <li>Bring in comments</li>
             </ul>
           </div>
         </section>

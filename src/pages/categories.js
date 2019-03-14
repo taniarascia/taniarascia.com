@@ -13,7 +13,7 @@ class CategoriesPage extends Component {
     return (
       <Layout>
         <SEO />
-        <Helmet title={`Categories | ${config.siteTitle}`} />
+        <Helmet title={`Categories – ${config.siteTitle}`} />
         <div className="container">
           <h1>Categories</h1>
           <div className="tag-container">

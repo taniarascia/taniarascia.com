@@ -1,25 +1,6 @@
 /* Code
   =============== */
 
-$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
-$code-font-color: #b3b9c5;
-$string: #92d192;
-$variable: #f2777a;
-$property: #abb2bf;
-$number: #fca369;
-$operator: #ac8d58;
-$punctuation: #d5d8df;
-$comment: #777c85;
-$function: #62cfcf;
-$keyword: #ffeead;
-$attribute: #ffd479;
-$class: #e1a6f2;
-$tag: #6ab0f3;
-$selector: #f7931e;
-$deleted: #f6bf26;
-$error: #eb4d5c;
-$border-radius: 4px;
-
 code {
   font-size: 14px;
 }
@@ -71,7 +52,7 @@ pre code {
   tab-size: 2;
   hyphens: none;
   border-radius: $border-radius;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Code blocks */
@@ -198,7 +179,7 @@ code[class*='language-sass'] {
 }
 
 .language-autohotkey .token.selector {
-  color: $selector;
+  color: $number;
 }
 
 .token.attr-name {
@@ -219,7 +200,7 @@ code[class*='language-sass'] {
 
 .token.deleted,
 .language-autohotkey .token.tag {
-  color: darken($deleted, 5%);
+  color: $error;
 }
 
 .token.tag {

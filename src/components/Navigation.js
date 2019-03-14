@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import floppy from '../images/floppy.svg'
+import ThemeContext from '../context/ThemeContext'
 
 class Navigation extends Component {
   state = {
@@ -8,7 +9,7 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', event => {
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 20) {
         this.setState({ scrolled: true })
       } else {
@@ -22,27 +23,35 @@ class Navigation extends Component {
     const { menuLinks } = this.props
 
     return (
-      <nav className={scrolled ? 'nav scroll' : 'nav'}>
-        <div className="nav-container">
-          <div className="brand">
-            <Link to="/">
-              <img src={floppy} className="favicon" /> <span className="text">Tania Rascia</span>
-            </Link>
-          </div>
-          <div className="links">
-            {menuLinks.map(link => (
-              <Link key={link.name} to={link.link}>
-                {link.name}
-              </Link>
-            ))}
-          </div>
-          <div class="cta">
-            <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
-              <span className="text">Donate</span> <span className="emoji-in-button">☕</span>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <ThemeContext.Consumer>
+        {theme => (
+          <nav className={scrolled ? 'nav scroll' : 'nav'}>
+            <div className="nav-container">
+              <div className="brand">
+                <Link to="/">
+                  <img src={floppy} className="favicon" />{' '}
+                  <span className="text">Tania Rascia</span>
+                </Link>
+              </div>
+              <div className="links">
+                {menuLinks.map(link => (
+                  <Link key={link.name} to={link.link}>
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="cta">
+                <button className="dark-switcher" onClick={theme.toggleDark}>
+                  {theme.dark ? <span>🌞</span> : <span>🌙</span>}
+                </button>
+                <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
+                  <span className="text">Donate</span> <span className="emoji-in-button">☕</span>
+                </a>
+              </div>
+            </div>
+          </nav>
+        )}
+      </ThemeContext.Consumer>
     )
   }
 }

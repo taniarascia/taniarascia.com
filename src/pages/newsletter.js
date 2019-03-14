@@ -8,7 +8,7 @@ class NewsletterPage extends Component {
   render() {
     return (
       <Layout>
-        <Helmet title={`Newsletter | ${config.siteTitle}`} />
+        <Helmet title={`Newsletter – ${config.siteTitle}`} />
         <div className="container">
           <Newsletter />
         </div>

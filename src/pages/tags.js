@@ -13,7 +13,7 @@ class TagsPage extends Component {
     return (
       <Layout>
         <SEO />
-        <Helmet title={`Tags | ${config.siteTitle}`} />
+        <Helmet title={`Tags – ${config.siteTitle}`} />
         <div className="container">
           <h1>Tags</h1>
           <div className="tag-container">

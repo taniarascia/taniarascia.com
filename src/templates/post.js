@@ -30,13 +30,13 @@ class PostTemplate extends Component {
       thumbnail = post.thumbnail.childImageSharp.fixed
     }
 
-    const date = formatDate(date)
+    const date = formatDate(post.date)
     const githubLink = editOnGithub(post)
 
     return (
       <Layout>
         <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
+          <title>{`${post.title} – ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">

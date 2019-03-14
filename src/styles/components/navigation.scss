@@ -25,7 +25,8 @@
         margin-right: 0;
         font-weight: 600;
         font-size: 1.1rem;
-        &:hover {
+        &:hover,
+        &:focus {
           color: black;
         }
       }
@@ -37,25 +38,28 @@
       display: flex;
       flex-direction: row;
       a {
+        border-radius: $border-radius;
         display: flex;
         align-items: center;
         font-size: 1rem;
         font-weight: 500;
+        padding: 1rem 0.5rem;
+        margin: 0;
         color: #888;
-        margin: 0 .5rem;
-        &:hover {
+        &:hover,
+        &:active {
           color: #111;
         }
       }
     }
-    a.donate-button {
-      padding: 1rem .5rem;
-      .text {
-        display: none;
-      }
-      .emoji-in-button {
-        margin: 0;
-      }
+  }
+  a.donate-button {
+    padding: 1rem 0.5rem;
+    .text {
+      display: none;
+    }
+    .emoji-in-button {
+      margin: 0;
     }
   }
 }
@@ -63,6 +67,17 @@
 .favicon {
   height: 25px;
   width: 25px;
+}
+
+button.dark-switcher {
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0.25rem;
+  margin: 0 0.25rem 0.5rem 0;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
 }
 
 @include small-breakpoint {
@@ -111,5 +126,9 @@
   }
   .favicon {
     margin-right: 1rem;
+  }
+  button.dark-switcher {
+    padding: 0.5rem;
+    margin: 0 1rem 0 0;
   }
 }

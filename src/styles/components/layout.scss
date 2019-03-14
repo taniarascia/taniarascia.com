@@ -111,7 +111,7 @@
       display: grid;
       align-items: center;
       grid-template-columns: 60px 1fr;
-      padding: .75rem;
+      padding: 0.75rem;
       margin: 0;
       border-radius: $border-radius;
       border: 2px solid transparent;
@@ -409,7 +409,7 @@ blockquote {
     &:active,
     &:focus {
       color: #111 !important;
-      background: $yellow !important;
+      background: lighten($yellow, 10%) !important;
     }
   }
   cite {
