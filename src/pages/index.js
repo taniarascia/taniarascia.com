@@ -59,8 +59,8 @@ class Index extends Component {
               <a href="https://github.com/taniarascia/taniarascia.com" target="_blank">
                 View the source
               </a>{' '}
-              of the new website! If you see any formatting errors on a post, feel free to make a
-              pull request and fix it on GitHub.
+              of the new website, and <a href="https://www.taniarascia.com/migrating-from-wordpress-to-gatsby">read about the migration</a>! I'm loving Gatsby so far. If you see any formatting errors on a post, feel free to make a
+              pull request and fix it on GitHub, or leave an issue if you find something I missed.
             </p>
             <h4>Todos</h4>
             <ul>

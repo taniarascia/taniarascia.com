@@ -43,6 +43,8 @@ A few things I really like about Gatsby:
 
 Very little boilerplate code was necessary to get started with Gatsby. I just forked the [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/), a very simple, minimalist, completely UI-free foundation after my own heart, and started working with it.
 
+So far, the only thing I don't like is that Gatsby seems to change the zoom of the site after building somehow, so my styles aren't matching up exactly.
+
 I should mention I moved my host from NearlyFreeSpeech.net to [Netlify](https://www.netlify.com/), which is awesome. I really can't say enough about them. I'm highly impressed with how quick and easy it is to set up anything I want. 
 
 ## My migration process
@@ -65,4 +67,4 @@ From there it was just a matter of building out all the pages, learning just eno
 
 I'm pretty tired as it's past midnight now, but I was too excited to not make a small post celebrating the next step in the journey of this website. I feel great that all of my posts are now safely saved in version control and markdown. It's actually a huge relief for me to know that they're not a mess inside some clunky MySQL database, but easy to read, write, edit, and share markdown files. Now if I want to move to some other SSG in the future, it'll be very easy.
 
-I can write more about this in the future if anyone has more specific questions about Gatsby, React, or Netlify.
+I can write more about this in the future if anyone has more specific questions about Gatsby, React, or Netlify. If you see anything broken about the new site, please let me know!
