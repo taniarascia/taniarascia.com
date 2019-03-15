@@ -37,11 +37,13 @@
     .links {
       display: flex;
       flex-direction: row;
+      flex: 1;
+      justify-content: space-around;
       a {
         border-radius: $border-radius;
         display: flex;
         align-items: center;
-        font-size: 1rem;
+        font-size: .9rem;
         font-weight: 500;
         padding: 1rem 0.3rem;
         margin: 0;
@@ -77,9 +79,6 @@ button.dark-switcher {
   padding: 0.2rem;
   margin: 0 0.25rem 0.5rem 0;
   background: transparent;
-  &:hover {
-    transform: scale(1.1);
-  }
   &:focus {
     outline: none;
   }
@@ -110,12 +109,10 @@ button.dark-switcher {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        flex: unset;
         a {
           font-size: 1.1rem;
-          margin: 0 0.5rem;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
+          margin: 0 1rem;
         }
       }
       a.donate-button {

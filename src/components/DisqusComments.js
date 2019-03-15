@@ -27,7 +27,7 @@ class DisqusComments extends Component {
     }
 
     const post = postNode.frontmatter
-    const url = urljoin(config.siteUrl, config.pathPrefix, postNode.fields.slug)
+    const url = urljoin(config.siteUrl, config.pathPrefix, postNode.fields.slug, '/')
     const disqusShortname = config.disqusShortname
     const disqusConfig = {
       url,
