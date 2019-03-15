@@ -68,7 +68,7 @@ class SEO extends Component {
       )
     }
     return (
-      <Helmet key={window.location.href}>
+      <Helmet>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
 
