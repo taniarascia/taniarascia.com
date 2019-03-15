@@ -55,7 +55,7 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - **Also 1994** – My brother deletes Win.exe, so I learn some basic DOS commands in order to keep being able to play Warcraft
 - **1998** – I go to the library and discover the internet. I make my first E–Mail address and learn the meaning of lol. I make my first website on Geocities – a clan website for some Zelda–themed online chat game
 - **1999** – Earliest record of I can find of me on the internet, [signing a guestbook](http://stinkybear.net/spos/archived/misc/baddyguestbook.html)
-- **2000** – I become internet famous for making a website about me and my made up Digimon [Here’s a long fanfic](http://www.oocities.org/yacutimon/digimon_dragons.html) someone wrote about my character, and [I also found whatever this is](http://www.geocities.ws/gennkamiya/princessomh.html)
+- **2000** – I become internet famous for making a website about me and my made up Digimon [Here’s a long fanfic](http://www.oocities.org/yacutimon/digimon_dragons.html) someone wrote about my character
 - **2003** – I make a website dedicated to George Michael’s facial hair through the years
 - **2005** – I become internet famous in the Philippines for creating the only website dedicated to [Seona Dancing](https://web.archive.org/web/20060423181337/http://www.seonadancing.com:80/), Ricky Gervais’s failed 80s pop duo
 - **2007** – I graduate from high school and go to college for a culinary arts degree. I spend the next eight years working in the restaurant industry

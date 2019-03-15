@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-sitemap: https://tania.dev/sitemap.xml
+sitemap: https://www.taniarascia.com/sitemap.xml

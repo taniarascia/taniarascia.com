@@ -1,14 +1,14 @@
 #main-content {
   margin-top: 55px;
   padding: 40px 0 0;
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 120px);
 }
 
 @include small-breakpoint {
   #main-content {
-    margin-top: $nav-height;
+    margin-top: 92px;
     padding: 60px 0 0;
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 192px);
   }
 }
 
@@ -29,7 +29,7 @@
   font-size: 1.1rem;
   h1 {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
   }
   .button {

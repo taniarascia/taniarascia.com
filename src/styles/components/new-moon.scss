@@ -2,7 +2,7 @@
   =============== */
 
 code {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 pre.language-terminal code.language-terminal {
@@ -14,7 +14,7 @@ pre.language-terminal code.language-terminal {
   border-radius: 6px;
   padding-top: 45px;
   margin: 2rem 0;
-  font-size: 14px;
+  font-size: 13px;
   background: white;
   color: #333;
   &::before {
@@ -39,7 +39,7 @@ code[class*='language-'],
 pre[class*='language-'],
 pre code {
   font-family: $code-font-family;
-  font-size: 14px;
+  font-size: 13px;
   color: $code-font-color;
   direction: ltr;
   text-align: left;
@@ -113,6 +113,16 @@ code[class*='language-sass'] {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   margin-bottom: -2.2rem;
+}
+
+@include small-breakpoint {
+  code,
+  pre.language-terminal code.language-terminal,
+  code[class*='language-'],
+  pre[class*='language-'],
+  pre code {
+    font-size: 15px;
+  }
 }
 
 /* Syntax Highlighting */

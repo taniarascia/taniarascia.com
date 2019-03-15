@@ -4,11 +4,9 @@ const defaultState = {
   dark: false,
   notFound: false,
   toggleDark: () => {},
-  toggleNotFound: () => {},
 }
 
 const ThemeContext = React.createContext(defaultState)
-
 const supportsDarkMode = () => window.matchMedia('(prefers-color-scheme: dark)').matches === true
 
 class ThemeProvider extends Component {
@@ -24,13 +22,11 @@ class ThemeProvider extends Component {
     this.setState({ dark })
   }
 
-  toggleNotFound = () => {
-    let notFound = !this.state.dark
-
-    this.setState({ notFound })
+  setNotFound = () => {
+    this.setState({ notFound: true })
   }
 
-  found = () => {
+  setFound = () => {
     this.setState({ notFound: false })
   }
 
@@ -39,22 +35,21 @@ class ThemeProvider extends Component {
 
     if (lsDark) {
       this.setState({ dark: lsDark })
-    } else if (supportsDarkMode()) {
-      this.setState({ dark: true })
     }
   }
 
   render() {
     const { children } = this.props
     const { dark, notFound } = this.state
+
     return (
       <ThemeContext.Provider
         value={{
           dark,
           notFound,
-          toggleNotFound: this.toggleNotFound,
+          setFound: this.setFound,
+          setNotFound: this.setNotFound,
           toggleDark: this.toggleDark,
-          found: this.found,
         }}
       >
         {children}

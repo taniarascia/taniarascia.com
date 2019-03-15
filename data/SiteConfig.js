@@ -3,7 +3,7 @@ const config = {
   siteTitleShort: 'Tania Rascia',
   siteTitleAlt: 'Tania Rascia',
   siteLogo: '/logos/logo-1024.png',
-  siteUrl: 'https://tania.dev',
+  siteUrl: 'https://www.taniarascia.com',
   repo: 'https://github.com/taniarascia/taniarascia.com',
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
@@ -11,7 +11,7 @@ const config = {
   siteDescription:
     'Tania Rascia is a developer, designer, and writer who breaks down complex concepts for all skill levels.',
   siteRss: '/rss.xml',
-  googleAnalyticsID: '',
+  googleAnalyticsID: 'UA-42068444-1',
   disqusShortname: 'taniarascia',
   postDefaultCategoryID: 'Tech',
   userName: 'Tania',

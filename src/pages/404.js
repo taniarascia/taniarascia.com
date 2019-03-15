@@ -5,17 +5,19 @@ import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 
-class NotFound extends Component {
-  componentDidMount() {
-    const { theme } = this.props
+class NotFoundPage extends Component {
+  static contextType = ThemeContext
 
-    theme.toggleNotFound()
+  componentDidMount() {
+    const { setNotFound } = this.context
+
+    setNotFound()
   }
 
   componentWillUnmount() {
-    const { theme } = this.props
+    const { setFound } = this.context
 
-    theme.found()
+    setFound()
   }
 
   render() {
@@ -41,16 +43,12 @@ class NotFound extends Component {
             </p>
           </div>
           <p className="text-right">
-            Click any link to continue<blink>&#9608;</blink>
+            Click any link to continue<span className="blink">&#9608;</span>
           </p>
         </div>
       </Layout>
     )
   }
 }
-
-const NotFoundPage = () => (
-  <ThemeContext.Consumer>{theme => <NotFound theme={theme} />}</ThemeContext.Consumer>
-)
 
 export default NotFoundPage

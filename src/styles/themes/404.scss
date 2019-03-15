@@ -46,6 +46,7 @@
     color: #000;
     height: 30px;
     .nav-container {
+      padding: 0 1rem;
       height: 30px;
       .brand {
         display: flex;
@@ -61,7 +62,7 @@
           border-radius: 0;
           color: #000;
           font-weight: 600;
-          padding: 0 10px;
+          padding: 0 14px;
           margin: 0;
           line-height: 0;
           font-size: 16px;
@@ -104,6 +105,7 @@
         .brand {
           a {
             font-size: 24px;
+            padding: 0 15px;
           }
         }
         a.donate-button {
@@ -123,7 +125,7 @@
   }
 }
 
-blink {
+.blink {
   animation: blinkingText 0.8s infinite;
 }
 

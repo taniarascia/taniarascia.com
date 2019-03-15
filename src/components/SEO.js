@@ -13,9 +13,9 @@ class SEO extends Component {
 
     if (postSEO) {
       const postMeta = postNode.frontmatter
-      ;({ title } = postMeta)
+      title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      image = postMeta.thumbnail
+      image = postMeta.cover
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
     } else {
       title = config.siteTitle
@@ -68,7 +68,7 @@ class SEO extends Component {
       )
     }
     return (
-      <Helmet>
+      <Helmet key={window.location.href}>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
 

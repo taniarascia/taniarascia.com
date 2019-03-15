@@ -13,7 +13,7 @@
   font-family: $button-font-family;
   font-size: $button-font-size;
   text-transform: $button-text-transform;
-  padding: 0.75rem 1.25rem;
+  padding: 0.6rem .9rem;
   margin: 0 0 0.5rem 0;
   vertical-align: middle;
   text-align: center;
@@ -83,5 +83,11 @@ a.donate-button {
     background: lighten($yellow, 20%);
     border: 2px solid darken($yellow, 10%);
     color: #111;
+  }
+}
+
+@include small-breakpoint {
+  #{$buttons} {
+    padding: 0.75rem 1.25rem;
   }
 }

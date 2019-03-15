@@ -8,14 +8,20 @@ class Navigation extends Component {
     scrolled: false,
   }
 
+  navOnScroll = () => {
+    if (window.scrollY > 20) {
+      this.setState({ scrolled: true })
+    } else {
+      this.setState({ scrolled: false })
+    }
+  }
+
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        this.setState({ scrolled: true })
-      } else {
-        this.setState({ scrolled: false })
-      }
-    })
+    window.addEventListener('scroll', this.navOnScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.navOnScroll)
   }
 
   render() {

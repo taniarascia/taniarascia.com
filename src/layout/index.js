@@ -8,25 +8,26 @@ import favicon from '../images/favicon.png'
 import '../styles/main.scss'
 
 class MainLayout extends Component {
+  static contextType = ThemeContext
+
   render() {
+    const { dark, notFound } = this.context
     const { children } = this.props
 
     return (
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <Helmet>
-              <meta name="description" content={config.siteDescription} />
-              <link rel="shortcut icon" type="image/png" href={favicon} />
-            </Helmet>
-            <section className={theme.dark ? 'dark' : '' || theme.notFound ? 'not-found' : ''}>
-              <Navigation menuLinks={config.menuLinks} />
-              <main id="main-content">{children}</main>
-              <Footer />
-            </section>
-          </>
-        )}
-      </ThemeContext.Consumer>
+      <>
+        <Helmet
+          bodyAttributes={{
+            class: `theme ${dark && !notFound ? 'dark' : '' || notFound ? 'not-found' : ''}`,
+          }}
+        >
+          <meta name="description" content={config.siteDescription} />
+          <link rel="shortcut icon" type="image/png" href={favicon} />
+        </Helmet>
+        <Navigation menuLinks={config.menuLinks} />
+        <main id="main-content">{children}</main>
+        <Footer />
+      </>
     )
   }
 }

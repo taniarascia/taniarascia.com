@@ -7,16 +7,16 @@
   width: 100%;
   background: white;
   border-bottom: 2px solid #f0f0f0;
-  transition: all 0.3s ease;
+  transition: height 0.3s ease;
   .nav-container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     height: 55px;
     max-width: $width;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 0.3s ease;
+    transition: height 0.3s ease;
     .brand {
       a {
         display: flex;
@@ -43,7 +43,7 @@
         align-items: center;
         font-size: 1rem;
         font-weight: 500;
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.6rem;
         margin: 0;
         color: #888;
         &:hover,
@@ -75,6 +75,9 @@ button.dark-switcher {
   padding: 0.25rem;
   margin: 0 0.25rem 0.5rem 0;
   background: transparent;
+  &:hover {
+    transform: scale(1.1);
+  }
   &:focus {
     outline: none;
   }
@@ -107,7 +110,7 @@ button.dark-switcher {
         justify-content: space-between;
         a {
           font-size: 1.1rem;
-          margin: 0 1.5rem;
+          margin: 0 0.5rem;
           display: flex;
           align-items: center;
           justify-content: flex-end;
@@ -130,5 +133,6 @@ button.dark-switcher {
   button.dark-switcher {
     padding: 0.5rem;
     margin: 0 1rem 0 0;
+    font-size: 1.4rem;
   }
 }

@@ -65,7 +65,7 @@ brew install yarn --without-node
 
 In `package.json`, ensure `react` and `react-dom` are `16.7.0`.
 
-package.json
+<div class="filename">package.json</div>
 
 ```json
 "dependencies": {
@@ -85,7 +85,7 @@ For `index.css`, I just copy and paste the CSS from [Primitive](https://taniaras
 
 In `index.js`, we'll simplify it by removing the references to Service Workers.
 
-index.js
+<div class="filename">index.js</div>
 
 ```jsx
 import React from 'react'
@@ -98,7 +98,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 And in `App.js`, I'll make a simple, functional component for `App` instead of a class.
 
-App.js
+<div class="filename">App.js</div>
 
 ```jsx
 import React from 'react'
@@ -132,7 +132,7 @@ If we look at a very simple example of a class component with state and a functi
 
 I'll make some quick example code, as if it were a library and you have books that have state.
 
-Class Component State Example
+<div class="filename">Class Component State Example</div>
 
 ```jsx
 class App extends Component {
@@ -709,7 +709,7 @@ React Hooks are not officially part of React yet, but they are very likely the w
 
 If you got lost anywhere along the way, don't forget to check out the demo and source.
 
-- [View Demo App](https://taniarascia.github.io/react-hooks/) 
+- [View Demo App](https://taniarascia.github.io/react-hooks/)
 - [View Source](https://github.com/taniarascia/react-hooks)
 
 The next thing to be on the lookout for is the [Suspense API](https://medium.com/swlh/react-suspense-with-the-fetch-api-cc655aced759), but there is not enough information yet to write about that.
