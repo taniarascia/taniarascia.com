@@ -1,6 +1,6 @@
 # taniarascia.com [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Personal theme for Gatsby.
+Personal website running on Gatsby, React, and Node.js.
 
 ## Installation
 
@@ -17,8 +17,9 @@ yarn run dev
 - Tags and categories
 - Night mode
 - DOS mode (404)
-- Theming (starring [Primitive])
 - Code theme (starring [New Moon](https://taniarascia.github.io/new-moon))
+- Sass (starring [Primitive](https://taniarascia.github.io/primitive))
+
 - Disqus comments
 
 ## Notes
@@ -39,7 +40,7 @@ prettier
 
 ## Contributing
 
-If you see any typos or errors in formatting in a post, please to not hesitate to open a pull request and fix it!
+If you see any typos or formatting errors in a post, please do not hesitate to open a pull request and fix it!
 
 ## Acknowledgements
 

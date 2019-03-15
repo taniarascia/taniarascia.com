@@ -6,7 +6,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
-  font-size: 15px;
+  font-size: 100% !important;
 }
 
 // Body base

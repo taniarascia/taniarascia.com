@@ -66,7 +66,6 @@ class Index extends Component {
             <ul>
               <li>Add improved sorting and filtering for posts</li>
               <li>Add logos for projects, podcasts, speaking, publications</li>
-              <li>Find out what's going on with comments</li>
             </ul>
           </div>
         </section>

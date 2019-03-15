@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import floppy from '../images/floppy.svg'
+import sun from '../images/sun.svg'
+import moon from '../images/moon.svg'
+import coffee from '../images/coffee.svg'
 import ThemeContext from '../context/ThemeContext'
 
 class Navigation extends Component {
@@ -48,10 +51,18 @@ class Navigation extends Component {
               </div>
               <div className="cta">
                 <button className="dark-switcher" onClick={theme.toggleDark}>
-                  {theme.dark ? <span>🌞</span> : <span>🌙</span>}
+                  {theme.dark ? (
+                    <span>
+                      <img src={sun} className="theme-icon" />
+                    </span>
+                  ) : (
+                    <span>
+                      <img src={moon} className="theme-icon" />
+                    </span>
+                  )}
                 </button>
                 <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
-                  <span className="text">Donate</span> <span className="emoji-in-button">☕</span>
+                  <span className="text">Donate</span> <img src={coffee} className="coffee-icon" />
                 </a>
               </div>
             </div>

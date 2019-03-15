@@ -24,6 +24,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: `${__dirname}/src/utils/typography.js`,
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
@@ -81,19 +87,18 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: '/logos/logo-192x192.png',
-            sizes: '192x192',
+            src: '/logos/logo-48.png',
+            sizes: '48x48',
             type: 'image/png',
           },
           {
-            src: '/logos/logo-512x512.png',
-            sizes: '512x512',
+            src: '/logos/logo-1024.png',
+            sizes: '1024x1024',
             type: 'image/png',
           },
         ],
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-feed',
       options: {

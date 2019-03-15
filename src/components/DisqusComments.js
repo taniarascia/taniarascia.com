@@ -26,13 +26,12 @@ class DisqusComments extends Component {
       return null
     }
 
-    const post = postNode.frontmatter
-    const url = urljoin(config.siteUrl, config.pathPrefix, postNode.fields.slug, '/')
+    const url = urljoin(config.siteUrl, postNode.fields.slug, '/')
     const disqusShortname = config.disqusShortname
     const disqusConfig = {
       url,
-      identifier: postNode.fields.slug,
-      title: post.title,
+      identifier: postNode.fields.slug + '/',
+      title: postNode.fields.slug + '/',
     }
 
     return <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />

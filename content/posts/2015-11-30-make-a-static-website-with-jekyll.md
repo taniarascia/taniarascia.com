@@ -10,7 +10,7 @@ tags:
   - git
   - jekyll
   - ruby
-  - static site
+  - ssg
 ---
 
 [Jekyll](https://jekyllrb.com/) is a static site generator that runs on the Ruby programming language. You may have heard of Jekyll or static site generators, but don't know how or where to get started. This guide is intended to be a complete tutorial, and require no additional resources to get you up and running with Jekyll.

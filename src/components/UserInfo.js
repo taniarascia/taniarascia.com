@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import coffee from '../images/coffee.svg'
 
 class UserInfo extends Component {
   render() {
@@ -14,7 +15,7 @@ class UserInfo extends Component {
             <strong>If you enjoy my content, please consider supporting what I do!</strong>
           </p>
           <a href="https://ko-fi.com/taniarascia" className="donate-button" target="_blank">
-            Support me <span className="emoji-in-button">☕</span>
+            Support me <img src={coffee} className="coffee-icon" />
           </a>
         </div>
       </aside>

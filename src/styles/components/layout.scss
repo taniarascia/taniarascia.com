@@ -141,7 +141,7 @@
   }
   h2 {
     font-size: 1.1rem;
-    line-height: 1.2;
+    line-height: 1.3;
     border-bottom: none;
     margin: 0;
   }
@@ -192,7 +192,7 @@
       .each {
         grid-template-columns: 80px 1fr;
         align-items: start;
-        padding: 3rem 2rem;
+        padding: 2.5rem 2rem;
         margin: 0 -2rem;
         h2 {
           font-size: 1.2rem;
@@ -206,6 +206,7 @@
         }
       }
       .excerpt {
+        font-size: 1.05rem;
         display: block;
       }
     }
@@ -470,6 +471,21 @@ blockquote {
   line-height: 0;
   font-size: 1.5rem;
   margin-left: 0.75rem;
+}
+
+.coffee-icon {
+  margin: 0;
+  height: 20px;
+  width: 20px;
+}
+
+@include small-breakpoint {
+  .coffee-icon {
+    margin-left: 0.75rem;
+    height: 25px;
+    width: 25px;
+    margin-bottom: 0.25rem;
+  }
 }
 
 .footer {

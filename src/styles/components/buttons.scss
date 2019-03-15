@@ -13,7 +13,7 @@
   font-family: $button-font-family;
   font-size: $button-font-size;
   text-transform: $button-text-transform;
-  padding: 0.6rem .9rem;
+  padding: 0.6rem 0.9rem;
   margin: 0 0 0.5rem 0;
   vertical-align: middle;
   text-align: center;
@@ -74,13 +74,13 @@ a.donate-button {
   align-items: center;
   border-radius: $border-radius;
   border: 2px solid $yellow;
+  background: lighten($yellow, 32%);
   padding: 0.75rem 1rem;
-  background: lighten($yellow, 28%);
   color: #333;
   &:hover,
   &:focus,
   &:active {
-    background: lighten($yellow, 20%);
+    background: lighten($yellow, 26%);
     border: 2px solid darken($yellow, 10%);
     color: #111;
   }
