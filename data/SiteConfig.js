@@ -24,15 +24,15 @@ const config = {
   menuLinks: [
     {
       name: 'About me',
-      link: '/me',
+      link: '/me/',
     },
     {
       name: 'Articles',
-      link: '/blog',
+      link: '/blog/',
     },
     {
       name: 'Newsletter',
-      link: '/newsletter',
+      link: '/newsletter/',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.

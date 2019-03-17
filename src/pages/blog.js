@@ -6,10 +6,15 @@ import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import kebabCase from 'lodash.kebabcase'
+import _ from 'lodash'
 
 class BlogPage extends Component {
+  state = {
+    posts: this.props.data.posts.edges,
+  }
+
   render() {
-    const postEdges = this.props.data.posts.edges
+    const { posts } = this.state
     const categories = this.props.data.categories.group.filter(
       category => category.fieldValue !== 'Popular'
     )
@@ -29,7 +34,7 @@ class BlogPage extends Component {
               </Link>
             ))}
           </div>
-          <PostListing excerpt postEdges={postEdges} />
+          <PostListing excerpt postEdges={posts} />
         </div>
       </Layout>
     )

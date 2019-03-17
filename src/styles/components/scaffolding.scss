@@ -6,7 +6,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
-  font-size: 100% !important;
+  font-size: 90% !important;
 }
 
 // Body base
@@ -84,7 +84,7 @@ h1 {
 h2 {
   font-size: $h2-mobile;
   font-weight: 600;
-  border-bottom: 2px solid lighten($border-color, 15%);
+  border-bottom: 2px solid lighten($border-color, 12%);
   padding-bottom: 0.5rem;
 }
 

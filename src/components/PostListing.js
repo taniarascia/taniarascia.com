@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { formatDate } from '../utils/global'
 
 class PostListing extends Component {
   getPostList() {
@@ -29,8 +28,6 @@ class PostListing extends Component {
     return (
       <section className={`posts ${simple ? 'simple' : ''}`}>
         {postList.map(post => {
-          const date = formatDate(post.date)
-
           let thumbnail
           if (post.thumbnail) {
             thumbnail = post.thumbnail.childImageSharp.fixed

@@ -19,7 +19,6 @@ yarn run dev
 - DOS mode (404)
 - Code theme (starring [New Moon](https://taniarascia.github.io/new-moon))
 - Sass (starring [Primitive](https://taniarascia.github.io/primitive))
-
 - Disqus comments
 
 ## Notes
