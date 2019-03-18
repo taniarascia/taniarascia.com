@@ -15,7 +15,7 @@ tags:
 
 ECMAScript 2015, also known as ES6, introduced many changes to JavaScript. Here is an overview of some of the most common features and syntactical differences, with comparisons to ES5 where applicable.
 
-[View on GitHub](https://github.com/taniarascia/es6)
+- [View on GitHub](https://github.com/taniarascia/es6)
 
 > **Note:** A commonly accepted practice is to use `const` except in cases of loops and reassignment. However, in this resource I'll be using `let` in place of `var` for all ES6 examples.
 

@@ -1,3 +1,16 @@
+---
+date: 2017-02-08
+title: 'How to Use jQuery, a JavaScript Library'
+template: post
+thumbnail: '../thumbnails/jquery.png'
+slug: how-to-use-jquery-a-javascript-library
+categories:
+  - Programming
+tags:
+  - javascript
+  - jquery
+---
+
 ### Introduction
 
 HTML, CSS, and JavaScript are the three fundamental languages of the web. We structure our websites with HTML, style them with CSS, and add interactive functionality with JavaScript. Most animations and any action that happens as a result of a user clicking, hovering, or scrolling are utilized with JavaScript.

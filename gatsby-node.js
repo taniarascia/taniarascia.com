@@ -72,7 +72,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${kebabCase(node.frontmatter.slug)}/`
+        slug = `/${node.frontmatter.slug}/`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = new Date(node.frontmatter.date)
 
