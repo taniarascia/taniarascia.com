@@ -30,7 +30,7 @@ class Index extends Component {
               write the <strong className="pink">missing instruction manuals</strong> of the web.
             </h1>
             <p>
-              I'm <strong>developer, designer,</strong> and <strong>writer</strong>. I created this
+              I'm a <strong>developer, designer,</strong> and <strong>writer</strong>. I created this
               site to document everything I learn, and share a bit of myself with the world. My site
               is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
             </p>
