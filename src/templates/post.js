@@ -3,9 +3,8 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
-import DisqusComments from '../components/DisqusComments'
-import DisqusCommentCount from '../components/DisqusCommentCount'
 import PostTags from '../components/PostTags'
+import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
@@ -32,6 +31,15 @@ class PostTemplate extends Component {
 
     const date = formatDate(post.date)
     const githubLink = editOnGithub(post)
+    const twitterUrl = 'https://twitter.com/search?q=' + config.siteUrl + '/' + post.slug + '/'
+    const twitterShare =
+      'http://twitter.com/share?text=' +
+      encodeURIComponent(post.title) +
+      '&url=' +
+      config.siteUrl +
+      '/' +
+      post.slug +
+      '/&via=taniarascia'
 
     return (
       <Layout>
@@ -46,8 +54,8 @@ class PostTemplate extends Component {
               <h1>{post.title}</h1>
               <div className="post-meta">
                 <time className="date">{date}</time>/
-                <a className="comment-link" href="#disqus-container">
-                  <DisqusCommentCount postNode={postNode} />
+                <a className="twitter-link" href={twitterShare}>
+                  Share
                 </a>
                 /
                 <a className="github-link" href={githubLink} target="_blank">
@@ -58,11 +66,19 @@ class PostTemplate extends Component {
             </div>
           </header>
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <div>
+            {' '}
+            <a href={twitterShare}>Share on Twitter</a> |{' '}
+            <a href={twitterUrl}>Discuss on Twitter</a> |{' '}
+            <a href={githubLink} target="_blank">
+              Edit on Github ✏️
+            </a>
+          </div>
+          <h3>Stay in touch</h3>
+          <p>Like the posts you see here? Sign up to get notified about new ones.</p>
+          <NewsletterForm />
         </article>
         <UserInfo config={config} />
-        <div id="disqus-container" className="container">
-          <DisqusComments postNode={postNode} />
-        </div>
       </Layout>
     )
   }

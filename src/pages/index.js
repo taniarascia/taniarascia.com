@@ -30,9 +30,9 @@ class Index extends Component {
               write the <strong className="pink">missing instruction manuals</strong> of the web.
             </h1>
             <p>
-              I'm a <strong>developer, designer,</strong> and <strong>writer</strong>. I created this
-              site to document everything I learn, and share a bit of myself with the world. My site
-              is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
+              I'm a <strong>developer, designer,</strong> and <strong>writer</strong>. I created
+              this site to document everything I learn, and share a bit of myself with the world. My
+              site is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
             </p>
             <Link className="button" to="/me" target="_blank">
               About me
@@ -48,24 +48,19 @@ class Index extends Component {
 
         <section className="note">
           <div className="container note-container">
-            <h3>Updates</h3>
+            <h3>News</h3>
             <p>
-              <small>
-                <em>March 13, 2019</em>
-              </small>
-              <br />
-              After a long and arduous journey, I've migrated the site from WordPress to Gatsby, a
-              React/Node.js static site generator.{' '}
-              <a href="https://github.com/taniarascia/taniarascia.com" target="_blank">
-                View the source
-              </a>{' '}
-              of the new website, and <a href="https://www.taniarascia.com/migrating-from-wordpress-to-gatsby">read about the migration</a>! I'm loving Gatsby so far. If you see any formatting errors on a post, feel free to make a
-              pull request and fix it on GitHub, or leave an issue if you find something I missed.
+              <em>March 21, 2019</em>
             </p>
-            <h4>Todos</h4>
             <ul>
-              <li>Add improved sorting and filtering for posts</li>
-              <li>Add logos for projects, podcasts, speaking, publications</li>
+              <li>
+                My post about migrating to Gatsby was featued{' '}
+                <a href="https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/">
+                  in the official Gatsby blog
+                </a>
+                !
+              </li>
+              <li>Also I removed Disqus comments because the ads were flagrant.</li>
             </ul>
           </div>
         </section>

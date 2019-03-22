@@ -1,20 +1,21 @@
 ---
-title: Resume
+title: Tania Rascia
 slug: resume
 template: page
 ---
 
-# Tania Rascia
-
 ### Full-Stack Developer
 
-> taniarascia.com | me@taniarascia.com | 630-615-8863 | Chicago, IL
+Highly motivated and versatile full-stack developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
 
-Highly motivated and versatile full-stack developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security. 
+- [taniarascia.com](https://www.taniarascia.com)
+- [me@taniarascia.com](mailto:me@taniarascia.com)
+- [630-615-8863](tel:630-615-8863)
+- Chicago, IL
 
 ## Technical Skills
 
-- **Languages** - JavaScript (ES6+), PHP, HTML5, CSS3, Bash 
+- **Languages** - JavaScript (ES6+), PHP, HTML5, CSS3, Bash
 - **Concepts** - RESTful API Design/Integration, MVC Architecture, CI/CD, Agile, ADA Compliance
 - **Tools/Environment** - Node.js, Git, Webpack, Jenkins, Chrome DevTools, Jira, AWS, CLI, Sass
 - **Frameworks/Libraries** - React, jQuery, Semantic UI, Material, Bootstrap, Jest
@@ -23,15 +24,15 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 
 ## Experience
 
-### Front End Software Engineer
+#### Front End Software Engineer
 
-**Dais Technology, Inc** - _2018 - Present |  Chicago, IL_
+**Dais Technology, Inc** - _2018 - Present | Chicago, IL_
 
 - Developed software for insurance companies in React with custom backend APIs
 - Created an internal user management system for organization admins
 - Worked with design team to create beautiful user interfaces and intuitive user experiences
 
-### Technical Writer - JavaScript
+#### Technical Writer - JavaScript
 
 **DigitalOcean** - _2017 - 2019 | Remote_
 
@@ -39,7 +40,7 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 - Wrote the How to Code in JavaScript tutorial series, covering fundamentals, syntax, and concepts
 - Shaped the curriculum of JavaScript content by collaborating with the in-house team
 
-### Web Developer 
+#### Web Developer
 
 **RateYourSeats.com** - _2018 | Chicago, IL_
 
@@ -47,8 +48,7 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 - Designed an API for the company to be able to access data across the platform
 - Integrated Git version control into the platform to track, manage, and simplify changes
 
-
-### Web Developer/Designer 
+#### Web Developer/Designer
 
 **Lettuce Entertain You Enterprises, Inc.** - _2015 - 2017 | Chicago, IL_
 
@@ -62,17 +62,17 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 - [Chip8.js](https://github.com/taniarascia/chip8) - Node.js emulator
 - [Laconia](https://github.com/taniarascia/laconia) - MVC web framework
 - [Primitive](https://github.com/taniarascia/primitive) - Sass boilerplate/CSS framework
-- [New Moon](https://github.com/taniarascia/new-moon) - Optimized dark theme 
+- [New Moon](https://github.com/taniarascia/new-moon) - Optimized dark theme
 
 ## Speaking
- 
-### Developing a WordPress Theme From Scratch
+
+#### Developing a WordPress Theme From Scratch
 
 **WordCamp Chicago** - _2017 | Chicago, IL_
- 
+
 ## Education
 
-### B.A. in Professional Studies
+#### B.A. in Professional Studies
 
 **Robert Morris University** - _2007 - 2010 | Chicago, IL_
 

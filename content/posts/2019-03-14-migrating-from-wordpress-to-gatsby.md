@@ -13,6 +13,8 @@ tags:
   - ssg
 ---
 
+> This post was featured on [the official Gatsby blog](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)!
+
 On September 24th, 2015, I made the [first post](/getting-started-with-git) on this blog, which was a custom self-hosted WordPress theme. I discovered Git, I discovered WordPress, and I [made 1,039 commits](https://github.com/taniarascia/oblate), in which I obsessively [designed](https://www.taniarascia.com/version-2-0-website-redesign-863-commits-later) and [redesigned](https://www.taniarascia.com/website-redesign-version-4-0) the site.
 
 I've had quite a bit of experience with WordPress. Once I learned how to make the blog, I wrote [Developing a WordPress Theme from Scratch](/developing-a-wordpress-theme-from-scratch), the post that has had millions of hits, hundreds of comments, made me plenty of friends, and launched my blogging career. I also worked as a WordPress developer for two years.
@@ -37,7 +39,7 @@ A few things I really like about Gatsby:
 - Image optimization - all the images are automatically stripped of metadata, optimized, resized, lazy-loaded, and compressed
 - Pre-fetch resources - Gatsby detects what links are available on a given page and loads that data into the cache
 - Bundling and minification - code is minified, bundled, and served
-- No server side rendering 
+- Server side rendered at build time
 - Anyone can edit my posts! If you see a typo or an error, just fork the repo and make the change!
 - Every time I push to the repo, the site gets automatically deployed.
 
