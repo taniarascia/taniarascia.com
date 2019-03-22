@@ -5,7 +5,7 @@ Personal website running on Gatsby, React, and Node.js.
 ## Installation
 
 ```bash
-git clone git@github.com:taniarascia/taniarascia.com
+git clone https://github.com/taniarascia/taniarascia.com
 cd taniarascia.com
 yarn
 yarn run dev
