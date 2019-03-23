@@ -2,7 +2,11 @@
 
 Personal website running on Gatsby, React, and Node.js.
 
+- [Post on the official Gatsby blog](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)
+
 ## Installation
+
+Run local server:
 
 ```bash
 git clone https://github.com/taniarascia/taniarascia.com
@@ -10,6 +14,8 @@ cd taniarascia.com
 yarn
 yarn run dev
 ```
+
+Navigate to `localhost:8000`.
 
 ## Features
 
@@ -19,7 +25,6 @@ yarn run dev
 - DOS mode (404)
 - Code theme (starring [New Moon](https://taniarascia.github.io/new-moon))
 - Sass (starring [Primitive](https://taniarascia.github.io/primitive))
-- Disqus comments
 
 ## Notes
 
@@ -39,13 +44,12 @@ prettier
 
 ## Contributing
 
-If you see any typos or formatting errors in a post, please do not hesitate to open a pull request and fix it!
+If you see any typos or formatting errors in a post, or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!
 
 ## Acknowledgements
 
-- Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) the theme I hacked on to create this one.
-- Muhammad Muhsin - [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/) the article I used to implement dark mode with the context API.
-- Thomas Frössman - [ExitWP](https://github.com/thomasf/exitwp) - the converter I used to do half of the work of migrating from WordPress XML to Markdown.
+- Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/)
+- Muhammad Muhsin - [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)- Thomas Frössman - [ExitWP](https://github.com/thomasf/exitwp) - WordPress XML to Markdown
 
 ## License
 
