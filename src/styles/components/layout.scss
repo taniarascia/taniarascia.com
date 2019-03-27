@@ -8,7 +8,7 @@
   #main-content {
     margin-top: 92px;
     padding: 60px 0 0;
-    min-height: calc(100vh - 192px);
+    min-height: calc(100vh - 222px);
   }
 }
 
@@ -58,7 +58,7 @@
 
 @include small-breakpoint {
   .section {
-    margin: 80px 0;
+    margin: 4rem 0;
   }
 }
 
@@ -144,6 +144,7 @@
     line-height: 1.3;
     border-bottom: none;
     margin: 0;
+    padding: 0;
   }
   .gatsby-image-wrapper {
     margin-top: 0;
@@ -405,9 +406,15 @@ blockquote {
   padding: 1rem;
   line-height: 1.6;
   font-size: 1rem;
+  &.quotation {
+    border: 0;
+    border-left: 10px solid #f0f0f0;
+    background: transparent;
+    padding: .5rem 2rem;
+  }
   p {
     padding: 0;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     &:last-of-type {
       margin-bottom: 0;
     }

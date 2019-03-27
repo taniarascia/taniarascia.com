@@ -4,11 +4,11 @@ import Layout from '../layout'
 import Contact from '../components/Contact'
 import config from '../../data/SiteConfig'
 
-class NewsletterPage extends Component {
+class ContactPage extends Component {
   render() {
     return (
       <Layout>
-        <Helmet title={`Newsletter – ${config.siteTitle}`} />
+        <Helmet title={`Contact – ${config.siteTitle}`} />
         <div className="container">
           <Contact />
         </div>
@@ -17,4 +17,4 @@ class NewsletterPage extends Component {
   }
 }
 
-export default NewsletterPage
+export default ContactPage

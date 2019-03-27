@@ -13,7 +13,7 @@ tags:
   - ssg
 ---
 
-> This post was featured on [the official Gatsby blog](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)!
+<blockquote class="quotation"><p>This post was featured in <a href="https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/">the official Gatsby blog</a>!</p></blockquote>
 
 On September 24th, 2015, I made the [first post](/getting-started-with-git) on this blog, which was a custom self-hosted WordPress theme. I discovered Git, I discovered WordPress, and I [made 1,039 commits](https://github.com/taniarascia/oblate), in which I obsessively [designed](https://www.taniarascia.com/version-2-0-website-redesign-863-commits-later) and [redesigned](https://www.taniarascia.com/website-redesign-version-4-0) the site.
 
@@ -47,13 +47,13 @@ Very little boilerplate code was necessary to get started with Gatsby. I just fo
 
 So far, the only thing I don't like is that Gatsby seems to change the zoom of the site after building somehow, so my styles aren't matching up exactly.
 
-I should mention I moved my host from NearlyFreeSpeech.net to [Netlify](https://www.netlify.com/), which is awesome. I really can't say enough about them. I'm highly impressed with how quick and easy it is to set up anything I want. 
+I should mention I moved my host from NearlyFreeSpeech.net to [Netlify](https://www.netlify.com/), which is awesome. I really can't say enough about them. I'm highly impressed with how quick and easy it is to set up anything I want.
 
 ## My migration process
 
 I've been putting off migrating to a static site for months and months, because I knew it would be a huge time sink, obsession, and a lot of work. But in the end, I was able to move everything in 10 days, so it really wasn't the end of the world. I'll give you the basics of what I did in case you also want to make the switch:
 
-- First, I downloaded the XML from WordPress in the Tools -> Export section. 
+- First, I downloaded the XML from WordPress in the Tools -> Export section.
 - Then I used the [ExitWP](https://github.com/thomasf/exitwp) tool to convert the XML to Markdown. This did about 50% of the work of converting the posts.
 - I had to go through and use the [HTML to Markdown Table Converter](https://jmalarcon.github.io/markdowntables/) individually, manually indent all code blocks, manually convert all four-indent spaced code blocks to GitHub style fenced codeblocks, and fix all the broken lists.
 - I used Prettier on all the markdown files to try to make them consistent.

@@ -66,6 +66,10 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 
 ## Speaking
 
+#### An Introduction to React
+
+**JavaScript Chicago** - _2019 | Chicago, IL_
+
 #### Developing a WordPress Theme From Scratch
 
 **WordCamp Chicago** - _2017 | Chicago, IL_

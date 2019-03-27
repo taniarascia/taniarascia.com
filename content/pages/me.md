@@ -4,7 +4,7 @@ slug: me
 template: page
 ---
 
-My name is Tania. I’m a developer, designer, writer, and former chef from Chicago. I currently work as a front end software engineer for [DAIS](https://www.dais.com/). I also write for [DigitalOcean](https://www.digitalocean.com/community/users/taniarascia), [SitePoint](https://www.sitepoint.com/author/trascia/), [Envato Tuts+](https://tutsplus.com/authors/tania-rascia), and other [publications](/publications).
+My name is Tania. I’m a developer, designer, writer, and former chef from Chicago. I currently work as a front end software engineer for [DAIS](https://www.dais.com/). I also write for [DigitalOcean](https://www.digitalocean.com/community/users/taniarascia), [SitePoint](https://www.sitepoint.com/author/trascia/), [Envato Tuts+](https://tutsplus.com/authors/tania-rascia), [Codrops](https://tympanus.net/codrops/author/taniarascia/), [LogRocket](https://blog.logrocket.com/@taniarascia),  and other [publications](/publications).
 
 A few highlights:
 

@@ -9,7 +9,7 @@
   border-bottom: 2px solid #f0f0f0;
   transition: height 0.3s ease;
   .nav-container {
-    padding: 0 1rem;
+    padding: 0 2rem;
     height: 55px;
     max-width: $width;
     margin: auto;
@@ -78,7 +78,7 @@ button.dark-switcher {
   -webkit-appearance: none;
   border: 0;
   padding: 0.2rem;
-  margin: 0 0.25rem 0.5rem 0;
+  margin: 0 0.75rem 0.5rem 0;
   background: transparent;
   &:focus {
     outline: none;

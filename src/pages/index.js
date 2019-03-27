@@ -34,36 +34,16 @@ class Index extends Component {
               this site to document everything I learn, and share a bit of myself with the world. My
               site is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
             </p>
-            <Link className="button" to="/me" target="_blank">
-              About me
-            </Link>
-            <a className="button" href="https://github.com/taniarascia" target="_blank">
-              GitHub
-            </a>
-            <a className="button" href="https://twitter.com/taniarascia" target="_blank">
-              Twitter
+            <a
+              className="twitter-follow-button"
+              href="https://twitter.com/taniarascia"
+              data-size="large"
+              data-show-screen-name="false"
+            >
+              Follow @taniarascia
             </a>
           </div>
         </div>
-
-        <section className="note">
-          <div className="container note-container">
-            <h3>News</h3>
-            <p>
-              <em>March 21, 2019</em>
-            </p>
-            <ul>
-              <li>
-                My post about migrating to Gatsby was featued{' '}
-                <a href="https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/">
-                  in the official Gatsby blog
-                </a>
-                !
-              </li>
-              <li>Also I removed Disqus comments because the ads were flagrant.</li>
-            </ul>
-          </div>
-        </section>
 
         <div className="container">
           <section className="section">
@@ -99,6 +79,33 @@ class Index extends Component {
           <section className="section">
             <h2>Speaking</h2>
             <SimpleListing simple data={speaking} />
+          </section>
+
+          <section className="section">
+            <h2>Other People's Opinions</h2>
+            <blockquote className="quotation">
+              <p>
+                You write extremely clear, concise tutorials that have the best ratio of learning to
+                bullshit that I've encountered so far. It's no exaggeration to say that I wouldn't
+                currently have a job in development without this site. So thanks for ruining my
+                life, Tania.
+              </p>
+              <cite>— Craig</cite>
+            </blockquote>
+            <blockquote className="quotation">
+              <p>
+                You taught me more than any class could have, and it took me a fraction of the time
+                because of how clearly you write and teach.
+              </p>
+              <cite>— Evan</cite>
+            </blockquote>
+            <blockquote className="quotation">
+              <p>
+                Not to get too dramatic, but I find your site to be an unspeakably beautiful
+                lifeboat in an overwhelming sea of technical jargon and shite.
+              </p>
+              <cite>— Lori</cite>
+            </blockquote>
           </section>
 
           <section className="section">
