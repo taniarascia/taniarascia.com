@@ -79,13 +79,10 @@ Let's start by making a basic `index.html` file. We're going to load in three CD
 
   <body>
     <div id="root"></div>
-  </body>
-</html>
 
     <script type="text/babel">
       // React code will go here
     </script>
-
   </body>
 </html>
 ```
@@ -153,8 +150,6 @@ index.html
 
   <body>
     <div id="root"></div>
-  </body>
-</html>
 
     <script type="text/babel">
       class App extends React.Component {
@@ -165,7 +160,6 @@ index.html
 
       ReactDOM.render(<App />, document.getElementById('root'))
     </script>
-
   </body>
 </html>
 ```
@@ -211,6 +205,8 @@ To see how the environment automatically compiles and updates your React code, f
 To get started, edit <code>src/App.js</code>
 ```
 
+````
+
 and save to reload.
 
 And replace it with any other text. Once you save the file, you'll notice `localhost:3000` compiles and refreshes with the new data.
@@ -227,7 +223,7 @@ Now in `index.js`, we're importing React, ReactDOM, and the CSS file.
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-```
+````
 
 Let's create our `App` component again. Before, we just had an `<h1>`, but now I'm adding in a div element with a class as well. You'll notice that we use `className` instead of `class`. This is our first hint that the code being written here is JavaScript, and not actually HTML.
 
@@ -904,7 +900,7 @@ If you got lost anywhere along the way, you can view [the complete source on Git
 
 One very common usage of React is pulling in data from an API. If you're not familiar with what an API is or how to connect to one, I would recommend reading [How to Connect to an API with JavaScript](/how-to-connect-to-an-api-with-javascript/), which will walk you through what APIs are and how to use them with vanilla JavaScript.
 
-As a little test, we can create an `Api.js` file, and create a new `App` in there. A public API we can test with is the [Wikipedia API](https://en.wikipedia.org/w/api.php), and I have a [URL endpoint right here](https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*) for a random* search. You can go to that link to see the API - and make sure you have [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) installed on your browser.
+As a little test, we can create an `Api.js` file, and create a new `App` in there. A public API we can test with is the [Wikipedia API](https://en.wikipedia.org/w/api.php), and I have a [URL endpoint right here](https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*) for a random\* search. You can go to that link to see the API - and make sure you have [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) installed on your browser.
 
 We're going to use [JavaScript's built-in Fetch](/how-to-use-the-javascript-fetch-api-to-get-json-data/) to gather the data from that URL endpoint and display it. You can switch between the app we created and this test file by just changing the URL in `index.js` - `import App from './Api';`.
 
