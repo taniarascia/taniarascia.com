@@ -27,11 +27,13 @@
 
 .lead {
   font-size: 1.1rem;
+
   h1 {
     font-weight: 500;
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
   }
+
   .button {
     margin-right: 0.5rem;
   }
@@ -40,9 +42,11 @@
 @include small-breakpoint {
   .lead {
     font-size: 1.2rem;
+
     h1 {
       font-size: 2rem;
     }
+
     .button {
       margin-right: 0.5rem;
     }
@@ -51,6 +55,7 @@
 
 .section {
   margin: 40px 0;
+
   &:first-of-type {
     margin-bottom: 0;
   }
@@ -81,13 +86,16 @@
 .single-header {
   display: grid;
   margin-bottom: 30px;
+
   .flex {
     display: flex;
     flex-direction: column;
   }
+
   h1 {
     margin: 0.5rem 0;
   }
+
   .post-meta {
     margin-bottom: 1rem;
   }
@@ -98,6 +106,7 @@
     display: grid;
     grid-template-columns: 180px 1fr;
     margin-bottom: 80px;
+
     h1 {
       margin: 0 0 0.5rem 0;
     }
@@ -107,6 +116,7 @@
 .posts {
   a {
     display: block;
+
     .each {
       display: grid;
       align-items: center;
@@ -116,29 +126,35 @@
       border-radius: $border-radius;
       border: 2px solid transparent;
       border-bottom-color: #f0f0f0;
+
       .date {
         margin: 0;
         font-size: 0.9rem;
         color: rgba(0, 0, 0, 0.4);
         font-weight: 400;
       }
+
       &:hover {
         border: 2px solid $primary-color;
         background: $button-background-hover;
+
         h2 {
           color: #111;
         }
       }
     }
+
     &:last-of-type {
       .each {
         border-bottom-color: transparent;
+
         &:hover {
           border-bottom-color: $primary-color;
         }
       }
     }
   }
+
   h2 {
     font-size: 1.1rem;
     line-height: 1.3;
@@ -146,16 +162,19 @@
     margin: 0;
     padding: 0;
   }
+
   .gatsby-image-wrapper {
     margin-top: 0;
     height: 40px !important;
     width: 40px !important;
   }
+
   .excerpt {
     display: none;
     color: $light-font-color;
     font-weight: 400;
   }
+
   &.simple {
     a {
       .each {
@@ -164,22 +183,26 @@
         padding: 0.75rem;
         margin: 0;
         border: 2px solid transparent;
+
         &:hover {
           border: 2px solid $primary-color;
           background: $button-background-hover;
         }
       }
     }
+
     .gatsby-image-wrapper {
       margin-top: 0;
       height: 30px !important;
       width: 30px !important;
     }
+
     h2 {
       font-weight: 500;
       padding: 0;
       margin: 0;
       color: $light-font-color;
+
       &:hover {
         color: #111;
       }
@@ -195,30 +218,36 @@
         align-items: start;
         padding: 2.5rem 2rem;
         margin: 0 -2rem;
+
         h2 {
           font-size: 1.2rem;
           line-height: 1.3;
           margin: 0 0 0.75rem 0;
         }
+
         .gatsby-image-wrapper {
           margin-top: 0;
           height: 50px !important;
           width: 50px !important;
         }
       }
+
       .excerpt {
         font-size: 1.05rem;
         display: block;
       }
     }
+
     &.simple {
       a {
         .each {
           padding: 0.75rem 1rem;
           margin: 0 -1rem;
+
           h2 {
             margin: 0;
           }
+
           .gatsby-image-wrapper {
             height: 30px !important;
             width: 30px !important;
@@ -236,6 +265,7 @@
       margin: 0;
       border: 2px solid transparent;
       border-radius: $border-radius;
+
       h2 {
         font-size: 1.1rem;
         font-weight: 500;
@@ -244,9 +274,11 @@
         color: $light-font-color;
         border-bottom: none;
       }
+
       &:hover {
         border: 2px solid $primary-color;
         background: $button-background-hover;
+
         h2 {
           color: #111;
         }
@@ -261,6 +293,7 @@
       .each {
         padding: 0.75rem 1rem;
         margin: 0 -1rem;
+
         h2 {
           font-size: 1.2rem;
         }
@@ -276,6 +309,7 @@
     justify-content: space-between;
     padding: 1rem 0;
   }
+
   h2 {
     font-size: 1.2rem;
     border-bottom: none;
@@ -284,12 +318,14 @@
     padding: 0;
     margin: 0 0 0.5rem 0;
   }
+
   p {
     display: none;
     color: $light-font-color;
     font-weight: normal;
     margin: 0;
   }
+
   .button {
     margin-right: 0.5rem;
     padding: 0.5rem;
@@ -304,10 +340,12 @@
       grid-template-columns: 2fr 5fr 3fr;
       grid-template-rows: none;
     }
+
     p {
       display: block;
       margin: 0 1.5rem 0 0;
     }
+
     .button {
       padding: 0.75rem 1.25rem;
       font-size: 1.1rem;
@@ -325,11 +363,13 @@
     font-size: 0.8rem;
     font-weight: 400;
     margin: 0 0.5rem 0.5rem 0;
+
     .count {
       color: $secondary-color;
       font-weight: 700;
       margin-left: 0.25rem;
     }
+
     &:hover,
     &:active,
     &:focus {
@@ -338,6 +378,7 @@
       color: darken($border-color, 40%);
     }
   }
+
   &.articles-page-tags {
     margin-bottom: 1rem;
   }
@@ -349,15 +390,19 @@
       font-size: 0.9rem;
       font-weight: 500;
       padding: 0.3rem 0.8rem;
+
       .count {
         margin-left: 0.5rem;
       }
     }
+
     &.articles-page-tags {
       margin-bottom: 2rem;
       display: flex;
+
       a {
         flex: 1;
+
         span {
           display: flex;
           justify-content: center;
@@ -371,19 +416,24 @@
   font-size: 0.8rem;
   color: $light-font-color;
   display: inline-block;
+
   .date {
     margin-right: 0.5rem;
   }
+
   a {
     color: $light-font-color;
+
     &.comment-link,
     &.twitter-link,
     &.github-link {
       margin: 0 0.5rem;
     }
+
     &.comment-link {
       text-transform: lowercase;
     }
+
     &:hover {
       color: $primary-color;
     }
@@ -406,22 +456,28 @@ blockquote {
   padding: 1rem;
   line-height: 1.6;
   font-size: 1rem;
+
   &.quotation {
+    border-radius: 0;
     border: 0;
-    border-left: 10px solid #f0f0f0;
+    border-left: 12px solid #f0f0f0;
     background: transparent;
     padding: .5rem 2rem;
   }
+
   p {
     padding: 0;
     font-size: 1.15rem;
+
     &:last-of-type {
       margin-bottom: 0;
     }
   }
+
   a {
     color: #111;
     border-bottom: 2px solid $yellow !important;
+
     &:hover,
     &:active,
     &:focus {
@@ -429,6 +485,7 @@ blockquote {
       background: lighten($yellow, 10%) !important;
     }
   }
+
   cite {
     display: block;
     margin-top: 1rem;
@@ -437,6 +494,7 @@ blockquote {
     font-family: $font-family;
     color: rgba(0, 0, 0, 0.4);
   }
+
   code {
     margin: 1rem 0 0;
   }
@@ -445,6 +503,7 @@ blockquote {
 @include small-breakpoint {
   blockquote {
     padding: 2rem;
+
     p {
       font-size: 1.2rem;
     }
@@ -457,12 +516,14 @@ blockquote {
   margin: 1.5rem 0;
   border-top: 2px solid #f0f0f0;
   border-bottom: 2px solid #f0f0f0;
+
   .note-container {
     background: white;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     padding: 1.5rem;
   }
+
   h2 {
     border-bottom: 0;
   }
@@ -472,6 +533,7 @@ blockquote {
   .note {
     padding: 4rem 0;
     margin: 3rem 0;
+
     .note-container {
       padding: 3rem;
     }

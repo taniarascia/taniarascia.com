@@ -2,23 +2,23 @@
   by Tania Rascia */
 
 // Configuration
-@import "base/variables";
-@import "base/mixins";
+@import 'base/variables';
+@import 'base/mixins';
 
 // Reset
-@import "base/reset";
+@import 'base/reset';
 
 // Components
-@import "components/scaffolding";
-@import "components/helpers";
-@import "components/buttons";
-@import "components/forms";
-@import "components/tables";
-@import "components/navigation";
-@import "components/layout";
-@import "components/new-moon";
+@import 'components/scaffolding';
+@import 'components/helpers';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/tables';
+@import 'components/navigation';
+@import 'components/layout';
+@import 'components/new-moon';
 
 // Themes
 
-@import "themes/dark";
-@import "themes/404";
+@import 'themes/dark';
+@import 'themes/404';

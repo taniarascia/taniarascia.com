@@ -17,6 +17,7 @@ pre.language-terminal code.language-terminal {
   font-size: 13px;
   background: white;
   color: #333;
+
   &::before {
     content: '\2022 \2022 \2022';
     position: absolute;
@@ -31,7 +32,7 @@ pre.language-terminal code.language-terminal {
     line-height: 0;
     padding: 15px 0;
     text-indent: 4px;
-    letter-spacing: -17px;
+    letter-spacing: -12px;
   }
 }
 
@@ -64,7 +65,9 @@ pre code {
   background-color: #333;
   border: 0;
   box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
-} // Keyboard input
+}
+
+// Keyboard input
 kbd {
   background-color: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -82,12 +85,12 @@ kbd {
 
 /* Inline code */
 
-:not(pre) > code[class*='language-'] {
+:not(pre)>code[class*='language-'] {
   padding: 3px 5px;
   color: #111111;
 }
 
-:not(pre) > code {
+:not(pre)>code {
   padding: 3px 5px;
   border: none;
   font-family: $code-font-family;
@@ -116,6 +119,7 @@ code[class*='language-sass'] {
 }
 
 @include small-breakpoint {
+
   code,
   pre.language-terminal code.language-terminal,
   code[class*='language-'],

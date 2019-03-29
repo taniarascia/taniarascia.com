@@ -41,13 +41,16 @@
 // Apply styles to .button class, button element, and button-based inputs
 #{$buttons} {
   @extend %buttons;
+
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
+
   &:hover {
     @extend %buttons-hover;
   }
+
   &:focus,
   &:active {
     @extend %buttons-focus;
@@ -58,6 +61,7 @@
 a.button.muted-bottom {
   color: darken($border-color, 30%);
   border: 2px solid $border-color;
+
   &:hover,
   &:focus,
   &:active {
@@ -77,6 +81,7 @@ a.donate-button {
   background: lighten($yellow, 32%);
   padding: 0.75rem 1rem;
   color: #333;
+
   &:hover,
   &:focus,
   &:active {

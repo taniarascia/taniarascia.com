@@ -30,6 +30,7 @@ table {
 }
 
 @include small-breakpoint {
+
   p,
   ol,
   ul,
@@ -64,6 +65,7 @@ h5 {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
   color: $heading-font-color;
+
   &:not(:first-child) {
     margin: 0 0 1rem 0;
   }
@@ -105,33 +107,42 @@ h5 {
 }
 
 @include small-breakpoint {
+
   h1,
   h2,
   h3,
   h4,
   h5 {
     margin: 0 0 2rem 0;
+
     &:not(:first-child) {
       margin: 0 0 1.5rem 0;
     }
   }
+
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child) {
     margin-top: 3.5rem;
-  } // Heading desktop individual styles
+  }
+
+  // Heading desktop individual styles
   h1 {
     font-size: $h1;
   }
+
   h2 {
     font-size: $h2;
   }
+
   h3 {
     font-size: $h3;
   }
+
   h4 {
     font-size: $h4;
   }
+
   h5 {
     font-size: $h5;
   }
@@ -139,6 +150,7 @@ h5 {
 
 ul {
   padding: 0;
+
   li {
     &:before {
       content: '\2022 ';
@@ -148,6 +160,7 @@ ul {
       font-size: 22px;
       line-height: 1.1;
     }
+
     position: relative;
     list-style-type: none;
     margin-bottom: 0.3rem;
@@ -170,6 +183,7 @@ a {
   color: $link-color;
   text-decoration: none;
   font-weight: 600;
+
   &:hover,
   &:active,
   &:focus {
@@ -180,6 +194,7 @@ a {
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+
     &:hover,
     &:active,
     &:focus {
@@ -188,6 +203,7 @@ a {
       background: $button-background-hover;
     }
   }
+
   img {
     max-width: 100%;
     height: auto;
