@@ -32,7 +32,8 @@ This guide is for macOS. I'll be using `/Users/tania` for all examples, but it w
 In this tutorial, we're going to:
 
 - Create a bash script that can be run from any directory on the computer.
-- Learn about variables, conditions, looping, and user input with bash. - Create a simple Git deployment script.
+- Learn about variables, conditions, looping, and user input with bash.
+- Create a simple Git deployment script.
 
 ## 1. Create a bin directory
 
