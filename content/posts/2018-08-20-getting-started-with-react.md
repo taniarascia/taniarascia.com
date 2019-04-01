@@ -205,7 +205,6 @@ To see how the environment automatically compiles and updates your React code, f
 To get started, edit <code>src/App.js</code>
 ```
 
-````
 
 and save to reload.
 
