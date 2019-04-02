@@ -7,7 +7,15 @@ table {
   border-spacing: 0;
   width: 100%;
   max-width: 100%;
-  table-layout: fixed;
+  overflow-x: auto;
+  display: block;
+
+  code {
+    &.language-text {
+      background: transparent;
+      padding: 0;
+    }
+  }
 }
 
 // Extra border underneath header
@@ -27,7 +35,7 @@ td {
 th,
 td {
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   hyphens: auto;
   word-break: break-word;
 }

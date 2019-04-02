@@ -233,7 +233,7 @@
       }
 
       .excerpt {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         display: block;
       }
     }
@@ -489,7 +489,7 @@ blockquote {
   cite {
     display: block;
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: right;
     font-family: $font-family;
     color: rgba(0, 0, 0, 0.4);
@@ -527,6 +527,10 @@ blockquote {
   h2 {
     border-bottom: 0;
   }
+}
+
+.search {
+  margin-bottom: 1rem;
 }
 
 @include small-breakpoint {

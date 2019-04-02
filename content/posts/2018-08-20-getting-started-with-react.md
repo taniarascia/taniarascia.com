@@ -202,10 +202,8 @@ In `/public`, our important file is `index.html`, which is very similar to the s
 To see how the environment automatically compiles and updates your React code, find the line that looks like this in `/src/App.js`:
 
 ```html
-To get started, edit <code>src/App.js</code>
+To get started, edit `src/App.js`
 ```
-
-````
 
 and save to reload.
 
@@ -223,7 +221,7 @@ Now in `index.js`, we're importing React, ReactDOM, and the CSS file.
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-````
+```
 
 Let's create our `App` component again. Before, we just had an `<h1>`, but now I'm adding in a div element with a class as well. You'll notice that we use `className` instead of `class`. This is our first hint that the code being written here is JavaScript, and not actually HTML.
 
@@ -659,7 +657,8 @@ To start, we're going to create a `state` object.
 
 ```jsx
 class App extends Component {
-  state = {};
+  state = {}
+}
 ```
 
 The object will contain properties for everything you want to store in the state. For us, it's `characters`.
@@ -667,8 +666,9 @@ The object will contain properties for everything you want to store in the state
 ```jsx
 class App extends Component {
   state = {
-      characters: []
-    };
+    characters: [],
+  }
+}
 ```
 
 Move the entire array of objects we created earlier into `state.characters`.
@@ -678,10 +678,12 @@ class App extends Component {
   state = {
     characters: [
       {
-        'name': 'Charlie',
+        name: 'Charlie',
         // the rest of the data
-    ]
-  };
+      },
+    ],
+  }
+}
 ```
 
 Our data is officially contained in the state. Since we want to be able to remove a character from the table, we're going to create a `removeCharacter` method on the parent `App` class.
@@ -772,8 +774,9 @@ Before anything else, let's remove all the hard-coded data from `state.character
 ```jsx
 class App extends Component {
   state = {
-    characters: []
-  };
+    characters: [],
+  }
+}
 ```
 
 Now let's go ahead and create a `Form` component in a new file called `Form.js`. We're going to create a class component, and within we'll use a `constructor()`, which we haven't done thus far. We'll need the `constructor()` to use `this`, and to receive the `props` of the parent.

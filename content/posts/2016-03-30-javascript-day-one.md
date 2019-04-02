@@ -1,6 +1,6 @@
 ---
 date: 2016-03-30
-title: 'JavaScript Day One: Comments, Variables, Data Types, and Hello, World!'
+title: 'JavaScript Comments, Variables, Data Types, and Hello, World!'
 template: post
 thumbnail: '../thumbnails/js.png'
 slug: javascript-day-one

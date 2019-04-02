@@ -1,7 +1,8 @@
 ---
 date: 2016-06-25
-title: 'JavaScript Day Two: Comparisons, Math, and Logic'
+title: 'JavaScript Comparisons, Math, and Logic'
 template: post
+thumbnail: '../thumbnails/js.png'
 slug: javascript-day-two
 categories:
   - Programming

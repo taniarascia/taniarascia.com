@@ -2,7 +2,7 @@
 
 Personal website running on Gatsby, React, and Node.js.
 
-- [Post on the official Gatsby blog](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)
+- [Read about it on the official Gatsby blog!](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)
 
 ## Installation
 
@@ -25,22 +25,6 @@ Navigate to `localhost:8000`.
 - DOS mode (404)
 - Code theme (starring [New Moon](https://taniarascia.github.io/new-moon))
 - Sass (starring [Primitive](https://taniarascia.github.io/primitive))
-
-## Notes
-
-### Format all markdown files
-
-```bash
-cd content/posts
-prettier
-  --print-width 100
-  --no-semi
-  --single-quote
-  --jsx-single-quote
-  --trailing-comma es5
-  --arrow-parens avoid
-  --parser "markdown"  "**/*.md"
-```
 
 ## Contributing
 

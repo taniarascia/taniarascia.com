@@ -10,7 +10,6 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 
 - [taniarascia.com](https://www.taniarascia.com)
 - [me@taniarascia.com](mailto:me@taniarascia.com)
-- [630-615-8863](tel:630-615-8863)
 - Chicago, IL
 
 ## Technical Skills

@@ -57,6 +57,21 @@ I've been putting off migrating to a static site for months and months, because 
 - Then I used the [ExitWP](https://github.com/thomasf/exitwp) tool to convert the XML to Markdown. This did about 50% of the work of converting the posts.
 - I had to go through and use the [HTML to Markdown Table Converter](https://jmalarcon.github.io/markdowntables/) individually, manually indent all code blocks, manually convert all four-indent spaced code blocks to GitHub style fenced codeblocks, and fix all the broken lists.
 - I used Prettier on all the markdown files to try to make them consistent.
+
+Here's the code I used to run prettier across all markdown files:
+
+```
+cd content/posts
+prettier
+  --print-width 100
+  --no-semi
+  --single-quote
+  --jsx-single-quote
+  --trailing-comma es5
+  --arrow-parens avoid
+  --parser "markdown"  "*.md"
+```
+
 - I basically had to re-do all the styles, using [Primitive](https://taniarascia.github.io/primitive) as the base of the style system as I haven't caught on to the idea of using CSS-in-JS yet.
 - I `scp`'d the images from the server to an `images` folder.
 - I used some regex to delete all WordPress thumbnails, e.g. all images that end in `150x150`, `300x300` and `1024px1024px` or any variation thereof, then do a find/replace all to make sure all files were linking to `../images/file.ext` instead of `wp-content/uploads/file.ext`, then remove the thumbnail url names from all posts.

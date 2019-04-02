@@ -10,7 +10,7 @@
   transition: height 0.3s ease;
 
   .nav-container {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     height: 55px;
     max-width: $width;
     margin: auto;
@@ -44,12 +44,13 @@
       flex-direction: row;
       flex: 1;
       justify-content: space-around;
+      margin: 0 .5rem;
 
       a {
         border-radius: $border-radius;
         display: flex;
         align-items: center;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: 500;
         padding: 1rem 0.3rem;
         margin: 0;
@@ -136,8 +137,9 @@ button.dark-switcher {
         flex: unset;
 
         a {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           margin: 0 1rem;
+          padding: 1rem .5rem;
         }
       }
 

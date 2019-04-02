@@ -30,9 +30,9 @@ pre.language-terminal code.language-terminal {
     font-size: 2.5rem;
     margin: 0;
     line-height: 0;
-    padding: 15px 0;
+    padding: 14px 0;
     text-indent: 4px;
-    letter-spacing: -12px;
+    letter-spacing: -15px;
   }
 }
 
@@ -80,7 +80,7 @@ kbd {
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
   text-shadow: 0 1px 0 white;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* Inline code */
@@ -125,7 +125,7 @@ code[class*='language-sass'] {
   code[class*='language-'],
   pre[class*='language-'],
   pre code {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 

@@ -14,8 +14,6 @@ A few highlights:
 
 I started this website as a place to document everything I learned while transitioning from chef to developer. I’ve continued throughout my career and the free resources I create help thousands of people successfully become developers. I turn down every ad, affiliate, and sponsor request I get. Please consider [supporting me with a coffee](https://ko-fi.com/taniarascia). (I might use it towards beer.)
 
-- [View resume](/resume)
-
 ### Some things I like
 
 Making websites, accordions, singing, fantasy and science fiction novels, old technology and video games, the '80s, bike rides, tea with milk, vinyl records, drawing.
