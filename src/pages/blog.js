@@ -51,17 +51,14 @@ class BlogPage extends Component {
               </Link>
             ))}
           </div>
-          <div className="flex">
             <input
               className="search"
-              type="search"
+              type="text"
               name="searchTerm"
               value={searchTerm}
               placeholder="Type here to filter posts..."
               onChange={this.handleChange}
-              autoComplete="new-password"
             />
-          </div>
           <PostListing excerpt postEdges={filteredPosts} />
         </div>
       </Layout>
