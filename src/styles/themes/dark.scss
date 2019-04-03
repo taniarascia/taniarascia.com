@@ -114,7 +114,6 @@ $dark-border: darken($background, 3%);
 
     a {
       .each {
-        border-bottom-color: $dark-border;
 
         h2 {
           color: #ccc;
@@ -228,7 +227,14 @@ $dark-border: darken($background, 3%);
 
   #{$forms} {
     color: $foreground;
+    border: 2px solid #666;
     background: transparent !important;
+    &:hover {
+      border: 2px solid #888;
+    }
+    &:active, &:focus {
+      border: 2px solid $primary-color;
+    }
   }
 
   #{$buttons} {

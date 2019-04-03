@@ -68,8 +68,8 @@ class PostTemplate extends Component {
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div>
             {' '}
-            <a href={twitterShare}>Share on Twitter</a> |{' '}
-            <a href={twitterUrl}>Discuss on Twitter</a> |{' '}
+            <a href={twitterShare} target="_blank">Share on Twitter</a> |{' '}
+            <a href={twitterUrl} target="_blank">Discuss on Twitter</a> |{' '}
             <a href={githubLink} target="_blank">
               Edit on Github ✏️
             </a>

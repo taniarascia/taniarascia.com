@@ -24,7 +24,7 @@ class BlogPage extends Component {
     const { posts } = this.state
 
     const filteredPosts = posts.filter(post =>
-      post.node.frontmatter.title.toLowerCase().includes(searchTerm)
+      post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
     )
 
     this.setState({ filteredPosts })
@@ -32,6 +32,7 @@ class BlogPage extends Component {
 
   render() {
     const { filteredPosts, searchTerm } = this.state
+    const filterCount = filteredPosts.length
     const categories = this.props.data.categories.group.filter(
       category => category.fieldValue !== 'Popular'
     )
@@ -42,15 +43,7 @@ class BlogPage extends Component {
         <SEO />
         <div className="container">
           <h1>Articles</h1>
-          <div className="tag-container articles-page-tags">
-            {categories.map(category => (
-              <Link to={`/categories/${kebabCase(category.fieldValue)}`} key={category.fieldValue}>
-                <span key={category.fieldValue}>
-                  {category.fieldValue} <strong className="count">{category.totalCount}</strong>
-                </span>
-              </Link>
-            ))}
-          </div>
+          <div className="flex">
             <input
               className="search"
               type="text"
@@ -59,7 +52,9 @@ class BlogPage extends Component {
               placeholder="Type here to filter posts..."
               onChange={this.handleChange}
             />
-          <PostListing excerpt postEdges={filteredPosts} />
+            <div className="filter-count">{filterCount}</div>
+          </div>
+          <PostListing postEdges={filteredPosts} />
         </div>
       </Layout>
     )
