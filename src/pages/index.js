@@ -26,7 +26,7 @@ class Index extends Component {
         <div className="container">
           <div className="lead">
             <h1>
-              Hi, I'm Tania. I build <strong>open source projects</strong> and
+              Hi, I'm Tania. I build open source projects and
               write the <a href="/blog">missing instruction manuals</a> of the web.
             </h1>
             <p>

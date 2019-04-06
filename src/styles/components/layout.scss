@@ -533,6 +533,14 @@ blockquote {
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .avatar {
+    margin-left: 1.5rem;
+    border-radius: 50%;
   }
 
   h2 {
