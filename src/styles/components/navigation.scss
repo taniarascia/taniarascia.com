@@ -91,8 +91,8 @@
 button.dark-switcher {
   -webkit-appearance: none;
   border: 0;
-  padding: 0.2rem;
-  margin: 0 0.75rem 0.5rem 0;
+  padding: 1rem 0.3rem;
+  margin: 0;
   background: transparent;
 
   &:focus {
@@ -162,8 +162,8 @@ button.dark-switcher {
   }
 
   button.dark-switcher {
-    padding: 0.5rem;
-    margin: 0 1rem 0 0;
+    padding: 1rem;
+    margin: 0;
     font-size: 1.4rem;
   }
 

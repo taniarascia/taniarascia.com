@@ -26,13 +26,10 @@ class Index extends Component {
         <div className="container">
           <div className="lead">
             <h1>
-              Hi, I'm Tania. I build open source projects and
-              write the <a href="/blog">missing instruction manuals</a> of the web.
+              Hi, I'm Tania
             </h1>
-            <p>
-              I'm a <strong>full-stack developer</strong> and <strong>technical writer</strong>. I created
-              this site to document everything I learn, and <a href="/me">share a bit of myself</a> with the world.
-            </p>
+            <p>I'm a full-stack developer and technical writer.</p>
+            <p>I like making things from scratch. I built <a href="https://github.com/taniarascia/laconia" target="blank">Laconia</a> (an MVC framework), <a href="https://taniarascia.github.io/primitive" target="blank">Primitive</a> (a CSS framework), <a href="https://github.com/taniarascia/chip8" target="blank">Chip8.js</a> (an old-school emulator), and created <a href="https://taniarascia.github.io/new-moon/" target="blank">New Moon</a>, the optimized dark theme. I've also written the <a href="https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript">How to Code in JavaScript</a> series for DigitalOcean, and <a href="/blog/">dozens of guides and tutorials</a> on this site.</p>
             <a
               className="twitter-follow-button"
               href="https://twitter.com/taniarascia"

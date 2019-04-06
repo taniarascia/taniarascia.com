@@ -53,7 +53,7 @@ class BlogPage extends Component {
             <a href="/how-to-use-the-command-line-for-apple-macos-and-linux/">Command line</a>,{' '} 
             <a href="/overview-of-sql-commands-and-pdo-operations/">SQL</a>,{' '} 
             <a href="/design-for-developers/">Design</a>,{' '} 
-            <a href="/create-a-simple-database-app-connecting-to-mysql-with-php/">CRUD</a>,{' '} 
+            <a href="/create-a-simple-database-app-connecting-to-mysql-with-php/">PHP/MySQL</a>,{' '} 
             <a href="/how-to-use-jquery-a-javascript-library/">jQuery</a>,{' '} 
             <a href="/learn-sass-now/">Sass</a>,{' '} 
             <a href="/what-is-bootstrap-and-how-do-i-use-it/">Bootstrap</a>,{' '} 
