@@ -6,7 +6,6 @@
   z-index: 3;
   width: 100%;
   background: white;
-  border-bottom: 2px solid #f0f0f0;
   transition: height 0.3s ease;
 
   .nav-container {
@@ -51,7 +50,7 @@
         display: flex;
         align-items: center;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
         padding: 1rem 0.3rem;
         margin: 0;
         color: rgba(0, 0, 0, 0.6);
@@ -105,11 +104,9 @@ button.dark-switcher {
 
 @include small-breakpoint {
   .nav {
-    border-bottom: 2px solid white;
 
     &.scroll {
-      background: #f5f5f5;
-      border-bottom: 2px solid #f5f5f5;
+      box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
 
       .nav-container {
         height: 60px;

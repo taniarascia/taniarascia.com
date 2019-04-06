@@ -23,6 +23,11 @@ const projects = [
     description: 'A Chip-8 emulator written in JavaScript (Node.js).',
   },
   {
+    title: 'Snek.js',
+    source: 'https://github.com/taniarascia/snek',
+    description: 'A terminal-based Snake implementation written in JavaScript (Node.js).',
+  },
+  {
     title: 'taniarascia.com',
     source: 'https://github.com/taniarascia/taniarascia.com',
     description: 'Personal theme for Gatsby (the source of this website).',

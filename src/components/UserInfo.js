@@ -15,7 +15,14 @@ class UserInfo extends Component {
             <strong>If you enjoy my content, please consider supporting what I do!</strong>
           </p>
           <a href="https://ko-fi.com/taniarascia" className="donate-button" target="_blank">
-            Support me <img src={coffee} className="coffee-icon" />
+            Support me with a coffee <img src={coffee} className="coffee-icon" />
+          </a>
+          <a
+            className="patreon-button"
+            href="https://www.patreon.com/taniarascia"
+            target="_blank"
+          >
+            Become a Patron!
           </a>
         </div>
       </aside>

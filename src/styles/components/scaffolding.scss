@@ -6,7 +6,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
-  font-size: 90% !important;
+  font-size: 87% !important;
 }
 
 // Body base
@@ -82,12 +82,12 @@ h3:not(:first-child) {
 // Heading individual styles
 h1 {
   font-size: $h1-mobile;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h2 {
   font-size: $h2-mobile;
-  font-weight: 600;
+  font-weight: 500;
   border-bottom: 2px solid lighten($border-color, 12%);
   padding-bottom: 0.5rem;
 }
@@ -99,7 +99,7 @@ h3 {
 
 h4 {
   font-size: $h4-mobile;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h5 {
@@ -157,7 +157,7 @@ ul {
       content: '\2022 ';
       position: absolute;
       left: 0;
-      color: $secondary-color;
+      color: lighten($font-color, 30%);
       font-size: 22px;
       line-height: 1.1;
     }

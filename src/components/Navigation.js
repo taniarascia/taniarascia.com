@@ -64,6 +64,7 @@ class Navigation extends Component {
                 <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
                   <span className="text">Donate</span> <img src={coffee} className="coffee-icon" />
                 </a>
+                
               </div>
             </div>
           </nav>

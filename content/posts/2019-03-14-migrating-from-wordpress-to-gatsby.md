@@ -60,7 +60,7 @@ I've been putting off migrating to a static site for months and months, because 
 
 Here's the code I used to run prettier across all markdown files:
 
-```
+```bash
 cd content/posts
 prettier
   --print-width 100

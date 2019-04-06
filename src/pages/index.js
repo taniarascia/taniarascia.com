@@ -21,18 +21,17 @@ class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Developer, designer, writer`} />
+        <Helmet title={`${config.siteTitle} – Full-Stack Developer`} />
         <SEO />
         <div className="container">
           <div className="lead">
             <h1>
-              Hi, I'm Tania. I build <strong className="pink">open source projects</strong> and
-              write the <strong className="pink">missing instruction manuals</strong> of the web.
+              Hi, I'm Tania. I build <strong>open source projects</strong> and
+              write the <a href="/blog">missing instruction manuals</a> of the web.
             </h1>
             <p>
-              I'm a <strong>developer, designer,</strong> and <strong>writer</strong>. I created
-              this site to document everything I learn, and share a bit of myself with the world. My
-              site is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
+              I'm a <strong>full-stack developer</strong> and <strong>technical writer</strong>. I created
+              this site to document everything I learn, and <a href="/me">share a bit of myself</a> with the world.
             </p>
             <a
               className="twitter-follow-button"
@@ -85,24 +84,24 @@ class Index extends Component {
             <h2>Other People's Opinions</h2>
             <blockquote className="quotation">
               <p>
-                You write extremely clear, concise tutorials that have the best ratio of learning to
+                “You write extremely clear, concise tutorials that have the best ratio of learning to
                 bullshit that I've encountered so far. It's no exaggeration to say that I wouldn't
                 currently have a job in development without this site. So thanks for ruining my
-                life, Tania.
+                life, Tania.”
               </p>
               <cite>— Craig</cite>
             </blockquote>
             <blockquote className="quotation">
               <p>
-                You taught me more than any class could have, and it took me a fraction of the time
-                because of how clearly you write and teach.
+                “You taught me more than any class could have, and it took me a fraction of the time
+                because of how clearly you write and teach.”
               </p>
               <cite>— Evan</cite>
             </blockquote>
             <blockquote className="quotation">
               <p>
-                Not to get too dramatic, but I find your site to be an unspeakably beautiful
-                lifeboat in an overwhelming sea of technical jargon and shite.
+                “Not to get too dramatic, but I find your site to be an unspeakably beautiful
+                lifeboat in an overwhelming sea of technical jargon and shite.”
               </p>
               <cite>— Lori</cite>
             </blockquote>

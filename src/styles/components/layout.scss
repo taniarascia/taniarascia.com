@@ -221,7 +221,7 @@
       .each {
         grid-template-columns: 80px 1fr;
         align-items: start;
-        padding: 2rem;
+        padding: 1rem 2rem;
         margin: 0 -2rem;
 
         h2 {
@@ -321,6 +321,7 @@
     font-size: 1.2rem;
     border-bottom: none;
     margin: 0 0 0.75rem 0;
+    font-weight: 600;
     color: #111;
     padding: 0;
     margin: 0 0 0.5rem 0;
@@ -344,7 +345,7 @@
   .projects {
     .each {
       display: grid;
-      grid-template-columns: 2fr 5fr 3fr;
+      grid-template-columns: 2.2fr 5fr 3fr;
       grid-template-rows: none;
     }
 
@@ -467,9 +468,12 @@ blockquote {
   &.quotation {
     border-radius: 0;
     border: 0;
-    border-left: 12px solid #f0f0f0;
     background: transparent;
-    padding: 0.5rem 2rem;
+    padding: .5rem 0;
+    p {
+      padding: 0;
+      font-size: 1.3rem;
+    }
   }
 
   p {
@@ -489,14 +493,14 @@ blockquote {
     &:active,
     &:focus {
       color: #111 !important;
-      background: lighten($yellow, 10%) !important;
+      background: lighten($yellow, 28%) !important;
     }
   }
 
   cite {
     display: block;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: right;
     font-family: $font-family;
     color: rgba(0, 0, 0, 0.4);
