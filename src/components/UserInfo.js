@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import coffee from '../images/coffee.svg'
 import tania from '../../content/images/tania2019.png'
 
 class UserInfo extends Component {
@@ -7,7 +6,7 @@ class UserInfo extends Component {
     return (
       <aside className="note">
         <div className="container note-container">
-          <div>
+          <div className="flex-author">
             <h2>A note from the author</h2>
             <p>
               Hi! I'm Tania. I write free, quality content that helps thousands of people daily. I turn down
@@ -18,7 +17,7 @@ class UserInfo extends Component {
             </p>
 
             <a href="https://ko-fi.com/taniarascia" className="donate-button" target="_blank">
-              Support me with a coffee <img src={coffee} className="coffee-icon" />
+              Support me
             </a>
             <a
               className="patreon-button"
@@ -28,7 +27,7 @@ class UserInfo extends Component {
               Patreon
             </a>
           </div>
-          <div>
+          <div className="flex-avatar">
             <img className="avatar" src={tania} />
           </div>
         </div>

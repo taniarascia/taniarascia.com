@@ -100,6 +100,7 @@ a.patreon-button {
   background: rgb(232, 91, 70);
   padding: 0.75rem 1rem;
   color: #fff;
+  margin: 0 0.5rem;
 
   &:hover,
   &:focus,
@@ -107,13 +108,6 @@ a.patreon-button {
     background: darken(rgb(232, 91, 70), 10%);
     border: 2px solid darken(rgb(232, 91, 70), 10%);
     color: #fff;
-  }
-}
-
-@include small-breakpoint {
-  .patreon-button,
-  a.patreon-button {
-    margin: 0 0.5rem;
   }
 }
 

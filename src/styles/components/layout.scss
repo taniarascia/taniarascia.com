@@ -469,7 +469,7 @@ blockquote {
     border-radius: 0;
     border: 0;
     background: transparent;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     p {
       padding: 0;
       font-size: 1.3rem;
@@ -534,17 +534,44 @@ blockquote {
     box-shadow: $box-shadow;
     padding: 1.5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
   }
 
+  .flex-author {
+    order: 2;
+  }
+
   .avatar {
-    margin-left: 1.5rem;
+    max-width: 200px;
     border-radius: 50%;
   }
 
   h2 {
     border-bottom: 0;
+  }
+}
+
+@include small-breakpoint {
+  .note {
+    background: $light;
+    padding: 2rem 0;
+    margin: 1.5rem 0;
+    border-top: 2px solid #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
+
+    .note-container {
+      flex-direction: row;
+    }
+
+    .flex-author {
+      order: initial;
+    }
+
+    .avatar {
+      margin-left: 1.5rem;
+    }
   }
 }
 
