@@ -29,7 +29,8 @@ class Index extends Component {
               Hi, I'm Tania
             </h1>
             <p>I'm a full-stack developer and technical writer.</p>
-            <p>I like making things from scratch. I built <a href="https://github.com/taniarascia/laconia" target="blank">Laconia</a> (an MVC framework), <a href="https://taniarascia.github.io/primitive" target="blank">Primitive</a> (a CSS framework), <a href="https://github.com/taniarascia/chip8" target="blank">Chip8.js</a> (an old-school emulator), and created <a href="https://taniarascia.github.io/new-moon/" target="blank">New Moon</a>, the optimized dark theme. I've also written the <a href="https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript">How to Code in JavaScript</a> series for DigitalOcean, and <a href="/blog/">dozens of guides and tutorials</a> on this site.</p>
+            <p>I like making things from scratch. My open source projects include <a href="https://github.com/taniarascia/laconia" target="blank">an MVC framework</a>, <a href="https://taniarascia.github.io/primitive" target="blank">a CSS framework</a>, <a href="https://github.com/taniarascia/chip8" target="blank">an old-school emulator</a>, and <a href="https://taniarascia.github.io/new-moon" target="blank">New Moon</a>, the optimized dark theme for web development.</p>
+            <p>Everything I learn, I document clearly. I wrote the <a href="https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript">How to Code in JavaScript</a> series for DigitalOcean, and <a href="/blog/">dozens more guides and tutorials</a> for beginner and intermediate developers.</p>
             <a
               className="twitter-follow-button"
               href="https://twitter.com/taniarascia"
