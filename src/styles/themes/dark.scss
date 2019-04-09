@@ -279,6 +279,20 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  a.patreon-button {
+    background: transparent !important;
+    border: 2px solid #e85b46;
+    color: #e85b46;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 2px solid lighten(#e85b46, 15%);
+      background: transparent;
+      color: lighten(#e85b46, 15%);
+    }
+  }
+
   button.dark-switcher {
     border: none;
   }
