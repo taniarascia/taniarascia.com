@@ -15,7 +15,8 @@ class SEO extends Component {
       const postMeta = postNode.frontmatter
       title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      image = postMeta.thumbnail
+      console.log(postMeta.thumbnail.childImageSharp.fixed.src)
+      image = postMeta.thumbnail ? postMeta.thumbnail.childImageSharp.fixed.src : ''
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
     } else {
       title = config.siteTitle
@@ -23,7 +24,7 @@ class SEO extends Component {
       image = config.siteLogo
     }
 
-    image = urljoin(config.siteUrl, config.pathPrefix)
+    image = urljoin(config.siteUrl, image)
     const blogURL = urljoin(config.siteUrl, config.pathPrefix)
     const schemaOrgJSONLD = [
       {
