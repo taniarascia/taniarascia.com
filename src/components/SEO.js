@@ -15,8 +15,15 @@ class SEO extends Component {
       const postMeta = postNode.frontmatter
       title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      console.log(postMeta.thumbnail.childImageSharp.fixed.src)
-      image = postMeta.thumbnail ? postMeta.thumbnail.childImageSharp.fixed.src : ''
+      if (
+        // y tho
+        postMeta &&
+        postMeta.thumbnail &&
+        postMeta.thumbnail.childImageSharp &&
+        postMeta.thumbnail.childImageSharp.fixed
+      ) {
+        image = postMeta.thumbnail.childImageSharp.fixed.src
+      }
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
     } else {
       title = config.siteTitle
