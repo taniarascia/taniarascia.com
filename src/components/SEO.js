@@ -8,20 +8,14 @@ class SEO extends Component {
     const { postNode, postPath, postSEO } = this.props
     let title
     let description
-    let image
+    let image = ''
     let postURL
 
     if (postSEO) {
       const postMeta = postNode.frontmatter
       title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      if (
-        // y tho
-        postMeta &&
-        postMeta.thumbnail &&
-        postMeta.thumbnail.childImageSharp &&
-        postMeta.thumbnail.childImageSharp.fixed
-      ) {
+      if (postMeta.thumbnail) {
         image = postMeta.thumbnail.childImageSharp.fixed.src
       }
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
