@@ -2,7 +2,7 @@ const config = {
   siteTitle: 'Tania Rascia',
   siteTitleShort: 'Tania Rascia',
   siteTitleAlt: 'Tania Rascia',
-  siteLogo: '/logos/logo-1024.png',
+  siteLogo: '/logos/tania.jpg',
   siteUrl: 'https://www.taniarascia.com',
   repo: 'https://github.com/taniarascia/taniarascia.com',
   pathPrefix: '',
@@ -23,11 +23,11 @@ const config = {
     'I build open source projects and write the missing instruction manuals of the web.',
   menuLinks: [
     {
-      name: 'About me',
+      name: 'Me',
       link: '/me/',
     },
     {
-      name: 'Blog',
+      name: 'Articles',
       link: '/blog/',
     },
     {

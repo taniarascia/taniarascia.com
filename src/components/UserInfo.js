@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import tania from '../../content/images/tania2019.png'
+import tania from '../../content/images/taniawarm.jpg'
 
 class UserInfo extends Component {
   render() {
@@ -9,7 +9,7 @@ class UserInfo extends Component {
           <div className="flex-author">
             <h2>A note from the author</h2>
             <p>
-              Hi! I'm Tania. I write free, quality content that helps thousands of people daily. I turn down
+              Hi! I'm Tania. I'm a Full-stack Software Developer specializing in modern JavaScript development. I write free, quality content that helps thousands of people daily, and I turn down
               everyone who offers to put ads, affiliate links, and sponsored posts on my website.
             </p>
             <p>
