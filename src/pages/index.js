@@ -106,7 +106,7 @@ class Index extends Component {
 
           <section className="section">
             <h2>Newsletter</h2>
-            <p>I make things in JavaScript and I write about how I did it. Sign up to get notified about new content.</p>
+            <p>I write what I know and I share it with the world. Sign up to get notified about new content!</p>
             <NewsletterForm />
           </section>
         </div>

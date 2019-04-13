@@ -9,8 +9,8 @@ class UserInfo extends Component {
           <div className="flex-author">
             <h2>A note from the author</h2>
             <p>
-              Hi! I'm Tania. I'm a Full-stack Software Developer specializing in modern JavaScript development. I write free, quality content that helps thousands of people daily, and I turn down
-              everyone who offers to put ads, affiliate links, and sponsored posts on my website.
+              Hi! I'm Tania. I'm a Full-stack Software Developer specializing in modern JavaScript development. I write free, quality content that helps thousands of people daily, and <mark>I turn down
+              everyone who offers to put ads, affiliate links, and sponsored posts</mark> on my website.
             </p>
             <p>
               <strong>If you enjoy my content, please consider supporting what I do!</strong>
