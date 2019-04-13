@@ -6,7 +6,7 @@ class Contact extends Component {
     return (
       <>
         <h1>Stay in touch</h1>
-        <p>Like the posts you see here? Sign up to get notified about new ones.</p>
+        <p>Like the posts you see here? Sign up to get notified about new content.</p>
         <NewsletterForm />
         <p>You can find me around the web:</p>
         <ul>

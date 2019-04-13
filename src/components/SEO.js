@@ -8,14 +8,16 @@ class SEO extends Component {
     const { postNode, postPath, postSEO } = this.props
     let title
     let description
-    let image
+    let image = ''
     let postURL
 
     if (postSEO) {
       const postMeta = postNode.frontmatter
       title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      image = postMeta.thumbnail
+      if (postMeta.thumbnail) {
+        image = postMeta.thumbnail.childImageSharp.fixed.src
+      }
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
     } else {
       title = config.siteTitle
@@ -23,7 +25,7 @@ class SEO extends Component {
       image = config.siteLogo
     }
 
-    image = urljoin(config.siteUrl, config.pathPrefix)
+    image = urljoin(config.siteUrl, image)
     const blogURL = urljoin(config.siteUrl, config.pathPrefix)
     const schemaOrgJSONLD = [
       {
