@@ -1,6 +1,6 @@
 ---
 date: 2016-01-14
-title: "WordPress Theme Development: Pagination, Comments, Functions, & Custom Posts"
+title: 'WordPress Theme Development: Pagination, Comments, Functions, & Custom Posts'
 template: post
 thumbnail: '../thumbnails/wp.png'
 slug: wordpress-from-scratch-part-two
@@ -56,29 +56,29 @@ In the last article, we made header, footer, sidebar, content, and page files. N
 ```php
 <?php get_header(); ?>
 
-    	<div class="row">
-    		<div class="col-sm-12">
+	<div class="row">
+		<div class="col-sm-12">
 
-    			<?php
-    if ( have_posts() ) : while ( have_posts() ) : the_post();
-    	get_template_part( 'content-single', get_post_format() );
-    endwhile; endif;
-    			?>
+			<?php
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+	get_template_part( 'content-single', get_post_format() );
+endwhile; endif;
+			?>
 
-    		</div> <!-- /.col -->
-    	</div> <!-- /.row -->
+		</div> <!-- /.col -->
+	</div> <!-- /.row -->
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
 ```
 
 Now you'll create **content-single.php**, which is a duplicate of **content.php**.
 
 ```php
 <div class="blog-post">
-    	<h2 class="blog-post-title"><?php the_title(); ?></h2>
-    	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
-     <?php the_content(); ?>
-    </div><!-- /.blog-post -->
+	<h2 class="blog-post-title"><?php the_title(); ?></h2>
+	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
+	<?php the_content(); ?>
+</div><!-- /.blog-post -->
 ```
 
 So now you can see that **index.php** is pulling in **content.php**, and **single.php** is pulling in **content-single.php**.
@@ -116,19 +116,19 @@ Currently, your **index.php** file looks like this.
 ```php
 <?php get_header(); ?>
 
-    	<div class="row">
-    		<div class="col-sm-8 blog-main">
+	<div class="row">
+		<div class="col-sm-8 blog-main">
 
-    			<?php
-    			if ( have_posts() ) : while ( have_posts() ) : the_post();
-    get_template_part( 'content', get_post_format() );
-    			endwhile; endif; ?>
+			<?php
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+				get_template_part( 'content', get_post_format() );
+			endwhile; endif; ?>
 
-    		</div>	<!-- /.blog-main -->
-    		<?php get_sidebar(); ?>
-    	</div> 	<!-- /.row -->
+		</div>	<!-- /.blog-main -->
+		<?php get_sidebar(); ?>
+	</div> 	<!-- /.row -->
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
 ```
 
 If you'll notice, the loop has `if` and `while`, then later `endif` and `endwhile`. To insert pagination, we'll have to put it after the `endwhile` but before the `endif`. This means that it won't repeat for each loop, but will only show up once based on posts.
@@ -137,18 +137,18 @@ If you'll notice, the loop has `if` and `while`, then later `endif` and `endwhil
 
 ```php
 <?php next_posts_link( 'Older posts' ); ?>
-    <?php previous_posts_link( 'Newer posts' ); ?>
+<?php previous_posts_link( 'Newer posts' ); ?>
 ```
 
 In **index.php**, between `endwhile;` and `endif;`, I'm going to place this code. Make sure to open and close the `<?php ?>` tags.
 
 ```php
 <nav>
-    	<ul class="pager">
-    		<li><?php next_posts_link( 'Previous' ); ?></li>
-    		<li><?php previous_posts_link( 'Next' ); ?></li>
-    	</ul>
-    </nav>
+	<ul class="pager">
+		<li><?php next_posts_link( 'Previous' ); ?></li>
+		<li><?php previous_posts_link( 'Next' ); ?></li>
+	</ul>
+</nav>
 ```
 
 By default, 10 posts will show up on a page before it will link to another page. For testing purposes, I'm going to go to **Settings > Reading** and change **Blog pages show at most** to 1.
@@ -167,53 +167,53 @@ Right now, the code looks like this.
 
 ```php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
-    	get_template_part( 'content-single', get_post_format() );
-    endwhile; endif;
+	get_template_part( 'content-single', get_post_format() );
+endwhile; endif;
 ```
 
 We're going to change it to look like this.
 
 ```php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
-    	get_template_part( 'content-single', get_post_format() );
+	get_template_part( 'content-single', get_post_format() );
 
-    	if ( comments_open() || get_comments_number() ) :
-    	  comments_template();
-    	endif;
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
 
-    endwhile; endif;
+endwhile; endif;
 ```
 
 This is just telling the single post to display the comments template. Now we'll create **comments.php**.
 
 ```php
 <?php if ( post_password_required() ) {
-    	return;
-    } ?>
-    	<div id="comments" class="comments-area">
-    		<?php if ( have_comments() ) : ?>
-    			<h3 class="comments-title">
-    <?php
-    printf( _nx( 'One comment on "%2$s"', '%1$s comments on "%2$s"', get_comments_number(), 'comments title'),
-    	number_format_i18n( get_comments_number() ), get_the_title() );
-    ?>
-    			</h3>
-    			<ul class="comment-list">
-    <?php
-    wp_list_comments( array(
-    	'short_ping'  => true,
-    	'avatar_size' => 50,
-    ) );
-    ?>
-    			</ul>
-    		<?php endif; ?>
-    		<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-    			<p class="no-comments">
-    <?php _e( 'Comments are closed.' ); ?>
-    			</p>
-    		<?php endif; ?>
-    		<?php comment_form(); ?>
-    	</div>
+	return;
+} ?>
+	<div id="comments" class="comments-area">
+		<?php if ( have_comments() ) : ?>
+			<h3 class="comments-title">
+<?php
+printf( _nx( 'One comment on "%2$s"', '%1$s comments on "%2$s"', get_comments_number(), 'comments title'),
+	number_format_i18n( get_comments_number() ), get_the_title() );
+?>
+			</h3>
+			<ul class="comment-list">
+<?php
+wp_list_comments( array(
+	'short_ping'  => true,
+	'avatar_size' => 50,
+) );
+?>
+			</ul>
+		<?php endif; ?>
+		<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+			<p class="no-comments">
+<?php _e( 'Comments are closed.' ); ?>
+			</p>
+		<?php endif; ?>
+		<?php comment_form(); ?>
+	</div>
 ```
 
 Comments are not the simplest part of WordPress theming, but I've managed to reduce it down to a small enough code block.
@@ -230,9 +230,9 @@ Of course, you might want to show how many comments there are or link to the com
 
 ```php
 <a href="<?php comments_link(); ?>">
-    	<?php
-    	printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n( 		get_comments_number() ) ); ?>
-    </a>
+	<?php
+	printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain' ), number_format_i18n( 		get_comments_number() ) ); ?>
+</a>
 ```
 
 ![](../images/Screen-Shot-2016-01-13-at-11.59.43-PM.png)
@@ -249,9 +249,9 @@ Located in your theme directory, you can create a file called [functions.php](ht
 
 ```php
 function custom_function() {
-    	//code
-    }
-    add_action( 'action', 'custom_function');
+	//code
+}
+add_action( 'action', 'custom_function');
 ```
 
 So, we're creating our custom function, and adding it in based on [action references](https://codex.wordpress.org/Plugin_API/Action_Reference). Within this file, you can pretty much change or override anything in WordPress.
@@ -279,20 +279,20 @@ I'm going to make **css**, **js** and **images** directories in the root of my t
   - bootstrap.min.css
   - blog.css
 
-* **js**
+- **js**
   - bootstrap.min.js
 
 Now here's the first code block we're going to put in **functions.php**:
 
 ```php
 // Add scripts and stylesheets
-    function startwordpress_scripts() {
-    	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6' );
-    	wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
-    	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
-    }
+function startwordpress_scripts() {
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6' );
+	wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
+}
 
-    add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
+add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
 ```
 
 In order for these to properly be inserted into your theme, `<?php wp_head(); ?>` needs to be placed before the closing `</head>` tag, and `<?php wp_footer(); ?>` before the closing `</body>` tag.
@@ -307,12 +307,12 @@ The function to include the Google Fonts stylesheets is slightly different, base
 
 ```php
 // Add Google Fonts
-    function startwordpress_google_fonts() {
-    wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
-    wp_enqueue_style( 'OpenSans');
-    		}
+function startwordpress_google_fonts() {
+	wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+	wp_enqueue_style( 'OpenSans');
+}
 
-    add_action('wp_print_styles', 'startwordpress_google_fonts');
+add_action('wp_print_styles', 'startwordpress_google_fonts');
 ```
 
 Now I have [Open Sans by Google Fonts](https://www.google.com/fonts/specimen/Open+Sans) linked in my page.
@@ -331,7 +331,7 @@ Introduced in WordPress 4.1 is the ability to simply have WordPress take care of
 
 ```php
 // WordPress Titles
-    add_theme_support( 'title-tag' );
+add_theme_support( 'title-tag' );
 ```
 
 ## Create Global Custom Fields
@@ -346,10 +346,10 @@ First, we're going to add a section on the left hand menu called **Custom Settin
 
 ```php
 // Custom settings
-    function custom_settings_add_menu() {
-      add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options', 'custom-settings', 'custom_settings_page', null, 99 );
-    }
-    add_action( 'admin_menu', 'custom_settings_add_menu' );
+function custom_settings_add_menu() {
+	add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options', 'custom-settings', 'custom_settings_page', null, 99 );
+}
+add_action( 'admin_menu', 'custom_settings_add_menu' );
 ```
 
 ![](../images/Screen-Shot-2016-01-14-at-12.37.57-AM.png)
@@ -358,18 +358,18 @@ Then we're going to create a basic page.
 
 ```php
 // Create Custom Global Settings
-    function custom_settings_page() { ?>
-      <div class="wrap">
-        <h1>Custom Settings</h1>
-        <form method="post" action="options.php">
-           <?php
-               settings_fields( 'section' );
-               do_settings_sections( 'theme-options' );
-               submit_button();
-           ?>
-        </form>
-      </div>
-    <?php }
+function custom_settings_page() { ?>
+	<div class="wrap">
+		<h1>Custom Settings</h1>
+		<form method="post" action="options.php">
+				<?php
+						settings_fields( 'section' );
+						do_settings_sections( 'theme-options' );
+						submit_button();
+				?>
+		</form>
+	</div>
+<?php }
 ```
 
 ![](../images/Screen-Shot-2016-01-14-at-12.41.13-AM.png)
@@ -380,21 +380,21 @@ Now we're going to create an input field for Twitter.
 
 ```php
 // Twitter
-    function setting_twitter() { ?>
-      <input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
-    <?php }
+function setting_twitter() { ?>
+	<input type="text" name="twitter" id="twitter" value="<?php echo get_option( 'twitter' ); ?>" />
+<?php }
 ```
 
 Finally, we're going to set up the page to show, accept and save the option fields.
 
 ```php
 function custom_settings_page_setup() {
-      add_settings_section( 'section', 'All Settings', null, 'theme-options' );
-      add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
+	add_settings_section( 'section', 'All Settings', null, 'theme-options' );
+	add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
 
-      register_setting('section', 'twitter');
-    }
-    add_action( 'admin_init', 'custom_settings_page_setup' );
+	register_setting('section', 'twitter');
+}
+add_action( 'admin_init', 'custom_settings_page_setup' );
 ```
 
 Now I've saved my Twitter URL in the field.
@@ -405,32 +405,32 @@ For good measure, I'm going to add another example, this time for GitHub.
 
 ```php
 function setting_github() { ?>
-      <input type="text" name="github" id="github" value="<?php echo get_option('github'); ?>" />
-    <?php }
+	<input type="text" name="github" id="github" value="<?php echo get_option('github'); ?>" />
+<?php }
 ```
 
 Now you'll just duplicate the fields in `custom_settings_page_setup`.
 
 ```php
-  add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
-      add_settings_field( 'github', 'GitHub URL', 'setting_github', 'theme-options', 'section' );
+add_settings_field( 'twitter', 'Twitter URL', 'setting_twitter', 'theme-options', 'section' );
+add_settings_field( 'github', 'GitHub URL', 'setting_github', 'theme-options', 'section' );
 
-    	register_setting( 'section', 'twitter' );
-      register_setting( 'section', 'github' );
+register_setting( 'section', 'twitter' );
+register_setting( 'section', 'github' );
 ```
 
 Now back in **sidebar.php**, I'm going to change the links from this:
 
 ```php
 <li><a href="#">GitHub</a></li>
-    <li><a href="#">Twitter</a></li>
+<li><a href="#">Twitter</a></li>
 ```
 
 To this:
 
 ```php
 <li><a href="<?php echo get_option('github'); ?>">GitHub</a></li>
-    <li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li>
+<li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li>
 ```
 
 And now the URLs are being dynamically generated from the custom settings panel!
@@ -441,7 +441,7 @@ You might want to have a featured image for each blog post. This functionality i
 
 ```php
 // Support Featured Images
-    add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' );
 ```
 
 Now you'll see an area where you can upload an image on each blog post.
@@ -452,8 +452,8 @@ I'm just going to upload something I drew in there for an example. Now, display 
 
 ```php
 <?php if ( has_post_thumbnail() ) {
-      the_post_thumbnail();
-    } ?>
+	the_post_thumbnail();
+} ?>
 ```
 
 ![](../images/Screen-Shot-2016-01-14-at-1.31.37-AM.png)
@@ -462,17 +462,17 @@ Now you have an image on your individual post pages! If you wanted the thumbnail
 
 ```php
 <?php if ( has_post_thumbnail() ) {?>
-    	<div class="row">
-    		<div class="col-md-4">
-    			<?php	the_post_thumbnail('thumbnail'); ?>
-    		</div>
-    		<div class="col-md-6">
-    			<?php the_excerpt(); ?>
-    		</div>
-    	</div>
-    	<?php } else { ?>
-    	<?php the_excerpt(); ?>
-    	<?php } ?>
+	<div class="row">
+		<div class="col-md-4">
+			<?php	the_post_thumbnail('thumbnail'); ?>
+		</div>
+		<div class="col-md-6">
+			<?php the_excerpt(); ?>
+		</div>
+	</div>
+	<?php } else { ?>
+	<?php the_excerpt(); ?>
+<?php } ?>
 ```
 
 ![](../images/Screen-Shot-2016-01-14-at-1.38.44-AM.png)
@@ -491,24 +491,24 @@ In **functions.php**, I'm going to create the custom post type called **My Custo
 
 ```php
 // Custom Post Type
-    function create_my_custom_post() {
-    	register_post_type( 'my-custom-post',
-    			array(
-    			'labels' => array(
-    	'name' => __( 'My Custom Post' ),
-    	'singular_name' => __( 'My Custom Post' ),
-    			),
-    			'public' => true,
-    			'has_archive' => true,
-    			'supports' => array(
-    	'title',
-    	'editor',
-    	'thumbnail',
-      'custom-fields'
-    			)
-    	));
-    }
-    add_action( 'init', 'create_my_custom_post' );
+function create_my_custom_post() {
+	register_post_type( 'my-custom-post',
+			array(
+			'labels' => array(
+	'name' => __( 'My Custom Post' ),
+	'singular_name' => __( 'My Custom Post' ),
+			),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array(
+	'title',
+	'editor',
+	'thumbnail',
+	'custom-fields'
+			)
+	));
+}
+add_action( 'init', 'create_my_custom_post' );
 ```
 
 In the **create_my_custom_post()**, I've created a post called **My Custom Post** with a slug of `my-custom-post`. If my original URL was _example.com_, the custom post type would appear at _example.com/my-custom-post_.
@@ -530,18 +530,17 @@ The original loop we used looked like this:
 
 ```php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
-    	// Contents of the Loop
-    endwhile; endif;
+	// Contents of the Loop
+endwhile; endif;
 ```
 
 A custom post type loop will look like this:
 
 ```php
 $custom_query = new WP_Query( $args );
-    while ($custom_query->have_posts()) : $custom_query->the_post();
-      // Contents of the custom Loop
-    endwhile;
-
+while ($custom_query->have_posts()) : $custom_query->the_post();
+	// Contents of the custom Loop
+endwhile;
 ```
 
 Note that this only a `while`, and does not have an `if` or `endif`.
@@ -550,10 +549,10 @@ I'll have to define the `$args` or arguments, before the loop.
 
 ```php
 $args =  array(
-    	'post_type' => 'my-custom-post',
-    	'orderby' => 'menu_order',
-    	'order' => 'ASC'
-    );
+	'post_type' => 'my-custom-post',
+	'orderby' => 'menu_order',
+	'order' => 'ASC'
+);
 ```
 
 Here I'm defining the post type as `my-custom-post`, and ordering the posts in ascending order.
@@ -563,30 +562,26 @@ So here's the entire code for **page-custom.php**.
 ```php
 <?php get_header(); ?>
 
-    	<div class="row">
-    		<div class="col-sm-12">
+	<div class="row">
+		<div class="col-sm-12">
 
-    			<?php
-    $args =  array(
-    	'post_type' => 'my-custom-post',
-    	'orderby' => 'menu_order',
-    	'order' => 'ASC'
-    );
-     $custom_query = new WP_Query( $args );
-                while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
+			<?php
+$args =  array(
+	'post_type' => 'my-custom-post',
+	'orderby' => 'menu_order',
+	'order' => 'ASC'
+);
+	$custom_query = new WP_Query( $args );
+						while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
 
-    <div class="blog-post">
-    	<h2 class="blog-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    	<?php the_excerpt(); ?>
-    
-```
+<div class="blog-post">
+	<h2 class="blog-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<?php the_excerpt(); ?>
+	<?php endwhile; ?>
+			</div> <!-- /.col -->
+		</div> <!-- /.row -->
 
-    <?php endwhile; ?>
-    		</div> <!-- /.col -->
-    	</div> <!-- /.row -->
-
-    	<?php get_footer(); ?>
-
+	<?php get_footer(); ?>
 ```
 
 Now _example.com/custom_ will only pull in posts from the custom post type we created. Right now, the custom post type is set up to only do things that the normal posts can do, but the more you fall down the rabbit hole, the more possibilities you discover. If this isn't working, make sure you've successfully updated permalinks.
@@ -616,8 +611,6 @@ I plan to continue this WordPress series and expand upon custom post types and w
 
 ## Part Three
 
-_Update 8/11/16_
-
 In part three, I discuss how to add custom fields and meta boxes to a post!
 
-[Go to Part 3](/wordpress-part-three-custom-fields-and-metaboxes/)
+- [Go to Part 3](/wordpress-part-three-custom-fields-and-metaboxes/)

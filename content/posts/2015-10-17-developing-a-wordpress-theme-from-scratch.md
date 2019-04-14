@@ -241,11 +241,11 @@ Everything from `<!DOCTYPE html>` to the main blog header will be in the header 
   <div class="blog-masthead">
     <div class="container">
       <nav class="blog-nav">
-<a class="blog-nav-item active" href="#">Home</a>
-<a class="blog-nav-item" href="#">New features</a>
-<a class="blog-nav-item" href="#">Press</a>
-<a class="blog-nav-item" href="#">New hires</a>
-<a class="blog-nav-item" href="#">About</a>
+        <a class="blog-nav-item active" href="#">Home</a>
+        <a class="blog-nav-item" href="#">New features</a>
+        <a class="blog-nav-item" href="#">Press</a>
+        <a class="blog-nav-item" href="#">New hires</a>
+        <a class="blog-nav-item" href="#">About</a>
       </nav>
     </div>
   </div>
@@ -349,19 +349,12 @@ Now we're going to add everything back in. Here's your new `index.php`.
 
 ```php
 <?php get_header(); ?>
-
 	<div class="row">
-
 		<div class="col-sm-8 blog-main">
-
 			<?php get_template_part( 'content', get_post_format() ); ?>
-
 		</div> <!-- /.blog-main -->
-
 		<?php get_sidebar(); ?>
-
 	</div> <!-- /.row -->
-
 <?php get_footer(); ?>
 ```
 
@@ -439,9 +432,7 @@ index.php
 
 			<?php
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-get_template_part( 'content', get_post_format() );
-
+        get_template_part( 'content', get_post_format() );
 			endwhile; endif;
 			?>
 
