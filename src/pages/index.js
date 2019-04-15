@@ -28,7 +28,7 @@ class Index extends Component {
             <h1>
               Hi, I'm Tania
             </h1>
-            <p>I'm a full-stack software developer specializing in modern JavaScript development. I write about everything I know and break down complex concepts in an accessible and intuitive way.</p>
+            <p>I'm a full-stack software developer specializing in modern JavaScript. I write about everything I know and break down complex concepts in an accessible and intuitive way.</p>
             <p>I like making things from scratch. My open source projects include <a href="https://github.com/taniarascia/laconia/" target="blank">an MVC framework</a>, <a href="https://taniarascia.github.io/primitive/" target="blank">a CSS framework</a>, <a href="https://github.com/taniarascia/chip8/" target="blank">an old-school emulator</a>, and <a href="https://taniarascia.github.io/new-moon/" target="blank">the optimized dark theme</a> for web development.</p>
             <a
               className="twitter-follow-button"
