@@ -4,7 +4,7 @@ slug: resume
 template: page
 ---
 
-### Full-Stack Developer
+### Full-Stack Software Developer
 
 Highly motivated and versatile full-stack developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
 

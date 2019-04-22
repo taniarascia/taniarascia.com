@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-paginate-an-array-in-javascript
 categories:
-  - Programming
+  - JavaScript
 tags:
   - javascript
   - pagination

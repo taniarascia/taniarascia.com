@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/newmoon.png'
 slug: adding-syntax-highlighting-to-code-snippets
 categories:
-  - UI/UX
+  - CSS
 tags:
   - code
   - syntax highlighting

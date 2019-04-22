@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-use-local-storage-with-javascript
 categories:
-  - Programming
+  - JavaScript
   - Popular
 tags:
   - data

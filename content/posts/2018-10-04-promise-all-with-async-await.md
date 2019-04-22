@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: promise-all-with-async-await
 categories:
-  - Programming
+  - JavaScript
 tags:
   - async/await
   - es6

@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-use-the-javascript-fetch-api-to-get-json-data
 categories:
-  - Programming
+  - JavaScript
 tags:
   - api
   - javascript

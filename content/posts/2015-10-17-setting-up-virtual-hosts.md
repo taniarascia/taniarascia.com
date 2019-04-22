@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/apache.png'
 slug: setting-up-virtual-hosts
 categories:
-  - DevOps
+  - Tools
 tags:
   - php
   - setup

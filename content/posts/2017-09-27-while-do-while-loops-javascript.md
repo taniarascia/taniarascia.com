@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: while-do-while-loops-javascript
 categories:
-  - Programming
+  - JavaScript
 tags:
   - javascript
   - fundamentals

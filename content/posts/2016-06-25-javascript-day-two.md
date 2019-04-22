@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: javascript-day-two
 categories:
-  - Programming
+  - JavaScript
 tags:
   - javascript
 ---

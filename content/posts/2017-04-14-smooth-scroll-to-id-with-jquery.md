@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/jquery.png'
 slug: smooth-scroll-to-id-with-jquery
 categories:
-  - Programming
+  - JavaScript
 tags:
   - javascript
   - jQuery

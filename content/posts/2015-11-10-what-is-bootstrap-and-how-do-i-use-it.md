@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/bs.png'
 slug: what-is-bootstrap-and-how-do-i-use-it
 categories:
   - Popular
-  - UI/UX
+  - CSS
 tags:
   - bootstrap
   - css

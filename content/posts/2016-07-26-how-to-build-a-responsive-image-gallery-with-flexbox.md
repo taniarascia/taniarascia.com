@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: how-to-build-a-responsive-image-gallery-with-flexbox
 categories:
-  - UI/UX
+  - CSS
 tags:
   - css
   - flex

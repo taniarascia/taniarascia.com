@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/seo.png'
 slug: a-practical-guide-to-search-engine-optimization-seo-with-google
 categories:
-  - Workflow
+  - Tools
 tags:
   - seo
 ---

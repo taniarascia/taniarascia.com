@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: background-position-fixed-and-cover-with-css
 categories:
-  - UI/UX
+  - CSS
 tags:
   - css
 ---

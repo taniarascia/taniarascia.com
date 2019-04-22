@@ -5,9 +5,8 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-connect-to-an-api-with-javascript
 categories:
-  - Programming
+  - JavaScript
   - Popular
-  - UI/UX
 tags:
   - api
   - app

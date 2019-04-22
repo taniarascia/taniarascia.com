@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/mamp.png'
 slug: local-environment
 categories:
-  - DevOps
+  - Tools
 tags:
   - php
   - setup

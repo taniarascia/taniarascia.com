@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/ubuntu.png'
 slug: how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant
 categories:
-  - DevOps
+  - Tools
 tags:
   - mysql
   - php

@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/terminal.png'
 slug: how-to-use-the-command-line-for-apple-macos-and-linux
 categories:
-  - DevOps
+  - Tools
 tags:
   - command line
   - linux

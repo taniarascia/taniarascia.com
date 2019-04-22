@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/vsc.png'
 slug: how-to-create-a-snippet-in-visual-studio-code
 categories:
-  - UI/UX
+  - Tools
 tags:
   - php
   - setup

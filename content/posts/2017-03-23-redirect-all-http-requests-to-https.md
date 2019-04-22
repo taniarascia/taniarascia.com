@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/ssl.png'
 slug: redirect-all-http-requests-to-https
 categories:
-  - DevOps
+  - Tools
 tags:
   - htaccess
 ---

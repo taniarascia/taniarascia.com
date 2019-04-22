@@ -5,8 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: content-editable-elements-in-javascript-react
 categories:
-  - Programming
-  - UI/UX
+  - JavaScript
 tags:
   - javascript
   - react

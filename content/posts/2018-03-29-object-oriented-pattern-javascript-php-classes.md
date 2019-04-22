@@ -5,7 +5,8 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: object-oriented-pattern-javascript-php-classes
 categories:
-  - Programming
+  - PHP
+  - JavaScript
 tags:
   - class
   - javascript

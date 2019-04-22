@@ -5,9 +5,8 @@ template: post
 thumbnail: '../thumbnails/react.png'
 slug: getting-started-with-react
 categories:
-  - Programming
   - Popular
-  - UI/UX
+  - JavaScript
 tags:
   - api
   - javascript

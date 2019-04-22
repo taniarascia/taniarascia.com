@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/bash.png'
 slug: how-to-create-and-use-bash-scripts
 categories:
-  - DevOps
+  - Tools
 tags:
   - bash
   - command line

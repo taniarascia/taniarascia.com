@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/writing.png'
 slug: design-for-developers
 categories:
   - Popular
-  - UI/UX
+  - CSS
 tags:
   - css
   - design

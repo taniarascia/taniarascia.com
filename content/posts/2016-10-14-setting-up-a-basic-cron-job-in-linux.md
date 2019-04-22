@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/linux.png'
 slug: setting-up-a-basic-cron-job-in-linux
 categories:
-  - DevOps
+  - Tools
 tags:
   - cron
   - linux

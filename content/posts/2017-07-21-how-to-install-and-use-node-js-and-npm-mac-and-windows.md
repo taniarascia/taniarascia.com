@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/node.png'
 slug: how-to-install-and-use-node-js-and-npm-mac-and-windows
 categories:
-  - Programming
+  - JavaScript
 tags:
   - javascript
   - node

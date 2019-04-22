@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: easiest-flex-grid-ever
 categories:
-  - UI/UX
+  - CSS
 tags:
   - css
   - flex

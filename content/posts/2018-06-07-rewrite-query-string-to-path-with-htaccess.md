@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/apache.png'
 slug: rewrite-query-string-to-path-with-htaccess
 categories:
-  - Programming
+  - Tools
 tags:
   - apache
   - htaccess

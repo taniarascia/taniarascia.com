@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/binary.png'
 slug: bits-bytes-bases-and-a-hex-dump-javascript
 categories:
-  - Programming
+  - JavaScript
 tags:
   - javascript
   - node

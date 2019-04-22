@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/terminal.png'
 slug: my-front-end-web-development-setup
 categories:
-  - UI/UX
+  - Tools
 tags:
   - setup
 ---

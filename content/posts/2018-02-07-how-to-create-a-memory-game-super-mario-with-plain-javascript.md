@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/mario.png'
 slug: how-to-create-a-memory-game-super-mario-with-plain-javascript
 categories:
-  - Programming
+  - JavaScript
   - UI/UX
 tags:
   - app

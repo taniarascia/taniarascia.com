@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/ssl.png'
 slug: https-ssl-tls-certificate-how-to
 categories:
-  - DevOps
+  - Tools
 tags:
   - security
   - ssl

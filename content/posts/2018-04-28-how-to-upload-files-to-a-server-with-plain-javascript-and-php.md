@@ -5,7 +5,8 @@ template: post
 thumbnail: '../thumbnails/terminal.png'
 slug: how-to-upload-files-to-a-server-with-plain-javascript-and-php
 categories:
-  - Programming
+  - PHP
+  - JavaScript
 tags:
   - javascript
   - php

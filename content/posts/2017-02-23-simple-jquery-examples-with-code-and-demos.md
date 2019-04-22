@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/jquery.png'
 slug: simple-jquery-examples-with-code-and-demos
 categories:
-  - UI/UX
+  - JavaScript
 tags:
   - javascript
   - jQuery

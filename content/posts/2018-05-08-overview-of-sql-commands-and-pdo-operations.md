@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/sql.png'
 slug: overview-of-sql-commands-and-pdo-operations
 categories:
   - Popular
-  - Programming
+  - Tools
 tags:
   - database
   - mysql

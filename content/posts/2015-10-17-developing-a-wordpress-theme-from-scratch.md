@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/wp.png'
 slug: developing-a-wordpress-theme-from-scratch
 categories:
   - Popular
-  - WordPress
+  - PHP
 tags:
   - php
   - wordpress

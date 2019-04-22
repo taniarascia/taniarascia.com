@@ -21,7 +21,7 @@ export default class UserInfo extends Component {
             </p>
 
             <a href="https://ko-fi.com/taniarascia" className="donate-button" target="_blank">
-              Support me
+              Buy me a coffee
             </a>
             <a
               className="patreon-button"

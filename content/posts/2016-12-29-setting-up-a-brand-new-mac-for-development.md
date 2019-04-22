@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/apple.png'
 slug: setting-up-a-brand-new-mac-for-development
 categories:
-  - Workflow
+  - Tools
 tags:
   - apple
   - mac

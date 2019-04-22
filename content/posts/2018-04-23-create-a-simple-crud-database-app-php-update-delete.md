@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/db.png'
 slug: create-a-simple-crud-database-app-php-update-delete
 categories:
-  - Programming
+  - PHP
 tags:
   - database
   - mysql

@@ -7,7 +7,7 @@ slug: web-developers-and-bloggers-i-follow-2017
 categories:
   - Personal
 tags:
-  - writing
+  - life
 ---
 
 Over the past few years, my RSS feed has begun to fill up with a number of amazing and inspiring web developers, entrepreneurs, and bloggers. I encountered most of them while researching a question or issue I've had, and they provided me with a clean website and a succinct answer. I've learned so much from them that thought it would be nice to share a list of them with you today.
