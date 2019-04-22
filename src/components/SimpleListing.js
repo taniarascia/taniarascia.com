@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class SimpleListing extends Component {
+export default class SimpleListing extends Component {
   render() {
     const { data } = this.props
 
@@ -19,5 +19,3 @@ class SimpleListing extends Component {
     )
   }
 }
-
-export default SimpleListing

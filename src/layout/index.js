@@ -7,7 +7,7 @@ import config from '../../data/SiteConfig'
 import favicon from '../images/favicon.png'
 import '../styles/main.scss'
 
-class MainLayout extends Component {
+export default class MainLayout extends Component {
   static contextType = ThemeContext
 
   render() {
@@ -31,5 +31,3 @@ class MainLayout extends Component {
     )
   }
 }
-
-export default MainLayout

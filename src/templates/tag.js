@@ -5,7 +5,7 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import config from '../../data/SiteConfig'
 
-class TagTemplate extends Component {
+export default class TagTemplate extends Component {
   render() {
     const { tag } = this.props.pageContext
     const postEdges = this.props.data.allMarkdownRemark.edges
@@ -23,8 +23,6 @@ class TagTemplate extends Component {
     )
   }
 }
-
-export default TagTemplate
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {

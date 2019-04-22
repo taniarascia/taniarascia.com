@@ -13,7 +13,7 @@ import publications from '../../data/publications'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 
-class Index extends Component {
+export default class Index extends Component {
   render() {
     const latestPostEdges = this.props.data.latest.edges
     const popularPostEdges = this.props.data.popular.edges
@@ -114,8 +114,6 @@ class Index extends Component {
     )
   }
 }
-
-export default Index
 
 export const pageQuery = graphql`
   query IndexQuery {

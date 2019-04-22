@@ -5,7 +5,7 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import config from '../../data/SiteConfig'
 
-class CategoryTemplate extends Component {
+export default class CategoryTemplate extends Component {
   render() {
     const { category } = this.props.pageContext
     const postEdges = this.props.data.allMarkdownRemark.edges
@@ -21,8 +21,6 @@ class CategoryTemplate extends Component {
     )
   }
 }
-
-export default CategoryTemplate
 
 export const pageQuery = graphql`
   query CategoryPage($category: String) {

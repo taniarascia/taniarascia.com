@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import kebabCase from 'lodash.kebabcase'
 import { Link } from 'gatsby'
 
-class PostTags extends Component {
+export default class PostTags extends Component {
   render() {
     const { tags, size } = this.props
 
@@ -18,5 +18,3 @@ class PostTags extends Component {
     )
   }
 }
-
-export default PostTags

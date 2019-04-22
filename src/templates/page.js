@@ -5,7 +5,7 @@ import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 
-class PageTemplate extends Component {
+export default class PageTemplate extends Component {
   render() {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
@@ -33,8 +33,6 @@ class PageTemplate extends Component {
     )
   }
 }
-
-export default PageTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

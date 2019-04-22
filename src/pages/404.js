@@ -5,7 +5,7 @@ import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 
-class NotFoundPage extends Component {
+export default class NotFoundPage extends Component {
   static contextType = ThemeContext
 
   componentDidMount() {
@@ -50,5 +50,3 @@ class NotFoundPage extends Component {
     )
   }
 }
-
-export default NotFoundPage

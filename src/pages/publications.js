@@ -5,7 +5,7 @@ import SimpleListing from '../components/SimpleListing'
 import config from '../../data/SiteConfig'
 import publications from '../../data/publications'
 
-class PublicationsPage extends Component {
+export default class PublicationsPage extends Component {
   render() {
     return (
       <Layout>
@@ -18,5 +18,3 @@ class PublicationsPage extends Component {
     )
   }
 }
-
-export default PublicationsPage

@@ -6,7 +6,7 @@ import kebabCase from 'lodash.kebabcase'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 
-class CategoriesPage extends Component {
+export default class CategoriesPage extends Component {
   render() {
     const { group } = this.props.data.allMarkdownRemark
 
@@ -30,8 +30,6 @@ class CategoriesPage extends Component {
     )
   }
 }
-
-export default CategoriesPage
 
 export const pageQuery = graphql`
   query CategoriesQuery {

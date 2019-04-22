@@ -6,7 +6,7 @@ import moon from '../images/moon.svg'
 import coffee from '../images/coffee.svg'
 import ThemeContext from '../context/ThemeContext'
 
-class Navigation extends Component {
+export default class Navigation extends Component {
   state = {
     scrolled: false,
   }
@@ -72,5 +72,3 @@ class Navigation extends Component {
     )
   }
 }
-
-export default Navigation

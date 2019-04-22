@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NewsletterForm from './NewsletterForm'
 
-class Contact extends Component {
+export default class Contact extends Component {
   render() {
     return (
       <>
@@ -36,5 +36,3 @@ class Contact extends Component {
     )
   }
 }
-
-export default Contact

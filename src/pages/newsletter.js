@@ -4,7 +4,7 @@ import Layout from '../layout'
 import Contact from '../components/Contact'
 import config from '../../data/SiteConfig'
 
-class NewsletterPage extends Component {
+export default class NewsletterPage extends Component {
   render() {
     return (
       <Layout>
@@ -16,5 +16,3 @@ class NewsletterPage extends Component {
     )
   }
 }
-
-export default NewsletterPage

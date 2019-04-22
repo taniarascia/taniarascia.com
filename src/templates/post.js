@@ -10,7 +10,7 @@ import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
 import { formatDate, editOnGithub } from '../utils/global'
 
-class PostTemplate extends Component {
+export default class PostTemplate extends Component {
   render() {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
@@ -83,8 +83,6 @@ class PostTemplate extends Component {
     )
   }
 }
-
-export default PostTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

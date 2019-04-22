@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { formatDate } from '../utils/global'
 
-class PostListing extends Component {
+export default class PostListing extends Component {
   getPostList() {
     const { postEdges } = this.props
     const postList = postEdges
@@ -50,5 +50,3 @@ class PostListing extends Component {
     )
   }
 }
-
-export default PostListing
