@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import floppy from '../images/floppy.svg'
+import floppy from '../images/floppy.png'
 import sun from '../images/sun.svg'
 import moon from '../images/moon.svg'
-import coffee from '../images/coffee.svg'
 import ThemeContext from '../context/ThemeContext'
 
 export default class Navigation extends Component {

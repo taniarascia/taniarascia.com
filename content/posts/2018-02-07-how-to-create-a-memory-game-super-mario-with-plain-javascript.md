@@ -6,7 +6,6 @@ thumbnail: '../thumbnails/mario.png'
 slug: how-to-create-a-memory-game-super-mario-with-plain-javascript
 categories:
   - JavaScript
-  - UI/UX
 tags:
   - app
   - game

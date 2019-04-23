@@ -229,10 +229,13 @@ $dark-border: darken($background, 3%);
     color: $foreground;
     border: 2px solid #666;
     background: transparent !important;
+
     &:hover {
       border: 2px solid #888;
     }
-    &:active, &:focus {
+
+    &:active,
+    &:focus {
       border: 2px solid $primary-color;
     }
   }
@@ -293,6 +296,7 @@ $dark-border: darken($background, 3%);
     }
   }
 
+
   button.dark-switcher {
     border: none;
   }
@@ -305,6 +309,27 @@ $dark-border: darken($background, 3%);
     &::before {
       background: #444;
       color: #333;
+    }
+  }
+
+  .category-container {
+    .category-filter {
+      padding: .5rem 1rem;
+      background: #222;
+      border-radius: $border-radius;
+      margin-right: .5rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: #111;
+        color: rgba(255, 255, 255, 0.6);
+      }
     }
   }
 

@@ -10,31 +10,60 @@ import _ from 'lodash'
 export default class BlogPage extends Component {
   state = {
     searchTerm: '',
+    currentCategories: [],
     posts: this.props.data.posts.edges,
     filteredPosts: this.props.data.posts.edges,
   }
 
-  handleChange = event => {
-    this.setState({ searchTerm: event.target.value })
-    this.filterPosts(event.target.value)
+  handleChange = async event => {
+    const { name, value } = event.target
+
+    await this.setState({ [name]: value })
+
+    this.filterPosts()
   }
 
-  filterPosts = searchTerm => {
-    const { posts } = this.state
+  filterPosts = () => {
+    const { posts, searchTerm, currentCategories } = this.state
 
-    const filteredPosts = posts.filter(post =>
-      post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+    let filteredPosts = posts.filter(post => {
+      if (post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return true
+      }
+    })
+
+    if (currentCategories.length > 0) {
+      filteredPosts = filteredPosts.filter(post => {
+        if (
+          post.node.frontmatter.categories &&
+          currentCategories.every(cat => post.node.frontmatter.categories.includes(cat))
+        ) {
+          return true
+        }
+      })
+    }
 
     this.setState({ filteredPosts })
   }
 
+  updateCategories = category => {
+    const { currentCategories } = this.state
+
+    if (!currentCategories.includes(category)) {
+      this.setState(prevState => ({
+        currentCategories: [...prevState.currentCategories, category],
+      }))
+    } else {
+      this.setState(prevState => ({
+        currentCategories: prevState.currentCategories.filter(cat => category !== cat),
+      }))
+    }
+  }
+
   render() {
-    const { filteredPosts, searchTerm } = this.state
+    const { filteredPosts, searchTerm, currentCategories } = this.state
     const filterCount = filteredPosts.length
-    const categories = this.props.data.categories.group.filter(
-      category => category.fieldValue !== 'Popular'
-    )
+    const categories = this.props.data.categories.group
 
     return (
       <Layout>
@@ -42,24 +71,25 @@ export default class BlogPage extends Component {
         <SEO />
         <div className="container">
           <h1>Articles</h1>
-          <p>
-            <strong>Popular guides:</strong>{' '}
-            <a href="/everything-i-know-as-a-software-developer-without-a-degree/">My roadmap</a>,{' '}
-            <a href="/getting-started-with-react">React</a>,{' '}
-            <a href="/how-to-connect-to-an-api-with-javascript/">APIs</a>,{' '}
-            <a href="/how-to-create-and-use-bash-scripts/">Bash</a>,{' '}
-            <a href="/es6-syntax-and-feature-overview/">ES6</a>,{' '}
-            <a href="/how-to-use-the-command-line-for-apple-macos-and-linux/">Command line</a>,{' '}
-            <a href="/overview-of-sql-commands-and-pdo-operations/">SQL</a>,{' '}
-            <a href="/design-for-developers/">Design</a>,{' '}
-            <a href="/create-a-simple-database-app-connecting-to-mysql-with-php/">PHP/MySQL</a>,{' '}
-            <a href="/how-to-use-jquery-a-javascript-library/">jQuery</a>,{' '}
-            <a href="/learn-sass-now/">Sass</a>,{' '}
-            <a href="/what-is-bootstrap-and-how-do-i-use-it/">Bootstrap</a>,{' '}
-            <a href="/developing-a-wordpress-theme-from-scratch/">WordPress</a>,{' '}
-            <a href="/getting-started-with-git/">Git</a>
-          </p>
-          <div className="flex">
+          <div className="category-container">
+            {categories.map(category => {
+              const active = currentCategories.includes(category.fieldValue)
+
+              return (
+                <div
+                  className={`category-filter ${active ? 'active' : null}`}
+                  key={category.fieldValue}
+                  onClick={async () => {
+                    await this.updateCategories(category.fieldValue)
+                    await this.filterPosts()
+                  }}
+                >
+                  {category.fieldValue}
+                </div>
+              )
+            })}
+          </div>
+          <div className="search-container">
             <input
               className="search"
               type="text"
@@ -91,6 +121,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            categories
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {

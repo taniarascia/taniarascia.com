@@ -14,7 +14,7 @@ tags:
 
 Usually when you think of a JavaScript game, you probably imagine something played in the browser, either rendered to the DOM or in an HTML5 canvas element.
 
-For a recent Node.js project, I wanted to render pixels to a terminal interface instead of a browser. For this, I was going to need to find and learn how to use a terminal UI library like [curses](<https://en.wikipedia.org/wiki/Curses_(programming_library)>). The most popular one in the JavaScript environment is [blessed](https://github.com/chjj/blessed).
+For a recent Node.js project, I wanted to render pixels to a terminal interface instead of a browser. For this, I was going to need to find and learn how to use a terminal UI library like [curses](https://en.wikipedia.org/wiki/Curses_(programming_library)). The most popular one in the JavaScript environment is [blessed](https://github.com/chjj/blessed).
 
 I thought writing the classic Snake game would be a fun and easy project to get used to blessed, so I wrote [🐍 Snek.js](https://github.com/taniarascia/snek).
 
