@@ -45,7 +45,7 @@ export default class PostListing extends Component {
                   <h2>{post.title}</h2>
                   {!simple ? <div className="excerpt">{date}</div> : null}
                 </div>
-                {popular ? (
+                {popular && !simple ? (
                   <div className="popular">
                     <div>Popular</div>
                   </div>
