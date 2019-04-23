@@ -17,6 +17,7 @@ export default class PostListing extends Component {
           date: postEdge.node.fields.date,
           excerpt: postEdge.node.excerpt,
           timeToRead: postEdge.node.timeToRead,
+          categories: postEdge.node.frontmatter.categories,
         }
       })
     return postList
@@ -33,6 +34,8 @@ export default class PostListing extends Component {
           if (post.thumbnail) {
             thumbnail = post.thumbnail.childImageSharp.fixed
           }
+          const popular = post.categories.includes('Popular')
+          console.log(popular)
           const date = formatDate(post.date)
           return (
             <Link to={post.path} key={post.title}>
@@ -42,6 +45,11 @@ export default class PostListing extends Component {
                   <h2>{post.title}</h2>
                   {!simple ? <div className="excerpt">{date}</div> : null}
                 </div>
+                {popular ? (
+                  <div className="popular">
+                    <div>Popular</div>
+                  </div>
+                ) : null}
               </div>
             </Link>
           )

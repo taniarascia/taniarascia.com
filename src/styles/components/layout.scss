@@ -128,7 +128,7 @@
     .each {
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 1fr;
+      grid-template-columns: 60px 1fr 0;
       padding: 1rem 0;
       margin: 0;
       border-radius: $border-radius;
@@ -145,10 +145,6 @@
     &:last-of-type {
       .each {
         border-bottom-color: transparent;
-
-        &:hover {
-          border-bottom-color: $primary-color;
-        }
       }
     }
   }
@@ -209,7 +205,7 @@
   .posts {
     a {
       .each {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 80px 1fr 90px;
         align-items: start;
         padding: 1rem 2rem;
         margin: 0 -2rem;
@@ -217,6 +213,12 @@
         &:hover {
           border: 2px solid $primary-color;
           background: $button-background-hover;
+
+          &last-of-type {
+            &:hover {
+              border-bottom-color: $primary-color;
+            }
+          }
 
           h2 {
             color: #111;
@@ -266,6 +268,27 @@
         }
       }
     }
+  }
+}
+
+.popular {
+  display: none;
+  align-self: center;
+  justify-self: flex-end;
+  div {
+    display: inline-block;
+    font-size: .9rem;
+    background: $green;
+    color: white;
+    border-radius: $border-radius;
+    padding: .5rem 1rem;
+    text-align: center;
+  }
+}
+
+@include small-breakpoint {
+  .popular {
+    display: block;
   }
 }
 
@@ -623,7 +646,7 @@ blockquote {
 
 .category-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 
@@ -663,9 +686,7 @@ blockquote {
 
 @include small-breakpoint {
   .category-container {
-    justify-content: flex-end;
     margin-bottom: 1.5rem;
-    margin-right: 75px;
 
     .category-filter {
       padding: .5rem 1rem;
