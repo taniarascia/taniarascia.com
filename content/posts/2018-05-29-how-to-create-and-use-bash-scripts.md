@@ -6,6 +6,7 @@ thumbnail: '../thumbnails/bash.png'
 slug: how-to-create-and-use-bash-scripts
 categories:
   - Tools
+  - Popular
 tags:
   - bash
   - command line

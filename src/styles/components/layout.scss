@@ -275,6 +275,7 @@
   display: none;
   align-self: center;
   justify-self: flex-end;
+
   div {
     display: inline-block;
     font-size: .9rem;
@@ -288,6 +289,28 @@
 
 @include small-breakpoint {
   .popular {
+    display: block;
+  }
+}
+
+.new {
+  display: none;
+  align-self: center;
+  justify-self: flex-end;
+
+  div {
+    display: inline-block;
+    font-size: .9rem;
+    background: $secondary-color;
+    color: white;
+    border-radius: $border-radius;
+    padding: .5rem 1rem;
+    text-align: center;
+  }
+}
+
+@include small-breakpoint {
+  .new {
     display: block;
   }
 }
@@ -609,7 +632,7 @@ blockquote {
 .filter-count {
   width: 80px;
   text-align: center;
-  color: $secondary-color;
+  color: $font-color;
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -652,7 +675,7 @@ blockquote {
 
   .category-filter {
     font-size: .85rem;
-    padding: .25rem .5rem;
+    padding: .5rem .75rem;
     background: $light;
     border-radius: $border-radius;
     margin-right: .5rem;

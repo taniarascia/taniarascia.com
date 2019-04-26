@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { formatDate } from '../utils/global'
+import moment from 'moment'
 
 export default class PostListing extends Component {
   getPostList() {
@@ -34,9 +35,11 @@ export default class PostListing extends Component {
           if (post.thumbnail) {
             thumbnail = post.thumbnail.childImageSharp.fixed
           }
+
           const popular = post.categories.includes('Popular')
-          console.log(popular)
           const date = formatDate(post.date)
+          const newest = moment(post.date) > moment().subtract(1, 'months')
+
           return (
             <Link to={post.path} key={post.title}>
               <div className="each">
@@ -45,11 +48,16 @@ export default class PostListing extends Component {
                   <h2>{post.title}</h2>
                   {!simple ? <div className="excerpt">{date}</div> : null}
                 </div>
-                {popular && !simple ? (
+                {newest && !simple && (
+                  <div className="new">
+                    <div>New!</div>
+                  </div>
+                )}
+                {popular && !simple && (
                   <div className="popular">
                     <div>Popular</div>
                   </div>
-                ) : null}
+                )}
               </div>
             </Link>
           )
