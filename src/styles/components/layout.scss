@@ -170,7 +170,7 @@
   &.simple {
     a {
       .each {
-        grid-template-columns: 50px 2fr;
+        grid-template-columns: 50px 2fr auto;
         align-items: center;
         padding: 1rem 0;
         margin: 0;
@@ -203,6 +203,8 @@
 
 @include small-breakpoint {
   .posts {
+    margin: 3rem 0;
+
     a {
       .each {
         grid-template-columns: 80px 1fr 90px;
@@ -311,6 +313,7 @@
 
 @include small-breakpoint {
   .new {
+    margin-left: 1rem;
     display: block;
   }
 }

@@ -16,6 +16,10 @@ React Context API is a way to essentially create global variables that can be pa
 
 I'm going to leave some brief, concise steps to getting started with Context here.
 
+## Prerequisite
+
+- Read [Getting Started with React](https://www.taniarascia.com/getting-started-with-react/) or [Build a React App with Hooks](https://www.taniarascia.com/crud-app-in-react-with-hooks/) if you don't know React or React Hooks yet.
+
 ## Create Context
 
 Imagine I have some information I want to be available anywhere or everywhere throughout a React app. A theme might be implemented using Context - for example, on this site I have Context serving three themes: dark mode, light mode, and MS-DOS mode (on the [404 page](/404)).In this simple example, I'll use a logged in user.
