@@ -1,9 +1,9 @@
 ---
 date: 2019-04-25
-title: 'Reference for Using Context API with React (Hooks and Classes)'
+title: 'Using Context API in React (Hooks and Classes)'
 template: post
 thumbnail: '../thumbnails/react.png'
-slug: using-context-api-with-react
+slug: using-context-api-in-react
 categories:
   - JavaScript
 tags:
