@@ -135,7 +135,7 @@ function HomePage() {
 }
 ```
 
-Once again, if you'd like to use Context outside of returning a
+Once again, if you'd like to use Context outside of the return, you have to use a different method. For functional components, that's using `useContext`, such as in the example below. This is the equivalent of `static contextType`.
 
 <div class="filename">src/HomePage.js</div>
 
@@ -156,11 +156,11 @@ function HomePage() {
 
 So there you have it.
 
-1. Use `const xContext = React.createContext()` to create context.
-2. Pull `xContext.Provider` and `xContext.Consumer` out of `xContext`
-3. Wrap `Provider` around your parent component.
-4. Use `Consumer` in any child component that wants to use the Context value.
-5. If you want to use a value outside of `render` for a class, use `static contextType = xContext`
-6. If you want to use a value outside of `return` for a functional component, use `const x = useContext(xContext)`
+- Use `const xContext = React.createContext()` to create context.
+- Pull `xContext.Provider` and `xContext.Consumer` out of `xContext`
+- Wrap `Provider` around your parent component.
+- Use `Consumer` in any child component that wants to use the Context value.
+- If you want to use a value outside of `render` for a class, use `static contextType = xContext`
+- If you want to use a value outside of `return` for a functional component, use `const x = useContext(xContext)`
 
 Hope this helps! I know I'll be referring to this page again in the future.
