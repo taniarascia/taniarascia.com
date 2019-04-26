@@ -118,8 +118,8 @@ We're matching the root route (`/`) to `HomePage`, and dynamically matching any 
 <Switch>
   <Route exact path="/" component={HomePage} />
   <Route path="/:id" component={UserPage} />
-  <Route path="categories" component={CategoriesPage} />
-  <Route path="categories/:id" component={IndividualCategoryPage} />
+  <Route path="/categories" component={CategoriesPage} />
+  <Route path="/categories/:id" component={IndividualCategoryPage} />
 </Switch>
 ```
 
