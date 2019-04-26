@@ -416,7 +416,7 @@ const handleInputChange = event => {
 }
 ```
 
-> If you don't understand what's being passed through, try playing around with `console.log(event)` in the input handling unction.
+> If you don't understand what's being passed through, try playing around with `console.log(event)` in the input handling function.
 
 Now we extract the values from the state object, and reference our function in the `onChange` event.
 
