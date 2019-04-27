@@ -85,12 +85,12 @@ kbd {
 
 /* Inline code */
 
-:not(pre)>code[class*='language-'] {
+:not(pre) > code[class*='language-'] {
   padding: 3px 5px;
   color: #111111;
 }
 
-:not(pre)>code {
+:not(pre) > code {
   padding: 3px 5px;
   border: none;
   font-family: $code-font-family;
@@ -119,7 +119,6 @@ code[class*='language-sass'] {
 }
 
 @include small-breakpoint {
-
   code,
   pre.language-terminal code.language-terminal,
   code[class*='language-'],

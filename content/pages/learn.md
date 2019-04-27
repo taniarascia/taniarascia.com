@@ -4,8 +4,6 @@ slug: learn
 template: page
 ---
 
-# Learning in Public
-
 My current focus is JavaScript and Computer Science fundamentals.
 
 ## Computer Science
