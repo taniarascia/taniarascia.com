@@ -48,8 +48,8 @@ export default class PostTemplate extends Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">
-          <header className="single-header">
-            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
+          <header className={`single-header ${!thumbnail ? 'no-thumbnail' : ''}`}>
+            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : null}
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">

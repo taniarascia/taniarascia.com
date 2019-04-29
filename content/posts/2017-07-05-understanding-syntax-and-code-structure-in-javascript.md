@@ -2,7 +2,7 @@
 date: 2017-07-05
 title: 'Understanding Syntax and Code Structure'
 template: post
-thumbnail: '../thumbnails/javascript.png'
+thumbnail: '../thumbnails/js.png'
 slug: understanding-syntax-and-code-structure-in-javascript
 categories:
   - JavaScript

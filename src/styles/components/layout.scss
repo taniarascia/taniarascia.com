@@ -90,6 +90,9 @@
 .single-header {
   display: grid;
   margin-bottom: 30px;
+  &.no-thumbnail {
+    display: flex;
+  }
 
   .flex {
     display: flex;
