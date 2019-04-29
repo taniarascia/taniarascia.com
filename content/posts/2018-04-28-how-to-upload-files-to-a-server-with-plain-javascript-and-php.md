@@ -300,7 +300,7 @@ Now that we're gathering all the files from the form and sending them to **proce
 
 First, we'll want to make sure the code only runs when a POST request hits the file.
 
-<div class="filename">process.js</div>
+<div class="filename">process.php</div>
 
 ```php
 <?php
