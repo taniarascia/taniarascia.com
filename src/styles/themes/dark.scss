@@ -158,7 +158,8 @@ $dark-border: darken($background, 3%);
   .tag-container {
     span {
       color: $foreground;
-      border: 2px solid $comment;
+      background: #222;
+      border: none;
 
       .count {
         color: $secondary-color;
@@ -167,8 +168,8 @@ $dark-border: darken($background, 3%);
       &:hover,
       &:active,
       &:focus {
-        border: 2px solid $foreground;
-        background: transparent;
+        border: none;
+        background: #111;
         color: white;
       }
     }
@@ -321,6 +322,11 @@ $dark-border: darken($background, 3%);
       font-weight: 600;
       color: rgba(255, 255, 255, 0.4);
       cursor: pointer;
+
+      &.active {
+        background: $primary-color !important;
+        color: white !important;
+      }
 
       &:last-of-type {
         margin-right: 0;

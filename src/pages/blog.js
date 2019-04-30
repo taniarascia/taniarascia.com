@@ -77,7 +77,7 @@ export default class BlogPage extends Component {
 
               return (
                 <div
-                  className={`category-filter ${active ? 'active' : null}`}
+                  className={`category-filter ${active ? 'active' : ''}`}
                   key={category.fieldValue}
                   onClick={async () => {
                     await this.updateCategories(category.fieldValue)

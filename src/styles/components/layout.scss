@@ -8,7 +8,7 @@
   #main-content {
     margin-top: 92px;
     padding: 60px 0 0;
-    min-height: calc(100vh - 222px);
+    min-height: calc(100vh - 219px);
   }
 }
 
@@ -90,6 +90,7 @@
 .single-header {
   display: grid;
   margin-bottom: 30px;
+
   &.no-thumbnail {
     display: flex;
   }
@@ -740,16 +741,19 @@ blockquote {
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   height: 55px;
   color: $light-font-color;
 }
 
 @include small-breakpoint {
   .footer {
+    display: flex;
+    align-items: center;
     height: 100px;
+
+    strong {
+      color: #111;
+    }
   }
 }
 
