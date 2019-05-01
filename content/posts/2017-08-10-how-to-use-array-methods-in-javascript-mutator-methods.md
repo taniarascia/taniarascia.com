@@ -23,9 +23,7 @@ Methods that modify the original array are known as **mutator** methods, and met
 
 In this article, we will learn about adding and removing elements, reversing, replacing, merging and otherwise modifying elements in an array.
 
-<$>[note]
-**Note:** Array methods are properly written out as `Array.prototype.method()`, as `Array.prototype` refers to the `Array` object itself. For simplicity, we will simply list the name as `method()`.
-<$>
+> **Note:** Array methods are properly written out as `Array.prototype.method()`, as `Array.prototype` refers to the `Array` object itself. For simplicity, we will simply list the name as `method()`.
 
 ## Accessor Methods
 
