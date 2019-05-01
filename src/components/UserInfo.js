@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import coffee from '../images/coffee.svg'
 import tania from '../../content/images/taniawarm.jpg'
 
 export default class UserInfo extends Component {
@@ -14,7 +15,9 @@ export default class UserInfo extends Component {
             </p>
 
             <a href="https://ko-fi.com/taniarascia" className="donate-button" target="_blank">
-              Buy me a coffee
+              Buy me a coffee 
+              {' '}
+            <img src={coffee} className="coffee-icon" />
             </a>
             <a
               className="patreon-button"

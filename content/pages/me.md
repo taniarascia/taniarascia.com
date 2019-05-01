@@ -8,6 +8,8 @@ I’m Tania Rascia, a full-stack software developer, technical writer, and forme
 
 I started this website as a place to document everything I learned while going through a [career change](https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/). I write about everything I know, and the free resources I create help thousands of people successfully become developers, too! 
 
+I [learn in public](/learn).
+
 ![Me](../images/taniafull.jpg)
 
 ### Around the web

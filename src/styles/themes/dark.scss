@@ -224,6 +224,10 @@ $dark-border: darken($background, 3%);
 
   .footer {
     color: $foreground;
+
+    strong {
+      color: $foreground;
+    }
   }
 
   #{$forms} {
@@ -337,6 +341,10 @@ $dark-border: darken($background, 3%);
         color: rgba(255, 255, 255, 0.6);
       }
     }
+  }
+
+  .filter-count {
+    color: $font-color;
   }
 
   ::selection {

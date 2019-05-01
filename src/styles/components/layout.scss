@@ -218,7 +218,7 @@
 
         &:hover {
           border: 2px solid $primary-color;
-          background: $button-background-hover;
+          background: $primary-hover;
 
           &last-of-type {
             &:hover {
@@ -229,6 +229,12 @@
           h2 {
             color: #111;
           }
+        }
+
+        &:active,
+        &:focus {
+          border: 2px dashed $primary-color;
+          background: $primary-hover;
         }
 
         h2 {
@@ -260,7 +266,13 @@
 
           &:hover {
             border: 2px solid $primary-color;
-            background: $button-background-hover;
+            background: $primary-hover;
+          }
+
+          &:active,
+          &:focus {
+            border: 2px dashed $primary-color;
+            background: $primary-hover;
           }
 
           h2 {
@@ -341,7 +353,7 @@
 
       &:hover {
         border: 2px solid $primary-color;
-        background: $button-background-hover;
+        background: $primary-hover;
 
         h2 {
           color: #111;
@@ -639,7 +651,7 @@ blockquote {
 .filter-count {
   width: 80px;
   text-align: center;
-  color: $font-color;
+  color: $primary-color;
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -750,6 +762,7 @@ blockquote {
     display: flex;
     align-items: center;
     height: 100px;
+    color: initial;
 
     strong {
       color: #111;

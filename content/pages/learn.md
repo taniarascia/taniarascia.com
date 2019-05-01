@@ -4,11 +4,15 @@ slug: learn
 template: page
 ---
 
-My current focus is JavaScript and Computer Science fundamentals.
+There's a lot I want to learn, and a lot I've learned and documented. Here's where I list both. Related: [Everything I Know as a Software Developer Without a Degree](/everything-i-know-as-a-software-developer-without-a-degree/).
 
-## Computer Science
+## To Learn:
 
-### Data Structures
+My current focus is all things **JavaScript** and **Computer Science** fundamentals.
+
+### Computer Science
+
+#### Data Structures
 
 - [ ] Lists
   - [ ] Arrays
@@ -24,7 +28,7 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [ ] Heap
 - [ ] Graph
 
-### Algorithms
+#### Algorithms
 
 - [ ] Complexity (Big O notation)
   - [ ] Size complexity
@@ -41,9 +45,9 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [ ] Pattern matching
 - [ ] Recursion
 
-## JavaScript
+### JavaScript
 
-### Concepts
+#### Concepts
 
 - [ ] Map, Set
 - [ ] WeakMap, WeakSet
@@ -56,32 +60,36 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [ ] File Handling
 - [ ] Bitwise Operators
 
-### Document Object Model (DOM)
+#### Document Object Model (DOM)
 
 - [ ] Scrolling
 - [ ] Drag n' Drop
 
-### Frameworks/Libraries
+#### Frameworks/Libraries
 
 - [ ] Vue.js
 
-## Networking
+### Networking
 
 - [ ] Sockets
 
-## Databases
+### Databases
 
 - [ ] GraphQL
 - [ ] NoSQL (MongoDB, Firebase)
 
-## DevOps and CI/CD
+### DevOps and CI/CD
 
 - [ ] Docker
 - [ ] Creating a Pipeline
 
-## JavaScript
+## Learned:
 
-### Concepts
+This is not everything I know, but a good amount of the things I've documented since I started this site.
+
+### JavaScript
+
+#### Concepts
 
 - [x] [Syntax and Code Structure](/understanding-syntax-and-code-structure-in-javascript)
 - [x] [Comments](/how-to-write-comments-in-javascript)
@@ -107,7 +115,7 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [x] [ES6](/es6-syntax-and-feature-overview/)
 - [x] [Buffers](/bits-bytes-bases-and-a-hex-dump-javascript/)
 
-### Document Object Model (DOM)
+#### Document Object Model (DOM)
 
 - [x] [The DOM](/introduction-to-the-dom)
 - [x] [DOM Tree and Nodes](/understanding-the-dom-tree-and-nodes)
@@ -117,7 +125,7 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [x] [Events](/understanding-events-in-javascript)
 - [x] [Local and Session Storage](/how-to-use-local-storage-with-javascript/)
 
-### Frameworks/Libraries
+#### Frameworks/Libraries
 
 - [x] [React](/getting-started-with-react/)
   - [x] [Hooks API](/crud-app-in-react-with-hooks/)
@@ -125,7 +133,7 @@ My current focus is JavaScript and Computer Science fundamentals.
   - [x] [Content Editable](/content-editable-elements-in-javascript-react/)
 - [x] [jQuery](/how-to-use-jquery-a-javascript-library/)
 
-## PHP
+### PHP
 
 - [x] Authentication
 - [x] Routing
@@ -137,7 +145,7 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [x] [WordPress Intermediate](/wordpress-from-scratch-part-two/)]
 - [x] [WordPress Custom Fields](/wordpress-part-three-custom-fields-and-metaboxes/)
 
-## CSS
+### CSS
 
 - [x] Spacing, Styling
 - [x] Selectos and Specificity
@@ -150,7 +158,7 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [x] [Sass](/learn-sass-now/)
 - [x] [Bootstrap](/what-is-bootstrap-and-how-do-i-use-it/)
 
-## Tools/Frameworks/Concepts
+### Tools/Frameworks/Concepts
 
 - [x] Git
   - [x] [Push, Pull, Commit](/getting-started-with-git/)
@@ -170,16 +178,16 @@ My current focus is JavaScript and Computer Science fundamentals.
 - [x] [Bash](/how-to-create-and-use-bash-scripts/)
 - [x] [Object-Oriented Paradigm](/object-oriented-pattern-javascript-php-classes/)
 
-## Databases
+### Databases
 
 - [x] [SQL](/overview-of-sql-commands-and-pdo-operations/)
 
-## Testing
+### Testing
 
 - [x] [Unit Tests](/unit-testing-in-javascript/)
 - [x] End-to-End Tests
 
-## DevOps and CI/CD
+### DevOps and CI/CD
 
 - [x] AWS
   - [x] [S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
