@@ -9,7 +9,6 @@ import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
-import publications from '../../data/publications'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 
@@ -17,7 +16,6 @@ export default class Index extends Component {
   render() {
     const latestPostEdges = this.props.data.latest.edges
     const popularPostEdges = this.props.data.popular.edges
-    const published = publications.filter((article, i) => i < 6)
 
     return (
       <Layout>
@@ -56,16 +54,6 @@ export default class Index extends Component {
           <section className="section">
             <h2>Open Source Projects</h2>
             <ProjectListing projects={projects} />
-          </section>
-
-          <section className="section">
-            <h2>
-              Published Articles{' '}
-              <Link className="view-all" to="/publications">
-                View all
-              </Link>
-            </h2>
-            <SimpleListing simple data={published} />
           </section>
 
           <section className="section">

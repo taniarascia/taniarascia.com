@@ -10,7 +10,10 @@ export default class SimpleListing extends Component {
           return (
             <a href={post.path} key={post.title} target="_blank">
               <div className="each">
-                <h2>{post.title}</h2>
+                <h2>
+                  <img src={post.img} />
+                  {post.title}
+                </h2>
               </div>
             </a>
           )

@@ -311,6 +311,16 @@
   }
 }
 
+h2.publication-company {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 50px;
+    margin: 0 1rem 0 0;
+  }
+}
+
 .new {
   display: none;
   align-self: center;
@@ -349,6 +359,15 @@
         margin: 0;
         color: $light-font-color;
         border-bottom: none;
+        display: flex;
+        align-items: center;
+      }
+
+      img {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        max-height: 30px;
+        max-width: 30px;
       }
 
       &:hover {
@@ -371,7 +390,7 @@
         margin: 0 -1rem;
 
         h2 {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -387,13 +406,16 @@
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-bottom: none;
-    margin: 0 0 0.75rem 0;
+    margin: 0;
     font-weight: 600;
     color: #111;
     padding: 0;
-    margin: 0 0 0.5rem 0;
+
+    a {
+      color: #111;
+    }
   }
 
   p {
@@ -414,8 +436,12 @@
   .projects {
     .each {
       display: grid;
-      grid-template-columns: 2.2fr 5fr 3fr;
+      grid-template-columns: 2.5fr 5fr 3fr;
       grid-template-rows: none;
+    }
+
+    h2 {
+      font-size: 1.4rem;
     }
 
     p {

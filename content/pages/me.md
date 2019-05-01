@@ -67,6 +67,10 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - **2018** – I get a job as a backend PHP developer at [RateYourSeats.com](https://www.rateyourseats.com/)
 - **2018** – I get a job as a front end software engineer at [DAIS](https://www.dais.com/), working with JavaScript/React
 
+## Published Articles
+
+- [View all](/publications)
+
 ## Currently Using
 
 - **Computer:** MacBook Pro 2015
