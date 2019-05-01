@@ -79,7 +79,7 @@ The way you provide Context is the same for class and functional components, but
 
 ### Class component
 
-The traditional way to retrieve Context values is by wrapping the child component in the `Consumer`. From there, you can access the value prop as `props`.
+The traditional way to retrieve Context values was by wrapping the child component in the `Consumer`. From there, you would be able to access the value prop as `props`.
 
 <div class="filename">src/HomePage.js (class example)</div>
 
@@ -100,7 +100,7 @@ class HomePage extends Component {
 }
 ```
 
-But what about lifecycle methods? What if I need the value from Context outside of `render`? We can do this in a class with `contextType`, which is a static variable on the class.
+But what about lifecycle methods? What if I need the value from Context outside of `render`? The wrapper method was limited. Instead, we can do this in a class with `contextType`, which is a static variable on the class.
 
 <div class="filename">src/HomePage.js (class example)</div>
 
@@ -125,17 +125,7 @@ class HomePage extends Component {
 
 ### Functional component and Hooks
 
-The `Consumer` wrapper method will work to retrieve Context
-
-<div class="filename">src/HomePage.js (functional example)</div>
-
-```jsx
-function HomePage() {
-  return <UserConsumer>{props => console.log(props)}</UserConsumer>
-}
-```
-
-Once again, if you'd like to use Context outside of the return, you have to use a different method. For functional components, that's using `useContext`, such as in the example below. This is the equivalent of `static contextType`.
+For functional components, you'll use `useContext`, such as in the example below. This is the equivalent of `static contextType`.
 
 <div class="filename">src/HomePage.js</div>
 
@@ -159,8 +149,7 @@ So there you have it.
 - Use `const xContext = React.createContext()` to create context.
 - Pull `xContext.Provider` and `xContext.Consumer` out of `xContext`
 - Wrap `Provider` around your parent component.
-- Use `Consumer` in any child component that wants to use the Context value.
-- If you want to use a value outside of `render` for a class, use `static contextType = xContext`
-- If you want to use a value outside of `return` for a functional component, use `const x = useContext(xContext)`
+- A class can consume with `static contextType = xContext`
+- A functional component can consume with `const x = useContext(xContext)`
 
 Hope this helps! I know I'll be referring to this page again in the future.
