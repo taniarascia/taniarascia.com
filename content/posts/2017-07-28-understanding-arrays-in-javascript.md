@@ -1,5 +1,5 @@
 ---
-date: 2016-07-28
+date: 2017-07-28
 title: 'Understanding Arrays in JavaScript'
 template: post
 thumbnail: '../thumbnails/js.png'
