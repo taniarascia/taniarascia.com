@@ -54,7 +54,7 @@ Google also has [strong opinions](<a href=) on this matter:
 
 > **If you haven't made your website mobile-friendly, you should.** The majority of users coming to your site are likely to be using a mobile device.
 
-You can run your site through the [Mobile-Friendly Test](https://search.google.com/search-console/mobile-friendly) to check.
+You can run your site through the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to check.
 
 As a web developer, the biggest part of this is making sure your website is responsive/adaptive to multiple screen sizes. I wrote an article about [understanding the fundamentals of responsive design](/you-dont-need-a-framework/) previously. Frameworks such as [Bootstrap](/what-is-bootstrap-and-how-do-i-use-it/) also make this achievable.
 
