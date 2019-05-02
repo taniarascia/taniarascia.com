@@ -82,11 +82,7 @@ We're going to start by creating an **index.html** file in a new directory. The 
 
   <body>
     <div id="root"></div>
-  </body>
-</html>
-
     <script src="scripts.js"></script>
-
   </body>
 </html>
 ```

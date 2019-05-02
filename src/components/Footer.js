@@ -5,7 +5,22 @@ export default class Footer extends Component {
     return (
       <footer className="footer container">
         <div>
-          Made by <strong>Tania Rascia</strong>.{'  '}
+        <strong>Tania Rascia</strong>
+          {' '}
+/
+          {' '}
+          <a href="https://twitter.com/taniarascia" target="_blank">
+            Twitter
+          </a>
+          {' '}
+          /
+          {' '}
+          <a href="https://github.com/taniarascia" target="_blank">
+            GitHub
+          </a>
+          {' '}
+          /
+          {' '}
           <a href="https://github.com/taniarascia/taniarascia.com" target="_blank">
             View source
           </a>

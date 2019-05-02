@@ -87,9 +87,10 @@ $box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
 
 /* Buttons */
 
-$button-background: white;
-$button-background-hover: lighten($primary-color, 32%);
-$button-color: darken($primary-color, 10%);
+$primary-hover: lighten($primary-color, 31%);
+$button-background: $primary-color;
+$button-background-hover: darken($primary-color, 15%);
+$button-color: white;
 $button-font-weight: 600;
 $button-font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
 $button-font-size: 1.1rem;

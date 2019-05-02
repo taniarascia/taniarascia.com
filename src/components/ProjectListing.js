@@ -8,12 +8,16 @@ export default class ProjectListing extends Component {
       <section className="projects">
         {projectList.map(project => (
           <div className="each" key={project.title}>
-            <h2>{project.title}</h2>
+            <h2>
+              <a href={project.source} target="_blank">
+                {project.title}
+              </a>
+            </h2>
             <p>{project.description}</p>
             <div className="buttons">
               {project.path ? (
                 <a className="button" href={project.path} target="_blank">
-                  Project
+                  Website
                 </a>
               ) : null}
               <a className="muted-button button" href={project.source}>

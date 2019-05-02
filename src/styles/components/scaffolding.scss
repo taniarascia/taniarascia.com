@@ -31,6 +31,7 @@ table {
 }
 
 @include small-breakpoint {
+
   p,
   ol,
   ul,
@@ -48,6 +49,7 @@ ul li p {
 // Remove extra margin for nested lists
 ul li ul {
   margin-bottom: 0;
+
   li {
     margin-left: 0;
   }
@@ -110,6 +112,7 @@ h5 {
 }
 
 @include small-breakpoint {
+
   h1,
   h2,
   h3,
@@ -154,6 +157,14 @@ ul {
   padding: 0;
 
   li {
+    &.task-list-item {
+      padding-left: 0;
+      margin-left: 0;
+      &:before {
+        content: ''
+      }
+    }
+
     &:before {
       content: '\2022 ';
       position: absolute;
@@ -196,12 +207,13 @@ a {
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+
     &:hover,
     &:active,
     &:focus {
       border-radius: $border-radius;
       color: $link-hover-color;
-      background: $button-background-hover;
+      background: $primary-hover;
     }
   }
 

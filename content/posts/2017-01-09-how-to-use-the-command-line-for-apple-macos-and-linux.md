@@ -9,7 +9,7 @@ categories:
 tags:
   - command line
   - linux
-  - shell
+  - terminal
 ---
 
 You might be like me - I used computers for twenty years without ever touching a command prompt. I didn't know anything about it, and it seemed scary and overwhelming. I thought it was something only really advanced users knew anything about. When I inevitably encountered a situation where I had to gain some basic command line knowledge, I discovered how useful and easy it is.

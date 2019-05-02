@@ -178,6 +178,10 @@ $dark-border: darken($background, 3%);
   .projects {
     h2 {
       color: $foreground;
+
+      a {
+        color: $foreground;
+      }
     }
 
     p {
@@ -224,6 +228,10 @@ $dark-border: darken($background, 3%);
 
   .footer {
     color: $foreground;
+
+    strong {
+      color: $foreground;
+    }
   }
 
   #{$forms} {
@@ -271,15 +279,13 @@ $dark-border: darken($background, 3%);
 
   a.donate-button {
     background: transparent !important;
-    border: 2px solid $yellow;
-    color: $yellow;
+    border: none;
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid lighten($yellow, 15%);
+      border: none;
       background: transparent;
-      color: lighten($yellow, 15%);
     }
   }
 
@@ -337,6 +343,10 @@ $dark-border: darken($background, 3%);
         color: rgba(255, 255, 255, 0.6);
       }
     }
+  }
+
+  .filter-count {
+    color: $primary-color;
   }
 
   ::selection {

@@ -218,7 +218,7 @@
 
         &:hover {
           border: 2px solid $primary-color;
-          background: $button-background-hover;
+          background: $primary-hover;
 
           &last-of-type {
             &:hover {
@@ -229,6 +229,12 @@
           h2 {
             color: #111;
           }
+        }
+
+        &:active,
+        &:focus {
+          border: 2px dashed $primary-color;
+          background: $primary-hover;
         }
 
         h2 {
@@ -260,7 +266,13 @@
 
           &:hover {
             border: 2px solid $primary-color;
-            background: $button-background-hover;
+            background: $primary-hover;
+          }
+
+          &:active,
+          &:focus {
+            border: 2px dashed $primary-color;
+            background: $primary-hover;
           }
 
           h2 {
@@ -299,6 +311,16 @@
   }
 }
 
+h2.publication-company {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 50px;
+    margin: 0 1rem 0 0;
+  }
+}
+
 .new {
   display: none;
   align-self: center;
@@ -307,8 +329,8 @@
   div {
     display: inline-block;
     font-size: .9rem;
-    background: $secondary-color;
-    color: white;
+    background: $yellow;
+    color: #111;
     border-radius: $border-radius;
     padding: .5rem 1rem;
     text-align: center;
@@ -337,11 +359,20 @@
         margin: 0;
         color: $light-font-color;
         border-bottom: none;
+        display: flex;
+        align-items: center;
+      }
+
+      img {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        max-height: 30px;
+        max-width: 30px;
       }
 
       &:hover {
         border: 2px solid $primary-color;
-        background: $button-background-hover;
+        background: $primary-hover;
 
         h2 {
           color: #111;
@@ -359,7 +390,7 @@
         margin: 0 -1rem;
 
         h2 {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -375,13 +406,16 @@
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-bottom: none;
-    margin: 0 0 0.75rem 0;
+    margin: 0;
     font-weight: 600;
     color: #111;
     padding: 0;
-    margin: 0 0 0.5rem 0;
+
+    a {
+      color: #111;
+    }
   }
 
   p {
@@ -402,8 +436,12 @@
   .projects {
     .each {
       display: grid;
-      grid-template-columns: 2.2fr 5fr 3fr;
+      grid-template-columns: 2.5fr 5fr 3fr;
       grid-template-rows: none;
+    }
+
+    h2 {
+      font-size: 1.4rem;
     }
 
     p {
@@ -639,7 +677,7 @@ blockquote {
 .filter-count {
   width: 80px;
   text-align: center;
-  color: $font-color;
+  color: $primary-color;
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -681,6 +719,8 @@ blockquote {
   flex-wrap: wrap;
 
   .category-filter {
+    display: flex;
+    align-items: center;
     font-size: .85rem;
     padding: .5rem .75rem;
     background: $light;
@@ -691,9 +731,26 @@ blockquote {
     color: lighten($font-color, 10%);
     cursor: pointer;
 
+    .count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      margin-left: 1rem;
+      color: $primary-color;
+      height: 23px;
+      width: 23px;
+      border-radius: 50%;
+      padding: 5px 5px 5px 5px;
+    }
+
     &.active {
       background: $primary-color;
       color: white;
+
+      .count {
+        background: white;
+      }
 
       &:hover,
       &:active,
@@ -750,6 +807,7 @@ blockquote {
     display: flex;
     align-items: center;
     height: 100px;
+    color: initial;
 
     strong {
       color: #111;
