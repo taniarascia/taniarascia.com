@@ -141,8 +141,8 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [CRUD: Creating andReading](/create-a-simple-database-app-connecting-to-mysql-with-php/)
 - [x] [CRUD: Updating and Deleting](/create-a-simple-crud-database-app-php-update-delete/)
 - [x] [File Uploads](/how-to-upload-files-to-a-server-with-plain-javascript-and-php/)
-- [x] [WordPress Basics](/developing-a-wordpress-theme-from-scratch/)]
-- [x] [WordPress Intermediate](/wordpress-from-scratch-part-two/)]
+- [x] [WordPress Basics](/developing-a-wordpress-theme-from-scratch/)
+- [x] [WordPress Intermediate](/wordpress-from-scratch-part-two/)
 - [x] [WordPress Custom Fields](/wordpress-part-three-custom-fields-and-metaboxes/)
 
 ### CSS
