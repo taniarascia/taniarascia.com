@@ -279,15 +279,13 @@ $dark-border: darken($background, 3%);
 
   a.donate-button {
     background: transparent !important;
-    border: 2px solid $yellow;
-    color: $yellow;
+    border: none;
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid lighten($yellow, 15%);
+      border: none;
       background: transparent;
-      color: lighten($yellow, 15%);
     }
   }
 

@@ -329,8 +329,8 @@ h2.publication-company {
   div {
     display: inline-block;
     font-size: .9rem;
-    background: $secondary-color;
-    color: white;
+    background: $yellow;
+    color: #111;
     border-radius: $border-radius;
     padding: .5rem 1rem;
     text-align: center;
@@ -719,6 +719,8 @@ blockquote {
   flex-wrap: wrap;
 
   .category-filter {
+    display: flex;
+    align-items: center;
     font-size: .85rem;
     padding: .5rem .75rem;
     background: $light;
@@ -729,9 +731,26 @@ blockquote {
     color: lighten($font-color, 10%);
     cursor: pointer;
 
+    .count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      margin-left: 1rem;
+      color: $primary-color;
+      height: 23px;
+      width: 23px;
+      border-radius: 50%;
+      padding: 5px 5px 5px 5px;
+    }
+
     &.active {
       background: $primary-color;
       color: white;
+
+      .count {
+        background: white;
+      }
 
       &:hover,
       &:active,

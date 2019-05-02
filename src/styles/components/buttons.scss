@@ -55,6 +55,7 @@
   &:active {
     @extend %buttons-focus;
   }
+
   &:active {
     transform: scale(.95)
   }
@@ -81,17 +82,17 @@ a.donate-button {
   display: inline-flex;
   align-items: center;
   border-radius: $border-radius;
-  border: 2px solid $yellow;
-  background: lighten($yellow, 32%);
+  border: none;
+  background: $primary-color;
   padding: 0.75rem 1rem;
-  color: #333;
+  color: white;
 
   &:hover,
   &:focus,
   &:active {
-    background: lighten($yellow, 26%);
-    border: 2px solid darken($yellow, 10%);
-    color: #111;
+    background: darken($primary-color, 10%);
+    border: none;
+    color: white;
   }
 }
 

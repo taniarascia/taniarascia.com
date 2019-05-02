@@ -63,7 +63,7 @@ export default class BlogPage extends Component {
   render() {
     const { filteredPosts, searchTerm, currentCategories } = this.state
     const filterCount = filteredPosts.length
-    const categories = this.props.data.categories.group.filter(category => category.fieldValue !== 'Popular')
+    const categories = this.props.data.categories.group
 
     return (
       <Layout>
@@ -84,7 +84,7 @@ export default class BlogPage extends Component {
                     await this.filterPosts()
                   }}
                 >
-                  {category.fieldValue}
+                  {category.fieldValue} <strong className="count">{category.totalCount}</strong>
                 </div>
               )
             })}

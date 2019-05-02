@@ -12,6 +12,7 @@ tags:
   - mysql
   - php
   - sql
+  - reference
 ---
 
 Structured Query Language, or **SQL**, is a widely used language the allows users to query and manage data in a database. Databases such as MySQL, MariaDB, SQLite, PostgreSQL, Oracle, and Microsoft SQL Server are all based on the SQL standard, with some slight variations. This resource uses the MySQL flavor of SQL.
