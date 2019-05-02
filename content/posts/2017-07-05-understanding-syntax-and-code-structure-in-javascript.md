@@ -52,9 +52,9 @@ Some aspects of JavaScript syntax and formatting are based on different schools 
 Consider the following three examples of variable assignment.
 
 ```js
-const greeting='Hello' // no whitespace between variable & string
-const greeting =        'Hello' // excessive whitespace after assignment
-const greeting = 'Hello' // single whitespace between variable & string
+const greeting='Hello'; // no whitespace between variable & string
+const greeting =        'Hello'; // excessive whitespace after assignment
+const greeting = 'Hello'; // single whitespace between variable & string
 ```
 
 Although all three of the examples above will function exactly the same in the output, the third option of `greeting = "Hello"` is by far the most commonly used, and the most readable way of writing the code, especially when considering it within the context of a larger program.
@@ -68,9 +68,9 @@ We'll go over some code examples below for you to familiarize yourself with the 
 Whitespace in JavaScript consists of spaces, tabs, and newlines (pressing `ENTER` on the keyboard). As demonstrated earlier, excessive whitespace outside of a string and the spaces between operators and other symbols are ignored by JavaScript. This means the following three examples of variable assignment will have the exact same computed output:
 
 ```js
-const userLocation        =       'New York City, ' + 'NY'
-const userLocation = 'New York City, ' + 'NY'
-const userLocation = 'New York City, ' + 'NY'
+const userLocation        =       'New York City, ' + 'NY';
+const userLocation = 'New York City, ' + 'NY';
+const userLocation = 'New York City, ' + 'NY';
 ```
 
 `userLocation` will represent "New York City, NY" no matter which of these styles are written in the script, nor will it make a difference to JavaScript whether the whitespace is written with tabs or spaces.
@@ -82,9 +82,9 @@ For example, `let x = 5 * y` is more readable than `let x=5*y`.
 One notable exception to this style you may see is during assignment of multiple variables. Note the position of `=` in the following example:
 
 ```js
-const companyName         = 'DigitalOcean'
-const companyHeadquarters = 'New York City'
-const companyHandle       = 'digitalocean'
+const companyName         = 'DigitalOcean';
+const companyHeadquarters = 'New York City';
+const companyHandle       = 'digitalocean';
 ```
 
 All the assignment operators (`=`) are lined up, with the whitespace after the variable. This type of organization structure is not used by every codebase, but can be used to improve readability.
@@ -127,7 +127,7 @@ function cube(number) {
 }
 
 // Invoke the function
-cube(5)
+cube(5);
 ```
 
 In the above example, `cube()` is a function, and the pair of parentheses `()` will contain the parameters or arguments. In this case, the parameters are `number` or `5`, respectively. Although `cube ()` with an extra space is valid in that the code will execute as expected, it is almost never seen. Keeping them together helps easily associate the function name to the parentheses pair and any associated passed arguments.
@@ -138,15 +138,14 @@ JavaScript programs consist of a series of instructions known as statements, jus
 
 ```js
 // A single JavaScript statement
-const now = new Date()
+const now = new Date();
 ```
 
 If two or more statements are next to each other, it is obligatory to separate them with a semicolon.
 
 ```js
 // Get the current timestamp and print it to the console
-const now = new Date()
-console.log(now)
+const now = new Date(); console.log(now)
 ```
 
 If statements are separated by a newline, the semicolon is optional.
@@ -157,12 +156,12 @@ const now = new Date()
 console.log(now)
 ```
 
-A safe and common convention is to separate statements with a semicolon regardless of newlines. Generally, it is considered good practice to include them to reduce the probability of errors.
+A safe and common convention is to separate statements with a semicolon regardless of newlines.
 
 ```js
 // Two statements separated by newlines and semicolons
-const now = new Date()
-console.log(now)
+const now = new Date();
+console.log(now);
 ```
 
 Semicolons are also required between the initialization, condition, and increment or decrement of a `for` loop.
@@ -187,18 +186,18 @@ if (number > 0) {
 }
 ```
 
-Be careful, as not all code encased in curly brackets will end without a semicolon. Objects are encased in curly brackets, and should end in a semicolon.
+Be careful, as not all code encased in curly brackets will end without a semicolon. Objects are encased in curly brackets, and should end in a semicolon if you're using semicolons.
 
 ```js
 // An example object
-const objectName = {}
+const objectName = {};
 
 // Initialize triangle object
 const triangle = {
   type: 'right',
   angle: 90,
   sides: 3,
-}
+};
 ```
 
 It is widely accepted practice to include semicolons after every JavaScript statement except block statements, which end in curly brackets.
@@ -211,7 +210,7 @@ Here's an example of a conditional `if`/`else` statement, written on either one 
 
 ```js
 // Conditional statement written on one line
-if (x === 1) {  /* execute code if true */ } else {   /* execute code if false */ }
+if (x === 1) {  /* execute code if true */ } else {  /* execute code if false */ }
 
 // Conditional statement with indentation
 if (x === 1) {
@@ -247,9 +246,9 @@ function isEqualToOne(x) {
   // Check if x is equal to one
   if (x === 1) {
     // on success, return true
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 ```
@@ -265,14 +264,14 @@ The name of a variable, function, or property is known as an **identifier** in J
 These names are case sensitive. The following two examples, `myVariable` and `myvariable` would refer to two distinct variables.
 
 ```js
-var myVariable = 1
-var myvariable = 2
+var myVariable = 1;
+var myvariable = 2;
 ```
 
 The convention of JavaScript names is that they are written in camelCase, meaning the first word is lowercase but every following word starts with an uppercase letter. You may also see global variables or constants written in all uppercase, separated by underscores.
 
 ```js
-const INSURANCE_RATE = 0.4
+const INSURANCE_RATE = 0.4;
 ```
 
 The exception to this rule is class names, which are often written with every word starting in an uppercase letter (PascalCase).

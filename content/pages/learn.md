@@ -8,7 +8,7 @@ There's a lot I want to learn, and a lot I've learned and documented. Here's whe
 
 ## To Learn:
 
-My current focus is all things **JavaScript** and **Computer Science** fundamentals.
+My current focus is **Computer Science** fundamentals and all things **JavaScript**.
 
 ### Computer Science
 
