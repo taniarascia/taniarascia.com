@@ -12,6 +12,11 @@
     box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
   }
 
+  .cta {
+    display: flex;
+    align-items: center;
+  }
+
   .nav-container {
     padding: 0 1.5rem;
     height: 55px;
@@ -47,10 +52,8 @@
       flex-direction: row;
       justify-content: flex-end;
       flex: 1;
-      margin: 0 .75rem;
-
+      margin: 0;
       a {
-        border-radius: $border-radius;
         display: flex;
         align-items: center;
         font-size: 1.05rem;
@@ -91,7 +94,6 @@
 button.dark-switcher {
   -webkit-appearance: none;
   border: 0;
-  padding: 1rem 0.3rem;
   margin: 0;
   background: transparent;
 
@@ -114,6 +116,17 @@ button.dark-switcher {
       .nav-container {
         height: 60px;
       }
+      .links a {
+        &:hover,
+        &.active {
+          color: #111;
+          border-bottom: 2px solid $primary-color;
+        }
+        &:active {
+          color: #111;
+          border-bottom: 2px dashed $primary-color;
+        }
+      }
     }
 
     .nav-container {
@@ -135,11 +148,16 @@ button.dark-switcher {
         flex-direction: row;
         justify-content: space-between;
         flex: unset;
+        height: 100%;
 
         a {
           font-size: 1.2rem;
           margin: 0 1rem;
           padding: 1rem 0.5rem;
+          border-bottom: 2px solid transparent;
+          &.active {
+            color: #111;
+          }
         }
       }
 
@@ -162,7 +180,6 @@ button.dark-switcher {
   }
 
   button.dark-switcher {
-    padding: 1rem;
     margin: 0;
     font-size: 1.4rem;
   }

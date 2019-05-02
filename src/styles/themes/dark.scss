@@ -84,7 +84,8 @@ $dark-border: darken($background, 3%);
     .links a {
       color: $comment;
 
-      &:hover {
+      &:hover,
+      &.active {
         color: $foreground;
       }
     }

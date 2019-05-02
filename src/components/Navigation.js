@@ -43,7 +43,7 @@ export default class Navigation extends Component {
           </div>
           <div className="links">
             {menuLinks.map(link => (
-              <Link key={link.name} to={link.link}>
+              <Link key={link.name} to={link.link} activeClassName="active">
                 {link.name}
               </Link>
             ))}
