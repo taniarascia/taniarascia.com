@@ -11,7 +11,7 @@ $dark-border: darken($background, 3%);
   }
 
   a {
-    color: lighten($primary-color, 2%);
+    color: lighten($primary-color, 10%);
 
     &:hover,
     &:active,
@@ -21,16 +21,35 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  .lead {
+    a {
+      border-bottom: 2px solid $primary-color;
+      &:hover {
+        color: $primary-color;
+        background: transparent;
+        border-bottom: 2px solid lighten($link-hover-color, 20%);
+      }
+      &:active,
+      &:focus {
+        background: transparent;
+        border-bottom: 2px dashed lighten($link-hover-color, 20%);
+      }
+    }
+  }
+
   .post,
   .page {
     a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-      color: lighten($primary-color, 2%);
-
-      &:hover,
+      border-bottom: 2px solid transparent;
+      &:hover {
+        color: $primary-color;
+        background: transparent;
+        border-bottom: 2px solid lighten($link-hover-color, 20%);
+      }
       &:active,
       &:focus {
-        color: lighten($primary-color, 12%);
         background: transparent;
+        border-bottom: 2px dashed lighten($link-hover-color, 20%);
       }
     }
 
@@ -40,7 +59,7 @@ $dark-border: darken($background, 3%);
     }
   }
 
-  :not(pre)>code {
+  :not(pre) > code {
     background: rgba(255, 255, 255, 0.1);
     color: $foreground;
   }
@@ -114,7 +133,6 @@ $dark-border: darken($background, 3%);
 
     a {
       .each {
-
         h2 {
           color: #ccc;
         }
@@ -303,7 +321,6 @@ $dark-border: darken($background, 3%);
     }
   }
 
-
   button.dark-switcher {
     border: none;
   }
@@ -321,10 +338,10 @@ $dark-border: darken($background, 3%);
 
   .category-container {
     .category-filter {
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       background: #222;
       border-radius: $border-radius;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.4);
       cursor: pointer;

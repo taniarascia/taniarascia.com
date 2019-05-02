@@ -31,7 +31,6 @@ table {
 }
 
 @include small-breakpoint {
-
   p,
   ol,
   ul,
@@ -112,7 +111,6 @@ h5 {
 }
 
 @include small-breakpoint {
-
   h1,
   h2,
   h3,
@@ -161,7 +159,7 @@ ul {
       padding-left: 0;
       margin-left: 0;
       &:before {
-        content: ''
+        content: '';
       }
     }
 
@@ -207,13 +205,17 @@ a {
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-radius: $border-radius;
+    border-bottom: 2px solid lighten($primary-color, 30%);
+    &:hover {
       color: $link-hover-color;
       background: $primary-hover;
+      border-bottom: 2px solid $link-hover-color;
+    }
+    &:active,
+    &:focus {
+      color: $link-hover-color;
+      background: $primary-hover;
+      border-bottom: 2px dashed $link-hover-color;
     }
   }
 

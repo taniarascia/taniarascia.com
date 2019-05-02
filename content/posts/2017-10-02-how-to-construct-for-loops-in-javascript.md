@@ -163,9 +163,7 @@ for (; ; i++) {
 3
 ```
 
-<$>[note]
-**Warning**: The `break` statement *must* be included if the condition is omitted, otherwise the loop will run forever as an [infinite loop](https://www.digitalocean.com/community/tutorials/using-while-and-do-while-loops-in-javascript#infinite-loops) and potentially crash the browser.
-<$>
+> **Warning**: The `break` statement _must_ be included if the condition is omitted, otherwise the loop will run forever as an [infinite loop](https://www.digitalocean.com/community/tutorials/using-while-and-do-while-loops-in-javascript#infinite-loops) and potentially crash the browser.
 
 Lastly, the final expression can be removed by putting it at the end of the loop instead. Both semicolons must still be included, or the loop will not function.
 

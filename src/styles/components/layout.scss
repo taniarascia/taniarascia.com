@@ -27,6 +27,20 @@
 
 .lead {
   font-size: 1.1rem;
+  a {
+    border-bottom: 2px solid lighten($primary-color, 30%);
+    &:hover {
+      color: $link-hover-color;
+      background: $primary-hover;
+      border-bottom: 2px solid $link-hover-color;
+    }
+    &:active,
+    &:focus {
+      color: $link-hover-color;
+      background: $primary-hover;
+      border-bottom: 2px dashed $link-hover-color;
+    }
+  }
 
   h1 {
     font-weight: 500;
@@ -296,11 +310,11 @@
 
   div {
     display: inline-block;
-    font-size: .9rem;
+    font-size: 0.9rem;
     background: $green;
     color: white;
     border-radius: $border-radius;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     text-align: center;
   }
 }
@@ -328,11 +342,11 @@ h2.publication-company {
 
   div {
     display: inline-block;
-    font-size: .9rem;
+    font-size: 0.9rem;
     background: $yellow;
     color: #111;
     border-radius: $border-radius;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     text-align: center;
   }
 }
@@ -704,8 +718,6 @@ blockquote {
   margin-left: 0.75rem;
 }
 
-
-
 .search-container {
   display: flex;
   align-items: center;
@@ -721,12 +733,12 @@ blockquote {
   .category-filter {
     display: flex;
     align-items: center;
-    font-size: .85rem;
-    padding: .5rem .75rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
     background: $light;
     border-radius: $border-radius;
-    margin-right: .5rem;
-    margin-bottom: .5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
     color: lighten($font-color, 10%);
     cursor: pointer;
@@ -735,7 +747,7 @@ blockquote {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: .8rem;
+      font-size: 0.8rem;
       margin-left: 1rem;
       color: $primary-color;
       height: 23px;
@@ -776,7 +788,7 @@ blockquote {
     margin-bottom: 1.5rem;
 
     .category-filter {
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       font-size: 1rem;
     }
   }
@@ -784,6 +796,7 @@ blockquote {
 
 .coffee-icon {
   margin: 0;
+  margin-left: 0.5rem;
   height: 20px;
   width: 20px;
 }

@@ -21,7 +21,7 @@ $width: 800px;
 /* Colors */
 
 $background: #f0f0f0;
-$primary-color: #517cfc;
+$primary-color: #556EF5;
 $secondary-color: rgb(255, 90, 95);
 $green: #00d287;
 $yellow: #f0d461;
@@ -30,7 +30,7 @@ $light: #f2f2f2;
 $alternate-background: #f0f0f0;
 $alternate-color: #404040;
 $link-color: $primary-color;
-$link-hover-color: darken($link-color, 22%);
+$link-hover-color: darken($link-color, 10%);
 $highlight: #ffeea8;
 $error: #d33c40;
 $bq-border: 16px solid #f0f0f0;
@@ -87,7 +87,7 @@ $box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
 
 /* Buttons */
 
-$primary-hover: lighten($primary-color, 31%);
+$primary-hover: lighten($primary-color, 33%);
 $button-background: $primary-color;
 $button-background-hover: darken($primary-color, 15%);
 $button-color: white;
