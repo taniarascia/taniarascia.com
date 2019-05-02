@@ -96,6 +96,20 @@ a.donate-button {
   }
 }
 
+.twitter-button,
+a.twitter-button {
+  background: #00aced;
+  border: 2px solid #00aced;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken(#00aced, 5%);
+    border: 2px solid darken(#00aced, 5%);
+    color: white;
+  }
+}
+
 // Secondary button color
 .patreon-button,
 a.patreon-button {

@@ -38,7 +38,8 @@ I wanted to try out Hooks and see how an app might look without any classes, but
 
 If you don't know how to make a simple CRUD app in React, regardless of whether you use classes or hooks, this article will be good for you as well.
 
-[View Demo App](https://taniarascia.github.io/react-hooks/) [View Source](https://github.com/taniarascia/react-hooks)
+- [View Demo App](https://taniarascia.github.io/react-hooks/)
+- [View Source](https://github.com/taniarascia/react-hooks)
 
 #### Prerequisites
 
@@ -696,6 +697,8 @@ useEffect(() => {
 
 In the Effect Hook, we create a callback function that updates the `user` state with the new prop thats being sent through. Before, we needed to compare `if (prevProps.currentUser !== this.state.currentUser)`, but with the Effect Hook we can just pass `[props]` through to let it know we're watching props.
 
+> Using the `[props]` array is similar to using `componentDidUpdate`. If you're doing a one-time event like `componentDidMount`, you can pass an empty array (`[]`) instead.
+
 Now if you try to change the user you're editing, it will work correctly!
 
 I said there were two issues here, and the other issue is that you can delete a user while it is currently being edited. We can fix this issue by adding `setEditing(false)` to the `deleteUser` function in `App.js`.
@@ -712,5 +715,3 @@ If you got lost anywhere along the way, don't forget to check out the demo and s
 - [View Source](https://github.com/taniarascia/react-hooks)
 
 The next thing to be on the lookout for is the [Suspense API](https://medium.com/swlh/react-suspense-with-the-fetch-api-cc655aced759), but there is not enough information yet to write about that.
-
-If you liked this article, please let me know, and share if you think it'll benefit someone else! If something is unclear or missing, let me know that as well.

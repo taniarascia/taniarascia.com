@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
 import PostTags from '../components/PostTags'
 import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import Img from 'gatsby-image'
 import { formatDate, editOnGithub } from '../utils/global'
 
 export default class PostTemplate extends Component {
@@ -31,15 +31,10 @@ export default class PostTemplate extends Component {
 
     const date = formatDate(post.date)
     const githubLink = editOnGithub(post)
-    const twitterUrl = 'https://twitter.com/search?q=' + config.siteUrl + '/' + post.slug + '/'
-    const twitterShare =
-      'http://twitter.com/share?text=' +
-      encodeURIComponent(post.title) +
-      '&url=' +
-      config.siteUrl +
-      '/' +
-      post.slug +
-      '/&via=taniarascia'
+    const twitterUrl = `https://twitter.com/search?q=${config.siteUrl}/${post.slug}/`
+    const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
+      config.siteUrl
+    }/${post.slug}/&via=taniarascia`
 
     return (
       <Layout>
@@ -53,7 +48,8 @@ export default class PostTemplate extends Component {
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
-                <time className="date">{date}</time>/
+                <time className="date">{date}</time>
+/
                 <a className="twitter-link" href={twitterShare}>
                   Share
                 </a>
@@ -68,10 +64,12 @@ export default class PostTemplate extends Component {
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div>
             {' '}
-            <a href={twitterShare} target="_blank">Share on Twitter</a> |{' '}
-            <a href={twitterUrl} target="_blank">Discuss on Twitter</a> |{' '}
-            <a href={githubLink} target="_blank">
-              Edit on Github ✏️
+            <a className="button twitter-button" href={twitterShare} target="_blank">
+              Share on Twitter
+            </a>
+            {' '}
+            <a className="button twitter-button" href={twitterUrl} target="_blank">
+              Discuss on Twitter
             </a>
           </div>
           <h3>Stay in touch</h3>

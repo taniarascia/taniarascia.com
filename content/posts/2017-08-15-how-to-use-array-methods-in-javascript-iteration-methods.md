@@ -23,9 +23,7 @@ In order to get the most out of this tutorial, you should have some familiarity 
 
 In this tutorial, we will use iteration methods to loop through arrays, perform functions on each item in an array, filter the desired results of an array, reduce array items down to a single value, and search through arrays to find values or indices.
 
-<$>[note]
-**Note:** Array methods are properly written out as `Array.prototype.method()`, as `Array.prototype` refers to the `Array` object itself. For simplicity, we will simply list the name as `method()`.
-<$>
+> **Note:** Array methods are properly written out as `Array.prototype.method()`, as `Array.prototype` refers to the `Array` object itself. For simplicity, we will simply list the name as `method()`.
 
 ## Understanding Arrow Functions
 
