@@ -11,6 +11,8 @@ tags:
   - fundamentals
 ---
 
+_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript)._
+
 ### Introduction
 
 **Variables** are a fundamental programming concept, and one of the first and most important things to learn. In JavaScript, there are three ways to declare a variable - with the keywords `var`, `let`, and `const`.
