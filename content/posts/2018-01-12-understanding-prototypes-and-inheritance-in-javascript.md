@@ -81,8 +81,8 @@ x.toString()
 
 This prototype chain is only one link long. `x` -> `Object`. We know this, because if we try to chain two `[[Prototype]]` properties together, it will be `null`.
 
-```
-x.__proto__.__proto__;
+```js
+x.__proto__.__proto__
 ```
 
 ```terminal
