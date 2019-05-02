@@ -18,8 +18,8 @@ React doesn't come with a built-in router, but we can easily achieve routing wit
 Example: If you go to [taniarascia.com](/), you end up on my home page. If you go to [taniarascia.com/me](/me), you're redirected to my about me page. If you go to [taniarascia.com/categories/javascript](/categories/javascript) or [taniarascia.com/categories/css](/categories/css), you end up on a category listing page. The routes for these pages look something like this:
 
 - `/` - root
-- `/me` - page
-- `/categories/:category` - category
+- `/:page_id` - page
+- `/categories/:category_id` - category
 
 I'm not actually making a folder called `categories` and filling it with a bunch of files like `javascript.html` or `css.html`, I just have one template and the router knows to direct to the proper template. Once it gets to the template, it can pull from the URL to know which variables to display - for example, JavaScript or CSS related posts.
 
