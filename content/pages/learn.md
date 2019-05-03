@@ -4,7 +4,7 @@ slug: learn
 template: page
 ---
 
-There's a lot I want to learn, and a lot I've learned and documented. Here's where I list both.([Here's the order I learned in](/everything-i-know-as-a-software-developer-without-a-degree/)).
+There's a lot I want to learn, and a lot I've learned and documented. Here's where I list both. ([Here's the order I learned in](/everything-i-know-as-a-software-developer-without-a-degree/).)
 
 ## To Learn:
 
