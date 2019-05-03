@@ -138,7 +138,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] Authentication
 - [x] Routing
 - [x] Sessions
-- [x] [CRUD: Creating andReading](/create-a-simple-database-app-connecting-to-mysql-with-php/)
+- [x] [CRUD: Creating and Reading](/create-a-simple-database-app-connecting-to-mysql-with-php/)
 - [x] [CRUD: Updating and Deleting](/create-a-simple-crud-database-app-php-update-delete/)
 - [x] [File Uploads](/how-to-upload-files-to-a-server-with-plain-javascript-and-php/)
 - [x] [WordPress Basics](/developing-a-wordpress-theme-from-scratch/)
@@ -148,7 +148,7 @@ This is not everything I know, but a good amount of the things I've documented s
 ### CSS
 
 - [x] Spacing, Styling
-- [x] Selectos and Specificity
+- [x] Selectors and Specificity
 - [x] Positioning
 - [x] Box model
 - [x] Flexbox
