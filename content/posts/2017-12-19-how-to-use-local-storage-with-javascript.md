@@ -122,11 +122,8 @@ First, we'll create a simple HTML front end with **index.html**. I'm loading in 
 
       <!-- more will go here -->
     </div>
-  </body>
-</html>
-
+  
     <script src="js/scripts.js"></script>
-
   </body>
 </html>
 ```
