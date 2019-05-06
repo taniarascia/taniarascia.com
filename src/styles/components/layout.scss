@@ -27,13 +27,16 @@
 
 .lead {
   font-size: 1.1rem;
+
   a {
     border-bottom: 2px solid lighten($primary-color, 30%);
+
     &:hover {
       color: $link-hover-color;
       background: $primary-hover;
       border-bottom: 2px solid $link-hover-color;
     }
+
     &:active,
     &:focus {
       color: $link-hover-color;
@@ -67,6 +70,27 @@
 
     .button {
       margin-right: 0.5rem;
+    }
+  }
+}
+
+.social-buttons {
+  display: flex;
+
+  div:first-of-type {
+    margin-right: .5rem;
+  }
+}
+
+@include small-breakpoint {
+  .lead-grid {
+    display: flex;
+
+    p {
+      flex: 1;
+      &:first-of-type {
+        margin-right: 1.5rem;
+      }
     }
   }
 }
@@ -826,6 +850,10 @@ blockquote {
       color: #111;
     }
   }
+}
+
+iframe {
+  margin-bottom: 0;
 }
 
 ::selection {

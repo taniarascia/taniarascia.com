@@ -1,7 +1,7 @@
 {
-  "name": "taniarascia",
-  "description": "Tania Rascia's personal theme for Gatsby.",
-  "version": "1.0.0",
+  "name": "taniarascia.com",
+  "description": "Personal website running on Gatsby, React, and Node.js.",
+  "version": "1.0.1",
   "author": "Tania Rascia <me@taniarascia.com>",
   "repository": "git@github.com:taniarascia/taniarascia.com",
   "dependencies": {
@@ -34,6 +34,7 @@
     "prismjs": "^1.15.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-github-btn": "^1.0.5",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
     "sharp": "^0.21.3",
@@ -48,7 +49,6 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "gh-pages": "^2.0.1",
     "prettier": "^1.16.4",
     "remark-cli": "^6.0.1",
     "remark-preset-lint-recommended": "^3.0.1",
@@ -78,7 +78,7 @@
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
-    "write-good": "write-good $(glob 'content/posts/**/*.md')",
+    "write-good": "write-good $(glob 'content/posts/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
     "check": "npx npm-check-updates -u"
   },
