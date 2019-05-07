@@ -58,6 +58,7 @@ export PATH=$PATH:/Users/tania/bin
 ```
 
 If you don't see hidden files and directories, or those that begin with a `.`, press Command + SHIFT + ..
+If Terminal.app is open, quit and reopen it so the PATH gets updated.
 
 ## 3. Create a script file and make it executable
 
