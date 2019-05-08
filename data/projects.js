@@ -19,6 +19,7 @@ const projects = [
   },
   {
     title: '🎮 Chip8.js',
+    path: 'https://taniarascia.github.io/chip8/',
     source: 'https://github.com/taniarascia/chip8/',
     description: 'A Chip-8 emulator written in JavaScript (Node.js).',
   },
