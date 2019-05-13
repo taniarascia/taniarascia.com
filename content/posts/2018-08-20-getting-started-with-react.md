@@ -565,7 +565,7 @@ return (
 )
 ```
 
-Now that data is being passed through to `Table`, and we have to work on accessing it from the other side.
+Now that data is being passed through to `Table`, we have to work on accessing it from the other side.
 
 <div class="filename">Table.js</div>
 
