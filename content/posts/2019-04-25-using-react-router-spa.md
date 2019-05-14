@@ -151,7 +151,7 @@ So now I'm going to my first route, the root route which is loading `HomePage`, 
 
 ![](../images/router-home-page.png)
 
-## Dynamic Route Paramter
+## Dynamic Route Parameter
 
 Our `Link` is navigating to `/taniarascia`, which will match the `/:id` parameter in `Route`. In order to dynamically get the content from the URL - in this case, `taniarascia` - we'll use `match.params.id` from the `props`.
 
