@@ -1,6 +1,6 @@
 ---
 date: 2018-08-20
-title: 'Getting Started with React - An Overview and Walkthrough'
+title: 'Getting Started with React - An Overview and Walkthrough Tutorial'
 template: post
 thumbnail: '../thumbnails/react.png'
 slug: getting-started-with-react
@@ -28,7 +28,7 @@ Here are what I consider to be React prerequisites.
 
 - Basic familiarity with [HTML & CSS](https://internetingishard.com/).
 - Basic knowledge of [JavaScript](https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript) and programming.
-- Basic understanding of [the DOM](https://www.digitalocean.com/community/tutorial_series/understanding-the-dom-document-object-model).
+- Basic understanding of [the DOM](/introduction-to-the-dom/).
 - Familiarity with [ES6 syntax and features](/es6-syntax-and-feature-overview/).
 - [Node.js and npm](/how-to-install-and-use-node-js-and-npm-mac-and-windows/) installed globally.
 
@@ -37,7 +37,10 @@ Here are what I consider to be React prerequisites.
 - Learn about essential React concepts and related terms, such as Babel, Webpack, JSX, components, props, state, and lifecycle.
 - Build a very simple React app that demonstrates the above concepts.
 
-[View Source on GitHub](https://github.com/taniarascia/react-tutorial)
+Here's the source and a live demo of the end result.
+
+- [View Source on GitHub](https://github.com/taniarascia/react-tutorial)
+- [View Demo](https://taniarascia.github.io/react-tutorial/)
 
 ## What is React?
 

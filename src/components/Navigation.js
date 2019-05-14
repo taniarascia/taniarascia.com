@@ -12,20 +12,20 @@ export default class Navigation extends Component {
     scrolled: false,
   }
 
-  navOnScroll = () => {
-    if (window.scrollY > 20) {
-      this.setState({ scrolled: true })
-    } else {
-      this.setState({ scrolled: false })
-    }
-  }
-
   componentDidMount() {
     window.addEventListener('scroll', this.navOnScroll)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.navOnScroll)
+  }
+
+  navOnScroll = () => {
+    if (window.scrollY > 20) {
+      this.setState({ scrolled: true })
+    } else {
+      this.setState({ scrolled: false })
+    }
   }
 
   render() {
@@ -38,7 +38,8 @@ export default class Navigation extends Component {
         <div className="nav-container">
           <div className="brand">
             <Link to="/">
-              <img src={floppy} className="favicon" /> <span className="text">Tania Rascia</span>
+              <img src={floppy} className="favicon" alt="Floppy Diskette" />
+              <span className="text">Tania Rascia</span>
             </Link>
           </div>
           <div className="links">
@@ -47,18 +48,18 @@ export default class Navigation extends Component {
                 {link.name}
               </Link>
             ))}
-            <a target="_blank" href="https://github.com/taniarascia">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/taniarascia">
               GitHub
             </a>
             <div className="cta">
               <button className="dark-switcher" onClick={theme.toggleDark}>
                 {theme.dark ? (
                   <span>
-                    <img src={sun} className="theme-icon" />
+                    <img src={sun} className="theme-icon" alt="Light Mode" />
                   </span>
                 ) : (
                   <span>
-                    <img src={moon} className="theme-icon" />
+                    <img src={moon} className="theme-icon" alt="Dark Mode" />
                   </span>
                 )}
               </button>

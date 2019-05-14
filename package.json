@@ -2,7 +2,7 @@
   "name": "taniarascia.com",
   "description": "Personal website running on Gatsby, React, and Node.js.",
   "version": "1.0.1",
-  "author": "Tania Rascia <me@taniarascia.com>",
+  "author": "Tania Rascia <tania@taniarascia.com>",
   "repository": "git@github.com:taniarascia/taniarascia.com",
   "dependencies": {
     "disqus-react": "^1.0.5",
@@ -28,6 +28,7 @@
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "2.3.1",
     "gatsby-transformer-sharp": "2.1.15",
+    "lodash": "^4.17.11",
     "lodash.kebabcase": "^4.1.1",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
@@ -42,6 +43,7 @@
     "url-join": "^4.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "cli-glob": "^0.1.0",
     "eslint": "^5.15.0",
     "eslint-config-airbnb": "^17.1.0",

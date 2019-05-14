@@ -16,7 +16,7 @@ export default class PublicationsPage extends Component {
       SitePoint: sitePoint,
       Codrops: codrops,
       'Envato Tuts+': envato,
-      Progress: progress
+      Progress: progress,
     }
 
     const pubs = Object.entries(publications)
@@ -32,14 +32,14 @@ export default class PublicationsPage extends Component {
             return (
               <article>
                 <h2 className="publication-company">
-                  <img src={logoMap[company]} />
+                  <img src={logoMap[company]} alt="Company" />
                   {company}
                 </h2>
                 <ul key={i}>
                   {articles.map((article, i) => {
                     return (
                       <li key={i}>
-                        <a href={article.path} target="_blank">
+                        <a href={article.path} target="_blank" rel="noopener noreferrer">
                           {article.title}
                         </a>
                       </li>

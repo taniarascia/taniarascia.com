@@ -59,6 +59,7 @@
 @include small-breakpoint {
   .lead {
     font-size: 1.2rem;
+    max-width: 600px;
 
     h1 {
       font-size: 2.2rem;
@@ -86,8 +87,9 @@
   .lead-grid {
     display: flex;
 
-    p {
+    div {
       flex: 1;
+
       &:first-of-type {
         margin-right: 1.5rem;
       }
@@ -173,8 +175,8 @@
       grid-template-columns: 60px 1fr 0;
       padding: 1rem 0;
       margin: 0;
-      border-radius: $border-radius;
       border: 2px solid transparent;
+      border-bottom: 2px solid $light;
 
       .date {
         margin: 0;
@@ -255,8 +257,8 @@
         margin: 0 -2rem;
 
         &:hover {
-          border: 2px solid $primary-color;
-          background: $primary-hover;
+          border-radius: $border-radius;
+          background: $light;
 
           &last-of-type {
             &:hover {
@@ -303,8 +305,8 @@
           margin: 0 -1rem;
 
           &:hover {
-            border: 2px solid $primary-color;
-            background: $primary-hover;
+            border: 2px solid $light;
+            background: $light;
           }
 
           &:active,
@@ -409,8 +411,8 @@ h2.publication-company {
       }
 
       &:hover {
-        border: 2px solid $primary-color;
-        background: $primary-hover;
+        border: 2px solid $light;
+        background: $light;
 
         h2 {
           color: #111;
@@ -583,6 +585,20 @@ h2.publication-company {
 @include small-breakpoint {
   .post-meta {
     font-size: 0.9rem;
+  }
+}
+
+@include small-breakpoint {
+  .quotations {
+    display: flex;
+
+    .quotation {
+      margin: 1rem;
+      padding: 2rem;
+      border-radius: $border-radius;
+      flex: 1;
+      box-shadow: $box-shadow;
+    }
   }
 }
 

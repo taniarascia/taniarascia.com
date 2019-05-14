@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ThemeContext from '../context/ThemeContext'
 import Helmet from 'react-helmet'
+import ThemeContext from '../context/ThemeContext'
 import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'

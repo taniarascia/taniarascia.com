@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ThemeContext from '../context/ThemeContext'
 import Helmet from 'react-helmet'
+import ThemeContext from '../context/ThemeContext'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import config from '../../data/SiteConfig'
@@ -13,12 +13,19 @@ export default class MainLayout extends Component {
   render() {
     const { dark, notFound } = this.context
     const { children } = this.props
+    let themeClass = ''
+    
+    if (dark && !notFound) {
+      themeClass = 'dark'
+    } else if (notFound) {
+      themeClass = 'not-found'
+    }
 
     return (
       <>
         <Helmet
           bodyAttributes={{
-            class: `theme ${dark && !notFound ? 'dark' : '' || notFound ? 'not-found' : ''}`,
+            class: `theme ${themeClass}`,
           }}
         >
           <meta name="description" content={config.siteDescription} />

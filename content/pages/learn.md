@@ -4,7 +4,7 @@ slug: learn
 template: page
 ---
 
-There's a lot I want to learn, and a lot I've learned and documented. Here's where I list both. ([Here's the order I learned in](/everything-i-know-as-a-software-developer-without-a-degree/).)
+There's a lot I want to learn, and a lot I've learned and documented. Here's where I list both.
 
 ## To Learn:
 
@@ -107,7 +107,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Date and Time](/understanding-date-and-time-in-javascript)
 - [x] [Conditional Statements and Logic](/how-to-write-conditional-statements-in-javascript)
 - [x] [Switch](/how-to-use-the-switch-statement-in-javascript)
-- [x] [While and Do While Loops](/using-while-and-do-while-loops-in-javascript)
+- [x] [While and Do While Loops](/while-do-while-loops-javascript)
 - [x] [For Loops](/how-to-construct-for-loops-in-javascript)
 - [x] [Functions](/how-to-define-functions-in-javascript)
 - [x] [Prototypes and Inheritance](/understanding-prototypes-and-inheritance-in-javascript)

@@ -11,7 +11,7 @@ export default class PostTags extends Component {
         {tags &&
           tags.map(tag => (
             <Link key={tag} style={{ textDecoration: 'none' }} to={`/tags/${kebabCase(tag)}/`}>
-              <span className={size ? size : null}>{tag}</span>
+              <span className={size}>{tag}</span>
             </Link>
           ))}
       </div>

@@ -6,10 +6,24 @@
   z-index: 3;
   width: 100%;
   background: white;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
 
   &.scroll {
     box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
+    background: #222;
+
+    .brand a {
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .links a {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    a:hover,
+    a.active {
+      color: white !important;
+    }
   }
 
   .cta {
@@ -26,61 +40,50 @@
     align-items: center;
     justify-content: space-between;
     transition: height 0.3s ease;
-
-    .brand {
-      a {
-        display: flex;
-        align-items: center;
-        color: #333;
-        margin-right: 0;
-        font-weight: 600;
-        font-size: 1.1rem;
-
-        &:hover,
-        &:focus {
-          color: black;
-        }
-      }
-
-      .text {
-        display: none;
-      }
-    }
-
-    .links {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      flex: 1;
-      margin: 0;
-      a {
-        display: flex;
-        align-items: center;
-        font-size: 1.05rem;
-        font-weight: 500;
-        padding: 1rem 0.75rem;
-        margin: 0;
-        color: rgba(0, 0, 0, 0.6);
-        line-height: 1.2;
-        text-align: center;
-
-        &:hover,
-        &:active {
-          color: #111;
-        }
-      }
-    }
   }
 
-  a.donate-button {
-    padding: 0.5rem;
+  .brand {
+    a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      margin-right: 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+
+      &:hover,
+      &:focus {
+        color: black;
+      }
+    }
 
     .text {
       display: none;
     }
+  }
 
-    .emoji-in-button {
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+    margin: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 1rem 0.75rem;
       margin: 0;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 1.2;
+      text-align: center;
+
+      &:hover,
+      &:active {
+        color: #111;
+      }
     }
   }
 }
@@ -116,12 +119,15 @@ button.dark-switcher {
       .nav-container {
         height: 60px;
       }
+
       .links a {
+
         &:hover,
         &.active {
           color: #111;
           border-bottom: 2px solid $primary-color;
         }
+
         &:active {
           color: #111;
           border-bottom: 2px dashed $primary-color;
@@ -155,6 +161,7 @@ button.dark-switcher {
           margin: 0 1rem;
           padding: 1rem 0.5rem;
           border-bottom: 2px solid transparent;
+
           &.active {
             color: #111;
           }

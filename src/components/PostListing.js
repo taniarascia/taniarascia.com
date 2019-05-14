@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { formatDate } from '../utils/global'
 import moment from 'moment'
+import { formatDate } from '../utils/global'
 
 export default class PostListing extends Component {
   getPostList() {

@@ -23,7 +23,7 @@ $dark-border: darken($background, 3%);
 
   .lead {
     a {
-      border-bottom: 2px solid $primary-color;
+      border-bottom: 2px solid transparent;
       &:hover {
         color: $primary-color;
         background: transparent;
@@ -128,7 +128,8 @@ $dark-border: darken($background, 3%);
       }
 
       &:hover {
-        border-color: $primary-color;
+        background: #343434;
+        border-color: #343434;
       }
     }
 
@@ -137,9 +138,12 @@ $dark-border: darken($background, 3%);
         h2 {
           color: #ccc;
         }
+        border: 2px solid transparent;
+        border-bottom-color: #343434;
 
         &:hover {
-          border-color: $primary-color;
+          background: #343434 !important;
+          border-color: #343434;
 
           h2 {
             color: white;
@@ -163,8 +167,8 @@ $dark-border: darken($background, 3%);
         }
 
         &:hover {
-          border: 2px solid $primary-color;
-          background: transparent;
+          border: 2px solid #343434;
+          background: #343434;
 
           h2 {
             color: white;
@@ -332,7 +336,7 @@ $dark-border: darken($background, 3%);
     color: #ccc;
 
     &::before {
-      background: #444;
+      background: #343434;
       color: #333;
     }
   }

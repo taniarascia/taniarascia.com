@@ -6,15 +6,13 @@ template: page
 
 I’m Tania Rascia, a full-stack software developer, technical writer, and former chef from Chicago. I currently work as a front end engineer for [DAIS](https://www.dais.com/), and I've also written for [DigitalOcean](https://www.digitalocean.com/community/users/taniarascia), [SitePoint](https://www.sitepoint.com/author/trascia/), [Envato Tuts+](https://tutsplus.com/authors/tania-rascia), and [more](/publications).
 
-I started this website as a place to document everything I learned while going through a [career change](https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know. The free resources I create help thousands of people successfully become developers, too! 
-
-
+I started this website as a place to document everything I learned while going through a [career change](https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know. The free resources I create help thousands of people successfully become developers, too!
 
 ![Me](../images/taniafull.jpg)
 
 ### Around the web
 
-- Email: [me@taniarascia.com](mailto:me@taniarascia.com)
+- Email: [tania@taniarascia.com](mailto:tania@taniarascia.com)
 - GitHub: [taniarascia](https://github.com/taniarascia)
 - Twitter: [taniarascia](https://twitter.com/taniarascia)
 - LinkedIn: [taniarascia](https://linkedin.com/in/taniarascia)

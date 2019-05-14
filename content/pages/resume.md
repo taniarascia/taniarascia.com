@@ -9,7 +9,7 @@ template: page
 Highly motivated and versatile full-stack developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
 
 - [taniarascia.com](https://www.taniarascia.com)
-- [me@taniarascia.com](mailto:me@taniarascia.com)
+- [tania@taniarascia.com](mailto:tania@taniarascia.com)
 - Chicago, IL
 
 ## Technical Skills

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
-import Layout from '../layout'
 import { Link, graphql } from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
+import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 

@@ -11,23 +11,23 @@ export default class Contact extends Component {
         <p>You can find me around the web:</p>
         <ul>
           <li>
-            <strong>Email</strong>: <a href="mailto:me@taniarascia.com">me@taniarascia.com</a>
+            <strong>Email</strong>: <a href="mailto:tania@taniarascia.com">tania@taniarascia.com</a>
           </li>
           <li>
             <strong>GitHub</strong>:{' '}
-            <a target="_blank" href="https://github.com/taniarascia">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/taniarascia">
               taniarascia
             </a>
           </li>
           <li>
             <strong>Twitter</strong>:{' '}
-            <a target="_blank" href="https://twitter.com/taniarascia">
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/taniarascia">
               taniarascia
             </a>
           </li>
           <li>
             <strong>LinkedIn</strong>:{' '}
-            <a target="_blank" href="https://linkedin.com/in/taniarascia">
+            <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/taniarascia">
               taniarascia
             </a>
           </li>

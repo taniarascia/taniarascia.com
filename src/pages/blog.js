@@ -5,7 +5,6 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import _ from 'lodash'
 
 export default class BlogPage extends Component {
   state = {
@@ -26,21 +25,16 @@ export default class BlogPage extends Component {
   filterPosts = () => {
     const { posts, searchTerm, currentCategories } = this.state
 
-    let filteredPosts = posts.filter(post => {
-      if (post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return true
-      }
-    })
+    let filteredPosts = posts.filter(post =>
+      post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
 
     if (currentCategories.length > 0) {
-      filteredPosts = filteredPosts.filter(post => {
-        if (
+      filteredPosts = filteredPosts.filter(
+        post =>
           post.node.frontmatter.categories &&
           currentCategories.every(cat => post.node.frontmatter.categories.includes(cat))
-        ) {
-          return true
-        }
-      })
+      )
     }
 
     this.setState({ filteredPosts })
@@ -84,7 +78,7 @@ export default class BlogPage extends Component {
                     await this.filterPosts()
                   }}
                 >
-                  {category.fieldValue} <strong className="count">{category.totalCount}</strong>
+                  {category.fieldValue}
                 </div>
               )
             })}

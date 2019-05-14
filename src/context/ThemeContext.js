@@ -14,11 +14,24 @@ class ThemeProvider extends Component {
     notFound: false,
   }
 
-  toggleDark = () => {
-    let dark = !this.state.dark
+  componentDidMount() {
+    const lsDark = JSON.parse(localStorage.getItem('dark'))
 
-    localStorage.setItem('dark', JSON.stringify(dark))
-    this.setState({ dark })
+    if (lsDark) {
+      this.setState({ dark: lsDark })
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    const { dark } = this.state
+
+    if (prevState.dark !== dark) {
+      localStorage.setItem('dark', JSON.stringify(dark))
+    }
+  }
+
+  toggleDark = () => {
+    this.setState(prevState => ({ dark: !prevState.dark }))
   }
 
   setNotFound = () => {
@@ -27,14 +40,6 @@ class ThemeProvider extends Component {
 
   setFound = () => {
     this.setState({ notFound: false })
-  }
-
-  componentDidMount() {
-    const lsDark = JSON.parse(localStorage.getItem('dark'))
-
-    if (lsDark) {
-      this.setState({ dark: lsDark })
-    }
   }
 
   render() {

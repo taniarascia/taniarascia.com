@@ -15,7 +15,7 @@ const config = {
   disqusShortname: 'taniarascia',
   postDefaultCategoryID: 'Tech',
   userName: 'Tania',
-  userEmail: 'me@taniarascia.com',
+  userEmail: 'tania@taniarascia.com',
   userTwitter: 'taniarascia',
   userLocation: 'Chicago, IL',
   userAvatar: 'https://api.adorable.io/avatars/150/test.png',

@@ -29,7 +29,7 @@ I'm going to show you how to set up a simple SPA in React with `react-router-dom
 
 - [View Source](https://github.com/taniarascia/router-example)
 
-## Prerequisites
+#### Prerequisites
 
 - Read [Getting Started with React](https://www.taniarascia.com/getting-started-with-react/) or [Build a React App with Hooks](https://www.taniarascia.com/crud-app-in-react-with-hooks/) if you don't know React or React Hooks yet.
 - Read [How to Connect to an API in JavaScript](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/) if you don't know how to work with APIs at all.
