@@ -4,6 +4,12 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer container">
+        <a href="https://ko-fo.com/taniarascia" target="_blank" rel="noopener noreferrer">
+          Buy me a Coffee
+        </a>
+        <a href="https://patreon.com/taniarascia" target="_blank" rel="noopener noreferrer">
+          Patreon
+        </a>
         <a href="https://twitter.com/taniarascia" target="_blank" rel="noopener noreferrer">
           Twitter
         </a>

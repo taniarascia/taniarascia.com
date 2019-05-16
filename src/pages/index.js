@@ -79,7 +79,7 @@ export default class Index extends Component {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="callouts">
               <Link to="/getting-started-with-react" className="article-callout">
                 <img src={react} alt="React" /> React
               </Link>
@@ -93,7 +93,7 @@ export default class Index extends Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container front-page">
           <section className="section">
             <h2>Latest Articles</h2>
             <PostListing simple postEdges={latestPostEdges} />

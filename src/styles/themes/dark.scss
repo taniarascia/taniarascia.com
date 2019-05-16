@@ -82,7 +82,7 @@ $dark-border: darken($background, 3%);
     }
 
     .links a {
-      color: $comment;
+      color: darken($foreground, 10%);
 
       &:hover,
       &.active {
@@ -309,20 +309,6 @@ $dark-border: darken($background, 3%);
     &:active {
       border: none;
       background: transparent;
-    }
-  }
-
-  a.patreon-button {
-    background: transparent !important;
-    border: 2px solid #e85b46;
-    color: #e85b46;
-
-    &:hover,
-    &:focus,
-    &:active {
-      border: 2px solid lighten(#e85b46, 15%);
-      background: transparent;
-      color: lighten(#e85b46, 15%);
     }
   }
 

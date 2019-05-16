@@ -116,17 +116,20 @@ a.patreon-button {
   display: inline-flex;
   align-items: center;
   border-radius: $border-radius;
-  border: 2px solid rgb(232, 91, 70);
-  background: rgb(232, 91, 70);
-  padding: 0.75rem 1rem;
+  border: 2px solid #f96854;
+  background: #f96854;
+  padding: 0 1rem;
   color: #fff;
   margin: 0 0.5rem;
+
+  img {
+    margin: 0;
+  }
 
   &:hover,
   &:focus,
   &:active {
-    background: darken(rgb(232, 91, 70), 10%);
-    border: 2px solid darken(rgb(232, 91, 70), 10%);
+    border: 2px solid darken(#f96854, 10%);
     color: #fff;
   }
 }

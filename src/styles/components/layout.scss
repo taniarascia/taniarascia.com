@@ -90,9 +90,9 @@ a.article-callout {
   transition: all .3s ease;
   border-radius: 4px;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, .1);
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  font-size: 1.5rem;
+  padding: .5rem;
+  margin: .5rem 0;
+  font-size: 1.2rem;
   color: $font-color;
   font-weight: 500;
   border: none !important;
@@ -110,6 +110,14 @@ a.article-callout {
     width: 50px;
     max-width: 50px;
     margin: 0 1.5rem 0 0;
+  }
+}
+
+@include small-breakpoint {
+  a.article-callout {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
   }
 }
 
@@ -132,6 +140,13 @@ a.article-callout {
         margin-right: 1.5rem;
       }
     }
+  }
+}
+
+.front-page {
+  h2 {
+    border-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -538,6 +553,7 @@ h2.publication-company {
       justify-content: space-between;
       padding: 1.5rem 0;
       border-bottom: 2px solid $light;
+
       &:last-of-type {
         border-bottom: none;
       }
@@ -756,10 +772,6 @@ blockquote {
     justify-content: space-between;
   }
 
-  .flex-author {
-    order: 2;
-  }
-
   .avatar {
     max-width: 200px;
     border-radius: 50%;
@@ -783,11 +795,11 @@ blockquote {
     }
 
     .flex-author {
-      order: initial;
+      display: flex;
     }
 
     .avatar {
-      margin-left: 1.5rem;
+      margin-right: 2rem;
     }
   }
 }
@@ -904,18 +916,9 @@ blockquote {
 
 .coffee-icon {
   margin: 0;
-  margin-left: 0.5rem;
-  height: 20px;
-  width: 20px;
-}
-
-@include small-breakpoint {
-  .coffee-icon {
-    margin-left: 0.75rem;
-    height: 25px;
-    width: 25px;
-    margin-bottom: 0.25rem;
-  }
+  margin-right: 0.5rem;
+  max-width: 40px;
+  height: auto;
 }
 
 .footer {

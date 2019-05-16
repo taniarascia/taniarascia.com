@@ -111,6 +111,11 @@ button.dark-switcher {
   margin-bottom: 0;
 }
 
+.kofi {
+  margin: 0;
+  max-width: 40px;
+}
+
 @include small-breakpoint {
   .nav {
     &.scroll {
@@ -180,6 +185,16 @@ button.dark-switcher {
         }
       }
     }
+  }
+
+  .patreon {
+    margin: 0;
+    border-radius: 4px;
+  }
+
+  .kofi {
+    margin: 0;
+    max-width: 40px;
   }
 
   .favicon {
