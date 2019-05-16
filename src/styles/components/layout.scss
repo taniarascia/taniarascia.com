@@ -58,8 +58,17 @@
 
 @include small-breakpoint {
   .lead {
+    display: flex;
     font-size: 1.2rem;
-    max-width: 600px;
+
+    >div:first-of-type {
+      flex: 2;
+      margin-right: 3rem;
+    }
+
+    >div {
+      flex: 1;
+    }
 
     h1 {
       font-size: 2.2rem;
@@ -72,6 +81,35 @@
     .button {
       margin-right: 0.5rem;
     }
+  }
+}
+
+a.article-callout {
+  display: flex;
+  align-items: center;
+  transition: all .3s ease;
+  border-radius: 4px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, .1);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  color: $font-color;
+  font-weight: 500;
+  border: none !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #111;
+    background: white;
+    box-shadow: $box-shadow;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    max-width: 50px;
+    margin: 0 1.5rem 0 0;
   }
 }
 
@@ -454,7 +492,20 @@ h2.publication-company {
     padding: 0;
 
     a {
+      display: flex;
       color: #111;
+      align-items: center;
+    }
+
+    .project-icon {
+      display: inline-block;
+      font-size: 2rem;
+      margin-right: 1rem;
+
+    }
+
+    .project-title {
+      display: inline-block;
     }
   }
 
@@ -463,6 +514,14 @@ h2.publication-company {
     color: $light-font-color;
     font-weight: normal;
     margin: 0;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
   }
 
   .button {
@@ -475,17 +534,26 @@ h2.publication-company {
 @include small-breakpoint {
   .projects {
     .each {
-      display: grid;
-      grid-template-columns: 2.5fr 5fr 3fr;
-      grid-template-rows: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      border-bottom: 2px solid $light;
+      &:last-of-type {
+        border-bottom: none;
+      }
     }
 
     h2 {
+      width: 150px;
+      min-width: 150px;
+      max-width: 150px;
       font-size: 1.4rem;
+      margin-right: 1rem;
     }
 
     p {
       display: block;
+      flex: 1;
       margin: 0 1.5rem 0 0;
     }
 
@@ -594,7 +662,7 @@ h2.publication-company {
 
     .quotation {
       margin: 1rem;
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: $border-radius;
       flex: 1;
       box-shadow: $box-shadow;
@@ -851,20 +919,31 @@ blockquote {
 }
 
 .footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   height: 55px;
   color: $light-font-color;
+
+  strong {
+    margin-right: 1rem;
+  }
+
+  a {
+    font-weight: 400;
+    color: darken($light, 30%);
+    display: block;
+    margin-right: 1rem;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
 @include small-breakpoint {
   .footer {
-    display: flex;
-    align-items: center;
     height: 100px;
-    color: initial;
-
-    strong {
-      color: #111;
-    }
   }
 }
 

@@ -63,16 +63,16 @@
 
 .button.muted-button,
 a.button.muted-bottom {
-  color: darken($primary-color, 10%);
-  border: 2px solid $primary-color;
-  background: transparent;
+  color: $font-color;
+  border: 2px solid darken($light, 5%);
+  background: darken($light, 5%);
 
   &:hover,
   &:focus,
   &:active {
-    border: 2px solid darken($primary-color, 10%);
-    background: $primary-hover;
-    color: darken($primary-color, 30%);
+    color: $heading-font-color;
+    border: 2px solid darken($light, 10%);
+    background: darken($light, 10%);
   }
 }
 

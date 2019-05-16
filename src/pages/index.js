@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
@@ -12,6 +12,9 @@ import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
+import react from '../../content/thumbnails/react.png'
+import vue from '../../content/thumbnails/vue.png'
+import js from '../../content/thumbnails/js.png'
 
 export default class Index extends Component {
   render() {
@@ -26,53 +29,66 @@ export default class Index extends Component {
         <SEO />
         <div className="container">
           <div className="lead">
-            <h1>{`Hi, I'm Tania`}</h1>
-            <p>
-              {`I'm a full-stack software developer specializing in modern JavaScript. I write about
-                everything I know and break down complex concepts in an accessible and intuitive
+            <div>
+              <h1>{`Hi, I'm Tania`}</h1>
+              <p>
+                {`I'm a full-stack software developer specializing in modern JavaScript. I write about
+                what I know and break down complex concepts in an accessible and intuitive
                 way.`}
-            </p>
-            <p>
-              I like making things from scratch and <a href="/learn">learning in public</a>. My open
-              source projects include{' '}
-              <a href="https://github.com/taniarascia/laconia/" target="blank">
-                an MVC framework
-              </a>
-              ,{' '}
-              <a href="https://taniarascia.github.io/primitive/" target="blank">
-                a CSS framework
-              </a>
-              ,{' '}
-              <a href="https://github.com/taniarascia/chip8/" target="blank">
-                an old-school emulator
-              </a>
-              , and{' '}
-              <a href="https://taniarascia.github.io/new-moon/" target="blank">
-                the optimized dark theme
-              </a>{' '}
-              for web development.
-            </p>
-            <div className="social-buttons">
-              <div>
-                <a
-                  className="twitter-follow-button"
-                  href="https://twitter.com/taniarascia"
-                  data-size="large"
-                  data-show-screen-name="false"
-                >
-                  Follow @taniarascia
+              </p>
+              <p>
+                I like making things from scratch and <a href="/learn">learning in public</a>. My
+                open source projects include{' '}
+                <a href="https://github.com/taniarascia/laconia/" target="blank">
+                  an MVC framework
                 </a>
+                ,{' '}
+                <a href="https://taniarascia.github.io/primitive/" target="blank">
+                  a CSS framework
+                </a>
+                ,{' '}
+                <a href="https://github.com/taniarascia/chip8/" target="blank">
+                  an old-school emulator
+                </a>
+                , and{' '}
+                <a href="https://taniarascia.github.io/new-moon/" target="blank">
+                  the optimized dark theme
+                </a>{' '}
+                for web development.
+              </p>
+              <div className="social-buttons">
+                <div>
+                  <a
+                    className="twitter-follow-button"
+                    href="https://twitter.com/taniarascia"
+                    data-size="large"
+                    data-show-screen-name="false"
+                  >
+                    Follow @taniarascia
+                  </a>
+                </div>
+                <div>
+                  <GitHubButton
+                    href="https://github.com/taniarascia"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Follow @taniarascia on GitHub"
+                  >
+                    Follow
+                  </GitHubButton>
+                </div>
               </div>
-              <div>
-                <GitHubButton
-                  href="https://github.com/taniarascia"
-                  data-size="large"
-                  data-show-count="true"
-                  aria-label="Follow @taniarascia on GitHub"
-                >
-                  Follow
-                </GitHubButton>
-              </div>
+            </div>
+            <div>
+              <Link to="/getting-started-with-react" className="article-callout">
+                <img src={react} alt="React" /> React
+              </Link>
+              <Link to="/getting-started-with-vue" className="article-callout">
+                <img src={vue} alt="Vue" /> Vue
+              </Link>
+              <Link to="/es6-syntax-and-feature-overview/" className="article-callout">
+                <img src={js} alt="JS" /> JavaScript ES6
+              </Link>
             </div>
           </div>
         </div>

@@ -55,19 +55,20 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] Promises, Async/Await, Microtasks, Event Loop
 - [ ] Bind, Call, Apply
 - [ ] Generators
-- [ ] Cookies
 - [ ] `this` behavior
-- [ ] File Handling
 - [ ] Bitwise Operators
 
-#### Document Object Model (DOM)
+#### Document Object Model (DOM) and Web APIs
 
 - [ ] Scrolling
-- [ ] Drag n' Drop
+- [ ] Drag and Drop
+- [ ] WebSockets
+- [ ] File Handling
+- [ ] Cookies
 
 #### Frameworks/Libraries
 
-- [ ] Vue.js
+- [x] Vue.js
 
 ### Networking
 
