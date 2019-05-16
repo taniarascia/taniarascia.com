@@ -66,10 +66,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] File Handling
 - [ ] Cookies
 
-#### Frameworks/Libraries
-
-- [x] Vue.js
-
 ### Networking
 
 - [ ] Sockets
@@ -128,6 +124,7 @@ This is not everything I know, but a good amount of the things I've documented s
 
 #### Frameworks/Libraries
 
+- [x] [Vue.js](/getting-started-with-vue)
 - [x] [React](/getting-started-with-react/)
   - [x] [Hooks API](/crud-app-in-react-with-hooks/)
   - [x] [Context API](https://www.taniarascia.com/using-context-api-in-react/)
