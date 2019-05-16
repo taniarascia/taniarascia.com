@@ -1143,7 +1143,7 @@ And within a minute or two, it should be all hosted!
 
 ## Conclusion
 
-Wow, that was a lot. We learned what Vue is, how to set up a Vue project via static HTML or Vue Cli, and how to make a complete CRUD app in Vue. We learned about Vue components, data, methods, computed methods, lifecycles, conditionals, events, form handling, and building. If you went through and did this whole tutorial, you should feel pretty good starting
+Wow, that was a lot. We learned what Vue is, how to set up a Vue project via static HTML or Vue Cli, and how to make a complete CRUD app in Vue. We learned about Vue components, data, methods, computed methods, lifecycles, conditionals, events, form handling, and building. If you went through and did this whole tutorial, you should feel pretty good starting to build your own apps from scratch in Vue.
 
 From here, you might want to look into [Vuex](https://vuex.vuejs.org/) for state management (similar to React's Redux), and [Vue Router](https://router.vuejs.org/) for front-end routing (similar to React Router DOM). The great part about the Vue environment is that it's batteries optional, but official batteries also included should you need it.
 
