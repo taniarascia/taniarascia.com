@@ -799,7 +799,7 @@ We'll emit an event like before, this time called `deleteEmployee`. We can pass 
 <div class="filename">EmployeeTable.vue</div>
 
 ```html
-<button @click="$emit('delete:employee', employee.name)">Delete</button>
+<button @click="$emit('delete:employee', employee.id)">Delete</button>
 ```
 
 Back in `App.vue`, we have to tell `employee-table` to perform an action on `delete-employee`...
