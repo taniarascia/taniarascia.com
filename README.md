@@ -36,6 +36,10 @@ If you see any typos or formatting errors in a post, or any other issue that nee
 - Muhammad Muhsin - [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)
 - Thomas Frössman - [ExitWP](https://github.com/thomasf/exitwp) - WordPress XML to Markdown
 
+## Author
+
+- [Tania Rascia](https://www.taniarascia.com)
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).

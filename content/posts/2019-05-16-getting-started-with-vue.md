@@ -1,5 +1,5 @@
 ---
-date: 2019-05-14
+date: 2019-05-16
 title: 'Getting Started with Vue - An Overview and Walkthrough Tutorial'
 template: post
 thumbnail: '../thumbnails/vue.png'
