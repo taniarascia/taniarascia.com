@@ -4,7 +4,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer container">
-        <a href="https://ko-fo.com/taniarascia" target="_blank" rel="noopener noreferrer">
+        <a href="https://ko-fi.com/taniarascia" target="_blank" rel="noopener noreferrer">
           Ko-Fi
         </a>
         <a href="https://patreon.com/taniarascia" target="_blank" rel="noopener noreferrer">
