@@ -49,13 +49,13 @@ export default class PostListing extends Component {
                   {!simple ? <div className="excerpt">{date}</div> : null}
                 </div>
                 {newest && (
-                  <div className="new">
-                    <div>New!</div>
+                  <div className="alert">
+                    <div className="new">New!</div>
                   </div>
                 )}
-                {popular && !simple && (
-                  <div className="popular">
-                    <div>Popular</div>
+                {popular && !simple && !newest && (
+                  <div className="alert">
+                    <div className="popular">Popular</div>
                   </div>
                 )}
               </div>

@@ -6,6 +6,7 @@ thumbnail: '../thumbnails/vue.png'
 slug: getting-started-with-vue
 categories:
   - JavaScript
+  - Popular
 tags:
   - javascript
   - vue

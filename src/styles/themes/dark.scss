@@ -212,6 +212,15 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  @include small-breakpoint {
+    .projects .each {
+      border-bottom: 2px solid darken($background, 5%);
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+
   .post-meta {
     color: $comment;
   }
@@ -286,6 +295,11 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  .new,
+  .popular {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
   .button.muted-button,
   a.button.muted-bottom {
     color: $comment;
@@ -334,7 +348,7 @@ $dark-border: darken($background, 3%);
       border-radius: $border-radius;
       margin-right: 0.5rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.4);
+      color: $primary-color;
       cursor: pointer;
 
       &.active {
@@ -348,7 +362,7 @@ $dark-border: darken($background, 3%);
 
       &:hover {
         background: #111;
-        color: rgba(255, 255, 255, 0.6);
+        color: darken($primary-color, 10%);
       }
     }
   }

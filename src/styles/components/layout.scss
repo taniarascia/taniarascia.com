@@ -61,12 +61,12 @@
     display: flex;
     font-size: 1.2rem;
 
-    >div:first-of-type {
+    > div:first-of-type {
       flex: 2;
       margin-right: 3rem;
     }
 
-    >div {
+    > div {
       flex: 1;
     }
 
@@ -84,40 +84,42 @@
   }
 }
 
-a.article-callout {
-  display: flex;
-  align-items: center;
-  transition: all .3s ease;
-  border-radius: 4px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, .1);
-  padding: .5rem;
-  margin: .5rem 0;
-  font-size: 1.2rem;
-  color: $font-color;
-  font-weight: 500;
-  border: none !important;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: #111;
-    background: white;
-    box-shadow: $box-shadow;
-  }
-
-  img {
-    height: 50px;
-    width: 50px;
-    max-width: 50px;
-    margin: 0 1.5rem 0 0;
-  }
+.callouts {
+  display: none;
 }
 
 @include small-breakpoint {
+  .callouts {
+    display: block;
+  }
+
   a.article-callout {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+    color: $font-color;
+    font-weight: 500;
+    border: none !important;
     padding: 1.5rem;
     margin: 1.5rem 0;
     font-size: 1.5rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: #111;
+      background: white;
+      box-shadow: $box-shadow;
+    }
+
+    img {
+      height: 50px;
+      width: 50px;
+      max-width: 50px;
+      margin: 0 1.5rem 0 0;
+    }
   }
 }
 
@@ -125,7 +127,7 @@ a.article-callout {
   display: flex;
 
   div:first-of-type {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }
 
@@ -382,28 +384,6 @@ a.article-callout {
   }
 }
 
-.popular {
-  display: none;
-  align-self: center;
-  justify-self: flex-end;
-
-  div {
-    display: inline-block;
-    font-size: 0.9rem;
-    background: $green;
-    color: white;
-    border-radius: $border-radius;
-    padding: 0.5rem 1rem;
-    text-align: center;
-  }
-}
-
-@include small-breakpoint {
-  .popular {
-    display: block;
-  }
-}
-
 h2.publication-company {
   display: flex;
   align-items: center;
@@ -414,16 +394,26 @@ h2.publication-company {
   }
 }
 
-.new {
+.alert {
   display: none;
   align-self: center;
   justify-self: flex-end;
 
-  div {
+  .new {
     display: inline-block;
     font-size: 0.9rem;
-    background: $yellow;
-    color: #111;
+    background: lighten($yellow, 26%);
+    color: darken($yellow, 18%);
+    border-radius: $border-radius;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  .popular {
+    display: inline-block;
+    font-size: 0.9rem;
+    background: lighten($green, 50%);
+    color: $green;
     border-radius: $border-radius;
     padding: 0.5rem 1rem;
     text-align: center;
@@ -431,7 +421,7 @@ h2.publication-company {
 }
 
 @include small-breakpoint {
-  .new {
+  .alert {
     margin-left: 1rem;
     display: block;
   }
@@ -440,7 +430,7 @@ h2.publication-company {
 .simple-posts {
   a {
     .each {
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       margin: 0;
       border: 2px solid transparent;
       border-radius: $border-radius;
@@ -499,12 +489,13 @@ h2.publication-company {
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border-bottom: none;
-    margin: 0;
+    margin: 0 1rem 0 0;
     font-weight: 600;
     color: #111;
     padding: 0;
+    min-width: 110px;
 
     a {
       display: flex;
@@ -516,7 +507,6 @@ h2.publication-company {
       display: inline-block;
       font-size: 2rem;
       margin-right: 1rem;
-
     }
 
     .project-title {
@@ -534,9 +524,9 @@ h2.publication-company {
   .buttons {
     display: flex;
     align-items: center;
-    width: 220px;
-    min-width: 220px;
-    max-width: 220px;
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
   }
 
   .button {
@@ -574,8 +564,8 @@ h2.publication-company {
     }
 
     .button {
-      padding: 0.75rem 1.25rem;
-      font-size: 1.1rem;
+      padding: 0.45rem 1.25rem;
+      font-size: 0.9rem;
     }
   }
 }
@@ -681,7 +671,7 @@ h2.publication-company {
       padding: 2.5rem;
       border-radius: $border-radius;
       flex: 1;
-      box-shadow: $box-shadow;
+      box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
     }
   }
 }
@@ -855,12 +845,12 @@ blockquote {
     align-items: center;
     font-size: 0.85rem;
     padding: 0.5rem 0.75rem;
-    background: $light;
+    background: lighten($primary-color, 32%);
     border-radius: $border-radius;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: lighten($font-color, 10%);
+    color: $primary-color;
     cursor: pointer;
 
     .count {
@@ -897,8 +887,8 @@ blockquote {
     }
 
     &:hover {
-      background: darken($light, 5%);
-      color: $font-color;
+      background: lighten($primary-color, 28%);
+      color: darken($primary-color, 5%);
     }
   }
 }

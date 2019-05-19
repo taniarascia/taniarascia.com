@@ -24,7 +24,7 @@ export default class ProjectListing extends Component {
             <div className="buttons">
               {project.path && (
                 <a className="button" href={project.path} target="_blank" rel="noopener noreferrer">
-                  Website
+                  Site
                 </a>
               )}
               <GitHubButton href={project.source} data-size="large" data-show-count="true">
