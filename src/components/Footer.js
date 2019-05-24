@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 
 export default class Footer extends Component {
   render() {
@@ -16,6 +17,9 @@ export default class Footer extends Component {
         <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
+        <Link to="/rss.xml" target="_blank" rel="noopener noreferrer">
+          RSS
+        </Link>
         <a
           href="https://github.com/taniarascia/taniarascia.com"
           target="_blank"

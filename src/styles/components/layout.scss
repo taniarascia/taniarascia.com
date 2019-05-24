@@ -911,6 +911,12 @@ blockquote {
   height: auto;
 }
 
+.newsletter-section {
+  border-radius: $border-radius;
+  padding: 3rem;
+  background: $light;
+}
+
 .footer {
   display: flex;
   justify-content: flex-start;

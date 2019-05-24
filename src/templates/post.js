@@ -48,8 +48,7 @@ export default class PostTemplate extends Component {
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
-                <time className="date">{date}</time>
-/
+                <time className="date">{date}</time>/
                 <a className="twitter-link" href={twitterShare}>
                   Share
                 </a>
@@ -65,15 +64,18 @@ export default class PostTemplate extends Component {
           <div>
             {' '}
             <a className="button twitter-button" href={twitterShare} target="_blank">
-              Share on Twitter
-            </a>
-            {' '}
+              Share
+            </a>{' '}
             <a className="button twitter-button" href={twitterUrl} target="_blank">
-              Discuss on Twitter
+              Discuss
             </a>
           </div>
-          <h3>Stay in touch</h3>
-          <p>Like the posts you see here? Sign up to get notified about new ones.</p>
+          <h3>Join the newsletter</h3>
+          <p>
+            I write about JavaScript, programming, and front-end design. Join{' '}
+            <strong class="pink">6000+</strong> other developers in keeping up with my content.
+            Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
+          </p>
           <NewsletterForm />
         </article>
         <UserInfo config={config} />

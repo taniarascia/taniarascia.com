@@ -140,11 +140,12 @@ export default class Index extends Component {
             </div>
           </section>
 
-          <section className="section">
-            <h2>Newsletter</h2>
+          <section className="newsletter-section section">
+            <h2>Join the Newsletter</h2>
             <p>
-              I write about what I know and share it with the world. Sign up to get notified about
-              new content!
+              I write about JavaScript, programming, and front-end design. Join{' '}
+              <strong class="pink">6000+</strong> other developers in keeping up with my content.
+              Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
             </p>
             <NewsletterForm />
           </section>

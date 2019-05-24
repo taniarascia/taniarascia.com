@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import NewsletterForm from './NewsletterForm'
 
 export default class Contact extends Component {
   render() {
     return (
       <>
-        <h1>Stay in touch</h1>
-        <p>Like the posts you see here? Sign up to get notified about new content.</p>
+        <h1>Stay in Touch</h1>
+        <p>
+          I write about JavaScript, programming, and front-end design. Join{' '}
+          <strong class="pink">6000+</strong> other developers in keeping up with my content.
+          Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
+        </p>
         <NewsletterForm />
-        <p>You can find me around the web:</p>
+        <p>You can also contact me via email or find me around the web.</p>
         <ul>
           <li>
             <strong>Email</strong>: <a href="mailto:tania@taniarascia.com">tania@taniarascia.com</a>
@@ -30,6 +35,9 @@ export default class Contact extends Component {
             <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/taniarascia">
               taniarascia
             </a>
+          </li>
+          <li>
+            <strong>Feed</strong>: <Link to="/rss.xml">RSS</Link>
           </li>
         </ul>
       </>
