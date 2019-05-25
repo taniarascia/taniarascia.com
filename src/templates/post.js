@@ -72,8 +72,8 @@ export default class PostTemplate extends Component {
           </div>
           <h3>Join the newsletter</h3>
           <p>
-            I write about JavaScript, programming, and front-end design. Join{' '}
-            <strong class="pink">6000+</strong> other developers in keeping up with my content.
+            I write about JavaScript, programming, and front-end design. Join over{' '}
+            <strong class="pink">6,000</strong> other developers in keeping up with my content.
             Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
           </p>
           <NewsletterForm />
