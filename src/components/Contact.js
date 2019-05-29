@@ -37,7 +37,7 @@ export default class Contact extends Component {
             </a>
           </li>
           <li>
-            <strong>Feed</strong>: <Link to="/rss.xml">RSS</Link>
+            <strong>Feed</strong>: <a href="https://www.taniarascia.com/rss.xml">RSS</a>
           </li>
         </ul>
       </>

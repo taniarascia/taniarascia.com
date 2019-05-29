@@ -17,9 +17,9 @@ export default class Footer extends Component {
         <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        <Link to="/rss.xml" target="_blank" rel="noopener noreferrer">
+        <a to="https://www.taniarascia.com/rss.xml" target="_blank" rel="noopener noreferrer">
           RSS
-        </Link>
+        </a>
         <a
           href="https://github.com/taniarascia/taniarascia.com"
           target="_blank"

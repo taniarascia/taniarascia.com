@@ -57,7 +57,7 @@
   }
 
   &:active {
-    transform: scale(.95)
+    transform: scale(0.95);
   }
 }
 
@@ -119,7 +119,7 @@ a.patreon-button {
   border: 2px solid #f96854;
   background: #f96854;
   padding: 0 1rem;
-  color: #fff;
+  color: #fff !important;
   margin: 0 0.5rem;
 
   img {
@@ -129,8 +129,9 @@ a.patreon-button {
   &:hover,
   &:focus,
   &:active {
+    background: #f96854 !important;
     border: 2px solid darken(#f96854, 10%);
-    color: #fff;
+    color: #fff !important;
   }
 }
 

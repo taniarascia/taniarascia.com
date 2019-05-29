@@ -268,11 +268,11 @@ $dark-border: darken($background, 3%);
 
   #{$forms} {
     color: $foreground;
-    border: 2px solid #666;
-    background: transparent !important;
+    border: 2px solid #333;
+    background: #222 !important;
 
     &:hover {
-      border: 2px solid #888;
+      border: 2px solid #444;
     }
 
     &:active,
@@ -294,6 +294,10 @@ $dark-border: darken($background, 3%);
       color: lighten($primary-color, 15%);
     }
   }
+  
+  .donate-button {
+    background: transparent;
+  }
 
   .new,
   .popular {
@@ -314,18 +318,6 @@ $dark-border: darken($background, 3%);
     }
   }
 
-  a.donate-button {
-    background: transparent !important;
-    border: none;
-
-    &:hover,
-    &:focus,
-    &:active {
-      border: none;
-      background: transparent;
-    }
-  }
-
   button.dark-switcher {
     border: none;
   }
@@ -339,6 +331,10 @@ $dark-border: darken($background, 3%);
       background: #343434;
       color: #333;
     }
+  }
+
+  .newsletter-section {
+    background: #222;
   }
 
   .category-container {

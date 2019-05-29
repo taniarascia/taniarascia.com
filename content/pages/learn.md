@@ -70,10 +70,11 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 - [ ] Sockets
 
-### Databases
+### Databases/APIs
 
 - [ ] GraphQL
 - [ ] NoSQL (MongoDB, Firebase)
+- [ ] Swagger - UI, Codegen, Docs
 
 ### DevOps and CI/CD
 
@@ -187,6 +188,5 @@ This is not everything I know, but a good amount of the things I've documented s
 
 ### DevOps and CI/CD
 
-- [x] AWS
-  - [x] [S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
+- [x] [AWS S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
 - [x] [Vagrant/VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/)
