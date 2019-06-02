@@ -2,7 +2,7 @@ const projects = [
   {
     icon: '🏺',
     title: 'Laconia',
-    path: 'https://laconia.site',
+    path: 'https://laconia.dev',
     source: 'https://github.com/taniarascia/laconia/',
     description: 'A modern PHP MVC framework written without libraries or frameworks.',
   },
