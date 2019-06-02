@@ -946,6 +946,20 @@ And now I can edit a single row at a time!
 
 ![](../images/vue12.png)
 
+Editing works, but you still can't cancel the state from updating with this code, even if the new values don't get sent to the API call. We'll create `cancelEdit`, and make the cancel button call ` @click="cancelEdit(employee)"` and remove `.id` from the edit button. We'll make a cached employee that we can return to.
+
+```js
+editMode(employee) {
+  this.editing = id	      
+  this.cachedEmployee = Object.assign({}, employee)
+  this.editing = employee.id
+},
+cancelEdit(employee) {
+  Object.assign(employee, this.cachedEmployee)
+  this.editing = null;
+}
+```
+
 At this point, the app is technically complete, but a real production app will probably be making API calls to a back end database, so we'll make a mock version of that.
 
 > If you'd like to view a completed version of the app before we get into the API calls, you can [view this CodeSandbox demo](https://codesandbox.io/s/m3126z3w8p)].
@@ -1112,7 +1126,7 @@ Create a `gh-pages` branch.
 git checkout -b gh-pages
 ```
 
-Uncomment the `dist` directory from `.gitignore`.
+Remove the `dist` directory from `.gitignore`.
 
 Create `vue.config.js` and add the `publicPath` of your GitHub
 
