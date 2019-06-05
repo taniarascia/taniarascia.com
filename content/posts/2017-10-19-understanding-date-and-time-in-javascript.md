@@ -91,7 +91,7 @@ To demonstrate the different ways to refer to a specific date, we'll create new 
 new Date(-6106015800000);
 
 // Date string method
-new Date("January 31 1980 12:30");
+new Date("July 4 1776 12:30");
 
 // Date and time method
 new Date(1776, 6, 4, 12, 30, 0, 0);
