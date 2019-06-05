@@ -54,7 +54,7 @@ In this article, we will learn how to create arrays, how they are indexed, how t
 
 ## Creating an Array
 
-There are two ways to create an array in JavaScript. The array literal, which uses square brackets, and the array constructor, with uses the `new` keyword.
+There are two ways to create an array in JavaScript. The array literal, which uses square brackets, and the array constructor, which uses the `new` keyword.
 
 Let's demonstrate how to create an array of shark species using the array constructor, which is initialized with `new Array()`.
 
