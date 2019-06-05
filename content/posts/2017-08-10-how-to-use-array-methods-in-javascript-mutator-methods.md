@@ -71,7 +71,7 @@ fishString
 'piranha,barracuda,koi,eel'
 ```
 
-The paramter of the `join()` function will contain the separator you would like between each array element.
+The parameter of the `join()` function will contain the separator you would like between each array element.
 
 ```js
 // Join the elements of an array into a string
