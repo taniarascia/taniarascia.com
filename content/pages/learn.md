@@ -97,7 +97,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Variables, Scope and Hoisting](/understanding-variables-scope-hoisting-in-javascript)
 - [x] [Math](/how-to-do-math-in-javascript-with-operators)
 - [x] [Arrays](/understanding-arrays-in-javascript)
-- [x] [Array Methods - Mutator](/understanding-arrays-in-javascript)
+- [x] [Array Methods - Mutator](/how-to-use-array-methods-in-javascript-mutator-methods)
 - [x] [Array Methods - Accessor](/how-to-use-array-methods-in-javascript-accessor-methods)
 - [x] [Array Methods - Iteration](/how-to-use-array-methods-in-javascript-iteration-methods)
 - [x] [Objects](/understanding-objects-in-javascript)
