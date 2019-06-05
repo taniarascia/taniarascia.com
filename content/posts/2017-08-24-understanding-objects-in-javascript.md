@@ -278,7 +278,7 @@ dwarf
 battle axe
 ```
 
-We can also retrieve the property name itself using just the first variabe in the `for...in` loop. We have used a string method to [convert the key values to upper case](https://www.digitalocean.com/community/tutorials/how-to-index-split-and-manipulate-strings-in-javascript#converting-to-upper-or-lower-case).
+We can also retrieve the property name itself using just the first variable in the `for...in` loop. We have used a string method to [convert the key values to upper case](https://www.digitalocean.com/community/tutorials/how-to-index-split-and-manipulate-strings-in-javascript#converting-to-upper-or-lower-case).
 
 ```js
 // Get keys and values of gimli properties
