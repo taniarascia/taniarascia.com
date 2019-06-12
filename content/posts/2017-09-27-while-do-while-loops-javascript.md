@@ -79,7 +79,7 @@ In our example, we set out `while` loop to run as long as the number of fish was
 
 ## Infinite Loops
 
-An **infinite loop**, as the name suggests, is a loop that will keep running forever. If you accidentally make an infinite loop at some point, it will likely crash your browser or computer. It is important to be aware of inifite loops so you can make sure to avoid them.
+An **infinite loop**, as the name suggests, is a loop that will keep running forever. If you accidentally make an infinite loop at some point, it will likely crash your browser or computer. It is important to be aware of infinite loops so you can make sure to avoid them.
 
 The simplest example of an infinite loop is simply setting the condition of the `while` statement to `true`. Below is an example of code that will run forever. It is not necessary to test any infinite loops.
 
@@ -126,7 +126,7 @@ Note that this is not necessarily a practical method of creating and terminating
 
 ## Do...While
 
-We already learned about the `while` loop, which executes a block of code for as long as a specified condition is true. Builing on that is the `do...while` statement, which is very similar to `while` with the major difference being that a `do...while` loop will always execute once, even if the condition is never true.
+We already learned about the `while` loop, which executes a block of code for as long as a specified condition is true. Building on that is the `do...while` statement, which is very similar to `while` with the major difference being that a `do...while` loop will always execute once, even if the condition is never true.
 
 Below we will demonstrate the syntax of the `do...while` loop.
 
@@ -136,7 +136,7 @@ do {
 } while (condition)
 ```
 
-As you can see, the `do` portion of the loop comes first, and is follwed by `while (condition)`. The code block will run, then the condition will be tested as a normal `while` loop.
+As you can see, the `do` portion of the loop comes first, and is followed by `while (condition)`. The code block will run, then the condition will be tested as a normal `while` loop.
 
 To test this very quickly, we can set a variable to `0`, increment it inside the `do`, and set our condition to `false`.
 
