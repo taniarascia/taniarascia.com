@@ -374,7 +374,7 @@ export default App
 
 Now we have to create a form that you can use to add the new user. Let's create a `forms` subdirectory with a file inside called `AddUserForm.js`.
 
-<div class="filename">App.js</div>
+<div class="filename">AddUserForm.js</div>
 
 ```jsx
 import React, { useState } from 'react'
