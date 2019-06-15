@@ -204,10 +204,8 @@ In `/public`, our important file is `index.html`, which is very similar to the s
 To see how the environment automatically compiles and updates your React code, find the line that looks like this in `/src/App.js`:
 
 ```html
-To get started, edit `src/App.js`
+To get started, edit `src/App.js` and save to reload.
 ```
-
-and save to reload.
 
 And replace it with any other text. Once you save the file, you'll notice `localhost:3000` compiles and refreshes with the new data.
 
