@@ -6,9 +6,46 @@ template: page
 
 There's a lot I want to learn, and a lot I've learned and documented. Here's where I list both.
 
-## To Learn:
+## To Learn
 
 My current focus is **Computer Science** fundamentals and all things **JavaScript**.
+
+### JavaScript
+
+#### Concepts
+
+- [ ] Map, Set
+- [ ] WeakMap, WeakSet
+- [ ] Closures
+- [ ] Promises, Async/Await, Microtasks, Event Loop
+- [ ] Bind, Call, Apply
+- [ ] Generators
+- [ ] `this` behavior
+- [ ] Bitwise Operators
+
+#### Document Object Model (DOM) and Web APIs
+
+- [ ] Scrolling
+- [ ] Drag and Drop
+- [ ] WebSockets
+- [ ] File Handling
+- [ ] Cookies
+
+### Networking
+
+- [ ] Sockets
+
+### Databases/APIs
+
+- [ ] GraphQL
+- [ ] NoSQL (MongoDB, Firebase)
+- [ ] Swagger - UI, Codegen, Docs
+- [ ] JWT Token generation and client side
+
+### DevOps and CI/CD
+
+- [ ] Docker
+- [ ] Creating a Pipeline
 
 ### Computer Science
 
@@ -45,43 +82,7 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] Pattern matching
 - [ ] Recursion
 
-### JavaScript
-
-#### Concepts
-
-- [ ] Map, Set
-- [ ] WeakMap, WeakSet
-- [ ] Closures
-- [ ] Promises, Async/Await, Microtasks, Event Loop
-- [ ] Bind, Call, Apply
-- [ ] Generators
-- [ ] `this` behavior
-- [ ] Bitwise Operators
-
-#### Document Object Model (DOM) and Web APIs
-
-- [ ] Scrolling
-- [ ] Drag and Drop
-- [ ] WebSockets
-- [ ] File Handling
-- [ ] Cookies
-
-### Networking
-
-- [ ] Sockets
-
-### Databases/APIs
-
-- [ ] GraphQL
-- [ ] NoSQL (MongoDB, Firebase)
-- [ ] Swagger - UI, Codegen, Docs
-
-### DevOps and CI/CD
-
-- [ ] Docker
-- [ ] Creating a Pipeline
-
-## Learned:
+## Learned
 
 This is not everything I know, but a good amount of the things I've documented since I started this site.
 
