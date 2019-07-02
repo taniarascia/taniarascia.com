@@ -40,7 +40,7 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] GraphQL
 - [ ] NoSQL (MongoDB, Firebase)
 - [ ] Swagger - UI, Codegen, Docs
-- [ ] JWT Token generation and client side
+- [ ] JWT token generation and client side handling
 
 ### DevOps and CI/CD
 

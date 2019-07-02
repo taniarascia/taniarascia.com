@@ -31,14 +31,14 @@ RewriteRule ^(.+)$ index.php [QSA,L]
 
 ## Create a routing switch
 
-Get the requested path with `$_SERVER['REDIRECT_URL']`, and require the page you want to display. I have `''` and `'/'` for both _url.com/_ and _url.com_.
+Get the requested path with `$_SERVER['REQUEST_URI']`, and require the page you want to display. I have `''` and `'/'` for both _url.com/_ and _url.com_.
 
 <div class="filename">index.php</div>
 
 ```php
 <?php
 
-$request = $_SERVER['REDIRECT_URL'];
+$request = $_SERVER['REQUEST_URI'];
 
 switch ($request) {
     case '/' :

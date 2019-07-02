@@ -6,7 +6,7 @@ template: page
 
 I’m Tania Rascia, a full-stack software developer, technical writer, and former chef from Chicago. I currently work as a front end engineer for [DAIS](https://www.dais.com/), and I've also written for [DigitalOcean](https://www.digitalocean.com/community/users/taniarascia), [SitePoint](https://www.sitepoint.com/author/trascia/), [Envato Tuts+](https://tutsplus.com/authors/tania-rascia), and [more](/publications).
 
-I started this website as a place to document everything I learned while going through a [career change](https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know. 
+I started this website as a place to document everything I learned while going through a [career change](https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
 
 I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate links, and the rest of the annoying noise we're so accustomed to seeing on the internet these days.
 
@@ -65,19 +65,23 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - **2016** – I get my first job in tech, as a web developer for Lettuce Entertain You. I design and develop restaurant sites like [Shaw’s](http://shawscrabhouse.com/), [Cafe Ba–Ba–Reeba](http://cafebabareeba.com/), [Stripburger](http://stripburger.com/), [Krispy Kreme](http://krispykremepacificnw.com/), [Tokio Pub](http://tokiopub.com/), and more.
 - **2017** – Solo backpacking trip around Europe
 - **2018** – I get a job as a backend PHP developer at [RateYourSeats.com](https://www.rateyourseats.com/)
-- **2018** – I get a job as a front end software engineer at [DAIS](https://www.dais.com/), working with JavaScript/React
+- **2018 - Present** – I get a job as a front end software engineer at [DAIS](https://www.dais.com/), working with JavaScript/React
 
 ## Published Articles
 
 - [View all](/publications)
+
+## 3D Printer
+
+- [3D Printer Projects](https://github.com/taniarascia/3d)
 
 ## Currently Using
 
 - **Computer:** MacBook Pro 2015
 - **Hosting:** [Netlify](https://netlify.com), [AWS](https://aws.amazon.com)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
-- **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
+- **Static site generator (blog):** [Gatsby](https://gatsbyjs.org)
 - **Syntax highlighting:** [PrismJS](http://prismjs.com/)
-- **Code theme:** [New Moon](https://taniarascia.github.io/new-moon)
+- **Code syntax theme:** [New Moon](https://taniarascia.github.io/new-moon)
 - **Newsletter:** [Sendy](https://sendy.co)
 - **Notes:** [SimpleNote](https://simplenote.com/)

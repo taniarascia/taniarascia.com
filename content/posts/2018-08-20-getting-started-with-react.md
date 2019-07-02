@@ -713,14 +713,16 @@ Now we have to pass that function through to the component, and render a button 
 <div class="filename">App.js</div>
 
 ```jsx
-return (
-  <div className="container">
-    <Table characterData={characters} removeCharacter={this.removeCharacter} />
-  </div>
-)
-```
+render() {
+  const { characters } = this.state
 
-Don't forget to put `const { characters } = this.state` to pull the correct data from state.
+  return (
+    <div className="container">
+      <Table characterData={characters} removeCharacter={this.removeCharacter} />
+    </div>
+  )
+}
+```
 
 Since we're passing it down to `TableBody` from `Table`, we're going to have to pass it through again as a prop, just like we did with the character data.
 
