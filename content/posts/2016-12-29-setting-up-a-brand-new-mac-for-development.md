@@ -139,7 +139,7 @@ touch .bash_profile
 We'll create a bash alias to combine all the commands to keep Homebrew clean and up to date.
 
 ```bash
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 
 ```
 
