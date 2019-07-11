@@ -29,66 +29,32 @@ export default class Index extends Component {
         <SEO />
         <div className="container">
           <div className="lead">
-            <div>
-              <h1>{`Hi, I'm Tania`}</h1>
-              <p>
-                {`I'm a full-stack software developer specializing in modern JavaScript. I write about
-                what I know and break down complex concepts in an accessible and intuitive
-                way.`}
-              </p>
-              <p>
-                I like making things from scratch and <a href="/learn">learning in public</a>. My
-                open source projects include{' '}
-                <a href="https://github.com/taniarascia/laconia/" target="blank">
-                  an MVC framework
+            <h1>{`Hi, I'm Tania`}</h1>
+            <p>
+              {`I'm a full-stack software developer specializing in modern JavaScript. I make things from scratch, contribute to open source, and write about
+                development in an accessible and intuitive way.`}
+            </p>
+            <div className="social-buttons">
+              <div>
+                <a
+                  className="twitter-follow-button"
+                  href="https://twitter.com/taniarascia"
+                  data-size="large"
+                  data-show-screen-name="false"
+                >
+                  Follow @taniarascia
                 </a>
-                ,{' '}
-                <a href="https://taniarascia.github.io/primitive/" target="blank">
-                  a CSS framework
-                </a>
-                ,{' '}
-                <a href="https://github.com/taniarascia/chip8/" target="blank">
-                  an old-school emulator
-                </a>
-                , and{' '}
-                <a href="https://taniarascia.github.io/new-moon/" target="blank">
-                  the optimized dark theme
-                </a>{' '}
-                for web development.
-              </p>
-              <div className="social-buttons">
-                <div>
-                  <a
-                    className="twitter-follow-button"
-                    href="https://twitter.com/taniarascia"
-                    data-size="large"
-                    data-show-screen-name="false"
-                  >
-                    Follow @taniarascia
-                  </a>
-                </div>
-                <div>
-                  <GitHubButton
-                    href="https://github.com/taniarascia"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Follow @taniarascia on GitHub"
-                  >
-                    Follow
-                  </GitHubButton>
-                </div>
               </div>
-            </div>
-            <div className="callouts">
-              <Link to="/getting-started-with-react" className="article-callout">
-                <img src={react} alt="React" /> React
-              </Link>
-              <Link to="/getting-started-with-vue" className="article-callout">
-                <img src={vue} alt="Vue" /> Vue
-              </Link>
-              <Link to="/es6-syntax-and-feature-overview/" className="article-callout">
-                <img src={js} alt="JS" /> JavaScript
-              </Link>
+              <div>
+                <GitHubButton
+                  href="https://github.com/taniarascia"
+                  data-size="large"
+                  data-show-count="true"
+                  aria-label="Follow @taniarascia on GitHub"
+                >
+                  Follow
+                </GitHubButton>
+              </div>
             </div>
           </div>
         </div>
@@ -144,8 +110,8 @@ export default class Index extends Component {
             <h2>Join the Newsletter</h2>
             <p>
               I write about JavaScript, programming, and front-end design. Join over{' '}
-              <strong class="pink">6,000</strong> other developers in keeping up with my content.
-              Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
+              <strong className="pink">6,000</strong> other developers in keeping up with my
+              content. Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
             </p>
             <NewsletterForm />
           </section>

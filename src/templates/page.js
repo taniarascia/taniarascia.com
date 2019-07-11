@@ -46,9 +46,6 @@ export const pageQuery = graphql`
         template
       }
       fields {
-        nextSlug
-        prevTitle
-        prevSlug
         slug
         date
       }

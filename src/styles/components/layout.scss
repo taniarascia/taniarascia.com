@@ -26,6 +26,9 @@
 }
 
 .lead {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 520px;
   font-size: 1.1rem;
 
   a {
@@ -46,8 +49,8 @@
   }
 
   h1 {
-    font-weight: 500;
-    font-size: 1.6rem;
+    font-weight: 700;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
   }
 
@@ -58,20 +61,10 @@
 
 @include small-breakpoint {
   .lead {
-    display: flex;
     font-size: 1.2rem;
 
-    > div:first-of-type {
-      flex: 2;
-      margin-right: 3rem;
-    }
-
-    > div {
-      flex: 1;
-    }
-
     h1 {
-      font-size: 2.2rem;
+      font-size: 5rem;
     }
 
     p {
@@ -125,27 +118,17 @@
 
 .social-buttons {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   div:first-of-type {
     margin-right: 0.5rem;
   }
 }
 
-@include small-breakpoint {
-  .lead-grid {
-    display: flex;
-
-    div {
-      flex: 1;
-
-      &:first-of-type {
-        margin-right: 1.5rem;
-      }
-    }
-  }
-}
-
 .front-page {
+  margin-top: 2rem;
   h2 {
     border-bottom: 0;
     padding-bottom: 0;
