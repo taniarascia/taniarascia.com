@@ -96,20 +96,16 @@ From here out, we'll put all JSON data into its own `.json` file. This way, we c
 Here's what **data.json** will look like.
 
 ```js
-;[
-  {
-    name: 'Aragorn',
-    race: 'Human',
-  },
-  {
-    name: 'Legolas',
-    race: 'Elf',
-  },
-  {
-    name: 'Gimli',
-    race: 'Dwarf',
-  },
-]
+[{
+	"name": "Aragorn",
+	"race": "Human"
+}, {
+	"name": "Legolas",
+	"race": "Elf"
+}, {
+	"name": "Gimli",
+	"race": "Dwarf"
+}]
 ```
 
 And here's how we'll extract that data in PHP.
