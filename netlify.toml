@@ -2,4 +2,4 @@
   publish = "public"
   command = "yarn run build"
 [build.environment]
-  YARN_VERSION = "1.7.0"
+  YARN_VERSION = "1.16.0"

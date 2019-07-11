@@ -16,7 +16,7 @@ export default class Contact extends Component {
         <p>You can also contact me via email or find me around the web.</p>
         <ul>
           <li>
-            <strong>Email</strong>: <a href="mailto:tania@taniarascia.com">tania@taniarascia.com</a>
+            <strong>Email</strong>: <a href="mailto:tania[AT]taniarascia[DOT]com">tania@taniarascia.com</a>
           </li>
           <li>
             <strong>GitHub</strong>:{' '}

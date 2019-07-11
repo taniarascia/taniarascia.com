@@ -233,7 +233,7 @@ sass --watch style.scss:style.css
 
 Any change I make to the file will be automaticaly compiled.
 
-```terminial
+```terminal
 > > > Change detected to: style.scss
 
         write style.css

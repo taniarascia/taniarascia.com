@@ -14,7 +14,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Around the web
 
-- Email: [tania@taniarascia.com](mailto:tania@taniarascia.com)
+- Email: [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com)
 - GitHub: [taniarascia](https://github.com/taniarascia)
 - Twitter: [taniarascia](https://twitter.com/taniarascia)
 - LinkedIn: [taniarascia](https://linkedin.com/in/taniarascia)
