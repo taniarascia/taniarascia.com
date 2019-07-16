@@ -2,7 +2,7 @@
 date: 2018-10-04
 title: 'Promise.all with Async/Await'
 template: post
-thumbnail: '../thumbnails/js.png'
+thumbnail: '../thumbnails/clock.png'
 slug: promise-all-with-async-await
 categories:
   - JavaScript
