@@ -27,8 +27,6 @@
 
 .lead {
   margin: 0 auto;
-  text-align: center;
-  max-width: 520px;
   font-size: 1.1rem;
 
   a {
@@ -69,6 +67,7 @@
 
     p {
       font-size: 1.3rem;
+      max-width: 550px;
     }
 
     .button {
@@ -119,8 +118,6 @@
 .social-buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
 
   div:first-of-type {
     margin-right: 0.5rem;
@@ -180,6 +177,7 @@
 
   h1 {
     margin: 0.5rem 0;
+    font-weight: 600;
   }
 
   .post-meta {
@@ -233,6 +231,7 @@
 
   h2 {
     font-size: 1.1rem;
+    font-weight: 600;
     line-height: 1.3;
     border-bottom: none;
     margin: 0;
@@ -254,7 +253,7 @@
       .each {
         grid-template-columns: 50px 2fr auto;
         align-items: center;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         margin: 0;
         border: 2px solid transparent;
 
@@ -339,7 +338,7 @@
     &.simple {
       a {
         .each {
-          padding: 0.75rem 1rem;
+          padding: 0.5rem 1rem;
           margin: 0 -1rem;
 
           &:hover {
@@ -452,7 +451,7 @@ h2.publication-company {
   .simple-posts {
     a {
       .each {
-        padding: 0.75rem 1rem;
+        padding: 0.5rem 1rem;
         margin: 0 -1rem;
 
         h2 {
@@ -468,7 +467,7 @@ h2.publication-company {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 
   h2 {
@@ -524,7 +523,7 @@ h2.publication-company {
     .each {
       display: flex;
       justify-content: space-between;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
       border-bottom: 2px solid $light;
 
       &:last-of-type {

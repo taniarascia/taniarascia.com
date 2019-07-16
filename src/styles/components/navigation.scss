@@ -8,24 +8,6 @@
   background: white;
   transition: all 0.3s ease;
 
-  &.scroll {
-    box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
-    background: #222;
-
-    .brand a {
-      color: rgba(255, 255, 255, .9);
-    }
-
-    .links a {
-      color: rgba(255, 255, 255, .6);
-    }
-
-    a:hover,
-    a.active {
-      color: white !important;
-    }
-  }
-
   .cta {
     display: flex;
     align-items: center;

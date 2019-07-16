@@ -85,29 +85,29 @@ h3:not(:first-child) {
 // Heading individual styles
 h1 {
   font-size: $h1-mobile;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 h2 {
   font-size: $h2-mobile;
-  font-weight: 500;
+  font-weight: 700;
   border-bottom: 2px solid lighten($border-color, 12%);
   padding-bottom: 0.5rem;
 }
 
 h3 {
   font-size: $h3-mobile;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 h4 {
   font-size: $h4-mobile;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h5 {
   font-size: $h5-mobile;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @include small-breakpoint {
