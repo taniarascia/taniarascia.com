@@ -1,10 +1,11 @@
 ---
 date: 2019-07-15
-title: 'Display Build Status and Test Coverage Badges for a JavaSript Project'
+title: 'Display Build Status and Test Coverage Badges for a JavaScript Project'
 template: post
 thumbnail: '../thumbnails/jest.png'
 slug: display-build-status-and-test-coverage
 categories:
+  - Tools
   - JavaScript
 tags:
   - javascript
