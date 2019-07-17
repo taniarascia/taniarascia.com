@@ -25,13 +25,13 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Full-Stack Software Developer`} />
+        <Helmet title={`${config.siteTitle} – Software Developer & Writer`} />
         <SEO />
         <div className="container">
           <div className="lead">
             <h1>{`Hi, I'm Tania`}</h1>
             <p>
-              {`I'm a full-stack software developer specializing in modern JavaScript. I make things from scratch, contribute to open source, and write about
+              {`I'm a software developer and writer specializing in modern JavaScript. I make things from scratch, contribute to open source, and write about
                 development in an accessible and intuitive way.`}
             </p>
             <div className="social-buttons">
