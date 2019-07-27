@@ -183,7 +183,7 @@ My project of 2019 has been creating a [Chip-8 emulator](https://github.com/tani
 
 ## Things I Don't Know, Abridged
 
-In true [Dan Abramov](https://overreacted.io/things-i-dont-know-as-of-2018/) fashion, I'm happy to admit the plethora of concepts, technologies, libraries, frameworks, etc. that I don't know. What I don't know I don't know is much more extensive, however. This is a list of things I don't know that I think I probably should.
+In true [Dan Abramov](https://overreacted.io/things-i-dont-know-as-of-2018/) fashion, I'm happy to admit the plethora of concepts, technologies, libraries, frameworks, etc. that I don't know. What I don't know is much more extensive, however. This is a list of things I don't know that I think I probably should.
 
 - GraphQL
 - Redux/MobX
