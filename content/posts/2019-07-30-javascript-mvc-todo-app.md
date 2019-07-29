@@ -18,7 +18,8 @@ I made [this todo app](https://taniarascia.github.io/mvc), which is a simple lit
 
 #### Prerequisites
 
-Basic JavaScript and HTML.
+- Basic JavaScript and HTML
+- Familiarity with [the latest JavaScript syntax](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
 
 #### Goals
 
@@ -26,6 +27,8 @@ Create a todo app in the browser with plain JavaScript, and get familiar with th
 
 - [View demo of the app](https://taniarascia.github.io/mvc)
 - [View source of the app](https://github.com/taniarascia/mvc)
+
+> **Note:** Since this app uses the latest JavaScript features (ES2017), it won't work as-is on some browsers like Safari without using Babel to compile to backwards-compatible JavaScript syntax.
 
 ## What is Model View Controller?
 
@@ -37,7 +40,7 @@ MVC is one possible pattern for organizing your code. It's a popular one.
 
 The **model** is the data. In this todo application, that'll be the actual todos, and the methods that will add, edit, or delete them.
 
-The **view** is how the data is displayed. In this todo application, that will be the rendered HTML in the DOM, and CSS.
+The **view** is how the data is displayed. In this todo application, that will be the rendered HTML in the DOM and CSS.
 
 The **controller** connects the model and the view. It takes user input, such as clicking or typing, and determines when the view should be updated.
 
@@ -544,7 +547,7 @@ addTodo(todo) {
 
 ### Adding live editing functionality
 
-The last piece in this puzzle is the ability to edit an existing todo. Editing is always a little trickier than adding or deleting. I wanted to make it simple, and not require an edit button or replacing the `span` with an `input` or anything. We also don't want to call the `editTodo` every single time a letter is typed.
+The last piece in this puzzle is the ability to edit an existing todo. Editing is always a little trickier than adding or deleting. I wanted to make it simple, and not require an edit button or replacing the `span` with an `input` or anything. We also don't want to call the `editTodo` every single time a letter is typed, because it will re-render the whole todo list UI.
 
 I decided to make one method on the controller that updates a temporary state variable with the new editing value, and another that calls the `editTodo` method in the model.
 
@@ -563,6 +566,7 @@ handleEditTodo = event => {
   }
 }
 
+// Send the completed value to the model
 handleEditTodoComplete = event => {
   if (this.temporaryEditValue) {
     const id = parseInt(event.target.parentElement.id)
@@ -573,9 +577,9 @@ handleEditTodoComplete = event => {
 }
 ```
 
-I'll admit this solution is a little messy, because the `temporaryEditValue` variable should technically be in the view as it's view-related state, not the controller, but I just put it together quickly to add that last bit of functionality.
+> I'll admit this solution is a little messy, because the `temporaryEditValue` variable should technically be in the view and not in the controller, as it's view-related state.
 
-Now we can add these to the `input`.
+Now we can add these to the view's event listeners. An `input` event is what gets fired when you type in a `contenteditable` element, and `focusout` fires when you leave a `contenteditable` element.
 
 <div class="filename">View</div>
 
@@ -588,3 +592,14 @@ setUpEventListeners(controller) {
   this.todoList.addEventListener('change', controller.handleToggle)
 }
 ```
+
+Now when you click on any todo item, you'll enter into "editing" mode, which will update the temporary state variable, and when you tab or click away from the todo, it will save in the model and reset the temporary state.
+
+## Conclusion
+
+There you have it. A dependency-free todo app in plain JavaScript that demonstrates the concepts of model-view-controller architecture. Here is a link to the completed demo and source once again.
+
+- [View demo of the app](https://taniarascia.github.io/mvc)
+- [View source of the app](https://github.com/taniarascia/mvc)
+
+I hope this tutorial helped you understand MVC. Using this loosely-coupled pattern can add a lot of boilerplate and abstraction to an application, but it's also a predictable, familiar pattern that is commonly used across many frameworks, and an important concept to know as a developer.
