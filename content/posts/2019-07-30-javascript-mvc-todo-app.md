@@ -24,6 +24,9 @@ Basic JavaScript and HTML.
 
 Create a todo app in the browser with plain JavaScript, and get familiar with the concepts of MVC (and OOP - object-oriented programming).
 
+- [View demo of the app](https://taniarascia.github.io/mvc)
+- [View source of the app](https://github.com/taniarascia/mvc)
+
 ## What is Model View Controller?
 
 MVC is one possible pattern for organizing your code. It's a popular one.
@@ -177,7 +180,7 @@ class View {
   constructor() {}
 
   // Create an element with an optional CSS class
-  createElement = (tag, className) => {
+  createElement(tag, className) {
     const element = document.createElement(tag)
     if (className) element.classList.add(className)
 
@@ -185,7 +188,7 @@ class View {
   }
 
   // Retrieve an element from the DOM
-  getElement = selector => {
+  getElement(selector) {
     const element = document.querySelector(selector)
 
     return element
@@ -238,48 +241,350 @@ class View {
 }
 ```
 
+Now the parts of the view that won't change are set up.
+
+![](../images/mvc2.png)
+
 Two more small things - a getter and resetter of the input (new todo) value.
 
 <div class="filename">View</div>
 
 ```js
-class View {
-  // ...
-  get todoText() {
-    return this.input.value
-  }
+get todoText() {
+  return this.input.value
+}
 
-  resetInput() {
-    this.input.value = ''
-  }
+resetInput() {
+  this.input.value = ''
 }
 ```
 
-Alright, all the setup's done, so here's the worst part: displaying the todos.
+All the setup's done now. The most complex part is displaying the todo list, which is the part that will change every time a change is made to the todos.
 
 <div class="filename">View</div>
 
 ```js
-class View {
+displayTodos(todos) {
   // ...
-  displayTodos(todos) {
-    // ...
-  }
 }
 ```
+
+The `displayTodos` method will create the `ul` and `li`s that the todo list consists of, and display them. Every time a todo is changed, added, or removes, the `displayTodos` method will be called again with the `todos` from the model, resetting the list and redisplaying them. This will keep the view in sync with the model state.
+
+The first thing we'll do is remove all todo nodes every time it's called. Then, we'll check if any todos exist. If they don't, we'll display an empty list message.
 
 <div class="filename">View</div>
 
 ```js
- // Delete all nodes
-    while (this.todoList.firstChild) {
-      this.todoList.removeChild(this.todoList.firstChild)
+// Delete all nodes
+while (this.todoList.firstChild) {
+  this.todoList.removeChild(this.todoList.firstChild)
+}
+
+// Show default message
+if (todos.length === 0) {
+  const p = this.createElement('p')
+  p.textContent = 'Nothing to do! Add a task?'
+  this.todoList.append(p)
+} else {
+  // ...
+}
+```
+
+Now we'll just loop through the todos and display a checkbox, span, and delete button for every existing todo.
+
+<div class="filename">View</div>
+
+```js
+else {
+  // Create todo item nodes for each todo in state
+  todos.forEach(todo => {
+    const li = this.createElement('li')
+    li.id = todo.id
+
+    // Each todo item will have a checkbox you can toggle
+    const checkbox = this.createElement('input')
+    checkbox.type = 'checkbox'
+    checkbox.checked = todo.complete
+
+    // The todo item text will be in a contenteditable span
+    const span = this.createElement('span')
+    span.contentEditable = true
+    span.classList.add('editable')
+
+    // If the todo is complete, it will have a strikethrough
+    if (todo.complete) {
+      const strike = this.createElement('s')
+      strike.textContent = todo.text
+      span.append(strike)
+    } else {
+      // Otherwise just display the text
+      span.textContent = todo.text
     }
 
-    // Show default message
-    if (todos.length === 0) {
-      const p = this.createElement('p')
-      p.textContent = 'Nothing to do! Add a task?'
-      this.todoList.append(p)
-    } else {
+    // The todos will also have a delete button
+    const deleteButton = this.createElement('button', 'delete')
+    deleteButton.textContent = 'Delete'
+    li.append(checkbox, span, deleteButton)
+
+    // Append nodes to the todo list
+    this.todoList.append(li)
+  })
+}
+```
+
+Now the view is set up and the model is set up. We just don't have a way to connect them - no events watching for a user to make input, and no handlers to handle the output of such an event.
+
+The console still exists as a temporary controller, and you can add and remove todos through it.
+
+![](../images/mvc3.png)
+
+## Controller
+
+Finally, the controller is the link between the model - the data - and the view - what the user sees. Here's what we have so far in the controller.
+
+<div class="filename">Controller</div>
+
+```js
+class Controller {
+  constructor() {
+    this.model = new Model()
+    this.view = new View()
+  }
+}
+```
+
+Our first link between the view and model is to make a method that calls `displayTodos` every time a todo changes. We can also call it once in the `constructor` to display the initial todos if there are any.
+
+<div class="filename">Controller</div>
+
+```js
+class Controller {
+  constructor() {
+    this.model = new Model()
+    this.view = new View()
+
+    // Display initial todos
+    this.onTodoListChanged(this.model.todos)
+  }
+
+  onTodoListChanged = todos => {
+    this.view.displayTodos(todos)
+  }
+}
+```
+
+The controller will handle events after they're fired. When you submit a new todo, or click the delete button, or click on the checkbox of a todo, an event will be fired. The view must listen for those events because they're user input of the view, but it will dispatch the responsibility of what will happen in response to the event to the controller.
+
+We'll create handlers for the events. First, a `handleAddTodo` event, which will fire when the todo input form we created is submitted, either by pressing enter or by clicking the "Submit" button. This is a `submit` event.
+
+Back in the view, we had a getter for `this.input.value` as `get todoText`. We'll make sure the input isn't empty to prevent submitting an empty todo, then we'll create the todo with an `id`, `text`, and `complete` being false. We'll add the todo to the model, and reset the input.
+
+<div class="filename">Controller</div>
+
+```js
+// Handle submit event for adding a todo
+handleAddTodo = event => {
+  event.preventDefault()
+
+  if (this.view.todoText) {
+    const todo = {
+      id: this.model.todos.length + 1,
+      text: this.view.todoText,
+      complete: false,
+    }
+
+    this.model.addTodo(todo)
+    this.view.resetInput()
+  }
+}
+```
+
+Deleting the todo is similar. It will respond to a `click` event on the delete button. The parent element of the delete button is the todo `li` itself, which has the corresponding `id` attached to it. We'll send that data to the proper model method.
+
+<div class="filename">Controller</div>
+
+```js
+// Handle click event for deleting a todo
+handleDeleteTodo = event => {
+  if (event.target.className === 'delete') {
+    const id = parseInt(event.target.parentElement.id)
+
+    this.model.deleteTodo(id)
+  }
+}
+```
+
+In JavaScript, when you click on a checkbox to toggle it, it emits a `change` event. We'll handle this the same way we handled clicking the delete button, and call the model method.
+
+<div class="filename">Controller</div>
+
+```js
+// Handle change event for toggling a todo
+handleToggle = event => {
+  if (event.target.type === 'checkbox') {
+    const id = parseInt(event.target.parentElement.id)
+
+    this.model.toggleTodo(id)
+  }
+}
+```
+
+### Setting up event listeners
+
+Now we have these three handlers, but the controller still doesn't know when to call them. We have to put event listeners on the DOM elements in the view. We'll respond to the `submit` event on the form, and `click` and `change` events on the todo list.
+
+In `View`, add a `setUpEventListeners` method which will call those events.
+
+<div class="filename">View</div>
+
+```js
+setUpEventListeners(controller) {
+  this.form.addEventListener('submit', controller.handleAddTodo)
+  this.todoList.addEventListener('click', controller.handleDeleteTodo)
+  this.todoList.addEventListener('change', controller.handleToggle)
+}
+```
+
+We need to pass the handlers to the view somehow. We're going to bind the methods that are listening for the events to the view. In the `constructor` of `Controller`, call `setUpEventListeners` and pass the `this` context of the controller.
+
+> We used arrow functions on all the handle events. This allows us to call them from the view using the `this` context of the controller. If we did not use arrow functions, we would have to call them as `controller.handleAddTodo.bind(this)`.
+
+<div class="filename">Controller</div>
+
+```js
+this.view.setUpEventListeners(this)
+```
+
+Now when a `submit`, `click` or `change` event happens on the specified elements, the corresponding handlers will be invoked.
+
+### Respond to callbacks in the model
+
+There's something we left out - the events are listening, the handlers are invoked, but nothing happens. This is because the model does not know that the view should update, and does not know what to do to make the view update. We have the `displayTodos` method on the view to solve this, but as mentioned earlier, the model and view should not know about each other.
+
+Just like with listening for events, the model should fire back to the controller to let it know that something happened.
+
+We already made the `onTodoListChanged` method on the controller to deal with this, we just have to make the model aware of it. We'll bind it to the model the same way we did with the handlers on the view.
+
+In the model, add a `bindHandler` for `onTodoListChanged`.
+
+<div class="filename">Model</div>
+
+```js
+bindHandler(controller) {
+  this.onTodoListChanged = controller.onTodoListChanged
+}
+```
+
+And in the controller, send the `this` context.
+
+<div class="filename">Controller</div>
+
+```js
+constructor() {
+  this.model.bindHandler(this)
+  this.view.setUpEventListeners(this)
+}
+```
+
+Now after every method in the model, you'll call the `onTodoListChanged` callback.
+
+> In a more complex app, you might have different callbacks for different events, but in this simple todo app, we can share one callback between all the methods.
+
+<div class="filename">Model</div>
+
+```js
+addTodo(todo) {
+  this.todos = [...this.todos, todo]
+
+  this.onTodoListChanged(this.todos)
+}
+```
+
+### Adding local storage
+
+At this point, the app is mostly complete and all the concepts have been demonstrated. We can make it a little bit more permanent by persisting the data in the local storage of the browser, so it will persist locally after refresh.
+
+> If you aren't aware of how local storage works, read [How to Use Local Storage with JavaScript](h/how-to-use-local-storage-with-javascript/).
+
+Now we can set the initial todo value to what's in local storage or an empty array.
+
+<div class="filename">Model</div>
+
+```js
+class Model {
+  constructor() {
+    this.todos = JSON.parse(localStorage.getItem('todos')) || []
+  }
+}
+```
+
+And make an `update` function to update the value of `localStorage`.
+
+<div class="filename">Model</div>
+
+```js
+update() {
+  localStorage.setItem('todos', JSON.stringify(this.todos))
+}
+```
+
+After every change to `this.todos`, we can call it.
+
+<div class="filename">Model</div>
+
+```js
+addTodo(todo) {
+  this.todos = [...this.todos, todo]
+  this.update()
+
+  this.onTodoListChanged(this.todos)
+}
+```
+
+### Adding live editing functionality
+
+The last piece in this puzzle is the ability to edit an existing todo. Editing is always a little trickier than adding or deleting. I wanted to make it simple, and not require an edit button or replacing the `span` with an `input` or anything. We also don't want to call the `editTodo` every single time a letter is typed.
+
+I decided to make one method on the controller that updates a temporary state variable with the new editing value, and another that calls the `editTodo` method in the model.
+
+<div class="filename">Controller</div>
+
+```js
+constructor() {
+  // ...
+  this.temporaryEditValue
+}
+
+// Update temporary state
+handleEditTodo = event => {
+  if (event.target.className === 'editable') {
+    this.temporaryEditValue = event.target.innerText
+  }
+}
+
+handleEditTodoComplete = event => {
+  if (this.temporaryEditValue) {
+    const id = parseInt(event.target.parentElement.id)
+
+    this.model.editTodo(id, this.temporaryEditValue)
+    this.temporaryEditValue = ''
+  }
+}
+```
+
+I'll admit this solution is a little messy, because the `temporaryEditValue` variable should technically be in the view as it's view-related state, not the controller, but I just put it together quickly to add that last bit of functionality.
+
+Now we can add these to the `input`.
+
+<div class="filename">View</div>
+
+```js
+setUpEventListeners(controller) {
+  this.form.addEventListener('submit', controller.handleAddTodo)
+  this.todoList.addEventListener('click', controller.handleDeleteTodo)
+  this.todoList.addEventListener('input', controller.handleEditTodo)
+  this.todoList.addEventListener('focusout', controller.handleEditTodoComplete)
+  this.todoList.addEventListener('change', controller.handleToggle)
+}
 ```
