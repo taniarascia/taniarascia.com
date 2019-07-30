@@ -74,7 +74,7 @@ export default class PostTemplate extends Component {
           <p>
             I write about JavaScript, programming, and front-end design. Join over{' '}
             <strong className="pink">6,000</strong> other developers in keeping up with my content.
-            Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
+            Unsubscribe whenever. <b>Never any spam, ads, or affiliate links.</b>
           </p>
           <NewsletterForm />
         </article>

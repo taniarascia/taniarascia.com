@@ -4,9 +4,9 @@ slug: resume
 template: page
 ---
 
-### Software Developer
+### Web Developer
 
-Highly motivated and versatile software developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
+Highly motivated and versatile web developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
 
 - [taniarascia.com](https://www.taniarascia.com)
 - [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com)

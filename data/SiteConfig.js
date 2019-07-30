@@ -9,7 +9,7 @@ const config = {
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
   siteDescription:
-    'Tania Rascia is software developer and writer specializing in modern JavaScript who breaks down complex concepts in an accessible and intuitive way.',
+    'Tania Rascia is web developer and writer specializing in modern JavaScript who breaks down complex concepts in an accessible and intuitive way.',
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-42068444-1',
   disqusShortname: 'taniarascia',

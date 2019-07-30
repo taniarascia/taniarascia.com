@@ -7,6 +7,10 @@
   width: 100%;
   background: white;
 
+  &.scroll {
+    box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
+  }
+
   .cta {
     display: flex;
     align-items: center;
@@ -100,14 +104,11 @@ button.dark-switcher {
 @include small-breakpoint {
   .nav {
     &.scroll {
-      box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
-
       .nav-container {
         height: 60px;
       }
 
       .links a {
-
         &:hover,
         &.active {
           color: #111;

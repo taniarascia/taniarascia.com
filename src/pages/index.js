@@ -15,6 +15,7 @@ import podcasts from '../../data/podcasts'
 import react from '../../content/thumbnails/react.png'
 import vue from '../../content/thumbnails/vue.png'
 import js from '../../content/thumbnails/js.png'
+import newMoon from '../../content/images/new-moon.svg'
 
 export default class Index extends Component {
   render() {
@@ -25,13 +26,16 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Software Developer & Writer`} />
+        <Helmet title={`${config.siteTitle} – Web developer & writer`} />
         <SEO />
         <div className="container">
           <div className="lead">
+            <a href="https://taniarascia.github.io/new-moon" target="_blank">
+              <img src={newMoon} className="new-moon-icon" title="Hmm? What's this?" />
+            </a>
             <h1>{`Hi, I'm Tania`}</h1>
             <p>
-              {`I'm a software developer and writer specializing in modern JavaScript. I make things from scratch, contribute to open source, and write about
+              {`I'm a web developer and writer specializing in modern JavaScript. I make things from scratch, contribute to open source, and write about
                 development in an accessible and intuitive way.`}
             </p>
             <div className="social-buttons">
@@ -111,7 +115,7 @@ export default class Index extends Component {
             <p>
               I write about JavaScript, programming, and front-end design. Join over{' '}
               <strong className="pink">6,000</strong> other developers in keeping up with my
-              content. Unsubscribe whenever. <u>Never any spam, ads, or affiliate links.</u>
+              content. Unsubscribe whenever. <b>Never any spam, ads, or affiliate links.</b>
             </p>
             <NewsletterForm />
           </section>
