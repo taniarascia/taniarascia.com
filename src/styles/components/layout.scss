@@ -904,14 +904,15 @@ blockquote {
 }
 
 .new-moon-icon {
+  display: none;
   float: right;
-  max-width: 100px;
+  max-width: 180px;
+  margin-top: 2rem;
   margin-left: 3.5rem;
   margin-bottom: 0;
 
   @include small-breakpoint {
-    max-width: 180px;
-    margin-top: 2rem;
+    display: block;
   }
 }
 
