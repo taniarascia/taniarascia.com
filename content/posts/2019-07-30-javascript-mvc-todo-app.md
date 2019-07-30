@@ -42,11 +42,11 @@ The **model** is the data. In this todo application, that'll be the actual todos
 
 The **view** is how the data is displayed. In this todo application, that will be the rendered HTML in the DOM and CSS.
 
-The **controller** connects the model and the view. It takes user input, such as clicking or typing, and determines when the view should be updated.
+The **controller** connects the model and the view. It takes user input, such as clicking or typing, and handles callbacks for user interactions.
 
 The model never touches the view. The view never touches the model. The controller connects them.
 
-> I'd like to mention that doing MVC for a simple todo app is actually a ton of boilerplate. It would really be overcomplicating things if this was the app you wanted to create and you made this whole system. But the point is to try to understand it on a small level so you can understand why a scaled system might use it.
+> I'd like to mention that doing MVC for a simple todo app is actually a ton of boilerplate. It would really be overcomplicating things if this was the app you wanted to create and you made this whole system. The point is to try to understand it on a small level so you can understand why a scaled system might use it.
 
 ## Initial Setup
 
@@ -62,7 +62,7 @@ This is going to be a fully JavaScript app, which means everything will be handl
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Todos</title>
+    <title>Todo App</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -95,13 +95,13 @@ class View {
 }
 
 class Controller {
-  constructor() {
-    this.model = new Model()
-    this.view = new View()
+  constructor(model, view) {
+    this.model = model
+    this.view = view
   }
 }
 
-const app = new Controller()
+const app = new Controller(new Model(), new View())
 ```
 
 Very nice and abstract.
@@ -344,15 +344,15 @@ The console still exists as a temporary controller, and you can add and remove t
 
 ## Controller
 
-Finally, the controller is the link between the model - the data - and the view - what the user sees. Here's what we have so far in the controller.
+Finally, the controller is the link between the model (the data ) and the view (what the user sees). Here's what we have so far in the controller.
 
 <div class="filename">Controller</div>
 
 ```js
 class Controller {
-  constructor() {
-    this.model = new Model()
-    this.view = new View()
+  constructor(model, view) {
+    this.model = model
+    this.view = view
   }
 }
 ```
@@ -363,9 +363,9 @@ Our first link between the view and model is to make a method that calls `displa
 
 ```js
 class Controller {
-  constructor() {
-    this.model = new Model()
-    this.view = new View()
+  constructor(model, view) {
+    this.model = model
+    this.view = view
 
     // Display initial todos
     this.onTodoListChanged(this.model.todos)
@@ -433,30 +433,32 @@ handleToggle = event => {
 }
 ```
 
+> These controller methods are a bit messy - ideally they shouldn't handle any logic, but should simply call the model.
+
 ### Setting up event listeners
 
 Now we have these three handlers, but the controller still doesn't know when to call them. We have to put event listeners on the DOM elements in the view. We'll respond to the `submit` event on the form, and `click` and `change` events on the todo list.
 
-In `View`, add a `setUpEventListeners` method which will call those events.
+In `View`, add a `bindEvents` method which will call those events.
 
 <div class="filename">View</div>
 
 ```js
-setUpEventListeners(controller) {
+bindEvents(controller) {
   this.form.addEventListener('submit', controller.handleAddTodo)
   this.todoList.addEventListener('click', controller.handleDeleteTodo)
   this.todoList.addEventListener('change', controller.handleToggle)
 }
 ```
 
-We need to pass the handlers to the view somehow. We're going to bind the methods that are listening for the events to the view. In the `constructor` of `Controller`, call `setUpEventListeners` and pass the `this` context of the controller.
+We need to pass the handlers to the view somehow. We're going to bind the methods that are listening for the events to the view. In the `constructor` of `Controller`, call `bindEvents` and pass the `this` context of the controller.
 
-> We used arrow functions on all the handle events. This allows us to call them from the view using the `this` context of the controller. If we did not use arrow functions, we would have to call them as `controller.handleAddTodo.bind(this)`.
+> We used arrow functions on all the handle events. This allows us to call them from the view using the `this` context of the controller. If we did not use arrow functions, we would have to manually bind them, like `controller.handleAddTodo.bind(this)`.
 
 <div class="filename">Controller</div>
 
 ```js
-this.view.setUpEventListeners(this)
+this.view.bindEvents(this)
 ```
 
 Now when a `submit`, `click` or `change` event happens on the specified elements, the corresponding handlers will be invoked.
@@ -469,12 +471,12 @@ Just like with listening for events, the model should fire back to the controlle
 
 We already made the `onTodoListChanged` method on the controller to deal with this, we just have to make the model aware of it. We'll bind it to the model the same way we did with the handlers on the view.
 
-In the model, add a `bindHandler` for `onTodoListChanged`.
+In the model, add a `bindEvents` for `onTodoListChanged`.
 
 <div class="filename">Model</div>
 
 ```js
-bindHandler(controller) {
+bindEvents(controller) {
   this.onTodoListChanged = controller.onTodoListChanged
 }
 ```
@@ -485,8 +487,9 @@ And in the controller, send the `this` context.
 
 ```js
 constructor() {
-  this.model.bindHandler(this)
-  this.view.setUpEventListeners(this)
+  // ...
+  this.model.bindEvents(this)
+  this.view.bindEvents(this)
 }
 ```
 
@@ -504,7 +507,7 @@ addTodo(todo) {
 }
 ```
 
-### Adding local storage
+### Add local storage
 
 At this point, the app is mostly complete and all the concepts have been demonstrated. We can make it a little bit more permanent by persisting the data in the local storage of the browser, so it will persist locally after refresh.
 
@@ -545,7 +548,7 @@ addTodo(todo) {
 }
 ```
 
-### Adding live editing functionality
+### Add live editing functionality
 
 The last piece in this puzzle is the ability to edit an existing todo. Editing is always a little trickier than adding or deleting. I wanted to make it simple, and not require an edit button or replacing the `span` with an `input` or anything. We also don't want to call the `editTodo` every single time a letter is typed, because it will re-render the whole todo list UI.
 
@@ -584,7 +587,7 @@ Now we can add these to the view's event listeners. An `input` event is what get
 <div class="filename">View</div>
 
 ```js
-setUpEventListeners(controller) {
+bindEvents(controller) {
   this.form.addEventListener('submit', controller.handleAddTodo)
   this.todoList.addEventListener('click', controller.handleDeleteTodo)
   this.todoList.addEventListener('input', controller.handleEditTodo)
