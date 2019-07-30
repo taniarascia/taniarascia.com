@@ -1,6 +1,6 @@
 ---
 date: 2019-07-30
-title: 'Writing a Simple MVC App in Vanilla JavaScript'
+title: 'Writing a Simple MVC App in Plain JavaScript'
 template: post
 thumbnail: '../thumbnails/triangle.png'
 slug: javascript-mvc-todo-app
