@@ -598,6 +598,8 @@ bindEvents(controller) {
 
 Now when you click on any todo item, you'll enter into "editing" mode, which will update the temporary state variable, and when you tab or click away from the todo, it will save in the model and reset the temporary state.
 
+> The `contenteditable` solution was quickly implemented. There are all sorts of issues you need to consider when using `contenteditable` in a production app, [many of which I've written about here](/content-editable-elements-in-javascript-react/).
+
 ## Conclusion
 
 There you have it. A dependency-free todo app in plain JavaScript that demonstrates the concepts of model-view-controller architecture. Here is a link to the completed demo and source once again.
