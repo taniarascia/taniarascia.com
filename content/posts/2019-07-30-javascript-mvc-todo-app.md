@@ -511,7 +511,7 @@ addTodo(todo) {
 
 At this point, the app is mostly complete and all the concepts have been demonstrated. We can make it a little bit more permanent by persisting the data in the local storage of the browser, so it will persist locally after refresh.
 
-> If you aren't aware of how local storage works, read [How to Use Local Storage with JavaScript](h/how-to-use-local-storage-with-javascript/).
+> If you aren't aware of how local storage works, read [How to Use Local Storage with JavaScript](/how-to-use-local-storage-with-javascript/).
 
 Now we can set the initial todo value to what's in local storage or an empty array.
 
