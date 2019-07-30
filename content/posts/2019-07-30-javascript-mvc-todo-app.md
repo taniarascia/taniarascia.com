@@ -160,7 +160,7 @@ will add a todo to the list, and you can log the contents of `app.model.todos`.
 
 ![](../images/mvc1.png)
 
-That's good enough for the model right now. In the end, we'll store the todos in [local storage](h/how-to-use-local-storage-with-javascript/) to make it semi-permanent, but for now the todos will just refresh any time you refresh the page.
+That's good enough for the model right now. In the end, we'll store the todos in [local storage](/how-to-use-local-storage-with-javascript/) to make it semi-permanent, but for now the todos will just refresh any time you refresh the page.
 
 As we can see, the model only deals with the actual data, and modifying that data. It doesn't understand or have any knowledge the **input** - what's modifying it, or the **output** - what will end up displaying.
 
