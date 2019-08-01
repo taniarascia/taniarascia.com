@@ -16,7 +16,7 @@ $dark-border: darken($background, 3%);
     &:hover,
     &:active,
     &:focus {
-      color: lighten($primary-color, 12%);
+      color: darken($primary-color, 2%);
       background: transparent;
     }
   }
@@ -82,7 +82,7 @@ $dark-border: darken($background, 3%);
     }
 
     .links a {
-      color: darken($foreground, 10%);
+      color: darken($foreground, 20%);
 
       &:hover,
       &.active {
@@ -214,7 +214,7 @@ $dark-border: darken($background, 3%);
 
   @include small-breakpoint {
     .projects .each {
-      border-bottom: 2px solid darken($background, 5%);
+      border-bottom: 2px solid lighten($background, 3%);
       &:last-of-type {
         border-bottom: none;
       }
@@ -247,7 +247,22 @@ $dark-border: darken($background, 3%);
   }
 
   blockquote {
-    background: transparent;
+    border: 2px solid #393939;
+    background: #222;
+
+    p {
+      color: $yellow;
+    }
+
+    a {
+      color: lighten($yellow, 25%) !important;
+      border-bottom: $yellow !important;
+
+      &:hover {
+        color: darken($yellow, 15%) !important;
+        background: #111 !important;
+      }
+    }
 
     &.quotation {
       border-color: #3a3a3a;
@@ -264,11 +279,18 @@ $dark-border: darken($background, 3%);
     strong {
       color: $foreground;
     }
+
+    a {
+      color: darken($foreground, 20%);
+      &:hover {
+        color: lighten($foreground, 10%);
+      }
+    }
   }
 
   #{$forms} {
     color: $foreground;
-    border: 2px solid #333;
+    border: 2px solid #393939;
     background: #222 !important;
 
     &:hover {
@@ -283,18 +305,18 @@ $dark-border: darken($background, 3%);
 
   #{$buttons} {
     color: $primary-color;
-    border: 2px solid $primary-color;
-    background: transparent !important;
+    border: 2px solid #222;
+    background: #222 !important;
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid lighten($primary-color, 15%);
-      background: transparent;
-      color: lighten($primary-color, 15%);
+      border: 2px solid black !important;
+      background: black !important;
+      color: darken($primary-color, 10%);
     }
   }
-  
+
   .donate-button {
     background: transparent;
   }
@@ -319,7 +341,7 @@ $dark-border: darken($background, 3%);
   }
 
   button.dark-switcher {
-    border: none;
+    border: none !important;
   }
 
   pre.language-terminal code.language-terminal {

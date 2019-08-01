@@ -651,7 +651,7 @@ h2.publication-company {
 
     .quotation {
       margin: 1rem;
-      padding: 2.5rem;
+      padding: 2.5 2.5rem 3.5rem;
       border-radius: $border-radius;
       flex: 1;
       box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -666,19 +666,22 @@ blockquote {
   border-radius: $border-radius;
   font-weight: 500;
   margin: 1.5rem 0;
-  padding: 1rem;
+  padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
 
   &.quotation {
-    border-radius: 0;
+    border-radius: $border-radius;
     border: 0;
-    background: transparent;
-    padding: 0.5rem 0;
-
-    p {
-      padding: 0;
-      font-size: 1.3rem;
+    background: $primary-color;
+    color: white;
+    padding: 1.5rem 1.5rem 3.5rem;
+    position: relative;
+    cite {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.5rem;
+      color: rgba(255, 255, 255, 0.6);
     }
   }
 
@@ -706,7 +709,7 @@ blockquote {
   cite {
     display: block;
     margin-top: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-align: right;
     font-family: $font-family;
     color: rgba(0, 0, 0, 0.4);
@@ -721,8 +724,15 @@ blockquote {
   blockquote {
     padding: 2rem;
 
+    &.quotation {
+      padding: 2rem 2rem 3.5rem;
+    }
+
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+    }
+    cite {
+      font-size: 2rem;
     }
   }
 }
@@ -906,8 +916,8 @@ blockquote {
 .new-moon-icon {
   display: none;
   float: right;
-  max-width: 180px;
-  margin-top: 2rem;
+  max-width: 150px;
+  margin-top: 3rem;
   margin-left: 3.5rem;
   margin-bottom: 0;
 
