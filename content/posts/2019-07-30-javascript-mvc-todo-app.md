@@ -392,7 +392,7 @@ handleAddTodo = event => {
 
   if (this.view.todoText) {
     const todo = {
-      id: this.model.todos.length + 1,
+      id: this.model.todos.length > 0 ? this.model.todos[this.model.todos.length - 1].id + 1 : 1,
       text: this.view.todoText,
       complete: false,
     }
