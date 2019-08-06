@@ -63,11 +63,11 @@
     font-size: 1.2rem;
 
     h1 {
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       max-width: 550px;
     }
 
@@ -127,6 +127,7 @@
 
 .front-page {
   margin-top: 2rem;
+
   h2 {
     border-bottom: 0;
     padding-bottom: 0;
@@ -650,11 +651,14 @@ h2.publication-company {
     display: flex;
 
     .quotation {
-      margin: 1rem;
       padding: 2.5 2.5rem 3.5rem;
       border-radius: $border-radius;
       flex: 1;
       box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+
+      &:nth-of-type(2n) {
+        margin-left: 1rem;
+      }
     }
   }
 }
@@ -670,6 +674,16 @@ blockquote {
   line-height: 1.6;
   font-size: 1rem;
 
+  &.success {
+    border: 2px solid $green;
+    background: lighten($green, 48%);
+  }
+
+  &.error {
+    border: 2px solid $error;
+    background: lighten($error, 23%);
+  }
+
   &.quotation {
     border-radius: $border-radius;
     border: 0;
@@ -677,6 +691,7 @@ blockquote {
     color: white;
     padding: 1.5rem 1.5rem 3.5rem;
     position: relative;
+
     cite {
       position: absolute;
       bottom: 1rem;
@@ -731,6 +746,7 @@ blockquote {
     p {
       font-size: 1.3rem;
     }
+
     cite {
       font-size: 2rem;
     }
@@ -781,6 +797,7 @@ blockquote {
       display: flex;
     }
   }
+
   .avatar {
     margin-right: 2rem;
   }
@@ -905,8 +922,12 @@ blockquote {
 
 .newsletter-section {
   border-radius: $border-radius;
-  padding: 1.5rem;
+  padding: 2.5rem;
   background: $light;
+
+  form {
+    margin-bottom: 0;
+  }
 
   @include small-breakpoint {
     padding: 3rem;
@@ -957,6 +978,66 @@ blockquote {
 
 iframe {
   margin-bottom: 0;
+}
+
+.comments {
+  [type="text"] {
+    width: auto;
+    min-width: 300px;
+  }
+
+  .comment {
+    border-bottom: 2px solid lighten($border-color, 12%);
+    padding: 1.5rem 0;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      color: lighten($font-color, 10%);
+      margin: 0 1rem 0 0;
+      font-size: 1.2rem;
+      padding: 0;
+      border: 0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      white-space: pre-line;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  .comment-date {
+    color: lighten($font-color, 20%);
+    font-size: 1rem;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+[type="submit"]:disabled,
+button[disabled] {
+  opacity: .5;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: .5;
+  }
 }
 
 ::selection {

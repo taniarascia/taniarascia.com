@@ -12,15 +12,11 @@ const config = {
     'Tania Rascia is web developer and writer specializing in modern JavaScript who breaks down complex concepts in an accessible and intuitive way.',
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-42068444-1',
-  disqusShortname: 'taniarascia',
   postDefaultCategoryID: 'Tech',
+  commentsApi: 'https://tania-comments-api.herokuapp.com/comments',
   userName: 'Tania',
   userEmail: 'tania@taniarascia.com',
   userTwitter: 'taniarascia',
-  userLocation: 'Chicago, IL',
-  userAvatar: 'https://api.adorable.io/avatars/150/test.png',
-  userDescription:
-    'I build open source projects and write the missing instruction manuals of the web.',
   menuLinks: [
     {
       name: 'Me',

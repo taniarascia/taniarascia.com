@@ -9,10 +9,30 @@ import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
+import Comments from '../components/Comments'
 
 export default class PostTemplate extends Component {
-  render() {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      comments: [],
+    }
+  }
+
+  async componentDidMount() {
     const { slug } = this.props.pageContext
+
+    const response = await fetch(`${config.commentsApi}${slug}`)
+    const comments = await response.json()
+
+    this.setState({ comments })
+  }
+
+  render() {
+    const { comments } = this.state
+    const { slug } = this.props.pageContext
+    const commentSlug = slug.replace(/\\|\//g, '')
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
     let thumbnail
@@ -31,7 +51,6 @@ export default class PostTemplate extends Component {
 
     const date = formatDate(post.date)
     const githubLink = editOnGithub(post)
-    const twitterUrl = `https://twitter.com/search?q=${config.siteUrl}/${post.slug}/`
     const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
       config.siteUrl
     }/${post.slug}/&via=taniarascia`
@@ -53,28 +72,28 @@ export default class PostTemplate extends Component {
                   Share
                 </a>
                 /
-                <a className="github-link" href={githubLink} target="_blank">
+                <a
+                  className="github-link"
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Edit on Github ✏️
                 </a>
               </div>
               <PostTags tags={post.tags} />
             </div>
           </header>
+
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div>
-            {' '}
-            <a className="button twitter-button" href={twitterShare} target="_blank">
-              Share
-            </a>{' '}
-            <a className="button twitter-button" href={twitterUrl} target="_blank">
-              Discuss
-            </a>
-          </div>
+
+          <Comments commentsList={comments} slug={commentSlug} />
+
           <h3>Join the newsletter</h3>
           <p>
-            I write about JavaScript, programming, and front-end design. Join over{' '}
-            <strong className="pink">6,000</strong> other developers in keeping up with my content.
-            Unsubscribe whenever. <b>Never any spam, ads, or affiliate links.</b>
+            I write about JavaScript, programming, and front-end design. Join other developers in
+            keeping up with my content. Unsubscribe whenever.{' '}
+            <b>Never any spam, ads, or affiliate links.</b>
           </p>
           <NewsletterForm />
         </article>

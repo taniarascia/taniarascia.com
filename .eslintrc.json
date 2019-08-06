@@ -2,6 +2,7 @@
   "extends": ["airbnb", "prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
+    "react/no-did-update-set-state": "off",
     "prefer-destructuring": "off",
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
@@ -16,6 +17,9 @@
     "react/jsx-one-expression-per-line": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/accessible-emoji": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
     "jsx-a11y/anchor-is-valid": [
       0,
       {
