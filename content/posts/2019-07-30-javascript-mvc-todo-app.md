@@ -26,8 +26,8 @@ I made [this todo app](https://taniarascia.github.io/mvc), which is a simple lit
 
 Create a todo app in the browser with plain JavaScript, and get familiar with the concepts of MVC (and OOP - object-oriented programming).
 
-- [View demo of the app](https://taniarascia.github.io/mvc)
-- [View source of the app](https://github.com/taniarascia/mvc)
+- [View demo](https://taniarascia.github.io/mvc)
+- [View source](https://github.com/taniarascia/mvc)
 
 > **Note:** Since this app uses the latest JavaScript features (ES2017), it won't work as-is on some browsers like Safari without using Babel to compile to backwards-compatible JavaScript syntax.
 
@@ -123,9 +123,14 @@ class Model {
     ]
   }
 
-  // Append a todo to the todos array
-  addTodo(todo) {
-    this.todos = [...this.todos, todo]
+  addTodo(todoText) {
+    const todo = {
+      id: this.todos.length > 0 ? this.todos[this.todos.length - 1].id + 1 : 1,
+      text: todoText,
+      complete: false,
+    }
+
+    this.todos.push(todo)
   }
 
   // Map through all todos, and replace the text of the todo with the specified id
@@ -149,17 +154,15 @@ class Model {
 }
 ```
 
-We have an `addTodo`, `editTodo`, `deleteTodo`, and `toggleTodo`. These should all be very self explanatory - add appends to the array, edit finds the id of the todo to edit and replaces it, delete filters a todo out of the array, and toggle switches the `complete` boolean property.
+We have an `addTodo`, `editTodo`, `deleteTodo`, and `toggleTodo`. These should all be very self explanatory - add appends a new todo to the array, edit finds the id of the todo to edit and replaces it, delete filters a todo out of the array, and toggle switches the `complete` boolean property.
 
 Since we're doing this all in the browser, and app is accessible from the window (global), you can test these out easily, typing something like:
 
 ```js
-app.model.addTodo({ id: 3, text: 'Take a nap', complete: false })
+app.model.addTodo('Take a nap')
 ```
 
 will add a todo to the list, and you can log the contents of `app.model.todos`.
-
-![](../images/mvc1.png)
 
 That's good enough for the model right now. In the end, we'll store the todos in [local storage](/how-to-use-local-storage-with-javascript/) to make it semi-permanent, but for now the todos will just refresh any time you refresh the page.
 
@@ -251,14 +254,16 @@ Now the parts of the view that won't change are set up.
 
 Two more small things - a getter and resetter of the input (new todo) value.
 
+> I'm using underscores in the method names to signify that they're private (local) methods that won't be used outside of the class.
+
 <div class="filename">View</div>
 
 ```js
-get todoText() {
+get _todoText() {
   return this.input.value
 }
 
-resetInput() {
+_resetInput() {
   this.input.value = ''
 }
 ```
@@ -380,86 +385,78 @@ class Controller {
 
 The controller will handle events after they're fired. When you submit a new todo, or click the delete button, or click on the checkbox of a todo, an event will be fired. The view must listen for those events because they're user input of the view, but it will dispatch the responsibility of what will happen in response to the event to the controller.
 
-We'll create handlers for the events. First, a `handleAddTodo` event, which will fire when the todo input form we created is submitted, either by pressing enter or by clicking the "Submit" button. This is a `submit` event.
-
-Back in the view, we had a getter for `this.input.value` as `get todoText`. We'll make sure the input isn't empty to prevent submitting an empty todo, then we'll create the todo with an `id`, `text`, and `complete` being false. We'll add the todo to the model, and reset the input.
+We'll create handlers for the events in the controller.
 
 <div class="filename">Controller</div>
 
 ```js
-// Handle submit event for adding a todo
-handleAddTodo = event => {
-  event.preventDefault()
+handleAddTodo = todoText => {
+  this.model.addTodo(todoText)
+}
 
-  if (this.view.todoText) {
-    const todo = {
-      id: this.model.todos.length > 0 ? this.model.todos[this.model.todos.length - 1].id + 1 : 1,
-      text: this.view.todoText,
-      complete: false,
-    }
+handleEditTodo = (id, todoText) => {
+  this.model.editTodo(id, todoText)
+}
 
-    this.model.addTodo(todo)
-    this.view.resetInput()
-  }
+handleDeleteTodo = id => {
+  this.model.deleteTodo(id)
+}
+
+handleToggleTodo = id => {
+  this.model.toggleTodo(id)
 }
 ```
-
-Deleting the todo is similar. It will respond to a `click` event on the delete button. The parent element of the delete button is the todo `li` itself, which has the corresponding `id` attached to it. We'll send that data to the proper model method.
-
-<div class="filename">Controller</div>
-
-```js
-// Handle click event for deleting a todo
-handleDeleteTodo = event => {
-  if (event.target.className === 'delete') {
-    const id = parseInt(event.target.parentElement.id)
-
-    this.model.deleteTodo(id)
-  }
-}
-```
-
-In JavaScript, when you click on a checkbox to toggle it, it emits a `change` event. We'll handle this the same way we handled clicking the delete button, and call the model method.
-
-<div class="filename">Controller</div>
-
-```js
-// Handle change event for toggling a todo
-handleToggle = event => {
-  if (event.target.type === 'checkbox') {
-    const id = parseInt(event.target.parentElement.id)
-
-    this.model.toggleTodo(id)
-  }
-}
-```
-
-> These controller methods are a bit messy - ideally they shouldn't handle any logic, but should simply call the model.
 
 ### Setting up event listeners
 
-Now we have these three handlers, but the controller still doesn't know when to call them. We have to put event listeners on the DOM elements in the view. We'll respond to the `submit` event on the form, and `click` and `change` events on the todo list.
-
-In `View`, add a `bindEvents` method which will call those events.
+Now we have these handlers, but the controller still doesn't know when to call them. We have to put event listeners on the DOM elements in the view. We'll respond to the `submit` event on the form, and `click` and `change` events on the todo list. (I'm skipping "Edit" for now since it's slightly more complicated.)
 
 <div class="filename">View</div>
 
 ```js
-bindEvents(controller) {
-  this.form.addEventListener('submit', controller.handleAddTodo)
-  this.todoList.addEventListener('click', controller.handleDeleteTodo)
-  this.todoList.addEventListener('change', controller.handleToggle)
+bindAddTodo(handler) {
+  this.form.addEventListener('submit', event => {
+    event.preventDefault()
+
+    if (this._todoText) {
+      handler(this._todoText)
+      this._resetInput()
+    }
+  })
+}
+
+bindDeleteTodo(handler) {
+  this.todoList.addEventListener('click', event => {
+    if (event.target.className === 'delete') {
+      const id = parseInt(event.target.parentElement.id)
+
+      handler(id)
+    }
+  })
+}
+
+bindToggleTodo(handler) {
+  this.todoList.addEventListener('change', event => {
+    if (event.target.type === 'checkbox') {
+      const id = parseInt(event.target.parentElement.id)
+
+      handler(id)
+    }
+  })
 }
 ```
 
-We need to pass the handlers to the view somehow. We're going to bind the methods that are listening for the events to the view. In the `constructor` of `Controller`, call `bindEvents` and pass the `this` context of the controller.
+We need to call the handler from the view, so we're going to bind the methods that are listening for the events to the view.
 
-> We used arrow functions on all the handle events. This allows us to call them from the view using the `this` context of the controller. If we did not use arrow functions, we would have to manually bind them, like `controller.handleAddTodo.bind(this)`.
+> We used arrow functions on all the handle events. This allows us to call them from the view using the `this` context of the controller. If we did not use arrow functions, we would have to manually bind them, like `this.view.bindAddTodo(this.handleAddTodo.bind(this))`. Yikes.
 
 <div class="filename">Controller</div>
 
 ```js
-this.view.bindEvents(this)
+this.view.bindAddTodo(this.handleAddTodo)
+this.view.bindDeleteTodo(this.handleDeleteTodo)
+this.view.bindToggleTodo(this.handleToggleTodo)
+// this.view.bindEditTodo(this.handleEditTodo) - We'll do this one last
 ```
 
 Now when a `submit`, `click` or `change` event happens on the specified elements, the corresponding handlers will be invoked.
@@ -477,32 +474,26 @@ In the model, add a `bindEvents` for `onTodoListChanged`.
 <div class="filename">Model</div>
 
 ```js
-bindEvents(controller) {
-  this.onTodoListChanged = controller.onTodoListChanged
+bindTodoListChanged(callback) {
+  this.onTodoListChanged = callback
 }
 ```
 
-And in the controller, send the `this` context.
+And you'll bind this in the controller, just like with the view.
 
 <div class="filename">Controller</div>
 
 ```js
-constructor() {
-  // ...
-  this.model.bindEvents(this)
-  this.view.bindEvents(this)
-}
+this.model.bindTodoListChanged(this.onTodoListChanged)
 ```
 
 Now after every method in the model, you'll call the `onTodoListChanged` callback.
 
-> In a more complex app, you might have different callbacks for different events, but in this simple todo app, we can share one callback between all the methods.
-
 <div class="filename">Model</div>
 
 ```js
-addTodo(todo) {
-  this.todos = [...this.todos, todo]
+deleteTodo(id) {
+  this.todos = this.todos.filter(todo => todo.id !== id)
 
   this.onTodoListChanged(this.todos)
 }
@@ -526,13 +517,14 @@ class Model {
 }
 ```
 
-And make an `update` function to update the value of `localStorage`.
+We'll make a `commit` private method to update the value of `localStorage` as well as the model state.
 
 <div class="filename">Model</div>
 
 ```js
-update() {
-  localStorage.setItem('todos', JSON.stringify(this.todos))
+_commit(todos) {
+  this.onTodoListChanged(todos)
+  localStorage.setItem('todos', JSON.stringify(todos))
 }
 ```
 
@@ -541,11 +533,10 @@ After every change to `this.todos`, we can call it.
 <div class="filename">Model</div>
 
 ```js
-addTodo(todo) {
-  this.todos = [...this.todos, todo]
-  this.update()
+deleteTodo(id) {
+  this.todos = this.todos.filter(todo => todo.id !== id)
 
-  this.onTodoListChanged(this.todos)
+  this._commit(this.todos)
 }
 ```
 
@@ -553,51 +544,48 @@ addTodo(todo) {
 
 The last piece in this puzzle is the ability to edit an existing todo. Editing is always a little trickier than adding or deleting. I wanted to make it simple, and not require an edit button or replacing the `span` with an `input` or anything. We also don't want to call the `editTodo` every single time a letter is typed, because it will re-render the whole todo list UI.
 
-I decided to make one method on the controller that updates a temporary state variable with the new editing value, and another that calls the `editTodo` method in the model.
-
-<div class="filename">Controller</div>
-
-```js
-constructor() {
-  // ...
-  this.temporaryEditValue
-}
-
-// Update temporary state
-handleEditTodo = event => {
-  if (event.target.className === 'editable') {
-    this.temporaryEditValue = event.target.innerText
-  }
-}
-
-// Send the completed value to the model
-handleEditTodoComplete = event => {
-  if (this.temporaryEditValue) {
-    const id = parseInt(event.target.parentElement.id)
-
-    this.model.editTodo(id, this.temporaryEditValue)
-    this.temporaryEditValue = ''
-  }
-}
-```
-
-> I'll admit this solution is a little messy, because the `temporaryEditValue` variable should technically be in the view and not in the controller, as it's view-related state.
-
-Now we can add these to the view's event listeners. An `input` event is what gets fired when you type in a `contenteditable` element, and `focusout` fires when you leave a `contenteditable` element.
+I decided to make a method on the view that updates a temporary state variable with the new editing value, and another that calls the `handleEditTodo` method in the controller which updates the model. An `input` event is what gets fired when you type in a `contenteditable` element, and `focusout` fires when you leave a `contenteditable` element.
 
 <div class="filename">View</div>
 
 ```js
-bindEvents(controller) {
-  this.form.addEventListener('submit', controller.handleAddTodo)
-  this.todoList.addEventListener('click', controller.handleDeleteTodo)
-  this.todoList.addEventListener('input', controller.handleEditTodo)
-  this.todoList.addEventListener('focusout', controller.handleEditTodoComplete)
-  this.todoList.addEventListener('change', controller.handleToggle)
+constructor() {
+  // ...
+  this._temporaryTodoText
+  this._initLocalListeners()
+}
+
+// Update temporary state
+_initLocalListeners() {
+  this.todoList.addEventListener('input', event => {
+    if (event.target.className === 'editable') {
+      this._temporaryTodoText = event.target.innerText
+    }
+  })
+}
+
+// Send the completed value to the model
+bindEditTodo(handler) {
+  this.todoList.addEventListener('focusout', event => {
+    if (this._temporaryTodoText) {
+      const id = parseInt(event.target.parentElement.id)
+
+      handler(id, this._temporaryTodoText)
+      this._temporaryTodoText = ''
+    }
+  })
 }
 ```
 
 Now when you click on any todo item, you'll enter into "editing" mode, which will update the temporary state variable, and when you tab or click away from the todo, it will save in the model and reset the temporary state.
+
+Just make sure to bind the `editTodo` handler.
+
+<div class="filename">Controller</div>
+
+```js
+this.view.bindEditTodo(this.handleEditTodo)
+```
 
 > The `contenteditable` solution was quickly implemented. There are all sorts of issues you need to consider when using `contenteditable` in a production app, [many of which I've written about here](/content-editable-elements-in-javascript-react/).
 
@@ -605,7 +593,7 @@ Now when you click on any todo item, you'll enter into "editing" mode, which wil
 
 There you have it. A dependency-free todo app in plain JavaScript that demonstrates the concepts of model-view-controller architecture. Here is a link to the completed demo and source once again.
 
-- [View demo of the app](https://taniarascia.github.io/mvc)
-- [View source of the app](https://github.com/taniarascia/mvc)
+- [View demo](https://taniarascia.github.io/mvc)
+- [View source](https://github.com/taniarascia/mvc)
 
 I hope this tutorial helped you understand MVC. Using this loosely-coupled pattern can add a lot of boilerplate and abstraction to an application, but it's also a predictable, familiar pattern that is commonly used across many frameworks, and an important concept to know as a developer.
