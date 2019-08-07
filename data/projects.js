@@ -36,9 +36,15 @@ const projects = [
   },
   {
     icon: '💾',
-    title: ' tania.dev',
+    title: 'tania.dev',
     source: 'https://github.com/taniarascia/taniarascia.com/',
     description: 'Personal theme for Gatsby (the source of this website).',
+  },
+  {
+    icon: '🔱',
+    title: 'ES6 Todo MVC',
+    source: 'https://github.com/taniarascia/mvc/',
+    description: 'A simple Todo MVC application in plain JavaScript.',
   },
 ]
 export default projects
