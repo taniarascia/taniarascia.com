@@ -48,7 +48,7 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - [Rainy Monday](https://soundcloud.com/ivoryandivory/rainy-monday)
 - [Saloon](https://soundcloud.com/ivoryandivory/saloon)
 
-## Timeline
+## Publications
 
 - [View all](/publications)
 
