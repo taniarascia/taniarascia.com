@@ -988,7 +988,6 @@ iframe {
   }
 
   .comment {
-    border-bottom: 2px solid lighten($border-color, 12%);
     padding: 1.5rem 0;
 
     &:last-of-type {
@@ -998,19 +997,19 @@ iframe {
     header {
       display: flex;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
     }
 
     h2 {
       color: lighten($font-color, 10%);
       margin: 0 1rem 0 0;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       padding: 0;
       border: 0;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       white-space: pre-line;
 
       &:last-of-type {

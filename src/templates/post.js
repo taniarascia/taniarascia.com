@@ -16,6 +16,7 @@ export default class PostTemplate extends Component {
     super(props)
 
     this.state = {
+      error: false,
       comments: [],
     }
   }
@@ -23,14 +24,18 @@ export default class PostTemplate extends Component {
   async componentDidMount() {
     const { slug } = this.props.pageContext
 
-    const response = await fetch(`${config.commentsApi}${slug}`)
-    const comments = await response.json()
+    try {
+      const response = await fetch(`${config.commentsApi}${slug}`)
+      const comments = await response.json()
 
-    this.setState({ comments })
+      this.setState({ comments })
+    } catch (error) {
+      this.setState({ error: true })
+    }
   }
 
   render() {
-    const { comments } = this.state
+    const { comments, error } = this.state
     const { slug } = this.props.pageContext
     const commentSlug = slug.replace(/\\|\//g, '')
     const postNode = this.props.data.markdownRemark
@@ -91,7 +96,7 @@ export default class PostTemplate extends Component {
         <UserInfo config={config} />
 
         <div className="container">
-          <Comments commentsList={comments} slug={commentSlug} />
+          {!error && <Comments commentsList={comments} slug={commentSlug} />}
 
           <h3>Join the newsletter</h3>
           <p>

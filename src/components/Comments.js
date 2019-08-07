@@ -7,6 +7,7 @@ export default class Comments extends Component {
     super(props)
 
     this.initialState = {
+      submitting: false,
       comments: [],
       newComment: {
         name: '',
@@ -31,6 +32,8 @@ export default class Comments extends Component {
 
   onSubmitComment = async event => {
     event.preventDefault()
+
+    this.setState({ submitting: true })
 
     const { newComment, comments } = this.state
     const { slug } = this.props
@@ -73,6 +76,7 @@ export default class Comments extends Component {
 
   render() {
     const {
+      submitting,
       success,
       error,
       comments,
@@ -92,15 +96,24 @@ export default class Comments extends Component {
         </blockquote>
       )
 
+    const commentTitle = commentLength => {
+      if (commentLength < 1) {
+        return 'Leave a comment'
+      } else if (commentLength === 1) {
+        return '1 comment'
+      } else {
+        return `${commentLength} comments`
+      }
+    }
+
     return (
       <section className="comments" id="comments">
         {success || error ? (
           showError() || showSuccess()
         ) : (
           <>
-            <h3>Leave a response</h3>
+            <h3>{commentTitle(comments.length)}</h3>
             <form id="new-comment" onSubmit={this.onSubmitComment}>
-              <label htmlFor="name">Name</label>
               <input
                 type="text"
                 name="name"
@@ -108,32 +121,33 @@ export default class Comments extends Component {
                 value={name}
                 onChange={this.handleChange}
                 minLength="3"
-                maxLength="30"
+                maxLength="255"
+                placeholder="Name"
                 required
               />
-              <label htmlFor="text">Message</label>
               <textarea
-                rows="5"
+                rows="3"
                 cols="5"
                 name="text"
                 id="text"
                 value={text}
                 onChange={this.handleChange}
                 minLength="20"
-                maxLength="800"
+                maxLength="1000"
                 required
               />
               <p>
-                <small>Plain text only.</small>
+                <small>Plain text only. Comment must be over 20 characters.</small>
               </p>
-              <button type="submit" disabled={!name || !text}>
-                Add response
-              </button>
+              {name && text && text.length > 20 && (
+                <button type="submit" disabled={!name || !text || text.length < 20 || submitting}>
+                  Add response
+                </button>
+              )}
             </form>
           </>
         )}
-        <h3>Discussion</h3>
-        {comments.length > 0 ? (
+        {comments.length > 0 &&
           comments.map((comment, i) => (
             <div className="comment" key={i}>
               <header>
@@ -142,12 +156,7 @@ export default class Comments extends Component {
               </header>
               <p>{comment.text}</p>
             </div>
-          ))
-        ) : (
-          <div>
-            <p>No responses yet!</p>
-          </div>
-        )}
+          ))}
       </section>
     )
   }
