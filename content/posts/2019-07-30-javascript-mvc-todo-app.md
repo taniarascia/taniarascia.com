@@ -469,7 +469,7 @@ Just like with listening for events, the model should fire back to the controlle
 
 We already made the `onTodoListChanged` method on the controller to deal with this, we just have to make the model aware of it. We'll bind it to the model the same way we did with the handlers on the view.
 
-In the model, add a `bindEvents` for `onTodoListChanged`.
+In the model, add `bindTodoListChanged` for `onTodoListChanged`.
 
 <div class="filename">Model</div>
 

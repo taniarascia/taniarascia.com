@@ -14,8 +14,7 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 #### Concepts
 
-- [ ] Map, Set
-- [ ] WeakMap, WeakSet
+- [ ] Map, Set, WeakMap, WeakSet
 - [ ] Closures
 - [ ] Promises, Async/Await, Microtasks, Event Loop
 - [ ] Bind, Call, Apply
@@ -39,13 +38,18 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 - [ ] GraphQL
 - [ ] NoSQL (MongoDB, Firebase)
-- [ ] Swagger - UI, Codegen, Docs
+- [x] Swagger - UI, Codegen, Docs
 - [ ] JWT token generation and client side handling
+- [x] Production Node API with Postgres
 
 ### DevOps and CI/CD
 
 - [ ] Docker
 - [ ] Creating a Pipeline
+
+### Frameworks
+
+- [x] Vuex
 
 ### Computer Science
 
