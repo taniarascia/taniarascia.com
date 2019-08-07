@@ -14,7 +14,6 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Around the web
 
-- **Email**: [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com)
 - **GitHub**: [taniarascia](https://github.com/taniarascia)
 - **Twitter**: [taniarascia](https://twitter.com/taniarascia)
 
@@ -47,6 +46,16 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - [Bridge Over Troubled Water](https://soundcloud.com/ivoryandivory/bridge-over-troubled-water)
 - [Rainy Monday](https://soundcloud.com/ivoryandivory/rainy-monday)
 - [Saloon](https://soundcloud.com/ivoryandivory/saloon)
+
+## Projects
+
+- [Laconia](https://github.com/taniarascia/laconia) – a modern PHP MVC framework written without libraries or frameworks
+- [New Moon](https://github.com/taniarascia/new-moon) – the optimized dark theme for web development. Your new favorite theme
+- [Chip8.js](https://github.com/taniarascia/chip8) – a Chip-8 emulator written in JavaScript for terminal and the browser
+- [Primitive](https://github.com/taniarascia/primitive) – a minimalist front-end design toolkit built with Sass
+- [MVC.js](https://github.com/taniarascia/mvc) – a simple Todo MVC application in plain JavaScript
+- [Snek.js](https://github.com/taniarascia/snek) – a terminal-based Snake implementation written in JavaScript (Node.js)
+- [tania.dev](https://github.com/taniarascia/taniarascia.com) – personal theme for Gatsby (the source of this website)
 
 ## Publications
 

@@ -93,7 +93,7 @@ export default class Comments extends Component {
       )
 
     return (
-      <section className="comments">
+      <section className="comments" id="comments">
         {success || error ? (
           showError() || showSuccess()
         ) : (

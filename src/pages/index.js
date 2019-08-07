@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
@@ -12,9 +12,7 @@ import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
-import react from '../../content/thumbnails/react.png'
-import vue from '../../content/thumbnails/vue.png'
-import js from '../../content/thumbnails/js.png'
+import quotes from '../../data/quotes'
 import newMoon from '../../content/images/new-moon.svg'
 
 export default class Index extends Component {
@@ -30,8 +28,17 @@ export default class Index extends Component {
         <SEO />
         <div className="container">
           <div className="lead">
-            <a href="https://taniarascia.github.io/new-moon" target="_blank">
-              <img src={newMoon} className="new-moon-icon" title="Hmm? What's this?" />
+            <a
+              href="https://taniarascia.github.io/new-moon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={newMoon}
+                className="new-moon-icon"
+                title="Hmm? What's this?"
+                alt="Hmm? What's this?"
+              />
             </a>
             <h1>{`Hi, I'm Tania`}</h1>
             <p>
@@ -92,21 +99,12 @@ export default class Index extends Component {
           <section className="section">
             <h2>{`Other People's Opinions`}</h2>
             <div className="quotations">
-              <blockquote className="quotation">
-                <p>
-                  {`“It's no exaggeration to say that I
-                wouldn't currently have a job in development without this site. So thanks for
-                ruining my life, Tania.”`}
-                </p>
-                <cite>— Craig</cite>
-              </blockquote>
-              <blockquote className="quotation">
-                <p>
-                  {`“Not to get too dramatic, but I find your site to be an unspeakably beautiful
-                lifeboat in an overwhelming sea of technical jargon and shite.”`}
-                </p>
-                <cite>— Lori</cite>
-              </blockquote>
+              {quotes.map(quote => (
+                <blockquote className="quotation">
+                  <p>{quote.quote}</p>
+                  <cite>— {quote.name}</cite>
+                </blockquote>
+              ))}
             </div>
           </section>
 

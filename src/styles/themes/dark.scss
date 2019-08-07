@@ -24,11 +24,13 @@ $dark-border: darken($background, 3%);
   .lead {
     a {
       border-bottom: 2px solid transparent;
+
       &:hover {
         color: $primary-color;
         background: transparent;
         border-bottom: 2px solid lighten($link-hover-color, 20%);
       }
+
       &:active,
       &:focus {
         background: transparent;
@@ -41,11 +43,13 @@ $dark-border: darken($background, 3%);
   .page {
     a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
       border-bottom: 2px solid transparent;
+
       &:hover {
         color: $primary-color;
         background: transparent;
         border-bottom: 2px solid lighten($link-hover-color, 20%);
       }
+
       &:active,
       &:focus {
         background: transparent;
@@ -59,7 +63,7 @@ $dark-border: darken($background, 3%);
     }
   }
 
-  :not(pre) > code {
+  :not(pre)>code {
     background: rgba(255, 255, 255, 0.1);
     color: $foreground;
   }
@@ -138,6 +142,7 @@ $dark-border: darken($background, 3%);
         h2 {
           color: #ccc;
         }
+
         border: 2px solid transparent;
         border-bottom-color: #343434;
 
@@ -215,6 +220,7 @@ $dark-border: darken($background, 3%);
   @include small-breakpoint {
     .projects .each {
       border-bottom: 2px solid lighten($background, 3%);
+
       &:last-of-type {
         border-bottom: none;
       }
@@ -266,6 +272,12 @@ $dark-border: darken($background, 3%);
 
     &.quotation {
       border-color: #3a3a3a;
+      background: #222;
+      color: $yellow;
+
+      cite {
+        color: rgba(255, 255, 255, 0.6);
+      }
     }
   }
 
@@ -282,6 +294,7 @@ $dark-border: darken($background, 3%);
 
     a {
       color: darken($foreground, 20%);
+
       &:hover {
         color: lighten($foreground, 10%);
       }
@@ -356,6 +369,7 @@ $dark-border: darken($background, 3%);
   }
 
   .newsletter-section {
+    border-color: #3a3a3a;
     background: #222;
   }
 

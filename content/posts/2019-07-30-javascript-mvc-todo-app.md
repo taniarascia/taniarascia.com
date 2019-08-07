@@ -5,6 +5,7 @@ template: post
 thumbnail: '../thumbnails/triangle.png'
 slug: javascript-mvc-todo-app
 categories:
+  - Popular
   - JavaScript
 tags:
   - javascript

@@ -646,22 +646,6 @@ h2.publication-company {
   }
 }
 
-@include small-breakpoint {
-  .quotations {
-    display: flex;
-
-    .quotation {
-      padding: 2.5 2.5rem 3.5rem;
-      border-radius: $border-radius;
-      flex: 1;
-      box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
-
-      &:nth-of-type(2n) {
-        margin-left: 1rem;
-      }
-    }
-  }
-}
 
 blockquote {
   color: rgba(0, 0, 0, 0.7);
@@ -684,21 +668,6 @@ blockquote {
     background: lighten($error, 23%);
   }
 
-  &.quotation {
-    border-radius: $border-radius;
-    border: 0;
-    background: $primary-color;
-    color: white;
-    padding: 1.5rem 1.5rem 3.5rem;
-    position: relative;
-
-    cite {
-      position: absolute;
-      bottom: 1rem;
-      right: 1.5rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-  }
 
   p {
     padding: 0;
@@ -739,10 +708,6 @@ blockquote {
   blockquote {
     padding: 2rem;
 
-    &.quotation {
-      padding: 2rem 2rem 3.5rem;
-    }
-
     p {
       font-size: 1.3rem;
     }
@@ -752,6 +717,41 @@ blockquote {
     }
   }
 }
+
+.quotations {
+  .quotation {
+    border-color: $primary-color;
+    background: $primary-color;
+    color: white;
+  }
+}
+
+@include small-breakpoint {
+  .quotations {
+    display: flex;
+    flex-wrap: wrap;
+
+    .quotation {
+      margin: 0 0 1rem;
+      padding: 2.5rem 2.5rem 4.5rem !important;
+      border-radius: $border-radius;
+      flex: 1 1 calc(50% - 2rem);
+      box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+      position: relative;
+
+      &:nth-of-type(2n) {
+        margin-left: 1rem;
+      }
+
+      cite {
+        position: absolute;
+        bottom: 1rem;
+        right: 1.5rem;
+      }
+    }
+  }
+}
+
 
 .note {
   background: $light;
@@ -921,6 +921,7 @@ blockquote {
 }
 
 .newsletter-section {
+  border: 2px solid $border-color;
   border-radius: $border-radius;
   padding: 2.5rem;
   background: $light;

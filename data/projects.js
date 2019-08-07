@@ -1,18 +1,10 @@
-const projects = [
+export default [
   {
     icon: '🏺',
     title: 'Laconia',
     path: 'https://laconia.dev',
     source: 'https://github.com/taniarascia/laconia/',
     description: 'A modern PHP MVC framework written without libraries or frameworks.',
-  },
-  {
-    icon: '⛏️',
-    title: ' Primitive',
-    path: 'https://taniarascia.github.io/primitive/',
-    source: 'https://github.com/taniarascia/primitive/',
-    description:
-      'A minimalist front-end design toolkit built with Sass for developing responsive, browser-consistent web apps.',
   },
   {
     icon: '🌙',
@@ -29,6 +21,21 @@ const projects = [
     description: 'A Chip-8 emulator written in JavaScript for terminal and the browser.',
   },
   {
+    icon: '⛏️',
+    title: ' Primitive',
+    path: 'https://taniarascia.github.io/primitive/',
+    source: 'https://github.com/taniarascia/primitive/',
+    description:
+      'A minimalist front-end design toolkit built with Sass for developing responsive, browser-consistent web apps.',
+  },
+  {
+    icon: '🔱',
+    title: 'MVC.js',
+    path: 'https://taniarascia.github.io/mvc/',
+    source: 'https://github.com/taniarascia/mvc/',
+    description: 'A simple Todo MVC application in plain JavaScript.',
+  },
+  {
     icon: '🐍',
     title: 'Snek.js',
     source: 'https://github.com/taniarascia/snek/',
@@ -40,11 +47,4 @@ const projects = [
     source: 'https://github.com/taniarascia/taniarascia.com/',
     description: 'Personal theme for Gatsby (the source of this website).',
   },
-  {
-    icon: '🔱',
-    title: 'ES6 Todo MVC',
-    source: 'https://github.com/taniarascia/mvc/',
-    description: 'A simple Todo MVC application in plain JavaScript.',
-  },
 ]
-export default projects
