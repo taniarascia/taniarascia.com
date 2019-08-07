@@ -111,7 +111,7 @@ export default class Comments extends Component {
                 maxLength="30"
                 required
               />
-              <label htmlFor="text">Response</label>
+              <label htmlFor="text">Message</label>
               <textarea
                 rows="5"
                 cols="5"
@@ -123,6 +123,9 @@ export default class Comments extends Component {
                 maxLength="800"
                 required
               />
+              <p>
+                <small>Plain text only.</small>
+              </p>
               <button type="submit" disabled={!name || !text}>
                 Add response
               </button>
@@ -142,7 +145,7 @@ export default class Comments extends Component {
           ))
         ) : (
           <div>
-            <p>No one has left a response yet.</p>
+            <p>No responses yet!</p>
           </div>
         )}
       </section>

@@ -86,7 +86,11 @@ export default class PostTemplate extends Component {
           </header>
 
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </article>
 
+        <UserInfo config={config} />
+
+        <div className="container">
           <Comments commentsList={comments} slug={commentSlug} />
 
           <h3>Join the newsletter</h3>
@@ -96,8 +100,7 @@ export default class PostTemplate extends Component {
             <b>Never any spam, ads, or affiliate links.</b>
           </p>
           <NewsletterForm />
-        </article>
-        <UserInfo config={config} />
+        </div>
       </Layout>
     )
   }
