@@ -1,5 +1,6 @@
-$background: #2d2d2d;
+$background: #202020;
 $foreground: #b3b9c5;
+$accent: #303030;
 $dark-border: darken($background, 3%);
 
 .dark {
@@ -132,8 +133,8 @@ $dark-border: darken($background, 3%);
       }
 
       &:hover {
-        background: #343434;
-        border-color: #343434;
+        background: $accent;
+        border-color: $accent;
       }
     }
 
@@ -144,11 +145,11 @@ $dark-border: darken($background, 3%);
         }
 
         border: 2px solid transparent;
-        border-bottom-color: #343434;
+        border-bottom-color: $accent;
 
         &:hover {
-          background: #343434 !important;
-          border-color: #343434;
+          background: $accent !important;
+          border-color: $accent;
 
           h2 {
             color: white;
@@ -172,8 +173,8 @@ $dark-border: darken($background, 3%);
         }
 
         &:hover {
-          border: 2px solid #343434;
-          background: #343434;
+          border: 2px solid $accent;
+          background: $accent;
 
           h2 {
             color: white;
@@ -186,7 +187,7 @@ $dark-border: darken($background, 3%);
   .tag-container {
     span {
       color: $foreground;
-      background: #222;
+      background: rgba(0, 0, 0, 0.2);
       border: none;
 
       .count {
@@ -254,7 +255,7 @@ $dark-border: darken($background, 3%);
 
   blockquote {
     border: 2px solid #393939;
-    background: #222;
+    background: rgba(0, 0, 0, 0.2);
 
     p {
       color: $yellow;
@@ -272,7 +273,7 @@ $dark-border: darken($background, 3%);
 
     &.quotation {
       border-color: #3a3a3a;
-      background: #222;
+      background: rgba(0, 0, 0, 0.2);
       color: $yellow;
 
       cite {
@@ -318,13 +319,19 @@ $dark-border: darken($background, 3%);
 
   #{$buttons} {
     color: $primary-color;
-    border: 2px solid #222;
-    background: #222 !important;
+    border: 2px solid darken($primary-color, 10%);
+    background: rgba(0, 0, 0, 0.2) !important;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      opacity: .3;
+    }
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid black !important;
+      border: 2px solid darken($primary-color, 10%);
       background: black !important;
       color: darken($primary-color, 10%);
     }
@@ -363,20 +370,20 @@ $dark-border: darken($background, 3%);
     color: #ccc;
 
     &::before {
-      background: #343434;
+      background: $accent;
       color: #333;
     }
   }
 
   .newsletter-section {
     border-color: #3a3a3a;
-    background: #222;
+    background: rgba(0, 0, 0, 0.2);
   }
 
   .category-container {
     .category-filter {
       padding: 0.5rem 1rem;
-      background: #222;
+      background: rgba(0, 0, 0, 0.2);
       border-radius: $border-radius;
       margin-right: 0.5rem;
       font-weight: 600;

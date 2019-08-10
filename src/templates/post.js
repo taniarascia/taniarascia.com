@@ -77,6 +77,14 @@ export default class PostTemplate extends Component {
                   Share
                 </a>
                 /
+                {!error && (
+                  <span>
+                    <a className="comment-link" href="#comments">
+                      Comments
+                    </a>
+                    /
+                  </span>
+                )}
                 <a
                   className="github-link"
                   href={githubLink}

@@ -126,7 +126,7 @@ export default class Comments extends Component {
                 required
               />
               <textarea
-                rows="3"
+                rows="2"
                 cols="5"
                 name="text"
                 id="text"
@@ -134,16 +134,15 @@ export default class Comments extends Component {
                 onChange={this.handleChange}
                 minLength="20"
                 maxLength="1000"
+                placeholder="Comment"
                 required
               />
-              <p>
+              <div style={{ marginBottom: '.5rem' }}>
                 <small>Plain text only. Comment must be over 20 characters.</small>
-              </p>
-              {name && text && text.length > 20 && (
-                <button type="submit" disabled={!name || !text || text.length < 20 || submitting}>
-                  Add response
-                </button>
-              )}
+              </div>
+              <button type="submit" disabled={!name || !text || text.length < 20 || submitting}>
+                Submit
+              </button>
             </form>
           </>
         )}
