@@ -93,7 +93,7 @@ Or you can go to Body, select raw, select `JSON`, and send the actual JSON you i
 
 ## PUT
 
-PUT updates an existing resource. It is **idempotent**, meaning that two identical PUT requests will modify the same resource. A POST requires the entire body to be sent through; if any data is missing, that data will be wiped (except automatic values like auto-incrementing IDs and timestamps).
+PUT updates an existing resource. It is **idempotent**, meaning that two identical PUT requests will modify the same resource. A PUT request requires the entire body to be sent through; if any data is missing, that data will be wiped (except automatic values like auto-incrementing IDs and timestamps).
 
 <div class="filename">PUT Request</div>
 
