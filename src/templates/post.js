@@ -60,6 +60,16 @@ export default class PostTemplate extends Component {
       config.siteUrl
     }/${post.slug}/&via=taniarascia`
 
+    const commentTitle = commentLength => {
+      if (commentLength < 1) {
+        return 'Comments'
+      } else if (commentLength === 1) {
+        return '1 comment'
+      } else {
+        return `${commentLength} comments`
+      }
+    }
+
     return (
       <Layout>
         <Helmet>
@@ -80,7 +90,7 @@ export default class PostTemplate extends Component {
                 {!error && (
                   <span>
                     <a className="comment-link" href="#comments">
-                      Comments
+                      {commentTitle(comments.length)}
                     </a>
                     /
                   </span>

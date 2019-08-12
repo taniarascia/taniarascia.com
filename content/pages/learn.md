@@ -17,9 +17,8 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] Map, Set, WeakMap, WeakSet
 - [ ] Closures
 - [ ] Promises, Async/Await, Microtasks, Event Loop
-- [ ] Bind, Call, Apply
+- [ ] Bind, Call, Apply and `this`
 - [ ] Generators
-- [ ] `this` behavior
 - [ ] Bitwise Operators
 
 #### Document Object Model (DOM) and Web APIs
@@ -40,7 +39,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] NoSQL (MongoDB, Firebase)
 - [x] Swagger - UI, Codegen, Docs
 - [ ] JWT token generation and client side handling
-- [x] Production Node API with Postgres
 
 ### DevOps and CI/CD
 
@@ -117,6 +115,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Classes](/understanding-classes-in-javascript)
 - [x] [ES6](/es6-syntax-and-feature-overview/)
 - [x] [Buffers](/bits-bytes-bases-and-a-hex-dump-javascript/)
+- [x] [MVC - Model View Controller](/javascript-mvc-todo-app)
 
 #### Document Object Model (DOM)
 
@@ -137,11 +136,13 @@ This is not everything I know, but a good amount of the things I've documented s
   - [x] [Content Editable](/content-editable-elements-in-javascript-react/)
 - [x] [jQuery](/how-to-use-jquery-a-javascript-library/)
 
+#### Databases/APIs
+
+- [x] [Production Node.js, Express REST API with PostgreSQL + Deploying to Heroku](/node-express-postgresql-heroku)
+
 ### PHP
 
-- [x] Authentication
-- [x] Routing
-- [x] Sessions
+- [x] [Authentication, Routing, Sessions (via Laconia MVC)](https://laconia.dev)
 - [x] [CRUD: Creating and Reading](/create-a-simple-database-app-connecting-to-mysql-with-php/)
 - [x] [CRUD: Updating and Deleting](/create-a-simple-crud-database-app-php-update-delete/)
 - [x] [File Uploads](/how-to-upload-files-to-a-server-with-plain-javascript-and-php/)

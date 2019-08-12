@@ -13,7 +13,7 @@ tags:
   - api
 ---
 
-Recently, I wanted to create and host a Node server, and discovered that [Heroku](https://heroku.com) is an excellent cloud platform service that has free hobby hosting for Node and Postgres, among many other languages and databases.
+Recently, I wanted to create and host a Node server, and discovered that [Heroku](https://heroku.com) is an excellent cloud platform service that has free hobby hosting for Node and PostgreSQL, among many other languages and databases.
 
 This tutorial walks through creating a local REST API with Node using an Express server and PostgreSQL database. It also lists the instructions for deploying to Heroku.
 
@@ -21,19 +21,19 @@ This tutorial walks through creating a local REST API with Node using an Express
 
 This guide uses installation instructions for macOS and assumes a prior knowledge of:
 
-- [Command line usage](how-to-use-the-command-line-for-apple-macos-and-linux/)
-- [Basic JavaScript](https://www.taniarascia.com/javascript-day-one/)
-- [Basic Node.js and npm](how-to-install-and-use-node-js-and-npm-mac-and-windows/)
-- [SQL](overview-of-sql-commands-and-pdo-operations/) and [PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
+- [Command line usage](/how-to-use-the-command-line-for-apple-macos-and-linux/)
+- [Basic JavaScript](/javascript-day-one/)
+- [Basic Node.js and npm](/how-to-install-and-use-node-js-and-npm-mac-and-windows/)
+- [SQL](/overview-of-sql-commands-and-pdo-operations/) and [PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
 - [Understanding REST/REST APIs](https://code.tutsplus.com/tutorials/code-your-first-api-with-nodejs-and-express-understanding-rest-apis--cms-31697)
 
 #### Goals
 
 This walkthrough will have three parts:
 
-- [1. Setting up a local **PostgreSQL database**](#set-up-postgresql-database)
-- [2. Setting up a local **Node/Express API server**](#create-express-api)
-- [3. Deploying the Node, Express, PostgreSQL API to **Heroku**](#deploy-app-to-heroku)
+- [Setting up a local **PostgreSQL database**](#set-up-postgresql-database)
+- [Setting up a local **Node/Express API server**](#create-express-api)
+- [Deploying the Node, Express, PostgreSQL API to **Heroku**](#deploy-app-to-heroku)
 
 We'll create a local, simple REST API in Node.js that runs on an Express server and utilizes PostgreSQL for a database. Then we'll deploy it to Heroku.
 
@@ -239,7 +239,7 @@ Don't forget to include the `engines` property for Node version.
 
 <div class="filename">package.json</div>
 
-```json
+```js
 {
   "name": "books-api",
   "version": "1.0.0",
@@ -325,7 +325,7 @@ heroku create # generates random name
 
 Go to [Heroku Add-ons](https://elements.heroku.com/addons) and select [Heroku Postgres](https://elements.heroku.com/addons/heroku-postgresql). Click on "Install Heroku Postgres". Click "Apply to app".
 
-It might take up to 5 minutes to propagate. Once that time passes, check to see if your add-on exists via Heroku CLI.L
+It might take up to 5 minutes to propagate. Once that time passes, check to see if your add-on exists via Heroku CLI.
 
 ```bash
 heroku addons
@@ -417,7 +417,7 @@ const origin = {
   origin: isProduction ? 'https://www.example.com' : '*',
 }
 
-cors(origin)
+app.use(cors(origin))
 ```
 
 Not that CORS protection _only_ applies to browsers - it does not protect your app from being accessed via cURL and Postman.
@@ -512,9 +512,48 @@ With this code, it would be required to set headers with the request via Postman
 
 ```bash
 curl -X DELETE \
-  http://www.example.com/book/1 \
+  https://<example-node-api>.herokuapp.com/books/1 \
   -H 'Content-Type: application/json' \
   -H 'ApiKey: hunter2'
+```
+
+## Using the API on the Front End
+
+If you're not familiar with how to work with an API from the front end, read [How to Connect to an API with JavaScript](/how-to-connect-to-an-api-with-javascript/). As a quick review, here is how you can use the built-in [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API to do `GET` and `POST` requests to the endpoints.
+
+### Get
+
+```js
+try {
+  const response = await fetch('https://<example-node-api>.herokuapp.com/books')
+  const books = await response.json()
+
+  console.log(books)
+} catch (error) {
+  console.log(error)
+}
+```
+
+### Post
+
+```js
+const newBook = {
+  title: 'Game of Thrones',
+  author: 'George R. R. Martin',
+}
+
+try {
+  const response = await fetch('https://<example-node-api>.herokuapp.com/books', {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    method: 'post',
+    body: JSON.stringify(newBook),
+  })
+} catch (error) {
+  console.log(error)
+}
 ```
 
 ## Conclusion
