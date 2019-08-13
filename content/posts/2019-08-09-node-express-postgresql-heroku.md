@@ -99,7 +99,7 @@ Insert one entry into the new table.
 
 ```sql
 INSERT INTO books (author, title)
-VALUES  ('J.K. Rowling', 'Harry Potter')
+VALUES  ('J.K. Rowling', 'Harry Potter');
 ```
 
 ## Create Express API
@@ -146,7 +146,7 @@ CREATE TABLE books (
 );
 
 INSERT INTO books (author, title)
-VALUES  ('J.K. Rowling', 'Harry Potter')
+VALUES  ('J.K. Rowling', 'Harry Potter');
 ```
 
 ### Set up PostgreSQL connection
