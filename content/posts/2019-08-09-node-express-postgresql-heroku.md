@@ -1,5 +1,5 @@
 ---
-date: 2019-08-10
+date: 2019-08-09
 title: 'Create and Deploy a Node.js, Express, & PostgreSQL REST API to Heroku'
 template: post
 thumbnail: '../thumbnails/heroku.png'
