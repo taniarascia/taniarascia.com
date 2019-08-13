@@ -165,12 +165,14 @@ require('dotenv').config()
 const { Pool } = require('pg')
 const isProduction = process.env.NODE_ENV === 'production'
 
-const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`
+const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`
 
 const pool = new Pool({
   connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
   ssl: isProduction,
 })
+
+module.exports = { pool }
 ```
 
 Set up the Express server. [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/) will go into much more detail on this process, and go through creating all the most important CRUD endpoints - `GET`, `POST`, `PUT`, and `DELETE`. I've purposely made this example very simple just to get a minimum viable product up and running.
