@@ -410,6 +410,10 @@ $dark-border: darken($background, 3%);
     color: $primary-color;
   }
 
+  .comments .comment header h2 {
+    color: lighten($foreground, 12%);
+  }
+
   ::selection {
     background: lighten($primary-color, 10%);
     color: white;

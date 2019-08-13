@@ -917,10 +917,10 @@ blockquote {
 }
 
 .newsletter-section {
+  background: $light;
   border: 2px solid $border-color;
   border-radius: $border-radius;
   padding: 2.5rem;
-  background: $light;
 
   form {
     margin-bottom: 0;
@@ -988,6 +988,20 @@ iframe {
 
     &:last-of-type {
       border-bottom: 0;
+    }
+
+    &.reply {
+      background: $light;
+      border: 2px solid $border-color;
+      border-radius: $border-radius;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      margin-left: 2rem;
+      margin-bottom: 0;
+
+      p {
+        margin-bottom: 0;
+      }
     }
 
     header {

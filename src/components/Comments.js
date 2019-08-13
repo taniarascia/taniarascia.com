@@ -11,7 +11,7 @@ export default class Comments extends Component {
       comments: [],
       newComment: {
         name: '',
-        website: '',
+        parentCommentId: '',
         text: '',
         slug: this.props.slug,
       },
@@ -53,7 +53,7 @@ export default class Comments extends Component {
         comments: [newComment, ...comments],
         newComment: {
           name: '',
-          website: '',
+          parentCommentId: '',
           text: '',
           slug,
         },
@@ -147,15 +147,30 @@ export default class Comments extends Component {
           </>
         )}
         {comments.length > 0 &&
-          comments.map((comment, i) => (
-            <div className="comment" key={i}>
-              <header>
-                <h2>{comment.name}</h2>
-                <div className="comment-date">{moment(comment.date).fromNow()}</div>
-              </header>
-              <p>{comment.text}</p>
-            </div>
-          ))}
+          comments
+            .filter(comment => !comment.parent_comment_id)
+            .map((comment, i) => {
+              const child = comments.find(c => comment.id == c.parent_comment_id)
+
+              return (
+                <div className="comment" key={i}>
+                  <header>
+                    <h2>{comment.name}</h2>
+                    <div className="comment-date">{moment(comment.date).fromNow()}</div>
+                  </header>
+                  <p>{comment.text}</p>
+                  {child && (
+                    <div className="comment reply">
+                      <header>
+                        <h2>{child.name}</h2>
+                        <div className="comment-date">{moment(child.date).fromNow()}</div>
+                      </header>
+                      <p>{child.text}</p>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
       </section>
     )
   }
