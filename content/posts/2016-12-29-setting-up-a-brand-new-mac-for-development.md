@@ -234,7 +234,7 @@ ssh-keygen -t rsa -b 4096 -C "email@email.com"
 
 ### Node.js
 
-We're going to use [Node Version Manager (nvm)](https://github.com/creationix/nvm/blob/master/README.markdown) to install Node.js.
+We're going to use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm/blob/master/README.md) to install Node.js.
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
