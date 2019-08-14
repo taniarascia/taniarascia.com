@@ -950,7 +950,6 @@ Editing works, but you still can't cancel the state from updating with this code
 
 ```js
 editMode(employee) {
-  this.editing = id	      
   this.cachedEmployee = Object.assign({}, employee)
   this.editing = employee.id
 },
