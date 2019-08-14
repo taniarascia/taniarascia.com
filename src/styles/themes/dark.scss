@@ -371,7 +371,7 @@ $dark-border: darken($background, 3%);
 
     &::before {
       background: $accent;
-      color: #333;
+      color: #888;
     }
   }
 
@@ -412,6 +412,11 @@ $dark-border: darken($background, 3%);
 
   .comments .comment header h2 {
     color: lighten($foreground, 12%);
+  }
+
+  .comments .comment.reply {
+    border: 2px solid #393939;
+    background: rgba(0, 0, 0, 0.2);
   }
 
   ::selection {

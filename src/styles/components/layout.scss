@@ -984,7 +984,7 @@ iframe {
   }
 
   .comment {
-    padding: 1.5rem 0;
+    margin: 2.5rem 0;
 
     &:last-of-type {
       border-bottom: 0;
@@ -995,9 +995,7 @@ iframe {
       border: 2px solid $border-color;
       border-radius: $border-radius;
       padding: 1.5rem;
-      margin-top: 1.5rem;
       margin-left: 2rem;
-      margin-bottom: 0;
 
       p {
         margin-bottom: 0;
