@@ -86,7 +86,7 @@ export default class Comments extends Component {
     const showError = () =>
       error && (
         <blockquote className="error">
-          <p>Comment failed to submit.</p>
+          <p>Comments disabled.</p>
         </blockquote>
       )
     const showSuccess = () =>
