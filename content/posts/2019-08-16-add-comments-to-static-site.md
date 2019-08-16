@@ -400,7 +400,10 @@ return (
       comments
         .filter(comment => !comment.parent_comment_id)
         .map((comment, i) => {
-          const child = comments.find(c => comment.id == c.parent_comment_id)
+          let child
+          if (comment.id) {
+            child = comments.find(c => comment.id == c.parent_comment_id)
+          }
 
           return (
             <div className="comment" key={i}>
@@ -427,6 +430,8 @@ return (
 
 ## Conclusion
 
-And that's it! If you want to use my shiny new comment system to tell me what can be improved about the comment system, go for it. Otherwise, I hope this helps out someone who wants a simple, free system for their own personal site.
+You'll probably also want to add in some anti-spam moderation system, like adding a `moderated` column to the comments, setting it to `false` by default, and manually setting it to `true` if you approve the comment.
 
-I like reinventing the wheel and making things from scratch. It's fun, and I learn a lot.
+I hope this helps out someone who wants a simple, free system for their own personal site. I like reinventing the wheel and making things from scratch. It's fun, and I learn a lot.
+
+Comments are currently disabled for this article.

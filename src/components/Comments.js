@@ -150,10 +150,13 @@ export default class Comments extends Component {
           comments
             .filter(comment => !comment.parent_comment_id)
             .map((comment, i) => {
-              const child = comments.find(c => comment.id == c.parent_comment_id)
+              let child
+              if (comment.id) {
+                child = comments.find(c => comment.id == c.parent_comment_id)
+              }
 
               return (
-                <div className="comment" key={i}>
+                <div className="comment" key={i} data-id={i}>
                   <header>
                     <h2>{comment.name}</h2>
                     <div className="comment-date">{moment(comment.date).fromNow()}</div>
