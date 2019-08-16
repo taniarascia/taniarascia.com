@@ -16,7 +16,7 @@ Recently, I wrote a lot of tests for [a project I've been working on](https://gi
 
 I have one badge displaying that my build has passed (hopefully), and another displaying my code coverage percent.
 
-[![Build Status](https://travis-ci.org/taniarascia/chip8.svg?branch=master)](https://travis-ci.org/taniarascia/chip8) [![Coverage Status](https://coveralls.io/repos/github/taniarascia/chip8/badge.svg?branch=master)](https://coveralls.io/github/taniarascia/chip8?branch=master)
+![](../images/cov.png)
 
 > I'll use my account ([taniarascia](https://github.com/taniarascia/)) and my project's repo ([chip8](https://github.com/taniarascia/chip8)) as examples for the name. I'm assuming you're using GitHub, but it also applied to GitLab or BitBucket.
 
