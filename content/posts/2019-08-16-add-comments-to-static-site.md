@@ -155,7 +155,7 @@ const updateComment = (request, response) => {
   const parentCommentId = parseInt(request.body.parentCommentId)
 
   pool.query(
-    'UPDATE comments SET name = $1, slug = $2, text = $3, parent_comment_id = $5 WHERE id = $5',
+    'UPDATE comments SET name = $1, slug = $2, text = $3, parent_comment_id = $4 WHERE id = $5',
     [name, slug, text, parentCommentId, id],
     error => {
       if (error) {
