@@ -236,7 +236,7 @@ There's some extra space we don't want, but I want to see how far Bootstrap can 
 
 ### Grid
 
-The last thing I'll do is add in some main content, which will be be in the form of a grid. Grids are rows...
+The last thing I'll do is add in some main content, which will be in the form of a grid. Grids are rows...
 
 ```html
 <div class="row"></div>
