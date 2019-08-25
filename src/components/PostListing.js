@@ -8,7 +8,6 @@ export default class PostListing extends Component {
   getPostList() {
     const { postEdges } = this.props
     const postList = postEdges
-      .filter(postEdge => postEdge.node.frontmatter.template === 'post')
       .map(postEdge => {
         return {
           path: postEdge.node.fields.slug,
