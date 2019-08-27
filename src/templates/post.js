@@ -9,6 +9,7 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
 import Comments from '../components/Comments'
+import NewsletterForm from '../components/NewsletterForm'
 
 export default class PostTemplate extends Component {
   constructor(props) {
@@ -110,11 +111,7 @@ export default class PostTemplate extends Component {
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </article>
         <div className="container">
-          <h3>Never miss an update</h3>
-          <p>Open source projects and web development tutorials, read by over 7,000 people.</p>
-          <a className="button" href="https://taniarascia.substack.com">
-            Get the Newsletter
-          </a>
+          <NewsletterForm />
         </div>
         <UserInfo config={config} />
         <div className="container">

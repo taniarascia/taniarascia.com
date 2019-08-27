@@ -762,6 +762,7 @@ blockquote {
 .avatar {
   max-width: 200px;
   border-radius: 12px;
+  margin-bottom: 0;
 }
 
 @include small-breakpoint {
@@ -778,6 +779,7 @@ blockquote {
 
     .flex-author {
       display: flex;
+      align-items: center;
     }
   }
 
@@ -1022,6 +1024,10 @@ button[disabled] {
 .centered-iframe {
   text-align: center;
   margin: 2rem auto;
+  iframe {
+    max-width: 100% !important;
+    width: 100%;
+  }
 }
 
 .newsletter-section {

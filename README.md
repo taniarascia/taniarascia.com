@@ -6,7 +6,9 @@ Tania's personal website running on Gatsby, React, and Node.js.
 
 ## Note
 
-I've made my website open source for your inspiration, motivation, and curiosity. However, this repo is not meant to be a theme or template for you to fork and replace the values with your own, as it's highly customized and personally tailored. It will take more work to remove all my custom code, and you won't learn much in the process. **I encourage you to be creative and create your own theme, design, and content.**
+I've made my website open source for your **inspiration, motivation, and curiosity**. However, this repo is not meant to be a theme or template for you to fork and replace the values with your own, as it's highly customized and personally tailored. It will take more work to remove all my custom code, and you won't learn much in the process.
+
+### I encourage you to be creative and create your own theme, design, and content instead of using this one.
 
 The [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) is a great place to start, and is the base for this blog.
 
