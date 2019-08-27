@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/postman.png'
 slug: making-api-requests-postman-curl
 categories:
   - Tools
-  - JavaScript
+  - Code
 tags:
   - rest
   - api

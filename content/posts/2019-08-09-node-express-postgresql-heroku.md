@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/heroku.png'
 slug: node-express-postgresql-heroku
 categories:
-  - JavaScript
+  - Code
 tags:
   - node
   - express

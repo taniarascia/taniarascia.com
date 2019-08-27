@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/vue.png'
 slug: getting-started-with-vue
 categories:
-  - JavaScript
+  - Code
   - Popular
 tags:
   - javascript

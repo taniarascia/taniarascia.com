@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: understanding-variables-scope-hoisting-in-javascript
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - fundamentals

@@ -14,9 +14,11 @@ export default class UserInfo extends Component {
             </div>
             <div>
               <p>
-                {`I'm Tania, a web developer specializing in modern JavaScript. I make
-              open source coding projects and write free, quality articles and tutorials that help
-              thousands of people daily. No ads, no sponsored posts, no bullshit.`}
+                I'm Tania, a web developer specializing in modern JavaScript. I make open source
+                coding projects and write <b>free, quality articles</b> and tutorials that help
+                thousands of people daily.
+                <br />
+                <mark>No ads, no affiliates, no sponsors, no bullshit.</mark>
               </p>
 
               <div className="flex">

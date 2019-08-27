@@ -7,12 +7,20 @@ export default class Contact extends Component {
       <>
         <h1>Stay in Touch</h1>
         <p>
-          I write about JavaScript, programming, and front-end design. Get updates once or twice a
-          month when I write an article.
+          I write about <b>modern JavaScript, Node.js, design</b> and all things{' '}
+          <b>web development</b>. Tania's List is read by over 7,000 subscribers.{' '}
+          <mark>No ads, no affiliates, no sponsors, no bullshit.</mark>
         </p>
         <NewsletterForm />
         <p>You can also find me around the web.</p>
         <ul>
+          <li>
+            <strong>Email</strong>:{' '}
+            <a target="_blank" rel="noopener noreferrer" href="mailto:taniaATtaniarasciaDOTcom">
+              tania@taniarascia.com
+            </a>{' '}
+            (<i>please no affiliate/sponsor/ad requests</i>)
+          </li>
           <li>
             <strong>GitHub</strong>:{' '}
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/taniarascia">

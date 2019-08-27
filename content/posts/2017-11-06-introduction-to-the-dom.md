@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/dom.png'
 slug: introduction-to-the-dom
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - dom

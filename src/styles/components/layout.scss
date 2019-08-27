@@ -29,23 +29,6 @@
   margin: 0 auto;
   font-size: 1.1rem;
 
-  a {
-    border-bottom: 2px solid lighten($primary-color, 30%);
-
-    &:hover {
-      color: $link-hover-color;
-      background: $primary-hover;
-      border-bottom: 2px solid $link-hover-color;
-    }
-
-    &:active,
-    &:focus {
-      color: $link-hover-color;
-      background: $primary-hover;
-      border-bottom: 2px dashed $link-hover-color;
-    }
-  }
-
   h1 {
     margin-top: 0;
     font-weight: 700;
@@ -58,12 +41,18 @@
   }
 }
 
-@include small-breakpoint {
+@include large-breakpoint {
   .lead {
+    display: flex;
+    align-items: center;
     font-size: 1.2rem;
 
+    .elevator {
+      margin-right: 2.5rem;
+    }
+
     h1 {
-      font-size: 5rem;
+      font-size: 4rem;
     }
 
     p {
@@ -379,7 +368,7 @@ h2.publication-company {
 }
 
 .alert {
-  display: none;
+  // display: none;
   align-self: center;
   justify-self: flex-end;
 
@@ -545,6 +534,7 @@ h2.publication-company {
       display: block;
       flex: 1;
       margin: 0 1.5rem 0 0;
+      font-size: 1.2rem;
     }
 
     .button {
@@ -642,7 +632,6 @@ h2.publication-company {
   }
 }
 
-
 blockquote {
   color: rgba(0, 0, 0, 0.7);
   border: 2px solid $yellow;
@@ -663,7 +652,6 @@ blockquote {
     border: 2px solid $error;
     background: lighten($error, 23%);
   }
-
 
   p {
     padding: 0;
@@ -748,7 +736,6 @@ blockquote {
   }
 }
 
-
 .note {
   background: $light;
   padding: 2rem 0;
@@ -774,7 +761,7 @@ blockquote {
 
 .avatar {
   max-width: 200px;
-  border-radius: 50%;
+  border-radius: 12px;
 }
 
 @include small-breakpoint {
@@ -916,21 +903,6 @@ blockquote {
   height: auto;
 }
 
-.newsletter-section {
-  background: $light;
-  border: 2px solid $border-color;
-  border-radius: $border-radius;
-  padding: 2.5rem;
-
-  form {
-    margin-bottom: 0;
-  }
-
-  @include small-breakpoint {
-    padding: 3rem;
-  }
-}
-
 .new-moon-icon {
   display: none;
   float: right;
@@ -959,7 +931,7 @@ blockquote {
     font-weight: 400;
     color: darken($light, 30%);
     display: block;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
 
     &:hover {
       color: $primary-color;
@@ -978,7 +950,7 @@ iframe {
 }
 
 .comments {
-  [type="text"] {
+  [type='text'] {
     width: auto;
     min-width: 300px;
   }
@@ -1005,7 +977,7 @@ iframe {
     header {
       display: flex;
       align-items: center;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     h2 {
@@ -1024,7 +996,6 @@ iframe {
         margin-bottom: 0;
       }
     }
-
   }
 
   .comment-date {
@@ -1037,18 +1008,64 @@ iframe {
   }
 }
 
-[type="submit"]:disabled,
+[type='submit']:disabled,
 button[disabled] {
-  opacity: .5;
+  opacity: 0.5;
 
   &:hover,
   &:active,
   &:focus {
-    opacity: .5;
+    opacity: 0.5;
+  }
+}
+
+.centered-iframe {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.newsletter-section {
+  border-radius: $border-radius;
+  display: block;
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: $box-shadow;
+
+  .newsletter-avatar {
+    margin-top: 1rem;
+    border-radius: 12px;
+    width: 50px;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .button {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  @include small-breakpoint {
+    .newsletter-avatar {
+      width: 75px;
+    }
+  }
+
+  @include large-breakpoint {
+    margin: 0;
+    padding: 2rem;
   }
 }
 
 ::selection {
-  background: rgba(255, 245, 20, 0.8);
+  background: rgba(255, 235, 20, 0.7);
   color: #111;
 }

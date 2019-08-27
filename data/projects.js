@@ -1,12 +1,5 @@
 export default [
   {
-    icon: '🏺',
-    title: 'Laconia',
-    path: 'https://laconia.dev',
-    source: 'https://github.com/taniarascia/laconia/',
-    description: 'A modern PHP MVC framework written without libraries or frameworks.',
-  },
-  {
     icon: '🌙',
     title: 'New Moon',
     path: 'https://taniarascia.github.io/new-moon/',
@@ -21,19 +14,26 @@ export default [
     description: 'A Chip-8 emulator written in JavaScript for terminal and the browser.',
   },
   {
+    icon: '🔱',
+    title: 'MVC.js',
+    path: 'https://taniarascia.github.io/mvc/',
+    source: 'https://github.com/taniarascia/mvc/',
+    description: 'A simple Todo MVC application in plain JavaScript.',
+  },
+  {
+    icon: '🏺',
+    title: 'Laconia',
+    path: 'https://laconia.dev',
+    source: 'https://github.com/taniarascia/laconia/',
+    description: 'A modern PHP MVC framework written without libraries or frameworks.',
+  },
+  {
     icon: '⛏️',
     title: ' Primitive',
     path: 'https://taniarascia.github.io/primitive/',
     source: 'https://github.com/taniarascia/primitive/',
     description:
       'A minimalist front-end design toolkit built with Sass for developing responsive, browser-consistent web apps.',
-  },
-  {
-    icon: '🔱',
-    title: 'MVC.js',
-    path: 'https://taniarascia.github.io/mvc/',
-    source: 'https://github.com/taniarascia/mvc/',
-    description: 'A simple Todo MVC application in plain JavaScript.',
   },
   {
     icon: '🐍',

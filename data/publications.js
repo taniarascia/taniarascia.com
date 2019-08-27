@@ -170,4 +170,10 @@ export default {
       path: 'https://www.sitepoint.com/beginners-guide-javascript-variables-and-datatypes',
     },
   ],
+  Gatsby: [
+    {
+      title: 'The End of an Era: Migrating from WordPress to Gatsby',
+      path: 'https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/',
+    },
+  ],
 }

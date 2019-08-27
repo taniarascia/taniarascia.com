@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-do-math-in-javascript-with-operators
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - fundamentals

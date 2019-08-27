@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/json.png'
 slug: how-to-use-json-data-with-php-or-javascript
 categories:
-  - JavaScript
+  - Code
 tags:
   - data
   - javascript

@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/php.png'
 slug: the-simplest-php-router
 categories:
-  - PHP
+  - Code
 tags:
   - mvc
   - php

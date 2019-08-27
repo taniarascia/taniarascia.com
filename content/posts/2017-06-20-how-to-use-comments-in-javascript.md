@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-write-comments-in-javascript
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - fundamentals

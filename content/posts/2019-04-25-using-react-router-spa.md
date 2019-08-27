@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/reactrouter.png'
 slug: using-react-router-spa
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - react

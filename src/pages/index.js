@@ -6,14 +6,13 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import ProjectListing from '../components/ProjectListing'
 import SimpleListing from '../components/SimpleListing'
-import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 import quotes from '../../data/quotes'
-import newMoon from '../../content/images/new-moon.svg'
+import tania from '../../content/images/taniawarm.jpg'
 
 export default class Index extends Component {
   render() {
@@ -24,48 +23,47 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Web developer & writer`} />
+        <Helmet title={`${config.siteTitle} – Developer & Writer`} />
         <SEO />
         <div className="container">
           <div className="lead">
-            <a
-              href="https://taniarascia.github.io/new-moon"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={newMoon}
-                className="new-moon-icon"
-                title="Hmm? What's this?"
-                alt="Hmm? What's this?"
-              />
-            </a>
-            <h1>{`Hi, I'm Tania`}</h1>
-            <p>
-              {`I'm a web developer and writer specializing in modern JavaScript. I make things from scratch, contribute to open source, and write about
-                development in an accessible and intuitive way.`}
-            </p>
-            <div className="social-buttons">
-              <div>
-                <a
-                  className="twitter-follow-button"
-                  href="https://twitter.com/taniarascia"
-                  data-size="large"
-                  data-show-screen-name="false"
-                >
-                  Follow @taniarascia
-                </a>
+            <div className="elevator">
+              <h1>I'm Tania</h1>
+              <p>
+                I write about modern JavaScript, Node.js, design and all things web development.{' '}
+                <br />
+                <mark>No ads, no affiliates, no sponsors, no bullshit.</mark>
+              </p>
+              <div className="social-buttons">
+                <div>
+                  <a
+                    className="twitter-follow-button"
+                    href="https://twitter.com/taniarascia"
+                    data-size="large"
+                    data-show-screen-name="false"
+                  >
+                    Follow @taniarascia
+                  </a>
+                </div>
+                <div>
+                  <GitHubButton
+                    href="https://github.com/taniarascia"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Follow @taniarascia on GitHub"
+                  >
+                    Follow
+                  </GitHubButton>
+                </div>
               </div>
-              <div>
-                <GitHubButton
-                  href="https://github.com/taniarascia"
-                  data-size="large"
-                  data-show-count="true"
-                  aria-label="Follow @taniarascia on GitHub"
-                >
-                  Follow
-                </GitHubButton>
-              </div>
+            </div>
+            <div className="newsletter-section">
+              <img src={tania} className="newsletter-avatar" />
+              <h3>Never miss an update</h3>
+              <p>Open source projects and development tutorials</p>
+              <a className="button" href="https://taniarascia.substack.com">
+                Subscribe
+              </a>
             </div>
           </div>
         </div>
@@ -100,22 +98,12 @@ export default class Index extends Component {
             <h2>{`Other People's Opinions`}</h2>
             <div className="quotations">
               {quotes.map(quote => (
-                <blockquote className="quotation">
+                <blockquote className="quotation" key={quote.name}>
                   <p>{quote.quote}</p>
                   <cite>— {quote.name}</cite>
                 </blockquote>
               ))}
             </div>
-          </section>
-
-          <section className="newsletter-section section">
-            <h2>Join the Newsletter</h2>
-            <p>
-              I write about JavaScript, programming, and front-end design. Join other developers in
-              keeping up with my content. Unsubscribe whenever.{' '}
-              <b>Never any spam, ads, or affiliate links.</b>
-            </p>
-            <NewsletterForm />
           </section>
         </div>
       </Layout>

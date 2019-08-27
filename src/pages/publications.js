@@ -8,6 +8,7 @@ import sitePoint from '../../content/images/sitepoint.png'
 import codrops from '../../content/images/codrops.png'
 import envato from '../../content/images/envato.png'
 import progress from '../../content/images/progress.png'
+import gatsby from '../../content/thumbnails/gatsby.png'
 
 export default class PublicationsPage extends Component {
   render() {
@@ -17,6 +18,7 @@ export default class PublicationsPage extends Component {
       Codrops: codrops,
       'Envato Tuts+': envato,
       Progress: progress,
+      Gatsby: gatsby,
     }
 
     const pubs = Object.entries(publications)

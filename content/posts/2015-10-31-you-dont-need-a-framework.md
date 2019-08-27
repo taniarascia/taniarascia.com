@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: you-dont-need-a-framework
 categories:
-  - CSS
+  - Design
 tags:
   - css
   - fundamentals

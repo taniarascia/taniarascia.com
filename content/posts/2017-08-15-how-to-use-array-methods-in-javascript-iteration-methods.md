@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-use-array-methods-in-javascript-iteration-methods
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - fundamentals

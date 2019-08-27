@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/react.png'
 slug: using-context-api-in-react
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - react

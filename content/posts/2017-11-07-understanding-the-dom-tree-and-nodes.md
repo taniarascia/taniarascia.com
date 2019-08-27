@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/dom.png'
 slug: understanding-the-dom-tree-and-nodes
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - dom

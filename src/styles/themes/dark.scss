@@ -12,7 +12,7 @@ $dark-border: darken($background, 3%);
   }
 
   a {
-    color: lighten($primary-color, 10%);
+    color: lighten($primary-color, 20%);
 
     &:hover,
     &:active,
@@ -64,7 +64,7 @@ $dark-border: darken($background, 3%);
     }
   }
 
-  :not(pre)>code {
+  :not(pre) > code {
     background: rgba(255, 255, 255, 0.1);
     color: $foreground;
   }
@@ -325,7 +325,7 @@ $dark-border: darken($background, 3%);
     &:disabled {
       cursor: default;
       pointer-events: none;
-      opacity: .3;
+      opacity: 0.3;
     }
 
     &:hover,
@@ -362,6 +362,12 @@ $dark-border: darken($background, 3%);
 
   button.dark-switcher {
     border: none !important;
+    &:hover {
+      background: #111 !important;
+    }
+    &:focus {
+      background: #111 !important;
+    }
   }
 
   pre.language-terminal code.language-terminal {
@@ -419,8 +425,13 @@ $dark-border: darken($background, 3%);
     background: rgba(0, 0, 0, 0.2);
   }
 
+  mark {
+    background: darken($primary-color, 20%);
+    color: white;
+  }
+
   ::selection {
-    background: lighten($primary-color, 10%);
+    background: $primary-color;
     color: white;
   }
 }

@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: crossfade-between-two-images-with-css-animations
 categories:
-  - CSS
+  - Design
 tags:
   - animation
   - css

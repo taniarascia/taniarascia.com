@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/http.png'
 slug: add-comments-to-static-site
 categories:
-  - JavaScript
+  - Code
 tags:
   - comments
   - gatsby

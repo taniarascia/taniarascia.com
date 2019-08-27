@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/db.png'
 slug: create-a-simple-database-app-connecting-to-mysql-with-php
 categories:
   - Popular
-  - PHP
+  - Code
 tags:
   - app
   - mysql

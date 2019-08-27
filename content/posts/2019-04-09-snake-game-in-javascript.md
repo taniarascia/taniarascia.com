@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/snake.png'
 slug: snake-game-in-javascript
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - terminal

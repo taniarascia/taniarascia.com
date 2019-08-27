@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/wp.png'
 slug: wordpress-from-scratch-part-two
 categories:
-  - PHP
+  - Code
 tags:
   - php
   - wordpress

@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/css.png'
 slug: off-canvas-navigation
 categories:
-  - CSS
+  - Design
 tags:
   - css
   - navigation

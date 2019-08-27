@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/html.png'
 slug: basic-html5-file
 categories:
-  - CSS
+  - Design
 tags:
   - html
 ---

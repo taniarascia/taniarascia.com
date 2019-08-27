@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/triangle.png'
 slug: javascript-mvc-todo-app
 categories:
   - Popular
-  - JavaScript
+  - Code
 tags:
   - javascript
   - mvc

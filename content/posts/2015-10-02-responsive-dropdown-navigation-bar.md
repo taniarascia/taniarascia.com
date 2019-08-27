@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/css.png'
 slug: responsive-dropdown-navigation-bar
 categories:
   - Popular
-  - CSS
+  - Design
 tags:
   - css
   - jQuery

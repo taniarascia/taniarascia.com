@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/dom.png'
 slug: how-to-access-elements-in-the-dom
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - dom

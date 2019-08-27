@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/jest.png'
 slug: display-build-status-and-test-coverage
 categories:
   - Tools
-  - JavaScript
+  - Code
 tags:
   - javascript
   - testing

@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/react.png'
 slug: getting-started-with-react
 categories:
   - Popular
-  - JavaScript
+  - Code
 tags:
   - api
   - javascript

@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: real-world-examples-of-map-filter-and-reduce-in-javascript
 categories:
-  - JavaScript
+  - Code
 tags:
   - es6
   - javascript

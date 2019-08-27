@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/node.png'
 slug: basic-authentication-for-an-express-node-app-htpasswd
 categories:
-  - JavaScript
+  - Code
 tags:
   - authentication
   - express

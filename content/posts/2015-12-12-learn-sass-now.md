@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/sass.png'
 slug: learn-sass-now
 categories:
-  - CSS
+  - Design
 tags:
   - css
   - sass

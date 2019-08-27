@@ -6,7 +6,7 @@ thumbnail: '../thumbnails/gatsby.png'
 slug: migrating-from-wordpress-to-gatsby
 categories:
   - Personal
-  - JavaScript
+  - Code
 tags:
   - react
   - gatsby

@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
 import PostTags from '../components/PostTags'
-import NewsletterForm from '../components/NewsletterForm'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
@@ -110,19 +109,16 @@ export default class PostTemplate extends Component {
 
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </article>
-
+        <div className="container">
+          <h3>Never miss an update</h3>
+          <p>Open source projects and web development tutorials, read by over 7,000 people.</p>
+          <a className="button" href="https://taniarascia.substack.com">
+            Get the Newsletter
+          </a>
+        </div>
         <UserInfo config={config} />
-
         <div className="container">
           {!error && <Comments commentsList={comments} slug={commentSlug} />}
-
-          <h3>Join the newsletter</h3>
-          <p>
-            I write about JavaScript, programming, and front-end design. Join other developers in
-            keeping up with my content. Unsubscribe whenever.{' '}
-            <b>Never any spam, ads, or affiliate links.</b>
-          </p>
-          <NewsletterForm />
         </div>
       </Layout>
     )

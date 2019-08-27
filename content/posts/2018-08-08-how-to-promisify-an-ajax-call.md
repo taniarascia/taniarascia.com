@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: how-to-promisify-an-ajax-call
 categories:
-  - JavaScript
+  - Code
 tags:
   - es6
   - javascript

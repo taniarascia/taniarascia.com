@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: es6-syntax-and-feature-overview
 categories:
-  - JavaScript
+  - Code
   - Popular
 tags:
   - es6

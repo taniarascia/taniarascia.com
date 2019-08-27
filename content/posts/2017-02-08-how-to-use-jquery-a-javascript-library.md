@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/jquery.png'
 slug: how-to-use-jquery-a-javascript-library
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - jquery

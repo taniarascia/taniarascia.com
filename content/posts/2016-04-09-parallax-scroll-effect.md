@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: parallax-scroll-effect
 categories:
-  - CSS
+  - Design
 tags:
   - jQuery
   - parallax

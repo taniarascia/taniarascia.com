@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/ghibli.png'
 slug: how-to-connect-to-an-api-with-javascript
 categories:
-  - JavaScript
+  - Code
   - Popular
 tags:
   - api
