@@ -14,6 +14,7 @@
   .cta {
     display: flex;
     align-items: center;
+    margin-right: 1rem;
   }
 
   .nav-container {
@@ -51,6 +52,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     flex: 1;
     margin: 0;
 
@@ -59,7 +61,7 @@
       align-items: center;
       font-size: 1.05rem;
       font-weight: 500;
-      padding: 1rem 0.75rem;
+      padding: 1rem;
       margin: 0;
       color: rgba(0, 0, 0, 0.45);
       line-height: 1.2;
@@ -68,6 +70,14 @@
       &:hover,
       &:active {
         color: #111;
+      }
+
+      &.kofi-button {
+        display: block;
+        padding: 0.8rem 0.8rem 0.5rem;
+        background: $primary-color;
+        border-radius: $border-radius;
+        margin: 0;
       }
     }
   }
@@ -81,13 +91,14 @@
 
 button.dark-switcher {
   -webkit-appearance: none;
+  transition: all 0.2s ease;
   border: 0;
   margin: 0;
   padding: 0.75rem 1rem;
-  background: lighten($light, 2%);
+  background: transparent;
 
   &:hover {
-    background: $light;
+    transform: scale(1.1);
   }
 
   &:focus {
@@ -117,12 +128,10 @@ button.dark-switcher {
         &:hover,
         &.active {
           color: #111;
-          border-bottom: 2px solid $primary-color;
         }
 
         &:active {
           color: #111;
-          border-bottom: 2px dashed $primary-color;
         }
       }
     }
@@ -130,58 +139,49 @@ button.dark-switcher {
     .nav-container {
       height: $nav-height;
       padding: 0 2rem;
+    }
 
-      .brand {
-        a {
-          font-size: 1.3rem;
-        }
-
-        .text {
-          display: block;
-        }
+    .brand {
+      a {
+        font-size: 1.3rem;
       }
 
-      .links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex: unset;
-        height: 100%;
+      .text {
+        display: block;
+      }
+    }
 
-        a {
-          font-size: 1.2rem;
-          margin: 0 1rem;
-          padding: 1rem 0.5rem;
-          border-bottom: 2px solid transparent;
+    .links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex: unset;
+      height: 100%;
 
-          &.active {
-            color: #111;
-          }
+      a {
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        padding: 1rem 0.5rem;
+        border-bottom: 2px solid transparent;
+
+        &.active {
+          color: #111;
         }
       }
+    }
 
-      a.donate-button {
-        padding: 0.5rem 1.25rem;
+    a.donate-button {
+      padding: 0.5rem 1.25rem;
 
-        .text {
-          display: block;
-        }
-
-        .emoji-in-button {
-          margin: 0.25rem 0 0 0.75rem;
-        }
+      .text {
+        display: block;
       }
     }
   }
 
-  .patreon {
-    margin: 0;
-    border-radius: 4px;
-  }
-
   .kofi {
     margin: 0;
-    max-width: 38px;
+    max-width: 32px;
   }
 
   .favicon {

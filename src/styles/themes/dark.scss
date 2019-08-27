@@ -12,7 +12,7 @@ $dark-border: darken($background, 3%);
   }
 
   a {
-    color: lighten($primary-color, 20%);
+    color: lighten($primary-color, 10%);
 
     &:hover,
     &:active,
@@ -113,7 +113,7 @@ $dark-border: darken($background, 3%);
   }
 
   h2 {
-    border-color: $dark-border;
+    border-color: #303030;
   }
 
   h1,
@@ -362,12 +362,7 @@ $dark-border: darken($background, 3%);
 
   button.dark-switcher {
     border: none !important;
-    &:hover {
-      background: #111 !important;
-    }
-    &:focus {
-      background: #111 !important;
-    }
+    background: transparent !important;
   }
 
   pre.language-terminal code.language-terminal {

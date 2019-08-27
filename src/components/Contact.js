@@ -8,8 +8,7 @@ export default class Contact extends Component {
         <h1>Stay in Touch</h1>
         <p>
           I write about <b>modern JavaScript, Node.js, design</b> and all things{' '}
-          <b>web development</b>. Tania's List is read by over 7,000 subscribers.{' '}
-          <mark>No ads, no affiliates, no sponsors, no bullshit.</mark>
+          <b>web development</b>.
         </p>
         <NewsletterForm />
         <p>You can also find me around the web.</p>

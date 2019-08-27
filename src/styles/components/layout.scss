@@ -199,7 +199,7 @@
     .each {
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 1fr 0;
+      grid-template-columns: 50px 1fr 60px;
       padding: 1rem 0;
       margin: 0;
       border: 2px solid transparent;
@@ -231,12 +231,8 @@
 
   .gatsby-image-wrapper {
     margin-top: 0;
-    height: 40px !important;
-    width: 40px !important;
-  }
-
-  .excerpt {
-    display: none;
+    height: 30px !important;
+    width: 30px !important;
   }
 
   &.simple {
@@ -270,6 +266,12 @@
         color: #111;
       }
     }
+  }
+  .excerpt {
+    font-size: 1rem;
+    display: block;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
   }
 }
 
@@ -317,13 +319,6 @@
           width: 50px !important;
         }
       }
-
-      .excerpt {
-        font-size: 1rem;
-        display: block;
-        color: rgba(0, 0, 0, 0.4);
-        font-weight: 500;
-      }
     }
 
     &.simple {
@@ -368,9 +363,9 @@ h2.publication-company {
 }
 
 .alert {
-  // display: none;
   align-self: center;
   justify-self: flex-end;
+  margin-left: 1rem;
 
   .new {
     display: inline-block;
@@ -378,25 +373,28 @@ h2.publication-company {
     background: lighten($yellow, 26%);
     color: darken($yellow, 18%);
     border-radius: $border-radius;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     text-align: center;
   }
 
   .popular {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     background: lighten($green, 50%);
     color: $green;
     border-radius: $border-radius;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     text-align: center;
   }
 }
 
 @include small-breakpoint {
   .alert {
-    margin-left: 1rem;
-    display: block;
+    .new,
+    .popular {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
   }
 }
 
@@ -497,13 +495,10 @@ h2.publication-company {
   .buttons {
     display: flex;
     align-items: center;
-    width: 210px;
-    min-width: 210px;
-    max-width: 210px;
   }
 
   .button {
-    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     padding: 0.5rem;
     font-size: 1rem;
   }
@@ -1025,22 +1020,25 @@ button[disabled] {
   text-align: center;
   margin: 2rem auto;
   iframe {
+    background: white;
+    border-radius: $border-radius;
     max-width: 100% !important;
     width: 100%;
   }
 }
 
 .newsletter-section {
+  display: flex;
+  align-items: center;
   border-radius: $border-radius;
-  display: block;
   margin: 2rem 0;
   padding: 1rem;
   text-align: center;
   box-shadow: $box-shadow;
 
   .newsletter-avatar {
-    margin-top: 1rem;
-    border-radius: 12px;
+    margin-top: 1.5rem;
+    border-radius: 8px;
     width: 50px;
   }
 
@@ -1055,13 +1053,20 @@ button[disabled] {
   }
 
   .button {
-    font-size: 1.5rem;
-    padding: 1.2rem;
+    font-size: 1.3rem;
+    padding: 1.1rem;
   }
 
   @include small-breakpoint {
+    flex-direction: column;
+
     .newsletter-avatar {
       width: 75px;
+    }
+
+    .button {
+      font-size: 1.5rem;
+      padding: 1.2rem;
     }
   }
 

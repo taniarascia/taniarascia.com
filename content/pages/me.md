@@ -10,7 +10,7 @@ I started this website as a place to document everything I learned while going t
 
 I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate links, and the rest of the annoying noise we're so accustomed to seeing on the internet these days.
 
-<a class="button" href="https://taniarascia.substack.com">Get the newsletter</a>
+<a class="button" href="https://taniarascia.substack.com">Subscribe</a>
 
 ![Me](../images/taniafull.jpg)
 

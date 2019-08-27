@@ -30,9 +30,7 @@ export default class Index extends Component {
             <div className="elevator">
               <h1>I'm Tania</h1>
               <p>
-                I write about modern JavaScript, Node.js, design and all things web development.{' '}
-                <br />
-                <mark>No ads, no affiliates, no sponsors, no bullshit.</mark>
+                I write about modern JavaScript, Node.js, design and all things web development.
               </p>
               <div className="social-buttons">
                 <div>
@@ -59,8 +57,10 @@ export default class Index extends Component {
             </div>
             <div className="newsletter-section">
               <img src={tania} className="newsletter-avatar" />
-              <h3>Never miss an update</h3>
-              <p>Open source projects and development tutorials</p>
+              <div>
+                <h3>Get updates</h3>
+                <p>Open source projects and development tutorials</p>
+              </div>
               <a className="button" href="https://taniarascia.substack.com">
                 Subscribe
               </a>

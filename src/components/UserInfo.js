@@ -15,8 +15,8 @@ export default class UserInfo extends Component {
             <div>
               <p>
                 I’m Tania Rascia, a web developer and writer. I document everything I learn in
-                clear, concise tutorials that help thousands of people transition into coding
-                careers themselves.
+                clear, concise tutorials that help thousands of people start coding careers. My site
+                has no ads, sponsors, or bullshit.
               </p>
 
               <div className="flex">

@@ -49,9 +49,6 @@ export default class Navigation extends Component {
                 {link.name}
               </Link>
             ))}
-            <a target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/taniarascia">
-              <img src={kofi} alt="Kofi" className="kofi" />
-            </a>
             <div className="cta">
               <button className="dark-switcher" onClick={theme.toggleDark}>
                 {theme.dark ? (
@@ -65,6 +62,14 @@ export default class Navigation extends Component {
                 )}
               </button>
             </div>
+            <a
+              className="kofi-button"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://ko-fi.com/taniarascia"
+            >
+              <img src={kofi} alt="Kofi" className="kofi" />
+            </a>
           </div>
         </div>
       </nav>
