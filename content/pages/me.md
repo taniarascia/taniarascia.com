@@ -72,10 +72,10 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 ## Currently Using
 
 - **Computer:** MacBook Pro 2015
-- **Hosting:** [Netlify](https://netlify.com), [AWS](https://aws.amazon.com), [Heroku](https://heroku.com)
+- **Hosting:** [Netlify](https://netlify.com) (blog), [Heroku](https://heroku.com) (API)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
-- **Static site generator (blog):** [Gatsby](https://gatsbyjs.org)
-- **Syntax highlighting:** [PrismJS](http://prismjs.com/)
-- **Code syntax theme:** [New Moon](https://taniarascia.github.io/new-moon)
+- **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
+- **Syntax Highlighting:** [PrismJS](http://prismjs.com/)
+- **Code Syntax Theme:** [New Moon](https://taniarascia.github.io/new-moon)
 - **Newsletter:** [Substack](https://substack.com)
 - **Notes:** [SimpleNote](https://simplenote.com/)

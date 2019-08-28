@@ -36,6 +36,10 @@
     margin-bottom: 1.5rem;
   }
 
+  p {
+    font-size: 1.25rem;
+  }
+
   .button {
     margin-right: 0.5rem;
   }
@@ -199,7 +203,7 @@
     .each {
       display: grid;
       align-items: center;
-      grid-template-columns: 50px 1fr 60px;
+      grid-template-columns: 50px 1fr 70px;
       padding: 1rem 0;
       margin: 0;
       border: 2px solid transparent;
@@ -267,6 +271,7 @@
       }
     }
   }
+
   .excerpt {
     font-size: 1rem;
     display: block;
@@ -390,6 +395,7 @@ h2.publication-company {
 
 @include small-breakpoint {
   .alert {
+
     .new,
     .popular {
       font-size: 0.9rem;
@@ -698,34 +704,53 @@ blockquote {
 }
 
 .quotations {
+  display: flex;
+  flex-wrap: wrap;
+
   .quotation {
+    padding: 1rem;
+    margin: 0 0 1rem;
+    flex: 1 1 calc(50% - 2rem);
     border-color: $primary-color;
     background: $primary-color;
     color: white;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+    padding: 1rem 1rem 3.5rem !important;
+    border-radius: $border-radius;
+
+    position: relative;
+
+    p {
+      font-size: 1rem;
+    }
+
+    &:nth-of-type(2n) {
+      margin-left: 1rem;
+    }
+
+    cite {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.5rem;
+      color: rgba(0, 0, 0, .6)
+    }
   }
 }
 
 @include small-breakpoint {
   .quotations {
-    display: flex;
-    flex-wrap: wrap;
 
     .quotation {
-      margin: 0 0 1rem;
       padding: 2.5rem 2.5rem 4.5rem !important;
-      border-radius: $border-radius;
-      flex: 1 1 calc(50% - 2rem);
-      box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
-      position: relative;
 
-      &:nth-of-type(2n) {
-        margin-left: 1rem;
+      p {
+        font-size: 1.3rem;
       }
 
       cite {
         position: absolute;
-        bottom: 1rem;
-        right: 1.5rem;
+        bottom: 1.5rem;
+        right: 2.5rem;
       }
     }
   }
@@ -755,9 +780,9 @@ blockquote {
 }
 
 .avatar {
-  max-width: 200px;
+  max-width: 100px;
   border-radius: 12px;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 @include small-breakpoint {
@@ -779,7 +804,9 @@ blockquote {
   }
 
   .avatar {
+    max-width: 200px;
     margin-right: 2rem;
+    margin-bottom: 0;
   }
 }
 
@@ -1019,6 +1046,7 @@ button[disabled] {
 .centered-iframe {
   text-align: center;
   margin: 2rem auto;
+
   iframe {
     background: white;
     border-radius: $border-radius;
@@ -1030,14 +1058,15 @@ button[disabled] {
 .newsletter-section {
   display: flex;
   align-items: center;
+  flex-direction: column;
   border-radius: $border-radius;
   margin: 2rem 0;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
   box-shadow: $box-shadow;
 
   .newsletter-avatar {
-    margin-top: 1.5rem;
+    margin-top: .5rem;
     border-radius: 8px;
     width: 50px;
   }
@@ -1053,13 +1082,11 @@ button[disabled] {
   }
 
   .button {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 1.1rem;
   }
 
   @include small-breakpoint {
-    flex-direction: column;
-
     .newsletter-avatar {
       width: 75px;
     }

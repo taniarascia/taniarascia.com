@@ -56,14 +56,14 @@ export default class Index extends Component {
               </div>
             </div>
             <div className="newsletter-section">
-              <img src={tania} className="newsletter-avatar" />
+              <img src={tania} className="newsletter-avatar" alt="Tania" />
               <div>
                 <h3>Get updates</h3>
                 <p>Open source projects and development tutorials</p>
+                <a className="button" href="https://taniarascia.substack.com">
+                  Subscribe
+                </a>
               </div>
-              <a className="button" href="https://taniarascia.substack.com">
-                Subscribe
-              </a>
             </div>
           </div>
         </div>

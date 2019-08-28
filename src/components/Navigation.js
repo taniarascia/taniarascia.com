@@ -52,13 +52,9 @@ export default class Navigation extends Component {
             <div className="cta">
               <button className="dark-switcher" onClick={theme.toggleDark}>
                 {theme.dark ? (
-                  <span>
-                    <img src={sun} className="theme-icon" alt="Light Mode" />
-                  </span>
+                  <img src={sun} className="theme-icon" alt="Light Mode" />
                 ) : (
-                  <span>
-                    <img src={moon} className="theme-icon" alt="Dark Mode" />
-                  </span>
+                  <img src={moon} className="theme-icon" alt="Dark Mode" />
                 )}
               </button>
             </div>

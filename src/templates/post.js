@@ -40,6 +40,7 @@ export default class PostTemplate extends Component {
     const commentSlug = slug.replace(/\\|\//g, '')
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
+    const popular = postNode.frontmatter.categories.find(category => category === 'Popular')
     let thumbnail
 
     if (!post.id) {
@@ -101,7 +102,7 @@ export default class PostTemplate extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Edit on Github ✏️
+                  Edit ✏️
                 </a>
               </div>
               <PostTags tags={post.tags} />
