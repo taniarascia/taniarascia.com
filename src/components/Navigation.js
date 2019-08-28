@@ -50,7 +50,7 @@ export default class Navigation extends Component {
               </Link>
             ))}
             <div className="cta">
-              <button className="dark-switcher" onClick={theme.toggleDark}>
+              <button className="dark-switcher" onClick={theme.toggleDark} aria-label="Toggle Dark Mode." title="Toggle Dark Mode">
                 {theme.dark ? (
                   <img src={sun} className="theme-icon" alt="Light Mode" />
                 ) : (
@@ -63,6 +63,8 @@ export default class Navigation extends Component {
               target="_blank"
               rel="noopener noreferrer"
               href="https://ko-fi.com/taniarascia"
+              aria-label="Buy me a coffee!"
+              title="Buy me a coffee!"
             >
               <img src={kofi} alt="Kofi" className="kofi" />
             </a>
