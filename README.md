@@ -4,6 +4,8 @@ Tania's personal website running on Gatsby, React, and Node.js.
 
 - [Read about it on the official Gatsby blog!](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1GNP8)
+
 ## Note
 
 I've made my website open source for your **inspiration, motivation, and curiosity**. However, this repo is not meant to be a theme or template for you to fork and replace the values with your own, as it's highly customized and personally tailored. It will take more work to remove all my custom code, and you won't learn much in the process.
