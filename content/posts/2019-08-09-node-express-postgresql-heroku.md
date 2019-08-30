@@ -155,7 +155,7 @@ Use the [node-postgres](https://www.npmjs.com/package/pg) package to create a [P
 
 Create a connection string that follows the pattern of `postgresql://USER:PASSWORD@HOST:PORT/DATABASE`. I'll use the environment variables from `.env` using `process.env.VARIABLE`. Initializing with `require('dotenv').config()` will allow you to use those environment variables.
 
-I've also created an `inProduction` string - in an environment like Heroku, `NODE_ENV` will be set to `production` so you can have different behavior between environments. Heroku will supply us with a string called `DATABASE_URL` for the connectionString, so we won't have to build a new one.
+I've also created an `isProduction` string - in an environment like Heroku, `NODE_ENV` will be set to `production` so you can have different behavior between environments. Heroku will supply us with a string called `DATABASE_URL` for the connectionString, so we won't have to build a new one.
 
 <div class="filename">config.js</div>
 
