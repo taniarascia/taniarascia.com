@@ -1,16 +1,16 @@
-# taniarascia.com [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# taniarascia.com
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys) 
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1GNP8)
 
 Tania's personal website running on Gatsby, React, and Node.js.
 
 - [Read about it on the official Gatsby blog!](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1GNP8)
-
 ## Note
 
-I've made my website open source for your **inspiration, motivation, and curiosity**. However, this repo is not meant to be a theme or template for you to fork and replace the values with your own, as it's highly customized and personally tailored. It will take more work to remove all my custom code, and you won't learn much in the process.
-
-### I encourage you to be creative and create your own theme, design, and content.
+I've made my website open source for your inspiration, motivation, and curiosity. However, this theme is highly customized and personally tailored, and it would take more work to remove all my custom code than create your own. **I encourage you to be creative and create your own theme, design, and content.**
 
 The [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) is a great place to start, and is the base for this blog.
 
