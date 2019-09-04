@@ -566,15 +566,11 @@ Here's a recap of all the commands I went over today.
 
 Now that you know how to use the command line, you can do a few things like...
 
-- Use Git from the command line
 - [Run Sass from the command line](/learn-sass-now/)
 - [Set up a workflow with Gulp](/getting-started-with-gulp/)
 - [Or Grunt](/getting-started-with-grunt-and-sass/)
-- Set up a Jekyll site]
 - [Download all your programs with a single command](/setting-up-a-brand-new-mac-for-development/)
 - [Set up a Linux server (AWS)](/getting-started-with-aws-setting-up-a-virtual-server/)
 - [Set up a cron job](/setting-up-a-basic-cron-job-in-linux/)
 
 and plenty more. There are no more limits! Have fun.
-
-I might consider making a Windows tutorial, which would be almost the same just with a few commands and screenshots changed, and a basic Bash script tutorial.
