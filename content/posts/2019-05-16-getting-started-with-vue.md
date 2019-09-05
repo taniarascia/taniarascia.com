@@ -472,7 +472,7 @@ Now that you've added this, you can see in Vue DevTools that the state of the co
 
 ### Event listeners
 
-We want to do an `onsubmit` event on the form. We can do that with `v-on:submit`, or `@submit` for short. This convention with be the same for `@click`/`v-on:click` or any other similar event. The `submit` event also has a handy `prevent` we can add to it, which is the same as putting `event.preventDefault()` inside the submit function, since we won't be using the default GET/POST methods provided by forms.
+We want to do an `onsubmit` event on the form. We can do that with `v-on:submit`, or `@submit` for short. This convention will be the same for `@click`/`v-on:click` or any other similar event. The `submit` event also has a handy `prevent` we can add to it, which is the same as putting `event.preventDefault()` inside the submit function, since we won't be using the default GET/POST methods provided by forms.
 
 Let's add this to the form, and reference a `handleSubmit` method we'll make.
 
