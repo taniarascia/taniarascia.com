@@ -27,7 +27,7 @@ export default class ProjectListing extends Component {
               </GitHubButton>
               {project.path && (
                 <a className="button" href={project.path} target="_blank" rel="noopener noreferrer">
-                  Site
+                  View
                 </a>
               )}
             </div>

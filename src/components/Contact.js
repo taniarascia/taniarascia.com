@@ -15,10 +15,10 @@ export default class Contact extends Component {
         <ul>
           <li>
             <strong>Email</strong>:{' '}
-            <a target="_blank" rel="noopener noreferrer" href="mailto:taniaATtaniarasciaDOTcom">
+            <a target="_blank" rel="noopener noreferrer" href="mailto:tania[AT]taniarascia[DOT]com">
               tania@taniarascia.com
             </a>{' '}
-            (<i>please no affiliate/sponsor/ad requests</i>)
+            (<i>please no affiliate/sponsor/ads/guest posts</i>)
           </li>
           <li>
             <strong>GitHub</strong>:{' '}

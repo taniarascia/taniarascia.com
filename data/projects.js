@@ -42,6 +42,13 @@ export default [
     description: 'A terminal-based Snake implementation written in JavaScript (Node.js).',
   },
   {
+    icon: '📦',
+    title: 'Webpack Boilerplate',
+    source: 'https://github.com/taniarascia/webpack-boilerplate',
+    description:
+      'A sensible Webpack 4 boilerplate with with Babel, Sass, ESLint, HMR, and prod/dev optimization.',
+  },
+  {
     icon: '💾',
     title: 'tania.dev',
     source: 'https://github.com/taniarascia/taniarascia.com/',

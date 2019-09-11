@@ -4,9 +4,9 @@ slug: me
 template: page
 ---
 
-I’m Tania Rascia, a web developer, technical writer, and former chef from Chicago. I currently work as a front end software engineer and I've written for [tons of publications](/publications).
+I’m Tania Rascia, a web developer, technical writer, and former chef from Chicago. I currently work as a front end software engineer and I've written for many [developer publications](/publications).
 
-I started this website as a place to document everything I learned while going through a [career change](https://www.taniarascia.com/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
+I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
 
 I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate links, and the rest of the annoying noise we're so accustomed to seeing on the internet these days.
 
@@ -16,7 +16,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Around the web
 
-- **Email**: [tania@taniarascia.com](mailto:taniaATtaniarasciaDOTcom) (_please no affiliate/sponsor/ad requests_)
+- **Email**: [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com) (_please no affiliate/sponsor/ads/guest posts_)
 - **GitHub**: [taniarascia](https://github.com/taniarascia)
 - **Twitter**: [taniarascia](https://twitter.com/taniarascia)
 
@@ -39,6 +39,7 @@ A non-exhaustive list.
 - [Laconia](https://github.com/taniarascia/laconia) – a modern PHP MVC framework written without libraries or frameworks
 - [Primitive](https://github.com/taniarascia/primitive) – a minimalist front-end design toolkit built with Sass
 - [Snek.js](https://github.com/taniarascia/snek) – a terminal-based Snake implementation written in JavaScript (Node.js)
+- [Webpack Boilerplate](https://github.com/taniarascia/webpack-boilerplate) – a sensible Webpack 4 boilerplate with with Babel, Sass, ESLint, HMR, and prod/dev optimization
 - [tania.dev](https://github.com/taniarascia/taniarascia.com) – personal theme for Gatsby (the source of this website)
 
 ## Publications
