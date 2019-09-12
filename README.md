@@ -2,11 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys) 
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1GNP8)
-
 Tania's personal website running on Gatsby, React, and Node.js.
-
-- [Read about it on the official Gatsby blog!](https://www.gatsbyjs.org/blog/2019-03-21-migrating-from-wordpress-to-gatsby/)
 
 ## Note
 
@@ -37,6 +33,8 @@ If you see any typos or formatting errors in a post, or any other issue that nee
 ## Author
 
 - [Tania Rascia](https://www.taniarascia.com)
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1GNP8)
 
 ## License
 
