@@ -16,7 +16,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Around the web
 
-- **Email**: [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com) (_please no affiliate/sponsor/ads/guest posts_)
+- **Email**: [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com)
 - **GitHub**: [taniarascia](https://github.com/taniarascia)
 - **Twitter**: [taniarascia](https://twitter.com/taniarascia)
 
@@ -44,7 +44,15 @@ A non-exhaustive list.
 
 ## Publications
 
-- [View all](/publications)
+Articles I've written for developer publications.
+
+- [DigitalOcean](/publications/#DigitalOcean)
+- [LogRocket](/publications/#LogRocket)
+- [Codrops](/publications/#Codrops)
+- [Progress](/publications/#Progress)
+- [Envato Tuts+](/publications/#EnvatoTuts+)
+- [SitePoint](/publications/#SitePoint)
+- [Gatsby](/publications/#Gatsby)
 
 ## Music
 

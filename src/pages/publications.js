@@ -9,6 +9,7 @@ import codrops from '../../content/images/codrops.png'
 import envato from '../../content/images/envato.png'
 import progress from '../../content/images/progress.png'
 import gatsby from '../../content/thumbnails/gatsby.png'
+import logRocket from '../../content/images/logrocket.png'
 
 export default class PublicationsPage extends Component {
   render() {
@@ -19,38 +20,47 @@ export default class PublicationsPage extends Component {
       'Envato Tuts+': envato,
       Progress: progress,
       Gatsby: gatsby,
+      LogRocket: logRocket,
     }
+
+    let companies = Object.keys(logoMap)
+    const companyStr = companies.join(', ').replace(/, ([^,]*)$/, ' and $1')
 
     const pubs = Object.entries(publications)
     return (
       <Layout>
         <Helmet title={`Published Articles – ${config.siteTitle}`} />
         <div className="container">
-          <h1>Published Articles</h1>
-          {pubs.map((publication, i) => {
-            const company = publication[0]
-            const articles = publication[1]
+          <header className="page-header">
+            <h1>Publications</h1>
+          </header>
+          <div className="page">
+            <p>I've written for {companyStr}.</p>
+            {pubs.map((publication, i) => {
+              const company = publication[0]
+              const articles = publication[1]
 
-            return (
-              <article>
-                <h2 className="publication-company">
-                  <img src={logoMap[company]} alt="Company" />
-                  {company}
-                </h2>
-                <ul key={i}>
-                  {articles.map((article, i) => {
-                    return (
-                      <li key={i}>
-                        <a href={article.path} target="_blank" rel="noopener noreferrer">
-                          {article.title}
-                        </a>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </article>
-            )
-          })}
+              return (
+                <article>
+                  <h2 className="publication-company" id={company.replace(/\s/g, '')}>
+                    <img src={logoMap[company]} alt="Company" />
+                    {company}
+                  </h2>
+                  <ul key={i}>
+                    {articles.map((article, i) => {
+                      return (
+                        <li key={i}>
+                          <a href={article.path} target="_blank" rel="noopener noreferrer">
+                            {article.title}
+                          </a>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </article>
+              )
+            })}
+          </div>
         </div>
       </Layout>
     )

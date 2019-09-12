@@ -140,6 +140,8 @@ Before we try to put anything on the front end of the website, let's open a conn
 
 We'll create a `request` variable and assign a new `XMLHttpRequest` object to it. Then we'll open a new connection with the `open()` method - in the arguments we'll specify the type of request as `GET` as well as the URL of the API endpoint. The request completes and we can access the data inside the `onload` function. When we're done, we'll send the request.
 
+> **Note:** At the time of writing this article, `XMLHttpRequest` was the default method of making an API request. Fetch API has much better browser support now, so you can also do this article using Fetch. Read [How to Use JavaScript Fetch API](how-to-use-the-javascript-fetch-api-to-get-json-data) to learn how.
+
 <div class="filename">scripts.js</div>
 
 ```js
@@ -149,7 +151,7 @@ var request = new XMLHttpRequest()
 // Open a new connection, using the GET request on the URL endpoint
 request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
 
-request.onload = function () {
+request.onload = function() {
   // Begin accessing JSON data here
 }
 
@@ -221,8 +223,6 @@ request.send()
 ```
 
 We've successfully used a `GET` HTTP request to retrieve (or consume) the API endpoint, which consisted of data in JSON format. However, we're still stuck in the console - we want to display this data on the front end of the website, which we'll do by modifying the DOM.
-
-> `XMLHttpRequest` is a widely supported built-in method of making requests. There is also a newer [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) which can be used for the same purpose, which is simpler but has less browser support.
 
 ## Displaying the Data
 

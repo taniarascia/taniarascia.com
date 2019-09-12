@@ -131,6 +131,12 @@ export default {
       path: 'https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript',
     },
   ],
+  LogRocket: [
+    {
+      title: 'Setting up a RESTful API with Node.js and PostgreSQL',
+      path: 'https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/',
+    }
+  ],
   Codrops: [
     {
       title: 'An Introduction to CSS Shapes',

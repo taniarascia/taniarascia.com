@@ -12,7 +12,7 @@ tags:
   - react
 ---
 
-In the latest release of React, a new concept was introduced - [Hooks](https://reactjs.org/docs/hooks-intro.html). Hooks are being added to React as an alternative to classes. If you use React right now, you'll be familiar with **simple (functional) components** and **class components**.
+A new concept was introduced in React - [Hooks](https://reactjs.org/docs/hooks-intro.html). Hooks are an alternative to classes. If you've used React before, you'll be familiar with **simple (functional) components** and **class components**.
 
 <div class="filename">Simple component</div>
 
@@ -49,7 +49,7 @@ In order to follow along with this tutorial, you'll need a basic knowledge of HT
 
 In this tutorial, we'll make a [simple CRUD app](https://taniarascia.github.io/react-hooks/). It will have users, and you'll be able to add, update, or delete users. We won't use any React classes, and instead we'll utilize State Hooks and Effect Hooks on functional components. If you get lost along the way, be sure to check out [the source of the completed project](https://github.com/taniarascia/react-hooks).
 
-## Create React App with React v16.7.0
+## Create React App
 
 We'll start by installing the project with **create-react-app** (CRA).
 
@@ -57,23 +57,7 @@ We'll start by installing the project with **create-react-app** (CRA).
 npx create-react-app react-hooks
 ```
 
-CRA will install React with the latest stable version.
-
-```bash
-brew install yarn --without-node
-```
-
-In `package.json`, ensure `react` and `react-dom` are `16.7.0`.
-
-<div class="filename">package.json</div>
-
-```json
-"dependencies": {
-  "react": "^16.7.0",
-  "react-dom": "^16.7.0",
-```
-
-Then run `yarn`.
+Then run `npm i`.
 
 Now you're all set with the React.
 
@@ -707,11 +691,11 @@ And that's it. We have a complete CRUD app utilizing React State and Effect hook
 
 ## Conclusion
 
-React Hooks are not officially part of React yet, but they are very likely the way of the future. I didn't cover every use case for Hooks, or all functionality in-depth, but I tried to provide a working example of a complete, albeit simple, React program. For a complete FAQ on all things relating to hooks, check out the [Hooks FAQ](https://reactjs.org/docs/hooks-faq.html).
+I didn't cover every use case for Hooks, or all functionality in-depth, but I tried to provide a working example of a complete, albeit simple, React program. For a complete FAQ on all things relating to hooks, check out the [Hooks FAQ](https://reactjs.org/docs/hooks-faq.html).
 
 If you got lost anywhere along the way, don't forget to check out the demo and source.
 
 - [View Demo App](https://taniarascia.github.io/react-hooks/)
 - [View Source](https://github.com/taniarascia/react-hooks)
 
-The next thing to be on the lookout for is the [Suspense API](https://medium.com/swlh/react-suspense-with-the-fetch-api-cc655aced759), but there is not enough information yet to write about that.
+The next thing to be on the lookout for is the [Suspense API](https://medium.com/swlh/react-suspense-with-the-fetch-api-cc655aced759).

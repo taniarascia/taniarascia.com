@@ -14,12 +14,12 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 #### Concepts
 
+- [x] Bind, Call, Apply and `this`
+- [x] Bitwise Operators
 - [ ] Map, Set, WeakMap, WeakSet
 - [ ] Closures
 - [ ] Promises, Async/Await, Microtasks, Event Loop
-- [x] Bind, Call, Apply and `this`
 - [ ] Generators
-- [ ] Bitwise Operators
 
 #### Document Object Model (DOM) and Web APIs
 
@@ -45,11 +45,31 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] Docker
 - [ ] Creating a Pipeline
 
-### Frameworks
+### Tools/Frameworks/Concepts
 
+- [x] Webpack
 - [x] Vuex
+- [x] Git
+  - [x] Merge, Rebase, Branch, Stash, Pull Request
 
 ### Computer Science
+
+#### Algorithms
+
+- [x] Complexity (Big O notation)
+  - [x] Size complexity
+  - [ ] Time complexity
+- [ ] Sorting
+  - [ ] Bubble
+  - [ ] Insertion
+  - [ ] Selection
+  - [ ] Merge
+  - [ ] Heap
+  - [ ] Quick
+- [ ] Searching
+  - [ ] Binary search
+- [ ] Pattern matching
+- [ ] Recursion
 
 #### Data Structures
 
@@ -66,23 +86,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
   - [ ] Segment tree
 - [ ] Heap
 - [ ] Graph
-
-#### Algorithms
-
-- [ ] Complexity (Big O notation)
-  - [ ] Size complexity
-  - [ ] Time complexity
-- [ ] Sorting
-  - [ ] Bubble
-  - [ ] Insertion
-  - [ ] Selection
-  - [ ] Merge
-  - [ ] Heap
-  - [ ] Quick
-- [ ] Searching
-  - [ ] Binary search
-- [ ] Pattern matching
-- [ ] Recursion
 
 ## Learned
 
@@ -152,12 +155,6 @@ This is not everything I know, but a good amount of the things I've documented s
 
 ### CSS
 
-- [x] Spacing, Styling
-- [x] Selectors and Specificity
-- [x] Positioning
-- [x] Box model
-- [x] Flexbox
-- [x] Floats
 - [x] [Responsive (Media Queries, Breakpoints)](/you-dont-need-a-framework/)
 - [x] [Shapes](https://tympanus.net/codrops/2018/11/29/an-introduction-to-css-shapes/)
 - [x] [Sass](/learn-sass-now/)
@@ -167,7 +164,6 @@ This is not everything I know, but a good amount of the things I've documented s
 
 - [x] Git
   - [x] [Push, Pull, Commit](/getting-started-with-git/)
-  - [x] Merge, Rebase, Branch, Stash, Pull Request
 - [x] [Mac Development](/setting-up-a-brand-new-mac-for-development/)
 - [x] [Command Line](/how-to-use-the-command-line-for-apple-macos-and-linux/)
 - [x] [Grunt](/getting-started-with-grunt-and-sass/)
@@ -189,8 +185,7 @@ This is not everything I know, but a good amount of the things I've documented s
 
 ### Testing
 
-- [x] [Unit Tests](/unit-testing-in-javascript/)
-- [x] End-to-End Tests
+- [x] [JavaScript Unit Tests with Jest or Mocha](/unit-testing-in-javascript/)
 
 ### DevOps and CI/CD
 
