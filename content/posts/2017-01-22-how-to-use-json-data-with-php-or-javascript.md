@@ -394,7 +394,7 @@ Gimli is a Dwarf.
 
 ### Using Fetch
 
-Now you can also use the Fetch API to do the same thing. Read [How to Use the JavaScript Fetch API to Get JSON Data](/how-to-use-the-javascript-fetch-api-to-get-json-data/) for an easier method to get this data.
+Now you can also use the Fetch API to do the same thing. Read [How to use the JavaScript Fetch API to Get JSON Data](/how-to-use-the-javascript-fetch-api-to-get-json-data/) for an easier method to get this data.
 
 ```js
 // Replace ./data.json with your JSON feed

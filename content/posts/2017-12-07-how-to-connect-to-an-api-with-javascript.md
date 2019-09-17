@@ -140,7 +140,7 @@ Before we try to put anything on the front end of the website, let's open a conn
 
 We'll create a `request` variable and assign a new `XMLHttpRequest` object to it. Then we'll open a new connection with the `open()` method - in the arguments we'll specify the type of request as `GET` as well as the URL of the API endpoint. The request completes and we can access the data inside the `onload` function. When we're done, we'll send the request.
 
-> **Note:** At the time of writing this article, `XMLHttpRequest` was the default method of making an API request. Fetch API has much better browser support now, so you can also do this article using Fetch. Read [How to Use JavaScript Fetch API](how-to-use-the-javascript-fetch-api-to-get-json-data) to learn how.
+> **Note:** At the time of writing this article, `XMLHttpRequest` was the default method of making an API request. Fetch API has much better browser support now, so you can also do this article using Fetch. Read [How to use the JavaScript Fetch API](/how-to-use-the-javascript-fetch-api-to-get-json-data) to learn how.
 
 <div class="filename">scripts.js</div>
 

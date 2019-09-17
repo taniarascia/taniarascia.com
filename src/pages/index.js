@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
@@ -70,12 +70,22 @@ export default class Index extends Component {
 
         <div className="container front-page">
           <section className="section">
-            <h2>Latest Articles</h2>
+            <h2>
+              Latest Articles
+              <Link to="/blog" className="view-all">
+                View all
+              </Link>
+            </h2>
             <PostListing simple postEdges={latestPostEdges} />
           </section>
 
           <section className="section">
-            <h2>Most Popular</h2>
+            <h2>
+              Most Popular
+              <Link to="/categories/popular" className="view-all">
+                View all
+              </Link>
+            </h2>
             <PostListing simple postEdges={popularPostEdges} />
           </section>
 

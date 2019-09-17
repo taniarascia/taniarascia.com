@@ -122,8 +122,24 @@
   margin-top: 2rem;
 
   h2 {
+    display: flex;
+    align-items: center;
     border-bottom: 0;
     padding-bottom: 0;
+    a.view-all {
+      display: inline-block;
+      padding: 0.4rem 0.6rem;
+      background: $light;
+      border-radius: $border-radius;
+      color: lighten($font-color, 10%);
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0.25rem 1rem 0 2rem;
+      &:hover,
+      &:focus {
+        background: darken($light, 5%);
+      }
+    }
   }
 }
 
@@ -395,7 +411,6 @@ h2.publication-company {
 
 @include small-breakpoint {
   .alert {
-
     .new,
     .popular {
       font-size: 0.9rem;
@@ -732,14 +747,13 @@ blockquote {
       position: absolute;
       bottom: 1rem;
       right: 1.5rem;
-      color: rgba(0, 0, 0, .6)
+      color: rgba(0, 0, 0, 0.6);
     }
   }
 }
 
 @include small-breakpoint {
   .quotations {
-
     .quotation {
       padding: 2.5rem 2.5rem 4.5rem !important;
 
@@ -942,10 +956,17 @@ blockquote {
 
 .footer {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   height: 55px;
   color: $light-font-color;
+
+  div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
 
   strong {
     margin-right: 1rem;
@@ -961,10 +982,17 @@ blockquote {
       color: $primary-color;
     }
   }
+
+  .footer-img {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 0;
+  }
 }
 
 @include small-breakpoint {
   .footer {
+    flex-direction: row;
     height: 100px;
   }
 }
@@ -1066,7 +1094,7 @@ button[disabled] {
   box-shadow: $box-shadow;
 
   .newsletter-avatar {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     border-radius: 8px;
     width: 50px;
   }

@@ -2,6 +2,9 @@ const path = require('path')
 const kebabCase = require('lodash.kebabcase')
 const moment = require('moment')
 const siteConfig = require('./data/SiteConfig')
+const sharp = require('sharp')
+sharp.simd(false)
+sharp.cache(false)
 
 const postNodes = []
 

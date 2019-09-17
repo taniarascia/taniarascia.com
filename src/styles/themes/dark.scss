@@ -40,6 +40,19 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  .front-page {
+    h2 {
+      a.view-all {
+        background: rgba(0, 0, 0, 0.2);
+        color: darken($foreground, 10%);
+        &:hover, &:focus {
+          background: black;
+          color: $foreground;
+        }
+      }
+    }
+  }
+
   .post,
   .page {
     a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {

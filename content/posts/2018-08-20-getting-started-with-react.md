@@ -143,7 +143,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 Here is the full code for our `index.html`.
 
-index.html
+<div class="filename">index.html</div>
 
 ```html
 <!DOCTYPE html>
@@ -495,11 +495,14 @@ const TableBody = () => {
 }
 ```
 
-Now our `Table` class will look like this.
+Now our `Table` file will look like this. Note that the `TableHeader` and `TableBody` components are all in the same file, and being used by the `Table` class component.
 
 <div class="filename">src/Table.js</div>
 
 ```jsx
+const TableHeader = () => { ... }
+const TableBody = () => { ... }
+
 class Table extends Component {
   render() {
     return (
