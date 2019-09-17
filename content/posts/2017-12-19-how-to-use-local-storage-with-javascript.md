@@ -113,7 +113,7 @@ First, we'll create a simple HTML front end with **index.html**. I'm loading in 
 
     <title>New Tab App</title>
 
-    <link rel="stylesheet" href="https://taniarascia.github.io/primitive/css/main.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
   </head>
 
   <body>
