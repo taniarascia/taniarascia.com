@@ -955,17 +955,17 @@ blockquote {
 }
 
 .footer {
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 55px;
   color: $light-font-color;
 
   div {
     display: flex;
     align-items: center;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
   }
 
   strong {
