@@ -80,16 +80,16 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 
 ## Portfolio
 
-I don't work as a designer/developer creature brochure-style websites anymore, but here are a few I made when I did.
+A few sites I designed.
 
-- [Cafe Ba-Ba-Reeba!](https://www.cafebabareeba.com/) - My favorite!
-- [Shaw's Crab House](https://www.shawscrabhouse.com)
-- [Tokio Asian Fusion](https://www.tokioasianfusion.com/)
-- [Stripburger](https://www.stripburger.com/)
-- [Krispy Kreme PNW](https://www.krispykremepacificnw.com/)
-- [Il Porcellino](https://www.ilporcellinochicago.com/)
-- [Reel Club](http://reel-club.com/)
-- [Beatrix Market](https://www.beatrixrestaurants.com/)
+- [Cafe Ba-Ba-Reeba!](https://www.cafebabareeba.com/) - 2017
+- [Shaw's Crab House](https://www.shawscrabhouse.com) - 2017
+- [Tokio Asian Fusion](https://www.tokioasianfusion.com/) - 2017
+- [Stripburger](https://www.stripburger.com/) - 2017
+- [Beatrix Market](https://www.beatrixrestaurants.com/) - 2017
+- [Krispy Kreme PNW](https://www.krispykremepacificnw.com/) - 2016
+- [Il Porcellino](https://www.ilporcellinochicago.com/) - 2016
+- [Reel Club](http://reel-club.com/) - 2016
 
 ## Currently Using
 
