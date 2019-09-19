@@ -8,7 +8,7 @@ There's a lot I want to learn, and a lot I've learned and documented. Here's whe
 
 ## To Learn
 
-My current focus is **Computer Science** fundamentals and all things **JavaScript**.
+My current focus is **Computer Science** fundamentals and all things **JavaScript**. (They stay here until I write about it.)
 
 ### JavaScript
 
@@ -16,9 +16,9 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 - [x] Bind, Call, Apply and `this`
 - [x] Bitwise Operators
-- [ ] Map, Set, WeakMap, WeakSet
+- [ ] Map, Set, WeakMap, and WeakSet
 - [ ] Closures
-- [ ] Promises, Async/Await, Microtasks, Event Loop
+- [ ] Promises, Async/Await, Microtasks,and the Event Loop
 - [ ] Generators
 
 #### Document Object Model (DOM) and Web APIs
@@ -58,7 +58,7 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 - [x] Complexity (Big O notation)
   - [x] Size complexity
-  - [ ] Time complexity
+  - [x] Time complexity
 - [ ] Sorting
   - [ ] Bubble
   - [ ] Insertion

@@ -78,6 +78,19 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - [Floppy Disk](https://github.com/taniarascia/3d#floppy-disk)
 - [Soap Holder](https://github.com/taniarascia/3d#soap-holder)
 
+## Portfolio
+
+I don't work as a designer/developer creature brochure-style websites anymore, but here are a few I made when I did.
+
+- [Cafe Ba-Ba-Reeba!](https://www.cafebabareeba.com/) - My favorite!
+- [Shaw's Crab House](https://www.shawscrabhouse.com)
+- [Tokio Asian Fusion](https://www.tokioasianfusion.com/)
+- [Stripburger](https://www.stripburger.com/)
+- [Krispy Kreme PNW](https://www.krispykremepacificnw.com/)
+- [Il Porcellino](https://www.ilporcellinochicago.com/)
+- [Reel Club](http://reel-club.com/)
+- [Beatrix Market](https://www.beatrixrestaurants.com/)
+
 ## Currently Using
 
 - **Computer:** MacBook Pro 2015
@@ -85,6 +98,10 @@ Sometimes I sing and play accordion/piano. I like to [record music](https://soun
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
 - **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
 - **Syntax Highlighting:** [PrismJS](http://prismjs.com/)
-- **Code Syntax Theme:** [New Moon](https://taniarascia.github.io/new-moon)
+- **Code Theme:** [New Moon](https://taniarascia.github.io/new-moon)
 - **Newsletter:** [Substack](https://substack.com)
 - **Notes:** [SimpleNote](https://simplenote.com/)
+
+## Misc
+
+- Won 3rd place for [Personal Developer Blog of the Year 2019](https://hackernoon.com/personal-developer-blog-of-the-year-hacker-noon-noonies-awards-2019-hz2tu32ql)
