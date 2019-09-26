@@ -13,7 +13,7 @@ tags:
 
 I recently discovered that I ended up on the Hacker Noon awards for [Personal Developer Blog of the Year 2019](https://hackernoon.com/personal-developer-blog-of-the-year-hacker-noon-noonies-awards-2019-hz2tu32ql), which is an amazing honor! I got third place. I thought that was pretty neat, so I figured I'd mention it. Thank you all for reading, subscribing, and sharing my content!
 
-In 2017, [I wrote a list](/web-developers-and-bloggers-i-follow-2017/) of some bloggers I follow, though much of the list wasn't actually web development related. I have a few favorites blogs I keep an eye on right now, so I'll share them with you.  
+In 2017, [I wrote a list](/web-developers-and-bloggers-i-follow-2017/) of some bloggers I follow, though much of the list wasn't actually web development related. I have a few favorites blogs I keep an eye on right now, so I'll share them with you.
 
 Everyone on this list has their own personal website/blog that isn't hosted on some third party like Medium, most of them have no ads, and I think they're all cool people in general.
 
@@ -27,7 +27,7 @@ Chances are, if you're looking for something about Firebase or React/Redux, you'
 
 - [khalilstemmler.com](https://khalilstemmler.com/)
 
-Khalil is filling an all-too-rare niche in web development blogs, which is how to build large scale applications properly, specificly with TypeScript and Node. He's bridging the gap between intermediate and advanced, which is a difficult area to cover. Check it out if you're looking for something beyond "Hello, World"!
+Khalil is filling an all-too-rare niche in web development blogs, which is how to build large scale applications properly, specifically with TypeScript and Node. He's bridging the gap between intermediate and advanced, which is a difficult area to cover. Check it out if you're looking for something beyond "Hello, World"!
 
 ## Flavio Copes
 
@@ -47,7 +47,7 @@ If you're into JavaScript, and especially React, I'm sure you already know and l
 
 Swyx has a lot of great posts and tutorials, and one of his most famous contributions to the web development zeitgeist is [Learn in Public](https://www.swyx.io/writing/learn-in-public/). I was inspired by that post, as it's what I've been doing all along since I started developing, and what I recommend to everyone who wants to become a developer themselves. In response, I made [my own Learning in Public page](/learn).
 
-## Chris Ferdinandi 
+## Chris Ferdinandi
 
 - [gomakethings.com](https://gomakethings.com/)
 
@@ -63,6 +63,6 @@ Probably the cleanest, fastest site running on WordPress I've ever seen. James w
 
 - [ahmadawais.com](https://ahmadawais.com/)
 
-I've recently discovered Ahmad, and he has an some extremely impressive credentials. If there's a list or committee in web deelopment, he's probably on it or associated with it - Google Developer Expert, Node.js Committee Member, WordPress Core Developer, to name a few. He also made a popular code theme, [Shades of Purple](https://github.com/ahmadawais/shades-of-purple-vscode)...but I'll never switch from [New Moon](https://github.com/taniarascia/new-moon)!
+I've recently discovered Ahmad, and he has an some extremely impressive credentials. If there's a list or committee in web development, he's probably on it or associated with it - Google Developer Expert, Node.js Committee Member, WordPress Core Developer, to name a few. He also made a popular code theme, [Shades of Purple](https://github.com/ahmadawais/shades-of-purple-vscode)...but I'll never switch from [New Moon](https://github.com/taniarascia/new-moon)!
 
-I'm sure I've forgotten a ton, but I wanted to get a little list out of the ones that came to my head. 
+I'm sure I've forgotten a ton, but I wanted to get a little list out of the ones that came to my head.
