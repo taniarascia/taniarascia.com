@@ -65,4 +65,10 @@ Probably the cleanest, fastest site running on WordPress I've ever seen. James w
 
 I've recently discovered Ahmad, and he has an some extremely impressive credentials. If there's a list or committee in web development, he's probably on it or associated with it - Google Developer Expert, Node.js Committee Member, WordPress Core Developer, to name a few. He also made a popular code theme, [Shades of Purple](https://github.com/ahmadawais/shades-of-purple-vscode)...but I'll never switch from [New Moon](https://github.com/taniarascia/new-moon)!
 
+## Valentino Gagliardi
+
+- [valentinog.com](https://www.valentinog.com/blog/)
+
+Another great site for tutorials. I've landed on Valentino's site plenty of times. His articles are very in-depth and informative, and he cares about responding to users and helping them out as well.
+
 I'm sure I've forgotten a ton, but I wanted to get a little list out of the ones that came to my head.
