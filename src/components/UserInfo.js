@@ -14,9 +14,9 @@ export default class UserInfo extends Component {
             </div>
             <div>
               <p>
-                I’m Tania Rascia, a web developer and writer. I document everything I learn and
+                I’m Tania Rascia. I document everything I learn and
                 help thousands of people start coding careers. My site has no ads, sponsors, or
-                bullshit.
+                bullshit. If you enjoy my content, please consider supporting what I do.
               </p>
 
               <div className="flex">
@@ -27,7 +27,7 @@ export default class UserInfo extends Component {
                   rel="noopener noreferrer"
                 >
                   <img src={kofi} className="coffee-icon" alt="Coffee icon" />
-                  Buy me a coffee!
+                  Buy me a coffee
                 </a>
                 <a
                   className="patreon-button"
@@ -35,7 +35,7 @@ export default class UserInfo extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={patreon} height="50" width="50" /> Patreon
+                  <img src={patreon} height="50" width="50" /> Become a Patron
                 </a>
               </div>
             </div>
