@@ -4,7 +4,7 @@ slug: contact
 template: page
 ---
 
-I write about modern JavaScript, Node.js, design and all things web development.
+I build open-source projects and write about modern JavaScript, Node.js, design and web development.
 
 <div class="centered-iframe">
   <iframe

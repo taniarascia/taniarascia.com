@@ -12,7 +12,7 @@ import projects from '../../data/projects'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 import quotes from '../../data/quotes'
-import tania from '../../content/images/taniawarm.jpg'
+import tania from '../../content/images/tania-avatar.jpg'
 
 export default class Index extends Component {
   render() {
@@ -30,7 +30,8 @@ export default class Index extends Component {
             <div className="elevator">
               <h1>I'm Tania</h1>
               <p>
-                I write about modern JavaScript, Node.js, design and all things web development.
+                I build open-source projects and write about modern JavaScript, Node.js, design and
+                web development.
               </p>
               <div className="social-buttons">
                 <div>

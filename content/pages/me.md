@@ -4,13 +4,17 @@ slug: me
 template: page
 ---
 
-I’m Tania Rascia, a web developer, technical writer, and former chef from Chicago. I currently work as a front end software engineer and I've written for many [developer publications](/publications).
+I’m Tania Rascia, a web developer, technical writer, and former chef from Chicago. I currently work as a front end software engineer for a startup, and I've written for many [developer publications](/publications).
 
 I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
 
 I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate links, and the rest of the annoying noise we're so accustomed to seeing on the internet these days.
 
-<a class="button" href="https://taniarascia.substack.com">Subscribe</a>
+### Newsletter
+
+I send out a message whenever I write something new. Sign up for the newsletter to get notified.
+
+<a class="button" href="https://taniarascia.substack.com">Join the newsletter</a>
 
 ![Me](../images/taniafull.jpg)
 
@@ -102,6 +106,6 @@ A few sites I designed.
 - **Newsletter:** [Substack](https://substack.com)
 - **Notes:** [SimpleNote](https://simplenote.com/)
 
-## Misc
+## Miscellaneous
 
 - Won 3rd place for [Personal Developer Blog of the Year 2019](https://hackernoon.com/personal-developer-blog-of-the-year-hacker-noon-noonies-awards-2019-hz2tu32ql)

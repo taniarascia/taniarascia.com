@@ -45,7 +45,7 @@
   }
 }
 
-@include large-breakpoint {
+@include small-breakpoint {
   .lead {
     display: flex;
     align-items: center;
@@ -717,9 +717,8 @@ blockquote {
     padding: 1rem;
     margin: 0 0 1rem;
     flex: 1 1 calc(50% - 2rem);
-    border: 1px solid lighten($primary-color, 10%);
-    background: lighten($primary-color, 32%);
-    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+    border: none;
+    background: $light;
     padding: 1rem 1rem 3.5rem !important;
     border-radius: $border-radius;
     position: relative;
@@ -1078,7 +1077,7 @@ button[disabled] {
   margin: 2rem 0;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: $box-shadow;
+  background: $light;
 
   .newsletter-avatar {
     margin-top: 0.5rem;
