@@ -9,7 +9,7 @@ I build open-source projects and write about modern JavaScript, Node.js, design 
 <div class="centered-iframe">
   <iframe
     width="480"
-    height="320"
+    height="350"
     src="https://taniarascia.substack.com/embed"
     frameborder="0"
     scrolling="no"
