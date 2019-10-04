@@ -12,7 +12,7 @@ tags:
   - fundamentals
 ---
 
-_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-make-changes-to-the-dom)_.
+_This article was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-make-changes-to-the-dom)_.
 
 In the previous two installments of the Understanding the DOM series, we learned [How to Access Elements in the DOM](/how-to-access-elements-in-the-dom) and [How to Traverse the DOM](/how-to-traverse-the-dom). Using this knowledge, a developer can use classes, tags, ids, and selectors to find any node in the DOM, and use parent, child, and sibling properties to find relative nodes.
 

@@ -11,7 +11,7 @@ tags:
   - fundamentals
 ---
 
-_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-mutator-methods)_.
+_This article was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-mutator-methods)_.
 
 Arrays in JavaScript consist of a list of elements. JavaScript has many useful built-in methods, which we will review in this article.
 

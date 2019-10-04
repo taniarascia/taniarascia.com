@@ -23,8 +23,9 @@ export default class PublicationsPage extends Component {
       LogRocket: logRocket,
     }
 
-    let companies = Object.keys(logoMap)
-    const companyStr = companies.join(', ').replace(/, ([^,]*)$/, ' and $1')
+    const companyStr = Object.keys(logoMap)
+      .join(', ')
+      .replace(/, ([^,]*)$/, ' and $1')
 
     const pubs = Object.entries(publications)
     return (

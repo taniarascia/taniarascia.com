@@ -11,7 +11,7 @@ tags:
   - fundamentals
 ---
 
-_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-syntax-and-code-structure-in-javascript)._
+_This article was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-syntax-and-code-structure-in-javascript)._
 
 ### Introduction
 

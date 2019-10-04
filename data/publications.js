@@ -130,6 +130,10 @@ export default {
       title: 'Understanding Events in JavaScript',
       path: 'https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript',
     },
+    {
+      title: 'Understanding This, Bind, Call, and Apply in JavaScript',
+      path: 'https://www.digitalocean.com/community/conceptual_articles/understanding-this-bind-call-and-apply-in-javascript',
+    },
   ],
   LogRocket: [
     {

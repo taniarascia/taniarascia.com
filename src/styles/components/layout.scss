@@ -126,6 +126,7 @@
     align-items: center;
     border-bottom: 0;
     padding-bottom: 0;
+
     a.view-all {
       display: inline-block;
       padding: 0.4rem 0.6rem;
@@ -135,6 +136,7 @@
       font-size: 1rem;
       font-weight: 500;
       margin: 0.25rem 1rem 0 2rem;
+
       &:hover,
       &:focus {
         background: darken($light, 5%);
@@ -376,10 +378,11 @@
 h2.publication-company {
   display: flex;
   align-items: center;
+  font-size: 1.6rem;
 
   img {
-    max-height: 50px;
-    margin: 0 1rem 0 0;
+    max-height: 30px;
+    margin: 0 .75rem 0 0;
   }
 }
 
@@ -411,6 +414,7 @@ h2.publication-company {
 
 @include small-breakpoint {
   .alert {
+
     .new,
     .popular {
       font-size: 0.9rem;

@@ -12,7 +12,7 @@ tags:
   - fundamentals
 ---
 
-_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-the-dom-tree-and-nodes)_.
+_This article was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-the-dom-tree-and-nodes)_.
 
 The DOM is often referred to as the **DOM tree**, and consists of a tree of objects called **nodes**. In the [Introduction to the DOM](/introduction-to-the-dom), we went over what the Document Object Model (DOM) is, how to access the `document` object and modify its properties with the [console](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-developer-console), and the difference between HTML source code and the DOM.
 

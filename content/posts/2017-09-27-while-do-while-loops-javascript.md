@@ -11,7 +11,7 @@ tags:
   - fundamentals
 ---
 
-_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/using-while-and-do-while-loops-in-javascript)_.
+_This article was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/using-while-and-do-while-loops-in-javascript)_.
 
 Automation is the technique of making a technique or system operate automatically; in programming, we use **loops** to automate repitious tasks. [Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) are one of the most useful features of programming languages, and in this this article we will learn about the `while` and `do...while` loops in JavaScript.
 

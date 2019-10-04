@@ -11,7 +11,7 @@ tags:
   - fundamentals
 ---
 
-_This post was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript)._
+_This article was originally written for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript)._
 
 ### Introduction
 
