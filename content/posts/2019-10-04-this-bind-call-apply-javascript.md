@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/js.png'
 slug: this-bind-call-apply-javascript
 categories:
-  - JavaScript
+  - Code
 tags:
   - javascript
   - fundamentals
