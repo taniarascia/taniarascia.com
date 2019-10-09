@@ -5,6 +5,7 @@ import config from '../../data/SiteConfig'
 
 export default class SEO extends Component {
   render() {
+    const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
     const { postNode, postPath, postSEO } = this.props
     let title
     let description
@@ -18,7 +19,7 @@ export default class SEO extends Component {
       if (postMeta.thumbnail) {
         image = postMeta.thumbnail.childImageSharp.fixed.src
       }
-      postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
+      postURL = urljoin(config.siteUrl, replacePath(postPath))
     } else {
       title = config.siteTitle
       description = config.siteDescription
