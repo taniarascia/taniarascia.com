@@ -33,7 +33,7 @@ Khalil is filling an all-too-rare niche in web development blogs, which is how t
 
 - [flaviocopes.com](https://flaviocopes.com/)
 
-No one is more prolific than Flavio. I honestly don't know how he has time to breathe, much less write all these tutorials. Not only does he write a blog post _every single day_, but he has endless handbooks, courses, and tutorials. Some of the posts are more like snippets, but you'll find nice, succint helpful stuff on there.
+No one is more prolific than Flavio. I honestly don't know how he has time to breathe, much less write all these tutorials. Not only does he write a blog post _every single day_, but he has endless handbooks, courses, and tutorials. Some of the posts are more like snippets, but you'll find nice, succinct helpful stuff on there.
 
 ## Dan Abramov
 
