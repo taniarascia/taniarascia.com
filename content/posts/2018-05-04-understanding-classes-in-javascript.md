@@ -176,6 +176,8 @@ An advantageous feature of constructor functions and classes is that they can be
 
 New constructor functions can be created from the parent using the [call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) method. In the example below, we will create a more specific character class called `Mage`, and assign the properties of `Hero` to it using `call()`, as well as adding an additional property.
 
+We will also set the `Mage`'s prototype to the one of `Hero`. Thus, `Mage` will inherit the methods of the `Hero`'s prototype.
+
 <div class="filename">constructor.js</div>
 
 ```js
@@ -186,6 +188,9 @@ function Mage(name, level, spell) {
 
   this.spell = spell
 }
+
+// Creating a new object using Hero's prototype as the prototype for the newly created object.
+Mage.prototype = Object.create(Hero.prototype)
 ```
 
 Now we can create a new instance of `Mage` using the same properties as `Hero` as well as a new one we added.
@@ -257,6 +262,9 @@ function Mage(name, level, spell) {
 
   this.spell = spell
 }
+
+// Creating a new object using Hero's prototype as the prototype for the newly created object.
+Mage.prototype = Object.create(Hero.prototype)
 ```
 
 <div class="filename">class.js</div>
