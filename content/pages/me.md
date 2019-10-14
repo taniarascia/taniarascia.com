@@ -37,6 +37,7 @@ A non-exhaustive list.
 
 ## Open Source Projects
 
+- [TakeNote](https://github.com/taniarascia/takenote) – A web-based note-taking app with GitHub sync and Markdown support
 - [New Moon](https://github.com/taniarascia/new-moon) – the optimized dark theme for web development. Your new favorite theme
 - [Chip8.js](https://github.com/taniarascia/chip8) – a Chip-8 emulator written in JavaScript for terminal and the browser
 - [MVC.js](https://github.com/taniarascia/mvc) – a simple Todo MVC application in plain JavaScript
