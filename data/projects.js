@@ -1,5 +1,11 @@
 export default [
   {
+    icon: '📝',
+    title: 'TakeNote',
+    source: 'https://github.com/taniarascia/takenote',
+    description: 'A web-based note-taking app with GitHub sync and Markdown support.',
+  },
+  {
     icon: '🌙',
     title: 'New Moon',
     path: 'https://taniarascia.github.io/new-moon/',
