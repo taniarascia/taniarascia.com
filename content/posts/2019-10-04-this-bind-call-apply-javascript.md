@@ -30,7 +30,7 @@ There are four main contexts in which the value of `this` can be implicitly infe
 
 ### Global
 
-In the global context, `this` refers to the [global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object). When you're working in a browser, the global context is would be `window`. When you're working in Node.js, the global context is `global`.
+In the global context, `this` refers to the [global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object). When you're working in a browser, the global context is `window`. When you're working in Node.js, the global context is `global`.
 
 > **Note:** If you are not yet familiar with the concept of scope in JavaScript, please review [Understanding Variables, Scope, and Hoisting in JavaScript](/understanding-variables-scope-hoisting-in-javascript).
 
