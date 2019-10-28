@@ -434,4 +434,6 @@ You'll probably also want to add in some anti-spam moderation system, like addin
 
 I hope this helps out someone who wants a simple, free system for their own personal site. I like reinventing the wheel and making things from scratch. It's fun, and I learn a lot.
 
-Comments are currently disabled for this article.
+_Update_
+
+I decided not to keep comments on the site due to the time required to moderate comments on a high traffic website. However, [Khalil Stemmler](https://khalilstemmler.com/) has expanded on this article in [How to Prerender Comments](https://khalilstemmler.com/articles/gatsbyjs/prerender-comments-for-seo/) and I highly suggest you check it out if you plan on hosting your own comment system!
