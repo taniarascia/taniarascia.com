@@ -1,9 +1,15 @@
 import wordpress from '../content/thumbnails/wp.png'
 import react from '../content/thumbnails/react.png'
+import vue from '../content/thumbnails/vue.png'
 
 export default [
   {
-    title: 'JS Chicago - An Introduction to React',
+    title: 'Chicago JavaScript - Getting Started with Vue',
+    path: 'https://www.youtube.com/watch?v=FPVI1wd7Uo0',
+    img: vue,
+  },
+  {
+    title: 'Chicago JavaScript - An Introduction to React',
     path: 'https://www.youtube.com/watch?v=35-WmqaQCj8&t',
     img: react,
   },
