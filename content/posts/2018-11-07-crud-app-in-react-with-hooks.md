@@ -250,6 +250,8 @@ const App = () => {
     </div>
   )
 }
+
+export default App
 ```
 
 Props works just as it did before. We'll map through the user data we sent through and display the properties for each user, or display a message if there are no users. The edit and delete buttons aren't hooked up to anything yet, so they won't do anything.
