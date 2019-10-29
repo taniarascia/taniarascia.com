@@ -113,7 +113,7 @@ response.clearCookie('nameOfCookie')
 
 #### Local values in Express middleware
 
-Express runs on middlewares. In the case that you want to update a cookie in one middleware and use it in the next, you can store it as an Express local. This might come in handy if you have to refresh a JWT access token in a preAuth route, use that authentication in the handler, and
+Express runs on middlewares. In the case that you want to update a cookie in one middleware and use it in the next, you can store it as an Express local. This might come in handy if you have to refresh a JWT access token in a preAuth route, use that authentication in the handler, and send cookies in the response at the end.
 
 ```js
 // Create a local
@@ -240,7 +240,7 @@ const router = require('./router')
 app.use('/api', router)
 ```
 
-### Building and serving
+## Production and Development
 
 With the production setup, an entire React application is built for distribution, and the Express app serves the SPA on all routes.
 
@@ -288,6 +288,6 @@ The [Webpack Boilerplate](https://github.com/taniarascia/webpack-boilerplate) is
 
 ## Conclusion
 
-Hopefully this resource helped you understand the various types of vulnerabilities associated with persistent client-side storage (XSS and CSRF), and some approaches we can take to mitigate potential attacks, namely HttpOnly, SameSite, Secure Web Cookies. 
+Hopefully this resource helped you understand the various types of vulnerabilities associated with persistent client-side storage (XSS and CSRF), and some approaches we can take to mitigate potential attacks, namely HttpOnly, SameSite, Secure Web Cookies.
 
 If you have any additional insight that can make this article better, please don't hesitate to let me know.
