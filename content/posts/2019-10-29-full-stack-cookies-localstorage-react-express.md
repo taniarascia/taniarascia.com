@@ -61,6 +61,8 @@ A real-world example of the setup:
 
 The Express server will serve the React SPA from all routes, exccept those that begin with `/api`. The React application will hit the Express server for all endpoints. With this method, your front end app is on the same domain, and has a server, allowing you to secure cookies with HttpOnly, Secure, and Same Site options.
 
+From here, you can make API calls to microservices or some protected server. The actual API endpoints and access tokens will not be visible from the browser.
+
 Below I will lay out some of the main concepts of setting up this architecture for a full stack application (without it being an actual tutorial walkthrough).
 
 ## Using HTTP cookies in Express
@@ -239,6 +241,65 @@ const router = require('./router')
 // Use all API routes
 app.use('/api', router)
 ```
+
+## React Single Page Application
+
+Tyler McGinnis has a great article about [Protected Routes and Authentication with React Router](https://tylermcginnis.com/react-router-protected-routes-authentication/), which demonstrates how you can make a `PrivateRoute` and `PublicRoute` component.
+
+This is front-end only authentication protection, which can not be trusted to protect sensitive data - that should be protected by the backend APIs that require access tokens (or whatever security method) to return a response.
+
+Using the basic example of routes from the aforementioned article, here's how you can make an API call to the Express server from React, authenticate some global [Context](/using-context-api-in-react/) state, and route the app through the front end.
+
+<div class="filename">App.js</div>
+
+```jsx
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import axios from 'axios'
+// ...plus page and context imports
+
+export default class App extends Component {
+  static contextType = AuthContext
+
+  state = { loading: true }
+
+  async componentDidMount() {
+    const Auth = this.context
+
+    try {
+      const response = await axios('/api/auth')
+
+      Auth.authenticate()
+    } catch (error) {
+      console.log(error)
+    } finally {
+      this.setState({ loading: false })
+    }
+  }
+
+  render() {
+    const Auth = this.context
+    const { loading } = this.state
+
+    if (loading) {
+      return <div>Loading...</div>
+    }
+
+    return (
+      <Router>
+        <Switch>
+          <PublicRoute exact path="/login" component={LoginPage} />
+          <ProtectedRoute exact path="/dashboard" component={DashboardPage} />
+          <Route exact path="/logout" component={LogoutPage} />
+          <Redirect to="/login" />
+        </Switch>
+      </Router>
+    )
+  }
+}
+```
+
+Now the development server will direct you to the correct route depending on your authentication status. In production mode, the distribution `index.html` file will be served - more on this below.
 
 ## Production and Development
 
