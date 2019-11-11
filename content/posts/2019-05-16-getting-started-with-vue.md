@@ -449,6 +449,26 @@ Make `EmployeeForm.vue` and set it up a field to enter name, email, and a button
 </style>
 ```
 
+We'll also need to add this to App.vue
+
+<div class="filename">src/components/EmployeeForm.vue</div>
+
+```html
+<template>
+  <employee-form @add:employee="addEmployee" />
+</template>
+```
+<script>
+  import EmployeeForm from '@/components/EmployeeForm.vue'
+  
+  export default {
+    name: 'app',
+    component: {
+      EmployeeForm,
+    },
+  }
+</script>
+
 ![](../images/vue6.png)
 
 Now we have to figure out how to get the data that we're writing in the input into Vue's component state. To do that we'll use `v-model`. [v-model](https://vuejs.org/v2/guide/forms.html) is some built-in Vue syntactic sugar for updating an input value with an onchange event.
