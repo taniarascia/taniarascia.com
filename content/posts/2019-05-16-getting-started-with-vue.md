@@ -972,7 +972,7 @@ We're going to use [JSON Placeholder](https://jsonplaceholder.typicode.com) to m
 
 An asynchronous method with [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) will look something like this, using a [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) block.
 
-> We'll use the built-in [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that Node and the browser have access to, however other options like [Axios](https://www.axios.com/) are available and popular. I just prefer to use Fetch because it's one less dependency to install for example purposes.
+> We'll use the built-in [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that Node and the browser have access to, however other options like [Axios](https://github.com/axios/axios) are available and popular. I just prefer to use Fetch because it's one less dependency to install for example purposes.
 
 ```js
 async asynchronousMethod() {
