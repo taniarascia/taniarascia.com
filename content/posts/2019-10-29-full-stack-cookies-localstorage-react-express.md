@@ -59,7 +59,7 @@ A real-world example of the setup:
 - an Node + Express server backend
 - Web Cookies (Secure, HttpOnly, Same Site)
 
-The Express server will serve the React SPA from all routes, exccept those that begin with `/api`. The React application will hit the Express server for all endpoints. With this method, your front end app is on the same domain, and has a server, allowing you to secure cookies with HttpOnly, Secure, and Same Site options.
+The Express server will serve the React SPA from all routes, except those that begin with `/api`. The React application will hit the Express server for all endpoints. With this method, your front end app is on the same domain, and has a server, allowing you to secure cookies with HttpOnly, Secure, and Same Site options.
 
 From here, you can make API calls to microservices or some protected server. The actual API endpoints and access tokens will not be visible from the browser.
 
