@@ -298,7 +298,6 @@ If I add it to the `addRow` method, I can fix them before they get submitted.
 
 ```jsx
 addRow = () => {
-  const { store, row } = this.state
   const trimSpaces = string => {
     return string
       .replace(/&nbsp;/g, '')
@@ -306,17 +305,19 @@ addRow = () => {
       .replace(/&gt;/g, '>')
       .replace(/&lt;/g, '<')
   }
-  const trimmedRow = {
-    ...row,
-    item: trimSpaces(row.item),
-  }
+  
+  this.setState(({ store, row }) => {
+    const trimmedRow = {
+      ...row,
+      item: trimSpaces(row.item),
+      id: store.length + 1,
+    }
+    return {
+      store: [...store, trimmedRow],
+      row: this.initialState.row,
+    }
+   })
 
-  row.id = store.length + 1
-
-  this.setState({
-    store: [...store, trimmedRow],
-    row: this.initialState.row,
-  })
 }
 ```
 
