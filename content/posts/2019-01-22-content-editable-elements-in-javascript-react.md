@@ -597,8 +597,6 @@ class App extends Component {
   }
 
   handleContentEditableUpdate = event => {
-    const { store } = this.state
-
     const {
       currentTarget: {
         dataset: { row, column },
@@ -606,11 +604,12 @@ class App extends Component {
       target: { value },
     } = event
 
-    let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
-    updatedRow[column] = value
-
-    this.setState({
-      store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
+    this.setState(({ store }) => {
+      return {
+        store: store.map(item => {
+          return item.id === parseInt(row, 10) ? { ...item, [column]: value } : item
+        }),
+      }
     })
   }
 
