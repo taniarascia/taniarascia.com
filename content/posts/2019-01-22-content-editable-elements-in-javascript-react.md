@@ -461,7 +461,7 @@ Instead of just displaying the values in the rows, they'll all be `ContentEditab
         <ContentEditable
           html={row.item}
           data-column="item"
-          data-row={i}
+          data-row={row.id}
           className="content-editable"
           onKeyPress={this.disableNewlines}
           onPaste={this.pasteAsPlainText}
@@ -473,7 +473,7 @@ Instead of just displaying the values in the rows, they'll all be `ContentEditab
         <ContentEditable
           html={row.price.toString()}
           data-column="price"
-          data-row={i}
+          data-row={row.id}
           className="content-editable"
           onKeyPress={this.validateNumber}
           onPaste={this.pasteAsPlainText}
