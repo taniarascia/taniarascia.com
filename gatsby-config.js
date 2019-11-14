@@ -180,6 +180,7 @@ module.exports = {
             }
           `,
             output: config.siteRss,
+            title: 'Tania Rascia - RSS Feed',
           },
         ],
       },

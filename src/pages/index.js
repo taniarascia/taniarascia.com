@@ -101,7 +101,7 @@ export default class Index extends Component {
           </section>
 
           <section className="section">
-            <h2>Speaking</h2>
+            <h2>Talks</h2>
             <SimpleListing simple data={speaking} />
           </section>
 
