@@ -160,22 +160,17 @@ We start with three methods: one to add a row, which will update the store with 
 
 ```jsx
 addRow = () => {
-  const { store, row } = this.state
-
-  row.id = store.length + 1
-
-  this.setState({
-    store: [...store, row],
+  this.setState(({row,store}) => {
+   return {
+    store: [...store, {...row,id: store.length + 1}],
     row: this.initialState.row,
-  })
+  }})
 }
 
 deleteRow = id => {
-  const { store } = this.state
-
-  this.setState({
+  this.setState(({store}) => ({
     store: store.filter(item => id !== item.id),
-  })
+  }))
 }
 ```
 
