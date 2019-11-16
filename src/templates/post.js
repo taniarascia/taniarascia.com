@@ -77,6 +77,17 @@ export default class PostTemplate extends Component {
 
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </article>
+        <div className="container no-comments">
+          <h3>No comments?</h3>
+          <p>
+            There are intentionally no comments on this site. Enjoy! If you found any errors in this
+            article, please feel free to{' '}
+            <a className="github-link" href={githubLink} target="_blank" rel="noopener noreferrer">
+              edit on GitHub
+            </a>
+            .
+          </p>
+        </div>
         <div className="container">
           <NewsletterForm />
         </div>
