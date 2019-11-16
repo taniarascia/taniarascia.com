@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import ProjectListing from '../components/ProjectListing'
@@ -28,33 +27,11 @@ export default class Index extends Component {
         <div className="container">
           <div className="lead">
             <div className="elevator">
-              <h1>I'm Tania</h1>
+              <h1>{`I'm Tania`}</h1>
               <p>
                 I build open-source projects and write about modern JavaScript, Node.js, design and
                 web development.
               </p>
-              <div className="social-buttons">
-                <div>
-                  <a
-                    className="twitter-follow-button"
-                    href="https://twitter.com/taniarascia"
-                    data-size="large"
-                    data-show-screen-name="false"
-                  >
-                    Follow @taniarascia
-                  </a>
-                </div>
-                <div>
-                  <GitHubButton
-                    href="https://github.com/taniarascia"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Follow @taniarascia on GitHub"
-                  >
-                    Follow
-                  </GitHubButton>
-                </div>
-              </div>
             </div>
             <div className="newsletter-section">
               <img src={tania} className="newsletter-avatar" alt="Tania" />

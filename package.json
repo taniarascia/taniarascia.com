@@ -19,7 +19,6 @@
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "2.2.12",
     "gatsby-plugin-sitemap": "2.2.1",
-    "gatsby-plugin-twitter": "^2.0.13",
     "gatsby-plugin-typography": "^2.2.10",
     "gatsby-remark-autolink-headers": "^2.1.0",
     "gatsby-remark-copy-linked-files": "^2.1.0",
@@ -35,7 +34,7 @@
     "prismjs": "^1.15.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-github-btn": "^1.0.5",
+    "react-github-btn": "^1.1.1",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
     "sharp": "^0.22.1",
@@ -88,5 +87,8 @@
     "plugins": [
       "remark-preset-lint-recommended"
     ]
+  },
+  "resolutions": {
+    "fsevents": "^2.1.1"
   }
 }
