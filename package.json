@@ -87,8 +87,5 @@
     "plugins": [
       "remark-preset-lint-recommended"
     ]
-  },
-  "resolutions": {
-    "fsevents": "^2.1.1"
   }
 }
