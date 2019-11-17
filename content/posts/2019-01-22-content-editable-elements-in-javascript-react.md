@@ -160,22 +160,17 @@ We start with three methods: one to add a row, which will update the store with 
 
 ```jsx
 addRow = () => {
-  const { store, row } = this.state
-
-  row.id = store.length + 1
-
-  this.setState({
-    store: [...store, row],
+  this.setState(({row,store}) => {
+   return {
+    store: [...store, {...row,id: store.length + 1}],
     row: this.initialState.row,
-  })
+  }})
 }
 
 deleteRow = id => {
-  const { store } = this.state
-
-  this.setState({
+  this.setState(({store}) => ({
     store: store.filter(item => id !== item.id),
-  })
+  }))
 }
 ```
 
@@ -303,7 +298,6 @@ If I add it to the `addRow` method, I can fix them before they get submitted.
 
 ```jsx
 addRow = () => {
-  const { store, row } = this.state
   const trimSpaces = string => {
     return string
       .replace(/&nbsp;/g, '')
@@ -311,17 +305,19 @@ addRow = () => {
       .replace(/&gt;/g, '>')
       .replace(/&lt;/g, '<')
   }
-  const trimmedRow = {
-    ...row,
-    item: trimSpaces(row.item),
-  }
+  
+  this.setState(({ store, row }) => {
+    const trimmedRow = {
+      ...row,
+      item: trimSpaces(row.item),
+      id: store.length + 1,
+    }
+    return {
+      store: [...store, trimmedRow],
+      row: this.initialState.row,
+    }
+   })
 
-  row.id = store.length + 1
-
-  this.setState({
-    store: [...store, trimmedRow],
-    row: this.initialState.row,
-  })
 }
 ```
 
@@ -465,7 +461,7 @@ Instead of just displaying the values in the rows, they'll all be `ContentEditab
         <ContentEditable
           html={row.item}
           data-column="item"
-          data-row={i}
+          data-row={row.id}
           className="content-editable"
           onKeyPress={this.disableNewlines}
           onPaste={this.pasteAsPlainText}
@@ -477,7 +473,7 @@ Instead of just displaying the values in the rows, they'll all be `ContentEditab
         <ContentEditable
           html={row.price.toString()}
           data-column="price"
-          data-row={i}
+          data-row={row.id}
           className="content-editable"
           onKeyPress={this.validateNumber}
           onPaste={this.pasteAsPlainText}
@@ -601,8 +597,6 @@ class App extends Component {
   }
 
   handleContentEditableUpdate = event => {
-    const { store } = this.state
-
     const {
       currentTarget: {
         dataset: { row, column },
@@ -610,11 +604,12 @@ class App extends Component {
       target: { value },
     } = event
 
-    let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
-    updatedRow[column] = value
-
-    this.setState({
-      store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
+    this.setState(({ store }) => {
+      return {
+        store: store.map(item => {
+          return item.id === parseInt(row, 10) ? { ...item, [column]: value } : item
+        }),
+      }
     })
   }
 
