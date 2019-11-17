@@ -12,6 +12,8 @@ import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 import quotes from '../../data/quotes'
 import tania from '../../content/images/tania-avatar.jpg'
+import patreon from '../../content/thumbnails/patreon.png'
+import github from '../../content/thumbnails/github.png'
 
 export default class Index extends Component {
   render() {
@@ -32,6 +34,24 @@ export default class Index extends Component {
                 I build open-source projects and write about modern JavaScript, Node.js, design and
                 web development.
               </p>
+              <div className="social-buttons">
+                <a
+                  className="patreon-button"
+                  href="https://www.patreon.com/taniarascia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={patreon} height="50" width="50" alt="Patreon" />
+                </a>
+                <a
+                  className="github-button"
+                  href="https://github.com/taniarascia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={github} height="50" width="50" alt="GitHub" />
+                </a>
+              </div>
             </div>
             <div className="newsletter-section">
               <img src={tania} className="newsletter-avatar" alt="Tania" />

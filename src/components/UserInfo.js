@@ -38,7 +38,7 @@ export default class UserInfo extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={patreon} height="50" width="50" /> Become a Patron
+                  <img src={patreon} height="50" width="50" alt="Patreon" /> Become a Patron
                 </a>
               </div>
             </div>

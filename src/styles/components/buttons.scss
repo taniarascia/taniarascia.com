@@ -135,8 +135,32 @@ a.patreon-button {
   &:focus,
   &:active {
     background: #f96854 !important;
-    border: 2px solid darken(#f96854, 10%);
+    border: 2px solid darken(#f96854, 15%);
     color: #fff !important;
+  }
+}
+
+a.github-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: $border-radius;
+  border: 2px solid #ddd;
+  background: #eee;
+  padding: 0 1rem;
+  color: #404040 !important;
+  margin: 0 0.5rem;
+
+  img {
+    padding: .5rem;
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #eee !important;
+    border: 2px solid darken(#ddd, 5%);
+    color: #222 !important;
   }
 }
 
