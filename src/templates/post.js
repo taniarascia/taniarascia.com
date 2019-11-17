@@ -58,7 +58,12 @@ export default class PostTemplate extends Component {
               <h1>{post.title}</h1>
               <div className="post-meta">
                 <time className="date">{date}</time>/
-                <a className="twitter-link" href={twitterShare}>
+                <a
+                  className="twitter-link"
+                  href={twitterShare}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Share
                 </a>
                 /
@@ -89,7 +94,14 @@ export default class PostTemplate extends Component {
           </p>
         </div>
         <div className="container">
-          <NewsletterForm />
+          <a
+            className="button"
+            href="https://taniarascia.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe to Newsletter
+          </a>
         </div>
         <UserInfo config={config} />
       </Layout>
