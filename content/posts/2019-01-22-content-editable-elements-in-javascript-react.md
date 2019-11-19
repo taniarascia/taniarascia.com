@@ -433,21 +433,20 @@ I'll make a new method just for updating. It's similar to the row, except instea
 
 ```jsx
 handleContentEditableUpdate = event => {
-  const { store } = this.state
-
   const {
     currentTarget: {
       dataset: { row, column },
     },
     target: { value },
-  } = event
-
-  let updatedRow = store.filter((item, i) => parseInt(i) === parseInt(row))[0]
-  updatedRow[column] = value
-
-  this.setState({
-    store: store.map((item, i) => (item[column] === row ? updatedRow : item)),
-  })
+  } = event;
+  
+  this.setState(({ store }) => {
+      return {
+        store: store.map(item => {
+          return item.id === parseInt(row, 10) ? { ...item, [column]: value } : item
+        }),
+      }
+   })
 }
 ```
 
