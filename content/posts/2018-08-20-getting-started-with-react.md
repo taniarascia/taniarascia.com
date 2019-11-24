@@ -544,7 +544,7 @@ Note that if the `return` is contained to one line, it does not need parentheses
 
 ## Props
 
-Right now, we have a cool `Table` component, but the data is being hard-coded. One of the big deals about React is how it handles data, and it does so with properties, referred to as **props**, and with state. First, we'll focus on handling data with props.
+Right now, we have a cool `Table` component, but the data is being hard-coded. One of the big deals about React is how it handles data, and it does so with properties, referred to as **props**, and with state. Now, we'll focus on handling data with props.
 
 First, let's remove all the data from our `TableBody` component.
 
