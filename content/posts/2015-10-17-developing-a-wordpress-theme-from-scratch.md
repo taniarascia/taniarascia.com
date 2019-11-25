@@ -58,7 +58,7 @@ I have conveniently set up a [GitHub repository of the code](https://github.com/
 
 ## Installing WordPress
 
-There are plenty of articles out there about how to install WordPress. They make the process seem long and scary, and the first time you do it, it can definitely be a bit confusing. [Here is the official guide to getting set up](http://codex.wordpress.org/Installing_WordPress).
+There are plenty of articles out there about how to install WordPress. They make the process seem long and scary, and the first time you do it, it can definitely be a bit confusing. [Here is the official guide to getting set up](https://wordpress.org/support/article/how-to-install-wordpress/).
 
 Since we're using a [local server and MAMP](http://www.taniarascia.com/local-environment), I already know you have all the prerequisites to installation, and FTP is not necessary.
 
