@@ -18,7 +18,6 @@ The [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/
 - DOS mode (404)
 - Code theme (starring [New Moon](https://taniarascia.github.io/new-moon))
 - Sass (starring [Primitive](https://taniarascia.github.io/primitive))
-- Comments (custom API)
 
 ## Contributing
 
