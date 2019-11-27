@@ -14,7 +14,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 #### Concepts
 
-- [x] Bind, Call, Apply and `this`
 - [x] Bitwise Operators
 - [ ] Map, Set, WeakMap, and WeakSet
 - [ ] Closures
@@ -26,8 +25,7 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] Scrolling
 - [ ] Drag and Drop
 - [ ] WebSockets
-- [ ] File Handling
-- [ ] Cookies
+- [x] File Handling
 
 ### Networking
 
@@ -56,17 +54,17 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 #### Algorithms
 
-- [x] Complexity (Big O notation)
+- [x] **Complexity** (Big O notation)
   - [x] Size complexity
   - [x] Time complexity
-- [ ] Sorting
+- [ ] **Sorting**
   - [ ] Bubble
   - [ ] Insertion
   - [ ] Selection
   - [ ] Merge
   - [ ] Heap
   - [ ] Quick
-- [ ] Searching
+- [ ] **Searching**
   - [ ] Binary search
 - [ ] Pattern matching
 - [ ] Recursion
@@ -119,6 +117,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [ES6](/es6-syntax-and-feature-overview/)
 - [x] [Buffers](/bits-bytes-bases-and-a-hex-dump-javascript/)
 - [x] [MVC - Model View Controller](/javascript-mvc-todo-app)
+- [x] [Bind, Call, Apply and `this`](/this-bind-call-apply-javascript/)
 
 #### Document Object Model (DOM)
 
@@ -129,6 +128,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Changing the DOM](/how-to-make-changes-to-the-dom)
 - [x] [Events](/understanding-events-in-javascript)
 - [x] [Local and Session Storage](/how-to-use-local-storage-with-javascript/)
+- [x] [Cookies, Local Storage, and Authentication](/full-stack-cookies-localstorage-react-express/)
 
 #### Frameworks/Libraries
 
@@ -162,7 +162,7 @@ This is not everything I know, but a good amount of the things I've documented s
 
 ### Tools/Frameworks/Concepts
 
-- [x] Git
+- [x] **Git**
   - [x] [Push, Pull, Commit](/getting-started-with-git/)
 - [x] [Mac Development](/setting-up-a-brand-new-mac-for-development/)
 - [x] [Command Line](/how-to-use-the-command-line-for-apple-macos-and-linux/)
