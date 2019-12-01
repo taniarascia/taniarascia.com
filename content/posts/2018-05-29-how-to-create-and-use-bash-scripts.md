@@ -185,7 +185,7 @@ echo How old are you?
 
 read age
 
-if [ "$age" -gt 20 ]
+if [ $age -gt 20 ]
 then
     echo You can drink.
 else
