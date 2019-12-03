@@ -1185,7 +1185,7 @@ I'll be honest, almost every time I create something in CSS grid, I end up conve
 
 ### BEM, OOCSS, SMACSS...how should I structure my CSS?
 
-A lot of people have come up with a lot of solutions on how to structure your CSS - [BEM](http://getbem.com/introduction/), [OOCSS](http://oocss.org/), [SMACSS](http://smacss.com/)...BEM (Block-Element-Modifier) seems to be one of the more popular and prevailing.
+A lot of people have come up with a lot of solutions on how to structure your CSS - [BEM](http://getbem.com/introduction/), [OOCSS](http://oocss.org/), [SMACSS](http://smacss.com/)...BEM (Block-Element-Modifier) seems to be one of the more popular and prevailing. I personally prefer not to use any of these in specific (and I don't like using underlines in CSS at all).
 
 ### What else?
 
@@ -1214,7 +1214,7 @@ Always have a `.container` element handy, that looks something like this (`max-w
 
 This will make your content pretty responsive by default. You'll have padding around the content on mobile, and the content won't expand too far on desktop screens, and will be horizontally centered (this is what happens when `auto` is applied to both margins).
 
-Don't spread text out too wide. Think about a page in a book; you wouldn't want one page to be too wide, or reading it is oddly stressful. I like to make a small container for text-only, to ensure articles and text
+Don't spread text out too wide. Think about a page in a book; you wouldn't want one page to be too wide, or reading it is oddly stressful. I like to make a small container for text-only, to ensure articles and text aren't too wide.
 
 ```css
 .small-container {
