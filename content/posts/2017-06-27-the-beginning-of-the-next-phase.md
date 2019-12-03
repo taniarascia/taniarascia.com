@@ -37,6 +37,4 @@ I'll also be doing a lot of writing on JavaScript outside of this website.
 
 My idea for a **full course on web development** would be a complete introduction to HTML and CSS, teaching the necessary code to build a finished website with current era design and best practices.
 
-Anything you would like to see a course on, please let me know in the comments.
-
 I'm excited to begin this next step in my life's journey! No matter what happens, whether I succeed in this venture or fail, I know I'll learn valuable things about myself and continuously grow in the career I love.

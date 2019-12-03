@@ -425,11 +425,9 @@ Whatever you want!
 
 ## Conclusion
 
-Got lost anywhere? Have something to add? Hate everything I said? Leave it in the comments below!
-
 You can use these guidelines to critique your own design. Do you need more padding? Do you have too many or inconsistent fonts? Are you using three different border radii?
 
 Here is the demo and source code.
 
-- [View Final Product](https://taniarascia.github.io/card/) 
+- [View Final Product](https://taniarascia.github.io/card/)
 - [View Source Code](https://github.com/taniarascia/card)

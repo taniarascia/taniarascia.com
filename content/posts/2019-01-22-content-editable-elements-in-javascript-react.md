@@ -160,15 +160,16 @@ We start with three methods: one to add a row, which will update the store with 
 
 ```jsx
 addRow = () => {
-  this.setState(({row,store}) => {
-   return {
-    store: [...store, {...row,id: store.length + 1}],
-    row: this.initialState.row,
-  }})
+  this.setState(({ row, store }) => {
+    return {
+      store: [...store, { ...row, id: store.length + 1 }],
+      row: this.initialState.row,
+    }
+  })
 }
 
 deleteRow = id => {
-  this.setState(({store}) => ({
+  this.setState(({ store }) => ({
     store: store.filter(item => id !== item.id),
   }))
 }
@@ -305,7 +306,7 @@ addRow = () => {
       .replace(/&gt;/g, '>')
       .replace(/&lt;/g, '<')
   }
-  
+
   this.setState(({ store, row }) => {
     const trimmedRow = {
       ...row,
@@ -316,8 +317,7 @@ addRow = () => {
       store: [...store, trimmedRow],
       row: this.initialState.row,
     }
-   })
-
+  })
 }
 ```
 
@@ -438,15 +438,15 @@ handleContentEditableUpdate = event => {
       dataset: { row, column },
     },
     target: { value },
-  } = event;
-  
+  } = event
+
   this.setState(({ store }) => {
-      return {
-        store: store.map(item => {
-          return item.id === parseInt(row, 10) ? { ...item, [column]: value } : item
-        }),
-      }
-   })
+    return {
+      store: store.map(item => {
+        return item.id === parseInt(row, 10) ? { ...item, [column]: value } : item
+      }),
+    }
+  })
 }
 ```
 
@@ -712,4 +712,4 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ## Conclusion
 
-So, that's what I got. There are some improvements to be made, and I'm sure someone has an improvement or something to say, so feel free to leave it in the comments.
+Hope that helps you out!

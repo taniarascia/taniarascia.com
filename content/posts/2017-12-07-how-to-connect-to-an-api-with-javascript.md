@@ -407,4 +407,4 @@ Congratulations, you used plain JavaScript to connect to the API using HTTP requ
 
 We did this all without having to worry about anything like Node.js, npm, Webpack, React, Angular, build tools, Axios and other popular development terms, dependencies, and frameworks that may confuse you about what is happening under the hood in it's simplest form.
 
-I hope you found this article useful, and please feel free to share, or correct me where I'm wrong in the comments below!
+I hope you found this article useful, and please feel free to share, or correct me where I'm wrong.
