@@ -487,7 +487,7 @@ To use a real example, in [this example MVC todo app](https://taniarascia.github
 - **Border box** says yes! Borders and padding are part of an element's size!
 - **Content box** says no! Borders and padding are not part of an element's size!
 
-My recommendation? Set `box-sizing` to `border-box` on everything (`*`). Always. Don't even think about it! On the rare occassion something needs to be `content-box`, you can override it. This is one of the few things IE got right - making `border-box` the default while the rest of the browsers use `content-box` as the default.
+My recommendation? Set `box-sizing` to `border-box` on everything (`*`). Always. Don't even think about it! On the rare occasion something needs to be `content-box`, you can override it. This is one of the few things IE got right - making `border-box` the default while the rest of the browsers use `content-box` as the default.
 
 ### Border box vs. content box?
 
@@ -897,7 +897,7 @@ Here are a few cool things flex can do:
 - space items apart or group them together easily
 - create repeating grids
 
-### Alignment: cLreate a navigation bar with flex
+### Alignment: create a navigation bar with flex
 
 Let's make a practical example to demonstrate some of what flex is capable of: a navigation bar. Here's what we want it to look like:
 
@@ -1067,7 +1067,7 @@ div {
 
 Remember the Box Model, from earlier? If you have any padding on your flex items, you _must_ have `box-sizing: border-box` for the percentage to be calculated correctly. If that's taken care of, it will correctly calculate each flex item to the proper 33.33333% width of the screen.
 
-But there is one more consideration - if you want gutters in your grid, you'll use margins to separate each item. Since the margins are calculated separately, you'll need to subtract the outer margins from the `flex-basis`. In this example, there's an extra `10px` margin on both sides, so we'll subtrack `20px`.
+But there is one more consideration - if you want gutters in your grid, you'll use margins to separate each item. Since the margins are calculated separately, you'll need to subtract the outer margins from the `flex-basis`. In this example, there's an extra `10px` margin on both sides, so we'll subtract `20px`.
 
 ```css
 div {
@@ -1157,7 +1157,7 @@ I use pixels (`px`) on borders, and `rem` on all font sizes, padding, and margin
 
 ### What about Sass? Or LESS?
 
-I prefer to use Sass for all CSS preprocessing, much like the popular CSS framework, [Bootstrap](https://getbootstrap.com/). It also works fantasically out-of-the-box with the JavaScript framework, [Vue](https://vuex.vuejs.org/). LESS is generally less popular and I don't prefer it, but [Ant Design](https://ant.design/) and [Semantic UI](https://semantic-ui.com/) do. You can also use tools like [PostCSS](https://postcss.org/) to compile the latest CSS to something most browsers can understand (much like Babel with ES6).
+I prefer to use Sass for all CSS preprocessing, much like the popular CSS framework, [Bootstrap](https://getbootstrap.com/). It also works fantastically out-of-the-box with the JavaScript framework, [Vue](https://vuex.vuejs.org/). LESS is generally less popular and I don't prefer it, but [Ant Design](https://ant.design/) and [Semantic UI](https://semantic-ui.com/) do. You can also use tools like [PostCSS](https://postcss.org/) to compile the latest CSS to something most browsers can understand (much like Babel with ES6).
 
 **Further reading**: [Learn Sass Now: A Guide to Installing and Understanding Sass](/learn-sass-now/)
 
