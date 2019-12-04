@@ -560,4 +560,4 @@ try {
 
 ## Conclusion
 
-This is all the steps required to set up a very basic Node, Express, and PostgreSQL REST API server and deploy it to Heroku. If anything about the app didn't make sense, I recommend reading I recommend reading [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/).
+This is all the steps required to set up a very basic Node, Express, and PostgreSQL REST API server and deploy it to Heroku. If anything about the app didn't make sense, I recommend reading [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/).
