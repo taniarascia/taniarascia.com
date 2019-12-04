@@ -1,6 +1,6 @@
 ---
-date: 2019-12-2
-title: 'CSS: An Art, a Science, a Nightmare (Overview of CSS Concepts)'
+date: 2019-12-02
+title: 'CSS: An Art, a Science, a Nightmare (Everything You Should Know)'
 template: post
 thumbnail: '../thumbnails/css2.png'
 slug: overview-of-css-concepts
@@ -54,7 +54,7 @@ This article is for the middleground of people who have had to touch CSS a few t
   - flex containers (`flex` display), flex items (`flex` property)
 - [Responsive: Media Queries](#responsive-media-queries)
   - `min-width`, `max-width`
-- ## [Other Considerations](#other-considerations)
+- [Other Considerations](#other-considerations)
 
 ## HTML Fundamentals
 
@@ -1201,7 +1201,7 @@ h3:not(:first-child) {
 }
 ```
 
-Always have a `.container` element handy, that looks something like this (`max-width` and `padding` negotiable).
+Always have a `.container` element handy, that looks something like this (`max-width` and `padding` can be changed up to whatever you want).
 
 ```css
 .container {
@@ -1234,7 +1234,7 @@ img.responsive-image {
 }
 ```
 
-Finally, I didn't get into transitions and animations, but I think those are overall less important than
+Finally, I didn't get into transitions and animations, but I think those are overall less important than the concepts I laid out here today.
 
 ## Conclusion
 
