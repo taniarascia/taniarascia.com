@@ -1117,7 +1117,7 @@ If you've ever heard the term **mobile-first**, this refers to building a websit
 }
 ```
 
-It is much easier to design a website mobile-first and scale up as needed, then trying to take a website that is only optimized for desktop and making it mobile-friendly with `min-width` media queries. If you're doing it from scratch, I would recommend starting mobile first and using `min-width` queries, but if you have to quickly make a desktop site work for mobile, it's easier and faster to add `max-width` queries here and there as needed.
+It is much easier to design a website mobile-first and scale up as needed, than trying to take a website that is only optimized for desktop and making it mobile-friendly with `min-width` media queries. If you're doing it from scratch, I would recommend starting mobile first and using `min-width` queries, but if you have to quickly make a desktop site work for mobile, it's easier and faster to add `max-width` queries here and there as needed.
 
 All CSS frameworks deal with these different queries, or responsive breakpoints, slightly differently. If we look at [Bootstrap's responsive breakpoints](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints), we can see they have five breakpoints, from extra small to extra large. Personally, I find that having one breakpoint (no breakpoint for mobile, and one for desktop) or two breakpoints (no breakpoint for mobile, one for tablet, and one for desktop) takes care of most of my responsive needs.
 
