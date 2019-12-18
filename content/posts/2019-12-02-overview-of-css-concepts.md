@@ -1079,7 +1079,7 @@ div {
 
 ![](../images/repeating6.png)
 
-You can easily made simple grids by either setting the `flex-basis` (setting one to `25%` and one to 75%, for example) or with varying `flex-grow`/`flex-shrink` combinations (`flex: 1` on one element and `flex: 2` on another element would result in a `33.3-%` / `66.6-%` split, respectively).
+You can easily make simple grids by either setting the `flex-basis` (setting one to `25%` and one to 75%, for example) or with varying `flex-grow`/`flex-shrink` combinations (`flex: 1` on one element and `flex: 2` on another element would result in a `33.3-%` / `66.6-%` split, respectively).
 
 ### Flex Property Reference
 
