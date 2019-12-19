@@ -91,7 +91,7 @@ which bash
 
 As is tradition, we'll make a "Hello, World!" example to get this working.
 
-hello-world
+<div class="filename">hello-world</div>
 
 ```bash
 #!/bin/bash
@@ -132,7 +132,7 @@ Congrats, you just got your first bash script up and running. You can also run t
 
 A variable is declared without a `$`, but has a `$` when invoked. Let's edit our `hello-world` example to use a variable for the entity being greeted, which is `World`.
 
-hello-world
+<div class="filename">hello-world</div>
 
 ```bash
 #!/bin/bash
@@ -176,7 +176,7 @@ Hello, Tania!
 
 `if` statements use the `if`, `then`, `else`, and `fi` keywords. The condition goes in square brackets.
 
-check-id
+<div class="filename">check-id</div>
 
 ```bash
 #!/bin/bash
