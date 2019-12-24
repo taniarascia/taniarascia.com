@@ -4,7 +4,7 @@ slug: contact
 template: page
 ---
 
-Hi, I'm Tania - a front end software developer based out of Chicago. I build open-source projects and write about modern JavaScript, Node.js, design and web development. If you like my stuff and hate spam, join over **8,000 other developers** in receiving my email newsletter. 👇 One-click subscribe anytime.
+Hi, I'm Tania - a front end software developer based out of Chicago. I build open-source projects and write about modern JavaScript, Node.js, design and web development. If you like my stuff and hate spam, join over **8,000 other developers** in receiving my email newsletter. 👇 One-click unsubscribe anytime.
 
 <div class="centered-iframe">
   <iframe

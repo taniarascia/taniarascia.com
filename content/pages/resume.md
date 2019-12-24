@@ -4,83 +4,106 @@ slug: resume
 template: page
 ---
 
-### Web Developer
-
-Highly motivated and versatile web developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
+### Front End Software Developer
 
 - [taniarascia.com](https://www.taniarascia.com)
-- [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com)
+- [taniarascia@gmail.com](mailto:taniarascia@gmail.com)
 - Chicago, IL
 
 ## Technical Skills
 
-- **Languages** - JavaScript (ES6+), PHP, HTML5, CSS3, Bash
-- **Concepts** - RESTful API Design/Integration, MVC Architecture, CI/CD, Agile, ADA Compliance
-- **Tools/Environment** - Node.js, Git, Webpack, Jenkins, Chrome DevTools, Jira, AWS, CLI, Sass
-- **Frameworks/Libraries** - React, jQuery, Semantic UI, Material, Bootstrap, Jest
-- **Data** - SQL (MySQL, PostgreSQL) GraphQL, JSON
-- **Testing** - Unit, integration, and end-to-end testing
+### Languages
+
+JavaScript (ES6), TypeScript, HTML5, CSS3, SQL, PHP, Bash
+
+### Tools/Environment
+
+React, Vue, Node, Express, Git, VSC, Jest, Selenium, Webpack, DevTools, Jira, AWS, Bootstrap, Sass, GraphQL
+
+### Concepts
+
+RESTful API Design, CI/CD, Agile Methodology, MVC Architecture, Secure Authentication, ADA, Testing (unit, integration, end-to-end) Databases (MySQL, PostgreSQL)
 
 ## Experience
 
-#### Front End Software Engineer
+### Front End Software Engineer
 
 **Dais Technology, Inc** - _2018 - Present | Chicago, IL_
 
-- Developed software for insurance companies in React with custom backend APIs
-- Created an internal user management system for organization admins
-- Worked with design team to create beautiful user interfaces and intuitive user experiences
+- Architected a platform that implements secure authentication and routing used in several production applications
+- Developed the internal user management and agent/carrier onboarding system
+- Worked in small teams as front end lead to create intuitive UIs
 
-#### Technical Writer - JavaScript
+### Technical Writer - JavaScript
 
 **DigitalOcean** - _2017 - 2019 | Remote_
 
-- Wrote the Understanding the DOM tutorial series, covering how to manipulate and traverse the DOM
-- Wrote the How to Code in JavaScript tutorial series, covering fundamentals, syntax, and concepts
-- Shaped the curriculum of JavaScript content by collaborating with the in-house team
+- Wrote the Understanding the DOM and How to Code JavaScript tutorial series
+- Shaped the content of the JavaScript curriculum by collaborating with the in-house team
 
-#### Web Developer
+### Web Developer
 
 **RateYourSeats.com** - _2018 | Chicago, IL_
 
-- Integrated Amazon SES and S3 for efficient object storage and secure email sending
-- Designed an API for the company to be able to access data across the platform
-- Integrated Git version control into the platform to track, manage, and simplify changes
+- Designed an API for data reuse across multiple front ends
+- Integrated Git version control into the company codebase
+- Created interactive SVGs for arenas and stadiums
 
-#### Web Developer/Designer
+### Web Developer/Designer
 
-**Lettuce Entertain You Enterprises, Inc.** - _2015 - 2017 | Chicago, IL_
+**Lettuce Entertain You Enterprises, Inc.** - _June 2015 - June 2017 | Chicago, IL_
 
-- Developed, designed, and maintained custom, responsive websites
-- Took ownership of Amazon Web Services infrastructure and Linux system administration
-- Established company conventions/standards and documented development processes
-- Designed and developed 15+ restaurant websites, such as Cafe Ba-Ba-Reeba!, Shaw’s Crab House, Krispy Kreme PNW, Tokio Pub, Beatrix, M Burger, and Stripburger
+- Developed, designed, and maintained custom websites
+- Took ownership of Amazon Web Services infrastructure and Linux administration tasks
+- Established company conventions/standards and documented all internal processes
 
 ## Open Source Projects
 
-- [TakeNote](https://github.com/taniarascia/takenote) - Web-based note-taking app
-- [Chip8.js](https://github.com/taniarascia/chip8) - Node.js emulator
-- [Laconia](https://github.com/taniarascia/laconia) - MVC web framework
-- [Primitive](https://github.com/taniarascia/primitive) - Sass boilerplate/CSS framework
-- [New Moon](https://github.com/taniarascia/new-moon) - Optimized dark theme
+### TakeNote
 
-## Talks
+**Web-based Markdown Note-taking App** - [Source](https://github.com/taniarascia/takenote) - _2019_
 
-#### An Introduction to React
+A simple, Markdown-based note-taking app for the web, written in TypeScript and functional React.
+
+### Chip8.js
+
+**Retro Game Emulator** - [Source](https://github.com/taniarascia/chip8) - _2018 - 2019_
+
+An emulator for Chip-8 games implementing browser, terminal, and graphical front ends.
+
+### Laconia
+
+**MVC Authentication Framework** - [Source](https://github.com/taniarascia/laconia) - _2018_
+
+An MVC framework used as a helpful starting point for implementing authentication, object-oriented architecture, MVC concepts, routing and databases.
+
+### Primitive
+
+**Front End Toolkit** - [Source](https://github.com/taniarascia/primitive)
+
+A minimalist front-end design toolkit built with Sass for developing responsive, browser-consistent web apps.
+
+## Speaking
+
+### An Introduction to Vue
 
 **JavaScript Chicago** - _2019 | Chicago, IL_
 
-#### Developing a WordPress Theme From Scratch
+### An Introduction to React
+
+**JavaScript Chicago** - _2019 | Chicago, IL_
+
+### Developing a WordPress Theme From Scratch
 
 **WordCamp Chicago** - _2017 | Chicago, IL_
 
 ## Education
 
-#### B.A. in Professional Studies
+### B.A. in Professional Studies
 
 **Robert Morris University** - _2007 - 2010 | Chicago, IL_
 
-# Accomplishments
+## Accomplishments
 
 - Getting Started With React article featured in official React documentation as React For Beginners. [Source](https://reactjs.org/docs/getting-started.html)
 - Interviewed in the Egghead.io Podcast in Switching Careers and Learning in Public with Joel Hooks. [Source](https://egghead.io/podcasts/switching-careers-and-learning-in-public-with-tania-rascia)

@@ -12,7 +12,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Newsletter
 
-I send out a message whenever I write something new. If you like my stuff and hate spam, join over 8,000 other developers on my email newsletter. 👇 One-click subscribe anytime.
+I send out a message whenever I write something new. If you like my stuff and hate spam, join over 8,000 other developers on my email newsletter. 👇 One-click unsubscribe anytime.
 
 <div class="centered-iframe">
   <iframe

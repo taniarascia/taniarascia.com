@@ -382,7 +382,7 @@ h2.publication-company {
 
   img {
     max-height: 30px;
-    margin: 0 .75rem 0 0;
+    margin: 0 0.75rem 0 0;
   }
 }
 
@@ -414,7 +414,6 @@ h2.publication-company {
 
 @include small-breakpoint {
   .alert {
-
     .new,
     .popular {
       font-size: 0.9rem;
