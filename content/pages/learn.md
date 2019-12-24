@@ -15,9 +15,9 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 #### Concepts
 
 - [x] Bitwise Operators
-- [ ] Map, Set, WeakMap, and WeakSet
+- [x] Map, Set, WeakMap, and WeakSet
 - [ ] Closures
-- [ ] Promises, Async/Await, Microtasks,and the Event Loop
+- [x] Promises, Async/Await, Microtasks,and the Event Loop
 - [ ] Generators
 
 #### Document Object Model (DOM) and Web APIs
@@ -47,8 +47,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 - [x] Webpack
 - [x] Vuex
-- [x] Git
-  - [x] Merge, Rebase, Branch, Stash, Pull Request
 
 ### Computer Science
 
@@ -155,15 +153,27 @@ This is not everything I know, but a good amount of the things I've documented s
 
 ### CSS
 
-- [x] [Responsive (Media Queries, Breakpoints)](/you-dont-need-a-framework/)
-- [x] [Shapes](https://tympanus.net/codrops/2018/11/29/an-introduction-to-css-shapes/)
-- [x] [Sass](/learn-sass-now/)
+- [x] [CSS](/overview-of-css-concepts/)
+  - [x] [CSS Syntax](/overview-of-css-concepts/#css-syntax)
+  - [x] [CSS Selectors](/overview-of-css-concepts/#css-selectors)
+  - [x] [CSS Specificity](/overview-of-css-concepts/#css-specificity)
+  - [x] [CSS Properties](/overview-of-css-concepts/#css-properties)
+  - [x] [CSS Spacing Out](/overview-of-css-concepts/#spacing-out-padding-and-margins)
+  - [x] [CSS Box Model](/overview-of-css-concepts/#box-model)
+  - [x] [CSS Shorthand Properties](/overview-of-css-concepts/#shorthand-properties)
+  - [x] [CSS Layouts: Display](/overview-of-css-concepts/#layouts-display)
+  - [x] [CSS Layouts: Positioning](/overview-of-css-concepts/#layouts-positioning)
+  - [x] [CSS Layouts: Flex](/overview-of-css-concepts/#layouts-flex)
+- [x] [CSS Responsive (Media Queries, Breakpoints)](/you-dont-need-a-framework/)
+- [x] [CSS Shapes](https://tympanus.net/codrops/2018/11/29/an-introduction-to-css-shapes/)
+- [x] [Sass/SCSS](/learn-sass-now/)
 - [x] [Bootstrap](/what-is-bootstrap-and-how-do-i-use-it/)
 
 ### Tools/Frameworks/Concepts
 
 - [x] **Git**
   - [x] [Push, Pull, Commit](/getting-started-with-git/)
+  - [x] **Merge, Rebase, Branch, Stash, Pull Request**
 - [x] [Mac Development](/setting-up-a-brand-new-mac-for-development/)
 - [x] [Command Line](/how-to-use-the-command-line-for-apple-macos-and-linux/)
 - [x] [Grunt](/getting-started-with-grunt-and-sass/)

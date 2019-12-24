@@ -4,7 +4,7 @@ slug: me
 template: page
 ---
 
-I’m Tania Rascia, a web developer, technical writer, and former chef from Chicago. I currently work as a front end software engineer for a startup, and I've written for many [developer publications](/publications).
+I’m Tania Rascia, a frontend software developer, technical writer, and former chef from Chicago. I currently work full-time for a startup in Chicago, and I've written for many [developer publications](/publications), such as DigitalOcean, LogRocket, and Envato.
 
 I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
 
