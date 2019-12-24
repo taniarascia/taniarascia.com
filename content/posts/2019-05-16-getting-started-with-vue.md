@@ -457,7 +457,7 @@ We'll also need to add this to App.vue
 <template>
   <employee-form @add:employee="addEmployee" />
 </template>
-```
+
 <script>
   import EmployeeForm from '@/components/EmployeeForm.vue'
   
@@ -468,6 +468,7 @@ We'll also need to add this to App.vue
     },
   }
 </script>
+```
 
 ![](../images/vue6.png)
 
