@@ -1,10 +1,10 @@
 ---
-title: Me
+title: About me
 slug: me
 template: page
 ---
 
-I’m Tania Rascia, a frontend software developer, technical writer, and former chef from Chicago. I currently work full-time for a startup in Chicago, and I've written for many [developer publications](/publications), such as DigitalOcean, LogRocket, and Envato.
+I’m Tania Rascia, a frontend software developer, technical writer, and former chef. I currently work full-time and write for various [developer publications](/publications), such as DigitalOcean, LogRocket, and Envato.
 
 I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
 
@@ -12,17 +12,19 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Newsletter
 
-I send out a message whenever I write something new. Sign up for the newsletter to get notified.
+I send out a message whenever I write something new. If you like my stuff and hate spam, join over 8,000 other developers on my email newsletter. 👇 One-click subscribe anytime.
 
-<a class="button" href="https://taniarascia.substack.com">Join the newsletter</a>
+<div class="centered-iframe">
+  <iframe
+    width="480"
+    height="150"
+    src="https://taniarascia.substack.com/embed"
+    frameborder="0"
+    scrolling="no"
+  ></iframe>
+</div>
 
 ![Me](../images/taniafull.jpg)
-
-### Around the web
-
-- **Email**: [tania@taniarascia.com](mailto:tania[AT]taniarascia[DOT]com)
-- **GitHub**: [taniarascia](https://github.com/taniarascia)
-- **Twitter**: [taniarascia](https://twitter.com/taniarascia)
 
 ## Links
 

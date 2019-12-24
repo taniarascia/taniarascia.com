@@ -20,7 +20,7 @@ const config = {
   userTwitter: 'taniarascia',
   menuLinks: [
     {
-      name: 'Me',
+      name: 'About me',
       link: '/me/',
     },
     {

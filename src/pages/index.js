@@ -31,8 +31,8 @@ export default class Index extends Component {
             <div className="elevator">
               <h1>{`I'm Tania`}</h1>
               <p>
-                I build open-source projects and write about modern JavaScript, Node.js, design and
-                web development.
+                Front end software developer and writer. I build open-source projects and write
+                about modern JavaScript, Node.js, design and web development. No ads, no bullshit.
               </p>
               <div className="social-buttons">
                 <a
@@ -42,6 +42,7 @@ export default class Index extends Component {
                   rel="noopener noreferrer"
                 >
                   <img src={patreon} height="50" width="50" alt="Patreon" />
+                  Patreon
                 </a>
                 <a
                   className="github-button"
@@ -49,7 +50,14 @@ export default class Index extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={github} height="50" width="50" alt="GitHub" />
+                  <img
+                    src={github}
+                    height="50"
+                    width="50"
+                    alt="GitHub"
+                    style={{ padding: '.75rem' }}
+                  />
+                  GitHub
                 </a>
               </div>
             </div>
