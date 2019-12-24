@@ -101,7 +101,7 @@ navLink;
 ```
 
 ```html
-[secondary_label Output] <a id="nav" href="https://www.wikipedia.org/">Navigate to Wikipedia</a>
+<a id="nav" href="https://www.wikipedia.org/">Navigate to Wikipedia</a>
 ```
 
 This is also reflected on the front-end of the website.
@@ -145,9 +145,7 @@ To demonstrate, create a `nodes.html` file. We'll add text, comment, and element
 
 The `html` element node is the parent node. `head` and `body` are siblings, children of `html`. `body` contains three child nodes, which are all siblings — the type of node does not change the level at which it is nested.
 
-<$>[note]
-**Note:** When working with an HTML-generated DOM, the indentation of the HTML source code will create many empty text nodes, which won't be visible from the DevTools Elements tab. Read about [Whitespace in the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace_in_the_DOM)
-<$>
+> **Note:** When working with an HTML-generated DOM, the indentation of the HTML source code will create many empty text nodes, which won't be visible from the DevTools Elements tab. Read about [Whitespace in the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace_in_the_DOM)
 
 ## Identifying Node Type
 
