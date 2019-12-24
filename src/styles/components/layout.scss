@@ -31,8 +31,8 @@
 
   h1 {
     margin-top: 0;
-    font-weight: 700;
-    font-size: 3.5rem;
+    font-weight: 600;
+    font-size: 3.2rem;
     margin-bottom: 1.5rem;
   }
 
@@ -113,8 +113,8 @@
   display: flex;
   align-items: center;
 
-  div:first-of-type {
-    margin-right: 0.5rem;
+  a.patreon-button {
+    margin-right: 0 0.5rem 0 0;
   }
 }
 
@@ -294,7 +294,7 @@
     font-size: 1rem;
     display: block;
     color: rgba(0, 0, 0, 0.4);
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
@@ -721,7 +721,7 @@ blockquote {
     margin: 0 0 1rem;
     flex: 1 1 calc(50% - 2rem);
     border: none;
-    background: $light;
+    background: #fafafa;
     padding: 1rem 1rem 3.5rem !important;
     border-radius: $border-radius;
     position: relative;
@@ -1080,7 +1080,7 @@ button[disabled] {
   margin: 2rem 0;
   padding: 1.5rem;
   text-align: center;
-  background: $light;
+  background: #fafafa;
 
   .newsletter-avatar {
     margin-top: 0.5rem;
@@ -1093,14 +1093,14 @@ button[disabled] {
   }
 
   h3 {
-    margin-top: 0;
+    margin: 0 0 .75rem;
     font-size: 1.5rem;
     font-weight: 600;
   }
 
   .button {
-    font-size: 1.2rem;
-    padding: 1.1rem;
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
   }
 
   @include small-breakpoint {
@@ -1109,8 +1109,8 @@ button[disabled] {
     }
 
     .button {
-      font-size: 1.5rem;
-      padding: 1.2rem;
+      font-size: 1.2rem;
+      padding: 1rem 1.2rem;
     }
   }
 

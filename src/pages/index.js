@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
+import GitHubButton from 'react-github-btn'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
@@ -12,8 +13,6 @@ import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 import quotes from '../../data/quotes'
 import tania from '../../content/images/tania-avatar.jpg'
-import patreon from '../../content/thumbnails/patreon.png'
-import github from '../../content/thumbnails/github.png'
 
 export default class Index extends Component {
   render() {
@@ -29,36 +28,23 @@ export default class Index extends Component {
         <div className="container">
           <div className="lead">
             <div className="elevator">
-              <h1>{`I'm Tania`}</h1>
+              <h1>{`Hey, I'm Tania`}</h1>
               <p>
-                Front end software developer and writer. I build open-source projects and write
-                about modern JavaScript, Node.js, design and web development. No ads, no bullshit.
+                I'm a front end software developer working on{' '}
+                <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">
+                  open source
+                </a>{' '}
+                and <Link to="/blog">writing</Link> about modern JavaScript, Node.js, and
+                development. 💾
               </p>
               <div className="social-buttons">
-                <a
-                  className="patreon-button"
-                  href="https://www.patreon.com/taniarascia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={patreon} height="50" width="50" alt="Patreon" />
-                  Patreon
-                </a>
-                <a
-                  className="github-button"
+                <GitHubButton
                   href="https://github.com/taniarascia"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  data-size="large"
+                  data-show-count="true"
                 >
-                  <img
-                    src={github}
-                    height="50"
-                    width="50"
-                    alt="GitHub"
-                    style={{ padding: '.75rem' }}
-                  />
-                  GitHub
-                </a>
+                  taniarascia
+                </GitHubButton>
               </div>
             </div>
             <div className="newsletter-section">

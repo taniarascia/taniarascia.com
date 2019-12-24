@@ -4,7 +4,7 @@ slug: me
 template: page
 ---
 
-I’m Tania Rascia, a frontend software developer, technical writer, and former chef. I currently work full-time and write for various [developer publications](/publications), such as DigitalOcean, LogRocket, and Envato.
+I’m Tania Rascia, a front end software developer, technical writer, and former chef. I currently work full-time and write for various [developer publications](/publications), such as DigitalOcean, LogRocket, and Envato.
 
 I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
 
@@ -12,7 +12,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 ### Newsletter
 
-I send out a message whenever I write something new. If you like my stuff and hate spam, join over 8,000 other developers on my email newsletter. 👇 One-click unsubscribe anytime.
+I send out a message whenever I write something new. If you like my stuff and hate spam, join over **8,000** other developers on my email newsletter. 👇 One-click unsubscribe anytime.
 
 <div class="centered-iframe">
   <iframe
@@ -100,14 +100,21 @@ A few sites I designed.
 
 ## Currently Using
 
-- **Computer:** MacBook Pro 2015
-- **Hosting:** [Netlify](https://netlify.com) (blog), [Heroku](https://heroku.com) (API)
+- **Computer:** MacBook Pro
+- **Hosting:** [Netlify](https://netlify.com) (blog)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
-- **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
-- **Syntax Highlighting:** [PrismJS](http://prismjs.com/)
-- **Code Theme:** [New Moon](https://taniarascia.github.io/new-moon)
-- **Newsletter:** [Substack](https://substack.com)
+- **Static site generator:** [Gatsby](https://gatsbyjs.org)
+- **Syntax highlighting:** [PrismJS](http://prismjs.com/)
+- **Code theme:** [New Moon](https://taniarascia.github.io/new-moon)
+- **Email newsletter:** [Substack](https://substack.com)
 - **Notes:** [SimpleNote](https://simplenote.com/)
+
+## Year in Review
+
+- [2016 into 2017](/2016-into-2017)
+- [2017 into 2018](/2017-into-2018)
+- [2018 into 2019](/2018-into-2019)
+- [2019 into 2020](/2019-into-2020)
 
 ## Miscellaneous
 
