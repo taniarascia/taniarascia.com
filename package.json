@@ -2,7 +2,7 @@
   "name": "taniarascia.com",
   "description": "Personal website running on Gatsby, React, and Node.js.",
   "version": "1.0.1",
-  "author": "Tania Rascia <tania@taniarascia.com>",
+  "author": "Tania Rascia <hello@taniarascia.com>",
   "repository": "git@github.com:taniarascia/taniarascia.com",
   "dependencies": {
     "eslint-utils": "^1.4.1",

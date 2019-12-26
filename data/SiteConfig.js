@@ -16,7 +16,7 @@ const config = {
   newsletter: 'https://taniarascia.substack.com',
   newsletterEmbed: 'https://taniarascia.substack.com/embed',
   userName: 'Tania',
-  userEmail: 'tania@taniarascia.com',
+  userEmail: 'hello@taniarascia.com',
   userTwitter: 'taniarascia',
   menuLinks: [
     {
