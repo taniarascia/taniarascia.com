@@ -332,7 +332,7 @@ render() {
   const { submitting, success, error, comments, newComment: { name, text } } = this.state
 ```
 
-I made some simple error or success messages to show after submnitting the form.
+I made some simple error or success messages to show after submitting the form.
 
 <div class="filename">Comments.js</div>
 
