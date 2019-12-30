@@ -443,7 +443,7 @@ With `app.use()`, it will apply to every endpoint, but we can also make certain 
 
 ```js
 const postLimiter = rateLimit({
-  windowMs: 1 * 60 * 1000
+  windowMs: 1 * 60 * 1000,
   max: 1,
 })
 
