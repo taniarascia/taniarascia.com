@@ -7,7 +7,7 @@ template: page
 ### Front End Software Developer
 
 - [taniarascia.com](https://www.taniarascia.com)
-- [taniarascia@gmail.com](mailto:taniarascia@gmail.com)
+- [hello@taniarascia.com](mailto:hello@taniarascia.com)
 - Chicago, IL
 
 ## Technical Skills

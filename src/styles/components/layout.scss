@@ -721,7 +721,7 @@ blockquote {
     margin: 0 0 1rem;
     flex: 1 1 calc(50% - 2rem);
     border: none;
-    background: #fafafa;
+    background: #f0f0f0;
     padding: 1rem 1rem 3.5rem !important;
     border-radius: $border-radius;
     position: relative;
@@ -1080,7 +1080,7 @@ button[disabled] {
   margin: 2rem 0;
   padding: 1.5rem;
   text-align: center;
-  background: #fafafa;
+  background: #f0f0f0;
 
   .newsletter-avatar {
     margin-top: 0.5rem;
@@ -1093,7 +1093,7 @@ button[disabled] {
   }
 
   h3 {
-    margin: 0 0 .75rem;
+    margin: 0 0 0.75rem;
     font-size: 1.5rem;
     font-weight: 600;
   }
