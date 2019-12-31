@@ -773,20 +773,20 @@ render() {
 
 Since we're passing it down to `TableBody` from `Table`, we're going to have to pass it through again as a prop, just like we did with the character data.
 
+In addition, since it turns out that the only components having their own states in our project are `App` and `Form`, it would be best practice to transform `Table` into a simple component from the class component it currently is.
+
 <div class="filename">src/Table.js</div>
 
 ```jsx
-class Table extends Component {
-  render() {
-    const { characterData, removeCharacter } = this.props
+const Table = (props) => {
+  const { characterData, removeCharacter } = props;
 
-    return (
-      <table>
-        <TableHeader />
-        <TableBody characterData={characterData} removeCharacter={removeCharacter} />
-      </table>
-    )
-  }
+  return (
+    <table>
+      <TableHeader />
+      <TableBody characterData={characterData} removeCharacter={removeCharacter} />
+    </table>
+  );
 }
 ```
 
