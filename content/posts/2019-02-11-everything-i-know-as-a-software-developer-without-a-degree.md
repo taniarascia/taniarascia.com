@@ -137,7 +137,7 @@ After I got back from traveling, I started looking for another job. I knew I nev
 
 ### Side project: Laconia MVC Framework
 
-During this time, I wrote [Laconia](https://laconia.site/) [(source)](https://github.com/taniarascia/laconia), a modern MVC (Model View Controller) application written in plain PHP without libraries or frameworks. I wanted to learn how to create something with MVC architecture, and I didn't want to rely on a framework to do it. I wanted it to be secure, and I wanted it to have users. I aimed to and succeeded in learning the basics of:
+During this time, I wrote [Laconia](https://laconia.dev/) [(source)](https://github.com/taniarascia/laconia), a modern MVC (Model View Controller) application written in plain PHP without libraries or frameworks. I wanted to learn how to create something with MVC architecture, and I didn't want to rely on a framework to do it. I wanted it to be secure, and I wanted it to have users. I aimed to and succeeded in learning the basics of:
 
 - **Authentication** - logging in, logging out, resetting a password, having private content/dashboard hidden from anonymous users
 - **Security and validation** - encrypted passwords and hashing, parameter binding with SQL, making sure users cannot be overridden, making sure no spam or empty content can go through, making sure passwords and usernames have the proper characters
