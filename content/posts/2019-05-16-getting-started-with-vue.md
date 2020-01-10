@@ -455,7 +455,12 @@ We'll also need to add this to App.vue
 
 ```html
 <template>
-  <employee-form @add:employee="addEmployee" />
+  <div id="app" class="small-container">
+    <h1>Employees</h1>
+
+    <employee-form />
+    <employee-table :employees="employees"/>
+  </div>
 </template>
 
 <script>
