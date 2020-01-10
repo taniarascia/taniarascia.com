@@ -451,7 +451,7 @@ Make `EmployeeForm.vue` and set it up a field to enter name, email, and a button
 
 We'll also need to add this to App.vue
 
-<div class="filename">src/components/EmployeeForm.vue</div>
+<div class="filename">src/components/App.vue</div>
 
 ```html
 <template>
