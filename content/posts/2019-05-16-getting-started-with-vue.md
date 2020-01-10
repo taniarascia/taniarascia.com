@@ -724,7 +724,6 @@ Finally, we'll set up the form. If the form is submitting and one of the compute
 <form @submit.prevent="handleSubmit">
   <label>Employee name</label>
   <input
-    ref="first"
     type="text"
     :class="{ 'has-error': submitting && invalidName }"
     v-model="employee.name"
