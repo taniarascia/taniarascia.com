@@ -464,13 +464,18 @@ We'll also need to add this to App.vue
 </template>
 
 <script>
+  import EmployeeTable from '@/components/EmployeeTable.vue'
   import EmployeeForm from '@/components/EmployeeForm.vue'
-  
+
   export default {
     name: 'app',
-    component: {
+    components: {
+      EmployeeTable,
       EmployeeForm,
     },
+    data: {
+      // ...
+    }
   }
 </script>
 ```
