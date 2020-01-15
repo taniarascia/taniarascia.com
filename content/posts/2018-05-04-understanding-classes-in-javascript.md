@@ -174,6 +174,7 @@ We can see in the output that the `constructor()` and `greet()` functions were a
 
 An advantageous feature of constructor functions and classes is that they can be extended into new object blueprints based off the parent. This is prevents repetition of code for objects that are similar but need some additional or more specific features.
 
+
 New constructor functions can be created from the parent using the [call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) method. In the example below, we will create a more specific character class called `Mage`, and assign the properties of `Hero` to it using `call()`, as well as adding an additional property.
 
 We will also set the `Mage`'s prototype to the one of `Hero`. Thus, `Mage` will inherit the methods of the `Hero`'s prototype.

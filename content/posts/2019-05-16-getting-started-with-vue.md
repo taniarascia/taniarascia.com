@@ -451,21 +451,31 @@ Make `EmployeeForm.vue` and set it up a field to enter name, email, and a button
 
 We'll also need to add this to App.vue
 
-<div class="filename">src/components/EmployeeForm.vue</div>
+<div class="filename">src/components/App.vue</div>
 
 ```html
 <template>
-  <employee-form @add:employee="addEmployee" />
+  <div id="app" class="small-container">
+    <h1>Employees</h1>
+
+    <employee-form />
+    <employee-table :employees="employees"/>
+  </div>
 </template>
 
 <script>
+  import EmployeeTable from '@/components/EmployeeTable.vue'
   import EmployeeForm from '@/components/EmployeeForm.vue'
-  
+
   export default {
     name: 'app',
-    component: {
+    components: {
+      EmployeeTable,
       EmployeeForm,
     },
+    data: {
+      // ...
+    }
   }
 </script>
 ```
@@ -714,7 +724,6 @@ Finally, we'll set up the form. If the form is submitting and one of the compute
 <form @submit.prevent="handleSubmit">
   <label>Employee name</label>
   <input
-    ref="first"
     type="text"
     :class="{ 'has-error': submitting && invalidName }"
     v-model="employee.name"
