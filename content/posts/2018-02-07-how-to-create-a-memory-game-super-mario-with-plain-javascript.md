@@ -72,8 +72,6 @@ First, let's create the setup. We'll create **index.html**, which will just be a
 
   <body>
     <div id="game"></div>
-  </body>
-</html>
 
     <script src="js/script.js"></script>
 
