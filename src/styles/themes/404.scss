@@ -64,7 +64,7 @@
           font-weight: 600;
           padding: 0 5px;
           margin: 0;
-          line-height: 0;
+          line-height: 30px;
           font-size: 16px;
           &:hover,
           &:active,
@@ -74,7 +74,7 @@
           }
         }
       }
-      a.donate-button {
+      a.kofi-button {
         display: none;
         background: #00aaaa;
         border: none;
@@ -107,9 +107,6 @@
             font-size: 24px;
             padding: 0 15px;
           }
-        }
-        a.donate-button {
-          display: flex;
         }
       }
     }

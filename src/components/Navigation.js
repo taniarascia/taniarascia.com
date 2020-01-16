@@ -7,7 +7,7 @@ import kofi from '../../content/thumbnails/kofi.png'
 import ThemeContext from '../context/ThemeContext'
 
 export default class Navigation extends Component {
-  static contextType = ThemeContext
+  static contextType = ThemeContext // eslint-disable-line
 
   state = {
     scrolled: false,
@@ -50,7 +50,12 @@ export default class Navigation extends Component {
               </Link>
             ))}
             <div className="cta">
-              <button className="dark-switcher" onClick={theme.toggleDark} aria-label="Toggle Dark Mode." title="Toggle Dark Mode">
+              <button
+                className="dark-switcher"
+                onClick={theme.toggleDark}
+                aria-label="Toggle Dark Mode."
+                title="Toggle Dark Mode"
+              >
                 {theme.dark ? (
                   <img src={sun} className="theme-icon" alt="Light Mode" />
                 ) : (

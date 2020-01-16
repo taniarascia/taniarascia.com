@@ -7,10 +7,6 @@ $dark-border: darken($background, 3%);
   background: $background;
   color: $foreground;
 
-  .lead h1 {
-    color: $foreground;
-  }
-
   a {
     color: lighten($primary-color, 10%);
 
@@ -23,19 +19,16 @@ $dark-border: darken($background, 3%);
   }
 
   .lead {
-    a {
-      border-bottom: 2px solid transparent;
+    h1 {
+      color: $foreground;
+    }
+
+    a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
+      border-bottom: none;
+      background: transparent !important;
 
       &:hover {
         color: $primary-color;
-        background: transparent;
-        border-bottom: 2px solid lighten($link-hover-color, 20%);
-      }
-
-      &:active,
-      &:focus {
-        background: transparent;
-        border-bottom: 2px dashed lighten($link-hover-color, 20%);
       }
     }
   }
@@ -45,7 +38,8 @@ $dark-border: darken($background, 3%);
       a.view-all {
         background: rgba(0, 0, 0, 0.2);
         color: darken($foreground, 10%);
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background: black;
           color: $foreground;
         }
@@ -110,11 +104,13 @@ $dark-border: darken($background, 3%);
   }
 
   .note {
-    background: transparent;
-    border-color: transparent;
-
     .note-container {
-      background: darken($background, 5%);
+      box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.6);
+      p,
+      button,
+      a {
+        color: white;
+      }
     }
   }
 

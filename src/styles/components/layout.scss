@@ -768,19 +768,25 @@ blockquote {
 }
 
 .note {
-  background: lighten($yellow, 28%);
-  padding: 2rem 0;
   margin: 1.5rem 0;
-  border-top: 2px solid $yellow;
-  border-bottom: 2px solid $yellow;
 
   .note-container {
+    background: radial-gradient(circle at 20% 20%, #5183f5 25%, #4640ff 100%);
+    box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100, 110, 140, 0.4);
+    color: rgba(255, 255, 255, 0.9);
     border-radius: $border-radius;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    a.donate-button {
+      background: darken($primary-color, 20%);
+      &:hover {
+        background: darken($primary-color, 30%);
+      }
+    }
   }
 
   h2 {
@@ -790,7 +796,7 @@ blockquote {
 
 .avatar {
   max-width: 100px;
-  border-radius: 12px;
+  border-radius: 50%;
   margin-bottom: 1rem;
 }
 
@@ -807,7 +813,7 @@ blockquote {
   }
 
   .avatar {
-    max-width: 200px;
+    max-width: 150px;
     margin-right: 2rem;
     margin-bottom: 0;
   }
@@ -1084,7 +1090,7 @@ button[disabled] {
 
   .newsletter-avatar {
     margin-top: 0.5rem;
-    border-radius: 8px;
+    border-radius: 50%;
     width: 50px;
   }
 
@@ -1105,7 +1111,7 @@ button[disabled] {
 
   @include small-breakpoint {
     .newsletter-avatar {
-      width: 75px;
+      width: 85px;
     }
 
     .button {

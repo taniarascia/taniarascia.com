@@ -254,6 +254,11 @@ kbd {
   text-shadow: 0 1px 0 #fff;
 }
 
+blockquote cite {
+  display: block;
+  text-align: right;
+}
+
 // Line break
 hr {
   height: 0;

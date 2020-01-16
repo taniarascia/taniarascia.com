@@ -107,7 +107,7 @@ A few sites I designed.
 - **Syntax highlighting:** [PrismJS](http://prismjs.com/)
 - **Code theme:** [New Moon](https://taniarascia.github.io/new-moon)
 - **Email newsletter:** [Substack](https://substack.com)
-- **Notes:** [SimpleNote](https://simplenote.com/)
+- **Notes:** [SimpleNote](https://simplenote.com/), [TakeNote](https://takenote.dev)
 
 ## Year in Review
 

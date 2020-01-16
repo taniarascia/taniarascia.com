@@ -14,7 +14,7 @@
   .cta {
     display: flex;
     align-items: center;
-    margin-right: .75rem;
+    margin-right: 0.75rem;
   }
 
   .nav-container {
@@ -61,9 +61,9 @@
       align-items: center;
       font-size: 1.05rem;
       font-weight: 500;
-      padding: .6rem;
+      padding: 0.6rem;
       margin: 0;
-      color: rgba(0, 0, 0, 0.45);
+      color: rgba(0, 0, 0, 0.6);
       line-height: 1.2;
       text-align: center;
 
@@ -97,7 +97,7 @@
   height: 23px;
   width: 23px;
   min-width: 23px;
-  margin-right: .75rem;
+  margin-right: 0.75rem;
   margin-bottom: 0;
 }
 
@@ -105,7 +105,7 @@ button.dark-switcher {
   -webkit-appearance: none;
   border: 0;
   margin: 0;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.5rem;
   background: transparent;
 
   &:focus {
@@ -122,9 +122,9 @@ button.dark-switcher {
 
 .kofi {
   margin: 0;
-  width: 26px;
-  max-width: 26px;
-  min-width: 26px;
+  width: 22px;
+  max-width: 22px;
+  min-width: 22px;
 }
 
 @include small-breakpoint {
@@ -135,7 +135,6 @@ button.dark-switcher {
       }
 
       .links a {
-
         &:hover,
         &.active {
           color: #111;
@@ -180,28 +179,22 @@ button.dark-switcher {
         }
       }
     }
-
-    a.donate-button {
-      padding: 0.5rem 1.25rem;
-
-      .text {
-        display: block;
-      }
-    }
   }
 
   .kofi {
     margin: 0;
-    max-width: 32px;
+    max-width: 30px;
+    min-width: 30px;
+    width: 30px;
   }
-
-  .favicon {
+  L .favicon {
     margin-right: 1rem;
   }
 
   button.dark-switcher {
     margin: 0;
     font-size: 1.4rem;
+    padding: 0.75rem 1rem;
   }
 
   .theme-icon {
