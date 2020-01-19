@@ -388,6 +388,7 @@ $dark-border: darken($background, 3%);
   .newsletter-section {
     border-color: #3a3a3a;
     background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.6);
   }
 
   .category-container {

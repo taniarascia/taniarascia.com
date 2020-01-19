@@ -50,8 +50,8 @@ export default class Index extends Component {
             <div className="newsletter-section">
               <img src={tania} className="newsletter-avatar" alt="Tania" />
               <div>
-                <h3>Get updates</h3>
-                <p>Open source projects and development tutorials</p>
+                <h3>Email Newsletter</h3>
+                <p>I write tutorials. Get an update when something new comes out by signing up below!</p>
                 <a className="button" href="https://taniarascia.substack.com">
                   Subscribe
                 </a>

@@ -52,7 +52,12 @@
     font-size: 1.2rem;
 
     .elevator {
+      flex: 2;
       margin-right: 2.5rem;
+    }
+
+    .newsletter-section {
+      flex: 1;
     }
 
     h1 {
@@ -1086,7 +1091,9 @@ button[disabled] {
   margin: 2rem 0;
   padding: 1.5rem;
   text-align: center;
-  background: #f0f0f0;
+  background: radial-gradient(circle at 20% 20%, #5183f5 25%, #4640ff 100%);
+  box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100, 110, 140, 0.4);
+  color: rgba(255, 255, 255, 0.9);
 
   .newsletter-avatar {
     margin-top: 0.5rem;
@@ -1102,11 +1109,20 @@ button[disabled] {
     margin: 0 0 0.75rem;
     font-size: 1.5rem;
     font-weight: 600;
+    color: white;
   }
 
   .button {
     font-size: 1.1rem;
     padding: 0.75rem 1rem;
+    border: none;
+    background: darken($primary-color, 25%);
+    &:hover,
+    &:active,
+    &:focus {
+      border: none;
+      background: darken($primary-color, 35%);
+    }
   }
 
   @include small-breakpoint {
