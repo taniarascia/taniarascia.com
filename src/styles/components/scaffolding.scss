@@ -86,19 +86,19 @@ h3:not(:first-child) {
 // Heading individual styles
 h1 {
   font-size: $h1-mobile;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
   font-size: $h2-mobile;
-  font-weight: 700;
+  font-weight: 600;
   border-bottom: 2px solid lighten($border-color, 12%);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
 }
 
 h3 {
   font-size: $h3-mobile;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h4 {
@@ -127,7 +127,7 @@ h5 {
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child) {
-    margin-top: 3.5rem;
+    margin-top: 4rem;
   }
 
   // Heading desktop individual styles
@@ -241,7 +241,7 @@ b {
 // Keyboard input
 kbd {
   background-color: #f7f7f7;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   color: #333;

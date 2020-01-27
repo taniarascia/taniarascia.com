@@ -9,7 +9,7 @@ pre.language-terminal code.language-terminal {
   position: relative;
   padding: 1rem;
   font-family: $code-font-family;
-  border: 1px solid #d8d9da;
+  border: 2px solid #d8d9da;
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   padding-top: 45px;
@@ -70,7 +70,7 @@ pre code {
 // Keyboard input
 kbd {
   background-color: #f7f7f7;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
   color: #333;

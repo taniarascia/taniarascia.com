@@ -16,7 +16,7 @@ $mobile: 620px;
 $tablet: $small;
 $desktop: $medium;
 
-$width: 800px;
+$width: 900px;
 
 /* Colors */
 
@@ -48,7 +48,7 @@ $font-color: #404040;
 $light-font-color: rgba(0, 0, 0, 0.6);
 $font-family: BlinkMacSystemFont, -apple-system, 'Roboto', Helvetica Neue, Helvetica, Arial,
   sans-serif;
-$line-height: 1.6;
+$line-height: 1.65;
 
 // Headings
 $heading-font-color: #111;
@@ -133,9 +133,6 @@ $code-family: Menlo, monospace;
 $code-background: transparent;
 $code-borders: $borders;
 
-/* Nav */
-
-$nav-height: 90px;
 
 $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 $code-font-color: #b3b9c5;

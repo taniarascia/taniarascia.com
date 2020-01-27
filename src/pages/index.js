@@ -30,14 +30,22 @@ export default class Index extends Component {
             <div className="elevator">
               <h1>{`Hey, I'm Tania`}</h1>
               <p>
-                I'm a front end software developer working on{' '}
+                I'm a front end software developer creating{' '}
                 <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">
                   open source
                 </a>{' '}
-                and <Link to="/blog">writing</Link> about modern JavaScript, Node.js, and
+                projects and <Link to="/blog">writing</Link> about modern JavaScript, Node.js, and
                 development. 💾
               </p>
               <div className="social-buttons">
+                <a
+                  className="patreon"
+                  href="https://www.patreon.com/taniarascia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Patreon
+                </a>
                 <GitHubButton
                   href="https://github.com/taniarascia"
                   data-size="large"
@@ -51,7 +59,9 @@ export default class Index extends Component {
               <img src={tania} className="newsletter-avatar" alt="Tania" />
               <div>
                 <h3>Email Newsletter</h3>
-                <p>I write tutorials. Get an update when something new comes out by signing up below!</p>
+                <p>
+                  I write tutorials. Get an update when something new comes out by signing up below!
+                </p>
                 <a className="button" href="https://taniarascia.substack.com">
                   Subscribe
                 </a>

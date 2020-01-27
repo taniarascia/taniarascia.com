@@ -98,6 +98,7 @@ $dark-border: darken($background, 3%);
 
       &:hover,
       &.active {
+        background: rgba(0, 0, 0, 0.2);
         color: $foreground;
       }
     }
@@ -143,7 +144,6 @@ $dark-border: darken($background, 3%);
 
       &:hover {
         background: $accent;
-        border-color: $accent;
       }
     }
 
@@ -154,7 +154,6 @@ $dark-border: darken($background, 3%);
         }
 
         border: 2px solid transparent;
-        border-bottom-color: $accent;
 
         &:hover {
           background: $accent !important;
@@ -214,6 +213,9 @@ $dark-border: darken($background, 3%);
   }
 
   .projects {
+    .each {
+      border-bottom: 2px solid $dark-border;
+    }
     h2 {
       color: $foreground;
 
@@ -224,16 +226,6 @@ $dark-border: darken($background, 3%);
 
     p {
       color: $comment;
-    }
-  }
-
-  @include small-breakpoint {
-    .projects .each {
-      border-bottom: 2px solid lighten($background, 3%);
-
-      &:last-of-type {
-        border-bottom: none;
-      }
     }
   }
 
@@ -251,7 +243,7 @@ $dark-border: darken($background, 3%);
   }
 
   td {
-    border-bottom: 1px solid darken($background, 8%);
+    border-bottom: 2px solid darken($background, 8%);
   }
 
   tbody tr:nth-child(even) {
@@ -375,7 +367,7 @@ $dark-border: darken($background, 3%);
   }
 
   pre.language-terminal code.language-terminal {
-    border: 1px solid #666;
+    border: 2px solid #666;
     background: #111;
     color: #ccc;
 

@@ -6,7 +6,7 @@
 
 @include small-breakpoint {
   #main-content {
-    margin-top: 92px;
+    margin-top: 140px;
     padding: 60px 0 0;
     min-height: calc(100vh - 219px);
   }
@@ -53,7 +53,10 @@
 
     .elevator {
       flex: 2;
-      margin-right: 2.5rem;
+      margin-right: 3rem;
+      p {
+        max-width: 450px;
+      }
     }
 
     .newsletter-section {
@@ -134,7 +137,7 @@
 
     a.view-all {
       display: inline-block;
-      padding: 0.4rem 0.6rem;
+      padding: 0.5rem 0.75rem;
       background: $light;
       border-radius: $border-radius;
       color: lighten($font-color, 10%);
@@ -230,7 +233,6 @@
       padding: 1rem 0;
       margin: 0;
       border: 2px solid transparent;
-      border-bottom: 2px solid $light;
 
       .date {
         margin: 0;
@@ -311,7 +313,7 @@
       .each {
         grid-template-columns: 80px 1fr 90px;
         align-items: start;
-        padding: 1rem 2rem;
+        padding: 1.5rem 2rem;
         margin: 0 -2rem;
 
         &:hover {
@@ -352,7 +354,7 @@
     &.simple {
       a {
         .each {
-          padding: 0.5rem 1rem;
+          padding: 0.75rem 1rem;
           margin: 0 -1rem;
 
           &:hover {
@@ -469,7 +471,7 @@ h2.publication-company {
   .simple-posts {
     a {
       .each {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         margin: 0 -1rem;
 
         h2 {
@@ -486,6 +488,7 @@ h2.publication-company {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
+    border-bottom: 2px solid #eee;
   }
 
   h2 {
@@ -538,8 +541,7 @@ h2.publication-company {
     .each {
       display: flex;
       justify-content: space-between;
-      padding: 1rem 0;
-      border-bottom: 2px solid $light;
+      padding: 1.25rem 0;
 
       &:last-of-type {
         border-bottom: none;
@@ -849,7 +851,7 @@ blockquote {
 
 .view-all {
   margin-left: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .emoji-in-button {
@@ -974,12 +976,12 @@ blockquote {
 
   a {
     font-weight: 400;
-    color: darken($light, 30%);
+    color: rgba(0, 0, 0, 0.6);
     display: block;
     margin-right: 1.5rem;
 
     &:hover {
-      color: $primary-color;
+      color: rgba(0, 0, 0, 0.8);
     }
   }
 
@@ -992,6 +994,7 @@ blockquote {
 
 @include small-breakpoint {
   .footer {
+    margin: 60px auto;
     flex-direction: row;
     height: 100px;
   }
@@ -1084,7 +1087,7 @@ button[disabled] {
 }
 
 .newsletter-section {
-  display: flex;
+  display: none;
   align-items: center;
   flex-direction: column;
   border-radius: $border-radius;
@@ -1098,7 +1101,7 @@ button[disabled] {
   .newsletter-avatar {
     margin-top: 0.5rem;
     border-radius: 50%;
-    width: 50px;
+    width: 85px;
   }
 
   p {
@@ -1113,8 +1116,8 @@ button[disabled] {
   }
 
   .button {
-    font-size: 1.1rem;
-    padding: 0.75rem 1rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
     border: none;
     background: darken($primary-color, 25%);
     &:hover,
@@ -1126,14 +1129,7 @@ button[disabled] {
   }
 
   @include small-breakpoint {
-    .newsletter-avatar {
-      width: 85px;
-    }
-
-    .button {
-      font-size: 1.2rem;
-      padding: 1rem 1.2rem;
-    }
+    display: flex;
   }
 
   @include large-breakpoint {
