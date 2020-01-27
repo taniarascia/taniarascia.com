@@ -42,15 +42,15 @@ export default class PublicationsPage extends Component {
               const articles = publication[1]
 
               return (
-                <article>
+                <article key={company}>
                   <h2 className="publication-company" id={company.replace(/\s/g, '')}>
                     <img src={logoMap[company]} alt="Company" />
                     {company}
                   </h2>
                   <ul key={i}>
-                    {articles.map((article, i) => {
+                    {articles.map((article, f) => {
                       return (
-                        <li key={i}>
+                        <li key={f}>
                           <a href={article.path} target="_blank" rel="noopener noreferrer">
                             {article.title}
                           </a>

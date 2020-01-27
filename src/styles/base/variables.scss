@@ -16,7 +16,7 @@ $mobile: 620px;
 $tablet: $small;
 $desktop: $medium;
 
-$width: 900px;
+$width: 850px;
 
 /* Colors */
 
@@ -40,15 +40,15 @@ $code: Menlo;
 
 // Body font
 $font-size: 1rem;
-$body-font-size: 1.2rem;
+$body-font-size: 1.15rem;
 $font-style: normal;
 $font-variant: normal;
 $font-weight: normal;
-$font-color: #404040;
+$font-color: #454545;
 $light-font-color: rgba(0, 0, 0, 0.6);
 $font-family: BlinkMacSystemFont, -apple-system, 'Roboto', Helvetica Neue, Helvetica, Arial,
   sans-serif;
-$line-height: 1.65;
+$line-height: 1.6;
 
 // Headings
 $heading-font-color: #111;
@@ -58,18 +58,18 @@ $heading-font-family: BlinkMacSystemFont, -apple-system, 'Roboto', Helvetica Neu
 $heading-line-height: 1.3;
 
 // Mobile heading font size
-$h1-mobile: 1.75rem;
-$h2-mobile: 1.5rem;
-$h3-mobile: 1.25rem;
-$h4-mobile: 1.1rem;
+$h1-mobile: 1.85rem;
+$h2-mobile: 1.7rem;
+$h3-mobile: 1.5rem;
+$h4-mobile: 1.3rem;
 $h5-mobile: 1rem;
 
 // Heading font size
-$h1: 2.25rem;
+$h1: 2.5rem;
 $h2: 2.2rem;
-$h3: 1.75rem;
-$h4: 1.6rem;
-$h5: 1.3rem;
+$h3: 1.85rem;
+$h4: 1.7rem;
+$h5: 1.4rem;
 
 /* Padding */
 

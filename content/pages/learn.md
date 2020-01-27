@@ -18,7 +18,7 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [x] Map, Set, WeakMap, and WeakSet
 - [ ] Closures
 - [x] Promises, Async/Await, Microtasks,and the Event Loop
-- [ ] Generators
+- [x] Generators
 
 #### Document Object Model (DOM) and Web APIs
 

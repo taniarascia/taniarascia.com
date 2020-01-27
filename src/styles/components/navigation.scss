@@ -14,7 +14,7 @@
   .cta {
     display: flex;
     align-items: center;
-    margin: 0 0.75rem;
+    margin: 0 0 0 0.75rem;
   }
 
   .nav-container {
@@ -51,7 +51,7 @@
   .links {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex: 1;
     margin: 0;
@@ -61,7 +61,7 @@
       align-items: center;
       font-size: 1.05rem;
       font-weight: 400;
-      padding: 0.6rem;
+      padding: 0.75rem;
       margin: 0;
       color: rgba(0, 0, 0, 0.6);
       line-height: 1.2;
@@ -128,8 +128,7 @@ button.dark-switcher {
     .links {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      flex: unset;
+      justify-content: flex-end;
       height: 100%;
 
       a {
