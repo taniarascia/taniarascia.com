@@ -9,7 +9,7 @@ pre.language-terminal code.language-terminal {
   position: relative;
   padding: 1rem;
   font-family: $code-font-family;
-  border: 2px solid #d8d9da;
+  border: 1px solid #d8d9da;
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   padding-top: 45px;
@@ -75,7 +75,7 @@ kbd {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
   color: #333;
   display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $font-family;
   line-height: 1.4;
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
@@ -88,13 +88,14 @@ kbd {
 :not(pre) > code[class*='language-'] {
   padding: 3px 5px;
   color: #111111;
+  font-weight: 500;
 }
 
 :not(pre) > code {
   padding: 3px 5px;
   border: none;
   font-family: $code-font-family;
-  font-weight: 400;
+  font-weight: 500;
   color: #111111;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.06);

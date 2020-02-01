@@ -230,7 +230,7 @@
       display: grid;
       align-items: center;
       grid-template-columns: 50px 1fr 70px;
-      padding: 1rem 0;
+      padding: 1.25rem 0;
       margin: 0;
       border: 2px solid transparent;
 
@@ -289,7 +289,7 @@
       font-weight: 500;
       padding: 0;
       margin: 0;
-      color: $light-font-color;
+      color: $font-color;
 
       &:hover {
         color: #111;
@@ -442,7 +442,7 @@ h2.publication-company {
         font-weight: 500;
         padding: 0;
         margin: 0;
-        color: $light-font-color;
+        color: $font-color;
         border-bottom: none;
         display: flex;
         align-items: center;
@@ -488,7 +488,6 @@ h2.publication-company {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
-    border-bottom: 2px solid #eee;
   }
 
   h2 {
@@ -541,7 +540,8 @@ h2.publication-company {
     .each {
       display: flex;
       justify-content: space-between;
-      padding: 1.25rem 0;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #eee;
 
       &:last-of-type {
         border-bottom: none;
@@ -659,8 +659,8 @@ h2.publication-company {
 }
 
 blockquote {
-  color: rgba(0, 0, 0, 0.7);
-  border: 2px solid $yellow;
+  color: rgba(0, 0, 0, 0.8);
+  border: none;
   background: lighten($yellow, 28%);
   border-radius: $border-radius;
   font-weight: 500;
@@ -670,12 +670,12 @@ blockquote {
   font-size: 1rem;
 
   &.success {
-    border: 2px solid $green;
+    border: none;
     background: lighten($green, 48%);
   }
 
   &.error {
-    border: 2px solid $error;
+    border: none;
     background: lighten($error, 23%);
   }
 
@@ -690,13 +690,13 @@ blockquote {
 
   a {
     color: #111;
-    border-bottom: 2px solid $yellow !important;
+    border-bottom: none !important;
 
     &:hover,
     &:active,
     &:focus {
       color: #111 !important;
-      background: lighten($yellow, 28%) !important;
+      background: lighten($yellow, 18%) !important;
     }
   }
 
@@ -863,6 +863,7 @@ blockquote {
 .search-container {
   display: flex;
   align-items: center;
+  max-width: 500px;
   margin-bottom: 2rem;
 }
 

@@ -92,13 +92,13 @@ h1 {
 h2 {
   font-size: $h2-mobile;
   font-weight: 600;
-  border-bottom: 2px solid lighten($border-color, 12%);
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.2rem;
 }
 
 h3 {
   font-size: $h3-mobile;
   font-weight: 600;
+  color: lighten($heading-font-color, 20%);
 }
 
 h4 {
@@ -127,7 +127,7 @@ h5 {
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
   }
 
   // Heading desktop individual styles
@@ -236,22 +236,6 @@ mark {
 strong,
 b {
   font-weight: 600;
-}
-
-// Keyboard input
-kbd {
-  background-color: #f7f7f7;
-  border: 2px solid #ccc;
-  border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-  color: #333;
-  display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 0 0.1em;
-  padding: 0.1em 0.6em;
-  text-shadow: 0 1px 0 #fff;
 }
 
 blockquote cite {

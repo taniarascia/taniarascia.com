@@ -30,12 +30,12 @@ export default class Index extends Component {
             <div className="elevator">
               <h1>{`Hey, I'm Tania`}</h1>
               <p>
-                I'm a front end software developer creating{' '}
+                I'm a full stack software developer creating{' '}
                 <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">
                   open source
                 </a>{' '}
                 projects and <Link to="/blog">writing</Link> about modern JavaScript, Node.js, and
-                development. 💾
+                development.
               </p>
               <div className="social-buttons">
                 <a
