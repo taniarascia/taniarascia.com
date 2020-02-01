@@ -408,8 +408,7 @@ I've given `644` (read and write by owner) permissions to test.html, a common pe
 
 ### Run as administrator
 
-[[![](../images/sandwich.png)
-](https://xkcd.com/149/)
+![](../images/sandwich.png)
 
 The term `sudo` stands for Super User Do. You might encounter a situation in which the current user you're logged in as does not have sufficient permissions to perform a task. You can precede a command with `sudo` to run the command as administrator, as long as you have the admin password. When you type the password, it will _not_ show any asterisks to indicate that you've typed anything.
 
