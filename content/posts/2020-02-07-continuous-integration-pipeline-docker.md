@@ -1,5 +1,5 @@
 ---
-date: 2020-02-04
+date: 2020-02-07
 title: 'Building a Continuous Integration & Deployment Pipeline Using Docker (CI/CD)'
 template: post
 thumbnail: '../thumbnails/docker.png'
