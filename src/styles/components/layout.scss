@@ -1107,25 +1107,27 @@ button[disabled] {
 
   p {
     font-size: 1.2rem;
+    color: rgba(255,255,255,.8) !important;
   }
 
   h3 {
     margin: 0 0 0.75rem;
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: white !important;
   }
 
-  .button {
+  a.button {
     font-size: 1.2rem;
     padding: 1rem 1.5rem;
-    border: none;
-    background: darken($primary-color, 25%);
+    border: none !important;
+    background: darken($primary-color, 35%);
+    color: white !important;
     &:hover,
     &:active,
     &:focus {
       border: none;
-      background: darken($primary-color, 35%);
+      background: #111;
     }
   }
 
