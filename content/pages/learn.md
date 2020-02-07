@@ -38,11 +38,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [x] Swagger - UI, Codegen, Docs
 - [x] JWT token generation and client side handling
 
-### DevOps and CI/CD
-
-- [ ] Docker
-- [ ] Creating a Pipeline
-
 ### Tools/Frameworks/Concepts
 
 - [x] Webpack
@@ -139,17 +134,15 @@ This is not everything I know, but a good amount of the things I've documented s
 
 #### Databases/APIs
 
+- [x] [SQL](/overview-of-sql-commands-and-pdo-operations/)
 - [x] [Production Node.js, Express REST API with PostgreSQL + Deploying to Heroku](/node-express-postgresql-heroku)
 
-### PHP
+### DevOps, Automation, Testing
 
-- [x] [Authentication, Routing, Sessions (via Laconia MVC)](https://laconia.dev)
-- [x] [CRUD: Creating and Reading](/create-a-simple-database-app-connecting-to-mysql-with-php/)
-- [x] [CRUD: Updating and Deleting](/create-a-simple-crud-database-app-php-update-delete/)
-- [x] [File Uploads](/how-to-upload-files-to-a-server-with-plain-javascript-and-php/)
-- [x] [WordPress Basics](/developing-a-wordpress-theme-from-scratch/)
-- [x] [WordPress Intermediate](/wordpress-from-scratch-part-two/)
-- [x] [WordPress Custom Fields](/wordpress-part-three-custom-fields-and-metaboxes/)
+- [x] [AWS S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
+- [x] [Vagrant/VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/)
+- [x] [Docker and creating a CI/CD pipeline](continuous-integration-pipeline-docker)
+- [x] [JavaScript Unit Tests with Jest or Mocha](/unit-testing-in-javascript/)
 
 ### CSS
 
@@ -189,15 +182,12 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Bash](/how-to-create-and-use-bash-scripts/)
 - [x] [Object-Oriented Paradigm](/object-oriented-pattern-javascript-php-classes/)
 
-### Databases
+### PHP
 
-- [x] [SQL](/overview-of-sql-commands-and-pdo-operations/)
-
-### Testing
-
-- [x] [JavaScript Unit Tests with Jest or Mocha](/unit-testing-in-javascript/)
-
-### DevOps and CI/CD
-
-- [x] [AWS S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
-- [x] [Vagrant/VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/)
+- [x] [Authentication, Routing, Sessions (via Laconia MVC)](https://laconia.dev)
+- [x] [CRUD: Creating and Reading](/create-a-simple-database-app-connecting-to-mysql-with-php/)
+- [x] [CRUD: Updating and Deleting](/create-a-simple-crud-database-app-php-update-delete/)
+- [x] [File Uploads](/how-to-upload-files-to-a-server-with-plain-javascript-and-php/)
+- [x] [WordPress Basics](/developing-a-wordpress-theme-from-scratch/)
+- [x] [WordPress Intermediate](/wordpress-from-scratch-part-two/)
+- [x] [WordPress Custom Fields](/wordpress-part-three-custom-fields-and-metaboxes/)
