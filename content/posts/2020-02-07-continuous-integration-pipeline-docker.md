@@ -238,7 +238,7 @@ Going to `localhost:5000` will now display your fully built application, just as
 
 ### Tag and publish
 
-To use one of these images on a production server, you'll want to be able to retrieve it from Docker Hub. You'll have to create a repository for the project on Docker Hub. Once you do that, you'll have a place to send your image. Now you can change the image name you build to your Docker Hub username and repository, plus whatever tag you want.
+To use one of these images on a production server, you'll want to be able to retrieve it from Docker Hub. You'll have to create a repository for the project on Docker Hub. Once you do that, you'll have a place to send your image. You'll have to update the image name to be your Docker Hub username and repository, plus whatever tag you want.
 
 Now you can build and tag like before with the new names, and `docker push` to the Docker Hub repository.
 
@@ -246,6 +246,11 @@ Now you can build and tag like before with the new names, and `docker push` to t
 docker build -t <username>/<repository>:<tag> .
 docker tag <username>/<repository>:<tag> <username>/<repository>:latest
 docker push <username>/<repository>:<tag>
+
+# It might look something like this:
+docker build -t user/app:v1.0.0 .
+docker tag user/app:v1.0.0 user/app:latest
+docker push user/app:v1.0.0
 ```
 
 If all went well, your image will now be live on Docker Hub and it will be easy to share.
@@ -401,14 +406,29 @@ Are you sure you want to continue connecting (yes/no)?
 I learned (from Vanya) that you can base64 encode a string to store it in a predictable format. In the install phase, you can decode a public key and write it to the `known_hosts` file to bypass that error.
 
 ```bash
-echo "publicKey" | base64
+echo <public key> | base64 # prints <base 64 encoded public key>
+```
 
-# prints "base64EncodedPublicKey"
+So in practice, the input would look something like this:
+
+```bash
+echo "123.45.67.89 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSU
+GPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3
+Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XA
+t3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/En
+mZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbx
+NrRFi9wrf+M7Q== you@example.com" | base64
+```
+
+And the base64 encoded output:
+
+```terminal
+MTIzLjQ1LjY3Ljg5IHNzaC1yc2EgQUFBQUIzTnphQzF5YzJFQUFBQUJJd0FBQVFFQWtsT1Vwa0RIcmZIWTE3U2JybVRJcE5MVEdLOVRqb20vQldEU1UKR1BsK25hZnpsSERUWVc3aGRJNHlaNWV3MThKSDRKVzlqYmhVRnJ2aVF6TTd4bEVMRVZmNGg5bEZYNVFWa2JQcHBTd2cwY2RhMwpQYnY3a09kSi9NVHlCbFdYRkNSK0hBbzNGWFJpdEJxeGlYMW5LaFhwSEFac01jaUxxOFY2UmpzTkFRd2RzZE1GdlNsVksvN1hBCnQzRmFvSm9Bc25jTTFROXg1KzNWMFd3NjgvZUlGbWIxenVVRmxqUUpLcHJyWDg4WHlwTkR2allOYnk2dncvUGIwcndlcnQvRW4KbVorQVc0T1pQblRQSTg5WlBtVk1MdWF5ckQyY0U4NlovaWw4YitndzNyMysxbkthdG1Ja2puMnNvMWQwMVFyYVRsTXFWU3NieApOclJGaTl3cmYrTTdRPT0geW91QGV4YW1wbGUuY29tCg==
 ```
 
 ```yml
 install:
-  - echo "base64EncodedPublicKey" | base64 -d >> $HOME/.ssh/known_hosts
+  - echo <base 64 encoded public key> | base64 -d >> $HOME/.ssh/known_hosts
 ```
 
 The same tactic can be used with the private key during the connection phase, as you'll likely need a private key to access your server. You'll just want to make sure the private key is securely stored in the Travis environment variable and absolutely not visible from the deployment feed.
