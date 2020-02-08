@@ -150,7 +150,7 @@ npm run build # build React app
 npm run start # start Node server
 ```
 
-With docker, you need to give insturctions to Docker via a file called `Dockerfile` in the root of your project. `Dockerfile` seems a little intimidating at first, but it's not that much different from how I set up my local environment. It just requires a few `Dockerfile` specific commands.
+To use a container, you'll need to give instructions to Docker via a file called `Dockerfile` in the root of your project. `Dockerfile` seems a little intimidating at first, but it's not that much different from how I set up my local environment. It just requires a few `Dockerfile` specific commands.
 
 - [FROM](https://docs.docker.com/engine/reference/builder/#from) - Start the Dockerfile and pull from a base image
 - [COPY](https://docs.docker.com/engine/reference/builder/#copy) - Copy files from local source to container target
