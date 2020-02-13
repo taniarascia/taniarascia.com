@@ -132,14 +132,21 @@ export default {
     },
     {
       title: 'Understanding This, Bind, Call, and Apply in JavaScript',
-      path: 'https://www.digitalocean.com/community/conceptual_articles/understanding-this-bind-call-and-apply-in-javascript',
+      path:
+        'https://www.digitalocean.com/community/conceptual_articles/understanding-this-bind-call-and-apply-in-javascript',
+    },
+    {
+      title: 'Understanding Map and Set Objects in JavaScript',
+      path:
+        'https://www.digitalocean.com/community/tutorials/understanding-map-and-set-objects-in-javascript',
     },
   ],
   LogRocket: [
     {
       title: 'Setting up a RESTful API with Node.js and PostgreSQL',
-      path: 'https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/',
-    }
+      path:
+        'https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/',
+    },
   ],
   Codrops: [
     {

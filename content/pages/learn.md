@@ -14,10 +14,9 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 #### Concepts
 
-- [x] Bitwise Operators
-- [x] Map, Set, WeakMap, and WeakSet
 - [ ] Closures
-- [x] Promises, Async/Await, Microtasks,and the Event Loop
+- [x] Bitwise Operators
+- [x] Promises, Async/Await, Microtasks, and the Event Loop
 - [x] Generators
 
 #### Document Object Model (DOM) and Web APIs
@@ -36,7 +35,6 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 - [ ] GraphQL
 - [ ] NoSQL (MongoDB, Firebase)
 - [x] Swagger - UI, Codegen, Docs
-- [x] JWT token generation and client side handling
 
 ### Tools/Frameworks/Concepts
 
@@ -111,6 +109,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Buffers](/bits-bytes-bases-and-a-hex-dump-javascript/)
 - [x] [MVC - Model View Controller](/javascript-mvc-todo-app)
 - [x] [Bind, Call, Apply and `this`](/this-bind-call-apply-javascript/)
+- [x] [Map and Set](/understanding-map-and-set-javascript)
 
 #### Document Object Model (DOM)
 
@@ -141,7 +140,7 @@ This is not everything I know, but a good amount of the things I've documented s
 
 - [x] [AWS S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
 - [x] [Vagrant/VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/)
-- [x] [Docker and creating a CI/CD pipeline](continuous-integration-pipeline-docker)
+- [x] [Docker and creating a CI/CD pipeline, JWT client side handling](continuous-integration-pipeline-docker)
 - [x] [JavaScript Unit Tests with Jest or Mocha](/unit-testing-in-javascript/)
 
 ### CSS
