@@ -437,9 +437,7 @@ Since Sets can only contain unique values, any attempt to add a value that alrea
 set.add('Chopin') // Set will still contain 3 unique values
 ```
 
-<$>[note] 
-**Note**: The same equality comparison that applies to Map keys applies to Set items. Two objects that have the same value but do not share the same reference will not be considered equal.
-<$>
+> **Note**: The same equality comparison that applies to Map keys applies to Set items. Two objects that have the same value but do not share the same reference will not be considered equal.
 
 You can also initialize Sets with an Array of values. If there are duplicate values in the array, they will be removed from the Set.
 
@@ -560,6 +558,6 @@ Set can be used for finding the union, intersection, and difference between two 
 
 ## Conclusion
 
-In this article, you learned that a Map is a collection of ordered key/value pairs, and that a Set is a collection of unique values. Both of these data structures add additional capabilities to JavaScript and simplify common tasks such as finding the length of a key/value pair collection and removing duplicate items from a data set, respectively. On the otherhand, Objects and Arrays have been traditionally used for data storage and manipulation in JavaScript, and have direct compatibility with JSON, which continues to make them the most essential data structures, especially for working with REST APIs. Maps and Sets are primarily useful as supporting data structures for Objects and Arrays.
+In this article, you learned that a Map is a collection of ordered key/value pairs, and that a Set is a collection of unique values. Both of these data structures add additional capabilities to JavaScript and simplify common tasks such as finding the length of a key/value pair collection and removing duplicate items from a data set, respectively. On the other hand, Objects and Arrays have been traditionally used for data storage and manipulation in JavaScript, and have direct compatibility with JSON, which continues to make them the most essential data structures, especially for working with REST APIs. Maps and Sets are primarily useful as supporting data structures for Objects and Arrays.
 
 If you would like to learn more about JavaScript, check out the homepage for our [How To Code in JavaScript series](https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript), or browse our [How to Code in Node.js series](https://www.digitalocean.com/community/tutorial_series/how-to-code-in-node-js) for articles on back-end development.
