@@ -78,7 +78,7 @@
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
-    "check": "npx npm-check-updates -u"
+    "check": "yarn upgrade-interactive --latest"
   },
   "remarkConfig": {
     "plugins": [
