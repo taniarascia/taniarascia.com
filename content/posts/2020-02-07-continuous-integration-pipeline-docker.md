@@ -376,7 +376,7 @@ The second part of the script depends entirely on what host you're using and the
 
 I won't supply the individual commands for the service because this will vary wildly, but what you'll do once you SSH into the deployment server will resemble this.
 
-- You'll want to find the currently running container and stop it.
+- You'll want to find the currently running container and stop it. (You can do this by setting a `--name` on the container, and stopping and removing that container before setting the new one.)
 - Then you'll want to start up the new container in the background.
   - Add `--restart-unless-stopped` to ensure if something happens, Docker will restart the container.
   - Add `-d` to run it in the background, allowing you to escape from the script or run other commands.
@@ -384,12 +384,10 @@ I won't supply the individual commands for the service because this will vary wi
 - Finally, you'll want to prune all old containers and images.
 
 ```bash
-# Find currently running container ID
-CONTAINER_ID=$(docker ps | grep takenote | cut -d" " -f1)
-
 # Stop, run, and clean
-docker stop ${CONTAINER_ID}
-docker run --restart unless-stopped -d -p 80:5000 ${IMAGE}:${GIT_VERSION}
+docker stop current-container
+docker rm current-container
+docker run --name=current-container --restart unless-stopped -d -p 80:5000 ${IMAGE}:${GIT_VERSION}
 docker system prune -a -f
 ```
 
