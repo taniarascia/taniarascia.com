@@ -1,6 +1,6 @@
 ---
 date: 2019-10-29
-title: 'Full Stack Authentication: Cookies and Local Storage'
+title: 'Authentication on the Client Side the Right Way: Cookies vs. Local Storage (Node/Express/React)'
 template: post
 thumbnail: '../thumbnails/cookie.png'
 slug: full-stack-cookies-localstorage-react-express
@@ -16,7 +16,7 @@ tags:
 
 ### The expectation
 
-When you log into an application, you have the expectation that the next time you open a new tab or window in the browser, you will still be logged into that application. This means that in some way, shape, or form, the client (browser) must maintain a reference to you in order to keep you logged in.
+When you log into an application, you have the expectation that the next time you open a new tab or window in the browser, you will still be logged into that application. This means that in some way, shape, or form, **the client (browser) must maintain a reference to you** in order to keep you logged in.
 
 ### Where can I persist state on the client?
 
@@ -49,15 +49,15 @@ In [Single-Page App Authentication Using Cookies](https://auth0.com/docs/login/s
 - has the same domain as your backend
 - makes API calls that require authentication to your backend
 
-then there is a way to safely use cookies for authentication.
+then _there is a way to safely use cookies for authentication_.
 
 ### What does it look like?
 
 A real-world example of the setup:
 
-- a React single-page application (SPA) on the front end
-- an Node + Express server backend
-- Web Cookies (Secure, HttpOnly, Same Site)
+- a **React** single-page application (SPA) on the front end
+- a **Node + Express** server backend
+- **Web Cookies** (Secure, HttpOnly, Same Site)
 
 The Express server will serve the React SPA from all routes, except those that begin with `/api`. The React application will hit the Express server for all endpoints. With this method, your front end app is on the same domain, and has a server, allowing you to secure cookies with HttpOnly, Secure, and Same Site options.
 
@@ -65,11 +65,13 @@ From here, you can make API calls to microservices or some protected server. The
 
 Below I will lay out some of the main concepts of setting up this architecture for a full stack application (without it being an actual tutorial walkthrough).
 
+> To see a real world example of this setup (using full stack TypeScript), look at [the source of TakeNote](https://github.com/taniarascia/takenote).
+
 ## Using HTTP cookies in Express
 
 In order to use cookies in Express, you use the [`cookie-parser`](https://www.npmjs.com/package/cookie-parser) module.
 
-#### Parse cookies
+### Parse cookies
 
 ```js
 const cookieParser = require('cookie-parser')
@@ -77,7 +79,7 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 ```
 
-#### Set a cookie
+### Set a cookie
 
 In a route, you can set a cookie on the `response` object, with some important properties:
 
@@ -95,7 +97,7 @@ response.cookie('nameOfCookie', 'cookieValue', {
 - [**HTTP Only**](https://en.wikipedia.org/wiki/HTTP_cookie#HttpOnly_cookie) - cookies are only accessible from a server
 - [**Secure**](https://en.wikipedia.org/wiki/Secure_cookie) - cookie must be transmitted over HTTPS
 
-#### Get a cookie
+### Get a cookie
 
 The cookie can now be read in subsequent responses.
 
@@ -104,7 +106,7 @@ The cookie can now be read in subsequent responses.
 response.cookies.nameOfCookie
 ```
 
-#### Clear a cookie
+### Clear a cookie
 
 On logging out of the authentication, you'll want to clear the cookies.
 
@@ -113,7 +115,7 @@ On logging out of the authentication, you'll want to clear the cookies.
 response.clearCookie('nameOfCookie')
 ```
 
-#### Local values in Express middleware
+### Local values in Express middleware
 
 Express runs on middlewares. In the case that you want to update a cookie in one middleware and use it in the next, you can store it as an Express local. This might come in handy if you have to refresh a JWT access token in a preAuth route, use that authentication in the handler, and send cookies in the response at the end.
 
@@ -134,15 +136,15 @@ const handler = (request, response) => {
 router.post('/app/user', refreshMiddleware, handler)
 ```
 
-## Serving the front end app
+## Serving the Front End React Application
 
 A good example of this setup can be found in the [Simple React Full Stack](https://github.com/crsandeep/simple-react-full-stack) boilerplate setup. Ultimately, here's what the layout of your application will look like:
 
 ```bash
-dist     # Distribution folder of the production React SPA build
-src
-  client # React source files
-  server # Express server files
+- dist     # Distribution folder of the production React SPA build
+- src
+  - client # React source files
+  - server # Express server files
 ```
 
 In which case, your server file will look something like this:
@@ -167,16 +169,16 @@ app.get('*', (request, response) => {
 })
 ```
 
-## Express routes and handlers
+## Express Routes and Handlers
 
 Using the [Express Router class](https://expressjs.com/en/guide/routing.html), you can organize all your API routes into subdirectories and bring them in with a single line in the main server entry point.
 
 ```bash
-src
-  server
-    router
-    handlers
-    index.js
+- src
+  - server
+    - router
+    - handlers
+    - index.js
 ```
 
 The routes can all be organized into individual subdirectories.

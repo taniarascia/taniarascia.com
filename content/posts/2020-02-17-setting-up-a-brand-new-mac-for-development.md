@@ -75,6 +75,17 @@ brew cask install \
   vlc
 ```
 
+## App Store
+
+A few I download from the App store.
+
+| Program                        | Purpose       |
+| ------------------------------ | ------------- |
+| [Slack](https://slack.com)     | communication |
+| [Spotify](https://spotify.com) | music         |
+
+Install [Keybase](https://keybase.io/docs/the_app/install_macos).
+
 ## Shell
 
 Catalina comes with [zsh](http://zsh.sourceforge.net/) as the default shell. Install [Oh My Zsh](https://ohmyz.sh/) for sensible defaults.
@@ -85,7 +96,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ## Node.js
 
-Use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm/blob/master/README.md) to install Node.js.
+Use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm/blob/master/README.md) to install Node.js. This allows you to easily switch between Node versions, which is essential.
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
@@ -143,7 +154,7 @@ The first thing you should do with Git is [set your global configuration](https:
 touch ~/.gitconfig
 ```
 
-Input your name, email, GitHub username, some aliases, and connect Git to the OS X Keychain.
+Input your config and create some aliases.
 
 ```bash
 [user]
@@ -170,7 +181,7 @@ Input your name, email, GitHub username, some aliases, and connect Git to the OS
   lt     = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset'
 ```
 
-With the above aliases, I can run `git s` instead of `git status`, for example. The less I have to type repeatedly, the happier I am.
+With the above aliases, I can run `git s` instead of `git status`, for example. The less I have to type, the happier I am.
 
 ## SSH
 
@@ -200,13 +211,15 @@ Now just run the alias to connect.
 ssh myssh
 ```
 
-#### Generate SSH key
+### Generate SSH key
 
 You can [generate an SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to distribute.
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "email@example.com"
 ```
+
+Add key.
 
 ```
 ssh-add -K ~/.ssh/id_rsa
@@ -220,8 +233,8 @@ To get the Home folder in the finder, press `CMD + SHIFT + H` and drag the home 
 
 ### General
 
-- Dark mode
-- Google Chrome default browser
+- Set Dark mode
+- Make Google Chrome default browser
 
 ### Dock
 
@@ -250,7 +263,7 @@ To get the Home folder in the finder, press `CMD + SHIFT + H` and drag the home 
 
 ### Users & Groups
 
-- Add "Spectacle" to Login Items
+- Add "Spectacle" to Login items
 
 ## Defaults
 
@@ -269,28 +282,29 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Prevent Two Finger Scroll on Chrome
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+# Prevent left and right swipe through history in Chrome
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 ```
 
 ## Application Settings
 
 ### Chrome
 
-- Turn off "warn before quitting"
-- Install ublock origin
+- Turn off "Warn before quitting"
+- Install [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
 - Install [DevTools Theme - New Moon](https://chrome.google.com/webstore/detail/devtools-theme-new-moon/lndddploiofhfpdcoclegenegblkhlfk?hl=en)
 - Settings
-  - Set theme to Dark
-  - Go to `chrome://flags` and set Developer Tools Experiments to Enabled
-  - Go to Experiments and select Allow custom UI themes
+  - Set theme to "Dark"
+  - Go to `chrome://flags` and set Developer Tools Experiments to "Enabled"
+  - Go to Experiments and select "Allow custom UI themes"
 
 ### Visual Studio Code
 
-- Press `CMD + SHIFT + P` and click Install code command in PATH.
+- Press `CMD + SHIFT + P` and click "Install code command in PATH".
 - Install Prettier
 - Install [New Moon Theme](https://marketplace.visualstudio.com/items?itemName=taniarascia.new-moon-vscode)
-- Install GitLens
+- Install [GitLens](https://gitlens.amod.io/)
+- Install [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
 - Keyboard Shortcuts
   - Copy Line Down - `CMD + SHIFT + E`
   - Delete Line - `CMD + SHIFT + D`
