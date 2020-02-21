@@ -191,7 +191,7 @@ Simplify the process of SSHing into other boxes. Create an SSH config file.
 mkdir ~/.ssh && touch ~/.ssh/config
 ```
 
-Add the following contents, changing the variables for any hosts that you connect to. Using the below willbe the same as running `ssh -i ~/.ssh/key.pem user@example.com`.
+Add the following contents, changing the variables for any hosts that you connect to. Using the below will be the same as running `ssh -i ~/.ssh/key.pem user@example.com`.
 
 ```bash
 Host *
@@ -324,4 +324,4 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 ## Conclusion
 
-That sums it up for my current preferences on setting up a MacBook Pro. I hope it helped speed up your process, or gave you ideas for the next time you're setting one up.
+That sums it up for my current preferences on setting up a MacBook Pro. I hope it helped speed up your process or gave you ideas for the next time you're setting one up.
