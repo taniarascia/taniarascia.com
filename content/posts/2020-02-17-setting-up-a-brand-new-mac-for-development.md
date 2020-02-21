@@ -26,12 +26,6 @@ Install the [Homebrew](https://brew.sh/) package manager. This will allow you to
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Install [Homebrew Cask](https://sourabhbajaj.com/mac-setup/Homebrew/Cask.html) for GUI applications.
-
-```
-brew tap caskroom/cask
-```
-
 Make sure everything is up to date.
 
 ```
