@@ -44,7 +44,7 @@ Here are some the programs I always install.
 | [Google Chrome](https://www.google.com/chrome/)            | web browser     |
 | [Firefox](https://www.mozilla.org/en-US/firefox/products/) | web browser     |
 | [Opera](http://www.opera.com/)                             | web browser     |
-| [Spectacle](https://www.spectacleapp.com/)                 | window resizing |
+| [Rectangle](https://rectangleapp.com/)                     | window resizing |
 | [iTerm2](https://iterm2.com/)                              | terminal        |
 | [Docker](https://www.docker.com/)                          | development     |
 | [VLC Media Player](http://www.videolan.org/vlc/index.html) | media player    |
@@ -305,7 +305,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
   - Reload Windw - Remove Development Mode from When
   - Format Document - `CMD + SHIFT + L`
 
-### Spectacle
+### Rectangle
 
 - Full Screen: `CMD + SHIFT + '` (prevents messing with other commands)
 - Left Half: `CMD + OPTION + LEFT`
