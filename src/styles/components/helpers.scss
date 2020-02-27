@@ -66,6 +66,12 @@
   color: darken($yellow, 10%);
 }
 
+.crypto {
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
 // Screen reader text for accessibility
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);

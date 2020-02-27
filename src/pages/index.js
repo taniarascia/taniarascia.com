@@ -38,14 +38,6 @@ export default class Index extends Component {
                 development.
               </p>
               <div className="social-buttons">
-                <a
-                  className="patreon"
-                  href="https://www.patreon.com/taniarascia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Patreon
-                </a>
                 <GitHubButton
                   href="https://github.com/taniarascia"
                   data-size="large"

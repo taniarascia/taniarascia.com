@@ -4,25 +4,21 @@ slug: me
 template: page
 ---
 
-I’m Tania Rascia, a full stack software developer, technical writer, and former chef. I currently spend most of my time programming in JavaScript. I've also written for various [developer publications](/publications), such as DigitalOcean, LogRocket, and Envato.
+I’m Tania Rascia, a full stack software developer, technical writer, and former chef. I currently spend most of my time programming in JavaScript/TypeScript and writing about it.
 
 I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know. I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate links, and the rest of the annoying noise we're so accustomed to seeing on the internet these days.
-
-- **Donate**: [Ko-Fi](https://ko-fi.com/taniarascia)
-- **BTC**: `3GimrDU7e4gxrtQQauwyGKeyK6yLWE1hZV`
-- **BCH**: `qrsk00l4hzvdlhj5pgx6ace232ym0j7gfqvrmt7dln`
-- **ETH**: `0xCB4c763eD6B916aaCDfE426D48655Ae3c1941D4F`
 
 ## Links
 
 A non-exhaustive list.
 
 - [Vanya Sergeev](https://sergeev.io) – a brilliant programmer who is very important to me
-- [Teodor Nikolaev](https://teodor.co/) – a talented designer, developer, artist, photographer, and Bulgarian
-- [Craig Lam](http://craiglam.com/) – one of the funniest people I’ve ever met and the mastermind behind Scripto
-- [Ben Schroeder](https://benschroeder.com/) – a dear friend of mine who is knowledgeable, hilarious, and eloquent
-- [Dave Bock](https://dkbock.com/) – an excellent designer and insightful friend
-- [Joe Carlyon](http://qualitytesting.tech/) – the automation expert and an awesome guy who makes great beer
+- [Teodor Nikolaev](https://teodor.co/)
+- [Craig Lam](http://craiglam.com/)
+- [Ben Schroeder](https://benschroeder.com/)
+- [Dave Bock](https://dkbock.com/)
+- [Joe Carlyon](http://qualitytesting.tech/)
+- [Carlos Santiago](https://www.carlossantiago.io/)
 
 ## Open Source Projects
 
@@ -83,7 +79,6 @@ A few sites I designed.
 - [Beatrix Market](https://www.beatrixrestaurants.com/) - 2017
 - [Krispy Kreme PNW](https://www.krispykremepacificnw.com/) - 2016
 - [Il Porcellino](https://www.ilporcellinochicago.com/) - 2016
-- [Reel Club](http://reel-club.com/) - 2016
 
 ## Currently Using
 

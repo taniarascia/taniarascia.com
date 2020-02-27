@@ -132,8 +132,13 @@
   h2 {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-bottom: 0;
     padding-bottom: 0;
+
+    @include small-breakpoint {
+      justify-content: flex-start;
+    }
 
     a.view-all {
       display: inline-block;
@@ -143,7 +148,7 @@
       color: lighten($font-color, 10%);
       font-size: 1rem;
       font-weight: 500;
-      margin: 0.25rem 1rem 0 2rem;
+      margin: 0.25rem 0 0 2rem;
 
       &:hover,
       &:focus {
@@ -230,7 +235,7 @@
       display: grid;
       align-items: center;
       grid-template-columns: 50px 1fr 70px;
-      padding: 1.25rem 0;
+      padding: 1rem 0;
       margin: 0;
       border: 2px solid transparent;
 
@@ -438,6 +443,7 @@ h2.publication-company {
       border-radius: $border-radius;
 
       h2 {
+        justify-content: flex-start;
         font-size: 1.1rem;
         font-weight: 500;
         padding: 0;
@@ -1107,7 +1113,7 @@ button[disabled] {
 
   p {
     font-size: 1.2rem;
-    color: rgba(255,255,255,.8) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 
   h3 {
