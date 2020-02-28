@@ -1,12 +1,12 @@
 # taniarascia.com
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys)
 
 Tania's personal website running on Gatsby, React, and Node.js.
 
 ## Note
 
-I've made my website open source for your inspiration, motivation, and curiosity. However, this theme is highly customized and personally tailored, and it would take more work to remove all my custom code than create your own. **I encourage you to be creative and create your own theme, design, and content.**
+I've made my website open source for your inspiration, motivation, and curiosity. However, this site is highly customized and personally tailored, and it is not simply a theme. **I encourage you to be creative and create your own theme, design, and content.**
 
 The [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) is a great place to start, and is the base for this blog.
 
