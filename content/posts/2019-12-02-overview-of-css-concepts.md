@@ -6,6 +6,7 @@ thumbnail: '../thumbnails/css2.png'
 slug: overview-of-css-concepts
 categories:
   - Design
+  - Popular
 tags:
   - css
   - styling

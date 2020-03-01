@@ -6,6 +6,7 @@ thumbnail: '../thumbnails/docker.png'
 slug: continuous-integration-pipeline-docker
 categories:
   - Tools
+  - Popular
 tags:
   - docker
   - travis

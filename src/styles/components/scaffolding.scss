@@ -87,12 +87,18 @@ h3:not(:first-child) {
 h1 {
   font-size: $h1-mobile;
   font-weight: 600;
+  code {
+    font-size: $h1-mobile !important;
+  }
 }
 
 h2 {
   font-size: $h2-mobile;
   font-weight: 600;
   padding-bottom: 0.2rem;
+  code {
+    font-size: $h2-mobile !important;
+  }
 }
 
 h3 {
@@ -133,10 +139,16 @@ h5 {
   // Heading desktop individual styles
   h1 {
     font-size: $h1;
+    code {
+      font-size: $h1 !important;
+    }
   }
 
   h2 {
     font-size: $h2;
+    code {
+      font-size: $h2 !important;
+    }
   }
 
   h3 {

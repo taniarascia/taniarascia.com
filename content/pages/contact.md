@@ -4,7 +4,7 @@ slug: contact
 template: page
 ---
 
-Hi, I'm Tania - a full stack software developer based out of Chicago. I build open-source projects and write about modern JavaScript, Node.js, design and web development.
+Hi, I'm Tania, a full stack software engineer based out of Chicago. I build open-source projects and write about modern JavaScript, Node.js, design and web development.
 
 If you like my stuff and hate spam, join over **9,000 other developers** in receiving my email newsletter. 👇 One-click unsubscribe anytime.
 

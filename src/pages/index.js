@@ -148,7 +148,7 @@ export const pageQuery = graphql`
       }
     }
     popular: allMarkdownRemark(
-      limit: 7
+      limit: 9
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { categories: { eq: "Popular" } } }
     ) {

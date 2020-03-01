@@ -6,6 +6,7 @@ thumbnail: '../thumbnails/apple.png'
 slug: setting-up-a-brand-new-mac-for-development
 categories:
   - Tools
+  - Popular
 tags:
   - apple
   - macos
