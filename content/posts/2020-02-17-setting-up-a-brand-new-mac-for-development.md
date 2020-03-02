@@ -49,6 +49,11 @@ Here are some the programs I always install.
 | [iTerm2](https://iterm2.com/)                              | terminal        |
 | [Docker](https://www.docker.com/)                          | development     |
 | [VLC Media Player](http://www.videolan.org/vlc/index.html) | media player    |
+| [Slack](https://slack.com)                                 | communication   |
+| [Spotify](https://spotify.com)                             | music           |
+| [Keybase](https://keybase.io/docs/the_app/install_macos)   | security        |
+
+<div class="filename">App installation</div>
 
 ```bash
 # Core
@@ -64,22 +69,14 @@ brew cask install \
   google-chrome \
   firefox \
   opera \
-  spectacle \
+  rectangle \
   iterm2 \
   docker \
-  vlc
+  vlc \
+  slack \
+  keybase \
+  spotify
 ```
-
-## App Store
-
-A few I download from the App store.
-
-| Program                        | Purpose       |
-| ------------------------------ | ------------- |
-| [Slack](https://slack.com)     | communication |
-| [Spotify](https://spotify.com) | music         |
-
-Install [Keybase](https://keybase.io/docs/the_app/install_macos).
 
 ## Shell
 
@@ -151,6 +148,8 @@ touch ~/.gitconfig
 
 Input your config and create some aliases.
 
+<div class="filename">.gitconfig</div>
+
 ```bash
 [user]
   name   = Firstname Lastname
@@ -187,6 +186,8 @@ mkdir ~/.ssh && touch ~/.ssh/config
 ```
 
 Add the following contents, changing the variables for any hosts that you connect to. Using the below will be the same as running `ssh -i ~/.ssh/key.pem user@example.com`.
+
+<div class="filename">.ssh/config</div>
 
 ```bash
 Host *
@@ -258,7 +259,7 @@ To get the Home folder in the finder, press `CMD + SHIFT + H` and drag the home 
 
 ### Users & Groups
 
-- Add "Spectacle" to Login items
+- Add "Rectangle" to Login items
 
 ## Defaults
 
