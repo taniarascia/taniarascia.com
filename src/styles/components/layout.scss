@@ -1156,3 +1156,9 @@ button[disabled] {
   background: rgba(255, 235, 20, 0.7);
   color: #111;
 }
+
+@media print {
+  .footer {
+    display: none;
+  }
+}
