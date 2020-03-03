@@ -250,8 +250,8 @@ If the body of a generator function has a way to catch and deal with errors, you
 To demonstrate this, we will put a [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) inside the generator function body and log an error if one is found:
 
 ```js
-// Define a generator function with a try...catch
-generator.throw(new Error('Agent Smith!'))function* generatorFunction() {
+// Define a generator function
+function* generatorFunction() {
   try {
     yield 'Neo'
     yield 'Morpheus'
