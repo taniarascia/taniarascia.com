@@ -75,8 +75,8 @@ Let's start by making a basic `index.html` file. We're going to load in three CD
 
     <title>Hello React!</title>
 
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
   </head>
 
@@ -189,7 +189,7 @@ The method I just used of loading JavaScript libraries into a static HTML page a
 
 Fortunately, Facebook has created [Create React App](https://github.com/facebook/create-react-app), an environment that comes pre-configured with everything you need to build a React app. It will create a live development server, use Webpack to automatically compile React, JSX, and ES6, auto-prefix CSS files, and use ESLint to test and warn about mistakes in the code.
 
-To set up `create-react-app`, run the following code in your terminal, one directory up from where you want the project to live. Make sure you have `5.2` or higher in Node.js.
+To set up `create-react-app`, run the following code in your terminal, one directory up from where you want the project to live.
 
 ```bash
 npx create-react-app react-tutorial
@@ -205,6 +205,8 @@ npm start
 Once you run this command, a new window will popup at `localhost:3000` with your new React app.
 
 ![](../images/Screen-Shot-2018-08-18-at-11.37.59-AM.png)
+
+> Create React App is very good for getting started for beginners as well as large-scale enterprise applications, but it's not perfect for every workflow. You can also create your own Webpack setup for React.
 
 If you look into the project structure, you'll see a `/public` and `/src` directory, along with the regular `node_modules`, `.gitignore`, `README.md`, and `package.json`.
 
@@ -778,15 +780,15 @@ In addition, since it turns out that the only components having their own states
 <div class="filename">src/Table.js</div>
 
 ```jsx
-const Table = (props) => {
-  const { characterData, removeCharacter } = props;
+const Table = props => {
+  const { characterData, removeCharacter } = props
 
   return (
     <table>
       <TableHeader />
       <TableBody characterData={characterData} removeCharacter={removeCharacter} />
     </table>
-  );
+  )
 }
 ```
 
@@ -830,7 +832,7 @@ class App extends Component {
 }
 ```
 
-Now let's go ahead and create a `Form` component in a new file called `Form.js`. We're going to create a class component, and within we'll use a `constructor()`, which we haven't done thus far. We'll need the `constructor()` to use `this`, and to receive the `props` of the parent.
+Now let's go ahead and create a `Form` component in a new file called `Form.js`.
 
 We're going to set the initial state of the `Form` to be an object with some empty properties, and assign that initial state to `this.state`.
 
@@ -840,18 +842,16 @@ We're going to set the initial state of the `Form` to be an object with some emp
 import React, { Component } from 'react'
 
 class Form extends Component {
-  constructor(props) {
-    super(props)
-
-    this.initialState = {
-      name: '',
-      job: '',
-    }
-
-    this.state = this.initialState
+  initialState = {
+    name: '',
+    job: '',
   }
+
+  state = this.initialState
 }
 ```
+
+> Previously, it was necessary to include a `constructor()` on React class components, but it's not required anymore.
 
 Our goal for this form will be to update the state of `Form` every time a field is changed in the form, and when we submit, all that data will pass to the `App` state, which will then update the `Table`.
 
@@ -879,14 +879,14 @@ render() {
 
   return (
     <form>
-      <label for="name">Name</label>
+      <label htmlFor="name">Name</label>
       <input
         type="text"
         name="name"
         id="name"
         value={name}
         onChange={this.handleChange} />
-      <label for="job">Job</label>
+      <label htmlFor="job">Job</label>
       <input
         type="text"
         name="job"
