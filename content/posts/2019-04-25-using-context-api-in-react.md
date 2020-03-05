@@ -165,13 +165,14 @@ class UserProvider extends Component {
 
   render() {
     const { children } = this.props
-    const { user, setUser } = this.state
+    const { user } = this.state
+    const { setUser } = this
 
     return (
       <UserContext.Provider
         value={{
           user,
-          user: this.setUser,
+          setUser,
         }}
       >
         {children}
