@@ -36,10 +36,11 @@ So I'll create it with `React.createContext()` in a new file called `UserContext
 ```jsx
 import React from 'react'
 
-const UserContext = React.createContext({})
+const UserContext = React.createContext()
 
 export const UserProvider = UserContext.Provider
 export const UserConsumer = UserContext.Consumer
+
 export default UserContext
 ```
 
@@ -79,7 +80,30 @@ The way you provide Context is the same for class and functional components, but
 
 ### Class component
 
-The traditional way to retrieve Context values was by wrapping the child component in the `Consumer`. From there, you would be able to access the value prop as `props`.
+The most common way to access Context from a class component is via the static `contextType`. If you need the value from Context outside of `render`, or in a lifecycle method, you'll use it this way.
+
+<div class="filename">src/HomePage.js (class example)</div>
+
+```jsx
+import React, { Component } from 'react'
+import UserContext from './UserContext'
+
+class HomePage extends Component {
+  static contextType = UserContext
+
+  componentDidMount() {
+    const user = this.context
+
+    console.log(user) // { name: 'Tania', loggedIn: true }
+  }
+
+  render() {
+    return <div>{user.name}</div>
+  }
+}
+```
+
+The traditional way to retrieve Context values was by wrapping the child component in the `Consumer`. From there, you would be able to access the value prop as `props`. You may still see this, but it's more of a legacy way of accessing Context.
 
 <div class="filename">src/HomePage.js (class example)</div>
 
@@ -100,29 +124,6 @@ class HomePage extends Component {
 }
 ```
 
-But what about lifecycle methods? What if I need the value from Context outside of `render`? The wrapper method was limited. Instead, we can do this in a class with `contextType`, which is a static variable on the class.
-
-<div class="filename">src/HomePage.js (class example)</div>
-
-```jsx
-import React, { Component } from 'react'
-import UserContext from './UserContext'
-
-class HomePage extends Component {
-  static contextType = UserContext
-
-  componentDidMount() {
-    const user = this.context
-
-    console.log(user) // { name: 'Tania', loggedIn: true }
-  }
-
-  render() {
-    return null
-  }
-}
-```
-
 ### Functional component and Hooks
 
 For functional components, you'll use `useContext`, such as in the example below. This is the equivalent of `static contextType`.
@@ -133,23 +134,97 @@ For functional components, you'll use `useContext`, such as in the example below
 import React, { useContext } from 'react'
 import UserContext from './UserContext'
 
-function HomePage() {
+export const HomePage = () => {
   const user = useContext(UserContext)
 
-  console.log(user) // { name: 'Tania', loggedIn: true }
-
-  return null
+  return <div>{user.name}</div>
 }
 ```
 
+## Updating Context
+
+Updating context is not much different than updating regular state. We can create a wrapper class that contains the state of Context and the means to update it.
+
+<div class="filename">src/UserContext.js</div>
+
+```jsx
+import React, { Component } from 'react'
+
+const UserContext = React.createContext()
+
+class UserProvider extends Component {
+  // Context state
+  state = {
+    user: {},
+  }
+
+  // Method to update state
+  setUser = user => {
+    this.setState(prevState => ({ user }))
+  }
+
+  render() {
+    const { children } = this.props
+    const { user, setUser } = this.state
+
+    return (
+      <UserContext.Provider
+        value={{
+          user,
+          user: this.setUser,
+        }}
+      >
+        {children}
+      </UserContext.Provider>
+    )
+  }
+}
+
+export default UserContext
+
+export { UserProvider }
+```
+
+Now you can update and view the user from the Context method.
+
+```jsx
+import React, { Component } from 'react'
+import UserContext from './UserContext'
+
+class HomePage extends Component {
+  static contextType = UserContext
+
+  render() {
+    const { user, setUser } = this.context
+
+    return (
+      <div>
+        <button
+          onClick={() => {
+            const newUser = { name: 'Joe', loggedIn: true }
+
+            setUser(newUser)
+          }}
+        >
+          Update User
+        </button>
+        <p>{`Current User: ${user.name}`}</p>
+      </div>
+    )
+  }
+}
+```
+
+In my opinion, the biggest downfall of Context API with classes is that you cannot use multiple static `contextTypes` in one component. This leads to the necessity of having on really big Context for all global state in an application, so it's not sufficient for a large application. The method of creating a wrapper for Context is also difficult to test.
+
 ## Conclusion
 
-So there you have it.
+To summarize:
 
-- Use `const xContext = React.createContext()` to create context.
-- Pull `xContext.Provider` and `xContext.Consumer` out of `xContext`
+- Use `const ___Context = React.createContext()` to create context.
+- Pull `___Context.Provider` and `___Context.Consumer` out of `___Context`
 - Wrap `Provider` around your parent component.
-- A class can consume with `static contextType = xContext`
-- A functional component can consume with `const x = useContext(xContext)`
+- A class can consume with `static contextType = ___Context`
+- A functional component can consume with `const x = useContext(___Context)`
 
-Hope this helps! I know I'll be referring to this page again in the future.
+Hope this helps!
