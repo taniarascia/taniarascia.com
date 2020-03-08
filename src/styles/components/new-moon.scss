@@ -325,3 +325,13 @@ code[class*='language-'] ::selection {
   color: inherit;
   background: rgba(150, 150, 150, 0.3) !important;
 }
+
+.gatsby-highlight-code-line {
+  background-color: #191919;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid $string;
+}
