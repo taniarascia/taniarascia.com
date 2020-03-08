@@ -54,7 +54,7 @@ The faster, easier option for syntax highlighting is embedding the code in the f
 
 #### Gist
 
-Here is an example of the above code embedded as a GitHub gist:
+Here is an example of the above code embedded as a GitHub gist: 
 
 #### Pen
 
@@ -105,7 +105,6 @@ Finally, wrap your desired code in `<pre><code class="language-whatever">`. You'
       -ms-border-radius: 10px;
       border-radius: 10px;
     }
-```
 
 </pre>
 ```
