@@ -1,5 +1,5 @@
 ---
-date: 2020-03-08
+date: 2020-03-09
 title: 'Using Redux with React: Complete Tutorial with Real-World Examples (Plain Redux and Redux Toolkit)'
 template: post
 thumbnail: '../thumbnails/redux.png'
@@ -27,7 +27,7 @@ Also, download Redux DevTools [for Chrome](https://chrome.google.com/webstore/de
 
 #### Goals
 
-In this tutorial, we will build a small blog app. It will fetch posts and comments from an API. I've created the exact same app with both plain Redux, and [Redux Toolkit](https://redux-toolkit.js.org/) (RTK), the officially sanctioned toolset for Redux. Here are the links to the source and demos of both the plain and RTK versions.
+In this tutorial, we will build a small blog app. It will fetch posts and comments from an API. I've created the same app with both plain Redux, and [Redux Toolkit](https://redux-toolkit.js.org/) (RTK), the officially sanctioned toolset for Redux. Here are the links to the source and demos of both the plain and RTK versions.
 
 ##### React + Redux Application (Plain Redux)
 
@@ -51,7 +51,7 @@ In this tutorial, we will build a small blog app. It will fetch posts and commen
 
 ## What is Redux?
 
-Redux is a state container for JavaScript applications. Normally with React, you manage state at a component level, and pass state around via props. With Redux, the entire state of your application is managed in one immutable object. Every update to the Redux state results in a complete copy of the state, plus the new change.
+Redux is a state container for JavaScript applications. Normally with React, you manage state at a component level, and pass state around via props. With Redux, the entire state of your application is managed in one immutable object. Every update to the Redux state results in a copy of sections of the state, plus the new change.
 
 Redux was originally created by [Dan Abramov](https://overreacted.io/) and [Andrew Clark](https://github.com/acdlite).
 
@@ -72,13 +72,13 @@ Usually I don't like to just make a list of terms and definitions, but Redux has
 - [Reducers](#reducers)
 - [Store](#store)
 - [Dispatch](#dispatch)
-- [Connect and Container](#connect-and-container)
+- [Connect](#connect-and-container)
 
 I'll just use the typical todo application, and the action of deleting a todo, for the examples.
 
 ### Actions
 
-An **action** is an object with two properties: `type` and (optional) `payload`. The type is generally an uppercase string (assigned to a constant) that describes the action. The payload is additional data that may be passed.
+An **action** is sends data from your application to the Redux store. An action is conventionally an object with two properties: `type` and (optional) `payload`. The type is generally an uppercase string (assigned to a constant) that describes the action. The payload is additional data that may be passed.
 
 <div class="filename">Action Type</div>
 
@@ -107,7 +107,7 @@ const deleteTodo = id => ({ type: DELETE_TODO, payload: id })
 
 ### Reducers
 
-A **reducer** is a function that takes two parameters: `state` and `action`. A reducer is immutable and always returns a copy of the entire state. A reducer consists of a `switch` statement that goes through all the possible action types.
+A **reducer** is a function that takes two parameters: `state` and `action`. A reducer is immutable and always returns a copy of the entire state. A reducer typically consists of a `switch` statement that goes through all the possible action types.
 
 <div class="filename">Reducer</div>
 
@@ -136,7 +136,7 @@ function todoReducer(state = initialState, action) {
 
 ### Store
 
-The Redux application state lives in the **store**, which is initalized with a reducer. A Provider exists to wrap the application, and anything within the Provider can have access to Redux.
+The Redux application state lives in the **store**, which is initalized with a reducer. When used with React, a `<Provider>` exists to wrap the application, and anything within the Provider can have access to Redux.
 
 <div class="filename">Store</div>
 
@@ -157,7 +157,7 @@ render(
 
 ### Dispatch
 
-`dispatch` is a method available on the store object that invokes an action creator and updates the Redux state.
+`dispatch` is a method available on the store object that accepts an object which is used to update the Redux state. Usually, this object is the result of invoking an action creator.
 
 ```jsx
 const Component = ({ dispatch }) => {
@@ -167,9 +167,9 @@ const Component = ({ dispatch }) => {
 }
 ```
 
-### Connect and Container
+### Connect
 
-The `connect` function connects React to Redux. A connected component is often referred to as a **container**.
+The `connect()` function is one typical way to connect React to Redux. A connected component is sometimes referred to as a **container**.
 
 Okay, that about covers it for the major terms of Redux. It can be overwhelming to read the terminology without any context, so let's begin.
 
@@ -589,7 +589,9 @@ export default connect(mapStateToProps)(PostsPage)
 // highlight-end
 ```
 
-Finally, we'll bring in the asyncronous `fetchPosts` from the actions, which is the action that combines the whole lifecycle of fetching all posts into one. Using `useEffect` from React, we'll `dispatch` `fetchPosts` when the component mounts. `dispatch` will automatically be available on a connected component.
+> Since this component uses state from the same reducer, we could also write `state => state.posts`. However, learning how to write it the long way is useful to know in case you need to bring multiple reducers into the same component.
+
+Finally, we'll bring in the asynchronous `fetchPosts` from the actions, which is the action that combines the whole lifecycle of fetching all posts into one. Using `useEffect` from React, we'll `dispatch` `fetchPosts` when the component mounts. `dispatch` will automatically be available on a connected component.
 
 <div class="filename">pages/PostsPage.js</div>
 
@@ -684,7 +686,7 @@ I would recommend completing your project so that it matches the demo app. There
 
 There is one more think I want to cover - [Redux Toolkit](https://redux-toolkit.js.org/). Redux Toolkit, or RTK, is a newer and easier official way to use Redux. You may notice that Redux has a _lot_ of boilerplate for setup and requires many more folders and files than plain React would. Some patterns have emerged to attempt to mitigate all that, such as [Redux ducks pattern](https://github.com/erikras/ducks-modular-redux), but we can simplify it even more.
 
-View the [source of the demo Redux Toolkit application](https://codesandbox.io/s/react-redux-toolkit-application-cbb6s), which is the exact same application we just created with Redux, but using RTK. It is much simpler, with a drastic reduction in lines of code for all the same functionality.
+View the [source of the demo Redux Toolkit application](https://codesandbox.io/s/react-redux-toolkit-application-cbb6s), which is the same application we just created with Redux, but using RTK. It is much simpler, with a drastic reduction in lines of code for all the same functionality.
 
 Using RTK just requires one dependency, [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit).
 
@@ -692,7 +694,7 @@ Using RTK just requires one dependency, [@reduxjs/toolkit](https://github.com/re
 @reduxjs/toolkit
 ```
 
-And no longer requires `redux-thunk` or `redux-devtools-extension`.
+And no longer requires you to install the `redux-thunk` or `redux-devtools-extension` dependencies.
 
 ### Advantages to Redux Toolkit
 
@@ -733,7 +735,7 @@ render(
 
 ### Slices
 
-Instead of dealing with reducers, actions, and all as separate files and individually creating all those action types, RTK gives us the concept of **slices**. A [slice](https://redux-toolkit.js.org/api/createSlice) is similar to a reducer, but it also automatically generates action types and action creators. You'll only have one folder - `slices` - and one file per reducer - in this case, `posts.js`.
+Instead of dealing with reducers, actions, and all as separate files and individually creating all those action types, RTK gives us the concept of **slices**. A [slice](https://redux-toolkit.js.org/api/createSlice) automatically generates reducers, action types, and action creators. As such, ou'll only have one create one folder - `slices`.
 
 `initialState` will look the same.
 
@@ -808,7 +810,7 @@ export function fetchPosts() {
 
 ### Selecting Redux state in a React component
 
-With Redux Toolkit, we no longer need to use `mapStateToProps` or the `connect()` function. Instead, we'll use `useDispatch` and `useSelector` from `react-redux`. This will allow us to select state from Redux, and dispatch the Redux action.
+The traditional approach, as we just learned, is to use `mapStateToProps` with the `connect()` function. This is still common in codebases and therefore worth learning. You can still use this approach with RTK, but the newer, React Hooks way of going about it is to use `useDispatch` and `useSelector` from `react-redux`. This approach requires less code overall as well.
 
 As you can see in the updated `PostsPage.js` file below, the Redux state is no longer available as props on the connected component, but from the selector we exported in the slice.
 
