@@ -5,7 +5,7 @@ template: post
 thumbnail: '../thumbnails/redux.png'
 slug: redux-react-guide
 categories:
-  - Programming
+  - Code
 tags:
   - redux
   - react
