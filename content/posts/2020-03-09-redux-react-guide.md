@@ -78,7 +78,7 @@ I'll just use the typical todo application, and the action of deleting a todo, f
 
 ### Actions
 
-An **action** is sends data from your application to the Redux store. An action is conventionally an object with two properties: `type` and (optional) `payload`. The type is generally an uppercase string (assigned to a constant) that describes the action. The payload is additional data that may be passed.
+An **action** sends data from your application to the Redux store. An action is conventionally an object with two properties: `type` and (optional) `payload`. The type is generally an uppercase string (assigned to a constant) that describes the action. The payload is additional data that may be passed.
 
 <div class="filename">Action Type</div>
 
