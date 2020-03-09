@@ -20,7 +20,7 @@ You must already know how to use React for this tutorial, as I will not be expla
 - Familiarity with [HTML & CSS](https://internetingishard.com/).
 - Familiarity with [ES6 syntax and features](/es6-syntax-and-feature-overview/).
 - Knowledge of React terminology: [JSX, State, Components, Props, Lifecycle](/getting-started-with-react/) and [Hooks](crud-app-in-react-with-hooks)
-- Knowledge of [React Router](using-react-router-spa/)
+- Knowledge of [React Router](/using-react-router-spa/)
 - Knowledge of asynchronous JavaScript and [making API calls](/how-to-connect-to-an-api-with-javascript)
 
 Also, download Redux DevTools [for Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) or [for FireFox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/).
