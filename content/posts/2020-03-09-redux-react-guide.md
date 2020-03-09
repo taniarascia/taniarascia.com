@@ -136,7 +136,7 @@ function todoReducer(state = initialState, action) {
 
 ### Store
 
-The Redux application state lives in the **store**, which is initalized with a reducer. When used with React, a `<Provider>` exists to wrap the application, and anything within the Provider can have access to Redux.
+The Redux application state lives in the **store**, which is initialized with a reducer. When used with React, a `<Provider>` exists to wrap the application, and anything within the Provider can have access to Redux.
 
 <div class="filename">Store</div>
 
@@ -348,7 +348,7 @@ It keeps track of all changes to your app and makes debugging a breeze compared 
 
 ## Setting up Redux Actions
 
-So now we have a reducer for posts, but we don't have any actions, meaning the reducer will only return the state witout modifying it in any way. **Actions** are how we communicate with the Redux store. For this blog app, we're going to want to fetch posts from an API and put them in our Redux state.
+So now we have a reducer for posts, but we don't have any actions, meaning the reducer will only return the state without modifying it in any way. **Actions** are how we communicate with the Redux store. For this blog app, we're going to want to fetch posts from an API and put them in our Redux state.
 
 Since fetching posts in an asynchronous action, it will require the use of Redux thunk. Fortunately, we don't have to do anything special to use thunk beyond setting it up in the store, which we already did.
 
@@ -600,7 +600,7 @@ import React, { useEffect } from 'react' // highlight-line
 import { connect } from 'react-redux'
 
 // highlight-start
-// Bring in the asyncronous fetchPosts action
+// Bring in the asynchronous fetchPosts action
 import { fetchPosts } from '../actions/postsActions'
 import { Post } from '../components/Post'
 // highlight-end
@@ -735,7 +735,7 @@ render(
 
 ### Slices
 
-Instead of dealing with reducers, actions, and all as separate files and individually creating all those action types, RTK gives us the concept of **slices**. A [slice](https://redux-toolkit.js.org/api/createSlice) automatically generates reducers, action types, and action creators. As such, ou'll only have one create one folder - `slices`.
+Instead of dealing with reducers, actions, and all as separate files and individually creating all those action types, RTK gives us the concept of **slices**. A [slice](https://redux-toolkit.js.org/api/createSlice) automatically generates reducers, action types, and action creators. As such, you'll only have to create one folder - `slices`.
 
 `initialState` will look the same.
 
