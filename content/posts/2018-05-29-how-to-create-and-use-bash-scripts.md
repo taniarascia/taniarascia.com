@@ -263,7 +263,7 @@ This is the opposite of what you might expect, but it's the way it works in bash
 | `-le`             | `<=`              | Less than or equal    |
 | `-z`              | `== null`         | Is null               |
 
-## Conditionals
+## Conditions
 
 `if` statements use the `if`, `then`, `else`, and `fi` keywords. The condition goes in square brackets.
 
