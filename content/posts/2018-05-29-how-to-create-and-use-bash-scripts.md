@@ -90,10 +90,10 @@ So far, you've learned how to run a script from the command line prefixed with t
 bash: ./hello-world: Permission denied
 ```
 
-In order to run a file directly, we'll need to change the permissions to allow the script to be executable for the user. `chmod` is a command that changes permissions on a file, and `u+x` will add read and execute rights to the user (which is the same as `chmod 500`).
+In order to run a file directly, we'll need to change the permissions to allow the script to be executable for the user. `chmod` is a command that changes permissions on a file, and `+x` will add execute rights to the script.
 
 ```bash
-chmod u+x hello-world
+chmod +x hello-world
 ```
 
 In order to interpret the file as an executable, you'll also have to add the [shebang (`#!`)](https://en.wikipedia.org/wiki/Shebang_%28Unix%29) at the top of the script. In Unix-like systems, a text file with a shebang is interpreted as an executable file. You can confirm where the bash interpreter is located with which bash.
@@ -113,6 +113,8 @@ We'll add `#!/bin/bash` to the top of the script.
 
 echo "Hello, world!"
 ```
+
+> Note:
 
 Now you can run `hello-world` directly.
 
@@ -170,6 +172,8 @@ echo -e "This string has a \nnew line"
 This string has a
 new line
 ```
+
+Double quoted strings are also important for use with variables, as we'll see in the next section.
 
 ## Variables
 
@@ -261,7 +265,8 @@ This is the opposite of what you might expect, but it's the way it works in bash
 | `-ge`             | `>=`              | Greater than or equal |
 | `-lt`             | `<`               | Less than             |
 | `-le`             | `<=`              | Less than or equal    |
-| `-z`              | `== null`         | Is null               |
+
+You can also use `-z` to test for emptiness on a string.
 
 ## Conditions
 
