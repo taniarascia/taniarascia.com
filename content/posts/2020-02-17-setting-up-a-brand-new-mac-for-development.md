@@ -50,8 +50,11 @@ Here are some the programs I always install.
 | [Docker](https://www.docker.com/)                          | development     |
 | [VLC Media Player](http://www.videolan.org/vlc/index.html) | media player    |
 | [Slack](https://slack.com)                                 | communication   |
-| [Spotify](https://spotify.com)                             | music           |
 | [Keybase](https://keybase.io/docs/the_app/install_macos)   | security        |
+| [Spotify](https://spotify.com)                             | music           |
+| [Postgres](https://www.postgresql.org/)                    | database        |
+| [Postico](https://eggerapps.at/postico/)                   | database UI     |
+| [Postman](https://www.postman.com/)                        | API tool        |
 
 <div class="filename">App installation</div>
 
@@ -75,7 +78,10 @@ brew cask install \
   vlc \
   slack \
   keybase \
-  spotify
+  spotify \
+  postgres \
+  postico \
+  postman
 ```
 
 ## Shell
@@ -304,7 +310,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 - Keyboard Shortcuts
   - Copy Line Down - `CMD + SHIFT + E`
   - Delete Line - `CMD + SHIFT + D`
-  - Reload Windw - Remove Development Mode from When
+  - Reload Window - Remove Development Mode from When
   - Format Document - `CMD + SHIFT + L`
 
 ### Rectangle
