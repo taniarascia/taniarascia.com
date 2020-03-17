@@ -603,4 +603,4 @@ Note that this implementation is for demonstrating how generators can be used in
 
 Generators are processes that can halt and resume execution. They are a powerful, versatile feature of JavaScript, although they are not commonly used. In this tutorial, we learned about generator functions and generator objects, methods available to generators, the `yield` and `yield*` operators, and using generators with finite and infinite data sets. We also explored one way to implement asynchronous code without nested callbacks or long promise chains.
 
-If you would like to learn more about JavaScript syntax, take a look at our [Understanding This, Bind, Call, and Apply in JavaScript](/this-bind-call-and-apply-javascript) and [Understanding Map and Set Objects in JavaScript](/understanding-map-and-set-javascript) tutorials.
+If you would like to learn more about JavaScript syntax, take a look at our [Understanding This, Bind, Call, and Apply in JavaScript](/this-bind-call-apply-javascript) and [Understanding Map and Set Objects in JavaScript](/understanding-map-and-set-javascript) tutorials.
