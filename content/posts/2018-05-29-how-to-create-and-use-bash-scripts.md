@@ -114,7 +114,7 @@ We'll add `#!/bin/bash` to the top of the script.
 echo "Hello, world!"
 ```
 
-> Note:
+> Note: You may also see `#!/usr/bin/env bash` instead, which can be used if you don't know the exact path for bash.
 
 Now you can run `hello-world` directly.
 
