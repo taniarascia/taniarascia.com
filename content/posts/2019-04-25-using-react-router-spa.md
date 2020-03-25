@@ -123,7 +123,7 @@ We're matching the root route (`/`) to `HomePage`, and dynamically matching any 
 </Switch>
 ```
 
-This would ensure that `taniarascia.com/categories` would go to a page listing all categories, but `taniarascia.com/categories/javascript` would go to a completely different template for the inidiviual category listing.
+This would ensure that `taniarascia.com/categories` would go to a page listing all categories, but `taniarascia.com/categories/javascript` would go to a completely different template for the individual category listing.
 
 ## Link
 
@@ -132,7 +132,7 @@ In order to link to a page within the SPA, we'll use [`Link`](https://reacttrain
 <div class="filename">src/pages/HomePage.js</div>
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function HomePage() {
