@@ -16,7 +16,7 @@ $mobile: 620px;
 $tablet: $small;
 $desktop: $medium;
 
-$width: 850px;
+$width: 825px;
 
 /* Colors */
 
@@ -46,14 +46,14 @@ $font-variant: normal;
 $font-weight: normal;
 $font-color: #454545;
 $light-font-color: rgba(0, 0, 0, 0.6);
-$font-family: BlinkMacSystemFont, -apple-system, 'Roboto', Helvetica Neue, Helvetica, Arial,
+$font-family: Helvetica Neue, 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial,
   sans-serif;
 $line-height: 1.6;
 
 // Headings
 $heading-font-color: #111;
-$heading-font-weight: 600;
-$heading-font-family: BlinkMacSystemFont, -apple-system, 'Roboto', Helvetica Neue, Helvetica, Arial,
+$heading-font-weight: 500;
+$heading-font-family: Helvetica Neue, 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial,
   sans-serif;
 $heading-line-height: 1.3;
 
@@ -93,8 +93,8 @@ $primary-hover: lighten($primary-color, 33%);
 $button-background: $primary-color;
 $button-background-hover: darken($primary-color, 15%);
 $button-color: white;
-$button-font-weight: 600;
-$button-font-family: BlinkMacSystemFont, -apple-system, 'Roboto', Helvetica Neue, Helvetica, Arial,
+$button-font-weight: 500;
+$button-font-family: Helvetica Neue, 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial,
   sans-serif;
 $button-font-size: 1.1rem;
 $button-border-width: 2px;
@@ -132,7 +132,6 @@ $code-size: 14px;
 $code-family: Menlo, monospace;
 $code-background: transparent;
 $code-borders: $borders;
-
 
 $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 $code-font-color: #b3b9c5;

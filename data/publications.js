@@ -140,6 +140,16 @@ export default {
       path:
         'https://www.digitalocean.com/community/tutorials/understanding-map-and-set-objects-in-javascript',
     },
+    {
+      title: 'Understanding Generators in JavaScript',
+      path:
+        'https://www.digitalocean.com/community/tutorials/understanding-generators-in-javascript',
+    },
+    {
+      title: 'Understanding Default Parameters in JavaScript',
+      path:
+        'https://www.digitalocean.com/community/tutorials/understanding-default-parameters-in-javascript',
+    },
   ],
   LogRocket: [
     {

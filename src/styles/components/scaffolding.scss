@@ -3,8 +3,8 @@
 
 // HTML base
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
   font-family: $font-family;
   font-size: 84% !important;
@@ -38,7 +38,7 @@ table {
   dl,
   table {
     margin: 0 0 2rem 0;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -70,6 +70,8 @@ h5 {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
   color: $heading-font-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &:not(:first-child) {
     margin: 0 0 1rem 0;
@@ -86,7 +88,7 @@ h3:not(:first-child) {
 // Heading individual styles
 h1 {
   font-size: $h1-mobile;
-  font-weight: 600;
+  font-weight: 500;
   code {
     font-size: $h1-mobile !important;
   }
@@ -94,7 +96,7 @@ h1 {
 
 h2 {
   font-size: $h2-mobile;
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 0.2rem;
   code {
     font-size: $h2-mobile !important;
@@ -103,18 +105,18 @@ h2 {
 
 h3 {
   font-size: $h3-mobile;
-  font-weight: 600;
+  font-weight: 500;
   color: lighten($heading-font-color, 20%);
 }
 
 h4 {
   font-size: $h4-mobile;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h5 {
   font-size: $h5-mobile;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @include small-breakpoint {
@@ -206,7 +208,7 @@ ul {
 a {
   color: $link-color;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 
   &:hover,
   &:active,
@@ -247,7 +249,7 @@ mark {
 
 strong,
 b {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 blockquote cite {
@@ -264,7 +266,7 @@ hr {
 
 // Definition list
 dt {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 dd {

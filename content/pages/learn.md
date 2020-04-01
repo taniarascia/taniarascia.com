@@ -15,20 +15,15 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 #### Concepts
 
 - [ ] Closures
-- [x] Bitwise Operators
-- [x] Promises, Async/Await, Microtasks, and the Event Loop
-- [x] Generators
+- [ ] Bitwise Operators
+- [ ] Promises, Async/Await, Microtasks, and the Event Loop
 
 #### Document Object Model (DOM) and Web APIs
 
 - [ ] Scrolling
 - [ ] Drag and Drop
 - [ ] WebSockets
-- [x] File Handling
-
-### Networking
-
-- [ ] Sockets
+- [ ] File Handling
 
 ### Databases/APIs
 
@@ -39,7 +34,11 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 ### Tools/Frameworks/Concepts
 
 - [x] Webpack
-- [x] Vuex
+- [x] VueX
+
+### Networking
+
+- [ ] Sockets
 
 ### Computer Science
 
@@ -110,6 +109,8 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [MVC - Model View Controller](/javascript-mvc-todo-app)
 - [x] [Bind, Call, Apply and `this`](/this-bind-call-apply-javascript/)
 - [x] [Map and Set](/understanding-map-and-set-javascript)
+- [x] [Generators](/understanding-generators-in-javascript)
+- [x] [Default Parameters](/default-parameters-javascriptt)
 
 #### Document Object Model (DOM)
 
@@ -120,7 +121,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Changing the DOM](/how-to-make-changes-to-the-dom)
 - [x] [Events](/understanding-events-in-javascript)
 - [x] [Local and Session Storage](/how-to-use-local-storage-with-javascript/)
-- [x] [Cookies, Local Storage, and Authentication](/full-stack-cookies-localstorage-react-express/)
+- [x] [Security and Authentication: Cookies, Local Storage](/full-stack-cookies-localstorage-react-express/)
 
 #### Frameworks/Libraries
 
@@ -129,6 +130,7 @@ This is not everything I know, but a good amount of the things I've documented s
   - [x] [Hooks API](/crud-app-in-react-with-hooks/)
   - [x] [Context API](https://www.taniarascia.com/using-context-api-in-react/)
   - [x] [Content Editable](/content-editable-elements-in-javascript-react/)
+- [x] [Redux](redux-react-guide)
 - [x] [jQuery](/how-to-use-jquery-a-javascript-library/)
 
 #### Databases/APIs
@@ -140,7 +142,7 @@ This is not everything I know, but a good amount of the things I've documented s
 
 - [x] [AWS S3, EC2, RDS, Route 53](/getting-started-with-aws-setting-up-a-virtual-server/)
 - [x] [Vagrant/VirtualBox](/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/)
-- [x] [Docker and creating a CI/CD pipeline, JWT client side handling](continuous-integration-pipeline-docker)
+- [x] [Docker and creating a CI/CD pipeline, JWT client side handling](/continuous-integration-pipeline-docker)
 - [x] [JavaScript Unit Tests with Jest or Mocha](/unit-testing-in-javascript/)
 
 ### CSS
@@ -176,7 +178,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Apache/Virtual Hosts](/setting-up-virtual-hosts/)
 - [x] [JSON](/how-to-use-json-data-with-php-or-javascript/)
 - [x] [REST API](/how-to-connect-to-an-api-with-javascript/)
-- [x] [SSL/TLS](<(/https-ssl-tls-certificate-how-to/)>)
+- [x] [SSL/TLS](/https-ssl-tls-certificate-how-to/)
 - [x] [Static Site Generators](/make-a-static-website-with-jekyll/)
 - [x] [Bash](/how-to-create-and-use-bash-scripts/)
 - [x] [Object-Oriented Paradigm](/object-oriented-pattern-javascript-php-classes/)

@@ -31,12 +31,13 @@
 
   h1 {
     margin-top: 0;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
   }
 
   p {
+    color: rgba(0, 0, 0, 0.6);
     font-size: 1.25rem;
   }
 
@@ -50,6 +51,7 @@
     display: flex;
     align-items: center;
     font-size: 1.2rem;
+    line-height: 1.5;
 
     .elevator {
       flex: 2;
@@ -203,7 +205,7 @@
 
   h1 {
     margin: 0.5rem 0;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .post-meta {
@@ -256,7 +258,7 @@
 
   h2 {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
     border-bottom: none;
     margin: 0;
@@ -500,7 +502,7 @@ h2.publication-company {
     font-size: 1.2rem;
     border-bottom: none;
     margin: 0 1rem 0 0;
-    font-weight: 600;
+    font-weight: 500;
     color: #111;
     padding: 0;
     min-width: 110px;
@@ -841,7 +843,7 @@ blockquote {
   text-align: center;
   color: $primary-color;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @include small-breakpoint {
@@ -888,7 +890,7 @@ blockquote {
     border-radius: $border-radius;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: $primary-color;
     cursor: pointer;
 
@@ -1119,7 +1121,7 @@ button[disabled] {
   h3 {
     margin: 0 0 0.75rem;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: white !important;
   }
 
