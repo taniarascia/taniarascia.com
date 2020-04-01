@@ -50,7 +50,7 @@ If you're proud of your content and it provides value to others, all it takes is
 
 ## Make your site mobile friendly
 
-Google also has [strong opinions](<a href=) on this matter:
+Google also has [strong opinions](https://developers.google.com/search/mobile-sites) on this matter:
 
 > **If you haven't made your website mobile-friendly, you should.** The majority of users coming to your site are likely to be using a mobile device.
 
