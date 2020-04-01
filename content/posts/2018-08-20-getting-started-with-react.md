@@ -900,11 +900,16 @@ render() {
 export default Form;
 ```
 
+
+
 In `App.js`, we can render the form below the table.
 
 <div class="filename">src/App.js</div>
+//Import Form in `App.js`
+
 
 ```jsx
+import Form from './Form';
 return (
   <div className="container">
     <Table characterData={characters} removeCharacter={this.removeCharacter} />
