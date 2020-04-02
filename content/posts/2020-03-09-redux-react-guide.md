@@ -60,7 +60,7 @@ Redux was originally created by [Dan Abramov](https://overreacted.io/) and [Andr
 - **Easily manage global state** - access or update any part of the state from any Redux-connected component
 - **Easily keep track of changes with Redux DevTools** - any action or state change is tracked and easy to follow with Redux. The fact that the entire state of the application is tracked with each change means you can easily do time-travel debugging to move back and forth between changes.
 
-The downside to Redux is that there's a lot of initial boilerplate to set up and maintain (especially if you use plain Redux without Redux Toolkit). A smaller application [may not need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) and may instead benefit from simply using [the Context API](using-context-api-in-react/) for global state needs.
+The downside to Redux is that there's a lot of initial boilerplate to set up and maintain (especially if you use plain Redux without Redux Toolkit). A smaller application [may not need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) and may instead benefit from simply using [the Context API](/using-context-api-in-react/) for global state needs.
 
 In my personal experience, I set up an application with Context alone, and later needed to convert everything over to Redux to make it more maintainable and organized.
 
