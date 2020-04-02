@@ -53,7 +53,7 @@ pre code {
   tab-size: 2;
   hyphens: none;
   border-radius: $border-radius;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /* Code blocks */
