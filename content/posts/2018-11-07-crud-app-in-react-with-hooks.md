@@ -640,7 +640,6 @@ Then create the toggle. We'll use a ternary operation to check if the `editing` 
     <div>
       <h2>Edit user</h2>
       <EditUserForm
-        editing={editing}
         setEditing={setEditing}
         currentUser={currentUser}
         updateUser={updateUser}
@@ -681,7 +680,7 @@ useEffect(() => {
 }, [props])
 ```
 
-In the Effect Hook, we create a callback function that updates the `user` state with the new prop thats being sent through. Before, we needed to compare `if (prevProps.currentUser !== this.state.currentUser)`, but with the Effect Hook we can just pass `[props]` through to let it know we're watching props.
+In the Effect Hook, we create a callback function that updates the `user` state with the new prop that's being sent through. Before, we needed to compare `if (prevProps.currentUser !== this.state.currentUser)`, but with the Effect Hook we can just pass `[props]` through to let it know we're watching props.
 
 > Using the `[props]` array is similar to using `componentDidUpdate`. If you're doing a one-time event like `componentDidMount`, you can pass an empty array (`[]`) instead.
 
