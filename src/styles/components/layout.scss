@@ -287,7 +287,7 @@
 
       &:last-of-type {
         .each {
-          border-bottom: 1px solid transparent;
+          border-bottom: 1px solid transparent !important;
         }
       }
     }
@@ -328,17 +328,11 @@
         align-items: start;
         padding: 1.5rem 2rem;
         margin: 0 -2rem;
-        border-bottom: 1px solid lighten($border-color, 15%);
+        border-bottom: 1px solid lighten($border-color, 12%);
 
         &:hover {
           border-radius: $border-radius;
           background: $light;
-
-          &last-of-type {
-            &:hover {
-              border-bottom-color: $primary-color;
-            }
-          }
 
           h2 {
             color: #111;
@@ -370,7 +364,7 @@
         .each {
           padding: 0.75rem 1rem;
           margin: 0 -1rem;
-          border-bottom: 1px solid lighten($border-color, 15%);
+          border-bottom: 1px solid lighten($border-color, 12%);
 
           &:hover {
             border: 1px solid $light;
@@ -397,9 +391,10 @@
   }
 }
 
-.post {
+.post,
+.page {
   h2 {
-    border-bottom: 1px solid lighten($border-color, 15%);
+    border-bottom: 1px solid lighten($border-color, 12%);
   }
 }
 
@@ -495,7 +490,7 @@ h2.publication-company {
       .each {
         padding: 0.75rem 1rem;
         margin: 0 -1rem;
-        border-bottom: 1px solid lighten($border-color, 15%);
+        border-bottom: 1px solid lighten($border-color, 12%);
 
         h2 {
           font-size: 1.3rem;
@@ -503,7 +498,7 @@ h2.publication-company {
       }
       &:last-of-type {
         .each {
-          border-bottom: 1px solid transparent;
+          border-bottom: 1px solid transparent !important;
         }
       }
     }
@@ -689,7 +684,7 @@ h2.publication-company {
 blockquote {
   color: rgba(0, 0, 0, 0.8);
   border: none;
-  background: lighten($yellow, 28%);
+  background: lighten($yellow, 25%);
   border-radius: $border-radius;
   font-weight: 500;
   margin: 1.5rem 0;
@@ -747,26 +742,33 @@ blockquote {
   }
 }
 
+.quotations-section {
+  padding: 4rem 0;
+  background: radial-gradient(circle at 20% 20%, #5183f5 25%, #4640ff 100%);
+}
+
 .quotations {
   display: flex;
   flex-wrap: wrap;
+  @extend .container;
 
   .quotation {
     padding: 1rem;
-    margin: 0 0 1rem;
     flex: 1 1 calc(50% - 2rem);
+    margin: 1rem 0;
     border: none;
-    background: #f0f0f0;
+    background: white;
     padding: 1rem 1rem 3.5rem !important;
     border-radius: $border-radius;
     position: relative;
+    box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.3);
 
     p {
       font-size: 1rem;
     }
 
     &:nth-of-type(2n) {
-      margin-left: 1rem;
+      margin-left: 2rem;
     }
 
     cite {
@@ -779,7 +781,9 @@ blockquote {
       font-size: 1.3rem;
       text-align: right;
       font-family: $font-family;
-      color: rgba(0, 0, 0, 0.4);
+      color: $primary-color;
+      font-weight: 600;
+      font-style: normal;
     }
   }
 }
@@ -1149,13 +1153,12 @@ button[disabled] {
     font-size: 1.2rem;
     padding: 1rem 1.5rem;
     border: none !important;
-    background: darken($primary-color, 35%);
-    color: white !important;
+    background: white;
+    color: darken($primary-color, 5%);
     &:hover,
     &:active,
     &:focus {
-      border: none;
-      background: #111;
+      color: darken($primary-color, 20%);
     }
   }
 

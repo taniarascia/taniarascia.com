@@ -48,7 +48,8 @@ ul li p {
 
 // Remove extra margin for nested lists
 ul li ul {
-  margin-bottom: 0;
+  padding-left: 2rem;
+  margin: .5rem 0 .75rem;
 
   li {
     margin-left: 0;
@@ -112,7 +113,7 @@ h3 {
 h4 {
   font-size: $h4-mobile;
   font-weight: 500;
-  color: lighten($heading-font-color, 30%);
+  color: lighten($heading-font-color, 40%);
 }
 
 h5 {
@@ -137,6 +138,10 @@ h5 {
   h2:not(:first-child),
   h3:not(:first-child) {
     margin-top: 4.5rem;
+  }
+
+  h4:not(:first-child) {
+    margin-top: 3.5rem;
   }
 
   // Heading desktop individual styles

@@ -2,25 +2,26 @@ $background: #202020;
 $foreground: #b3b9c5;
 $accent: #303030;
 $dark-border: darken($background, 3%);
+$dark-primary: $tag;
 
 .dark {
   background: $background;
   color: $foreground;
 
   a {
-    color: lighten($primary-color, 10%);
+    color: $dark-primary;
 
     &:hover,
     &:active,
     &:focus {
-      color: darken($primary-color, 2%);
+      color: darken($dark-primary, 15%);
       background: transparent;
     }
   }
 
   .lead {
     h1 {
-      color: $foreground;
+      color: #eee;
     }
 
     a {
@@ -29,7 +30,7 @@ $dark-border: darken($background, 3%);
         background: transparent !important;
 
         &:hover {
-          color: $primary-color;
+          color: darken($dark-primary, 15%);
         }
       }
       &.patreon:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
@@ -65,21 +66,25 @@ $dark-border: darken($background, 3%);
       border-bottom: 2px solid transparent;
 
       &:hover {
-        color: $primary-color;
+        color: darken($dark-primary, 10%);
         background: transparent;
-        border-bottom: 2px solid lighten($link-hover-color, 30%);
       }
 
       &:active,
       &:focus {
+        color: darken($dark-primary, 10%);
         background: transparent;
-        border-bottom: 2px dashed lighten($link-hover-color, 30%);
       }
     }
 
     img {
       max-width: 100%;
       height: auto;
+    }
+
+    h2 {
+      color: $attribute;
+      border: none;
     }
   }
 
@@ -111,15 +116,22 @@ $dark-border: darken($background, 3%);
       &:hover,
       &.active {
         background: rgba(0, 0, 0, 0.2);
+      }
+
+      &:hover {
         color: $foreground;
+      }
+
+      &.active {
+        color: $tag;
       }
     }
   }
 
   .note {
     .note-container {
-      background: linear-gradient(to bottom right, #0b41bc, #051f5b);
-      box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.6);
+      background: #191919;
+      box-shadow: none;
       p,
       button,
       a {
@@ -144,12 +156,13 @@ $dark-border: darken($background, 3%);
   h3,
   h4,
   h5 {
-    color: #cecece;
+    color: #eee;
   }
 
   .posts {
     &.simple a .each {
       border-color: transparent;
+      border-bottom-color: $dark-border;
 
       h2 {
         color: lighten($comment, 10%);
@@ -166,7 +179,8 @@ $dark-border: darken($background, 3%);
           color: #ccc;
         }
 
-        border: 2px solid transparent;
+        border: 1px solid transparent;
+        border-bottom: 1px solid $dark-border;
 
         &:hover {
           background: $accent !important;
@@ -189,12 +203,13 @@ $dark-border: darken($background, 3%);
   .simple-posts {
     a {
       .each {
+        border-bottom: 1px solid $dark-border;
         h2 {
           color: lighten($comment, 10%);
         }
 
         &:hover {
-          border: 2px solid $accent;
+          border: 1px solid $accent;
           background: $accent;
 
           h2 {
@@ -227,7 +242,7 @@ $dark-border: darken($background, 3%);
 
   .projects {
     .each {
-      border-bottom: 2px solid $dark-border;
+      border-bottom: 1px solid $dark-border;
     }
     h2 {
       color: $foreground;
@@ -267,6 +282,10 @@ $dark-border: darken($background, 3%);
     background: #3a3a3a;
   }
 
+  .quotations-section {
+    background: transparent;
+  }
+
   blockquote {
     border: 2px solid #393939;
     background: rgba(0, 0, 0, 0.2);
@@ -289,9 +308,10 @@ $dark-border: darken($background, 3%);
       border-color: #3a3a3a;
       background: rgba(0, 0, 0, 0.2);
       color: $yellow;
+      box-shadow: none;
 
       cite {
-        color: rgba(255, 255, 255, 0.6);
+        color: white;
       }
     }
   }
@@ -327,14 +347,14 @@ $dark-border: darken($background, 3%);
 
     &:active,
     &:focus {
-      border: 2px solid $primary-color;
+      border: 2px solid $dark-primary;
     }
   }
 
   #{$buttons} {
     color: white;
     border: 2px solid transparent;
-    background: darken($primary-color, 30%) !important;
+    background: darken($dark-primary, 30%) !important;
 
     &:disabled {
       cursor: default;
@@ -346,7 +366,7 @@ $dark-border: darken($background, 3%);
     &:focus,
     &:active {
       border: 2px solid transparent;
-      background: darken($primary-color, 20%) !important;
+      background: darken($dark-primary, 20%) !important;
       color: white;
     }
   }
@@ -358,6 +378,10 @@ $dark-border: darken($background, 3%);
   .new,
   .popular {
     background: rgba(0, 0, 0, 0.2);
+  }
+
+  .popular {
+    color: $string;
   }
 
   .button.muted-button,
@@ -391,15 +415,16 @@ $dark-border: darken($background, 3%);
   }
 
   .newsletter-section {
-    background: linear-gradient(to bottom right, #0b41bc, #051f5b);
-    box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
     a.button {
-      background: darken($primary-color, 25%) !important;
-      color: white !important;
+      background: #111 !important;
+      color: $dark-primary !important;
       &:hover,
       &:focus,
       &:active {
-        background: #111 !important;
+        background: #080808 !important;
+        color: lighten($dark-primary, 10%) !important;
       }
     }
   }
@@ -411,11 +436,11 @@ $dark-border: darken($background, 3%);
       border-radius: $border-radius;
       margin-right: 0.5rem;
       font-weight: 500;
-      color: $primary-color;
+      color: $dark-primary;
       cursor: pointer;
 
       &.active {
-        background: $primary-color !important;
+        background: $dark-primary !important;
         color: white !important;
       }
 
@@ -425,13 +450,13 @@ $dark-border: darken($background, 3%);
 
       &:hover {
         background: #111;
-        color: lighten($primary-color, 10%);
+        color: lighten($dark-primary, 10%);
       }
     }
   }
 
   .filter-count {
-    color: $primary-color;
+    color: $dark-primary;
   }
 
   .comments .comment header h2 {
@@ -444,12 +469,16 @@ $dark-border: darken($background, 3%);
   }
 
   mark {
-    background: darken($primary-color, 20%);
+    background: darken($dark-primary, 20%);
     color: white;
   }
 
   ::selection {
-    background: $primary-color;
+    background: $dark-primary;
     color: white;
   }
+}
+
+path {
+  stroke: $keyword;
 }
