@@ -112,6 +112,7 @@ h3 {
 h4 {
   font-size: $h4-mobile;
   font-weight: 500;
+  color: lighten($heading-font-color, 30%);
 }
 
 h5 {

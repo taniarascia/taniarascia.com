@@ -4,17 +4,28 @@ slug: me
 template: page
 ---
 
-I’m Tania Rascia, a full stack software developer, technical writer, and former chef.
-
-I started this website as a place to document everything I learned while going through a [career change](/how-i-made-a-career-change-into-web-development/). I [learn in public](/learn) and write about everything I know.
+I’m Tania Rascia, a full stack software developer, technical writer, and former chef. I [learn in public](/learn) and write about everything I know.
 
 I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate links, and the rest of the annoying noise we're so accustomed to seeing on the internet these days.
+
+### Tania:
+
+- 💻 works full-time as a software engineer 
+- 🎹 can play piano and accordion 
+- 🔪 has a degree in culinary arts and worked in kitchens for 8 years
+- 🥾 has taken a solo-backpacking trip to around 20 countries
+- 🇪🇸 can speak Spanish
+- 💾 has the coolest handle on reddit
+- 👾 loves old strategy games and old technology
+- ☕ needs coffee
+- 🍺 also needs beer
+- ✍️ has written around 150 tutorials (so far!)
 
 ## Links
 
 A non-exhaustive list.
 
-- [Vanya Sergeev](https://sergeev.io)
+- ❤️ [Vanya Sergeev](https://sergeev.io)
 - [Teodor Nikolaev](https://teodor.co/)
 - [Craig Lam](http://craiglam.com/)
 - [Ben Schroeder](https://benschroeder.com/)

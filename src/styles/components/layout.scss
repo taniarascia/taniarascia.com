@@ -31,7 +31,7 @@
 
   h1 {
     margin-top: 0;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
   }
@@ -205,7 +205,7 @@
 
   h1 {
     margin: 0.5rem 0;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .post-meta {
@@ -239,7 +239,7 @@
       grid-template-columns: 50px 1fr 70px;
       padding: 1rem 0;
       margin: 0;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
 
       .date {
         margin: 0;
@@ -278,10 +278,16 @@
         align-items: center;
         padding: 0.5rem 0;
         margin: 0;
-        border: 2px solid transparent;
+        border: 1px solid transparent;
 
         &:hover {
           background: white;
+        }
+      }
+
+      &:last-of-type {
+        .each {
+          border-bottom: 1px solid transparent;
         }
       }
     }
@@ -322,6 +328,7 @@
         align-items: start;
         padding: 1.5rem 2rem;
         margin: 0 -2rem;
+        border-bottom: 1px solid lighten($border-color, 15%);
 
         &:hover {
           border-radius: $border-radius;
@@ -340,7 +347,7 @@
 
         &:active,
         &:focus {
-          border: 2px dashed $primary-color;
+          border: 1px dashed $primary-color;
           background: $primary-hover;
         }
 
@@ -363,15 +370,16 @@
         .each {
           padding: 0.75rem 1rem;
           margin: 0 -1rem;
+          border-bottom: 1px solid lighten($border-color, 15%);
 
           &:hover {
-            border: 2px solid $light;
+            border: 1px solid $light;
             background: $light;
           }
 
           &:active,
           &:focus {
-            border: 2px dashed $primary-color;
+            border: 1px dashed $primary-color;
             background: $primary-hover;
           }
 
@@ -386,6 +394,12 @@
         }
       }
     }
+  }
+}
+
+.post {
+  h2 {
+    border-bottom: 1px solid lighten($border-color, 15%);
   }
 }
 
@@ -441,7 +455,7 @@ h2.publication-company {
     .each {
       padding: 0.5rem 0;
       margin: 0;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       border-radius: $border-radius;
 
       h2 {
@@ -464,7 +478,7 @@ h2.publication-company {
       }
 
       &:hover {
-        border: 2px solid $light;
+        border: 1px solid $light;
         background: $light;
 
         h2 {
@@ -481,9 +495,15 @@ h2.publication-company {
       .each {
         padding: 0.75rem 1rem;
         margin: 0 -1rem;
+        border-bottom: 1px solid lighten($border-color, 15%);
 
         h2 {
           font-size: 1.3rem;
+        }
+      }
+      &:last-of-type {
+        .each {
+          border-bottom: 1px solid transparent;
         }
       }
     }
@@ -1028,7 +1048,7 @@ iframe {
 
     &.reply {
       background: $light;
-      border: 2px solid $border-color;
+      border: 1px solid $border-color;
       border-radius: $border-radius;
       padding: 1.5rem;
       margin-left: 2rem;
@@ -1119,7 +1139,7 @@ button[disabled] {
   }
 
   h3 {
-    margin: 0 0 0.75rem;
+    margin: 1rem 0 0.75rem;
     font-size: 1.5rem;
     font-weight: 500;
     color: white !important;
