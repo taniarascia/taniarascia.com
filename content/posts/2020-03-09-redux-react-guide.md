@@ -72,7 +72,7 @@ Usually I don't like to just make a list of terms and definitions, but Redux has
 - [Reducers](#reducers)
 - [Store](#store)
 - [Dispatch](#dispatch)
-- [Connect](#connect-and-container)
+- [Connect](#connect)
 
 I'll just use the typical todo application, and the action of deleting a todo, for the examples.
 
@@ -350,7 +350,7 @@ It keeps track of all changes to your app and makes debugging a breeze compared 
 
 So now we have a reducer for posts, but we don't have any actions, meaning the reducer will only return the state without modifying it in any way. **Actions** are how we communicate with the Redux store. For this blog app, we're going to want to fetch posts from an API and put them in our Redux state.
 
-Since fetching posts in an asynchronous action, it will require the use of Redux thunk. Fortunately, we don't have to do anything special to use thunk beyond setting it up in the store, which we already did.
+Since fetching posts is an asynchronous action, it will require the use of Redux thunk. Fortunately, we don't have to do anything special to use thunk beyond setting it up in the store, which we already did.
 
 Create a `actions/postsActions.js`. First, we'll define the **action types** as constants. This is not necessary, but is a common convention, and makes it easy to export the actions around and prevent typos. We want to do three things:
 
@@ -529,7 +529,6 @@ For each post, let's make a `Post` component that will display the title and an 
 
 ```jsx
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export const Post = ({ post }) => (
   <article className="post-excerpt">
@@ -602,7 +601,6 @@ import { connect } from 'react-redux'
 // highlight-start
 // Bring in the asynchronous fetchPosts action
 import { fetchPosts } from '../actions/postsActions'
-import { Post } from '../components/Post'
 // highlight-end
 
 // highlight-start
@@ -637,7 +635,9 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchPosts } from '../actions/postsActions'
+// highlight-start
 import { Post } from '../components/Post'
+// highlight-end
 
 const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
   useEffect(() => {
@@ -684,7 +684,7 @@ I would recommend completing your project so that it matches the demo app. There
 
 ## Redux Toolkit
 
-There is one more think I want to cover - [Redux Toolkit](https://redux-toolkit.js.org/). Redux Toolkit, or RTK, is a newer and easier official way to use Redux. You may notice that Redux has a _lot_ of boilerplate for setup and requires many more folders and files than plain React would. Some patterns have emerged to attempt to mitigate all that, such as [Redux ducks pattern](https://github.com/erikras/ducks-modular-redux), but we can simplify it even more.
+There is one more thing I want to cover - [Redux Toolkit](https://redux-toolkit.js.org/). Redux Toolkit, or RTK, is a newer and easier official way to use Redux. You may notice that Redux has a _lot_ of boilerplate for setup and requires many more folders and files than plain React would. Some patterns have emerged to attempt to mitigate all that, such as [Redux ducks pattern](https://github.com/erikras/ducks-modular-redux), but we can simplify it even more.
 
 View the [source of the demo Redux Toolkit application](https://codesandbox.io/s/react-redux-toolkit-application-cbb6s), which is the same application we just created with Redux, but using RTK. It is much simpler, with a drastic reduction in lines of code for all the same functionality.
 
@@ -858,4 +858,4 @@ We did it! If you followed along with me through this whole tutorial, you should
 
 You can place most of the state of your application in Redux, but certain areas of an app, such as forms as they are being updated, still make sense to keep in the React component state itself until the form is officially submitted.
 
-I hope you enjoyed this article! It was a lot of work to put together two complete demo applications and run through the whole thing here, and the article ran pretty long, but hopefully this is your one-stop shop for learning all beginner and intermediate Redux concepts. Please let me know what you think and share the article it helped you out, and donations are always welcome!
+I hope you enjoyed this article! It was a lot of work to put together two complete demo applications and run through the whole thing here, and the article ran pretty long, but hopefully this is your one-stop shop for learning all beginner and intermediate Redux concepts. Please let me know what you think and share the article if it helped you out, and donations are always welcome!
