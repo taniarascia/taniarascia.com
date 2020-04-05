@@ -8,8 +8,8 @@ categories:
   - Code
 tags:
   - php
-	- wordpress
-	- tutorial
+  - wordpress
+  - tutorial
 ---
 
 In part one of the tutorial series [Developing a WordPress Theme From Scratch](http://www.taniarascia.com/developing-a-wordpress-theme-from-scratch/), we learned what WordPress is, what it can do, and how to do the following:
