@@ -9,6 +9,7 @@ categories:
 tags:
   - php
   - wordpress
+  - tutorial
 ---
 
 In the [first part](/developing-a-wordpress-theme-from-scratch/) of my WordPress tutorial series, we learned **what WordPress is** and **how to create and use a basic theme**. In [part two](/wordpress-from-scratch-part-two/), we learned more advanced concepts like adding **comments and images**.

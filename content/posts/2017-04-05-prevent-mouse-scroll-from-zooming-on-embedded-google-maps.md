@@ -8,7 +8,7 @@ categories:
   - Design
 tags:
   - css
-  - google-maps
+  - snippet
 ---
 
 If you embed a Google Map into a website, they'll give you some HTML that looks like this:

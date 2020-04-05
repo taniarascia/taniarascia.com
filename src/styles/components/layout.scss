@@ -1,14 +1,14 @@
 #main-content {
   margin-top: 55px;
   padding: 40px 0 0;
-  min-height: calc(100vh - 162px);
+  min-height: calc(100vh - 190px);
 }
 
 @include small-breakpoint {
   #main-content {
     margin-top: 140px;
     padding: 60px 0 0;
-    min-height: calc(100vh - 219px);
+    min-height: calc(100vh - 360px);
   }
 }
 
@@ -36,6 +36,10 @@
     margin-bottom: 1.5rem;
   }
 
+  .newsletter-section .newsletter-avatar {
+    display: none;
+  }
+
   p {
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.25rem;
@@ -46,7 +50,7 @@
   }
 }
 
-@include small-breakpoint {
+@media screen and (min-width: 750px) {
   .lead {
     display: flex;
     align-items: center;
@@ -63,6 +67,10 @@
 
     .newsletter-section {
       flex: 1;
+
+      .newsletter-avatar {
+        display: block;
+      }
     }
 
     h1 {
@@ -184,6 +192,7 @@
 @include small-breakpoint {
   .single {
     .gatsby-image-wrapper {
+      order: 1;
       height: 150px !important;
       width: 150px !important;
     }
@@ -216,8 +225,8 @@
 @include small-breakpoint {
   .single-header {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    margin-bottom: 80px;
+    grid-template-columns: 1fr 180px;
+    margin-bottom: 50px;
 
     h1 {
       margin: 0 0 0.5rem 0;
@@ -235,11 +244,11 @@
 
     .each {
       display: grid;
-      align-items: center;
       grid-template-columns: 50px 1fr 70px;
       padding: 1rem 0;
       margin: 0;
       border: 1px solid transparent;
+      border-bottom: 1px solid lighten($border-color, 12%);
 
       .date {
         margin: 0;
@@ -310,11 +319,18 @@
     }
   }
 
-  .excerpt {
+  .datetime {
     font-size: 1rem;
     display: block;
     color: rgba(0, 0, 0, 0.4);
     font-weight: 400;
+  }
+
+  .excerpt {
+    margin-top: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+    font-size: 1.1rem;
   }
 }
 
@@ -328,7 +344,6 @@
         align-items: start;
         padding: 1.5rem 2rem;
         margin: 0 -2rem;
-        border-bottom: 1px solid lighten($border-color, 12%);
 
         &:hover {
           border-radius: $border-radius;
@@ -410,14 +425,13 @@ h2.publication-company {
 }
 
 .alert {
-  align-self: center;
   justify-self: flex-end;
   margin-left: 1rem;
 
   .new {
     display: inline-block;
     font-size: 0.9rem;
-    background: lighten($yellow, 26%);
+    background: #fff8e2;
     color: darken($yellow, 18%);
     border-radius: $border-radius;
     padding: 0.5rem 0.75rem;
@@ -605,7 +619,7 @@ h2.publication-company {
     margin: 0 0.5rem 0.5rem 0;
 
     .count {
-      color: $secondary-color;
+      color: $primary-color;
       font-weight: 700;
       margin-left: 0.25rem;
     }
@@ -654,7 +668,8 @@ h2.publication-company {
 .post-meta {
   font-size: 0.8rem;
   color: $light-font-color;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 
   .date {
     margin-right: 0.5rem;
@@ -683,7 +698,7 @@ h2.publication-company {
 
 blockquote {
   color: rgba(0, 0, 0, 0.8);
-  border: none;
+  border: 2px solid lighten($yellow, 20%);
   background: lighten($yellow, 25%);
   border-radius: $border-radius;
   font-weight: 500;
@@ -743,8 +758,14 @@ blockquote {
 }
 
 .quotations-section {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 4rem 0;
   background: radial-gradient(circle at 20% 20%, #5183f5 25%, #4640ff 100%);
+
+  h2 {
+    color: white;
+  }
 }
 
 .quotations {
@@ -754,21 +775,16 @@ blockquote {
 
   .quotation {
     padding: 1rem;
-    flex: 1 1 calc(50% - 2rem);
     margin: 1rem 0;
     border: none;
     background: white;
-    padding: 1rem 1rem 3.5rem !important;
+    padding: 1.5rem 1.5rem 3.5rem !important;
     border-radius: $border-radius;
     position: relative;
     box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(0, 0, 0, 0.3);
 
     p {
-      font-size: 1rem;
-    }
-
-    &:nth-of-type(2n) {
-      margin-left: 2rem;
+      font-size: 1.1rem;
     }
 
     cite {
@@ -791,6 +807,7 @@ blockquote {
 @include small-breakpoint {
   .quotations {
     .quotation {
+      flex: 1 1 calc(50% - 2rem);
       padding: 2.5rem 2.5rem 5.5rem !important;
 
       p {
@@ -801,6 +818,10 @@ blockquote {
         position: absolute;
         bottom: 1.5rem;
         right: 2.5rem;
+      }
+
+      &:nth-of-type(2n) {
+        margin-left: 2rem;
       }
     }
   }
@@ -839,6 +860,12 @@ blockquote {
   margin-bottom: 1rem;
 }
 
+.avatar-small {
+  max-width: 35px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
 @include small-breakpoint {
   .note {
     .note-container {
@@ -852,7 +879,7 @@ blockquote {
   }
 
   .avatar {
-    max-width: 150px;
+    max-width: 125px;
     margin-right: 2rem;
     margin-bottom: 0;
   }
@@ -1120,7 +1147,6 @@ button[disabled] {
 }
 
 .newsletter-section {
-  display: none;
   align-items: center;
   flex-direction: column;
   border-radius: $border-radius;

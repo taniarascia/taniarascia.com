@@ -8,7 +8,7 @@ categories:
   - Tools
 tags:
   - php
-  - setup
+  - apache
 ---
 
 My early experiences with web design and development only involved the front end - HTML, CSS and some JavaScript. As long as I had a browser, I was set. Eventually as a web developer, you get to a point where you need to implement PHP or some other back-end language. Maybe you need to install Wordpress or some other CMS, but you have no idea how to do that or what it entails. Whatever the case, it's impossible to be a serious developer without knowing how to work with a server.

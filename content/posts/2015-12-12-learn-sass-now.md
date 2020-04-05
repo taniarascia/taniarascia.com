@@ -9,6 +9,7 @@ categories:
 tags:
   - css
   - sass
+  - tutorial
 ---
 
 Sass is a CSS preproccessor that can make writing CSS faster and more efficient. You might have heard of Sass, but not know how to set it up or integrate it with your projects. We'll go over all of that in this tutorial for Mac and Windows.

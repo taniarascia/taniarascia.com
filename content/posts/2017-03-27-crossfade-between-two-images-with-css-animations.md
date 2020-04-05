@@ -7,7 +7,6 @@ slug: crossfade-between-two-images-with-css-animations
 categories:
   - Design
 tags:
-  - animation
   - css
 ---
 

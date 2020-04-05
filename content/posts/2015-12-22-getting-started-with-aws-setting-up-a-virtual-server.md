@@ -7,9 +7,9 @@ slug: getting-started-with-aws-setting-up-a-virtual-server
 categories:
   - Tools
 tags:
-  - aws
   - linux
-  - server
+  - apache
+  - tutorial
 ---
 
 Amazon Web Services, or AWS, is a set of web services provided by Amazon.com. If you're looking for web hosting through AWS and have only had experience with managed hosting services before, there's a lot to learn. In this tutorial, I'm going to highlight some of the most important features and services of AWS.

@@ -9,7 +9,6 @@ categories:
   - Popular
 tags:
   - css
-  - styling
   - design
 ---
 

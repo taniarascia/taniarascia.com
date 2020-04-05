@@ -1,6 +1,6 @@
 ---
 date: 2020-03-09
-title: 'Using Redux with React: Complete Tutorial with Real-World Examples (Plain Redux and Redux Toolkit)'
+title: 'Using Redux with React: Complete Tutorial with Real-World Examples'
 template: post
 thumbnail: '../thumbnails/redux.png'
 slug: redux-react-guide
@@ -9,6 +9,7 @@ categories:
 tags:
   - redux
   - react
+  - tutorial
 ---
 
 Do you have experience using [React](https://reactjs.org/)? Have you heard of [Redux](https://redux.js.org/), but you've put off learning it because it looks very complicated and all the guides seem overwhelming? If that's the case, this is the article for you! Contain your fear of containing state and come along with me on this relatively painless journey.

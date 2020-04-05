@@ -227,17 +227,16 @@ a {
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-    border-bottom: 2px solid lighten($primary-color, 30%);
+    padding: 1px 2px;
+    border-radius: 4px;
     &:hover {
-      color: $link-hover-color;
-      background: $primary-hover;
-      border-bottom: 2px solid $link-hover-color;
+      background: $link-hover-color;
+      color: $primary-hover;
     }
     &:active,
     &:focus {
-      color: $link-hover-color;
-      background: $primary-hover;
-      border-bottom: 2px dashed $link-hover-color;
+      background: darken($link-hover-color, 10%);
+      color: $primary-hover;
     }
   }
 
@@ -255,7 +254,7 @@ mark {
 
 strong,
 b {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 blockquote cite {

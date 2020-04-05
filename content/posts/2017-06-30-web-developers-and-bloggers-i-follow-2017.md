@@ -7,7 +7,6 @@ slug: web-developers-and-bloggers-i-follow-2017
 categories:
   - Personal
 tags:
-  - life
   - blogging
 ---
 

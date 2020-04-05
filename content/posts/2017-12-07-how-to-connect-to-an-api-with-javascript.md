@@ -8,8 +8,7 @@ categories:
   - Code
   - Popular
 tags:
-  - api
-  - app
+  - rest api
   - javascript
 ---
 

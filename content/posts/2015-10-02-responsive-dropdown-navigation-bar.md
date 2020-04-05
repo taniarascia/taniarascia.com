@@ -10,7 +10,6 @@ categories:
 tags:
   - css
   - jQuery
-  - navigation
   - sass
 ---
 

@@ -7,8 +7,7 @@ slug: google-maps-apis-for-multiple-locations
 categories:
   - Code
 tags:
-  - api
-  - google-maps
+  - rest api
   - javascript
 ---
 

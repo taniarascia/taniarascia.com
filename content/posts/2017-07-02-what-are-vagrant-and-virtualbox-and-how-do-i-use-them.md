@@ -7,10 +7,7 @@ slug: what-are-vagrant-and-virtualbox-and-how-do-i-use-them
 categories:
   - Tools
 tags:
-  - lamp
-  - server
-  - sysadmin
-  - virtual machine
+  - devops
 ---
 
 I've gotten to the point in my web development career where I can no longer avoid the words [VirtualBox](https://www.virtualbox.org/), [Vagrant](https://www.vagrantup.com/), and [Docker](https://www.docker.com/). Thanks to my friend Timm Stelzer, I finally got over my fear of the unknown and delved into the world of virtual machines via Vagrant and VirtualBox.

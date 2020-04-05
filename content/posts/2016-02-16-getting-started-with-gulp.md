@@ -7,7 +7,7 @@ slug: getting-started-with-gulp
 categories:
   - Tools
 tags:
-  - gulp
+  - automation
   - node
   - sass
 ---

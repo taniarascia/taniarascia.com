@@ -14,9 +14,8 @@ My current focus is **Computer Science** fundamentals and all things **JavaScrip
 
 #### Concepts
 
-- [ ] Closures
-- [ ] Bitwise Operators
 - [ ] Promises, Async/Await, Microtasks, and the Event Loop
+- [ ] Bitwise Operators
 
 #### Document Object Model (DOM) and Web APIs
 

@@ -10,7 +10,7 @@ tags:
   - es6
   - javascript
   - jQuery
-  - promise
+  - asynchronous
 ---
 
 Let's say you have an AJAX call, and some other function that depends on the AJAX call loading before it runs.

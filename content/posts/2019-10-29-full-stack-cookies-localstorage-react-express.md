@@ -11,7 +11,7 @@ tags:
   - react
   - node
   - express
-  - cookies
+  - authentication
 ---
 
 ### The expectation

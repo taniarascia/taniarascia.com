@@ -8,8 +8,9 @@ categories:
   - Code
 tags:
   - javascript
-  - terminal
+  - command line
   - node
+  - game
 ---
 
 Usually when you think of a JavaScript game, you probably imagine something played in the browser, either rendered to the DOM or in an HTML5 canvas element.

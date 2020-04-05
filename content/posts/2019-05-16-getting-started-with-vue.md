@@ -10,8 +10,7 @@ categories:
 tags:
   - javascript
   - vue
-  - library
-  - framework
+  - tutorial
 ---
 
 We're in a golden era of JavaScript libraries and frameworks. More and more companies are building out full, dynamic web apps in addition to - or in lieu of - traditional desktop applications. This means things are constantly changing and frameworks are going in and out of vogue, but the core concepts of what we're trying to accomplish remain similar.

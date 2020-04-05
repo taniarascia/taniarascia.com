@@ -10,7 +10,6 @@ tags:
   - javascript
   - react
   - routing
-  - react-router
 ---
 
 React doesn't come with a built-in router, but we can easily achieve routing with the `react-router-dom` library. **Routing** is how a web applications direct traffic. (If you know what routing is, feel free to skip this section.)

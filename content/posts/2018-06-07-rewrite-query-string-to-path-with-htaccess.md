@@ -8,8 +8,7 @@ categories:
   - Tools
 tags:
   - apache
-  - htaccess
-  - rewrite
+  - snippet
 ---
 
 Let's say I have this URL:

@@ -8,7 +8,8 @@ categories:
   - Tools
 tags:
   - php
-  - setup
+	- setup
+	- snippet
 ---
 
 Here's how you make a custom, global snippet in VSCode.

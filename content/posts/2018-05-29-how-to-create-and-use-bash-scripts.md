@@ -10,8 +10,9 @@ categories:
 tags:
   - bash
   - command line
-  - scripting
-  - sysadmin
+  - devops
+  - reference
+  - tutorial
 ---
 
 Bash scripting is an extremely useful and powerful part of system administration and development. It might seem extremely scary the first time you do it, but hopefully this guide will help ease the fear.

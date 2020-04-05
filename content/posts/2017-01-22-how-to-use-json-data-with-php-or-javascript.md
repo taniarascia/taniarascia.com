@@ -8,7 +8,7 @@ categories:
   - Code
   - Popular
 tags:
-  - data
+  - rest api
   - javascript
   - json
   - php

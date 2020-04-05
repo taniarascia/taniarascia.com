@@ -8,7 +8,7 @@ categories:
   - Design
 tags:
   - jQuery
-  - parallax
+  - css
 ---
 
 Parallax scrolling, an effect that allows sections of a website to scroll at different speeds, is an effect that has gone through various stages of popularity over the last few years. I’m not going to debate the usefulness or trendiness of parallax scrolling here, I’m simply going to show you how to do it.

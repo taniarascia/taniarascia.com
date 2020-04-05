@@ -8,6 +8,7 @@ categories:
   - Design
 tags:
   - html
+  - snippet
 ---
 
 I often like to start my projects from scratch and stray away from using frameworks. [HTML5 Boilerplate](https://html5boilerplate.com/) is a really great resource for creating a style-agnostic web project foundation; all your bases will be covered. However, it's much more than I need for a standard project, and I'd waste more time deleting what I don't need than I'd save for the convenience.

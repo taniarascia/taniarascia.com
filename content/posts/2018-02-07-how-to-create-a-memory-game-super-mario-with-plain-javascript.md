@@ -7,9 +7,9 @@ slug: how-to-create-a-memory-game-super-mario-with-plain-javascript
 categories:
   - Code
 tags:
-  - app
   - game
   - javascript
+  - tutorial
 ---
 
 I was presented with a coding exercise to make a memory game using any language. I decided such a task really doesn't require any libraries like React or jQuery, so I made it with plain JavaScript.

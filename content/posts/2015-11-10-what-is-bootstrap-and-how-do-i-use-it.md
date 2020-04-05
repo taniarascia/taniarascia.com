@@ -8,9 +8,7 @@ categories:
   - Popular
   - Design
 tags:
-  - bootstrap
   - css
-  - framework
 ---
 
 ![](../images/vangogh.jpg)

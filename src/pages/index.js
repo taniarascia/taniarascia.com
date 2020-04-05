@@ -30,7 +30,7 @@ export default class Index extends Component {
             <div className="elevator">
               <h1>{`Hey, I'm Tania 👋`} </h1>
               <p>
-                I'm a full stack software developer creating{' '}
+                {`I'm a full stack software developer creating `}
                 <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">
                   open source
                 </a>{' '}
@@ -99,6 +99,9 @@ export default class Index extends Component {
           </section>
         </div>
         <div className="quotations-section">
+          <div className="container">
+            <h2>Other People Say...</h2>
+          </div>
           <div className="quotations">
             {quotes.map(quote => (
               <blockquote className="quotation" key={quote.name}>

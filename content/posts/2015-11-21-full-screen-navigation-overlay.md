@@ -9,8 +9,6 @@ categories:
 tags:
   - css
   - jQuery
-  - navigation
-  - responsive
 ---
 
 One current trend in navigation styles that you may have seen is the full screen navigation overlay. With this type of navigation, toggling the navigation will overlay the menu across the entire screen. Codrops did a [really nice set of demos](http://tympanus.net/Development/FullscreenOverlayStyles/) with full screen overlay styles last year. I wanted to demonstrate a very simple version of the overlay using jQuery. Of course, it's responsive as well, and you can [view the demo on CodePen](http://codepen.io/taniarascia/pen/yYrXRG).

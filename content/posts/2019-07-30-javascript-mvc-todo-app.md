@@ -11,6 +11,7 @@ tags:
   - javascript
   - mvc
   - architecture
+  - tutorial
 ---
 
 I wanted to write a simple application in plain JavaScript using the [model-view-controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) architectural pattern. So I did, and here it is. Hopefully it helps you understand MVC, as it's a difficult concept to wrap your head around when you're first starting out.

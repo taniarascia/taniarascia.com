@@ -6,11 +6,8 @@ thumbnail: '../thumbnails/js.png'
 slug: object-oriented-pattern-javascript-php-classes
 categories:
   - Code
-  - Code
 tags:
-  - class
   - javascript
-  - oop
   - php
 ---
 

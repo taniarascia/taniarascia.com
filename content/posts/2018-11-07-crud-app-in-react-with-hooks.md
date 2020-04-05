@@ -7,7 +7,6 @@ slug: crud-app-in-react-with-hooks
 categories:
   - Code
 tags:
-  - hooks
   - javascript
   - react
 ---

@@ -9,7 +9,7 @@ categories:
 tags:
   - cron
   - linux
-  - server
+  - devops
 ---
 
 Recently, I had to set up a scheduled task on a server, which is a little intimidating and scary the first time around, so here's a quick article about the steps for setting up a basic cron job. In this article, we'll create a simple PHP script to send out an email once per day.

@@ -8,6 +8,7 @@ categories:
   - Code
 tags:
   - javascript
+  - fundamentals
 ---
 
 In order to properly learn something, you have to start at the beginning. You learn one concept at a time, process it, and move to the next. For example, when you learn Spanish, first you learn how to say "¿Cómo estás?" (how are you), but the next logical step is not to memorize every possible conjugation and irregularity of "estar" - it's probably to learn how to say "Me llamo..." (my name is).

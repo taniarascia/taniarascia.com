@@ -7,9 +7,7 @@ slug: styling-ui-components-from-scratch-buttons-forms
 categories:
   - Design
 tags:
-  - buttons
   - css
-  - forms
 ---
 
 It's hard to style basic web components if you've never done it before. You want your **buttons** and **forms** to look good and also be cross-browser consistent. The easiest solution is to use a framework like Bootstrap or Foundation, but that won't help you understand the fundamentals. It's actually not as hard as it seems, and in this article I'll show you how.

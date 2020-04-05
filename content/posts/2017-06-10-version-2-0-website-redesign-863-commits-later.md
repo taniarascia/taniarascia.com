@@ -7,7 +7,7 @@ slug: version-2-0-website-redesign-863-commits-later
 categories:
   - Personal
 tags:
-  - design
+  - meta
 ---
 
 From September 24th, 2015 to June 10, 2017, I've made [863 commits](https://github.com/taniarascia/oblate) on my personal website, taniarascia.com. That means there's technically 863 versions of the site - but most of those commits are small tweaks that added up to slightly different versions through the two years this site has been around.

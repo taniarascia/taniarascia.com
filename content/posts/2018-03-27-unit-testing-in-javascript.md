@@ -9,7 +9,6 @@ categories:
   - Code
 tags:
   - javascript
-  - mocha
   - testing
 ---
 

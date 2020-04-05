@@ -7,8 +7,9 @@ slug: how-to-use-the-javascript-fetch-api-to-get-json-data
 categories:
   - Code
 tags:
-  - api
+  - rest api
   - javascript
+  - snippet
 ---
 
 In [How to Use JSON Data with PHP or JavaScript](/how-to-use-json-data-with-php-or-javascript/), I discussed how to use `XMLHttpRequest()` to get data from a JSON feed.

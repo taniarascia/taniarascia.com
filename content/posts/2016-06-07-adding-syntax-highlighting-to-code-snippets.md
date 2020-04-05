@@ -7,8 +7,7 @@ slug: adding-syntax-highlighting-to-code-snippets
 categories:
   - Design
 tags:
-  - code
-  - syntax highlighting
+  - snippet
 ---
 
 I've received a few requests on how to highlight the syntax of snippets of in a blog like I have. Here is an example snippet of SCSS code, so you can see exactly what I'm referring to.

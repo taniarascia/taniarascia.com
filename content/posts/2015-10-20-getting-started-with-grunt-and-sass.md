@@ -7,7 +7,7 @@ slug: getting-started-with-grunt-and-sass
 categories:
   - Tools
 tags:
-  - grunt
+  - automation
   - node
   - sass
 ---

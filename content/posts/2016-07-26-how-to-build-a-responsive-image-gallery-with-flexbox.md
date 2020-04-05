@@ -9,7 +9,6 @@ categories:
 tags:
   - css
   - flex
-  - gallery
 ---
 
 You may have noticed I've updated the site to include a [front page with a grid listing all the tutorials](/). As you resize the screen, it goes from three columns, to two columns, to a single column on mobile. Another great example of that is [this really weird musical side project of mine](/music/), where I arrange all the songs as if they're a Spotify album listing. The only real difference between those two is that one has margins, and the other doesn't.

@@ -8,7 +8,8 @@ categories:
   - Tools
 tags:
   - cron
-  - mamp
+  - apache
+  - snippet
 ---
 
 In [Setting Up a Basic Cron Job in Linux](/setting-up-a-basic-cron-job-in-linux/), I went over how cron jobs work and how to set one up.

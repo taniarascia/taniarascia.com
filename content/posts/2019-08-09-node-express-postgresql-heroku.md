@@ -10,7 +10,8 @@ tags:
   - node
   - express
   - postgres
-  - api
+  - rest api
+  - tutorial
 ---
 
 Recently, I wanted to create and host a Node server, and discovered that [Heroku](https://heroku.com) is an excellent cloud platform service that has free hobby hosting for Node and PostgreSQL, among many other languages and databases.

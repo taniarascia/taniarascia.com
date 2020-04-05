@@ -7,10 +7,9 @@ slug: promise-all-with-async-await
 categories:
   - Code
 tags:
-  - async/await
   - es6
   - javascript
-  - promise
+  - asynchronous
 ---
 
 Let's say I have an API call that returns all the users from a database and takes some amount of time to complete.

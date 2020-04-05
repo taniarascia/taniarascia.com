@@ -9,9 +9,9 @@ categories:
 tags:
   - mysql
   - php
-  - server
-  - sysadmin
-  - ubuntu
+  - devops
+  - apache
+  - linux
   - virtual machine
 ---
 

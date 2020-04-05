@@ -7,8 +7,7 @@ slug: how-to-generate-a-public-key-from-a-private-key
 categories:
   - Tools
 tags:
-  - server
-  - sysadmin
+  - devops
 ---
 
 Recently, I needed to find the corresponding public key from a private key (`.pem`) to give a Linux user access to a server. I used the below code to generate the public key.

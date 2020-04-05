@@ -8,8 +8,7 @@ categories:
   - Tools
   - Popular
 tags:
-  - apple
-  - macos
+  - macOS
   - setup
 ---
 

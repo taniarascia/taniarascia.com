@@ -9,7 +9,6 @@ categories:
 tags:
   - mvc
   - php
-  - routes
   - routing
 ---
 

@@ -1,6 +1,6 @@
 ---
 date: 2017-08-11
-title: 'Real World Examples of Map, Filter and Reduce in JavaScript'
+title: 'Examples of Map, Filter and Reduce in JavaScript'
 template: post
 thumbnail: '../thumbnails/js.png'
 slug: real-world-examples-of-map-filter-and-reduce-in-javascript

@@ -8,7 +8,7 @@ categories:
   - Code
 tags:
   - javascript
-  - jquery
+  - jQuery
 ---
 
 ### Introduction

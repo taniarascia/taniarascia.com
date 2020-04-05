@@ -10,7 +10,7 @@ categories:
 tags:
   - javascript
   - php
-  - upload
+  - tutorial
 ---
 
 Writing the code to upload images to a server from scratch seems like a very daunting task. I'm going to make a very simple upload form to demonstrate how file data works and can be transferred.

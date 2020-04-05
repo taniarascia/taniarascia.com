@@ -64,16 +64,19 @@ $dark-primary: $tag;
   .page {
     a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
       border-bottom: 2px solid transparent;
+      padding: 1px 2px;
 
       &:hover {
-        color: darken($dark-primary, 10%);
-        background: transparent;
+        background: darken($dark-primary, 10%);
+        color: white;
+        border-radius: 4px;
       }
 
       &:active,
       &:focus {
-        color: darken($dark-primary, 10%);
-        background: transparent;
+        background: darken($dark-primary, 10%);
+        color: white;
+        border-radius: 4px;
       }
     }
 
@@ -194,8 +197,12 @@ $dark-primary: $tag;
         }
       }
 
-      .excerpt {
+      .datetime {
         color: $comment;
+      }
+
+      .excerpt {
+        color: rgba(255, 255, 255, 0.3);
       }
     }
   }
@@ -283,6 +290,7 @@ $dark-primary: $tag;
   }
 
   .quotations-section {
+    border-color: transparent;
     background: transparent;
   }
 
@@ -431,10 +439,7 @@ $dark-primary: $tag;
 
   .category-container {
     .category-filter {
-      padding: 0.5rem 1rem;
       background: rgba(0, 0, 0, 0.2);
-      border-radius: $border-radius;
-      margin-right: 0.5rem;
       font-weight: 500;
       color: $dark-primary;
       cursor: pointer;
@@ -477,8 +482,8 @@ $dark-primary: $tag;
     background: $dark-primary;
     color: white;
   }
-}
 
-path {
-  stroke: $keyword;
+  path {
+    stroke: $keyword;
+  }
 }

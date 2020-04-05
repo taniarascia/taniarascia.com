@@ -8,6 +8,7 @@ categories:
   - Code
 tags:
   - javascript
+  - fundamentals
 ---
 
 In [JavaScript Day One](/javascript-day-one/), we covered some of the essential fundamentals of programming: variables, data types, comments, and how to write a simple "Hello, World!" program. In this lesson, I'll be going over comparison, arithmetic (math), and conditional statements (logic).

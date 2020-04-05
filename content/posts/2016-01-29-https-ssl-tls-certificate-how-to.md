@@ -8,8 +8,7 @@ categories:
   - Tools
 tags:
   - security
-  - ssl
-  - tls
+  - wordpress
 ---
 
 This article begins with the assumption that you're not looking for an in-depth explanation of what HTTPS is, how encryption works, the difference between TLS and SSL, or why you should or shouldn't obtain a certificate. There are [plenty of](https://en.wikipedia.org/wiki/HTTPS) [articles](https://en.wikipedia.org/wiki/Transport_Layer_Security) [about](https://www.instantssl.com/ssl.html) [that](https://tools.ietf.org/html/rfc5246). No, you just want the fancy green padlock in front of your URL, I hear you.

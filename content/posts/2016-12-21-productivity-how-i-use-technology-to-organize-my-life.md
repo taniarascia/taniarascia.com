@@ -7,7 +7,6 @@ slug: productivity-how-i-use-technology-to-organize-my-life
 categories:
   - Tools
 tags:
-  - organization
   - productivity
 ---
 

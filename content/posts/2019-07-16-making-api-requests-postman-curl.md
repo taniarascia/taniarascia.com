@@ -8,8 +8,8 @@ categories:
   - Tools
   - Code
 tags:
-  - rest
-  - api
+  - rest api
+  - reference
 ---
 
 [Postman](https://www.getpostman.com/) is an API testing environment. [cURL](https://curl.haxx.se/) is a command line tool for transfering data via URLs. When it comes to REST APIs, we can use Postman as a GUI (graphical user interface) and cURL as a CLI (command line interface) to do the same tasks.

@@ -8,10 +8,9 @@ categories:
   - Tools
   - Popular
 tags:
-  - docker
-  - travis
-  - cicd
   - automation
+  - devops
+  - tutorial
 ---
 
 I built my first websites in the late '90s, and it was pretty simple to get them up and running. You had a single shared server running Apache and you could FTP in by typing `ftp://ftp.example.com` into the URL bar, entering your username and password, and moving your files to the host. They were different times, simpler times.

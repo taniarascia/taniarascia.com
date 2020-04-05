@@ -8,11 +8,10 @@ categories:
   - Popular
   - Code
 tags:
-  - api
+  - rest api
   - javascript
-  - library
-  - framework
   - react
+  - tutorial
 ---
 
 I've been hearing about React since I first started learning JavaScript, but I'll admit I took one look at it and it scared me. I saw what looked like a bunch of HTML mixed with JavaScript and thought, _isn't this what we've been trying to avoid? What's the big deal with React?_

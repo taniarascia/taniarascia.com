@@ -8,7 +8,7 @@ categories:
   - Design
 tags:
   - css
-  - navigation
+  - jQuery
 ---
 
 One of the more minimalist approaches to responsive navigation is the off canvas navigation method. This method utilizes the ubiquitous three-line hamburger menu, which prompts a sidebar to slide out when toggled. [Lanyon](http://lanyon.getpoole.com/) theme for Poole is a popular, simple example of the slide-out off canvas navigation.

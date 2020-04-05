@@ -10,7 +10,6 @@ categories:
 tags:
   - css
   - design
-  - layout
 ---
 
 I've noticed a lot of web developers struggle with design; they think they don't have a natural talent for design and knowing what looks good, and everything they create from scratch is **doomed to look amateur and unprofessional**.

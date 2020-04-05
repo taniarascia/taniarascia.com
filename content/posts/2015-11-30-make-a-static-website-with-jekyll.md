@@ -7,9 +7,7 @@ slug: make-a-static-website-with-jekyll
 categories:
   - Tools
 tags:
-  - git
-  - jekyll
-  - ruby
+  - tutorial
   - ssg
 ---
 

@@ -8,23 +8,13 @@ import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
-import NewsletterForm from '../components/NewsletterForm'
+import tania from '../../content/images/profile-small.jpg'
 
 export default class PostTemplate extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      error: false,
-    }
-  }
-
   render() {
-    const { comments, error } = this.state
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
-    const popular = postNode.frontmatter.categories.find(category => category === 'Popular')
     let thumbnail
 
     if (!post.id) {
@@ -57,6 +47,7 @@ export default class PostTemplate extends Component {
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
+                <img src={tania} className="avatar-small" alt="Tania" />
                 <time className="date">{date}</time>/
                 <a
                   className="twitter-link"
