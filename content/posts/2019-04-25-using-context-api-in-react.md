@@ -215,7 +215,7 @@ class HomePage extends Component {
 }
 ```
 
-In my opinion, the biggest downfall of Context API with classes is that you cannot use multiple static `contextTypes` in one component. This leads to the necessity of having on really big Context for all global state in an application, so it's not sufficient for a large application. The method of creating a wrapper for Context is also difficult to test.
+In my opinion, the biggest downfall of Context API with classes is that you cannot use multiple static `contextTypes` in one component. This leads to the necessity of having one really big Context for all global state in an application, so it's not sufficient for a large application. The method of creating a wrapper for Context is also difficult to test.
 
 ## Conclusion
 
