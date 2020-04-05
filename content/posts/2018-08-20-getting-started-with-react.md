@@ -904,6 +904,12 @@ In `App.js`, we can render the form below the table.
 <div class="filename">src/App.js</div>
 
 ```jsx
+import Form from './Form';
+```
+
+<div class="filename">src/App.js</div>
+
+```jsx
 return (
   <div className="container">
     <Table characterData={characters} removeCharacter={this.removeCharacter} />
