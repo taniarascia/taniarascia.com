@@ -8,7 +8,6 @@ categories:
   - Tools
 tags:
   - php
-	- setup
 	- snippet
 ---
 

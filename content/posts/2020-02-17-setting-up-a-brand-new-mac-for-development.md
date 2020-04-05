@@ -9,7 +9,6 @@ categories:
   - Popular
 tags:
   - macOS
-  - setup
 ---
 
 I have to set up a MacBook Pro fairly often - when starting a new job and when buying a new personal computer. I created this article back in 2015 when I got my first Mac and have been updating it ever since with whatever I need as my job evolves. I'm primarily a full-stack web developer, so most of my needs will revolve around JavaScript/Node.js.

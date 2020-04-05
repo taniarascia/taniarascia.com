@@ -7,7 +7,7 @@ slug: my-front-end-web-development-setup
 categories:
   - Tools
 tags:
-  - setup
+  - reference
 ---
 
 I'm a self-taught web developer who has been working professionally in the field since June, 2015. I'm going to write about the setup, programs, and plugins I use on a daily basis with some brief descriptions and alternate options.

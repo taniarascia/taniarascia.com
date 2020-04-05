@@ -9,6 +9,7 @@ categories:
   - Design
 tags:
   - css
+  - tutorial
 ---
 
 ![](../images/vangogh.jpg)

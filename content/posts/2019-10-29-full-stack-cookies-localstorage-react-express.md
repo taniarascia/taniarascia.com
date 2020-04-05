@@ -1,6 +1,6 @@
 ---
 date: 2019-10-29
-title: 'Authentication on the Client Side the Right Way: Cookies vs. Local Storage (Node/Express/React)'
+title: 'Authentication on the Client Side the Right Way: Cookies vs. Local Storage'
 template: post
 thumbnail: '../thumbnails/cookie.png'
 slug: full-stack-cookies-localstorage-react-express
