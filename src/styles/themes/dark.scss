@@ -294,6 +294,15 @@ $dark-primary: $tag;
     background: transparent;
   }
 
+  .instruction-manuals {
+    > a {
+      background: lighten($background, 4%);
+      &:hover {
+        background: lighten($background, 8%);
+      }
+    }
+  }
+
   blockquote {
     border: 2px solid #393939;
     background: rgba(0, 0, 0, 0.2);
