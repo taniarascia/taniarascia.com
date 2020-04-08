@@ -98,7 +98,7 @@ export default class Index extends Component {
             <SimpleListing simple data={speaking} />
           </section>
         </div>
-        <div className="quotations-section">
+        <div className="gradient-section">
           <div className="container">
             <h2>Other People Say...</h2>
           </div>

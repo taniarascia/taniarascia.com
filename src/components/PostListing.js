@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import moment from 'moment'
-import kebabCase from 'lodash.kebabcase'
 
 import { formatDate } from '../utils/global'
 
@@ -47,15 +46,6 @@ export default class PostListing extends Component {
                 <div className="each-list-item">
                   <h2>{post.title}</h2>
                   {!simple && <div className="datetime">{date}</div>}
-                  {!simple && <p className="excerpt">{post.excerpt}</p>}
-                  <div className="tag-container">
-                    {!simple && post.tags &&
-                      post.tags.map(tag => (
-                        <Link to={`/tags/${kebabCase(tag)}`}>
-                          <span key={tag}>{tag}</span>
-                        </Link>
-                      ))}
-                  </div>
                 </div>
                 {newest && (
                   <div className="alert">
