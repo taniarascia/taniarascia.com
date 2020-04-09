@@ -193,6 +193,7 @@
   .single {
     .gatsby-image-wrapper {
       order: 1;
+      margin-left: 2rem;
       height: 150px !important;
       width: 150px !important;
     }
@@ -226,7 +227,7 @@
   .single-header {
     display: grid;
     grid-template-columns: 1fr 180px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 
     h1 {
       margin: 0 0 0.5rem 0;
@@ -870,8 +871,8 @@ blockquote {
     }
   }
 
-  h2 {
-    border-bottom: 0;
+  h3 {
+    color: white;
   }
 
   p {
@@ -887,7 +888,9 @@ blockquote {
 }
 
 .avatar-small {
+  width: 35px;
   max-width: 35px;
+  height: auto;
   border-radius: 50%;
   margin-right: 0.75rem;
 }
@@ -904,15 +907,20 @@ blockquote {
 
     .flex-author {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .flex-avatar {
       display: block;
     }
+
+    p {
+      line-height: 1.5;
+    }
   }
 
   .avatar {
+    width: 125px;
     max-width: 125px;
     margin-right: 2rem;
     margin-bottom: 0;
@@ -1258,8 +1266,10 @@ button[disabled] {
     img {
       display: block;
       margin: auto;
+      width: 50px;
       max-width: 50px;
       max-height: 50px;
+      height: auto;
     }
     h3 {
       margin: 0.5rem auto 0;
@@ -1271,6 +1281,7 @@ button[disabled] {
   @include small-breakpoint {
     > a {
       img {
+        width: 75px;
         max-width: 75px;
         max-height: 75px;
       }

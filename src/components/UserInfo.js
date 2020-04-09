@@ -13,13 +13,11 @@ export default class UserInfo extends Component {
               <img className="avatar" src={tania} alt="Tania Rascia" />
             </div>
             <div>
+              <h3>Author</h3>
               <p>
-                I’m Tania Rascia. I document everything I learn and help thousands of people start
-                coding careers.{' '}
-                <strong>
-                  My site has no ads, sponsors, or bullshit. If you enjoy my content, please
-                  consider supporting what I do.
-                </strong>
+                Hey, I’m Tania, a full stack software engineer. I write about what I know to help
+                viewers like you. My site has <strong>no ads, sponsors, or bullshit.</strong> If you
+                enjoy my content, please consider supporting what I do!
               </p>
 
               <div className="flex">

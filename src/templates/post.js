@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
@@ -47,7 +47,9 @@ export default class PostTemplate extends Component {
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
-                <img src={tania} className="avatar-small" alt="Tania" />
+                <Link to="/me">
+                  <img src={tania} className="avatar-small" alt="Tania" />
+                </Link>
                 <time className="date">{date}</time>/
                 <a
                   className="twitter-link"
