@@ -25,15 +25,15 @@ Create an **auth.js** with the following code, changing `username` and `password
 ```js
 const auth = require('basic-auth')
 
-const admins = { username: { password: 'password' } }
+const admin = { name: 'username', password: 'password' }
 
 module.exports = function(request, response, next) {
-  var user = auth(request)
-  if (!user || !admins[user.name] || admins[user.name].password !== user.pass) {
-    response.set('WWW-Authenticate', 'Basic realm="example"')
-    return response.status(401).send()
-  }
-  return next()
+          var user = auth(request)
+          if (!user || !admin.name || admin.password !== user.pass) {
+                      response.set('WWW-Authenticate', 'Basic realm="example"')
+                      return response.status(401).send()
+                    }
+          return next()
 }
 ```
 
