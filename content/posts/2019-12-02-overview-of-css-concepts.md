@@ -1,6 +1,6 @@
 ---
 date: 2019-12-02
-title: 'CSS: An Art, a Science, a Nightmare (Everything You Should Know)'
+title: 'CSS - An Art, a Science, a Nightmare (Everything You Should Know)'
 template: post
 thumbnail: '../thumbnails/css2.png'
 slug: overview-of-css-concepts

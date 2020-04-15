@@ -48,11 +48,11 @@ ul li p {
 
 // Remove extra margin for nested lists
 ul li ul {
-  padding-left: 2rem;
-  margin: .5rem 0 .75rem;
+  padding-left: 1rem;
+  margin: 0;
 
   li {
-    margin-left: 0;
+    margin: .25rem 0;
   }
 }
 

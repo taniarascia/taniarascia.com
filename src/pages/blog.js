@@ -72,7 +72,7 @@ export default class BlogPage extends Component {
             <h2 className="text-center">The Missing Instruction Manuals of the Web</h2>
             <div className="instruction-manuals">
               {manuals.map(manual => (
-                <Link to={manual.url}>
+                <Link to={manual.url} key={manual.url}>
                   <img src={manual.image} alt={manual.name} />
                   <h3>{manual.name}</h3>
                 </Link>
@@ -86,7 +86,7 @@ export default class BlogPage extends Component {
             {categories.map(category => {
               return (
                 <Link
-                  to={`categories/${category.fieldValue.toLowerCase()}`}
+                  to={`/categories/${category.fieldValue.toLowerCase()}`}
                   className="category-filter"
                   key={category.fieldValue}
                 >
