@@ -30,7 +30,7 @@ There are plenty of guides on how to make a Chip-8 emulator, such as [Mastering 
 - [What is Chip-8](#what-is-chip-8)
 - [What Goes Into a Chip-8 Interpreter?](#what-goes-into-a-chip-8-interpreter)
 - [Decoding Chip-8 Instructions](#decoding-chip-8-instructions)
-- [Reading the ROM Data Buffer](#reading-the-rom-data-buffer)
+- [Reading the ROM](#reading-the-rom-data-buffer)
 - [The Instruction Cycle - Fetch, Decode, Execute](#the-instruction-cycle---fetch-decode-execute)
 - [Creating a CPU Interface for I/O](#creating-a-cpu-interface-for-i-o)
   - [CLI App - Interfacing with the Terminal](#cli-app---interfacing-with-the-terminal)
@@ -84,12 +84,12 @@ You can access and use this array like a regular array, from `memory[0]` to `mem
 
 ### Program counter
 
-The program counter stores the current instruction as an **16-bit integer**. Every single instruction in Chip-8 will update the program counter (PC) when it is done to go on to the next instruction, by accessing memory with PC as the index.
+The program counter stores the address of the current instruction as an **16-bit integer**. Every single instruction in Chip-8 will update the program counter (PC) when it is done to go on to the next instruction, by accessing memory with PC as the index.
 
 In the Chip-8 memory layout, `0x000` to `0x1FF` in memory is reserved, so it starts at `0x200`.
 
 ```js
-let PC = 0x200 // memory[PC] will access the current point in memory*
+let PC = 0x200 // memory[PC] will access the address of  the current instruvtion
 ```
 
 <small><em>\*You'll notice the memory array is 8-bit and the PC is a 16-bit integer, so two program codes will be combined to make a big endian opcode.</em></small>
@@ -160,7 +160,7 @@ Sprites that can be saved in memory are `8x15` - eight pixels wide by fifteen pi
 
 ### CPU
 
-Put it all together, and you get the CPU.
+Put it all together, and you get the CPU state.
 
 <div class="filename">CPU</div>
 
@@ -200,7 +200,7 @@ x = x + y
 
 With this instruction set I'll have to store this data in 16-bits, so every instrution ends up being a number from `0x0000` to `0xffff`. Each digit position in these sets is a nibble (4-bit).
 
-So how can I get from `nnnn` to something like `ADD x, y`, that is a little more understandable? Well, I'll syart by looking at one of the instructions from Chip-8, which is basically the same as the above example:
+So how can I get from `nnnn` to something like `ADD x, y`, that is a little more understandable? Well, I'll start by looking at one of the instructions from Chip-8, which is basically the same as the above example:
 
 | Instruction | Description  |
 | ----------- | ------------ |
@@ -294,11 +294,11 @@ function disassemble(opcode) {
 }
 ```
 
-## Reading the ROM Data Buffer
+## Reading the ROM
 
 Since we're considering this project an emulator, each Chip-8 program file can be considered a ROM. The ROM is just binary data, and we're writing the program to interpret it. We can imagine the Chip8 CPU to be a virtual console, and a Chip-8 ROM to be a virtual game cartridge.
 
-The ROM buffer will take the raw binary and translate it into 16-bit big endian words (a word is a unit of data consisting of a set amount of bits). This is where that [hex dump article](/bits-bytes-bases-and-a-hex-dump-javascript/) comes in handy. With a **buffer** we're collecting the binary data and converting it into blocks that I can use, in this case the 16-bit opcodes. Big endian means that the most significant byte will be first in the buffer, so when it encounters the two bytes `12 34`, it will create a `1234` 16-bit code. A little endian code would look like `3412`.
+The ROM buffer will take the raw binary file and translate it into 16-bit big endian words (a word is a unit of data consisting of a set amount of bits). This is where that [hex dump article](/bits-bytes-bases-and-a-hex-dump-javascript/) comes in handy. I'm collecting the binary data and converting it into blocks that I can use, in this case the 16-bit opcodes. Big endian means that the most significant byte will be first in the buffer, so when it encounters the two bytes `12 34`, it will create a `1234` 16-bit code. A little endian code would look like `3412`.
 
 <div class="filename">RomBuffer.js</div>
 
@@ -369,7 +369,7 @@ function execute(instruction) {
   switch (id) {
     case 'ADD_VX_VY':
       // Perform the instruction operation
-      registers[args[0]] + registers[args[1]]
+      registers[args[0]] += registers[args[1]]
 
       // Update program counter to next instruction
       PC = PC + 2
@@ -380,7 +380,7 @@ function execute(instruction) {
 }
 ```
 
-What I end up with is the CPU, with all the state and the instruction cycle. There are two methods exposed on the CPU - `load`, which is the equivalent of loading a cartridge into a console with the `romBuffer` as the game, and `step`, which is all three functions of the instruction cycle. `step` will run in an infinite loop.
+What I end up with is the CPU, with all the state and the instruction cycle. There are two methods exposed on the CPU - `load`, which is the equivalent of loading a cartridge into a console with the `romBuffer` as the game, and `step`, which is the three functions of the instruction cycle (fetch, decode, execute). `step` will run in an infinite loop.
 
 <div class="filename">CPU.js</div>
 
@@ -462,7 +462,7 @@ Based on that, we'll want the interface to have methods like:
 - `waitKey()`
 - `drawPixel()` (`drawSprite` would have been 1:1, but it ended up to be easier doing it pixel-by-pixel from the interface)
 
-JavaScript doesn't really have a concept of an abstract class as far as I could find, but I created one by making a class that could not itself be instantiated, with methods that can only be used from classes that extend it. It will define the contract between CPU and I/O. Here are all the interface methods on the class:
+JavaScript doesn't really have a concept of an abstract class as far as I could find, but I created one by making a class that could not itself be instantiated, with methods that can only be used from classes that extend it. Here are all the interface methods on the class:
 
 <div class="filename">CpuInterface.js</div>
 
@@ -525,7 +525,7 @@ Before setting up the interface with any real environment (web, terminal, or nat
 
 ### Screen
 
-The screen has a resolution of 64 pixels wide by 32 pixels tall. So as far as the CPU and interface is concerned, its a 64x32 grid of bits that are either on or off. To set up an empty screen, I can just make a 3D array of zeroes to represent all pixels being off. A [frame buffer](https://en.wikipedia.org/wiki/Framebuffer) is a portion of memory containing a bitmapped image that will be sent to a display.
+The screen has a resolution of 64 pixels wide by 32 pixels tall. So as far as the CPU and interface is concerned, its a 64x32 grid of bits that are either on or off. To set up an empty screen, I can just make a 3D array of zeroes to represent all pixels being off. A [frame buffer](https://en.wikipedia.org/wiki/Framebuffer) is a portion of memory containing a bitmapped image that will be rendered to a display.
 
 <div class="filename">MockCpuInterface.js</div>
 
@@ -625,7 +625,7 @@ In the interface, `keys` is a binary number consisting of 16 digits where each i
 0b0000000000110000 // Q and W are pressed (index 4, 5)
 ```
 
-Now if, for example, `V` is pressed (`keyMap[15]`) and the current nibble being accessed as an argument is `0xf` (decimal `15`), the key is pressed. Left shifting (`<<`) with `1` will create a binary number with a `1` followed by as many zeroes as are in the left shift.
+Now if, for example, `V` is pressed (`keyMap[15]`) and the operand is `0xf` (decimal `15`), the key is pressed. Left shifting (`<<`) with `1` will create a binary number with a `1` followed by as many zeroes as are in the left shift.
 
 ```js
 case 'SKP_VX':
@@ -637,9 +637,7 @@ case 'SKP_VX':
   }
 ```
 
-There is one other key method, `waitKey`, where the instruction is to wait for a keypress and return the key once pressed.
-
-The CPU does not have any instructions that actually update the keys - only instructions that work with key data, which is why each interface implementation will set the keys in its own way.
+There is one other key method, `waitKey`, where the instruction is to wait for a keypress and return the key once pressed. 
 
 ## CLI App - Interfacing with the Terminal
 
@@ -647,7 +645,7 @@ The first interface I made was for the terminal. This was less familiar to me th
 
 ![](../images/terminalpong.png)
 
-[Curses](<https://en.wikipedia.org/wiki/Curses_(programming_library)>) is a library used to create text user interfaces in the terminal. [Blessed](https://github.com/chjj/blessed) is a library based off curses for Node.js.
+[Curses](<https://en.wikipedia.org/wiki/Curses_(programming_library)>) is a library used to create text user interfaces in the terminal. [Blessed](https://github.com/chjj/blessed) is a library wrapping curses for Node.js.
 
 ### Screen
 
@@ -896,7 +894,7 @@ r.CloseWindow()
 
 ### Screen
 
-Within the `beginDrawing()` and `endDrawing()` methods, the screen will update. Unfortunately, for the Raylib implementation I had to access the interface directly from the script instead of keeping everything contained in the interface, but it works.
+Within the `beginDrawing()` and `endDrawing()` methods, the screen will update. For the Raylib implementation I accessed the interface directly from the script instead of keeping everything contained in the interface, but it works.
 
 ```js
 r.BeginDrawing()
