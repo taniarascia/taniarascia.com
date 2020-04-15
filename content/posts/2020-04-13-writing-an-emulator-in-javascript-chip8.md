@@ -1,6 +1,6 @@
 ---
 date: 2020-04-13
-title: 'Writing a Chip-8 Emulator in JavaScript (and Interfacing with Multiple UIs)'
+title: 'Writing an Emulator in JavaScript (and Interfacing with Multiple UIs)'
 template: post
 thumbnail: '../thumbnails/blinky.png'
 slug: writing-an-emulator-in-javascript-chip8
