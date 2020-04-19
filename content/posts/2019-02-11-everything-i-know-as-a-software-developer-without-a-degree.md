@@ -31,7 +31,7 @@ Here's what I learned in that period, although since I learned by doing, I didn'
 
 - An idea of what **HTML** (Hypertext Markup Language) is - the very first step to doing anything related to web development.
 - How to view the HTML **source** of a **web browser** (Netscape Navigator, and later Internet Explorer).
-- How to create and edit an HTML file with a **text editor** (Nodepad) and save it locally on my file system (Windows as my OS).
+- How to create and edit an HTML file with a **text editor** (Notepad) and save it locally on my file system (Windows as my OS).
 - Basic HTML **tags/elements** - text, headings, lists, tables, links, images, formatting (also blinking text).
 - How to make colors with **hex codes**.
 - How to use **FTP** (File Transfer Protocol) to upload files from my computer to a web **host** on the internet to make my website publicly accessible.
