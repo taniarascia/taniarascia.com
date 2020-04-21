@@ -15,7 +15,7 @@ export default class Footer extends Component {
           <a href="https://patreon.com/taniarascia" target="_blank" rel="noopener noreferrer">
             Patreon
           </a>
-          <Link to="/contact">Newsletter</Link>
+          <Link to="/newsletter">Newsletter</Link>
           <a href="https://www.taniarascia.com/rss.xml" target="_blank" rel="noopener noreferrer">
             RSS
           </a>
@@ -36,7 +36,7 @@ export default class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer"
               className="footer-img"
-              alt="GitHub"
+              alt="Netlify"
             />
           </a>
           <a href="https://www.gatsbyjs.org/" title="Built with Gatsby">
@@ -45,7 +45,7 @@ export default class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer"
               className="footer-img"
-              alt="GitHub"
+              alt="Gatsby"
             />
           </a>
         </div>

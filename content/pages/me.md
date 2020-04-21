@@ -15,7 +15,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 - 🔪 has a degree in culinary arts and worked in kitchens for 8 years
 - 🥾 has taken a solo-backpacking trip to around 20 countries
 - 🇪🇸 can speak Spanish
-- 💾 has the coolest handle on reddit
+- 💾 has the best handle on reddit
 - 👾 loves old strategy games and old technology
 - ☕ needs coffee
 - 🍺 also needs beer

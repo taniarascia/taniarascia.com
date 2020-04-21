@@ -109,7 +109,7 @@ This is not everything I know, but a good amount of the things I've documented s
 - [x] [Bind, Call, Apply and `this`](/this-bind-call-apply-javascript/)
 - [x] [Map and Set](/understanding-map-and-set-javascript)
 - [x] [Generators](/understanding-generators-in-javascript)
-- [x] [Default Parameters](/default-parameters-javascriptt)
+- [x] [Default Parameters](/default-parameters-javascript)
 
 #### Document Object Model (DOM)
 

@@ -20,7 +20,7 @@ const config = {
   userTwitter: 'taniarascia',
   menuLinks: [
     {
-      name: 'About me',
+      name: 'About',
       link: '/me/',
     },
     {
@@ -28,8 +28,8 @@ const config = {
       link: '/blog/',
     },
     {
-      name: 'Contact',
-      link: '/contact/',
+      name: 'Newsletter',
+      link: '/newsletter/',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.

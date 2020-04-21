@@ -12,7 +12,7 @@ import projects from '../../data/projects'
 import speaking from '../../data/speaking'
 import podcasts from '../../data/podcasts'
 import quotes from '../../data/quotes'
-import tania from '../../content/images/profile.jpg'
+import tania from '../../content/images/tania2020crop.jpg'
 
 export default class Index extends Component {
   render() {

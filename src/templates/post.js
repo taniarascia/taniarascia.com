@@ -8,7 +8,7 @@ import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
-import tania from '../../content/images/profile-small.jpg'
+import tania from '../../content/images/tania2020crop.jpg'
 
 export default class PostTemplate extends Component {
   render() {
