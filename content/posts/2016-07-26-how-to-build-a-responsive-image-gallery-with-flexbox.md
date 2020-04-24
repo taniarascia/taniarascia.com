@@ -191,7 +191,6 @@ Here's an example using the flex grid above and pulling all images from the gall
           ?>
 
     <div class="cell"><a href="<?php echo $image[0]; ?>"><img src="<?php echo $thumb[0]; ?>" class="responsive-image"></a>
-```
 
     			<?php endwhile; ?>
     	</div>
