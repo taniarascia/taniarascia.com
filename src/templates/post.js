@@ -30,7 +30,6 @@ export default class PostTemplate extends Component {
     }
 
     const date = formatDate(post.date)
-    const githubLink = editOnGithub(post)
     const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
       config.siteUrl
     }/${post.slug}/&via=taniarascia`
@@ -59,7 +58,6 @@ export default class PostTemplate extends Component {
                 >
                   Share
                 </a>
-                /
               </div>
               <PostTags tags={post.tags} />
             </div>

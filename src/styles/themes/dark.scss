@@ -313,6 +313,7 @@ $dark-primary: $tag;
 
     a {
       color: lighten($yellow, 25%) !important;
+      background: darken($yellow, 50%) !important;
       border-bottom: $yellow !important;
 
       &:hover {

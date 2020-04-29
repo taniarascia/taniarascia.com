@@ -4,15 +4,6 @@
 
 Tania's personal website running on Gatsby, React, and Node.js.
 
-## Features
-
-- Posts and pages in Markdown
-- Tags and categories
-- Night mode
-- DOS mode (404)
-- Code theme (starring [New Moon](https://taniarascia.github.io/new-moon))
-- Sass (starring [Primitive](https://taniarascia.github.io/primitive))
-
 ## Acknowledgements
 
 - Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/)
