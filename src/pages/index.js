@@ -28,7 +28,7 @@ export default class Index extends Component {
         <div className="container">
           <div className="lead">
             <div className="elevator">
-              <h1>{`Hey, I'm Tania 👋`} </h1>
+              <h1>{`Hey, I'm Tania`} </h1>
               <p>
                 {`I'm a full stack software developer creating `}
                 <a href="https://github.com/taniarascia" target="_blank" rel="noopener noreferrer">

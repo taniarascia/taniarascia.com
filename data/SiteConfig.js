@@ -28,8 +28,8 @@ const config = {
       link: '/blog/',
     },
     {
-      name: 'Newsletter',
-      link: '/newsletter/',
+      name: 'Contact',
+      link: '/contact/',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.

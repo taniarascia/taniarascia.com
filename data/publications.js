@@ -150,6 +150,11 @@ export default {
       path:
         'https://www.digitalocean.com/community/tutorials/understanding-default-parameters-in-javascript',
     },
+    {
+      title: 'Understanding Destructuring, Rest Parameters, and Spread Syntax',
+      path:
+        'https://www.digitalocean.com/community/tutorials/understanding-destructuring-rest-parameters-and-spread-syntax-in-javascript',
+    },
   ],
   LogRocket: [
     {
