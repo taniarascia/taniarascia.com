@@ -4,6 +4,8 @@
 
 Tania's personal website running on Gatsby, React, and Node.js.
 
+**Note**: The source for this site was not created to be a template or theme. It is not intended to be cloned, installed, and deployed. As such, I do not provide support or guidance for doing that. I recommend using the [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) to set up a blog.
+
 ## Acknowledgements
 
 - Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/)
