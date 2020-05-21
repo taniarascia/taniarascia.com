@@ -35,7 +35,7 @@ export default class Footer extends Component {
               alt="Netlify"
             />
           </a>
-          <a href="https://www.gatsbyjs.org/" title="Built with Gatsby" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.gatsbyjs.org/" title="Built with Gatsby" target="_blank" rel="noopener noreferrer" style={{marginRight: 0}}>
             <img
               src={gatsby}
               className="footer-img"
