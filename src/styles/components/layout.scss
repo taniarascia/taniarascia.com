@@ -17,6 +17,7 @@
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
+  overflow-wrap: break-word;
 }
 
 @include small-breakpoint {
