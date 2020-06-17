@@ -89,12 +89,12 @@ export default class Index extends Component {
           </section>
 
           <section className="section">
-            <h2>Interviews</h2>
+            <h2>Interviews &amp; Podcasts</h2>
             <SimpleListing simple data={podcasts} />
           </section>
 
           <section className="section">
-            <h2>Talks</h2>
+            <h2>Speaking</h2>
             <SimpleListing simple data={speaking} />
           </section>
         </div>
