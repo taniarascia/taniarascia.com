@@ -26,9 +26,7 @@ export default function PostTemplate({ data, pageContext }) {
         </article>
         <Sidebar post={post} />
       </section>
-      <section>
-        <Suggested previous={previous} next={next} />
-      </section>
+      <Suggested previous={previous} next={next} />
     </Layout>
   )
 }

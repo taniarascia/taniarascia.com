@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="footer container">
       <section className="flex">
-        <nav>
+        <nav className="footer-links">
           <Link to="/blog">Blog</Link>
           <Link to="/guides">Guides</Link>
           <a

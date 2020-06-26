@@ -23,6 +23,10 @@ export default function BlogIndex({ data }) {
       <section>
         <h1>Guides</h1>
         <p className="subtitle">The missing instruction manuals of the web.</p>
+        <p className="medium">
+          This is where I put my long-form tutorials, walkthroughs, references, and
+          resources on design, development, and programming.
+        </p>
         <Guides data={simplifiedPosts} />
       </section>
     </Layout>

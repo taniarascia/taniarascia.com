@@ -34,7 +34,13 @@ html {
 
 body {
   margin: 0;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    padding: 0 2rem;
+  }
 }
 
 article {
@@ -75,6 +81,16 @@ table,
 blockquote {
   font-size: 1.05rem;
   margin: 0 0 1.5rem 0;
+}
+
+ul {
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  ul {
+    padding: 0 2rem;
+  }
 }
 
 ul li p {
@@ -152,15 +168,15 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 h2 code {
-  font-size: 2rem !important;
+  font-size: 1.75rem !important;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--font-color);
   font-weight: 600;
 }
@@ -180,6 +196,19 @@ h5 {
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  h2 code {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    color: var(--font-color);
+    font-weight: 600;
   }
 }
 
@@ -333,7 +362,7 @@ main {
 .navbar a,
 .footer a {
   border-radius: 0.3rem;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem;
   margin: 0 0.25rem;
   color: var(--light-font-color);
   border-bottom: none;
@@ -394,13 +423,20 @@ main {
 /* Footer */
 
 .footer {
-  margin: 5rem auto;
+  margin: 3rem auto;
 }
 
 .footer > .flex {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .flex nav {
@@ -426,6 +462,10 @@ main {
 }
 
 @media screen and (min-width: 800px) {
+  .footer {
+    margin: 5rem auto;
+  }
+
   .footer > .flex {
     align-items: flex-start;
     margin-left: -1.5rem;
@@ -492,9 +532,11 @@ tbody tr:nth-child(even) {
   grid-template-columns: 40px auto;
 }
 
-.description {
+.row .cell.description {
   grid-column: 1 / span 2;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  font-size: 1.1rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -507,7 +549,7 @@ tbody tr:nth-child(even) {
     grid-template-columns: 50px 1fr 4fr;
   }
 
-  .description {
+  .row .cell.description {
     grid-column: auto;
     margin-bottom: 0;
   }
@@ -532,7 +574,7 @@ tbody tr:nth-child(even) {
 .posts .row,
 .lists .row {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-bottom: none;
 }
 
@@ -543,12 +585,19 @@ tbody tr:nth-child(even) {
   color: var(--dark-font-color);
   font-size: 1.2rem;
   line-height: 1.2;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
+}
+
+.row .cell time {
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width: 800px) {
   .row .cell {
     font-size: 1.1rem;
+  }
+  .row .cell time {
+    font-size: 0.9rem;
   }
   .row .cell.simple {
     padding: 0.5rem 0;
@@ -617,6 +666,7 @@ tbody tr:nth-child(even) {
 .grid.guide h2 {
   margin: 0;
   font-size: 1rem;
+  flex: 1;
 }
 
 @media screen and (min-width: 600px) {
@@ -631,6 +681,7 @@ tbody tr:nth-child(even) {
   .grid.guide h2 {
     text-align: center;
     margin: 1rem 0 0;
+    flex: none;
   }
   .grid.guide .gatsby-image-wrapper {
     margin-right: 0;
@@ -663,7 +714,7 @@ tbody tr:nth-child(even) {
 }
 
 .article-header h1 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
 }
@@ -702,13 +753,13 @@ tbody tr:nth-child(even) {
 /* Suggested */
 
 .suggested {
+  flex-direction: column;
+  align-items: stretch;
   margin-left: -1rem;
   margin-right: -1rem;
-  align-items: stretch;
 }
 
 .suggested a {
-  flex: 1;
   text-align: center;
   margin: 1rem;
   border-bottom: none;
@@ -724,6 +775,15 @@ tbody tr:nth-child(even) {
   transform: translate3D(0, -1px, 0);
   box-shadow: 0 8px 22px rgba(100, 110, 140, 0.2),
     0 5px 18px rgba(100, 110, 140, 0.25);
+}
+
+@media screen and (min-width: 800px) {
+  .suggested {
+    flex-direction: row;
+  }
+  .suggested a {
+    flex: 0 0 calc(50% - 2rem);
+  }
 }
 
 /* Helpers */
