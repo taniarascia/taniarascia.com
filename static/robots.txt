@@ -1,3 +1,0 @@
-User-agent: *
-
-sitemap: https://www.taniarascia.com/sitemap.xml

@@ -1,53 +1,35 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
+import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../layout'
+import Helmet from 'react-helmet'
+
+import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
 
-export default class PageTemplate extends Component {
-  render() {
-    const { slug } = this.props.pageContext
-    const postNode = this.props.data.markdownRemark
-    const page = postNode.frontmatter
+import config from '../utils/config'
 
-    if (!page.id) {
-      page.id = slug
-    }
+export default function PageTemplate({ data }) {
+  const post = data.markdownRemark
 
-    return (
-      <Layout>
-        <Helmet>
-          <title>{`${page.title} – ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <div className="container">
-          <article>
-            <header className="page-header">
-              <h1>{page.title}</h1>
-            </header>
-            <div className="page" dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          </article>
-        </div>
-      </Layout>
-    )
-  }
+  return (
+    <Layout>
+      <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
+      <SEO />
+      <article>
+        <header>
+          <h1>{post.frontmatter.title}</h1>
+        </header>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </article>
+    </Layout>
+  )
 }
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      timeToRead
-      excerpt
       frontmatter {
         title
-        template
-      }
-      fields {
-        slug
-        date
       }
     }
   }
