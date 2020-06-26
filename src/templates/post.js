@@ -12,7 +12,6 @@ import config from '../utils/config'
 export default function PostTemplate({ data, pageContext }) {
   const post = data.markdownRemark
   const { previous, next } = pageContext
-  console.log(post)
 
   return (
     <Layout>
