@@ -328,6 +328,10 @@ a:hover {
   color: var(--heading-color);
 }
 
+a.gatsby-resp-image-link:hover {
+  border-bottom: none;
+}
+
 a code {
   border-bottom: 2px solid var(--link-color);
 }

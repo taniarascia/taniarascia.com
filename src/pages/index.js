@@ -56,7 +56,7 @@ export default function BlogIndex({ data }) {
         </p>
         <p>
           You can <Link to="/blog">read my posts</Link>,{' '}
-          <Link to="/blog">view my development guides</Link>, or contact me at{' '}
+          <Link to="/blog">view my dev guides</Link>, or contact me at{' '}
           <b>hello</b> at <b>taniarasica.com</b>.
         </p>
       </section>
