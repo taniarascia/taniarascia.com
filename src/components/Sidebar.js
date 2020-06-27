@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import patreon from '../../content/thumbnails/patreon-light.png'
 import kofi from '../../content/thumbnails/kofi.png'
 import rss from '../../content/thumbnails/rss.png'
+import email from '../../content/images/email.png'
 
 import { slugify } from '../utils/helpers'
 
@@ -55,6 +56,7 @@ export default function Sidebar({ post }) {
               <mark>No bullshit</mark>
             </li>
           </ul>
+          <h3>Support</h3>
           <p>
             If you like what I do and would like to support me, you can do so
             below!
@@ -64,7 +66,7 @@ export default function Sidebar({ post }) {
               href="https://ko-fi.com/taniarascia"
               target="_blank"
               rel="noreferrer"
-              className="kofi"
+              className="link"
             >
               <img src={kofi} alt="Patreon" /> <span>Buy me a coffee</span>
             </a>
@@ -72,9 +74,9 @@ export default function Sidebar({ post }) {
               href="https://patreon.com/taniarascia"
               target="_blank"
               rel="noreferrer"
-              className="patreon"
+              className="link patreon"
             >
-              <img src={patreon} alt="Kofi" /> <span>Become a Patron</span>
+              <img src={patreon} alt="Patreon" /> <span>Become a Patron</span>
             </a>
           </nav>
         </section>
@@ -82,8 +84,7 @@ export default function Sidebar({ post }) {
           <h3>Stay in touch</h3>
           <p>
             Every now and then I'll send out an email when I've created
-            something new. No spam, unsubscribe whenever. Or follow on
-            RSS.
+            something new. No spam, unsubscribe whenever. Or follow on RSS.
           </p>
           <nav>
             <a
@@ -92,13 +93,14 @@ export default function Sidebar({ post }) {
               rel="noreferrer"
               className="link"
             >
-              Subscribe to the email list
+              <img src={email} alt="Email" />
+              <span>Subscribe to the email list</span>
             </a>
             <Link
               to="/rss.xml"
               target="_blank"
               rel="noreferrer"
-              className="rss"
+              className="link"
             >
               <img src={rss} alt="RSS" /> <span>RSS Feed</span>
             </Link>

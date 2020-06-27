@@ -55,9 +55,9 @@ export default function BlogIndex({ data }) {
           days.
         </p>
         <p>
-          You can <Link to="/blog">read my posts</Link>,{' '}
-          <Link to="/guides">view my dev guides</Link>, or contact me at{' '}
-          <b>hello</b> at <b>taniarascia.com</b>.
+          You can read my <Link to="/blog">blog</Link>, view my{' '}
+          <Link to="/guides">dev guides</Link>, or contact me at <b>hello</b> at{' '}
+          <b>taniarascia.com</b>.
         </p>
       </section>
       <Section title="Latest">

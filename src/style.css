@@ -231,14 +231,6 @@ aside h3 {
   font-size: 1.4rem;
 }
 
-aside a.link {
-  display: block;
-  padding: 0.75rem;
-  border-radius: 0.3rem;
-  border-bottom: 0;
-  color: var(--heading-color);
-}
-
 aside a.link:hover {
   border-bottom: 0;
   background: var(--light-background);
@@ -259,43 +251,27 @@ aside a.link:hover {
   }
 }
 
-a.kofi,
-a.patreon,
-a.rss {
+a.link {
   display: grid;
-  grid-template-columns: 40px auto;
+  grid-template-columns: 45px auto;
+  align-items: center;
   color: var(--heading-color);
   border-bottom: none;
   padding: 0.75rem;
   border-radius: 0.3rem;
-  align-items: center;
 }
 
-a.kofi:hover,
-a.patreon:hover,
-a.rss:hover {
+a.link:hover {
   border-bottom: none;
   background: var(--light-background);
 }
 
-.kofi img,
-.patreon img,
-.rss img {
+a.link img {
   display: inline-block;
   height: auto;
   margin-right: 1rem;
-}
-
-.kofi img {
-  width: 30px;
-}
-
-.rss img {
-  width: 30px;
-}
-
-.patreon img {
-  width: 25px;
+  height: 22px;
+  width: auto;
 }
 
 /* Main */
@@ -844,8 +820,8 @@ time,
 .tags > a {
   display: block;
   font-weight: 500;
-  background: #f8f9fa;
-  color: #868e96;
+  background: #f1f3f5;
+  color: #343a40;
   margin: 0.2rem;
   padding: 0.4rem 0.5rem;
   font-size: 0.8rem;
@@ -873,14 +849,14 @@ mark {
 
 a.tag-javascript,
 a.tag-sql {
-  background: #fff9db;
-  color: #fab005;
+  background: #fff3bf;
+  color: black;
 }
 
 a.tag-javascript:hover,
 a.tag-sql:hover {
-  background: #fab005;
-  color: white;
+  background: #ffd43b;
+  color: black;
 }
 
 a.tag-linux,
@@ -888,7 +864,7 @@ a.tag-git,
 a.tag-snippets,
 a.tag-html {
   background: #fff4e6;
-  color: #fd7e14;
+  color: #e8590c;
 }
 
 a.tag-linux:hover,
@@ -901,7 +877,7 @@ a.tag-html:hover {
 
 a.tag-vue,
 a.tag-new-year {
-  color: #0ca678;
+  color: #087f5b;
   background: #e6fcf5;
 }
 
@@ -914,8 +890,8 @@ a.tag-new-year:hover {
 a.tag-fundamentals,
 a.tag-game,
 a.tag-testing {
-  background: #ebfbee;
-  color: #37b24d;
+  background: #d3f9d8;
+  color: #111;
 }
 
 a.tag-fundamentals:hover,
@@ -929,7 +905,7 @@ a.tag-node,
 a.tag-security,
 a.tag-automation {
   background: #fff5f5;
-  color: #f03e3e;
+  color: #e03131;
 }
 
 a.tag-node:hover,
@@ -945,7 +921,7 @@ a.tag-reference,
 a.tag-notes,
 a.tag-jQuery {
   background: #e3fafc;
-  color: #1098ad;
+  color: #0c8599;
 }
 
 a.tag-wordpress:hover,
@@ -961,7 +937,7 @@ a.tag-css,
 a.tag-dom,
 a.tag-architecture {
   background: #e7f5ff;
-  color: #1c7ed6;
+  color: #1971c2;
 }
 
 a.tag-css:hover,
@@ -976,7 +952,7 @@ a.tag-redux,
 a.tag-gatsby,
 a.tag-life {
   background: #f3f0ff;
-  color: #7950f2;
+  color: #6741d9;
 }
 
 a.tag-php:hover,
@@ -990,7 +966,7 @@ a.tag-life:hover {
 a.tag-react,
 a.tag-api {
   background: #edf2ff;
-  color: #4263eb;
+  color: #3b5bdb;
 }
 
 a.tag-react:hover,
@@ -1002,7 +978,7 @@ a.tag-api:hover {
 a.tag-design,
 a.tag-database {
   background: #fff0f6;
-  color: #e64980;
+  color: #c2255c;
 }
 
 a.tag-design:hover,
@@ -1013,7 +989,7 @@ a.tag-database:hover {
 
 a.tag-notes {
   background: #f8f0fc;
-  color: #ae3ec9;
+  color: #9c36b5;
 }
 
 a.tag-notes:hover {
