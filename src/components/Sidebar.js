@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 
 import patreon from '../../content/thumbnails/patreon-light.png'
 import kofi from '../../content/thumbnails/kofi.png'
+import rss from '../../content/thumbnails/rss.png'
 
 import { slugify } from '../utils/helpers'
 
@@ -58,36 +59,50 @@ export default function Sidebar({ post }) {
             If you like what I do and would like to support me, you can do so
             below!
           </p>
-          <a
-            href="https://ko-fi.com/taniarascia"
-            target="_blank"
-            rel="noreferrer"
-            className="kofi"
-          >
-            <img src={kofi} alt="Patreon" /> <span>Buy me a coffee</span>
-          </a>
-          <a
-            href="https://patreon.com/taniarascia"
-            target="_blank"
-            rel="noreferrer"
-            className="patreon"
-          >
-            <img src={patreon} alt="Kofi" /> <span>Become a Patron</span>
-          </a>
+          <nav>
+            <a
+              href="https://ko-fi.com/taniarascia"
+              target="_blank"
+              rel="noreferrer"
+              className="kofi"
+            >
+              <img src={kofi} alt="Patreon" /> <span>Buy me a coffee</span>
+            </a>
+            <a
+              href="https://patreon.com/taniarascia"
+              target="_blank"
+              rel="noreferrer"
+              className="patreon"
+            >
+              <img src={patreon} alt="Kofi" /> <span>Become a Patron</span>
+            </a>
+          </nav>
         </section>
         <section>
-          <h3>Email list</h3>
+          <h3>Stay in touch</h3>
           <p>
             Every now and then I'll send out an email when I've created
-            something new. Never any spam, easy unsubscribe whenever.
+            something new. No spam, unsubscribe whenever. Or follow on
+            RSS.
           </p>
-          <a
-            href="https://taniarascia.substack.com/subscribe"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Subscribe to the email list
-          </a>
+          <nav>
+            <a
+              href="https://taniarascia.substack.com/subscribe"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              Subscribe to the email list
+            </a>
+            <Link
+              to="/rss.xml"
+              target="_blank"
+              rel="noreferrer"
+              className="rss"
+            >
+              <img src={rss} alt="RSS" /> <span>RSS Feed</span>
+            </Link>
+          </nav>
         </section>
       </div>
     </aside>

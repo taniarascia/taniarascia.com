@@ -231,6 +231,19 @@ aside h3 {
   font-size: 1.4rem;
 }
 
+aside a.link {
+  display: block;
+  padding: 0.75rem;
+  border-radius: 0.3rem;
+  border-bottom: 0;
+  color: var(--heading-color);
+}
+
+aside a.link:hover {
+  border-bottom: 0;
+  background: var(--light-background);
+}
+
 .aside-content {
   border-top: 2px solid var(--light-background);
 }
@@ -247,29 +260,37 @@ aside h3 {
 }
 
 a.kofi,
-a.patreon {
+a.patreon,
+a.rss {
   display: grid;
   grid-template-columns: 40px auto;
   color: var(--heading-color);
   border-bottom: none;
   padding: 0.75rem;
   border-radius: 0.3rem;
+  align-items: center;
 }
 
 a.kofi:hover,
-a.patreon:hover {
+a.patreon:hover,
+a.rss:hover {
   border-bottom: none;
   background: var(--light-background);
 }
 
 .kofi img,
-.patreon img {
+.patreon img,
+.rss img {
   display: inline-block;
   height: auto;
   margin-right: 1rem;
 }
 
 .kofi img {
+  width: 30px;
+}
+
+.rss img {
   width: 30px;
 }
 

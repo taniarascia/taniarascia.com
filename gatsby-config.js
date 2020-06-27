@@ -8,6 +8,8 @@ module.exports = {
     siteUrl: 'https://www.taniarascia.com',
     description:
       'Software engineer and open source creator. This is my digital garden.',
+    feedUrl: 'https://www.taniarascia.com/rss.xml',
+    logo: 'https://www.taniarascia.com/logo.png',
   },
   plugins: [
     // ===================================================================================
@@ -28,6 +30,65 @@ module.exports = {
         theme_color: '#5183f5',
         display: 'minimal-ui',
         icon: `static/logo.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  categories: edge.node.frontmatter.tags,
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { frontmatter: { template: { eq: "post" } } }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { 
+                        slug 
+                      }
+                      frontmatter {
+                        title
+                        date
+                        tags
+                        template
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'Tania Rascia | RSS Feed',
+          },
+        ],
       },
     },
 

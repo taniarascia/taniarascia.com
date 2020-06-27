@@ -19,12 +19,13 @@ export default function Footer() {
           >
             Email list
           </a>
+          <Link to="/rss.xml">RSS feed</Link>
           <a
             href="https://ko-fi.com/taniarascia"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ko-Fi
+            Ko-fi
           </a>
           <a
             href="https://patreon.com/taniarascia"
