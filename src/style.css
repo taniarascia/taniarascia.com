@@ -181,6 +181,10 @@ h3 {
   font-weight: 600;
 }
 
+h3 code {
+  font-size: 1.5rem !important;
+}
+
 h4 {
   font-size: 1.4rem;
   color: var(--font-color);
@@ -209,6 +213,10 @@ h5 {
     font-size: 1.6rem;
     color: var(--font-color);
     font-weight: 600;
+  }
+
+  h3 code {
+    font-size: 1.6rem !important;
   }
 }
 
