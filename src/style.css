@@ -717,7 +717,7 @@ tbody tr:nth-child(even) {
 /* Post */
 
 .grid.post {
-  grid-gap: 3rem;
+  grid-gap: 1rem;
   margin-left: 0;
   margin-right: 0;
 }
@@ -730,6 +730,7 @@ tbody tr:nth-child(even) {
 
 @media screen and (min-width: 1100px) {
   .grid.post {
+    grid-gap: 3rem;
     grid-template-columns: 3fr 1fr;
   }
 
@@ -897,27 +898,27 @@ a.tag-new-year:hover {
 
 a.tag-fundamentals,
 a.tag-game,
-a.tag-testing {
+a.tag-testing,
+a.tag-security {
   background: #d3f9d8;
   color: #111;
 }
 
 a.tag-fundamentals:hover,
 a.tag-game:hover,
-a.tag-testing:hover {
+a.tag-testing:hover,
+a.tag-security:hover {
   background: #37b24d;
   color: white;
 }
 
 a.tag-node,
-a.tag-security,
 a.tag-automation {
   background: #fff5f5;
   color: #e03131;
 }
 
 a.tag-node:hover,
-a.tag-security:hover,
 a.tag-automation:hover {
   background: #f03e3e;
   color: white;
@@ -1003,4 +1004,19 @@ a.tag-notes {
 a.tag-notes:hover {
   background: #ae3ec9;
   color: white;
+}
+
+.mobile-only {
+  display: block !important;
+}
+
+.mobile-only.gatsby-image-wrapper {
+  height: 100px !important;
+  width: 100px !important;
+}
+
+@media screen and (min-width: 1100px) {
+  .mobile-only {
+    display: none !important;
+  }
 }

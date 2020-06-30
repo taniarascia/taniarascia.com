@@ -29,8 +29,8 @@ export default function TagTemplate({ data, pageContext }) {
           {message}
         </p>
       </section>
-      <section className="medium">
-        <Posts data={simplifiedPosts} />
+      <section>
+        <Posts data={simplifiedPosts} tags />
       </section>
     </Layout>
   )
@@ -38,7 +38,10 @@ export default function TagTemplate({ data, pageContext }) {
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
-    allMarkdownRemark(filter: { frontmatter: { tags: { in: [$tag] } } }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
       totalCount
       edges {
         node {

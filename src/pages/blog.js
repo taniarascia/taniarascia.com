@@ -16,7 +16,7 @@ export default function BlogIndex({ data }) {
   return (
     <Layout>
       <Helmet title={`Blog | ${config.siteTitle}`} />
-      <SEO />
+      <SEO customDescription="Articles, tutorials, snippets, musings, and everything else." />
       <section>
         <h1>Blog</h1>
         <p className="subtitle">
