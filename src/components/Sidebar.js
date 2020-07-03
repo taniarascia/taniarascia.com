@@ -7,9 +7,11 @@ import kofi from '../../content/thumbnails/kofi.png'
 import rss from '../../content/thumbnails/rss.png'
 import email from '../../content/images/email.png'
 
+import SearchForm from '../components/SearchForm'
+
 import { slugify } from '../utils/helpers'
 
-export default function Sidebar({ post }) {
+export default function Sidebar({ post, ...props }) {
   const { tags, thumbnail } = post.frontmatter
 
   return (
@@ -105,6 +107,11 @@ export default function Sidebar({ post }) {
               <img src={rss} alt="RSS" /> <span>RSS Feed</span>
             </Link>
           </nav>
+        </section>
+        <section>
+          <h3>Search</h3>
+          <p>This search actually works, I promise.</p>
+          <SearchForm {...props} />
         </section>
       </div>
     </aside>

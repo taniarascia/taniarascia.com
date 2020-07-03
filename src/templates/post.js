@@ -10,10 +10,10 @@ import SEO from '../components/SEO'
 
 import config from '../utils/config'
 
-export default function PostTemplate({ data, pageContext }) {
+export default function PostTemplate({ data, pageContext, ...props }) {
   const post = data.markdownRemark
   const { previous, next } = pageContext
-  const { tags, thumbnail } = post.frontmatter
+  const { thumbnail } = post.frontmatter
 
   return (
     <Layout>
@@ -32,7 +32,7 @@ export default function PostTemplate({ data, pageContext }) {
         <article>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
-        <Sidebar post={post} />
+        <Sidebar post={post} {...props} />
       </section>
       <Suggested previous={previous} next={next} />
     </Layout>

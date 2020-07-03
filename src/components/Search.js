@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
+import * as queryString from 'query-string'
 
 import Posts from './Posts'
 
-export default function Search({ posts }) {
-  const [query, setQuery] = useState('')
+export default function Search({ posts, location, navigate }) {
+  const { search } = queryString.parse(location.search)
+  const [query, setQuery] = useState(search || '')
   const { localSearchPages } = useStaticQuery(graphql`
     query {
       localSearchPages {
@@ -27,7 +29,11 @@ export default function Search({ posts }) {
         id="search"
         type="search"
         placeholder="Search all posts..."
-        onChange={(e) => setQuery(e.target.value)}
+        value={query}
+        onChange={(e) => {
+          navigate(e.target.value ? `/blog/?search=${e.target.value}` : '')
+          setQuery(e.target.value)
+        }}
       />
       <section>
         {query ? (

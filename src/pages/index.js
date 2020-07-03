@@ -7,6 +7,7 @@ import Posts from '../components/Posts'
 import Lists from '../components/Lists'
 import Projects from '../components/Projects'
 import SEO from '../components/SEO'
+import SearchForm from '../components/SearchForm'
 
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -15,7 +16,7 @@ import projects from '../data/projects'
 import interviews from '../data/interviews'
 import speaking from '../data/speaking'
 
-export default function BlogIndex({ data }) {
+export default function BlogIndex({ data, ...props }) {
   const latest = data.latest.edges
   const popular = data.popular.edges
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
@@ -87,6 +88,10 @@ export default function BlogIndex({ data }) {
         >
           Subscribe to the email list
         </a>
+      </Section>
+      <Section title="Search" className="small">
+        <p>Search anything on the site.</p>
+        <SearchForm {...props} />
       </Section>
     </Layout>
   )

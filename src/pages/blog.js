@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function BlogIndex({ data }) {
+export default function BlogIndex({ data, ...props }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
 
@@ -22,7 +22,7 @@ export default function BlogIndex({ data }) {
         <p className="subtitle">
           Articles, tutorials, snippets, musings, and everything else.
         </p>
-        <Search posts={simplifiedPosts} />
+        <Search posts={simplifiedPosts} {...props} />
       </section>
     </Layout>
   )

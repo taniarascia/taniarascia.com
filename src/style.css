@@ -227,8 +227,9 @@ aside {
 }
 
 aside p,
-aside ul {
-  font-size: 0.95rem;
+aside ul,
+aside a {
+  font-size: 0.9rem;
 }
 
 aside ul {
@@ -236,7 +237,7 @@ aside ul {
 }
 
 aside h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 aside a.link:hover {
@@ -325,7 +326,7 @@ p.subtitle {
 a {
   color: var(--link-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 a:hover {
