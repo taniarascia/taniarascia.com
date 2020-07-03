@@ -743,6 +743,10 @@ tbody tr:nth-child(even) {
 
 /* Search */
 
+.search-form {
+  display: flex;
+}
+
 [type='search'] {
   display: block;
   padding: 0.8rem 1rem;
@@ -751,6 +755,30 @@ tbody tr:nth-child(even) {
   max-width: 400px;
   border-radius: 0.3rem;
   font-size: 1rem;
+  -webkit-appearance: none;
+}
+
+.search-form [type='search'] {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+button {
+  /* background: var(--link-color); */
+  /* color: white; */
+  font-weight: 500;
+  font-size: 1.3rem;
+  border: 2px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
+button:hover {
+  background: #eee;
 }
 
 ::placeholder,

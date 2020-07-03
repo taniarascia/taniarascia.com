@@ -5,6 +5,7 @@ export default function SearchForm({ posts, location, navigate }) {
 
   return (
     <form
+      className="search-form"
       onSubmit={(e) => {
         e.preventDefault()
         if (!query) return
@@ -21,6 +22,7 @@ export default function SearchForm({ posts, location, navigate }) {
           setQuery(e.target.value)
         }}
       />
+      <button>🔍</button>
     </form>
   )
 }

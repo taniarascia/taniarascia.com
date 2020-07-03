@@ -57,8 +57,8 @@ export default function BlogIndex({ data, ...props }) {
         </p>
         <p>
           You can read my <Link to="/blog">blog</Link>, view my{' '}
-          <Link to="/guides">dev guides</Link>, or contact me at <b>hello</b> at{' '}
-          <b>taniarascia.com</b>.
+          <Link to="/guides">dev guides</Link>, or contact{' '}
+          <Link to="/me">me</Link> at <b>hello</b> at <b>taniarascia.com</b>.
         </p>
       </section>
       <Section title="Latest">
@@ -90,7 +90,7 @@ export default function BlogIndex({ data, ...props }) {
         </a>
       </Section>
       <Section title="Search" className="small">
-        <p>Search anything on the site.</p>
+        <p>Search anything in the blog.</p>
         <SearchForm {...props} />
       </Section>
     </Layout>
