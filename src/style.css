@@ -223,7 +223,7 @@ h5 {
 /* Sidebar */
 
 aside {
-  min-width: 300px;
+  min-width: 260px;
 }
 
 aside p,
@@ -258,6 +258,13 @@ aside a.link:hover {
   .aside-content section {
     margin-top: 0.25rem;
   }
+}
+
+.avatar {
+  display: block;
+  border-radius: 50%;
+  max-width: 180px;
+  margin: 0 auto 1rem;
 }
 
 a.link {
@@ -300,13 +307,43 @@ a.link img {
   font-size: 1.1rem;
 }
 
+.lead h1,
+.lead p {
+  max-width: 600px;
+}
+
+.lead img {
+  display: none;
+}
+
 @media screen and (min-width: 800px) {
+  .lead {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .lead h1 {
     font-size: 3rem;
   }
 
   .lead p {
     font-size: 1.2rem;
+  }
+
+  .lead img {
+    border-radius: 16px;
+    display: block !important;
+    margin-left: 2rem;
+    max-width: 200px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .lead {
+    align-items: center;
+  }
+  .lead img {
+    max-width: 350px;
   }
 }
 
@@ -488,7 +525,7 @@ main {
 }
 
 .emoji {
-  margin: 0 0.4rem 0 0.1rem;
+  margin: 0 0.5rem 0 0.1rem;
 }
 
 /* Tables */
@@ -723,10 +760,15 @@ tbody tr:nth-child(even) {
   margin-right: 0;
 }
 
+.article-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
 .article-header h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
+  margin: 0;
 }
 
 @media screen and (min-width: 1100px) {
@@ -737,8 +779,18 @@ tbody tr:nth-child(even) {
 
   .article-header h1 {
     font-size: 2.75rem;
-    margin-bottom: 3rem;
   }
+}
+
+.post-thumbnail {
+  display: block !important;
+}
+
+.post-thumbnail.gatsby-image-wrapper {
+  min-width: 75px;
+  height: 75px !important;
+  width: 75px !important;
+  margin-right: 1.5rem;
 }
 
 /* Search */
@@ -765,8 +817,6 @@ tbody tr:nth-child(even) {
 }
 
 button {
-  /* background: var(--link-color); */
-  /* color: white; */
   font-weight: 500;
   font-size: 1.3rem;
   border: 2px solid var(--border);
@@ -787,6 +837,23 @@ button:hover {
 :-moz-placeholder,
 :-ms-input-placeholder {
   color: var(--light-font-color);
+}
+
+.button {
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: 2px solid var(--link-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: var(--link-color);
+  color: white;
+  border-radius: 0.3rem;
+}
+
+.button:hover {
+  border: 2px solid #4068c4;
+  background: #4068c4;
+  color: white;
 }
 
 /* Suggested */
@@ -1033,19 +1100,4 @@ a.tag-notes {
 a.tag-notes:hover {
   background: #ae3ec9;
   color: white;
-}
-
-.mobile-only {
-  display: block !important;
-}
-
-.mobile-only.gatsby-image-wrapper {
-  height: 100px !important;
-  width: 100px !important;
-}
-
-@media screen and (min-width: 1100px) {
-  .mobile-only {
-    display: none !important;
-  }
 }

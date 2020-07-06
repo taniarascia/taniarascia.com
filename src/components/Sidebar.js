@@ -1,24 +1,31 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
 import patreon from '../../content/thumbnails/patreon-light.png'
 import kofi from '../../content/thumbnails/kofi.png'
 import rss from '../../content/thumbnails/rss.png'
 import email from '../../content/images/email.png'
+import tania from '../../content/images/tania-2020.png'
 
 import SearchForm from '../components/SearchForm'
 
 import { slugify } from '../utils/helpers'
 
 export default function Sidebar({ post, ...props }) {
-  const { tags, thumbnail } = post.frontmatter
+  const { tags } = post.frontmatter
 
   return (
     <aside>
       <div className="aside-content">
         <section>
-          {thumbnail && <Img fixed={thumbnail.childImageSharp.fixed} />}
+          <img src={tania} alt="Tania" className="avatar" />
+          <p>
+            I'm Tania, a software engineer and open-source
+            creator. This website is a compendium of things I've learned while
+            writing code for fun and profit.
+          </p>
+        </section>
+        <section>
           <h3>Published</h3>
           <time>{post.frontmatter.date}</time>
           <h3>Tags</h3>
@@ -35,13 +42,9 @@ export default function Sidebar({ post, ...props }) {
               ))}
           </div>
         </section>
+
         <section>
-          <h3>Author</h3>
-          <p>
-            Hey there, I'm Tania&mdash;a software engineer and open-source
-            creator. This website is a compendium of things I've learned while
-            writing code for fun and profit.
-          </p>
+          <h3>Support</h3>
           <p>
             I believe there are pockets of the internet that can still be
             beautiful. That's why my site has:
@@ -58,7 +61,6 @@ export default function Sidebar({ post, ...props }) {
               <mark>No bullshit</mark>
             </li>
           </ul>
-          <h3>Support</h3>
           <p>
             If you like what I do and would like to support me, you can do so
             below!
@@ -96,7 +98,7 @@ export default function Sidebar({ post, ...props }) {
               className="link"
             >
               <img src={email} alt="Email" />
-              <span>Subscribe to the email list</span>
+              <span>Email list</span>
             </a>
             <Link
               to="/rss.xml"

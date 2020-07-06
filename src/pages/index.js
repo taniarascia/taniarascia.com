@@ -16,6 +16,8 @@ import projects from '../data/projects'
 import interviews from '../data/interviews'
 import speaking from '../data/speaking'
 
+import tania from '../../content/images/tania-2020.png'
+
 export default function BlogIndex({ data, ...props }) {
   const latest = data.latest.edges
   const popular = data.popular.edges
@@ -35,31 +37,36 @@ export default function BlogIndex({ data, ...props }) {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <section className="small lead">
-        <h1>Hey, I'm Tania</h1>
-        <p className="subtitle">
-          I'm a software engineer, technical writer, and{' '}
-          <a
-            href="https://github.com/taniarascia"
-            target="_blank"
-            rel="noreferrer"
-          >
-            open source
-          </a>{' '}
-          creator. This website is a compendium of the things I have learned
-          over the years, and also my "digital garden".
-        </p>
-        <p>
-          I aim to create a beautiful corner of the web free of ads, sponsored
-          posts, newsletter pop-ups, affiliate links, and the rest of the
-          annoying noise we're so accustomed to seeing on the internet these
-          days.
-        </p>
-        <p>
-          You can read my <Link to="/blog">blog</Link>, view my{' '}
-          <Link to="/guides">dev guides</Link>, or contact{' '}
-          <Link to="/me">me</Link> at <b>hello</b> at <b>taniarascia.com</b>.
-        </p>
+      <section className="lead">
+        <div>
+          <h1>Hey, I'm Tania</h1>
+          <p className="subtitle">
+            I'm a software engineer, technical writer, and{' '}
+            <a
+              href="https://github.com/taniarascia"
+              target="_blank"
+              rel="noreferrer"
+            >
+              open source
+            </a>{' '}
+            creator. This website is a compendium of the things I have learned
+            over the years, and also my "digital garden".
+          </p>
+          <p>
+            I aim to create a beautiful corner of the web free of ads, sponsored
+            posts, newsletter pop-ups, affiliate links, and the rest of the
+            annoying noise we're so accustomed to seeing on the internet these
+            days.
+          </p>
+          <p>
+            You can read my <Link to="/blog">blog</Link>, view my{' '}
+            <Link to="/guides">dev guides</Link>, or contact{' '}
+            <Link to="/me">me</Link> at <b>hello</b> at <b>taniarascia.com</b>.
+          </p>
+        </div>
+        <div>
+          <img src={tania} alt="Tania" />
+        </div>
       </section>
       <Section title="Latest">
         <Posts data={simplifiedLatest} tags />
@@ -85,6 +92,7 @@ export default function BlogIndex({ data, ...props }) {
           href="https://taniarascia.substack.com/subscribe"
           target="_blank"
           rel="noreferrer"
+          className="button"
         >
           Subscribe to the email list
         </a>
