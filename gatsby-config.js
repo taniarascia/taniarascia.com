@@ -136,6 +136,12 @@ module.exports = {
               },
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `30`,
+            },
+          },
           'gatsby-remark-prismjs',
         ],
       },

@@ -21,6 +21,7 @@
     "gatsby-plugin-netlify": "^2.3.7",
     "gatsby-plugin-react-helmet": "^3.3.5",
     "gatsby-plugin-sharp": "^2.6.13",
+    "gatsby-remark-autolink-headers": "^2.3.10",
     "gatsby-remark-images": "^3.3.12",
     "gatsby-remark-prismjs": "^3.5.5",
     "gatsby-source-filesystem": "^2.3.13",
