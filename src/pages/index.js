@@ -41,7 +41,7 @@ export default function BlogIndex({ data, ...props }) {
         <div>
           <h1>Hey, I'm Tania</h1>
           <p className="subtitle">
-            I'm a software engineer, technical writer, and{' '}
+            I'm a software engineer and{' '}
             <a
               href="https://github.com/taniarascia"
               target="_blank"
@@ -49,19 +49,18 @@ export default function BlogIndex({ data, ...props }) {
             >
               open source
             </a>{' '}
-            creator. This website is a compendium of the things I have learned
-            over the years, and also my "digital garden".
+            creator. This website is my digital garden, a compendium of the
+            things I have learned over the years.
           </p>
           <p>
             I aim to create a beautiful corner of the web free of ads, sponsored
-            posts, newsletter pop-ups, affiliate links, and the rest of the
-            annoying noise we're so accustomed to seeing on the internet these
-            days.
+            posts, and the rest of the annoying noise we're so accustomed to
+            seeing on the internet these days.
           </p>
           <p>
             You can read my <Link to="/blog">blog</Link>, view my{' '}
-            <Link to="/guides">dev guides</Link>, or contact{' '}
-            <Link to="/me">me</Link> at <b>hello</b> at <b>taniarascia.com</b>.
+            <Link to="/guides">guides &amp; tutorials</Link>, or contact{' '}
+            <Link to="/me">me</Link> at <b>hello</b>@<b>taniarascia.com</b>.
           </p>
         </div>
         <div>
@@ -85,8 +84,8 @@ export default function BlogIndex({ data, ...props }) {
       </Section>
       <Section title="Newsletter" className="small">
         <p>
-          Every now and then I'll send out an email when I've created something
-          new. Never any spam, easy unsubscribe whenever.
+          I sent out an email when I've created something new. Never any spam,
+          easy unsubscribe whenever. Keep in touch!
         </p>
         <a
           href="https://taniarascia.substack.com/subscribe"
@@ -94,7 +93,7 @@ export default function BlogIndex({ data, ...props }) {
           rel="noreferrer"
           className="button"
         >
-          Subscribe to the email list
+          Subscribe to the Email list
         </a>
       </Section>
       <Section title="Search" className="small">

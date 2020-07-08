@@ -18,7 +18,9 @@ export default function PageTemplate({ data }) {
         <header>
           <h1>{post.frontmatter.title}</h1>
         </header>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section className="medium">
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </section>
       </article>
     </Layout>
   )

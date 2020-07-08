@@ -6,6 +6,7 @@
   --font-color: #495057;
   --heading-color: #343a40;
   --dark-font-color: #212529;
+  --medium-font-color: #60656c;
   --light-font-color: #868e96;
   --light-background: #f1f3f5;
   --border: #d6d9de;
@@ -23,8 +24,8 @@
 /* Scaffolding */
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI', Roboto,
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
+    Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   color: var(--font-color);
   font-weight: 400;
@@ -138,6 +139,28 @@ blockquote a:hover {
   border-bottom: 2px solid #ffe066;
   background: #ffe066;
   color: var(--heading-color);
+}
+
+blockquote.quotation {
+  margin: 2rem 0;
+  padding: 0 1.5rem;
+  background: white;
+  border-radius: 0;
+  border: none;
+  border-left: 12px solid var(--border);
+  padding-bottom: 2rem;
+}
+
+blockquote.quotation p {
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  color: var(--medium-font-color);
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+blockquote.quotation cite {
+  float: right;
 }
 
 /* Headings */
@@ -348,7 +371,7 @@ a.link img {
 }
 
 p.subtitle {
-  color: var(--light-font-color);
+  color: var(--medium-font-color);
   font-size: 1.2rem;
 }
 
@@ -621,7 +644,7 @@ tbody tr:nth-child(even) {
 .posts .row,
 .lists .row {
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border-bottom: none;
 }
 
@@ -630,9 +653,9 @@ tbody tr:nth-child(even) {
   align-items: center;
   font-weight: 700;
   color: var(--dark-font-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.2;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 
 .row .cell time {
@@ -640,8 +663,13 @@ tbody tr:nth-child(even) {
 }
 
 @media screen and (min-width: 800px) {
+  .posts .row,
+  .lists .row {
+    margin-bottom: 2rem;
+  }
+
   .row .cell {
-    font-size: 1.1rem;
+    padding: 0.5rem 0;
   }
   .row .cell time {
     font-size: 0.9rem;
@@ -682,7 +710,7 @@ tbody tr:nth-child(even) {
 /* Guide */
 
 .grid.guide {
-  grid-gap: 1.5rem;
+  grid-gap: 1rem;
   grid-auto-rows: 1fr;
   margin-top: 3rem;
   margin-left: 0;
@@ -693,7 +721,7 @@ tbody tr:nth-child(even) {
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 0.3rem;
   box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
     0 2px 4px rgba(100, 110, 140, 0.15);
@@ -701,6 +729,8 @@ tbody tr:nth-child(even) {
 }
 
 .grid.guide .gatsby-image-wrapper {
+  height: 50px !important;
+  width: 50px !important;
   margin-right: 1.5rem;
 }
 
@@ -718,12 +748,13 @@ tbody tr:nth-child(even) {
 
 @media screen and (min-width: 600px) {
   .grid.guide {
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .grid.guide a {
     flex-direction: column;
-
     justify-content: center;
+    padding: 1.5rem;
   }
   .grid.guide h2 {
     text-align: center;
@@ -731,6 +762,8 @@ tbody tr:nth-child(even) {
     flex: none;
   }
   .grid.guide .gatsby-image-wrapper {
+    height: 75px !important;
+    width: 75px !important;
     margin-right: 0;
   }
 }
@@ -762,13 +795,21 @@ tbody tr:nth-child(even) {
 
 .article-header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
   margin-bottom: 2.5rem;
 }
 
 .article-header h1 {
   font-size: 2rem;
   margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .article-header {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 1100px) {
@@ -908,6 +949,11 @@ time,
   font-size: 0.9rem;
   white-space: nowrap;
   font-weight: 400;
+}
+
+.meta {
+  color: var(--medium-font-color);
+  font-size: 1rem;
 }
 
 /* Tags */
@@ -1069,13 +1115,15 @@ a.tag-life:hover {
 }
 
 a.tag-react,
-a.tag-api {
+a.tag-api,
+a.tag-tutorial {
   background: #edf2ff;
   color: #3b5bdb;
 }
 
 a.tag-react:hover,
-a.tag-api:hover {
+a.tag-api:hover,
+a.tag-tutorial:hover {
   background: #4263eb;
   color: white;
 }

@@ -20,9 +20,9 @@ export default function Sidebar({ post, ...props }) {
         <section>
           <img src={tania} alt="Tania" className="avatar" />
           <p>
-            I'm Tania, a software engineer and open-source
-            creator. This website is a compendium of things I've learned while
-            writing code for fun and profit.
+            I'm Tania, a software engineer and open-source creator. This website
+            is a compendium of things I've learned while writing code for fun
+            and profit.
           </p>
         </section>
         <section>
@@ -86,10 +86,7 @@ export default function Sidebar({ post, ...props }) {
         </section>
         <section>
           <h3>Stay in touch</h3>
-          <p>
-            Every now and then I'll send out an email when I've created
-            something new. No spam, unsubscribe whenever. Or follow on RSS.
-          </p>
+          <p>Get an email when I create something new.</p>
           <nav>
             <a
               href="https://taniarascia.substack.com/subscribe"
@@ -112,7 +109,6 @@ export default function Sidebar({ post, ...props }) {
         </section>
         <section>
           <h3>Search</h3>
-          <p>This search actually works, I promise.</p>
           <SearchForm {...props} />
         </section>
       </div>

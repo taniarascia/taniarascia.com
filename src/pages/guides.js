@@ -50,7 +50,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             thumbnail {
               childImageSharp {
-                fixed(width: 50, height: 50) {
+                fixed(width: 75, height: 75) {
                   ...GatsbyImageSharpFixed
                 }
               }
