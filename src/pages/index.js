@@ -39,23 +39,15 @@ export default function BlogIndex({ data, ...props }) {
       <SEO />
       <section className="lead">
         <div>
-          <h1>Hey, I'm Tania</h1>
-          <p className="subtitle">
-            I'm a software engineer and{' '}
-            <a
-              href="https://github.com/taniarascia"
-              target="_blank"
-              rel="noreferrer"
-            >
-              open source
-            </a>{' '}
-            creator. This website is my digital garden, a compendium of the
-            things I have learned over the years.
-          </p>
+          <h1>
+            Hey! My name is <Link to="/me">Tania Rascia</Link>. I'm a software
+            engineer and open-source creator.
+          </h1>
           <p>
-            I aim to create a beautiful corner of the web free of ads, sponsored
-            posts, and the rest of the annoying noise we're so accustomed to
-            seeing on the internet these days.
+            This website is my digital garden&mdash;a compendium of the things I
+            have learned over the years. I believe in having no ads, sponsored
+            posts, or any of the rest of the annoying noise we're so accustomed
+            to seeing on the internet these days.
           </p>
           <p>
             You can read my <Link to="/blog">blog</Link>, view my{' '}

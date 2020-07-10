@@ -11,8 +11,8 @@ export default function Posts({ data, tags }) {
           <Link to={node.slug} className="row" key={node.id}>
             <div className="cell">
               <time>{node.date}</time>
+              <div>{node.title}</div>
             </div>
-            <div className="cell">{node.title}</div>
             {tags && (
               <div className="cell tags">
                 {node.tags &&
