@@ -565,7 +565,6 @@ table {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  display: block;
 }
 
 th {
@@ -1146,13 +1145,15 @@ a.tag-tutorial:hover {
 }
 
 a.tag-design,
-a.tag-database {
+a.tag-database,
+a.tag-travel {
   background: #fff0f6;
   color: #c2255c;
 }
 
 a.tag-design:hover,
-a.tag-database:hover {
+a.tag-database:hover,
+a.tag-travel:hover {
   background: #e64980;
   color: white;
 }
