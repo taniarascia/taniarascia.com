@@ -148,7 +148,6 @@ blockquote.quotation {
   border-radius: 0;
   border: none;
   border-left: 12px solid var(--border);
-  padding-bottom: 2rem;
 }
 
 blockquote.quotation p {
@@ -321,6 +320,8 @@ a.link img {
 /* Main */
 
 .lead {
+  display: flex;
+  flex-direction: column;
   margin: 4rem 0;
 }
 
@@ -342,13 +343,21 @@ a.link img {
 }
 
 .lead img {
-  display: none;
+  display: block;
+  border-radius: 16px;
+  height: 150px;
+  width: 150px;
+  margin-bottom: 2rem;
+}
+
+.copy {
+  order: 2;
 }
 
 @media screen and (min-width: 800px) {
   .lead {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
   .lead h1 {
@@ -361,10 +370,13 @@ a.link img {
   }
 
   .lead img {
-    border-radius: 16px;
-    display: block !important;
-    margin-left: 2rem;
+    height: auto;
+    width: auto;
     max-width: 200px;
+    margin-right: 2.5rem;
+  }
+  .copy {
+    order: 1;
   }
 }
 
@@ -439,7 +451,7 @@ main {
 .navbar a,
 .footer a {
   border-radius: 0.3rem;
-  padding: 0.5rem;
+  padding: 0.4rem;
   color: var(--light-font-color);
   border-bottom: none;
   font-weight: 400;
@@ -459,7 +471,7 @@ main {
 }
 
 .navbar a.brand {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--font-color);
   white-space: nowrap;
@@ -674,6 +686,7 @@ tbody tr:nth-child(even) {
   }
 
   .row .cell {
+    font-size: 1.2rem;
     padding: 0.75rem 0;
   }
   .row .cell time {
