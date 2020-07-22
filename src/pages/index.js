@@ -38,68 +38,72 @@ export default function BlogIndex({ data, ...props }) {
       <Helmet title={config.siteTitle} />
       <SEO />
       <section className="lead">
-        <div className="copy">
-          <h1>
-            Hey! My name is <Link to="/me">Tania Rascia</Link>. I'm a software
-            engineer and open-source creator.
-          </h1>
-          <p>
-            This website is my digital garden&mdash;a compendium of the things I
-            have learned over the years,{' '}
-            <a
-              href="https://github.com/taniarascia"
-              target="_blank"
-              rel="noreferrer"
-            >
-              my projects
-            </a>
-            , and anything else I want to write about.
-          </p>
-          <p>
-            You can read my <Link to="/blog">writing</Link>, view my{' '}
-            <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
-            <Link to="/me">about me</Link>. Please feel free to email me at{' '}
-            <b>hello</b>@<b>taniarascia.com</b> if you enjoyed what you found
-            here.
-          </p>
-        </div>
-        <div className="image">
-          <img src={tania} alt="Tania" />
+        <div className="container">
+          <div className="copy">
+            <h1>
+              Hey! My name is <Link to="/me">Tania Rascia</Link>. I'm a software
+              engineer and open-source creator.
+            </h1>
+            <p>
+              This website is my digital garden&mdash;a compendium of the things
+              I have learned over the years,{' '}
+              <a
+                href="https://github.com/taniarascia"
+                target="_blank"
+                rel="noreferrer"
+              >
+                my projects
+              </a>
+              , and anything else I want to write about.
+            </p>
+            <p>
+              You can read my <Link to="/blog">writing</Link>, view my{' '}
+              <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
+              <Link to="/me">about me</Link>. Please feel free to email me at{' '}
+              <b>hello</b>@<b>taniarascia.com</b> if you enjoyed what you found
+              here.
+            </p>
+          </div>
+          <div className="image">
+            <img src={tania} alt="Tania" />
+          </div>
         </div>
       </section>
-      <Section title="Latest">
-        <Posts data={simplifiedLatest} tags />
-      </Section>
-      <Section title="Popular">
-        <Posts data={simplifiedPopular} tags />
-      </Section>
-      <Section title="Projects">
-        <Projects data={projects} />
-      </Section>
-      <Section title="Interviews &amp; Podcasts" className="medium">
-        <Lists data={interviews} />
-      </Section>
-      <Section title="Speaking" className="medium">
-        <Lists data={speaking} />
-      </Section>
-      <Section title="Newsletter" className="small">
-        <p>
-          I sent out an email when I've created something new. Never any spam,
-          easy unsubscribe whenever. Keep in touch!
-        </p>
-        <a
-          href="https://taniarascia.substack.com/subscribe"
-          target="_blank"
-          rel="noreferrer"
-          className="button"
-        >
-          Subscribe to the Email list
-        </a>
-      </Section>
-      <Section title="Search" className="small">
-        <p>Search anything in the blog.</p>
-        <SearchForm {...props} />
-      </Section>
+      <div className="container">
+        <Section title="Latest">
+          <Posts data={simplifiedLatest} tags />
+        </Section>
+        <Section title="Popular">
+          <Posts data={simplifiedPopular} tags />
+        </Section>
+        <Section title="Projects">
+          <Projects data={projects} />
+        </Section>
+        <Section title="Interviews &amp; Podcasts" className="medium">
+          <Lists data={interviews} />
+        </Section>
+        <Section title="Speaking" className="medium">
+          <Lists data={speaking} />
+        </Section>
+        <Section title="Newsletter" className="small">
+          <p>
+            I sent out an email when I've created something new. Never any spam,
+            easy unsubscribe whenever. Keep in touch!
+          </p>
+          <a
+            href="https://taniarascia.substack.com/subscribe"
+            target="_blank"
+            rel="noreferrer"
+            className="button"
+          >
+            Subscribe to the Email list
+          </a>
+        </Section>
+        <Section title="Search" className="small">
+          <p>Search anything in the blog.</p>
+          <SearchForm {...props} />
+        </Section>
+      </div>
     </Layout>
   )
 }

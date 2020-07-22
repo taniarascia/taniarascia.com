@@ -16,7 +16,7 @@ export default function Layout({ children }) {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
       <Nav />
-      <main className="container">{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   )

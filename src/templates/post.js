@@ -19,9 +19,10 @@ export default function PostTemplate({ data, pageContext, ...props }) {
     <Layout>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
-      <section className="grid post">
-        <article>
-          <header className="article-header medium">
+
+      <header className="article-header">
+        <div className="container">
+          <div className="medium">
             {thumbnail && (
               <Img
                 fixed={thumbnail.childImageSharp.fixed}
@@ -29,12 +30,18 @@ export default function PostTemplate({ data, pageContext, ...props }) {
               />
             )}
             <h1>{post.frontmatter.title}</h1>
-          </header>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </article>
-        <Sidebar post={post} {...props} />
-      </section>
-      <Suggested previous={previous} next={next} />
+          </div>
+        </div>
+      </header>
+      <div className="container">
+        <section className="grid post">
+          <article>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </article>
+          <Sidebar post={post} {...props} />
+        </section>
+        <Suggested previous={previous} next={next} />
+      </div>
     </Layout>
   )
 }

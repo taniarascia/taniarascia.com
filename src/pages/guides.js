@@ -20,14 +20,20 @@ export default function BlogIndex({ data }) {
     <Layout>
       <Helmet title={`Guides | ${config.siteTitle}`} />
       <SEO />
+      <header>
+        <div className="container">
+          <h1>
+            <u>Guides</u>
+          </h1>
+          <p className="subtitle">
+            The missing instruction manuals of the web.
+          </p>
+        </div>
+      </header>
       <section>
-        <h1>Guides</h1>
-        <p className="subtitle">The missing instruction manuals of the web.</p>
-        <p className="medium">
-          This is where I put my long-form tutorials, walkthroughs, references, and
-          resources on design, development, and programming.
-        </p>
-        <Guides data={simplifiedPosts} />
+        <div className="container">
+          <Guides data={simplifiedPosts} />
+        </div>
       </section>
     </Layout>
   )
