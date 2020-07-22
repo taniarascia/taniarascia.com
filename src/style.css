@@ -505,7 +505,7 @@ main {
 
 .navbar {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem .5rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -896,10 +896,11 @@ tbody tr:nth-child(even) {
 }
 
 header {
-  padding: 2rem 0 0;
+  padding: 2.5rem 0 0;
 }
 
 header h1 {
+  font-size: 2rem;
   display: inline-block;
 }
 
@@ -921,6 +922,10 @@ header u {
 @media screen and (min-width: 800px) {
   header {
     padding: 4rem 0 0;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
   }
 
   .article-header .medium {
