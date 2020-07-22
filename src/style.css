@@ -50,8 +50,8 @@ section {
 
 section > h2 {
   font-size: 1.8rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -347,7 +347,7 @@ a.link img {
 /* Main */
 
 .lead {
-  padding: 4rem 0;
+  padding: 3rem 0 2rem;
   margin: 0;
   background: #1b1d25;
 }
@@ -407,6 +407,10 @@ a.link img {
 }
 
 @media screen and (min-width: 800px) {
+  .lead {
+    padding: 4rem 0;
+  }
+
   .lead .container {
     flex-direction: row;
     justify-content: space-between;
@@ -495,9 +499,13 @@ main {
   margin-top: 3.5rem;
 }
 
+.emoji {
+  margin: 0 0.25rem 0 0.1rem;
+}
+
 .navbar {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -518,10 +526,11 @@ main {
 .navbar a,
 .footer a {
   border-radius: 0.3rem;
-  padding: 0.4rem;
+  padding: 0.3rem;
   color: rgba(0, 0, 0, 0.7);
   border-bottom: none;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .navbar a:hover {
@@ -548,10 +557,12 @@ main {
 }
 
 @media screen and (min-width: 800px) {
+  .emoji {
+    margin: 0 0.5rem 0 0.1rem;
+  }
   main {
     margin-top: 0;
   }
-
   .navbar {
     margin: 0;
     padding: 1.5rem 0;
@@ -632,10 +643,6 @@ main {
     padding: 0 0.5rem;
     margin: 0 1rem;
   }
-}
-
-.emoji {
-  margin: 0 0.5rem 0 0.1rem;
 }
 
 /* Tables */
