@@ -10,14 +10,14 @@ export default function Footer() {
     <footer className="footer container">
       <section className="flex">
         <nav className="footer-links">
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">Writing</Link>
           <Link to="/guides">Guides</Link>
           <a
             href="https://taniarascia.substack.com/subscribe"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Email list
+            Email newsletter
           </a>
           <Link to="/rss.xml">RSS feed</Link>
           <a

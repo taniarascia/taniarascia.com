@@ -21,9 +21,9 @@ export default function Sidebar({ post, ...props }) {
           <h3>Author</h3>
           <img src={tania} className="avatar" alt="Me" />
           <p>
-            I'm Tania, a software engineer and open-source creator. This website
-            is a compendium of things I've learned while writing code for fun
-            and profit.
+            I'm <Link to="/me">Tania</Link>, a software engineer and open-source
+            creator. This website is a compendium of things I've learned while
+            writing code for fun and profit.
           </p>
           <nav>
             <a
@@ -33,7 +33,7 @@ export default function Sidebar({ post, ...props }) {
               className="link"
             >
               <img src={email} alt="Email" />
-              <span>Email list</span>
+              <span>Newsletter signup</span>
             </a>
             <Link
               to="/rss.xml"

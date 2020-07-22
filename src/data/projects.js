@@ -25,7 +25,6 @@ export default [
   {
     icon: '🔱',
     title: 'MVC.js',
-    path: 'https://taniarascia.github.io/mvc/',
     source: 'https://github.com/taniarascia/mvc/',
     description: 'A simple Todo MVC application in JavaScript.',
   },

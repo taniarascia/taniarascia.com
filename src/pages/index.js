@@ -41,29 +41,22 @@ export default function BlogIndex({ data, ...props }) {
         <div className="container">
           <div className="copy">
             <h1>
-              Hey! My name is <Link to="/me">Tania Rascia</Link>. I'm a software
-              engineer and open-source creator.
+              Hey! I'm{' '}
+              <Link to="/me" className="name">
+                Tania Rascia
+              </Link>
+              .<br /> I'm a software engineer and open-source creator.
             </h1>
-            <p>
-              This website is my digital garden&mdash;a compendium of the things
-              I have learned over the years,{' '}
-              <a
-                href="https://github.com/taniarascia"
-                target="_blank"
-                rel="noreferrer"
-              >
-                my projects
-              </a>
-              , and anything else I want to write about.
-            </p>
-            <p>
-              You can read my <Link to="/blog">writing</Link>, view my{' '}
-              <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
-              <Link to="/me">about me</Link>. Please feel free to email me at{' '}
-              <b>hello</b>@<b>taniarascia.com</b> if you enjoyed what you found
-              here.
-            </p>
+              <p>
+                This website is my digital garden&mdash;a compendium of the
+                things I have learned and created over the years, and anything
+                else I want to write about. You can read my{' '}
+                <Link to="/blog">blog</Link>, view my{' '}
+                <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
+                <Link to="/me">about me</Link>.
+              </p>
           </div>
+
           <div className="image">
             <img src={tania} alt="Tania" />
           </div>
