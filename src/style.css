@@ -505,7 +505,7 @@ main {
 
 .navbar {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -526,7 +526,7 @@ main {
 .navbar a,
 .footer a {
   border-radius: 0.3rem;
-  padding: 0.3rem;
+  padding: 0.4rem;
   color: rgba(0, 0, 0, 0.7);
   border-bottom: none;
   font-weight: 600;
