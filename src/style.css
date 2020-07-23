@@ -75,6 +75,10 @@ section > h2 {
   margin-right: auto;
 }
 
+.container.page p {
+  max-width: 600px;
+}
+
 @media screen and (min-width: 800px) {
   .container {
     padding: 0 2rem;
@@ -168,6 +172,50 @@ blockquote.quotation p {
   color: var(--medium-font-color);
   font-size: 1.1rem;
   margin: 0 0 2rem 0;
+}
+
+blockquote.pull-quote {
+  display: none;
+  margin: 1.5rem 0;
+  padding: 2rem;
+  background: var(--light-accent-color);
+  color: var(--dark-font-color);
+  border: 0;
+}
+
+blockquote.pull-quote p {
+  line-height: 1.5;
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+  font-weight: 400;
+}
+
+blockquote.pull-quote p:last-of-type {
+  margin: 0;
+}
+
+blockquote.pull-quote cite {
+  font-size: 1rem;
+}
+
+blockquote.pull-quote a {
+  background: linear-gradient(transparent 70%, var(--accent-color) 0);
+}
+
+blockquote.pull-quote a:hover {
+  background: linear-gradient(transparent 70%, var(--accent-color) 0);
+  border-bottom: 0;
+  color: var(--dark-font-color);
+}
+
+@media screen and (min-width: 800px) {
+  blockquote.pull-quote {
+    display: block;
+    margin: 1.5rem 2.5rem;
+    padding: 2rem;
+    max-width: 400px;
+    float: right;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -265,7 +313,7 @@ h5 {
 /* Sidebar */
 
 aside {
-  min-width: 300px;
+  min-width: 310px;
 }
 
 aside p,
@@ -376,7 +424,7 @@ a.link img {
 }
 
 .lead p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
   font-weight: 300;
   margin-bottom: 0;
@@ -525,11 +573,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  background: linear-gradient(
-    to bottom right,
-    var(--accent-color),
-    var(--light-accent-color)
-  );
+  background: var(--dark-font-color);
   box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
     0 2px 4px rgba(100, 110, 140, 0.15);
   z-index: 2;
@@ -544,19 +588,24 @@ main {
   background: transparent;
   border-radius: 0.3rem;
   padding: 0.4rem;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.7);
   border-bottom: none;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.95rem;
 }
 
-.navbar a:hover {
-  background: rgba(255, 255, 255, 0.5);
-  color: black;
+.navbar a:hover,
+.navbar a[aria-current='page'] {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.footer a {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .footer a:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .navbar a:first-of-type {
@@ -569,8 +618,9 @@ main {
 .navbar a.brand {
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--font-color);
+  color: white;
   white-space: nowrap;
+  background: transparent;
 }
 
 @media screen and (min-width: 800px) {
@@ -594,6 +644,7 @@ main {
   .navbar a,
   .footer a {
     padding: 1rem 1.5rem;
+    margin: 0 0.25rem;
     font-size: 1.1rem;
   }
   .navbar a.brand {
@@ -752,10 +803,6 @@ tbody tr:nth-child(even) {
 
 .row {
   display: contents;
-}
-
-.grid a {
-  background: transparent;
 }
 
 .posts .row,
@@ -1098,7 +1145,7 @@ button:hover {
 }
 
 .medium {
-  max-width: 750px;
+  max-width: 800px;
 }
 
 time,

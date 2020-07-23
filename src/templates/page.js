@@ -22,10 +22,8 @@ export default function PageTemplate({ data }) {
         </div>
       </header>
       <section>
-        <div className="container">
-          <div className="medium">
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
+        <div className="container page">
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </section>
     </Layout>
