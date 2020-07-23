@@ -805,6 +805,10 @@ tbody tr:nth-child(even) {
   display: contents;
 }
 
+.row a {
+  background: transparent;
+}
+
 .posts .row,
 .lists .row {
   display: block;
