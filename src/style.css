@@ -805,7 +805,7 @@ tbody tr:nth-child(even) {
   display: contents;
 }
 
-.row a {
+a.row {
   background: transparent;
 }
 
