@@ -22,7 +22,7 @@ export default function PageTemplate({ data }) {
         </div>
       </header>
       <section>
-        <div className="container page">
+        <div className="container">
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </section>

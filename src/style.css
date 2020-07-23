@@ -175,12 +175,12 @@ blockquote.quotation p {
 }
 
 blockquote.pull-quote {
-  display: none;
   margin: 1.5rem 0;
   padding: 2rem;
   background: var(--light-accent-color);
   color: var(--dark-font-color);
   border: 0;
+  min-width: 360px;
 }
 
 blockquote.pull-quote p {
@@ -210,11 +210,8 @@ blockquote.pull-quote a:hover {
 
 @media screen and (min-width: 800px) {
   blockquote.pull-quote {
-    display: block;
     margin: 1.5rem 2.5rem;
     padding: 2rem;
-    max-width: 400px;
-    float: right;
   }
 }
 
@@ -752,6 +749,25 @@ tbody tr:nth-child(even) {
 .flex {
   display: flex;
   align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 800px) {
+  .flex-row {
+    flex-direction: row;
+  }
+}
+
+.flex-col {
+  flex: 1;
+}
+
+.flex-two-thirds {
+  flex: 2;
 }
 
 .grid {
