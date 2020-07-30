@@ -40,11 +40,8 @@ export default function BlogIndex({ data, ...props }) {
         <div className="container">
           <div className="copy">
             <h1>
-              Hey! I'm{' '}
-              <Link to="/me" className="name">
-                Tania Rascia
-              </Link>
-              .<br /> I'm a software engineer and open-source creator.
+              Hey! I'm Tania Rascia .<br /> I'm a software engineer and
+              open-source creator.
             </h1>
             <p>
               This website is my digital garden&mdash;a compendium of the things
@@ -53,7 +50,7 @@ export default function BlogIndex({ data, ...props }) {
               view my <Link to="/guides">guides &amp; tutorials</Link>, or learn
               more <Link to="/me">about me</Link>.
             </p>
-            <p>
+            <p className="flex">
               <a
                 href="https://github.com/taniarascia"
                 target="_blank"

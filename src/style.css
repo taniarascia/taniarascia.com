@@ -8,7 +8,8 @@
   --dark-font-color: #1b1d25;
   --medium-font-color: #60656c;
   --light-font-color: #868e96;
-  --light-background: #f1f3f5;
+  --light-background: #f6f8fb;
+  --lighter-background: #e6e8eb;
   --border: #d6d9de;
   --link-color: #5c7cfa;
   --accent-color: #fadb6b;
@@ -53,7 +54,6 @@ section > h2 {
   font-size: 1.8rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background: linear-gradient(transparent 80%, var(--accent-color) 0);
   padding: 0.4rem 0;
 }
 
@@ -68,7 +68,7 @@ section > h2 {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1100px;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -383,7 +383,7 @@ a.link:hover {
 
 .lead {
   padding: 3rem 0 2.5rem;
-  background: var(--dark-font-color);
+  background: white;
   margin: 0;
 }
 
@@ -393,7 +393,6 @@ a.link:hover {
 }
 
 .lead h1 {
-  color: white;
   font-weight: 600;
   font-size: 1.8rem;
   margin-bottom: 2rem;
@@ -401,9 +400,9 @@ a.link:hover {
 }
 
 .lead p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 2.5rem;
 }
 
@@ -424,33 +423,25 @@ a.link:hover {
 }
 
 .lead a {
-  color: var(--accent-color);
+  color: var(--link-color);
   background: transparent;
-}
-
-.lead a.name {
-  color: var(--accent-color);
-}
-
-.lead a:hover {
-  color: white;
-  background: transparent;
-  border-bottom: 3px solid var(--accent-color);
+  font-weight: 700;
 }
 
 .lead a.button {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-  border: transparent;
-  padding: 1rem 2rem;
+  display: block;
+  border: none;
+  background: #edf2ff;
+  color: #3b5bdb;
+  padding: 0.85rem 2rem;
   margin-right: 0.75rem;
+  font-weight: 500;
 }
 
 .lead a.button:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--accent-color);
-  border: transparent;
-  padding: 1rem 2rem;
+  background: #4263eb;
+  color: white;
+  border: none;
 }
 
 .lead .image {
@@ -467,10 +458,6 @@ a.link:hover {
 
 @media screen and (min-width: 800px) {
   .lead {
-    border-bottom: 10px solid var(--accent-color);
-    margin-top: -16px;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
     padding: 3.5rem 0;
   }
 
@@ -574,8 +561,6 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  background: var(--dark-font-color);
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
@@ -588,7 +573,7 @@ main {
   background: transparent;
   border-radius: 0.3rem;
   padding: 0.4rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.7);
   border-bottom: none;
   font-weight: 400;
   font-size: 0.95rem;
@@ -596,8 +581,8 @@ main {
 
 .navbar a:hover,
 .navbar a[aria-current='page'] {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--accent-color);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--dark-font-color);
 }
 
 .footer a {
@@ -618,7 +603,7 @@ main {
 .navbar a.brand {
   font-size: 1.05rem;
   font-weight: 600;
-  color: white;
+  color: var(--dark-font-color);
   white-space: nowrap;
   background: transparent;
 }
@@ -631,13 +616,10 @@ main {
     margin-top: 0;
   }
   .navbar {
-    margin: 0;
+    margin: 1rem 0;
     padding: 1.5rem 0;
     position: static;
     box-shadow: none;
-    border-bottom: 10px solid var(--accent-color);
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
   }
 
   .navbar .flex {
@@ -886,16 +868,12 @@ a.row {
   .row .cell:first-child,
   .row .cell.simple:first-child {
     padding-left: 1rem;
-    /* border-top-left-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem; */
   }
 
   .row .cell:last-child,
   .row .cell.simple:last-child {
     padding-right: 1rem;
     padding-left: 1rem;
-    /* border-top-right-radius: 0.3rem;
-    border-bottom-right-radius: 0.3rem; */
   }
 }
 
@@ -906,11 +884,6 @@ a.row {
 
 /* Guide */
 
-.guides-section {
-  background: var(--light-background);
-  padding: 1rem 0 4rem;
-}
-
 .grid.guide {
   grid-gap: 1rem;
   grid-auto-rows: 1fr;
@@ -920,7 +893,7 @@ a.row {
 }
 
 .grid.guide a {
-  background: white;
+  background: var(--light-background);
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -930,8 +903,6 @@ a.row {
 }
 
 .grid.guide img {
-  background: white;
-  border: 1px solid var(--light-background);
   padding: 0.5rem;
   border-radius: 0.3rem;
 }
@@ -944,8 +915,7 @@ a.row {
 
 .grid.guide a:hover {
   transform: translate3D(0, -1px, 0);
-  box-shadow: 0 8px 22px rgba(100, 110, 120, 0.2),
-    0 5px 30px rgba(100, 110, 120, 0.25);
+  background: var(--lighter-background);
 }
 
 .grid.guide h2 {
@@ -1026,7 +996,6 @@ header h1 {
 header u {
   display: inline-block;
   text-decoration: none;
-  background: linear-gradient(transparent 80%, var(--accent-color) 0);
   padding: 0.4rem 0;
 }
 
