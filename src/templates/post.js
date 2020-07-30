@@ -19,23 +19,22 @@ export default function PostTemplate({ data, pageContext, ...props }) {
     <Layout>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
-
-      <header className="article-header">
-        <div className="container">
-          <div className="medium">
-            {thumbnail && (
-              <Img
-                fixed={thumbnail.childImageSharp.fixed}
-                className="post-thumbnail"
-              />
-            )}
-            <h1>{post.frontmatter.title}</h1>
-          </div>
-        </div>
-      </header>
       <div className="container">
         <section className="grid post">
           <article>
+            <header className="article-header">
+              <div className="container">
+                <div className="thumb">
+                  {thumbnail && (
+                    <Img
+                      fixed={thumbnail.childImageSharp.fixed}
+                      className="post-thumbnail"
+                    />
+                  )}
+                  <h1>{post.frontmatter.title}</h1>
+                </div>
+              </div>
+            </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
           <Sidebar post={post} {...props} />

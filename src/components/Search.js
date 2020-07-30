@@ -26,9 +26,10 @@ export default function Search({ posts, location, navigate }) {
   return (
     <>
       <input
+        style={{ margin: '0 auto' }}
         id="search"
         type="search"
-        placeholder="Search everything..."
+        placeholder="Search for anything..."
         value={query}
         onChange={(e) => {
           navigate(e.target.value ? `/blog/?search=${e.target.value}` : '')

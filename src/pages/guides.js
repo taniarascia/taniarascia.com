@@ -21,18 +21,18 @@ export default function BlogIndex({ data }) {
       <Helmet title={`Guides | ${config.siteTitle}`} />
       <SEO />
       <header>
-        <div className="container">
-          <h1>
-            <u>Guides</u>
-          </h1>
+        <div className="container text-center">
+          <h1>Guides</h1>
           <p className="subtitle">
             The missing instruction manuals of the web.
           </p>
         </div>
       </header>
       <section>
-        <div className="container">
-          <Guides data={simplifiedPosts} />
+        <div className="guides-section">
+          <div className="container">
+            <Guides data={simplifiedPosts} />
+          </div>
         </div>
       </section>
     </Layout>
@@ -56,7 +56,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             thumbnail {
               childImageSharp {
-                fixed(width: 75, height: 75) {
+                fixed(width: 100, height: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }

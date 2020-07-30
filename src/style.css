@@ -51,7 +51,7 @@ section {
 section > h2 {
   display: inline-block;
   font-size: 1.8rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   background: linear-gradient(transparent 80%, var(--accent-color) 0);
   padding: 0.4rem 0;
@@ -63,13 +63,12 @@ section > h2 {
   }
   section > h2 {
     font-size: 2.2rem;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem;
   }
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1160px;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -180,7 +179,6 @@ blockquote.pull-quote {
   background: var(--light-accent-color);
   color: var(--dark-font-color);
   border: 0;
-  min-width: 360px;
 }
 
 blockquote.pull-quote p {
@@ -212,12 +210,14 @@ blockquote.pull-quote a:hover {
   blockquote.pull-quote {
     margin: 1.5rem 2.5rem;
     padding: 2rem;
+    min-width: 320px;
   }
 }
 
 @media screen and (min-width: 800px) {
   blockquote.quotation {
-    padding-bottom: 2rem;
+    margin: 2.5rem 0;
+    overflow: auto;
   }
   blockquote.quotation cite {
     float: right;
@@ -310,7 +310,7 @@ h5 {
 /* Sidebar */
 
 aside {
-  min-width: 310px;
+  min-width: 270px;
 }
 
 aside p,
@@ -325,8 +325,11 @@ aside ul {
 
 aside h3 {
   margin-top: 0.5rem;
-  margin-bottom: 1.25rem;
-  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.1rem;
+  color: var(--dark-font-color);
+  border-bottom: 2px solid var(--light-background);
 }
 
 aside p a {
@@ -337,32 +340,12 @@ aside p a {
   ) !important;
 }
 
-aside a.link {
-  background: white;
-}
-
-aside a.link:hover {
-  color: var(--dark-font-color);
-  background: var(--light-background);
-}
-
 aside section {
-  padding: 1.5rem;
-  border-radius: 0.3rem;
-  box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
-    0 2px 4px rgba(100, 110, 140, 0.15);
-  margin: 1.5rem 0;
+  margin: 3.5rem 0;
   background: white;
-}
-
-.aside-content {
-  border-radius: 0.3rem;
-  background: radial-gradient(var(--accent-color), var(--light-accent-color));
-  padding: 1.5rem;
 }
 
 .aside-content section:first-child {
-  padding-top: 0.5rem;
   margin-top: 0;
 }
 .aside-content section:last-child {
@@ -377,34 +360,31 @@ aside section {
 }
 
 a.link {
-  display: grid;
-  grid-template-columns: 45px auto;
-  align-items: center;
-  color: var(--heading-color);
-  border-bottom: none;
-  padding: 0.75rem;
+  display: block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem 0;
+  background: var(--light-background);
   border-radius: 0.3rem;
+  font-weight: 400;
 }
 
 a.link:hover {
-  border-bottom: none;
-  background: var(--light-background);
+  background: #edf2ff;
+  color: #3b5bdb;
 }
 
-a.link img {
-  display: inline-block;
-  height: auto;
-  margin-right: 1rem;
-  height: 18px;
-  width: auto;
+@media screen and (min-width: 1000px) {
+  .aside-content {
+    padding-left: 2.5rem;
+  }
 }
 
 /* Main */
 
 .lead {
-  padding: 3rem 0 2rem;
+  padding: 3rem 0 2.5rem;
+  background: var(--dark-font-color);
   margin: 0;
-  background: #1b1d25;
 }
 
 .lead .container {
@@ -414,16 +394,20 @@ a.link img {
 
 .lead h1 {
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.8rem;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
 
 .lead p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
   font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.lead p:last-child {
   margin-bottom: 0;
 }
 
@@ -451,6 +435,22 @@ a.link img {
 .lead a:hover {
   color: white;
   background: transparent;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.lead a.button {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: transparent;
+  padding: 1rem 2rem;
+  margin-right: 0.75rem;
+}
+
+.lead a.button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--accent-color);
+  border: transparent;
+  padding: 1rem 2rem;
 }
 
 .lead .image {
@@ -467,7 +467,11 @@ a.link img {
 
 @media screen and (min-width: 800px) {
   .lead {
-    padding: 4rem 0;
+    border-bottom: 10px solid var(--accent-color);
+    margin-top: -16px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 3.5rem 0;
   }
 
   .lead .container {
@@ -571,8 +575,7 @@ main {
   top: 0;
   left: 0;
   background: var(--dark-font-color);
-  box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
-    0 2px 4px rgba(100, 110, 140, 0.15);
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
@@ -593,8 +596,8 @@ main {
 
 .navbar a:hover,
 .navbar a[aria-current='page'] {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
 }
 
 .footer a {
@@ -632,6 +635,9 @@ main {
     padding: 1.5rem 0;
     position: static;
     box-shadow: none;
+    border-bottom: 10px solid var(--accent-color);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   .navbar .flex {
@@ -656,7 +662,7 @@ main {
 /* Footer */
 
 .footer {
-  margin: 3rem auto;
+  padding: 2rem 0;
 }
 
 .footer > .flex {
@@ -695,15 +701,12 @@ main {
 }
 
 @media screen and (min-width: 800px) {
-  .footer {
-    margin: 5rem auto;
-  }
-
   .footer > .flex {
     align-items: flex-start;
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
+
   .footer a.img {
     padding: 0 0.5rem;
     margin: 0 1rem;
@@ -770,6 +773,10 @@ tbody tr:nth-child(even) {
   flex: 2;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .grid {
   display: grid;
   align-items: stretch;
@@ -833,7 +840,7 @@ a.row {
 }
 
 .row .cell {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--dark-font-color);
   font-size: 1.1rem;
   line-height: 1.2;
@@ -899,6 +906,11 @@ a.row {
 
 /* Guide */
 
+.guides-section {
+  background: var(--light-background);
+  padding: 1rem 0 4rem;
+}
+
 .grid.guide {
   grid-gap: 1rem;
   grid-auto-rows: 1fr;
@@ -913,10 +925,15 @@ a.row {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-radius: 0.3rem;
-  box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
-    0 2px 4px rgba(100, 110, 140, 0.15);
+  border-radius: 0.5rem;
   border-bottom: none;
+}
+
+.grid.guide img {
+  background: white;
+  border: 1px solid var(--light-background);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 .grid.guide .gatsby-image-wrapper {
@@ -927,14 +944,15 @@ a.row {
 
 .grid.guide a:hover {
   transform: translate3D(0, -1px, 0);
-  box-shadow: 0 8px 22px rgba(100, 110, 140, 0.2),
-    0 5px 18px rgba(100, 110, 140, 0.25);
+  box-shadow: 0 8px 22px rgba(100, 110, 120, 0.2),
+    0 5px 30px rgba(100, 110, 120, 0.25);
 }
 
 .grid.guide h2 {
   margin: 0;
   font-size: 1rem;
   flex: 1;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 600px) {
@@ -944,13 +962,19 @@ a.row {
   }
   .grid.guide a {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 1.5rem;
   }
   .grid.guide h2 {
-    text-align: center;
-    margin: 1rem 0 0;
+    margin: 1rem 0;
     flex: none;
+  }
+
+  .grid.guide p {
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.3;
   }
   .grid.guide .gatsby-image-wrapper {
     height: 75px !important;
@@ -963,16 +987,21 @@ a.row {
   .grid.guide {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-}
-@media screen and (min-width: 1000px) {
-  .grid.guide {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
 
-@media screen and (min-width: 1200px) {
-  .grid.guide {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+  .grid.guide a {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .grid.guide h2 {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .grid.guide .gatsby-image-wrapper {
+    height: 75px !important;
+    width: 75px !important;
+    margin-right: 0;
   }
 }
 
@@ -991,6 +1020,7 @@ header {
 header h1 {
   font-size: 2rem;
   display: inline-block;
+  font-weight: 600;
 }
 
 header u {
@@ -1000,14 +1030,25 @@ header u {
   padding: 0.4rem 0;
 }
 
-.article-header .medium {
+.article-header {
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article-header .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.article-header .thumb {
   display: flex;
   flex-direction: column;
 }
 
 .article-header h1 {
+  font-weight: 600;
   font-size: 2rem;
-  margin: 1rem 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 800px) {
@@ -1023,7 +1064,12 @@ header u {
     background: linear-gradient(transparent 82%, var(--accent-color) 0);
   }
 
-  .article-header .medium {
+  .article-header {
+    padding-top: 0;
+    margin-bottom: 3.5rem;
+  }
+
+  .article-header .thumb {
     flex-direction: row;
     align-items: center;
   }
@@ -1037,7 +1083,7 @@ header u {
   }
 
   .article-header h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -1132,6 +1178,7 @@ button:hover {
   align-items: stretch;
   margin-left: -1rem;
   margin-right: -1rem;
+  padding: 0;
 }
 
 .suggested a {
@@ -1196,6 +1243,8 @@ time,
   display: flex !important;
   flex-wrap: wrap;
   align-items: center;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
 .tags > a {
@@ -1210,14 +1259,6 @@ time,
   border-bottom: 0;
   white-space: nowrap;
   line-height: 1;
-}
-
-.tags > a:first-child {
-  margin-left: 0;
-}
-
-.tags > a:last-child {
-  margin-right: 0;
 }
 
 .tags > a:hover {
@@ -1272,7 +1313,8 @@ a.tag-new-year:hover {
 a.tag-fundamentals,
 a.tag-game,
 a.tag-testing,
-a.tag-security {
+a.tag-security,
+a.tag-server {
   background: #d3f9d8;
   color: #111;
 }
@@ -1280,19 +1322,22 @@ a.tag-security {
 a.tag-fundamentals:hover,
 a.tag-game:hover,
 a.tag-testing:hover,
-a.tag-security:hover {
+a.tag-security:hover,
+a.tag-server:hover {
   background: #37b24d;
   color: white;
 }
 
 a.tag-node,
-a.tag-automation {
+a.tag-automation,
+a.tag-ruby {
   background: #fff5f5;
   color: #e03131;
 }
 
 a.tag-node:hover,
-a.tag-automation:hover {
+a.tag-automation:hover,
+a.tag-ruby:hover {
   background: #f03e3e;
   color: white;
 }
@@ -1373,12 +1418,18 @@ a.tag-travel:hover {
   color: white;
 }
 
-a.tag-notes {
+a.tag-notes,
+a.tag-tools {
   background: #f8f0fc;
   color: #9c36b5;
 }
 
-a.tag-notes:hover {
+a.tag-notes:hover,
+a.tag-tools:hover {
   background: #ae3ec9;
   color: white;
+}
+
+.text-center {
+  text-align: center;
 }

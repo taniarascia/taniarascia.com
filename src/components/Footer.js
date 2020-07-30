@@ -7,10 +7,10 @@ import github from '../../content/thumbnails/github.png'
 
 export default function Footer() {
   return (
-    <footer className="footer container">
-      <section className="flex">
+    <footer className="footer flex">
+      <section className="container">
         <nav className="footer-links">
-          <Link to="/blog">Writing</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/guides">Guides</Link>
           <a
             href="https://taniarascia.substack.com/subscribe"
@@ -19,13 +19,13 @@ export default function Footer() {
           >
             Email newsletter
           </a>
-          <Link to="/rss.xml">RSS feed</Link>
+          <Link to="/rss.xml">RSS</Link>
           <a
             href="https://ko-fi.com/taniarascia"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ko-fi
+            Donate
           </a>
           <a
             href="https://patreon.com/taniarascia"
@@ -35,7 +35,7 @@ export default function Footer() {
             Patreon
           </a>
         </nav>
-        <nav className="flex">
+        <nav className="flex justify-center">
           <a
             href="https://www.gatsbyjs.org/"
             title="Built with Gatsby"
