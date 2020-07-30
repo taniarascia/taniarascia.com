@@ -382,7 +382,7 @@ a.link:hover {
 /* Main */
 
 .lead {
-  padding: 3rem 0 2.5rem;
+  padding: 3rem 0;
   background: white;
   margin: 0;
 }
@@ -458,7 +458,7 @@ a.link:hover {
 
 @media screen and (min-width: 800px) {
   .lead {
-    padding: 3.5rem 0;
+    padding: 4rem 0;
   }
 
   .lead .container {
@@ -561,6 +561,9 @@ main {
   position: fixed;
   top: 0;
   left: 0;
+  background: white;
+  box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
+    0 2px 4px rgba(100, 110, 140, 0.15);
   z-index: 2;
 }
 
@@ -572,7 +575,7 @@ main {
 .footer a {
   background: transparent;
   border-radius: 0.3rem;
-  padding: 0.4rem;
+  padding: 0.6rem;
   color: rgba(0, 0, 0, 0.7);
   border-bottom: none;
   font-weight: 400;
@@ -777,7 +780,7 @@ tbody tr:nth-child(even) {
 
 @media screen and (min-width: 800px) {
   .row .cell.tags {
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
   }
   .grid {
     margin-left: -1rem;
@@ -1030,7 +1033,7 @@ header u {
   }
 
   header u {
-    background: linear-gradient(transparent 82%, var(--accent-color) 0);
+    background: linear-gradient(transparent 82%, #bac8ff 0);
   }
 
   .article-header {
