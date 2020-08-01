@@ -366,7 +366,9 @@ a.link {
   border-radius: 0.3rem;
   font-weight: 400;
   background: #edf2ff;
-  color: #3b5bdb;
+  border: 1px solid #3b5bdb;
+  border-left: 3px solid #3b5bdb;
+  color: var(--dark-font-color);
 }
 
 a.link:hover {
