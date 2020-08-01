@@ -4,6 +4,8 @@
  Source: https://github.com/taniarascia/new-moon
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
 :root {
   --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
   --code-font-color: #b3b9c5;
