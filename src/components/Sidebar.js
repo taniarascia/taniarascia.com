@@ -19,6 +19,17 @@ export default function Sidebar({ post, ...props }) {
             creator. This website is a compendium of things I've learned while
             writing code for fun and profit.
           </p>
+          <p>
+            I create guides, tutorials, and resources on programming, modern
+            JavaScript, and web development.
+          </p>
+        </section>
+        <section>
+          <h3>Stay in touch</h3>
+          <p>
+            I write as often as I can! I'll send out an email after I've written
+            a few. Never any spam.
+          </p>
           <nav>
             <a
               href="https://taniarascia.substack.com/subscribe"
@@ -26,7 +37,7 @@ export default function Sidebar({ post, ...props }) {
               rel="noreferrer"
               className="link"
             >
-              Join the newsletter
+              Get emails from Tania
             </a>
             <Link
               to="/rss.xml"
@@ -34,8 +45,20 @@ export default function Sidebar({ post, ...props }) {
               rel="noreferrer"
               className="link"
             >
-              RSS feed
+              Follow the RSS feed
             </Link>
+            <a href="mailto:hello@taniarascia.com" className="link">
+              hello@taniarascia.com
+            </a>
+          </nav>
+        </section>
+        <section>
+          <h3>Support me</h3>
+          <p>
+            Everything I write and create for you is <b>free</b>. I will{' '}
+            <b>never have ads, paywalls, or sponsored content</b> on my website.
+          </p>
+          <nav>
             <a
               href="https://ko-fi.com/taniarascia"
               target="_blank"

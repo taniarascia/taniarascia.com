@@ -363,14 +363,15 @@ a.link {
   display: block;
   padding: 0.25rem 0.75rem;
   margin: 0.25rem 0;
-  background: var(--light-background);
   border-radius: 0.3rem;
   font-weight: 400;
+  background: #edf2ff;
+  color: #3b5bdb;
 }
 
 a.link:hover {
-  background: #edf2ff;
-  color: #3b5bdb;
+  background: var(--link-color);
+  color: white;
 }
 
 @media screen and (min-width: 1000px) {
@@ -458,7 +459,7 @@ a.link:hover {
 
 @media screen and (min-width: 800px) {
   .lead {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
   }
 
   .lead .container {
@@ -619,7 +620,7 @@ main {
     margin-top: 0;
   }
   .navbar {
-    margin: 1rem 0;
+    margin: 2rem 0;
     padding: 1.5rem 0;
     position: static;
     box-shadow: none;
@@ -1025,7 +1026,7 @@ header u {
 
 @media screen and (min-width: 800px) {
   header {
-    padding: 4rem 0 0;
+    padding: 0;
   }
 
   header h1 {
