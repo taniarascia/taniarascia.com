@@ -40,8 +40,8 @@ export default function BlogIndex({ data, ...props }) {
         <div className="container">
           <div className="copy">
             <h1>
-              Hey! I'm Tania Rascia .<br /> I'm a software engineer and
-              open-source creator.
+              Hey! I'm Tania Rascia.
+              <br /> I'm a software engineer and open-source creator.
             </h1>
             <p>
               This website is my digital garden&mdash;a compendium of the things
