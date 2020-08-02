@@ -1,13 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import patreon from '../../content/thumbnails/patreon-light.png'
-import kofi from '../../content/thumbnails/kofi.png'
-import rss from '../../content/thumbnails/rss.png'
-import email from '../../content/images/email.png'
-import tania from '../../content/images/tania-2020.png'
-
 import SearchForm from '../components/SearchForm'
+import tania from '../../content/images/tania-2020.png'
 
 import { slugify } from '../utils/helpers'
 
@@ -18,12 +13,22 @@ export default function Sidebar({ post, ...props }) {
     <aside>
       <div className="aside-content">
         <section>
-          <h3>Author</h3>
-          <img src={tania} className="avatar" alt="Me" />
+          <img src={tania} alt="Tania" className="avatar" />
           <p>
             I'm <Link to="/me">Tania</Link>, a software engineer and open-source
             creator. This website is a compendium of things I've learned while
             writing code for fun and profit.
+          </p>
+          <p>
+            I create guides, tutorials, and resources on programming, modern
+            JavaScript, and web development.
+          </p>
+        </section>
+        <section>
+          <h3>Stay in touch</h3>
+          <p>
+            I write as often as I can! I'll send out an email after I've written
+            a few. Never any spam.
           </p>
           <nav>
             <a
@@ -32,8 +37,7 @@ export default function Sidebar({ post, ...props }) {
               rel="noreferrer"
               className="link"
             >
-              <img src={email} alt="Email" />
-              <span>Newsletter signup</span>
+              Get emails from Tania
             </a>
             <Link
               to="/rss.xml"
@@ -41,29 +45,37 @@ export default function Sidebar({ post, ...props }) {
               rel="noreferrer"
               className="link"
             >
-              <img src={rss} alt="RSS" /> <span>RSS Feed</span>
+              Follow the RSS feed
             </Link>
+            <a href="mailto:hello@taniarascia.com" className="link">
+              hello@taniarascia.com
+            </a>
+          </nav>
+        </section>
+        <section>
+          <h3>Support me</h3>
+          <p>
+            Everything I write and create for you is <b>free</b>. I will{' '}
+            <b>never have ads, paywalls, or sponsored content</b> on my website.
+          </p>
+          <nav>
             <a
               href="https://ko-fi.com/taniarascia"
               target="_blank"
               rel="noreferrer"
               className="link"
             >
-              <img src={kofi} alt="Patreon" /> <span>Buy me a coffee</span>
+              Buy me a coffee
             </a>
             <a
               href="https://patreon.com/taniarascia"
               target="_blank"
               rel="noreferrer"
-              className="link patreon"
+              className="link"
             >
-              <img src={patreon} alt="Patreon" /> <span>Become a Patron</span>
+              Become a Patron
             </a>
           </nav>
-        </section>
-        <section>
-          <h3>Published</h3>
-          <time>{post.frontmatter.date}</time>
         </section>
         <section>
           <h3>Tags</h3>
@@ -79,6 +91,10 @@ export default function Sidebar({ post, ...props }) {
                 </Link>
               ))}
           </div>
+        </section>
+        <section>
+          <h3>Published</h3>
+          <time>{post.frontmatter.date}</time>
         </section>
 
         <section>

@@ -7,7 +7,6 @@ import Posts from '../components/Posts'
 import Lists from '../components/Lists'
 import Projects from '../components/Projects'
 import SEO from '../components/SEO'
-import SearchForm from '../components/SearchForm'
 
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -41,20 +40,34 @@ export default function BlogIndex({ data, ...props }) {
         <div className="container">
           <div className="copy">
             <h1>
-              Hey! I'm{' '}
-              <Link to="/me" className="name">
-                Tania Rascia
-              </Link>
-              .<br /> I'm a software engineer and open-source creator.
+              Hey! I'm Tania Rascia.
+              <br /> I'm a software engineer and open-source creator.
             </h1>
-              <p>
-                This website is my digital garden&mdash;a compendium of the
-                things I have learned and created over the years, and anything
-                else I want to write about. You can read my{' '}
-                <Link to="/blog">blog</Link>, view my{' '}
-                <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
-                <Link to="/me">about me</Link>.
-              </p>
+            <p>
+              This website is my digital garden&mdash;a compendium of the things
+              I have learned and created over the years, and anything else I
+              want to write about. You can read my <Link to="/blog">blog</Link>,
+              view my <Link to="/guides">guides &amp; tutorials</Link>, or learn
+              more <Link to="/me">about me</Link>.
+            </p>
+            <p className="flex">
+              <a
+                href="https://github.com/taniarascia"
+                target="_blank"
+                rel="noreferrer"
+                className="button"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://taniarascia.substack.com/subscribe"
+                target="_blank"
+                rel="noreferrer"
+                className="button"
+              >
+                Newsletter
+              </a>
+            </p>
           </div>
 
           <div className="image">
@@ -78,7 +91,7 @@ export default function BlogIndex({ data, ...props }) {
         <Section title="Speaking" className="medium">
           <Lists data={speaking} />
         </Section>
-        <Section title="Newsletter" className="small">
+        <Section title="Join the Newsletter" className="small">
           <p>
             I sent out an email when I've created something new. Never any spam,
             easy unsubscribe whenever. Keep in touch!
@@ -89,12 +102,8 @@ export default function BlogIndex({ data, ...props }) {
             rel="noreferrer"
             className="button"
           >
-            Subscribe to the Email list
+            Subscribe
           </a>
-        </Section>
-        <Section title="Search" className="small">
-          <p>Search anything in the blog.</p>
-          <SearchForm {...props} />
         </Section>
       </div>
     </Layout>
