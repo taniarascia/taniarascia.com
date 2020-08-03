@@ -52,20 +52,12 @@ export default function BlogIndex({ data, ...props }) {
             </p>
             <p className="flex">
               <a
-                href="https://github.com/taniarascia"
-                target="_blank"
-                rel="noreferrer"
-                className="button"
-              >
-                GitHub
-              </a>
-              <a
                 href="https://taniarascia.substack.com/subscribe"
                 target="_blank"
                 rel="noreferrer"
                 className="button"
               >
-                Newsletter
+                Join the Newsletter
               </a>
             </p>
           </div>
@@ -77,7 +69,7 @@ export default function BlogIndex({ data, ...props }) {
       </section>
       <div className="container">
         <Section title="Latest">
-          <Posts data={simplifiedLatest} tags />
+          <Posts data={simplifiedLatest} tags includeDate />
         </Section>
         <Section title="Popular">
           <Posts data={simplifiedPopular} tags />
@@ -90,20 +82,6 @@ export default function BlogIndex({ data, ...props }) {
         </Section>
         <Section title="Speaking" className="medium">
           <Lists data={speaking} />
-        </Section>
-        <Section title="Join the Newsletter" className="small">
-          <p>
-            I sent out an email when I've created something new. Never any spam,
-            easy unsubscribe whenever. Keep in touch!
-          </p>
-          <a
-            href="https://taniarascia.substack.com/subscribe"
-            target="_blank"
-            rel="noreferrer"
-            className="button"
-          >
-            Subscribe
-          </a>
         </Section>
       </div>
     </Layout>
