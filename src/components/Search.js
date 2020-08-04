@@ -44,7 +44,7 @@ export default function Search({ posts, location, navigate }) {
             <p>Sorry, nothing matched that search.</p>
           )
         ) : (
-          <Posts data={posts} tags />
+          <Posts data={posts} tags showYears />
         )}
       </section>
     </>

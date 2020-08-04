@@ -14,6 +14,7 @@
   --link-color: #5c7cfa;
   --accent-color: #fadb6b;
   --light-accent-color: #fcebb0;
+  --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 }
 
 /* Reset */
@@ -50,11 +51,11 @@ section {
 }
 
 section > h2 {
-  display: inline-block;
   font-size: 1.8rem;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
 @media screen and (min-width: 800px) {
@@ -63,7 +64,7 @@ section > h2 {
   }
   section > h2 {
     font-size: 2.2rem;
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
   }
 }
 
@@ -141,13 +142,11 @@ ol li ol {
 }
 
 blockquote {
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   padding: 1rem;
   background: #edf2ff;
   border-radius: 0.3rem;
-  border: 1px solid #3b5bdb;
-  border-left: 8px solid #3b5bdb;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 blockquote p {
@@ -158,9 +157,13 @@ blockquote a {
   padding: 1px 4px;
 }
 
+blockquote :not(pre) > code[class*='language-'] {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
 blockquote a:hover {
   border-radius: 0.3rem;
-  border-bottom: 2px solid #3b5bdb;
+  border-bottom: 1px solid #3b5bdb;
   background: #3b5bdb;
   color: white;
 }
@@ -171,7 +174,7 @@ blockquote.quotation {
   background: white;
   border-radius: 0;
   border: none;
-  border-left: 12px solid var(--border);
+  border-left: 11px solid var(--border);
 }
 
 blockquote.quotation p {
@@ -287,7 +290,7 @@ h4 {
   color: var(--font-color);
   font-weight: 500;
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--light-background);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.25rem;
 }
 
@@ -322,6 +325,12 @@ h5 {
 
 /* Sidebar */
 
+.aside-content {
+  background: var(--light-background);
+  padding: 1.5rem;
+  border-radius: 0.3rem;
+}
+
 aside {
   min-width: 270px;
 }
@@ -342,7 +351,7 @@ aside h3 {
   padding-bottom: 0.25rem;
   font-size: 1.1rem;
   color: var(--dark-font-color);
-  border-bottom: 2px solid var(--light-background);
+  border-bottom: 1px solid var(--font-color);
 }
 
 aside p a {
@@ -355,7 +364,6 @@ aside p a {
 
 aside section {
   margin: 3.5rem 0;
-  background: white;
 }
 
 .aside-content section:first-child {
@@ -385,12 +393,6 @@ a.link {
 a.link:hover {
   background: transparent;
   color: #3b5bdb;
-}
-
-@media screen and (min-width: 1000px) {
-  .aside-content {
-    padding-left: 2.5rem;
-  }
 }
 
 /* Main */
@@ -442,20 +444,25 @@ a.link:hover {
   font-weight: 700;
 }
 
+.lead a:hover {
+  background: linear-gradient(transparent 70%, #dbe4ff 0);
+}
+
 .lead a.button {
   display: block;
   border: none;
-
-  padding: 0.85rem 2rem;
+  padding: 0.85rem 1.5rem;
   margin-right: 0.75rem;
   font-weight: 500;
-  background: var(--link-color);
-  color: white;
+  background: var(--light-background);
+  color: var(--dark-font-color);
+  border: 1px solid transparent;
 }
 
 .lead a.button:hover {
-  border: none;
+  border: 1px solid #3b5bdb;
   background: #3b5bdb;
+  color: white;
 }
 
 .lead .image {
@@ -472,7 +479,7 @@ a.link:hover {
 
 @media screen and (min-width: 800px) {
   .lead {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
   }
 
   .lead .container {
@@ -482,7 +489,7 @@ a.link:hover {
   }
 
   .lead h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     line-height: 1.1;
   }
 
@@ -571,11 +578,12 @@ main {
 
 .navbar {
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   position: fixed;
   top: 0;
   left: 0;
-  background: white;
+  background: #4c6ef5;
+  border-bottom: 1px solid #3b5bdb;
   box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
     0 2px 4px rgba(100, 110, 140, 0.15);
   z-index: 2;
@@ -589,18 +597,18 @@ main {
 .footer a {
   background: transparent;
   border-radius: 0.3rem;
-  padding: 0.6rem;
-  margin: 0 .25rem;
-  color: rgba(0, 0, 0, 0.7);
-  border-bottom: none;
+  padding: 0.5rem;
+  margin: 0 0.1rem;
+  color: white;
   font-weight: 400;
   font-size: 0.95rem;
+  border: 1px solid transparent;
 }
 
 .navbar a:hover,
 .navbar a[aria-current='page'] {
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--dark-font-color);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .navbar a .emoji {
@@ -624,10 +632,11 @@ main {
 
 .navbar a.brand {
   font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--dark-font-color);
+  font-weight: 500;
+  color: white;
   white-space: nowrap;
   background: transparent;
+  border: none;
 }
 
 .navbar a.brand .emoji {
@@ -638,12 +647,8 @@ main {
   .emoji {
     margin: 0 0.5rem 0 0.1rem;
   }
-  main {
-    margin-top: 0;
-  }
   .navbar {
-    margin: 2rem 0;
-    padding: 1.5rem 0;
+    padding: 0.5rem 0;
     position: static;
     box-shadow: none;
   }
@@ -659,11 +664,12 @@ main {
     font-size: 1.1rem;
   }
   .navbar a .emoji {
-    display: inline-block;
+    /* display: inline-block; */
   }
   .navbar a.brand {
     font-size: 1.3rem;
     margin-right: 3rem;
+    border: none;
   }
   .navbar a:first-of-type {
     margin-left: -1.5rem;
@@ -739,11 +745,11 @@ th {
 }
 
 tfoot th {
-  border-top: 2px solid var(--light-background);
+  border-top: 1px solid var(--light-background);
 }
 
 td {
-  border-bottom: 2px solid var(--light-background);
+  border-bottom: 1px solid var(--light-background);
 }
 
 th,
@@ -814,6 +820,10 @@ tbody tr:nth-child(even) {
     grid-template-columns: 50px 1fr 4fr;
   }
 
+  .row .cell.tags {
+    justify-content: flex-end;
+  }
+
   .row .cell.description {
     grid-column: auto;
     margin-bottom: 0;
@@ -836,7 +846,7 @@ tbody tr:nth-child(even) {
   display: contents;
 }
 
-a.row {
+a.cell {
   background: transparent;
 }
 
@@ -844,7 +854,7 @@ a.row {
 .lists .row {
   display: block;
   margin-bottom: 1rem;
-  border-bottom: none;
+  padding-bottom: 1rem;
 }
 
 .row .cell {
@@ -875,8 +885,7 @@ a.row {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0;
   }
   .row .cell time {
     font-size: 0.8rem;
@@ -891,17 +900,22 @@ a.row {
 
   .row:hover > * {
     background: var(--light-background);
+    border-color: var(--border);
   }
 
   .row .cell:first-child,
   .row .cell.simple:first-child {
     padding-left: 1rem;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
   }
 
   .row .cell:last-child,
   .row .cell.simple:last-child {
     padding-right: 1rem;
     padding-left: 1rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
   }
 }
 
@@ -927,7 +941,6 @@ a.row {
   align-items: center;
   padding: 1rem;
   border-radius: 0.5rem;
-  border-bottom: none;
 }
 
 .grid.guide img {
@@ -1012,13 +1025,14 @@ a.row {
 }
 
 header {
-  padding: 2.5rem 0 0;
+  padding: 3rem 0 0;
 }
 
 header h1 {
   font-size: 2rem;
   display: inline-block;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 header u {
@@ -1028,7 +1042,6 @@ header u {
 }
 
 .article-header {
-  padding-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -1044,7 +1057,7 @@ header u {
 
 .article-header h1 {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -1058,7 +1071,7 @@ header u {
   }
 
   header u {
-    background: linear-gradient(transparent 82%, #bac8ff 0);
+    background: linear-gradient(transparent 85%, #bac8ff 0);
   }
 
   .article-header {
@@ -1075,7 +1088,7 @@ header u {
 @media screen and (min-width: 1100px) {
   .grid.post {
     margin-top: 5rem;
-    grid-gap: 3rem;
+    grid-gap: 4rem;
     grid-template-columns: 3fr 1fr;
   }
 
@@ -1114,7 +1127,7 @@ header u {
 [type='search'] {
   display: block;
   padding: 0.8rem 1rem;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   width: 100%;
   max-width: 400px;
   border-radius: 0.3rem;
@@ -1131,7 +1144,7 @@ header u {
 button {
   font-weight: 500;
   font-size: 1.3rem;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   padding: 0.5rem 1rem;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
@@ -1154,7 +1167,7 @@ button:hover {
 .button {
   font-weight: 500;
   font-size: 1.1rem;
-  border: 2px solid var(--link-color);
+  border: 1px solid var(--link-color);
   padding: 0.5rem 1rem;
   cursor: pointer;
   background: var(--link-color);
@@ -1163,7 +1176,7 @@ button:hover {
 }
 
 .button:hover {
-  border: 2px solid #364fc7;
+  border: 1px solid #364fc7;
   background: #364fc7;
   color: white;
 }
@@ -1186,15 +1199,12 @@ button:hover {
   transition: all 0.2s ease;
   padding: 1.5rem;
   border-radius: 0.3rem;
-  box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
-    0 2px 4px rgba(100, 110, 140, 0.15);
-  color: var(--font-color);
+  background: var(--light-background);
 }
 
 .suggested a:hover {
   transform: translate3D(0, -1px, 0);
-  box-shadow: 0 8px 22px rgba(100, 110, 140, 0.2),
-    0 5px 18px rgba(100, 110, 140, 0.25);
+  background: var(--lighter-background);
 }
 
 @media screen and (min-width: 800px) {

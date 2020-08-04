@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import SearchForm from '../components/SearchForm'
 import tania from '../../content/images/tania-2020.png'
 
 import { slugify } from '../utils/helpers'
@@ -15,9 +14,13 @@ export default function Sidebar({ post, ...props }) {
         <section>
           <img src={tania} alt="Tania" className="avatar" />
           <p>
-            I'm <Link to="/me">Tania</Link>, a software engineer and open-source
-            creator. This website is a compendium of things I've learned while
-            writing code for fun and profit.
+            I'm Tania, a software engineer and open-source creator. This website
+            is a compendium of things I've learned while writing code for fun
+            and profit.
+          </p>
+          <p>
+            Everything I write and create is <b>free</b>. I will{' '}
+            <b>never have ads, paywalls, or sponsored content</b> on my website.
           </p>
         </section>
         <section>
@@ -48,7 +51,7 @@ export default function Sidebar({ post, ...props }) {
               rel="noreferrer"
               className="link"
             >
-              <span className="emoji">✉️</span> Get emails from Tania
+              <span className="emoji">✉️</span> Email newsletter
             </a>
             <Link
               to="/rss.xml"
@@ -56,17 +59,8 @@ export default function Sidebar({ post, ...props }) {
               rel="noreferrer"
               className="link"
             >
-              <span className="emoji">☢️</span> Follow the RSS feed
+              <span className="emoji">☢️</span> RSS feed
             </Link>
-          </nav>
-        </section>
-        <section>
-          <h3>Support</h3>
-          <p>
-            Everything I write and create is <b>free</b>. I will{' '}
-            <b>never have ads, paywalls, or sponsored content</b> on my website.
-          </p>
-          <nav>
             <a
               href="https://ko-fi.com/taniarascia"
               target="_blank"
@@ -75,21 +69,7 @@ export default function Sidebar({ post, ...props }) {
             >
               <span className="emoji">☕</span> Buy me a coffee
             </a>
-            <a
-              href="https://patreon.com/taniarascia"
-              target="_blank"
-              rel="noreferrer"
-              className="link"
-            >
-              <span className="emoji">🔴</span> Become a Patron
-            </a>
           </nav>
-        </section>
-
-        <section>
-          <h3>Search</h3>
-          <p>Search anything on the site.</p>
-          <SearchForm {...props} />
         </section>
       </div>
     </aside>

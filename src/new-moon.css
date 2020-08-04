@@ -26,10 +26,6 @@
   --light-background: #f1f3f5;
 }
 
-pre[class*='language-'] {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55);
-}
-
 code[class*='language-'],
 pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
@@ -105,11 +101,10 @@ pre.language-terminal {
   position: relative;
   background: white;
   color: #595c62;
-  box-shadow: 0 8px 16px rgba(100, 120, 130, 0.35);
   padding-top: 3rem;
   margin: 2rem 0;
   border-radius: 0.3rem;
-  border: 1px solid #c9cccf;
+  border: 1px solid #ced1d3;
 }
 
 code.language-terminal {
@@ -130,6 +125,14 @@ pre.language-terminal::before {
   padding: 18px 0 16px;
   text-indent: 6px;
   letter-spacing: -18px;
+}
+
+pre.language-terminal::after {
+  content: 'Output';
+  font-size: .9rem;
+  position: absolute;
+  top: 4px;
+  right: 8px;
 }
 
 .gatsby-highlight-code-line {
@@ -234,7 +237,7 @@ pre.language-terminal::before {
   padding: 0.5rem 1.5rem 0.75rem;
   line-height: 1.8;
 
-  background-color: black;
+  background-color: #505050;
   color: white;
   z-index: 1;
 
@@ -244,7 +247,7 @@ pre.language-terminal::before {
 
 @media screen and (min-width: 800px) {
   .filename {
-    padding: 0.5rem 1rem 0.75rem;
+    padding: 0.25rem 1rem 0.5rem;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
 

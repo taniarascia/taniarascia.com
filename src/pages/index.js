@@ -57,7 +57,7 @@ export default function BlogIndex({ data, ...props }) {
                 rel="noreferrer"
                 className="button"
               >
-                Join the Newsletter
+                <span className="emoji">💌</span> Join the Newsletter
               </a>
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function BlogIndex({ data, ...props }) {
       </section>
       <div className="container">
         <Section title="Latest">
-          <Posts data={simplifiedLatest} tags includeDate />
+          <Posts data={simplifiedLatest} tags />
         </Section>
         <Section title="Popular">
           <Posts data={simplifiedPopular} tags />
