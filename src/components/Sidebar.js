@@ -43,6 +43,12 @@ export default function Sidebar({ post, ...props }) {
           <time>{post.frontmatter.date}</time>
         </section>
         <section>
+          <h3>Comments</h3>
+          <a href="#comments" className="link">
+            View all comments
+          </a>
+        </section>
+        <section>
           <h3>Stay in touch</h3>
           <nav>
             <a

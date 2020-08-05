@@ -2,6 +2,8 @@
 
 /* Global variables */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
   --font-color: #495057;
   --heading-color: #343a40;
@@ -34,7 +36,7 @@ html {
   color: var(--font-color);
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 body {
@@ -332,7 +334,7 @@ h5 {
 }
 
 aside {
-  min-width: 270px;
+  min-width: 300px;
 }
 
 aside p,
@@ -1056,7 +1058,7 @@ header u {
 }
 
 .article-header h1 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.8rem;
   margin: 0;
 }
@@ -1088,7 +1090,7 @@ header u {
 @media screen and (min-width: 1100px) {
   .grid.post {
     margin-top: 5rem;
-    grid-gap: 4rem;
+    grid-gap: 5rem;
     grid-template-columns: 3fr 1fr;
   }
 

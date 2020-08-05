@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import Suggested from '../components/Suggested'
 import SEO from '../components/SEO'
+import Comment from '../components/Comment'
 
 import config from '../utils/config'
 
@@ -14,6 +15,23 @@ export default function PostTemplate({ data, pageContext, ...props }) {
   const post = data.markdownRemark
   const { previous, next } = pageContext
   const { thumbnail } = post.frontmatter
+  const commentBox = React.createRef()
+
+  useEffect(() => {
+    const scriptEl = document.createElement('script')
+    scriptEl.async = true
+    scriptEl.src = 'https://utteranc.es/client.js'
+    scriptEl.setAttribute('repo', 'taniarascia/comments')
+    scriptEl.setAttribute('issue-term', 'title')
+    scriptEl.setAttribute('id', 'utterances')
+    scriptEl.setAttribute('theme', 'github-light')
+    scriptEl.setAttribute('crossorigin', 'anonymous')
+    if (commentBox && commentBox.current) {
+      commentBox.current.appendChild(scriptEl)
+    } else {
+      console.log(`Error adding utterances comments on: ${commentBox}`)
+    }
+  }, [])
 
   return (
     <Layout>
@@ -36,6 +54,10 @@ export default function PostTemplate({ data, pageContext, ...props }) {
               </div>
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <section id="comments">
+              <h2>Comments</h2>
+              <Comment commentBox={commentBox} />
+            </section>
           </article>
           <Sidebar post={post} {...props} />
         </section>
