@@ -456,9 +456,9 @@ a.link:hover {
   padding: 0.85rem 1.5rem;
   margin-right: 0.75rem;
   font-weight: 500;
-  background: var(--light-background);
-  color: var(--dark-font-color);
-  border: 1px solid transparent;
+  border: 1px solid var(--link-color);
+  background: var(--link-color);
+  color: white;
 }
 
 .lead a.button:hover {
@@ -857,6 +857,10 @@ a.cell {
   display: block;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+}
+
+.lists a {
+  background: transparent;
 }
 
 .row .cell {

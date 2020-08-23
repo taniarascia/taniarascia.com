@@ -57,7 +57,15 @@ export default function BlogIndex({ data, ...props }) {
                 rel="noreferrer"
                 className="button"
               >
-                <span className="emoji">💌</span> Join the Newsletter
+                <span className="emoji">💌</span> Join Newsletter
+              </a>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSd-Z3LTaSe8HsqAjnsGf3tXzAIFCTJT9JWtQTEbLpjOmc8UVA/viewform"
+                target="_blank"
+                rel="noreferrer"
+                className="button"
+              >
+                Give Feedback
               </a>
             </p>
           </div>

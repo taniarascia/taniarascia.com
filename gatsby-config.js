@@ -52,7 +52,6 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  categories: edge.node.frontmatter.tags,
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -64,6 +63,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
+                  limit: 30,
                   sort: { order: DESC, fields: [frontmatter___date] },
                   filter: { frontmatter: { template: { eq: "post" } } }
                 ) {
@@ -77,7 +77,6 @@ module.exports = {
                       frontmatter {
                         title
                         date
-                        tags
                         template
                       }
                     }
@@ -122,7 +121,13 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 650,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
@@ -156,11 +161,7 @@ module.exports = {
       options: {
         name: 'pages',
         engine: 'flexsearch',
-        engineOptions: {
-          encode: 'icase',
-          tokenize: 'forward',
-          async: false,
-        },
+        engineOptions: 'speed',
         query: `
           {
             allMarkdownRemark(filter: { frontmatter: { template: { eq: "post" } } }) {
