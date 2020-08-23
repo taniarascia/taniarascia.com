@@ -65,6 +65,7 @@ export default function BlogIndex({ data, ...props }) {
                 rel="noreferrer"
                 className="button"
               >
+                <span className="emoji">📣</span>
                 Give Feedback
               </a>
             </p>
