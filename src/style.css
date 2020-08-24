@@ -53,11 +53,31 @@ section {
 }
 
 section > h2 {
+  display: flex;
+  align-items: center;
   font-size: 1.8rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  padding: 0.4rem 0;
+  padding: 0 0 0.3rem 0;
   border-bottom: 1px solid var(--border);
+}
+
+.section-button {
+  font-weight: 500;
+  background: #f1f3f5;
+  color: #343a40;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 3rem;
+  border-bottom: 0;
+  white-space: nowrap;
+  line-height: 1;
+  margin-left: 2rem;
+}
+
+.section-button:hover {
+  background: #868e96;
+  color: white;
 }
 
 @media screen and (min-width: 800px) {
@@ -65,13 +85,13 @@ section > h2 {
     margin: 3rem 0;
   }
   section > h2 {
-    font-size: 2.2rem;
-    margin: 0 0 1rem;
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
   }
 }
 
 .container {
-  max-width: 1150px;
+  max-width: 1100px;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -99,7 +119,7 @@ ul,
 dl,
 table,
 blockquote {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin: 0 0 1.5rem 0;
 }
 
@@ -114,7 +134,7 @@ ul {
   dl,
   table,
   blockquote {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
 
   ul {
@@ -237,7 +257,7 @@ blockquote.pull-quote a:hover {
     float: right;
   }
   blockquote.quotation p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -307,15 +327,15 @@ h5 {
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   h2 code {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   h3 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: var(--font-color);
     font-weight: 600;
   }
@@ -334,7 +354,7 @@ h5 {
 }
 
 aside {
-  min-width: 300px;
+  min-width: 280px;
 }
 
 aside p,
@@ -365,7 +385,7 @@ aside p a {
 }
 
 aside section {
-  margin: 3.5rem 0;
+  margin: 2.5rem 0;
 }
 
 .aside-content section:first-child {
@@ -891,7 +911,7 @@ a.cell {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
   }
   .row .cell time {
     font-size: 0.8rem;
@@ -1063,7 +1083,7 @@ header u {
 
 .article-header h1 {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -1099,7 +1119,7 @@ header u {
   }
 
   .article-header h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -1197,15 +1217,25 @@ button:hover {
   padding: 0;
 }
 
+.suggested span {
+  font-weight: 400;
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.55);
+}
+
 .suggested a {
   background: none;
-  text-align: center;
   margin: 1rem;
   border-bottom: none;
   transition: all 0.2s ease;
   padding: 1.5rem;
   border-radius: 0.3rem;
   background: var(--light-background);
+}
+
+.suggested a:first-of-type {
+  text-align: right;
 }
 
 .suggested a:hover {
@@ -1447,17 +1477,23 @@ a.tag-tools:hover {
   text-align: center;
 }
 
+.utterances {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
 kbd {
   background-color: #f7f7f7;
-  border: 2px solid rgba(0,0,0,.3);
+  border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.2), inset 0 0 0 2px #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 2px #fff;
   color: #333;
   display: inline-block;
-  font-family: Helvetica Neue,Inter,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+  font-family: Helvetica Neue, Inter, -apple-system, BlinkMacSystemFont,
+    Helvetica, Arial, sans-serif;
   line-height: 1.4;
-  margin: 0 .1em;
-  padding: .1em .6em;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
   text-shadow: 0 1px 0 #fff;
   font-size: 14px;
 }

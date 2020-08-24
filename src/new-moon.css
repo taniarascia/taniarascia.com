@@ -64,7 +64,7 @@ pre[class*='language-'] {
 @media screen and (min-width: 800px) {
   code[class*='language-'],
   pre[class*='language-'] {
-    font-size: 1rem;
+    font-size: .9rem;
   }
   pre[class*='language-'] {
     padding: 1.5rem;

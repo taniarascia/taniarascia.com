@@ -25,9 +25,16 @@ export default function BlogIndex({ data, ...props }) {
     popular,
   ])
 
-  const Section = ({ title, children, ...props }) => (
+  const Section = ({ title, children, button, ...props }) => (
     <section {...props}>
-      <h2>{title}</h2>
+      <h2>
+        {title}
+        {button && (
+          <Link className="section-button" to="/blog">
+            View all
+          </Link>
+        )}
+      </h2>
       {children}
     </section>
   )
@@ -44,11 +51,12 @@ export default function BlogIndex({ data, ...props }) {
               <br /> I'm a software engineer and open-source creator.
             </h1>
             <p>
-              This website is my digital garden&mdash;a compendium of the things
-              I have learned and created over the years, and anything else I
-              want to write about. You can read my <Link to="/blog">blog</Link>,
-              view my <Link to="/guides">guides &amp; tutorials</Link>, or learn
-              more <Link to="/me">about me</Link>.
+              This website is my 🌱 digital garden&mdash;a compendium of the
+              things I have learned and created over the years, and anything
+              else I want to write about. You can read my{' '}
+              <Link to="/blog">blog</Link>, view my{' '}
+              <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
+              <Link to="/me">about me</Link>.
             </p>
             <p className="flex">
               <a
@@ -65,8 +73,7 @@ export default function BlogIndex({ data, ...props }) {
                 rel="noreferrer"
                 className="button"
               >
-                <span className="emoji">📣</span>
-                Give Feedback
+                <span className="emoji">📣</span> Give Feedback
               </a>
             </p>
           </div>
@@ -77,19 +84,19 @@ export default function BlogIndex({ data, ...props }) {
         </div>
       </section>
       <div className="container">
-        <Section title="Latest">
-          <Posts data={simplifiedLatest} tags />
+        <Section title="Latest Articles" button>
+          <Posts data={simplifiedLatest} tags withDate />
         </Section>
-        <Section title="Popular">
-          <Posts data={simplifiedPopular} tags />
+        <Section title="Popular Articles" button>
+          <Posts data={simplifiedPopular} tags withDate />
         </Section>
         <Section title="Projects">
           <Projects data={projects} />
         </Section>
-        <Section title="Interviews &amp; Podcasts" className="medium">
+        <Section title="Interviews &amp; Podcasts">
           <Lists data={interviews} />
         </Section>
-        <Section title="Speaking" className="medium">
+        <Section title="Speaking">
           <Lists data={speaking} />
         </Section>
       </div>

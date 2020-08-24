@@ -68,6 +68,27 @@ export default function Sidebar({ post, ...props }) {
               <span className="emoji">☢️</span> RSS feed
             </Link>
             <a
+              href="https://github.com/taniarascia"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              <span className="emoji">🐙</span> GitHub: @taniarascia
+            </a>
+            <a
+              href="https://twitter.com/taniarascia"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              <span className="emoji">🐦</span> Twitter: @taniarascia
+            </a>
+          </nav>
+        </section>
+        <section>
+          <h3>Support</h3>
+          <nav>
+            <a
               href="https://ko-fi.com/taniarascia"
               target="_blank"
               rel="noreferrer"
