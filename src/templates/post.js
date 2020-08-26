@@ -51,6 +51,9 @@ export default function PostTemplate({ data, pageContext, ...props }) {
                   )}
                   <h1>{post.frontmatter.title}</h1>
                 </div>
+                {post.frontmatter.description && (
+                  <p className="description">{post.frontmatter.description}</p>
+                )}
               </div>
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -79,6 +82,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+        description
         thumbnail {
           childImageSharp {
             fixed(width: 150, height: 150) {

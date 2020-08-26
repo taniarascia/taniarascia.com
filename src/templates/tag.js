@@ -32,7 +32,7 @@ export default function TagTemplate({ data, pageContext }) {
         </div>
       </header>
       <section className="container">
-        <Posts data={simplifiedPosts} tags />
+        <Posts data={simplifiedPosts} tags withDate />
       </section>
     </Layout>
   )

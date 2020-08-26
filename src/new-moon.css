@@ -54,23 +54,26 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   margin-bottom: 2rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
   overflow: auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.06),
+    0 2px 2px rgba(0, 0, 0, 0.06), 0 4px 4px rgba(0, 0, 0, 0.06),
+    0 8px 8px rgba(0, 0, 0, 0.06), 0 16px 16px rgba(0, 0, 0, 0.06);
 }
 
 @media screen and (min-width: 800px) {
   code[class*='language-'],
   pre[class*='language-'] {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   pre[class*='language-'] {
     padding: 1.5rem;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 0.3rem;
+    border-radius: 0.35rem;
   }
 }
 
@@ -82,7 +85,7 @@ pre[class*='language-'] {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   padding: 0.1rem 0.3rem;
-  border-radius: 0.3rem;
+  border-radius: 0.35rem;
 }
 
 pre.language-text,
@@ -101,10 +104,12 @@ pre.language-terminal {
   position: relative;
   background: white;
   color: #595c62;
-  padding-top: 3.5rem;
+  padding-top: 3rem;
   margin: 2rem 0;
-  border-radius: 0.3rem;
-  border: 1px solid #ced1d3;
+  border-radius: 0.35rem;
+  border: 1px solid #c7c9ca;
+  box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.2),
+    0 0.5rem 2rem rgba(51, 51, 51, 0.2);
 }
 
 code.language-terminal {
@@ -116,23 +121,27 @@ pre.language-terminal::before {
   position: absolute;
   top: 0;
   left: 0;
-  background: #e0e3e7;
-  color: var(--code-font-color);
+  background: linear-gradient(to bottom, #eaeaea, #d2d2d2);
+  color: #b9bcbd;
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
   line-height: 0;
-  padding: 18px 0 16px;
+  padding: 15px 0 12px;
   text-indent: 6px;
   letter-spacing: -18px;
+  border-bottom: 1px solid #a6a9aa;
 }
 
 pre.language-terminal::after {
   content: 'Output';
-  font-size: .9rem;
+  line-height: 1;
+  font-family: 'Myriad Pro', sans-serif;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
   position: absolute;
-  top: 4px;
-  right: 8px;
+  top: 6px;
+  right: 0.5rem;
 }
 
 .gatsby-highlight-code-line {
@@ -234,20 +243,26 @@ pre.language-terminal::after {
 .filename {
   font-size: 0.9rem;
   margin-bottom: -0.8rem;
-  padding: 0.5rem 1.5rem 0.75rem;
-  line-height: 1.8;
+  padding: 0.3rem 1.5rem;
+  line-height: 1;
+  font-family: 'Myriad Pro', sans-serif;
 
-  background-color: #505050;
-  color: white;
-  z-index: 1;
+  background: linear-gradient(to bottom, #eaeaea, #d2d2d2);
+  border: 1px solid #b9bcbd;
+  color: #4d494d;
+  z-index: 2;
 
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) inset, 0px 1px 0px #515151;
+  text-align: center;
 }
 
 @media screen and (min-width: 800px) {
   .filename {
-    padding: 0.25rem 1rem 0.5rem;
+    padding: 0.3rem 1rem 0.5rem;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
 

@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import Posts from '../components/Posts'
+import Guides from '../components/Guides'
 import Lists from '../components/Lists'
 import Projects from '../components/Projects'
 import SEO from '../components/SEO'
@@ -93,11 +94,11 @@ export default function BlogIndex({ data, ...props }) {
         <Section title="Projects">
           <Projects data={projects} />
         </Section>
-        <Section title="Interviews &amp; Podcasts">
-          <Lists data={interviews} />
+        <Section title="Interviews">
+          <Guides data={interviews} />
         </Section>
         <Section title="Speaking">
-          <Lists data={speaking} />
+          <Guides data={speaking} />
         </Section>
       </div>
     </Layout>

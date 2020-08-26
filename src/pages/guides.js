@@ -54,9 +54,10 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            description
             thumbnail {
               childImageSharp {
-                fixed(width: 100, height: 100) {
+                fixed(width: 50, height: 50) {
                   ...GatsbyImageSharpFixed
                 }
               }

@@ -17,7 +17,14 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Email newsletter
+            Newsletter
+          </a>
+          <a
+            href="https://twitter.com/taniarascia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
           </a>
           <Link to="/rss.xml">RSS</Link>
           <a
