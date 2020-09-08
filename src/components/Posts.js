@@ -5,7 +5,7 @@ import { slugify } from '../utils/helpers'
 
 const Cell = ({ node, tags, withDate }) => {
   return (
-    <div className="row" key={node.id}>
+    <div className={`row ${!withDate ? 'narrow' : ''}`} key={node.id}>
       <Link to={node.slug} className="cell">
         <div>
           {withDate && <time>{node.date}</time>}

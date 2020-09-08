@@ -1,0 +1,136 @@
+:root {
+  --font-color: #b3b9c5;
+  --heading-color: #ffd479;
+  --dark-font-color: #ced4da;
+  --background: #2b2b2b;
+  --medium-font-color: #dee2e6;
+  --light-font-color: #868e96;
+  --light-background: #383838;
+  --lighter-background: #404040;
+  --border: #404040;
+  --link-color: #6ab0f3;
+  --link-hover-color: #e1a6f2;
+  --navbar-color: #1d1d1d;
+  --blockquote: var(--light-background);
+  --transparent-text: rgba(255, 255, 255, 0.7);
+  --transparent-bg: rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: white;
+}
+
+h3,
+h4 {
+  color: var(--medium-font-color);
+}
+
+.grid.guide h2 {
+  color: var(--medium-font-color);
+}
+
+.navbar {
+  box-shadow: none;
+}
+
+a {
+  color: var(--link-color);
+  background: transparent;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  background: transparent;
+}
+
+a[class^='tag-'] {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--link-color);
+}
+a[class^='tag-']:hover {
+  background: var(--link-color);
+  color: white;
+}
+
+a.button {
+  border: 1px solid transparent;
+  background: var(--link-color);
+  color: white;
+}
+
+.lead a:hover {
+  background: transparent;
+}
+
+.navbar a {
+  color: var(--transparent-text);
+}
+
+.navbar a:hover,
+.navbar a[aria-current='page'] {
+  color: var(--link-hover-color);
+}
+
+.navbar a.brand {
+  color: white;
+}
+
+.filename {
+  background: linear-gradient(to bottom, #303030, #202020) !important;
+  box-shadow: 0px 1px 0px rgba(100, 100, 100, 0.5) inset, 0px 1px 0px #515151;
+  border: 1px solid #202020 !important;
+  color: var(--dark-font-color) !important;
+  text-shadow: none !important;
+}
+
+pre.language-terminal {
+  background: var(--navbar-color);
+  border: 1px solid #111;
+}
+
+pre.language-terminal::before {
+  border-bottom: 1px solid #111;
+  background: linear-gradient(to bottom, #303030, #202020) !important;
+  color: inherit;
+}
+
+pre.language-terminal::after {
+  text-shadow: none;
+  color: var(--light-font-color);
+}
+
+code.language-terminal {
+  color: var(--dark-font-color);
+}
+
+[type='search'] {
+  border: 1px solid var(--light-background);
+  background: var(--light-background);
+  color: var(--dark-font-color);
+  border: 2px solid transparent;
+}
+
+[type='search']:focus {
+  outline: none;
+  border: 2px solid var(--link-color);
+}
+
+header u {
+  background: linear-gradient(transparent 85%, #111 0);
+}
+
+table,
+td,
+th {
+  border-color: #111;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #222;
+}
+
+blockquote {
+  color: #92d192;
+}

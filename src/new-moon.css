@@ -23,7 +23,6 @@
   --class: #e1a6f2;
   --tag: #6ab0f3;
   --error: #f2777a;
-  --light-background: #f1f3f5;
 }
 
 code[class*='language-'],
@@ -91,7 +90,7 @@ pre[class*='language-'] {
 pre.language-text,
 code.language-text {
   background: var(--light-background) !important;
-  color: #333 !important;
+  color: var(--dark-font-color) !important;
   box-shadow: none;
 }
 

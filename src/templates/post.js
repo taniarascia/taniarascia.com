@@ -18,20 +18,20 @@ export default function PostTemplate({ data, pageContext, ...props }) {
   const commentBox = React.createRef()
 
   useEffect(() => {
-    const scriptEl = document.createElement('script')
-    scriptEl.async = true
-    scriptEl.src = 'https://utteranc.es/client.js'
-    scriptEl.setAttribute('repo', 'taniarascia/comments')
-    scriptEl.setAttribute('issue-term', 'pathname')
-    scriptEl.setAttribute('id', 'utterances')
-    scriptEl.setAttribute('theme', 'github-light')
-    scriptEl.setAttribute('crossorigin', 'anonymous')
+    const commentScript = document.createElement('script')
+    commentScript.async = true
+    commentScript.src = 'https://utteranc.es/client.js'
+    commentScript.setAttribute('repo', 'taniarascia/comments') // CHANGE THIS if you're just going to clone this repo and use the code. Do not test your code using my repo.
+    commentScript.setAttribute('issue-term', 'pathname')
+    commentScript.setAttribute('id', 'utterances')
+    commentScript.setAttribute('theme', 'github-light')
+    commentScript.setAttribute('crossorigin', 'anonymous')
     if (commentBox && commentBox.current) {
-      commentBox.current.appendChild(scriptEl)
+      commentBox.current.appendChild(commentScript)
     } else {
       console.log(`Error adding utterances comments on: ${commentBox}`)
     }
-  }, [])
+  }, []) // eslint-disable-line
 
   return (
     <Layout>

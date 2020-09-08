@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Posts from '../components/Posts'
 import Guides from '../components/Guides'
-import Lists from '../components/Lists'
 import Projects from '../components/Projects'
 import SEO from '../components/SEO'
 
@@ -18,7 +17,7 @@ import speaking from '../data/speaking'
 
 import tania from '../../content/images/tania-2020.png'
 
-export default function BlogIndex({ data, ...props }) {
+export default function BlogIndex({ data }) {
   const latest = data.latest.edges
   const popular = data.popular.edges
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
@@ -59,24 +58,6 @@ export default function BlogIndex({ data, ...props }) {
               <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
               <Link to="/me">about me</Link>.
             </p>
-            <p className="flex">
-              <a
-                href="https://taniarascia.substack.com/subscribe"
-                target="_blank"
-                rel="noreferrer"
-                className="button"
-              >
-                <span className="emoji">💌</span> Join Newsletter
-              </a>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSd-Z3LTaSe8HsqAjnsGf3tXzAIFCTJT9JWtQTEbLpjOmc8UVA/viewform"
-                target="_blank"
-                rel="noreferrer"
-                className="button"
-              >
-                <span className="emoji">📣</span> Give Feedback
-              </a>
-            </p>
           </div>
 
           <div className="image">
@@ -84,7 +65,7 @@ export default function BlogIndex({ data, ...props }) {
           </div>
         </div>
       </section>
-      <div className="container">
+      <div className="container index">
         <Section title="Latest Articles" button>
           <Posts data={simplifiedLatest} tags withDate />
         </Section>
@@ -99,6 +80,19 @@ export default function BlogIndex({ data, ...props }) {
         </Section>
         <Section title="Speaking">
           <Guides data={speaking} />
+        </Section>
+        <Section title="Newsletter">
+          <p>
+            I send out an email whenever I create something new. Never any spam.
+          </p>
+          <a
+            href="https://taniarascia.substack.com/subscribe"
+            target="_blank"
+            rel="noreferrer"
+            className="button"
+          >
+            <span className="emoji">💌</span> Join Newsletter
+          </a>
         </Section>
       </div>
     </Layout>

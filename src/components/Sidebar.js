@@ -18,10 +18,6 @@ export default function Sidebar({ post, ...props }) {
             is a compendium of things I've learned while writing code for fun
             and profit.
           </p>
-          <p>
-            Everything I write and create is <b>free</b>. I will{' '}
-            <b>never have ads, paywalls, or sponsored content</b> on my website.
-          </p>
         </section>
         <section>
           <h3>Tags</h3>
@@ -87,6 +83,10 @@ export default function Sidebar({ post, ...props }) {
         </section>
         <section>
           <h3>Support</h3>
+          <p>
+            Everything I write and create is <b>free</b>. I will{' '}
+            <b>never have ads, paywalls, or sponsored content</b> on my website.
+          </p>
           <nav>
             <a
               href="https://ko-fi.com/taniarascia"
