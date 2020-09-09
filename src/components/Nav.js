@@ -35,18 +35,6 @@ export default function Nav() {
                   if (link) {
                     link.forEach((el) => el.remove())
                     event.target.textContent = '🌙'
-
-                    const message = {
-                      type: 'set-theme',
-                      theme: 'github-light',
-                    }
-                    let utterances = document.querySelector('iframe')
-                    if (utterances && utterances.contentWindow) {
-                      utterances.contentWindow.postMessage(
-                        message,
-                        'https://utteranc.es'
-                      )
-                    }
                   }
                 } else {
                   typeof window !== 'undefined' &&
@@ -59,18 +47,6 @@ export default function Nav() {
                   link.href = '../dark.css'
 
                   head.appendChild(link)
-
-                  const message = {
-                    type: 'set-theme',
-                    theme: 'github-dark',
-                  }
-                  let utterances = document.querySelector('iframe')
-                  if (utterances && utterances.contentWindow) {
-                    utterances.contentWindow.postMessage(
-                      message,
-                      'https://utteranc.es'
-                    )
-                  }
                 }
               }}
             >

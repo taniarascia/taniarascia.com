@@ -10,18 +10,5 @@ exports.onInitialClientRender = () => {
     link.id = 'dark-mode'
     link.href = '../dark.css'
     head.appendChild(link)
-
-    window.addEventListener('message', (event) => {
-      if (event.origin !== 'https://utteranc.es') {
-        return
-      }
-      const message = {
-        type: 'set-theme',
-        theme: 'github-dark',
-      }
-      let utterances = document.querySelector('iframe')
-      if (utterances && utterances.contentWindow)
-        utterances.contentWindow.postMessage(message, 'https://utteranc.es')
-    })
   }
 }
