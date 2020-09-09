@@ -61,10 +61,10 @@ export default function PostTemplate({ data, pageContext, ...props }) {
               </div>
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <section id="comments">
+            <div id="comments">
               <h2>Comments</h2>
               <Comment commentBox={commentBox} />
-            </section>
+            </div>
           </article>
           <Sidebar post={post} {...props} />
         </section>

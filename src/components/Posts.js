@@ -4,9 +4,19 @@ import { Link } from 'gatsby'
 import { slugify } from '../utils/helpers'
 
 const Cell = ({ node, tags, withDate }) => {
+  const date = new Date(node.date)
+  const oneMonthAgo = new Date()
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
+  let isNew = false
+
+  if (date > oneMonthAgo) {
+    isNew = true
+  }
+
   return (
     <div className={`row ${!withDate ? 'narrow' : ''}`} key={node.id}>
       <Link to={node.slug} className="cell">
+        {isNew && <div className="new-post">New!</div>}
         <div>
           {withDate && <time>{node.date}</time>}
           <div>{node.title}</div>

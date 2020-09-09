@@ -66,6 +66,15 @@ export default function BlogIndex({ data }) {
             >
               <span className="emoji">💌</span> Join Newsletter
             </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd-Z3LTaSe8HsqAjnsGf3tXzAIFCTJT9JWtQTEbLpjOmc8UVA/viewform"
+              target="_blank"
+              rel="noreferrer"
+              className="button secondary"
+            >
+              <span className="emoji">📣</span>
+              Give Feedback
+            </a>
           </div>
 
           <div className="image">
@@ -91,7 +100,8 @@ export default function BlogIndex({ data }) {
         </Section>
         <Section title="Newsletter">
           <p>
-            I send out an email whenever I create something new. Never any spam.
+            I send out an email when I create something new. Subscribe to get
+            updates!
           </p>
           <a
             href="https://taniarascia.substack.com/subscribe"
@@ -99,7 +109,7 @@ export default function BlogIndex({ data }) {
             rel="noreferrer"
             className="button"
           >
-            <span className="emoji">💌</span> Join Newsletter
+            <span className="emoji">💌</span> Join the Newsletter
           </a>
         </Section>
       </div>

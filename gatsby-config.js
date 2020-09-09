@@ -7,7 +7,7 @@ module.exports = {
     pathPrefix: '/',
     siteUrl: 'https://www.taniarascia.com',
     description:
-      'Software engineer and open source creator. This is my digital garden.',
+      'Software engineer and open-source creator. This is my digital garden.',
     feedUrl: 'https://www.taniarascia.com/rss.xml',
     logo: 'https://www.taniarascia.com/logo.png',
   },
@@ -56,7 +56,10 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [
+                    { 'content:encoded': edge.node.html },
+                    { author: 'hello@taniarascia.com' },
+                  ],
                 })
               })
             },
@@ -179,7 +182,7 @@ module.exports = {
           }
         `,
         ref: 'id',
-        index: ['title', 'body', 'tags'],
+        index: ['title', 'tags'],
         store: ['id', 'slug', 'title', 'tags', 'date'],
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map((node) => ({
