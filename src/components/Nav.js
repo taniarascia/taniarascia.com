@@ -24,12 +24,12 @@ export default function Nav() {
             <button
               id="dark-mode-button"
               onClick={(event) => {
-                const windowGlobal = typeof window !== 'undefined' && window
                 const theme =
-                  windowGlobal && windowGlobal.localStorage.getItem('theme')
+                  typeof window !== 'undefined' && localStorage.getItem('theme')
 
                 if (theme === 'dark') {
-                  windowGlobal.localStorage.removeItem('theme')
+                  typeof window !== 'undefined' &&
+                    localStorage.removeItem('theme')
                   const link = document.querySelectorAll('#dark-mode')
 
                   if (link) {
@@ -49,7 +49,8 @@ export default function Nav() {
                     }
                   }
                 } else {
-                  windowGlobal.localStorage.setItem('theme', 'dark')
+                  typeof window !== 'undefined' &&
+                    localStorage.setItem('theme', 'dark')
                   event.target.textContent = '☀️'
                   const head = document.getElementsByTagName('head')[0]
                   const link = document.createElement('link')
@@ -74,7 +75,7 @@ export default function Nav() {
               }}
             >
               {typeof window !== 'undefined' &&
-              window.localStorage.getItem('theme') === 'dark'
+              localStorage.getItem('theme') === 'dark'
                 ? '☀️'
                 : '🌙'}
             </button>
