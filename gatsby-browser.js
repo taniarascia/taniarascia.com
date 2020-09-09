@@ -1,8 +1,10 @@
 exports.onInitialClientRender = () => {
-  const theme = localStorage.getItem('theme')
+  const windowGlobal = typeof window !== 'undefined' && window
 
-  if (theme === 'dark') {
-    localStorage.setItem('theme', 'dark')
+  const theme = windowGlobal && windowGlobal.localStorage.getItem('theme')
+
+  if (windowGlobal && theme === 'dark') {
+    windowGlobal.localStorage.setItem('theme', 'dark')
     document.getElementById('dark-mode-button').textContent = '☀️'
     const head = document.getElementsByTagName('head')[0]
     const link = document.createElement('link')
