@@ -11,7 +11,7 @@
   --link-color: #6ab0f3;
   --link-hover-color: #e1a6f2;
   --navbar-color: #1d1d1d;
-  --blockquote: var(--light-background);
+  --blockquote: #2a4661;
   --transparent-text: rgba(255, 255, 255, 0.7);
   --transparent-bg: rgba(0, 0, 0, 0.2);
 }
@@ -54,14 +54,19 @@ a[class^='tag-']:hover {
   color: white;
 }
 
+.lead a:hover {
+  background: transparent;
+}
+
 a.button {
   border: 1px solid transparent;
-  background: var(--link-color);
+  background: #4a72a5;
   color: white;
 }
 
-.lead a:hover {
-  background: transparent;
+a.button:hover {
+  border: 1px solid transparent;
+  background: var(--link-color);
 }
 
 .navbar a {
@@ -132,5 +137,5 @@ tbody tr:nth-child(odd) {
 }
 
 blockquote {
-  color: #92d192;
+  color: rgba(255, 255, 255, 0.9);
 }

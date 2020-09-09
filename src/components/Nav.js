@@ -22,17 +22,18 @@ export default function Nav() {
               <span className="emoji">📘</span> Guides
             </Link>
             <button
-              id="dark-mode"
+              id="dark-mode-button"
               onClick={(event) => {
                 const theme = localStorage.getItem('theme')
 
                 if (theme === 'dark') {
                   localStorage.removeItem('theme')
-                  const link = document.getElementById('dark-mode')
+                  const link = document.querySelectorAll('#dark-mode')
 
                   if (link) {
-                    event.target.textContent = '☀️'
-                    link.remove()
+                    link.forEach((el) => el.remove())
+                    event.target.textContent = '🌙'
+
                     const message = {
                       type: 'set-theme',
                       theme: 'github-light',
@@ -47,12 +48,12 @@ export default function Nav() {
                   }
                 } else {
                   localStorage.setItem('theme', 'dark')
+                  event.target.textContent = '☀️'
                   const head = document.getElementsByTagName('head')[0]
                   const link = document.createElement('link')
                   link.rel = 'stylesheet'
                   link.id = 'dark-mode'
                   link.href = '../dark.css'
-                  event.target.textContent = '🌙'
 
                   head.appendChild(link)
 
@@ -70,7 +71,7 @@ export default function Nav() {
                 }
               }}
             >
-              🌙
+              {localStorage.getItem('theme') === 'dark' ? '☀️' : '🌙'}
             </button>
           </div>
         </div>

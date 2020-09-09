@@ -56,7 +56,7 @@ section {
   margin: 2rem 0;
 }
 
-.index section:first-of-type {
+section:first-of-type {
   margin-top: 0;
 }
 
@@ -316,6 +316,7 @@ h5 {
 /* Sidebar */
 
 .aside-content {
+  margin-top: 1rem;
   border-radius: 0.35rem;
 }
 
@@ -373,7 +374,7 @@ a.link {
 
 a.link:hover {
   background: transparent;
-  color: #3b5bdb;
+  color: var(--link-color);
 }
 
 /* Main */
@@ -585,8 +586,8 @@ main {
 .footer a {
   background: transparent;
   border-radius: 0.35rem;
-  padding: 0.5rem;
-  margin: 0 0.1rem;
+  padding: 0.3rem;
+  margin: 0 0.05rem;
   color: white;
   font-weight: 400;
   font-size: 0.95rem;
@@ -638,6 +639,12 @@ main {
 
 .navbar a.brand .emoji {
   display: inline-block !important;
+}
+
+@media screen and (min-width: 500px) {
+  .navbar a {
+    padding: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -1023,6 +1030,10 @@ a.cell {
   margin-right: 0;
 }
 
+header {
+  padding: 1rem 0;
+}
+
 header h1 {
   font-size: 2rem;
   display: inline-block;
@@ -1135,6 +1146,9 @@ header u {
   border-radius: 0.35rem;
   font-size: 1rem;
   -webkit-appearance: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 .search-form [type='search'] {
@@ -1441,23 +1455,29 @@ a.tag-tools:hover {
   color: white;
 }
 
-button {
+#dark-mode-button {
   display: flex;
   background: transparent;
   border: none;
-  padding: 0.5rem 0.7rem 0.5rem 0.5rem;
+  padding: 0.2rem 0.7rem 0.2rem 0.5rem;
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
   font-size: 1.1rem;
 }
 
-button:hover {
+#dark-mode-button:hover {
   background: var(--transparent-bg);
 }
 
-button:focus {
+#dark-mode-button:focus {
   outline: none;
+}
+
+@media screen and (min-width: 800px) {
+  #dark-mode-button {
+    padding: 0.75rem;
+  }
 }
 
 ::selection {

@@ -58,6 +58,14 @@ export default function BlogIndex({ data }) {
               <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
               <Link to="/me">about me</Link>.
             </p>
+            <a
+              href="https://taniarascia.substack.com/subscribe"
+              target="_blank"
+              rel="noreferrer"
+              className="button"
+            >
+              <span className="emoji">💌</span> Join Newsletter
+            </a>
           </div>
 
           <div className="image">

@@ -43,11 +43,11 @@ export default function Posts({ data, tags, showYears, withDate }) {
 
   if (showYears) {
     return years.map((year) => (
-      <section>
+      <section key={year}>
         <h2>{year}</h2>
         <div className={tags ? 'grid posts with-tags' : 'grid posts'}>
           {postsByYear[year].map((node) => (
-            <Cell node={node} tags={tags} withDate={withDate} />
+            <Cell key={node.id} node={node} tags={tags} withDate={withDate} />
           ))}
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Posts({ data, tags, showYears, withDate }) {
     return (
       <div className={tags ? 'grid posts with-tags' : 'grid posts'}>
         {data.map((node) => (
-          <Cell node={node} tags={tags} withDate={withDate} />
+          <Cell key={node.id} node={node} tags={tags} withDate={withDate} />
         ))}
       </div>
     )

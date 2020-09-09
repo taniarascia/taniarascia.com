@@ -3,7 +3,7 @@ exports.onInitialClientRender = () => {
 
   if (theme === 'dark') {
     localStorage.setItem('theme', 'dark')
-    document.getElementById('dark-mode').textContent = '☀️'
+    document.getElementById('dark-mode-button').textContent = '☀️'
     const head = document.getElementsByTagName('head')[0]
     const link = document.createElement('link')
     link.rel = 'stylesheet'

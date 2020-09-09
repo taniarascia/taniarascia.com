@@ -87,7 +87,7 @@ export default function Sidebar({ post, ...props }) {
             Everything I write and create is <b>free</b>. I will{' '}
             <b>never have ads, paywalls, or sponsored content</b> on my website.
           </p>
-          <nav>
+          <nav style={{ marginTop: '1rem' }}>
             <a
               href="https://ko-fi.com/taniarascia"
               target="_blank"
