@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import floppy from '../../content/images/floppylogo.png'
 
 export default function Nav() {
   return (
@@ -8,7 +9,15 @@ export default function Nav() {
         <div className="flex">
           <div>
             <Link to="/" className="brand">
-              <span className="emoji">💾</span> Tania Rascia
+              <span className="emoji">
+                <img
+                  src={floppy}
+                  height="30"
+                  width="30"
+                  alt="Floppy Diskette"
+                />
+              </span>{' '}
+              Tania Rascia
             </Link>
           </div>
           <div className="flex">
