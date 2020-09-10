@@ -69,6 +69,16 @@ section > h2 {
   margin-bottom: 2rem;
 }
 
+.index h2 {
+  border-bottom-width: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .index h2 {
+    border-bottom-width: 1px;
+  }
+}
+
 .section-button {
   font-weight: 500;
   background: var(--light-background);
@@ -465,6 +475,17 @@ a.button.secondary:hover {
   color: white;
 }
 
+.lead a.button {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 600px) {
+  .lead a.button {
+    display: inline-block;
+  }
+}
+
 @media screen and (min-width: 800px) {
   a.button {
     padding: 1rem 1.5rem;
@@ -774,7 +795,6 @@ table {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--border);
   border-radius: 0.35rem;
 }
 
@@ -788,11 +808,11 @@ th {
 }
 
 tfoot th {
-  border-top: 1px solid var(--light-background);
+  border-top: 1px solid var(--border);
 }
 
 td {
-  border-bottom: 1px solid var(--light-background);
+  border-bottom: 1px solid var(--border);
 }
 
 th,
@@ -810,6 +830,7 @@ tbody tr:nth-child(even) {
 @media screen and (min-width: 800px) {
   table {
     display: table;
+    border: 1px solid var(--border);
   }
 }
 

@@ -91,6 +91,7 @@ pre.language-text,
 code.language-text {
   background: var(--light-background) !important;
   color: var(--dark-font-color) !important;
+  border: 1px solid var(--border);
   box-shadow: none;
 }
 
