@@ -124,6 +124,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 650,
@@ -135,7 +141,7 @@ module.exports = {
               classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
-              showLineNumbers: true,
+              showLineNumbers: false,
               noInlineHighlight: true,
               prompt: {
                 user: 'root',
@@ -144,13 +150,6 @@ module.exports = {
               },
             },
           },
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              offsetY: `120`,
-            },
-          },
-          'gatsby-remark-prismjs',
         ],
       },
     },
