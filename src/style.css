@@ -55,7 +55,7 @@ article {
 
 section {
   margin: 2rem 0;
-}
+} 
 
 section:first-of-type {
   margin-top: 0;
@@ -69,12 +69,12 @@ section > h2 {
   margin-bottom: 2rem;
 }
 
-.index h2 {
+.index h2, section > h2 {
   border-bottom-width: 0;
 }
 
 @media screen and (min-width: 800px) {
-  .index h2 {
+  .index h2, section > h2 {
     border-bottom-width: 1px;
   }
 }
@@ -361,6 +361,7 @@ aside section {
   background: var(--light-background);
   padding: 1.5rem;
   border-radius: 0.35rem;
+  border: 1px solid var(--border); 
 }
 
 .aside-content section:last-child {
@@ -666,7 +667,6 @@ main {
 }
 
 .navbar a.brand {
-  font-size: 1.05rem;
   font-weight: 500;
   color: white;
   white-space: nowrap;
@@ -683,6 +683,11 @@ main {
 
 .navbar a.brand .emoji {
   display: inline-block !important;
+}
+
+.navbar a.brand img {
+  height: 22px;
+  width: 22px;
 }
 
 @media screen and (min-width: 500px) {
@@ -714,6 +719,11 @@ main {
     font-size: 1.3rem;
     margin-right: 3rem;
     border: none;
+  }
+  .navbar a.brand img {
+    height: 26px;
+    width: 26px;
+    margin-right: .25rem;
   }
   .navbar a:first-of-type {
     margin-left: -1.5rem;
@@ -864,9 +874,8 @@ tbody tr:nth-child(even) {
   justify-content: center;
 }
 
-.new-post {
+.new-post, .popular-post {
   display: inline-block;
-  background: #d3f9d8;
   color: #111;
   padding: 0.5rem;
   border-radius: 0.3rem;
@@ -875,8 +884,17 @@ tbody tr:nth-child(even) {
   margin-bottom: 1rem;
 }
 
+.new-post {
+  background: #d3f9d8;
+}
+
+.popular-post {
+  background: #4263eb;
+  color: white;
+}
+
 @media screen and (min-width: 800px) {
-  .new-post {
+  .new-post, .popular-post {
     margin-bottom: 0;
   }
 }
@@ -1032,6 +1050,7 @@ a.cell {
   padding: 1.5rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  border: 1px solid var(--border); 
 }
 
 .grid.guide img {
@@ -1276,6 +1295,7 @@ header u {
   padding: 1.5rem;
   border-radius: 0.35rem;
   background: var(--light-background);
+  border: 1px solid var(--border); 
 }
 
 .suggested a:hover {

@@ -20,7 +20,7 @@ export default function Search({ posts, location, navigate }) {
   const results = useFlexSearch(
     query,
     localSearchPages.index,
-    JSON.parse(localSearchPages.store)
+    localSearchPages.store
   )
 
   return (

@@ -12,8 +12,6 @@ export default function Nav() {
               <span className="emoji">
                 <img
                   src={floppy}
-                  height="30"
-                  width="30"
                   alt="Floppy Diskette"
                 />
               </span>{' '}

@@ -95,6 +95,10 @@ code.language-text {
   box-shadow: none;
 }
 
+pre.language-text code.language-text {
+  border: none;
+}
+
 code.language-shell::before {
   content: '$ ';
   color: var(--comment);
