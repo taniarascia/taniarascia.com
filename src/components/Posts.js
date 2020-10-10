@@ -15,13 +15,11 @@ const Cell = ({ node, tags, withDate }) => {
 
   const isPopular = node.categories && node.categories.includes('Popular')
 
-  console.log(node.categories)
-
   return (
     <div className={`row ${!withDate ? 'narrow' : ''}`} key={node.id}>
       <Link to={node.slug} className="cell">
-        {isNew ? <div className="new-post">New!</div> :
-        isPopular ? <div className="popular-post">Popular</div> : null}
+        {isNew && <div className="new-post">New!</div>}
+        {isPopular && <div className="popular-post">Popular</div>}
         <div>
           {withDate && <time>{node.date}</time>}
           <div>{node.title}</div>
