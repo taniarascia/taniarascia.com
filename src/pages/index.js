@@ -45,38 +45,20 @@ export default function BlogIndex({ data }) {
       <SEO />
       <section className="lead">
         <div className="container">
-          <div className="copy">
+          <div>
             <h1>
               Hey! I'm Tania Rascia.
-              <br /> I'm a software engineer and open-source creator.
+              <br /> I'm a software engineer, writer, and open-source creator.
             </h1>
             <p>
               This website is my 🌱 digital garden&mdash;a compendium of the
-              things I have learned and created over the years, and anything
-              else I want to write about. You can read my{' '}
-              <Link to="/blog">blog</Link>, view my{' '}
+              things I've learned and created over the years, and anything else
+              I want to write about. You can read my{' '}
+              <Link to="/blog">articles</Link>, view my{' '}
               <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
               <Link to="/me">about me</Link>.
             </p>
-            <a
-              href="https://taniarascia.substack.com/subscribe"
-              target="_blank"
-              rel="noreferrer"
-              className="button"
-            >
-              <span className="emoji">💌</span> Join Newsletter
-            </a>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd-Z3LTaSe8HsqAjnsGf3tXzAIFCTJT9JWtQTEbLpjOmc8UVA/viewform"
-              target="_blank"
-              rel="noreferrer"
-              className="button secondary"
-            >
-              <span className="emoji">📣</span>
-              Give Feedback
-            </a>
           </div>
-
           <div className="image">
             <img src={tania} alt="Tania" />
           </div>
@@ -84,19 +66,19 @@ export default function BlogIndex({ data }) {
       </section>
       <div className="container index">
         <Section title="Latest Articles" button>
-          <Posts data={simplifiedLatest} tags withDate />
+          <Posts data={simplifiedLatest} />
         </Section>
         <Section title="Popular Articles" button>
-          <Posts data={simplifiedPopular} tags withDate />
+          <Posts data={simplifiedPopular} />
         </Section>
         <Section title="Projects">
           <Projects data={projects} />
         </Section>
         <Section title="Interviews">
-          <Guides data={interviews} />
+          <Guides data={interviews} frontPage />
         </Section>
         <Section title="Speaking">
-          <Guides data={speaking} />
+          <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter">
           <p>

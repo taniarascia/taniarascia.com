@@ -15,6 +15,7 @@
   --blockquote: #2a4661;
   --transparent-text: rgba(255, 255, 255, 0.7);
   --transparent-bg: rgba(0, 0, 0, 0.2);
+  --light-transparent-bg: rgba(255, 255, 255, 0.05);
 }
 
 h1 {
@@ -26,24 +27,18 @@ h4 {
   color: var(--medium-font-color);
 }
 
-.grid.guide h2 {
-  color: var(--medium-font-color);
-}
-
 .navbar {
   box-shadow: none;
 }
 
 a {
   color: var(--link-color);
-  background: transparent;
   text-decoration: none;
   font-weight: 700;
 }
 
 a:hover {
   color: var(--link-hover-color);
-  background: transparent;
 }
 
 a[class^='tag-'] {
@@ -56,7 +51,6 @@ a[class^='tag-']:hover {
 }
 
 .lead a:hover {
-  background: transparent;
 }
 
 a.button {
@@ -82,7 +76,7 @@ a.button.secondary {
 
 .navbar a:hover,
 .navbar a[aria-current='page'] {
-  color: var(--link-hover-color);
+  color: white;
 }
 
 .navbar a.brand {

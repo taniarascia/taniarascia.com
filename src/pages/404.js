@@ -11,7 +11,7 @@ export default function FourOhFour() {
     <Layout>
       <Helmet title={`404 | ${config.siteTitle}`} />
       <SEO />
-      <div className="container text-center">
+      <div className="container">
         <header>
           <h1>404</h1>
           <p className="subtitle">This was probably a mistake.</p>

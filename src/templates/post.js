@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
-import Sidebar from '../components/Sidebar'
 import Suggested from '../components/Suggested'
 import SEO from '../components/SEO'
 import Comment from '../components/Comment'
 
 import config from '../utils/config'
+import { slugify } from '../utils/helpers'
 
-export default function PostTemplate({ data, pageContext, ...props }) {
+export default function PostTemplate({ data, pageContext }) {
   const post = data.markdownRemark
   const { previous, next } = pageContext
-  const { thumbnail } = post.frontmatter
+  const { tags, thumbnail, title, description, date } = post.frontmatter
   const commentBox = React.createRef()
 
   useEffect(() => {
@@ -42,32 +42,48 @@ export default function PostTemplate({ data, pageContext, ...props }) {
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
       <div className="container">
-        <section className="grid post">
-          <article>
-            <header className="article-header">
-              <div className="container">
-                <div className="thumb">
-                  {thumbnail && (
-                    <Img
-                      fixed={thumbnail.childImageSharp.fixed}
-                      className="post-thumbnail"
-                    />
-                  )}
-                  <h1>{post.frontmatter.title}</h1>
+        <article>
+          <header className="article-header">
+            <div className="container">
+              <div className="thumb">
+                {thumbnail && (
+                  <Img
+                    fixed={thumbnail.childImageSharp.fixed}
+                    className="post-thumbnail"
+                  />
+                )}
+                <div>
+                  <h1>{title}</h1>
                 </div>
-                {post.frontmatter.description && (
-                  <p className="description">{post.frontmatter.description}</p>
+              </div>
+              <div className="post-meta">
+                <div>
+                  Written by <Link to="/me">Tania Rascia</Link> on{' '}
+                  <time>{date}</time>
+                </div>
+                {tags && (
+                  <div className="tags">
+                    {tags.map((tag) => (
+                      <Link
+                        key={tag}
+                        to={`/tags/${slugify(tag)}`}
+                        className={`tag-${tag}`}
+                      >
+                        {tag}
+                      </Link>
+                    ))}
+                  </div>
                 )}
               </div>
-            </header>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <div id="comments">
-              <h2>Comments</h2>
-              <Comment commentBox={commentBox} />
             </div>
-          </article>
-          <Sidebar post={post} {...props} />
-        </section>
+            {description && <p className="description">{description}</p>}
+          </header>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div id="comments">
+            <h2>Comments</h2>
+            <Comment commentBox={commentBox} />
+          </div>
+        </article>
         <Suggested previous={previous} next={next} />
       </div>
     </Layout>

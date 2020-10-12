@@ -2,20 +2,21 @@ import React from 'react'
 
 export default function Projects({ data }) {
   return (
-    <div className="grid projects">
+    <div className="projects">
       {data.map((node) => {
         return (
-          <a
-            href={node.path || node.source}
-            key={node.path || node.source}
-            className="row"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="cell simple">{node.icon}</div>
-            <div className="cell simple">{node.title}</div>
-            <div className="cell simple light description">{node.description}</div>
-          </a>
+          <div className="project">
+            <a
+              href={node.path || node.source}
+              key={node.path || node.source}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="icon">{node.icon}</div>
+              <h3>{node.title}</h3>
+            </a>
+            <div className="description">{node.description}</div>
+          </div>
         )
       })}
     </div>

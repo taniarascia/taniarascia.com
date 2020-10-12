@@ -1,9 +1,7 @@
 import React, { useMemo } from 'react'
 import { Link } from 'gatsby'
 
-import { slugify } from '../utils/helpers'
-
-const Cell = ({ node, tags, withDate }) => {
+const Cell = ({ node }) => {
   const date = new Date(node.date)
   const oneMonthAgo = new Date()
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
@@ -16,34 +14,20 @@ const Cell = ({ node, tags, withDate }) => {
   const isPopular = node.categories && node.categories.includes('Popular')
 
   return (
-    <div className={`row ${!withDate ? 'narrow' : ''}`} key={node.id}>
-      <Link to={node.slug} className="cell">
+    <div className="post" key={node.id}>
+      <Link to={node.slug}>
         {isNew && <div className="new-post">New!</div>}
         {isPopular && <div className="popular-post">Popular</div>}
         <div>
-          {withDate && <time>{node.date}</time>}
-          <div>{node.title}</div>
+          <time>{node.date}</time>
+          <h3>{node.title}</h3>
         </div>
       </Link>
-      {tags && (
-        <div className="cell tags">
-          {node.tags &&
-            node.tags.map((tag) => (
-              <Link
-                key={tag}
-                to={`/tags/${slugify(tag)}`}
-                className={`tag-${tag}`}
-              >
-                {tag}
-              </Link>
-            ))}
-        </div>
-      )}
     </div>
   )
 }
 
-export default function Posts({ data, tags, showYears, withDate }) {
+export default function Posts({ data, showYears }) {
   const postsByYear = {}
 
   data.forEach((post) => {
@@ -58,18 +42,18 @@ export default function Posts({ data, tags, showYears, withDate }) {
     return years.map((year) => (
       <section key={year}>
         <h2>{year}</h2>
-        <div className={tags ? 'grid posts with-tags' : 'grid posts'}>
+        <div className="posts">
           {postsByYear[year].map((node) => (
-            <Cell key={node.id} node={node} tags={tags} withDate={withDate} />
+            <Cell key={node.id} node={node} />
           ))}
         </div>
       </section>
     ))
   } else {
     return (
-      <div className={tags ? 'grid posts with-tags' : 'grid posts'}>
+      <div className="posts">
         {data.map((node) => (
-          <Cell key={node.id} node={node} tags={tags} withDate={withDate} />
+          <Cell key={node.id} node={node} />
         ))}
       </div>
     )

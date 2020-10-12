@@ -10,18 +10,15 @@ export default function Nav() {
           <div>
             <Link to="/" className="brand">
               <span className="emoji">
-                <img
-                  src={floppy}
-                  alt="Floppy Diskette"
-                />
+                <img src={floppy} alt="Floppy Diskette" />
               </span>{' '}
               Tania Rascia
             </Link>
           </div>
           <div className="flex">
-            <Link to="/me">About</Link>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog">Articles</Link>
             <Link to="/guides">Guides</Link>
+            <Link to="/me">About me</Link>
             <button
               id="dark-mode-button"
               onClick={(event) => {

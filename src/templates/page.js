@@ -15,12 +15,13 @@ export default function PageTemplate({ data }) {
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO />
       <header>
-        <div className="container medium text-center">
+        <div className="container">
           <h1>{post.frontmatter.title}</h1>
+          <p className="subtitle">{post.frontmatter.description}</p>
         </div>
       </header>
       <section>
-        <div className="container medium">
+        <div className="container">
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </section>
@@ -34,6 +35,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        description
       }
     }
   }
