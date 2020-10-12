@@ -1239,6 +1239,7 @@ kbd {
   }
 
   .post a {
+    padding: 0.6rem 0;
     border-bottom-color: transparent;
   }
 
