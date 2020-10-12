@@ -27,10 +27,6 @@ h4 {
   color: var(--medium-font-color);
 }
 
-.navbar {
-  box-shadow: none;
-}
-
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -39,18 +35,6 @@ a {
 
 a:hover {
   color: var(--link-hover-color);
-}
-
-a[class^='tag-'] {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--link-color);
-}
-a[class^='tag-']:hover {
-  background: var(--link-color);
-  color: white;
-}
-
-.lead a:hover {
 }
 
 a.button {
@@ -144,4 +128,8 @@ blockquote {
 .new-post {
   background: #37b24d;
   color: white;
+}
+
+.guide h2 {
+  color: var(--medium-font-color);
 }

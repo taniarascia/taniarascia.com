@@ -123,14 +123,9 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-remark-autolink-headers',
           {
-            resolve: 'gatsby-remark-autolink-headers',
-            options: {
-            offsetY: '100',
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 650,
             },

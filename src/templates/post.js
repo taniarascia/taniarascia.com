@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Suggested from '../components/Suggested'
 import SEO from '../components/SEO'
 import Comment from '../components/Comment'
+import Blurb from '../components/Blurb'
 
 import config from '../utils/config'
 import { slugify } from '../utils/helpers'
@@ -54,36 +55,68 @@ export default function PostTemplate({ data, pageContext }) {
                 )}
                 <div>
                   <h1>{title}</h1>
-                </div>
-              </div>
-              <div className="post-meta">
-                <div>
-                  Written by <Link to="/me">Tania Rascia</Link> on{' '}
-                  <time>{date}</time>
-                </div>
-                {tags && (
-                  <div className="tags">
-                    {tags.map((tag) => (
-                      <Link
-                        key={tag}
-                        to={`/tags/${slugify(tag)}`}
-                        className={`tag-${tag}`}
-                      >
-                        {tag}
-                      </Link>
-                    ))}
+                  <div className="post-meta">
+                    <div>
+                      By <Link to="/me">Tania Rascia</Link> on{' '}
+                      <time>{date}</time> &middot;{' '}
+                      <Link to="#comments">View comments</Link>
+                    </div>
+                    {tags && (
+                      <div className="tags">
+                        {tags.map((tag) => (
+                          <Link
+                            key={tag}
+                            to={`/tags/${slugify(tag)}`}
+                            className={`tag-${tag}`}
+                          >
+                            {tag}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
             </div>
             {description && <p className="description">{description}</p>}
           </header>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <div id="comments">
-            <h2>Comments</h2>
-            <Comment commentBox={commentBox} />
-          </div>
+          <div
+            className="article-post"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
         </article>
+      </div>
+      <Blurb title="About the author">
+        <p>
+          Hey, I'm <Link to="/me">Tania</Link>, a software engineer, writer, and
+          open-source creator. I publish guides and tutorials about modern
+          JavaScript, design, and programming.
+        </p>
+        <p>
+          <a
+            className="button"
+            href="https://taniarascia.substack.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join newsletter
+          </a>
+          <a
+            className="button"
+            href="https://ko-fi.com/taniarascia"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Buy me a coffee
+          </a>
+        </p>
+      </Blurb>
+      <div class="container">
+        <div id="comments">
+          <h2>Comments</h2>
+          <Comment commentBox={commentBox} />
+        </div>
+
         <Suggested previous={previous} next={next} />
       </div>
     </Layout>

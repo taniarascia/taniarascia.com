@@ -7,6 +7,7 @@ import Posts from '../components/Posts'
 import Guides from '../components/Guides'
 import Projects from '../components/Projects'
 import SEO from '../components/SEO'
+import Blurb from '../components/Blurb'
 
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -14,8 +15,6 @@ import config from '../utils/config'
 import projects from '../data/projects'
 import interviews from '../data/interviews'
 import speaking from '../data/speaking'
-
-import tania from '../../content/images/tania-2020.png'
 
 export default function BlogIndex({ data }) {
   const latest = data.latest.edges
@@ -43,27 +42,34 @@ export default function BlogIndex({ data }) {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <section className="lead">
-        <div className="container">
-          <div>
-            <h1>
-              Hey! I'm Tania Rascia.
-              <br /> I'm a software engineer, writer, and open-source creator.
-            </h1>
-            <p>
-              This website is my 🌱 digital garden&mdash;a compendium of the
-              things I've learned and created over the years, and anything else
-              I want to write about. You can read my{' '}
-              <Link to="/blog">articles</Link>, view my{' '}
-              <Link to="/guides">guides &amp; tutorials</Link>, or learn more{' '}
-              <Link to="/me">about me</Link>.
-            </p>
-          </div>
-          <div className="image">
-            <img src={tania} alt="Tania" />
-          </div>
-        </div>
-      </section>
+      <Blurb title="Hey! I'm Tania Rascia.">
+        <p>
+          I'm a software engineer, writer, and open-source creator. This website
+          is my digital garden &mdash; a compendium of the things I've learned
+          and created over the years.
+        </p>
+        <p>
+          <Link className="button" to="/me">
+            About me
+          </Link>
+          <a
+            className="button"
+            href="https://taniarascia.substack.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join newsletter
+          </a>
+          <a
+            className="button"
+            href="https://github.com/taniarascia"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        </p>
+      </Blurb>
       <div className="container index">
         <Section title="Latest Articles" button>
           <Posts data={simplifiedLatest} />
@@ -89,7 +95,7 @@ export default function BlogIndex({ data }) {
             href="https://taniarascia.substack.com/subscribe"
             target="_blank"
             rel="noreferrer"
-            className="button"
+            className="button large"
           >
             <span className="emoji">💌</span> Join the Newsletter
           </a>
