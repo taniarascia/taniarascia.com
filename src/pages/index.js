@@ -48,7 +48,7 @@ export default function BlogIndex({ data }) {
           is my digital garden &mdash; a compendium of the things I've learned
           and created over the years.
         </p>
-        <p>
+        <p className="stack-mobile">
           <Link className="button" to="/me">
             About me
           </Link>

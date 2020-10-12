@@ -38,14 +38,14 @@ a:hover {
 }
 
 a.button {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   color: white;
-  background: var(--link-color-darker);
+  background: #4263eb;
 }
 
 a.button:hover {
-  border: 1px solid transparent;
-  background: var(--link-color);
+  border: 2px solid transparent;
+  background: #748ffc;
 }
 
 a.button.secondary {
