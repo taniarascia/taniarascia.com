@@ -18,7 +18,7 @@ export default function Nav() {
           <div className="flex">
             <Link to="/blog">Articles</Link>
             <Link to="/guides">Guides</Link>
-            <Link to="/me">About me</Link>
+            <Link to="/me">About</Link>
             <button
               id="dark-mode-button"
               onClick={(event) => {

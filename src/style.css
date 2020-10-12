@@ -939,7 +939,7 @@ header u {
 
 .article-header {
   padding-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 
 .article-header .container {
@@ -970,9 +970,6 @@ header u {
   margin-top: 1rem;
   padding: 1rem 0;
   color: var(--light-font-color);
-}
-
-.post-meta a {
 }
 
 .post-meta a:hover {
@@ -1237,7 +1234,7 @@ kbd {
 .post h3 {
   margin-top: 0.1rem;
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
@@ -1301,6 +1298,7 @@ kbd {
   height: 50px !important;
   width: 50px !important;
   min-width: 50px;
+  margin-right: 1rem;
 }
 
 .guides.front-page img {
@@ -1308,9 +1306,6 @@ kbd {
   width: 50px !important;
   min-width: 50px;
   margin-right: 1rem;
-}
-
-a.image-link {
 }
 
 .guide {
