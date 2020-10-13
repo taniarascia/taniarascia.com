@@ -684,6 +684,7 @@ main {
 @media screen and (min-width: 800px) {
   #dark-mode-button {
     padding: 0.75rem;
+    font-size: 1.2rem;
   }
 }
 
