@@ -23,7 +23,7 @@ export default function TagTemplate({ data, pageContext }) {
       <header>
         <div className="container">
           <h1>Posts tagged: {tag}</h1>
-          <p class="subtitle">
+          <p className="subtitle">
             <span className="count">{totalCount}</span>
             {message}
           </p>

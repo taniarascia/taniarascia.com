@@ -1313,6 +1313,10 @@ kbd {
   margin-right: 1rem;
 }
 
+.guides.front-page .guide h2 {
+  margin-bottom: 0;
+}
+
 .guides.front-page img {
   height: 50px !important;
   width: 50px !important;

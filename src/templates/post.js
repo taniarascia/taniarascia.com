@@ -110,7 +110,7 @@ export default function PostTemplate({ data, pageContext }) {
           </a>
         </p>
       </Blurb>
-      <div class="container">
+      <div className="container">
         <div id="comments">
           <h2>Comments</h2>
           <Comment commentBox={commentBox} />
