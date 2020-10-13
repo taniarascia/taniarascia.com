@@ -1,6 +1,6 @@
 import React from 'react'
 
-import tania from '../../content/images/tania-2020.png'
+import tania from '../../content/images/dither.jpg'
 
 export default function Blurb({ title, children }) {
   return (

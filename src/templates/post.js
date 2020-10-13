@@ -58,8 +58,7 @@ export default function PostTemplate({ data, pageContext }) {
                   <div className="post-meta">
                     <div>
                       By <Link to="/me">Tania Rascia</Link> on{' '}
-                      <time>{date}</time> &middot;{' '}
-                      <Link to="#comments">View comments</Link>
+                      <time>{date}</time>
                     </div>
                     {tags && (
                       <div className="tags">
