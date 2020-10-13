@@ -193,6 +193,7 @@ blockquote {
   background: var(--blockquote);
   border-radius: 0.35rem;
   font-weight: 400;
+  border-left: 3px solid var(--link-color);
 }
 
 blockquote p {
@@ -1217,6 +1218,10 @@ kbd {
   justify-content: stretch;
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
+}
+
+.posts .post:last-of-type a {
+  border-bottom-width: 0;
 }
 
 .post a:hover {
