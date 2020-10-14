@@ -53,10 +53,10 @@ export default [
   },
   {
     icon: '📦',
-    title: 'Webpack Boilerplate',
+    title: 'webpack Boilerplate',
     source: 'https://github.com/taniarascia/webpack-boilerplate',
     description:
-      'A sensible Webpack 4 boilerplate with with Babel, Sass, ESLint, HMR, and optimization.',
+      'A sensible webpack 5 boilerplate with with Babel, Post CSS, and Sass.',
   },
   {
     icon: '💾',
