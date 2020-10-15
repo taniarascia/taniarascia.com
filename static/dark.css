@@ -133,3 +133,7 @@ blockquote {
 .guide h2 {
   color: var(--medium-font-color);
 }
+
+.guide-thumbnails a:hover {
+  color: white;
+}

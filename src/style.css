@@ -1312,6 +1312,42 @@ kbd {
 
 /* Guide */
 
+.guide-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.guide-thumbnails a {
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  margin: 0.25rem;
+  color: var(--font-color);
+  min-width: 80px;
+}
+
+.guide-thumbnails span {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.guide-thumbnails a:hover {
+  background: var(--light-background);
+  transform: translate3d(0, -1px, 0);
+}
+
+.guide-thumbnails img,
+.guide-thumbnails .gatsby-image-wrapper {
+  max-width: 40px;
+  max-height: 40px;
+  margin-bottom: 0.25rem;
+}
+
 .guides .gatsby-image-wrapper {
   height: 50px !important;
   width: 50px !important;

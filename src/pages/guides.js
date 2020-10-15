@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import Guides from '../components/Guides'
@@ -29,10 +30,18 @@ export default function BlogIndex({ data }) {
         </div>
       </header>
       <section>
-        <div className="guides-section">
-          <div className="container">
-            <Guides data={simplifiedPosts} />
-          </div>
+        <div className="container guide-thumbnails">
+          {simplifiedPosts.map((post) => (
+            <Link to={post.slug} className="image-link">
+              <Img fixed={post.thumbnail} />
+              <span>{post.topic}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <Guides data={simplifiedPosts} />
         </div>
       </section>
     </Layout>
@@ -56,6 +65,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             tags
+            topic
             thumbnail {
               childImageSharp {
                 fixed(width: 100, height: 100) {
