@@ -196,7 +196,7 @@ blockquote {
   border-left: 3px solid var(--link-color);
 }
 
-blockquote p {
+blockquote *:last-child {
   margin: 0;
 }
 
