@@ -12,10 +12,10 @@
   --dark-font-color: #1b1d25;
   --medium-font-color: #60656c;
   --light-font-color: #858b93;
-  --light-background: #f6f8fb;
-  --lighter-background: #e6e8eb;
+  --light-background: #f1f4f8;
+  --light-background-hover: #e1e6ed;
   --border: #d6d9de;
-  --link-color: #5c7cfa;
+  --link-color: #5183f5;
   --link-color-darker: #364fc7;
   --navbar-color: #1b1d25;
   --blockquote: #edf2ff;
@@ -91,7 +91,7 @@ section > h2 {
   color: var(--dark-font-color);
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
-  border-radius: 3rem;
+  border-radius: 0.3rem;
   border-bottom: 0;
   white-space: nowrap;
   line-height: 1;
@@ -100,8 +100,8 @@ section > h2 {
 }
 
 .section-button:hover {
-  background: #868e96;
-  color: white;
+  background: var(--light-background-hover);
+  color: var(--heading-color);
 }
 
 @media screen and (min-width: 800px) {
@@ -564,7 +564,7 @@ main {
 .navbar a {
   border-radius: 0.35rem;
   margin: 0 0.05rem;
-  color: #bbb;
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 400;
   font-size: 0.85rem;
   border: 1px solid transparent;
@@ -650,14 +650,14 @@ main {
   }
   .navbar a:hover,
   .navbar a[aria-current='page'] {
-    background: var(--transparent-bg);
+    background: var(--light-background);
     color: var(--dark-font-color);
   }
   .navbar a.brand:hover {
-    background: var(--transparent-bg) !important;
+    background: var(--light-background) !important;
   }
   #dark-mode-button:hover {
-    background: var(--transparent-bg);
+    background: var(--light-background);
   }
 }
 
@@ -730,7 +730,7 @@ main {
 
 .footer a:hover {
   color: var(--heading-color);
-  background: var(--transparent-bg);
+  background: var(--light-background);
 }
 
 .footer a.img {
@@ -862,8 +862,8 @@ tbody tr:nth-child(even) {
 }
 
 .popular-post {
-  background: #4263eb;
-  color: white;
+  background: #dce6fd;
+  color: var(--heading-color);
 }
 
 @media screen and (min-width: 800px) {
@@ -1087,7 +1087,7 @@ header u {
 
 .suggested a:hover {
   transform: translate3D(0, -1px, 0);
-  background: var(--lighter-background);
+  background: var(--light-background-hover);
 }
 
 @media screen and (min-width: 800px) {
@@ -1151,7 +1151,7 @@ time,
 }
 
 .tags > a:hover {
-  background: var(--lighter-background);
+  background: var(--light-background-hover);
   color: var(--heading-color);
 }
 
@@ -1212,6 +1212,10 @@ kbd {
   flex: 1;
 }
 
+.posts .post:last-of-type a {
+  border-bottom-width: 0;
+}
+
 .post a {
   display: flex;
   align-items: center;
@@ -1220,16 +1224,8 @@ kbd {
   border-bottom: 1px solid var(--border);
 }
 
-.posts .post:last-of-type a {
-  border-bottom-width: 0;
-}
-
 .post a:hover {
   border-radius: 0.3rem;
-}
-
-.post a:hover h3 {
-  text-decoration: underline;
 }
 
 .post h3 {
@@ -1240,13 +1236,22 @@ kbd {
 }
 
 @media screen and (min-width: 800px) {
-  .post h3 {
-    font-size: 1.2rem;
+  .posts {
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   .post a {
-    padding: 0.6rem 0;
+    padding: 0.5rem 1rem;
     border-bottom-color: transparent;
+  }
+
+  .post a:hover {
+    background: var(--light-background);
+  }
+
+  .post h3 {
+    font-size: 1.2rem;
   }
 
   .post-row time {
@@ -1315,7 +1320,7 @@ kbd {
 .guide-thumbnails {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .guide-thumbnails a {
@@ -1323,17 +1328,14 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   border-radius: 0.3rem;
-  padding: 0.5rem;
+  padding: 0.4rem;
   margin: 0.25rem;
   color: var(--font-color);
-  min-width: 80px;
 }
 
 .guide-thumbnails span {
-  font-size: 0.9rem;
-  font-weight: 400;
+  display: none;
 }
 
 .guide-thumbnails a:hover {
@@ -1343,9 +1345,32 @@ kbd {
 
 .guide-thumbnails img,
 .guide-thumbnails .gatsby-image-wrapper {
-  max-width: 40px;
-  max-height: 40px;
-  margin-bottom: 0.25rem;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+@media screen and (min-width: 800px) {
+  .guide-thumbnails {
+    justify-content: flex-start;
+  }
+
+  .guide-thumbnails a {
+    min-width: 80px;
+    flex-direction: column;
+  }
+
+  .guide-thumbnails span {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  .guide-thumbnails img,
+  .guide-thumbnails .gatsby-image-wrapper {
+    max-width: 30px;
+    max-height: 30px;
+    margin-bottom: 0.25rem;
+  }
 }
 
 .guides .gatsby-image-wrapper {
@@ -1377,7 +1402,7 @@ kbd {
 }
 
 .guide h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding-bottom: 0.5rem;
   margin: 0 0 0.5rem 0;

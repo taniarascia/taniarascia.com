@@ -6,7 +6,7 @@
   --medium-font-color: #dee2e6;
   --light-font-color: #868e96;
   --light-background: #383838;
-  --lighter-background: #404040;
+  --light-background-hover: #404040;
   --border: #404040;
   --link-color: #6ab0f3;
   --link-color-darker: #4a72a5;
@@ -49,8 +49,8 @@ a.button:hover {
 }
 
 a.button.secondary {
-  border-color: var(--lighter-background);
-  background: var(--lighter-background);
+  border-color: var(--light-background-hover);
+  background: var(--light-background-hover);
   color: white;
 }
 
@@ -126,7 +126,12 @@ blockquote {
 }
 
 .new-post {
-  background: #37b24d;
+  background: #72ce6e;
+  color: black;
+}
+
+.popular-post {
+  background: #4263eb;
   color: white;
 }
 

@@ -32,7 +32,7 @@ export default function BlogIndex({ data }) {
       <section>
         <div className="container guide-thumbnails">
           {simplifiedPosts.map((post) => (
-            <Link to={post.slug} className="image-link">
+            <Link to={post.slug} className="image-link" key={post.slug}>
               <Img fixed={post.thumbnail} />
               <span>{post.topic}</span>
             </Link>
