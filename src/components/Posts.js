@@ -17,7 +17,6 @@ const Cell = ({ node }) => {
   dateArr.pop()
   dateArr[0] = dateArr[0].slice(0, 3)
   const formattedDate = dateArr.join(' ').slice(0, -1)
-  console.log(formattedDate)
 
   return (
     <div className="post" key={node.id}>

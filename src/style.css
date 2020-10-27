@@ -42,7 +42,7 @@ html {
   color: var(--font-color);
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
 body {
@@ -81,25 +81,25 @@ section > h2 {
 @media screen and (min-width: 800px) {
   .index h2,
   section > h2 {
-    border-bottom-width: 1px;
+    border-bottom-width: 4px;
   }
 }
 
-.section-button {
+a.section-button {
   font-weight: 500;
   background: var(--light-background);
   color: var(--dark-font-color);
   padding: 0.4rem 0.6rem;
   font-size: 0.8rem;
   border-radius: 0.3rem;
-  border-bottom: 0;
+  border-width: 0 !important;
   white-space: nowrap;
   line-height: 1;
   margin-left: 2rem;
   margin-top: 0.5rem;
 }
 
-.section-button:hover {
+a.section-button:hover {
   background: var(--light-background-hover);
   color: var(--heading-color);
 }
@@ -158,7 +158,7 @@ ul {
   dl,
   table,
   blockquote {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
   }
 
   ul {
@@ -191,7 +191,6 @@ blockquote {
   margin: 2rem 0;
   padding: 1rem;
   background: var(--blockquote);
-  border-radius: 0.35rem;
   font-weight: 400;
   border-left: 3px solid var(--link-color);
 }
@@ -200,19 +199,8 @@ blockquote *:last-child {
   margin: 0;
 }
 
-blockquote a {
-  padding: 1px 4px;
-}
-
 blockquote :not(pre) > code[class*='language-'] {
   background: rgba(0, 0, 0, 0.1) !important;
-}
-
-blockquote a:hover {
-  border-radius: 0.35rem;
-  border-bottom: 1px solid var(--link-color-darker);
-  background: var(--link-color-darker);
-  color: white;
 }
 
 blockquote.quotation {
@@ -274,7 +262,7 @@ h1 {
 h2 {
   font-size: 1.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 4px solid var(--light-background);
 }
 
 h2 code {
@@ -297,7 +285,7 @@ h4 {
   color: var(--font-color);
   font-weight: 500;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--light-background);
   padding-bottom: 0.25rem;
 }
 
@@ -312,21 +300,26 @@ h5 {
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   h2 code {
-    font-size: 1.8rem !important;
+    font-size: 1.9rem !important;
   }
 
   h3 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     color: var(--font-color);
     font-weight: 600;
   }
 
   h3 code {
     font-size: 1.6rem !important;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 1.4rem;
   }
 }
 
@@ -385,12 +378,14 @@ h5 {
   color: #bbbbbb;
   background: black;
   font-weight: 400;
+  border-width: 0;
 }
 
 .blurb a:hover {
   color: white;
   background: #04a1a1;
   font-weight: 400;
+  border-width: 0;
 }
 
 .blurb a.button {
@@ -507,13 +502,19 @@ p.subtitle {
 /* Links */
 
 a {
-  color: var(--link-color);
+  color: var(--heading-color);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
+  border-bottom: 3px solid #b9cdfb;
 }
 
 a:hover {
-  color: var(--link-color-darker);
+  color: #101010;
+  border-bottom: 3px solid #96b4f9;
+}
+
+a.image-link {
+  border-width: 0;
 }
 
 a.gatsby-resp-image-link:hover {
@@ -630,7 +631,8 @@ main {
   .navbar a {
     padding: 0.75rem 1.25rem;
     margin: 0 0.25rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: var(--font-color);
   }
   .navbar a.brand {
@@ -778,7 +780,6 @@ table {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  border-radius: 0.35rem;
 }
 
 thead,
@@ -814,6 +815,10 @@ tbody tr:nth-child(even) {
   table {
     display: table;
     border: 1px solid var(--border);
+  }
+  thead,
+  tbody {
+    white-space: normal;
   }
 }
 
@@ -930,10 +935,7 @@ header u {
 
 .post-meta a {
   color: var(--font-color);
-}
-
-.post-meta a:hover {
-  text-decoration: underline;
+  border-width: 0;
 }
 
 .post-meta time {
@@ -955,13 +957,22 @@ header u {
   fill: var(--link-color);
   font-weight: 700;
   left: -0.25rem;
+  border-width: 0;
 }
 
 .article-post .anchor.before {
   top: 1rem;
 }
 
+.article-post {
+  margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 800px) {
+  .article-post {
+    margin-bottom: 3rem;
+  }
+
   .article-post h1,
   .article-post h2,
   .article-post h3,
@@ -992,7 +1003,8 @@ header u {
     flex-direction: row;
   }
   .article-header .description {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
   }
 }
 
@@ -1031,7 +1043,8 @@ header u {
 
 [type='search'] {
   padding: 0.8rem 1rem;
-  border: 1px solid var(--border);
+  background: var(--light-background);
+  border: 2px solid var(--border);
   width: 100%;
   max-width: 400px;
   border-radius: 0.35rem;
@@ -1081,7 +1094,6 @@ header u {
   padding: 1.5rem;
   border-radius: 0.35rem;
   background: var(--light-background);
-  border: 1px solid var(--border);
   color: var(--heading-color);
 }
 
@@ -1220,8 +1232,8 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: stretch;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--light-background);
 }
 
 .post a:hover {
@@ -1242,7 +1254,7 @@ kbd {
   }
 
   .post a {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-bottom-color: transparent;
   }
 
@@ -1251,7 +1263,7 @@ kbd {
   }
 
   .post h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .post-row time {
@@ -1269,8 +1281,8 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+  border-bottom: 2px solid var(--light-background);
 }
 
 .project .icon {
@@ -1282,6 +1294,7 @@ kbd {
   display: flex;
   align-items: center;
   margin-bottom: 0.25rem;
+  border-width: 0;
 }
 
 .project a:hover h3 {
@@ -1300,6 +1313,7 @@ kbd {
 
 .project a.button {
   margin-left: 1.5rem;
+  border-width: 2px;
 }
 
 @media screen and (min-width: 800px) {
@@ -1324,7 +1338,7 @@ kbd {
 }
 
 .guide-thumbnails a {
-  border: 1px solid var(--border);
+  border: 2px solid var(--light-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1398,7 +1412,7 @@ kbd {
 .guide {
   display: flex;
   padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 4px solid var(--light-background);
 }
 
 .guide h2 {

@@ -2,7 +2,7 @@
   --font-color: #b3b9c5;
   --heading-color: #ffd479;
   --dark-font-color: #ced4da;
-  --background: #282828;
+  --background: #1f2022;
   --medium-font-color: #dee2e6;
   --light-font-color: #868e96;
   --light-background: #383838;
@@ -31,10 +31,12 @@ a {
   color: var(--link-color);
   text-decoration: none;
   font-weight: 700;
+  border-color: transparent;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: white;
+  border-color: var(--link-color);
 }
 
 a.button {
@@ -95,6 +97,11 @@ code.language-terminal {
   color: var(--dark-font-color);
 }
 
+code {
+  border-width: 1px !important;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
 [type='search'] {
   border: 1px solid var(--light-background);
   background: var(--light-background);
@@ -141,4 +148,17 @@ blockquote {
 
 .guide-thumbnails a:hover {
   color: white;
+}
+
+.post a:hover {
+  border-bottom-color: transparent;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blurb {
+  background: #111;
 }
