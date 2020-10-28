@@ -84,7 +84,7 @@ pre[class*='language-'] {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 0.35rem;
 }
 
@@ -158,9 +158,9 @@ pre.language-terminal::after {
   background-color: #191919;
   display: block;
   margin-right: -1rem;
-  margin-left: -1rem;
-  padding-right: 1rem;
-  padding-left: 0.75rem;
+  margin-left: -1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.25rem;
   border-left: 0.25rem solid #748ffc;
 }
 

@@ -87,10 +87,7 @@ export default function BlogIndex({ data }) {
           <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter">
-          <p>
-            I send out an email when I create something new. Subscribe to get
-            updates!
-          </p>
+          <p>I send out an email when I create something new.</p>
           <a
             href="https://taniarascia.substack.com/subscribe"
             target="_blank"

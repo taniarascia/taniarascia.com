@@ -192,6 +192,7 @@ blockquote {
   padding: 1rem;
   background: var(--blockquote);
   font-weight: 400;
+  border-radius: 0.3rem;
   border-left: 3px solid var(--link-color);
 }
 
@@ -220,15 +221,19 @@ blockquote.quotation p {
 }
 
 @media screen and (min-width: 800px) {
+  blockquote {
+    padding: 2rem;
+  }
   blockquote.quotation {
     margin: 2.5rem 0;
     overflow: auto;
   }
   blockquote.quotation cite {
     float: right;
+    font-size: 1.2rem;
   }
   blockquote.quotation p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 

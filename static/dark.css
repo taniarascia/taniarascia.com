@@ -5,8 +5,9 @@
   --background: #1f2022;
   --medium-font-color: #dee2e6;
   --light-font-color: #868e96;
-  --light-background: #383838;
-  --light-background-hover: #404040;
+  --light-background: #2D2D31;
+  --light-background-hover: #3b3b3e;
+  --code-background-color:#2e2e30;
   --border: #404040;
   --link-color: #6ab0f3;
   --link-color-darker: #4a72a5;
@@ -61,8 +62,10 @@ a.button.secondary {
 }
 
 .navbar a:hover,
-.navbar a[aria-current='page'] {
+.navbar a[aria-current='page'],
+.footer a:hover {
   color: white;
+  border-color: transparent;
 }
 
 .navbar a.brand {
@@ -151,12 +154,16 @@ blockquote {
 }
 
 .post a:hover {
-  border-bottom-color: transparent;
+  border-bottom-color: var(--light-background);
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+pre.language-terminal {
+  box-shadow: none;
 }
 
 .blurb {
