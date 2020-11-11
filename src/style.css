@@ -691,7 +691,7 @@ main {
 
 @media screen and (min-width: 800px) {
   #dark-mode-button {
-    padding: 0.75rem;
+    padding: 0.95rem 0.75rem;
     font-size: 1.2rem;
   }
 }
@@ -1337,7 +1337,7 @@ kbd {
 /* Guide */
 
 .guide-thumbnails {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -1370,6 +1370,7 @@ kbd {
 
 @media screen and (min-width: 800px) {
   .guide-thumbnails {
+    display: flex;
     justify-content: flex-start;
   }
 
