@@ -233,7 +233,7 @@ blockquote.quotation p {
     font-size: 1.2rem;
   }
   blockquote.quotation p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -522,8 +522,8 @@ a.image-link {
   border-width: 0;
 }
 
-a.gatsby-resp-image-link:hover {
-  border-bottom: none;
+a.gatsby-resp-image-link {
+  border-bottom: none !important;
 }
 
 a code[class*='language-'] {
