@@ -19,13 +19,6 @@ export default function Footer() {
           >
             Newsletter
           </a>
-          <a
-            href="https://twitter.com/taniarascia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Twitter
-          </a>
           <Link to="/rss.xml">RSS</Link>
           <a
             href="https://ko-fi.com/taniarascia"

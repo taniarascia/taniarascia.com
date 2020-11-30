@@ -42,11 +42,11 @@ export default function BlogIndex({ data }) {
     <Layout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <Blurb title="Hey! I'm Tania Rascia.">
+      <Blurb title="I'm Tania Rascia.">
         <p>
-          I'm a software engineer, writer, and open-source creator. This website
-          is my digital garden &mdash; a compendium of the things I've learned
-          and created over the years.
+          I'm a software engineer and writer. This website is my digital garden
+          &mdash; a compendium of the things I've learned and created over the
+          years.
         </p>
         <p className="stack-mobile">
           <Link className="button" to="/me">
@@ -94,7 +94,7 @@ export default function BlogIndex({ data }) {
             rel="noreferrer"
             className="button large"
           >
-            <span className="emoji">💌</span> Join the Newsletter
+            <span className="emoji">💌</span> Get the Newsletter
           </a>
         </Section>
       </div>

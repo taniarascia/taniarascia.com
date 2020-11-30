@@ -88,7 +88,6 @@ export default function SEO({
       <meta property="og:image" content={image} />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={config.userTwitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
