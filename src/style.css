@@ -91,6 +91,7 @@ h2.section-title {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 a.section-button {
@@ -281,7 +282,7 @@ h4:not(:first-child) {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 1.1;
   font-family: 'DM Mono', Georgia, serif;
   letter-spacing: -0.1rem;
@@ -364,7 +365,6 @@ h5 {
 
 .blurb p {
   font-size: 1.2rem;
-  line-height: 1.5;
 }
 
 .blurb p:last-of-type {
@@ -381,7 +381,7 @@ h5 {
 
 @media screen and (min-width: 800px) {
   .blurb {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
   }
 
   .blurb p {
@@ -470,12 +470,14 @@ p.subtitle {
   font-size: 1.3rem;
   font-weight: 300;
   margin-bottom: 0;
+  line-height: 1.5;
 }
 
 @media screen and (min-width: 800px) {
   p.subtitle {
     font-size: 1.7rem;
     max-width: 700px;
+    line-height: 1.6;
   }
 }
 
@@ -547,7 +549,7 @@ main {
   margin: 0 0.05rem;
   color: rgba(255, 255, 255, 0.65);
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   border: 1px solid transparent;
   padding: 0 0.3rem;
   background: transparent;
@@ -582,8 +584,8 @@ main {
 }
 
 .navbar a.brand img {
-  height: 25px;
-  width: 25px;
+  height: 23px;
+  width: 23px;
 }
 
 @media screen and (min-width: 500px) {
@@ -656,7 +658,7 @@ main {
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: transparent;
 }
 
@@ -953,7 +955,7 @@ header u {
 
 @media screen and (min-width: 800px) {
   header {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
   }
 
   .article-post {

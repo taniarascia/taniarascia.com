@@ -18,11 +18,11 @@ export default function BlogIndex({ data }) {
 
   return (
     <Layout>
-      <Helmet title={`Tutorials | ${config.siteTitle}`} />
+      <Helmet title={`Guides | ${config.siteTitle}`} />
       <SEO />
       <header>
         <div className="container">
-          <h1>Tutorials.</h1>
+          <h1>Guides.</h1>
           <p className="subtitle">
             The missing instruction manuals of the web. Long form articles,
             guides, tutorials, and references about programming and design.

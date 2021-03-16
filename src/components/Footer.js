@@ -11,7 +11,7 @@ export default function Footer() {
       <section className="container">
         <nav className="footer-links">
           <Link to="/blog">Articles</Link>
-          <Link to="/guides">Tutorials</Link>
+          <Link to="/guides">Guides</Link>
           <a
             href="https://taniarascia.substack.com/subscribe"
             target="_blank"
