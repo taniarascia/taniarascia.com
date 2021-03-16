@@ -2,7 +2,7 @@
 
 /* Global variables */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 :root {
@@ -55,6 +55,7 @@ body {
 
 time {
   font-family: var(--code-font-family);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 section {
@@ -284,6 +285,7 @@ h1 {
   line-height: 1.1;
   font-family: 'DM Mono', Georgia, serif;
   letter-spacing: -0.1rem;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 h2 {
@@ -292,6 +294,7 @@ h2 {
   border-bottom: 3px solid var(--border-color);
   font-family: 'DM Mono', Georgia, serif;
   letter-spacing: -0.05rem;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 h2 code {
@@ -356,6 +359,7 @@ h5 {
 
 .blurb {
   padding: 2.5rem 0;
+  margin-bottom: 0;
 }
 
 .blurb p {
@@ -563,7 +567,7 @@ main {
 }
 
 .navbar a.brand {
-  font-weight: 500;
+  font-weight: 700;
   color: white;
   white-space: nowrap;
   border: none;
@@ -1358,10 +1362,6 @@ kbd {
 }
 
 @media screen and (min-width: 800px) {
-  .guides {
-    margin: 3rem 0;
-  }
-
   .guide-thumbnails {
     display: flex;
     justify-content: flex-start;
@@ -1409,8 +1409,8 @@ kbd {
 }
 
 .guide {
+  padding: 1.5rem 0;
   display: flex;
-  margin: 2rem 0;
 }
 
 .guide h2 {
@@ -1444,7 +1444,7 @@ kbd {
 
 @media screen and (min-width: 800px) {
   .guide {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
   }
 
   .guide p {
