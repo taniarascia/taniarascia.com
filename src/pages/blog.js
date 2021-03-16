@@ -21,7 +21,8 @@ export default function BlogIndex({ data, ...props }) {
         <div className="container">
           <h1>Articles</h1>
           <p className="subtitle">
-            Posts, tutorials, snippets, musings, and everything else.
+            Posts, tutorials, snippets, musings, notes, and everything else. The
+            archive of everything I've written.
           </p>
         </div>
       </header>

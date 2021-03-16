@@ -2,8 +2,8 @@
 
 /* Global variables */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 :root {
   --font-color: #495057;
@@ -36,9 +36,9 @@
 /* Scaffolding */
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
-    Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   color: var(--font-color);
   font-weight: 400;
   font-size: 1rem;
@@ -49,6 +49,10 @@ body {
   background: var(--background);
   margin: 0;
   padding: 0;
+}
+
+time {
+  font-family: var(--code-font-family);
 }
 
 section {
@@ -62,7 +66,7 @@ section:first-of-type {
 section > h2 {
   display: flex;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -86,17 +90,19 @@ section > h2 {
 }
 
 a.section-button {
-  font-weight: 500;
   background: var(--light-background);
   color: var(--dark-font-color);
-  padding: 0.4rem 0.6rem;
-  font-size: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
   border-radius: 0.3rem;
   border-width: 0 !important;
   white-space: nowrap;
   line-height: 1;
   margin-left: 2rem;
   margin-top: 0.5rem;
+  font-family: var(--code-font-family);
+  font-weight: 400;
+  letter-spacing: auto;
 }
 
 a.section-button:hover {
@@ -108,14 +114,17 @@ a.section-button:hover {
   section {
     margin: 3.5rem 0;
   }
-  section > h2 {
+  h2.section-title {
     font-size: 2rem;
-    margin: 0 0 1rem;
+    margin: 0 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .container {
-  max-width: 825px;
+  max-width: 1000px;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -143,7 +152,7 @@ ul,
 dl,
 table,
 blockquote {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   margin: 0 0 1.5rem 0;
 }
 
@@ -158,7 +167,7 @@ ul {
   dl,
   table,
   blockquote {
-    font-size: 1.125rem;
+    font-size: 1.3rem;
   }
 
   ul {
@@ -213,10 +222,10 @@ blockquote.quotation {
 }
 
 blockquote.quotation p {
-  font-family: Georgia, serif;
+  font-family: 'DM Serif', Georgia, serif;
   line-height: 1.6;
   color: var(--medium-font-color);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0 0 2rem 0;
 }
 
@@ -230,10 +239,10 @@ blockquote.quotation p {
   }
   blockquote.quotation cite {
     float: right;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   blockquote.quotation p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -262,12 +271,16 @@ h4:not(:first-child) {
 h1 {
   font-size: 2.5rem;
   line-height: 1.1;
+  font-family: 'DM Mono', Georgia, serif;
+  letter-spacing: -0.15rem;
 }
 
 h2 {
   font-size: 1.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 4px solid var(--light-background);
+  border-bottom: 4px solid var(--dark-font-color);
+  font-family: 'DM Mono', Georgia, serif;
+  letter-spacing: -0.1rem;
 }
 
 h2 code {
@@ -279,6 +292,7 @@ h3 {
   color: var(--font-color);
   font-weight: 600;
   margin-bottom: 1rem;
+  text-decoration: underline;
 }
 
 h3 code {
@@ -290,7 +304,7 @@ h4 {
   color: var(--font-color);
   font-weight: 500;
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--light-background);
+  border-bottom: 2px solid var(--dark-font-color);
   padding-bottom: 0.25rem;
 }
 
@@ -305,7 +319,7 @@ h5 {
   }
 
   h2 {
-    font-size: 1.9rem;
+    font-size: 2.5rem;
   }
 
   h2 code {
@@ -313,7 +327,7 @@ h5 {
   }
 
   h3 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: var(--font-color);
     font-weight: 600;
   }
@@ -323,91 +337,17 @@ h5 {
   }
 
   h4 {
-    font-weight: 400;
-    font-size: 1.4rem;
+    font-weight: 600;
+    font-size: 1.5rem;
   }
-}
-
-.avatar {
-  display: none;
-  max-width: 100px;
-  margin-right: 1rem;
 }
 
 .blurb {
   padding: 2rem 0;
-  background: #0004a5;
-  font-family: 'VT323', monospace;
-}
-
-.blurb .container {
-  max-width: 90%;
-  background-color: #bbbbbb;
-  border: 0.875px solid #000000;
-  margin-top: 7px;
-  padding-top: 6.125px;
-  padding-bottom: 7px;
-  border-left-width: 2px;
-  border-right-width: 2px;
-  padding-left: 10.5px;
-  padding-right: 11.5px;
-  box-shadow: -3.5px -7px 0 0 #bbbbbb, 2.5px 6.125px 0 0 #bbbbbb,
-    -3.5px 6.125px 0 0 #bbbbbb, 2.5px -7px 0 0 #bbbbbb;
-  filter: drop-shadow(7px 8px 0 black);
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.blurb p {
-  color: #000000;
-  font-size: 24px;
-  line-height: 1;
-  font-weight: 400;
 }
 
 .blurb p:last-of-type {
   margin-bottom: 0.5rem;
-}
-
-.blurb h3 {
-  background: #000000;
-  color: #bbbbbb;
-  padding-left: 1rem;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.blurb a {
-  color: #bbbbbb;
-  background: black;
-  font-weight: 400;
-  border-width: 0;
-}
-
-.blurb a:hover {
-  color: white;
-  background: #04a1a1;
-  font-weight: 400;
-  border-width: 0;
-}
-
-.blurb a.button {
-  border-color: #04a1a1;
-  background: #04a1a1;
-  color: white;
-  border-radius: 0;
-  font-size: 24px;
-  padding: 0.25rem 0.75rem;
-  filter: drop-shadow(7px 8px 0 black);
-  margin-top: 0.25rem;
-}
-
-.blurb a.button:hover {
-  border-color: white;
-  background: white;
-  color: black;
 }
 
 @media screen and (min-width: 800px) {
@@ -415,26 +355,26 @@ h5 {
     padding: 3.5rem 0;
   }
 
+  .blurb p {
+    max-width: 600px;
+    font-size: 1.6rem;
+  }
+
+  .blurb h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
   .blurb .container {
     display: flex;
-    max-width: calc(825px - 4rem);
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
   }
 
   .avatar {
     display: block;
-    max-width: 180px;
-  }
-
-  .blurb p {
-    font-size: 32px;
-  }
-
-  .blurb h3 {
-    font-size: 40px;
-  }
-
-  .blurb a.button {
-    font-size: 32px;
+    max-width: 400px;
   }
 }
 
@@ -454,18 +394,18 @@ a.link:hover {
 a.button {
   display: inline-block;
   border: 2px solid var(--link-color);
-  padding: 0.3rem 0.6rem;
+  padding: 0.8rem 1.2rem;
   margin-right: 0.75rem;
   font-weight: 500;
   background: var(--link-color);
   color: white;
   border-radius: 0.35rem;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 a.button.large {
   padding: 0.8rem 1rem;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
 }
 
 a.button.secondary {
@@ -483,11 +423,11 @@ a.button.secondary:hover {
 
 @media screen and (min-width: 800px) {
   a.button {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
   a.button.large {
     padding: 1rem 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -501,6 +441,7 @@ p.subtitle {
 @media screen and (min-width: 800px) {
   p.subtitle {
     font-size: 1.5rem;
+    max-width: 750px;
   }
 }
 
@@ -607,8 +548,8 @@ main {
 }
 
 .navbar a.brand img {
-  height: 22px;
-  width: 22px;
+  height: 25px;
+  width: 25px;
 }
 
 @media screen and (min-width: 500px) {
@@ -641,15 +582,15 @@ main {
     color: var(--font-color);
   }
   .navbar a.brand {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-right: 3rem;
     border: none;
     background: transparent !important;
     color: var(--dark-font-color);
   }
   .navbar a.brand img {
-    height: 26px;
-    width: 26px;
+    height: 30px;
+    width: 30px;
     margin-right: 0.25rem;
   }
   .navbar a:first-of-type {
@@ -744,13 +685,13 @@ main {
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 0 0.75rem;
+  margin: 0 0.5rem;
   background: none;
 }
 
 .footer img {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 @media screen and (min-width: 800px) {
@@ -762,6 +703,7 @@ main {
 
   .footer a {
     padding: 0.75rem;
+    font-size: 1.2rem;
   }
 
   .footer a.img {
@@ -865,6 +807,7 @@ tbody tr:nth-child(even) {
   border-radius: 0.3rem;
   font-size: 0.85rem;
   margin-left: 1rem;
+  font-family: var(--code-font-family);
 }
 
 .new-post {
@@ -919,12 +862,13 @@ header u {
 
 .article-header h1 {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0;
+  line-height: 1.3;
 }
 
 .article-header .description {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--light-font-color);
   font-weight: 300;
   margin-top: 2rem;
@@ -935,7 +879,8 @@ header u {
   margin-top: 1rem;
   padding: 0;
   color: var(--light-font-color);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-family: var(--code-font-family);
 }
 
 .post-meta a {
@@ -945,7 +890,7 @@ header u {
 
 .post-meta time {
   margin-top: 0.2rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .post-meta .tags {
@@ -978,6 +923,10 @@ header u {
     margin-bottom: 3rem;
   }
 
+  .article-post p {
+    max-width: 750px;
+  }
+
   .article-post h1,
   .article-post h2,
   .article-post h3,
@@ -991,7 +940,7 @@ header u {
     padding: 1rem 0;
   }
   header h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-top: 2rem;
   }
   header u {
@@ -1008,8 +957,9 @@ header u {
     flex-direction: row;
   }
   .article-header .description {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.5;
+    max-width: 750px;
   }
 }
 
@@ -1160,7 +1110,7 @@ time,
   color: var(--font-color);
   margin: 0.2rem;
   padding: 0.5rem 0.6rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border-radius: 0.3rem;
   border-bottom: 0;
   white-space: nowrap;
@@ -1222,7 +1172,8 @@ kbd {
 
 .post-row time {
   display: block;
-  flex: 0 0 65px;
+  flex: 0 0 75px;
+  font-size: 1rem;
 }
 
 .post-row h3 {
@@ -1248,8 +1199,9 @@ kbd {
 .post h3 {
   margin-top: 0.1rem;
   margin-bottom: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 800px) {
@@ -1268,26 +1220,19 @@ kbd {
   }
 
   .post h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    letter-spacing: -0.02rem;
+    font-weight: 700;
   }
 
   .post-row time {
-    flex: 0 0 80px;
+    flex: 0 0 100px;
   }
 }
 
 /* Projects */
 
-.projects .project:last-of-type {
-  border-bottom-width: 0;
-}
-
-.project {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 2px solid var(--light-background);
+.projects {
 }
 
 .project .icon {
@@ -1307,8 +1252,10 @@ kbd {
 }
 
 .project h3 {
-  font-size: 1.2rem;
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .project .description {
@@ -1322,19 +1269,26 @@ kbd {
 }
 
 @media screen and (min-width: 800px) {
-  .project {
-    border-bottom-width: 0;
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.75rem 0;
+    grid-gap: 3rem;
   }
 
   .project h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .project .description {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
 /* Guide */
+
+.guides {
+  padding: 2rem 0;
+}
 
 .guide-thumbnails {
   display: none;
@@ -1397,7 +1351,7 @@ kbd {
   height: 50px !important;
   width: 50px !important;
   min-width: 50px;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .guides.front-page .guide h2 {
@@ -1418,30 +1372,49 @@ kbd {
 .guide {
   display: flex;
   padding: 1.5rem 0;
-  border-bottom: 4px solid var(--light-background);
+  border-bottom: 4px solid var(--dark-font-color);
 }
 
 .guide h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding-bottom: 0.5rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   border-bottom: none;
+  text-decoration: underline;
 }
 
 .guide a h2:hover {
-  text-decoration: underline;
+  color: var(--light-font-color);
 }
 
 .guide p {
   font-weight: 400;
   margin: 0;
   line-height: 1.5;
-  color: var(--light-font-color);
+  color: var(--medium-font-color);
+  font-size: 1.1rem;
+}
+
+.guide time {
   font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 800px) {
+  .guide {
+    padding: 2.5rem 0;
+  }
+
+  .guide p {
+    font-size: 1.3rem;
+  }
+
+  .guide h2 {
+    font-size: 1.55rem;
+  }
+
   .guides.front-page img {
     margin-right: 1.5rem;
   }
@@ -1454,11 +1427,7 @@ kbd {
     height: 100px !important;
     width: 100px !important;
     min-width: 100px;
-    margin-right: 2rem;
-  }
-
-  .guide {
-    padding: 2rem 0;
+    margin-right: 2.5rem;
   }
 
   .guides.front-page .guide {

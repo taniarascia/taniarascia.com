@@ -26,7 +26,7 @@ export default function BlogIndex({ data }) {
 
   const Section = ({ title, children, button, ...props }) => (
     <section {...props}>
-      <h2>
+      <h2 className="section-title">
         {title}
         {button && (
           <Link className="section-button" to="/blog">
@@ -48,27 +48,6 @@ export default function BlogIndex({ data }) {
           &mdash; a compendium of the things I've learned and created over the
           years.
         </p>
-        <p className="stack-mobile">
-          <Link className="button" to="/me">
-            About me
-          </Link>
-          <a
-            className="button"
-            href="https://taniarascia.substack.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Join newsletter
-          </a>
-          <a
-            className="button"
-            href="https://github.com/taniarascia"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-        </p>
       </Blurb>
       <div className="container index">
         <Section title="Latest Articles" button>
@@ -87,14 +66,18 @@ export default function BlogIndex({ data }) {
           <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter">
-          <p>I send out an email when I create something new.</p>
+          <p>
+            I send out an email when I create something new. There is no
+            schedule &ndash; it might be once a week or once every two months.
+            I'm never going to spam you, and you can unsubscribe any time.
+          </p>
           <a
             href="https://taniarascia.substack.com/subscribe"
             target="_blank"
             rel="noreferrer"
             className="button large"
           >
-            <span className="emoji">💌</span> Get the Newsletter
+            Get the newsletter
           </a>
         </Section>
       </div>

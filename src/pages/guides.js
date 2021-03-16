@@ -19,26 +19,17 @@ export default function BlogIndex({ data }) {
 
   return (
     <Layout>
-      <Helmet title={`Guides | ${config.siteTitle}`} />
+      <Helmet title={`Tutorials | ${config.siteTitle}`} />
       <SEO />
       <header>
         <div className="container">
-          <h1>Guides</h1>
+          <h1>Tutorials</h1>
           <p className="subtitle">
-            The missing instruction manuals of the web.
+            The missing instruction manuals of the web. Long form articles,
+            guides, tutorials, and references about programming and design.
           </p>
         </div>
       </header>
-      <section>
-        <div className="container guide-thumbnails">
-          {simplifiedPosts.map((post) => (
-            <Link to={post.slug} className="image-link" key={post.slug}>
-              <Img fixed={post.thumbnail} />
-              <span>{post.topic}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
       <section>
         <div className="container">
           <Guides data={simplifiedPosts} />

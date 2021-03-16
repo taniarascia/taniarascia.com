@@ -98,7 +98,7 @@ export default function PostTemplate({ data, pageContext }) {
             target="_blank"
             rel="noreferrer"
           >
-            Join newsletter
+            Get the newsletter
           </a>
           <a
             className="button"
