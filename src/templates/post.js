@@ -88,7 +88,7 @@ export default function PostTemplate({ data, pageContext }) {
       <Blurb title="About the author">
         <p>
           Hey, I'm <Link to="/me">Tania</Link>, a software engineer, writer, and
-          open-source creator. I publish guides and tutorials about modern
+          open-sourceror. I publish articles and tutorials about modern
           JavaScript, design, and programming.
         </p>
         <p>

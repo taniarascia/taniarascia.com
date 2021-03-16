@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-export default function Guides({ data, frontPage }) {
+export default function Guides({ data, frontPage, includeTime }) {
   const LinkType = ({ guide, children }) =>
     guide.slug ? (
       <Link to={guide.slug} className="image-link">
@@ -36,7 +36,7 @@ export default function Guides({ data, frontPage }) {
             <div>
               <LinkType guide={guide}>
                 <h2>{guide.title}</h2>
-                <time>{guide.date}</time>
+                {includeTime && <time>{guide.date}</time>}
               </LinkType>
               {guide.description && <p>{guide.description}</p>}
             </div>

@@ -5,9 +5,9 @@
   --background: #1f2022;
   --medium-font-color: #dee2e6;
   --light-font-color: #868e96;
-  --light-background: #2D2D31;
+  --light-background: #2d2d31;
   --light-background-hover: #3b3b3e;
-  --code-background-color:#2e2e30;
+  --code-background-color: #2e2e30;
   --border: #404040;
   --link-color: #6ab0f3;
   --link-color-darker: #4a72a5;
@@ -17,6 +17,7 @@
   --transparent-text: rgba(255, 255, 255, 0.7);
   --transparent-bg: rgba(0, 0, 0, 0.2);
   --light-transparent-bg: rgba(255, 255, 255, 0.05);
+  --border-color: #3b3b3b;
 }
 
 h1 {
@@ -26,6 +27,10 @@ h1 {
 h3,
 h4 {
   color: var(--medium-font-color);
+}
+
+p.subtitle {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 a {
@@ -40,15 +45,14 @@ a:hover {
   border-color: var(--link-color);
 }
 
-a.button {
-  border: 2px solid transparent;
-  color: white;
-  background: #4263eb;
+a code[class*='language-'] {
+  color: var(--link-color) !important;
 }
 
-a.button:hover {
+a.button {
   border: 2px solid transparent;
-  background: #748ffc;
+  color: black;
+  background: var(--link-color);
 }
 
 a.button.secondary {
@@ -145,12 +149,12 @@ blockquote {
   color: white;
 }
 
-.guide h2 {
-  color: var(--medium-font-color);
-}
-
 .guide-thumbnails a:hover {
   color: white;
+}
+
+.guide a h2:hover {
+  color: #ffeead;
 }
 
 .post a:hover {

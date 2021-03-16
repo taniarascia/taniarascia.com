@@ -22,7 +22,11 @@
   --transparent-text: rgba(0, 0, 0, 0.7);
   --transparent-bg: rgba(0, 0, 0, 0.05);
   --light-transparent-bg: rgba(255, 255, 255, 0.1);
+  --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+  --border-color: var(--dark-font-color);
 }
 
 /* Reset */
@@ -36,9 +40,7 @@
 /* Scaffolding */
 
 html {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: var(--font-family);
   color: var(--font-color);
   font-weight: 400;
   font-size: 1rem;
@@ -66,7 +68,7 @@ section:first-of-type {
 section > h2 {
   display: flex;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -74,26 +76,27 @@ section > h2 {
 @media screen and (min-width: 800px) {
   section > h2 {
     margin-bottom: 2rem;
+    font-size: 2rem;
   }
 }
 
 .index h2,
 section > h2 {
-  border-bottom-width: 0;
+  border-bottom-width: 3px;
 }
 
-@media screen and (min-width: 800px) {
-  .index h2,
-  section > h2 {
-    border-bottom-width: 4px;
-  }
+h2.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 a.section-button {
   background: var(--light-background);
   color: var(--dark-font-color);
-  padding: 0.6rem 0.8rem;
-  font-size: 1rem;
+  padding: 0.6rem 0.6rem;
+  font-size: 0.9rem;
   border-radius: 0.3rem;
   border-width: 0 !important;
   white-space: nowrap;
@@ -102,7 +105,7 @@ a.section-button {
   margin-top: 0.5rem;
   font-family: var(--code-font-family);
   font-weight: 400;
-  letter-spacing: auto;
+  letter-spacing: 0;
 }
 
 a.section-button:hover {
@@ -117,9 +120,9 @@ a.section-button:hover {
   h2.section-title {
     font-size: 2rem;
     margin: 0 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  }
+  a.section-button {
+    font-size: 1rem;
   }
 }
 
@@ -130,8 +133,12 @@ a.section-button:hover {
   margin-right: auto;
 }
 
-.container.page p {
-  max-width: 600px;
+.page p {
+  max-width: 700px;
+}
+
+.page img {
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -177,6 +184,10 @@ ul {
 
 ul li p {
   margin: 0;
+}
+
+ul li {
+  padding-bottom: 0.3rem;
 }
 
 ul li ul {
@@ -269,18 +280,18 @@ h4:not(:first-child) {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   line-height: 1.1;
   font-family: 'DM Mono', Georgia, serif;
-  letter-spacing: -0.15rem;
+  letter-spacing: -0.1rem;
 }
 
 h2 {
   font-size: 1.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 4px solid var(--dark-font-color);
+  border-bottom: 3px solid var(--border-color);
   font-family: 'DM Mono', Georgia, serif;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.05rem;
 }
 
 h2 code {
@@ -304,7 +315,7 @@ h4 {
   color: var(--font-color);
   font-weight: 500;
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--dark-font-color);
+  border-bottom: 3px solid var(--border-color);
   padding-bottom: 0.25rem;
 }
 
@@ -319,7 +330,8 @@ h5 {
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    letter-spacing: -0.1rem;
   }
 
   h2 code {
@@ -343,11 +355,24 @@ h5 {
 }
 
 .blurb {
-  padding: 2rem 0;
+  padding: 2.5rem 0;
+}
+
+.blurb p {
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
 .blurb p:last-of-type {
   margin-bottom: 0.5rem;
+}
+
+.avatar {
+  display: block;
+  max-height: 200px;
+  margin: 1.5rem auto 0;
+  border-radius: 12px;
+  border: 3px solid var(--border-color);
 }
 
 @media screen and (min-width: 800px) {
@@ -356,12 +381,13 @@ h5 {
   }
 
   .blurb p {
-    max-width: 600px;
+    max-width: 700px;
     font-size: 1.6rem;
+    line-height: 1.6;
   }
 
   .blurb h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
   }
 
@@ -373,8 +399,9 @@ h5 {
   }
 
   .avatar {
-    display: block;
-    max-width: 400px;
+    max-height: none;
+    max-width: 350px;
+    margin-left: 2rem;
   }
 }
 
@@ -394,13 +421,15 @@ a.link:hover {
 a.button {
   display: inline-block;
   border: 2px solid var(--link-color);
-  padding: 0.8rem 1.2rem;
+  padding: 0.6rem 1rem;
   margin-right: 0.75rem;
   font-weight: 500;
   background: var(--link-color);
   color: white;
   border-radius: 0.35rem;
   font-size: 1.1rem;
+  font-family: var(--code-font-family);
+  margin-bottom: 0.5rem;
 }
 
 a.button.large {
@@ -424,6 +453,7 @@ a.button.secondary:hover {
 @media screen and (min-width: 800px) {
   a.button {
     font-size: 1.3rem;
+    padding: 0.8rem 1.2rem;
   }
   a.button.large {
     padding: 1rem 1.5rem;
@@ -440,8 +470,8 @@ p.subtitle {
 
 @media screen and (min-width: 800px) {
   p.subtitle {
-    font-size: 1.5rem;
-    max-width: 750px;
+    font-size: 1.7rem;
+    max-width: 700px;
   }
 }
 
@@ -468,7 +498,7 @@ a.gatsby-resp-image-link {
 }
 
 a code[class*='language-'] {
-  color: var(--link-color) !important;
+  color: var(--link-color-darker) !important;
 }
 
 a code[class*='language-']:hover {
@@ -565,7 +595,7 @@ main {
   }
   .navbar {
     position: static;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
     background: transparent;
     box-shadow: none;
   }
@@ -577,7 +607,7 @@ main {
   .navbar a {
     padding: 0.75rem 1.25rem;
     margin: 0 0.25rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: var(--font-color);
   }
@@ -622,7 +652,7 @@ main {
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   background: transparent;
 }
 
@@ -633,7 +663,7 @@ main {
 @media screen and (min-width: 800px) {
   #dark-mode-button {
     padding: 0.95rem 0.75rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -815,8 +845,7 @@ tbody tr:nth-child(even) {
 }
 
 .popular-post {
-  background: #dce6fd;
-  color: var(--heading-color);
+  background: #ffeead;
 }
 
 @media screen and (min-width: 800px) {
@@ -919,12 +948,16 @@ header u {
 }
 
 @media screen and (min-width: 800px) {
+  header {
+    padding: 2.5rem 0;
+  }
+
   .article-post {
     margin-bottom: 3rem;
   }
 
   .article-post p {
-    max-width: 750px;
+    max-width: 700px;
   }
 
   .article-post h1,
@@ -935,12 +968,16 @@ header u {
     padding-top: 1rem;
   }
 
+  .article-post h2 {
+    font-size: 2rem;
+  }
+
   .post-meta {
     margin-top: 1.5rem;
     padding: 1rem 0;
   }
   header h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     margin-top: 2rem;
   }
   header u {
@@ -959,7 +996,7 @@ header u {
   .article-header .description {
     font-size: 2rem;
     line-height: 1.5;
-    max-width: 750px;
+    max-width: 700px;
   }
 }
 
@@ -1007,7 +1044,7 @@ header u {
   -webkit-appearance: none;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .search-form [type='search'] {
@@ -1173,7 +1210,7 @@ kbd {
 .post-row time {
   display: block;
   flex: 0 0 75px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .post-row h3 {
@@ -1199,7 +1236,7 @@ kbd {
 .post h3 {
   margin-top: 0.1rem;
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 500;
   text-decoration: none;
 }
@@ -1227,12 +1264,14 @@ kbd {
 
   .post-row time {
     flex: 0 0 100px;
+    font-size: 1rem;
   }
 }
 
 /* Projects */
 
-.projects {
+.project {
+  margin: 1.5rem 0;
 }
 
 .project .icon {
@@ -1253,7 +1292,7 @@ kbd {
 
 .project h3 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   text-decoration: underline;
 }
@@ -1285,10 +1324,6 @@ kbd {
 }
 
 /* Guide */
-
-.guides {
-  padding: 2rem 0;
-}
 
 .guide-thumbnails {
   display: none;
@@ -1323,6 +1358,10 @@ kbd {
 }
 
 @media screen and (min-width: 800px) {
+  .guides {
+    margin: 3rem 0;
+  }
+
   .guide-thumbnails {
     display: flex;
     justify-content: flex-start;
@@ -1371,17 +1410,18 @@ kbd {
 
 .guide {
   display: flex;
-  padding: 1.5rem 0;
-  border-bottom: 4px solid var(--dark-font-color);
+  margin: 2rem 0;
 }
 
 .guide h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding-bottom: 0.5rem;
   margin: 0;
   border-bottom: none;
   text-decoration: underline;
+  font-family: var(--font-family);
+  letter-spacing: 0;
 }
 
 .guide a h2:hover {
@@ -1404,7 +1444,7 @@ kbd {
 
 @media screen and (min-width: 800px) {
   .guide {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
   }
 
   .guide p {

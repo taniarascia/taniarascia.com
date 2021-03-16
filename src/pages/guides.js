@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import Guides from '../components/Guides'
@@ -23,7 +22,7 @@ export default function BlogIndex({ data }) {
       <SEO />
       <header>
         <div className="container">
-          <h1>Tutorials</h1>
+          <h1>Tutorials.</h1>
           <p className="subtitle">
             The missing instruction manuals of the web. Long form articles,
             guides, tutorials, and references about programming and design.
@@ -32,7 +31,7 @@ export default function BlogIndex({ data }) {
       </header>
       <section>
         <div className="container">
-          <Guides data={simplifiedPosts} />
+          <Guides data={simplifiedPosts} includeTime />
         </div>
       </section>
     </Layout>

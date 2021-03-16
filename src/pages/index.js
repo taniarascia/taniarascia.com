@@ -50,22 +50,22 @@ export default function BlogIndex({ data }) {
         </p>
       </Blurb>
       <div className="container index">
-        <Section title="Latest Articles" button>
+        <Section title="Latest Articles." button>
           <Posts data={simplifiedLatest} />
         </Section>
-        <Section title="Popular Articles" button>
+        <Section title="Popular Articles." button>
           <Posts data={simplifiedPopular} />
         </Section>
-        <Section title="Projects">
+        <Section title="Projects.">
           <Projects data={projects} />
         </Section>
-        <Section title="Interviews">
+        <Section title="Interviews.">
           <Guides data={interviews} frontPage />
         </Section>
-        <Section title="Speaking">
+        <Section title="Speaking.">
           <Guides data={speaking} frontPage />
         </Section>
-        <Section title="Newsletter">
+        <Section title="Newsletter.">
           <p>
             I send out an email when I create something new. There is no
             schedule &ndash; it might be once a week or once every two months.

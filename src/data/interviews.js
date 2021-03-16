@@ -12,14 +12,6 @@ export default [
     staticThumbnail: techy,
   },
   {
-    id: 'sitemonster',
-    title: 'The Secret Is Just Do a Little Bit Over a Long Time',
-    path:
-      'https://sitesmonster.com/interviews/tania-rascia-the-secret-is-just-do-a-little-bit-over-a-long-time',
-    description: 'Interview with James King on SitesMonster.com',
-    staticThumbnail: sm,
-  },
-  {
     id: 'egghead',
     title: 'Switching Careers and Learning in Public',
     path:
