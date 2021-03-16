@@ -11,16 +11,14 @@ export default [
     title: 'Chip8.js',
     path: 'https://taniarascia.github.io/chip8/',
     source: 'https://github.com/taniarascia/chip8/',
-    description:
-      'A Chip-8 emulator written in JavaScript for terminal and the browser.',
+    description: 'A Chip-8 emulator written in JavaScript.',
   },
   {
     icon: '🌙',
     title: 'New Moon',
     path: 'https://taniarascia.github.io/new-moon/',
     source: 'https://github.com/taniarascia/new-moon/',
-    description:
-      'The optimized dark theme for web development. Your new favorite theme.',
+    description: 'The optimized dark theme for web development. ',
   },
   {
     icon: '🔱',
@@ -33,30 +31,26 @@ export default [
     title: 'Laconia',
     path: 'https://laconia.dev',
     source: 'https://github.com/taniarascia/laconia/',
-    description:
-      'A modern PHP MVC framework written without libraries or frameworks.',
+    description: 'A modern PHP Model View Controller framework.',
   },
   {
     icon: '⛏️',
     title: ' Primitive',
     path: 'https://taniarascia.github.io/primitive/',
     source: 'https://github.com/taniarascia/primitive/',
-    description:
-      'A minimalist front-end design toolkit built for developing responsive web apps.',
+    description: 'A minimalist front-end design toolkit.',
   },
   {
     icon: '🐍',
     title: 'Snek.js',
     source: 'https://github.com/taniarascia/snek/',
-    description:
-      'A terminal-based Snake implementation written in JavaScript (Node.js).',
+    description: 'A terminal-based Snake implementation.',
   },
   {
     icon: '📦',
     title: 'webpack Boilerplate',
     source: 'https://github.com/taniarascia/webpack-boilerplate',
-    description:
-      'A sensible webpack 5 boilerplate with with Babel, Post CSS, and Sass.',
+    description: 'A sensible webpack 5 boilerplate.',
   },
   {
     icon: '💾',

@@ -21,6 +21,13 @@ export default function Guides({ data, frontPage, includeTime }) {
           <div className="guide" key={guide.id}>
             <div>
               <LinkType guide={guide}>
+                <h2>{guide.title}</h2>
+                {includeTime && <time>{guide.date}</time>}
+              </LinkType>
+              {guide.description && <p>{guide.description}</p>}
+            </div>
+            <div>
+              <LinkType guide={guide}>
                 {guide.staticThumbnail ? (
                   <img
                     src={guide.staticThumbnail}
@@ -32,13 +39,6 @@ export default function Guides({ data, frontPage, includeTime }) {
                   <Img fixed={guide.thumbnail} />
                 )}
               </LinkType>
-            </div>
-            <div>
-              <LinkType guide={guide}>
-                <h2>{guide.title}</h2>
-                {includeTime && <time>{guide.date}</time>}
-              </LinkType>
-              {guide.description && <p>{guide.description}</p>}
             </div>
           </div>
         )

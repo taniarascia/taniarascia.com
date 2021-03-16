@@ -47,12 +47,6 @@ export default function PostTemplate({ data, pageContext }) {
           <header className="article-header">
             <div className="container">
               <div className="thumb">
-                {thumbnail && (
-                  <Img
-                    fixed={thumbnail.childImageSharp.fixed}
-                    className="post-thumbnail"
-                  />
-                )}
                 <div>
                   <h1>{title}</h1>
                   <div className="post-meta">
@@ -74,7 +68,13 @@ export default function PostTemplate({ data, pageContext }) {
                       </div>
                     )}
                   </div>
-                </div>
+                </div>{' '}
+                {thumbnail && (
+                  <Img
+                    fixed={thumbnail.childImageSharp.fixed}
+                    className="post-thumbnail"
+                  />
+                )}
               </div>
             </div>
             {description && <p className="description">{description}</p>}
