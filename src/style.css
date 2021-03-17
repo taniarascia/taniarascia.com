@@ -282,7 +282,7 @@ h4:not(:first-child) {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.1;
   font-family: 'DM Mono', Georgia, serif;
   letter-spacing: -0.1rem;
@@ -290,7 +290,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--border-color);
   font-family: 'DM Mono', Georgia, serif;
@@ -547,12 +547,12 @@ main {
 
 .navbar a {
   border-radius: 0.35rem;
-  margin: 0 0.05rem;
-  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0.03rem;
+  color: rgba(243, 151, 151, 0.65);
   font-weight: 400;
   font-size: 0.83rem;
   border: 1px solid transparent;
-  padding: 0 0.3rem;
+  padding: 0 0.2rem;
   background: transparent;
 }
 
@@ -659,7 +659,7 @@ main {
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: .95rem;
   background: transparent;
 }
 
