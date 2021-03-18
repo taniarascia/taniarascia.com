@@ -218,6 +218,10 @@ blockquote {
   border-left: 3px solid var(--link-color);
 }
 
+blockquote p {
+  max-width: 100%;
+}
+
 blockquote *:last-child {
   margin: 0;
 }
