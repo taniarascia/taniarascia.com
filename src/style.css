@@ -161,7 +161,7 @@ ul,
 dl,
 table,
 blockquote {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   margin: 0 0 1.5rem 0;
 }
 
@@ -286,7 +286,7 @@ h4:not(:first-child) {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   line-height: 1.1;
   font-family: 'DM Mono', Georgia, serif;
   letter-spacing: -0.1rem;
@@ -294,7 +294,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--border-color);
   font-family: 'DM Mono', Georgia, serif;
@@ -551,12 +551,12 @@ main {
 
 .navbar a {
   border-radius: 0.35rem;
-  margin: 0 0.05rem;
-  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0.03rem;
+  color: var(--light-background-hover);
   font-weight: 400;
   font-size: 0.83rem;
   border: 1px solid transparent;
-  padding: 0 0.3rem;
+  padding: 0 0.2rem;
   background: transparent;
 }
 
@@ -663,7 +663,7 @@ main {
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: transparent;
 }
 
@@ -886,7 +886,7 @@ header u {
 }
 
 .article-header {
-  padding-top: 2rem;
+  padding-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
