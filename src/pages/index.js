@@ -66,7 +66,7 @@ export default function BlogIndex({ data }) {
           <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter.">
-          <p style="max-width:700px;">
+          <p>
             I send out an email when I create something new. There is no
             schedule &ndash; it might be once a week or once every two months.
             I'm never going to spam you, and you can unsubscribe any time.

@@ -48,7 +48,7 @@ export default function PostTemplate({ data, pageContext }) {
             <div className="container">
               <div className="thumb">
                 <div>
-                  <h1 style={!thumbnail ? 'margin-top: 1rem;' : ''}>{title}</h1>
+                  <h1>{title}</h1>
                   <div className="post-meta">
                     <div>
                       By <Link to="/me">Tania Rascia</Link> on{' '}
