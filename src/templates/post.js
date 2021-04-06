@@ -68,7 +68,7 @@ export default function PostTemplate({ data, pageContext }) {
                       </div>
                     )}
                   </div>
-                </div>{' '}
+                </div>
                 {thumbnail && (
                   <Img
                     fixed={thumbnail.childImageSharp.fixed}
