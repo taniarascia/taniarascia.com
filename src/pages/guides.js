@@ -5,11 +5,10 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Guides from '../components/Guides'
 import SEO from '../components/SEO'
-
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function BlogIndex({ data }) {
+export default function GuidesIndex({ data }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(
     () => getSimplifiedPosts(posts, { thumbnails: true }),

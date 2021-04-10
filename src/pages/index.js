@@ -8,10 +8,8 @@ import Guides from '../components/Guides'
 import Projects from '../components/Projects'
 import SEO from '../components/SEO'
 import Blurb from '../components/Blurb'
-
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
-
 import projects from '../data/projects'
 import interviews from '../data/interviews'
 import speaking from '../data/speaking'
@@ -66,7 +64,7 @@ export default function BlogIndex({ data }) {
           <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter.">
-          <p>
+          <p className="paragraph">
             I send out an email when I create something new. There is no
             schedule &ndash; it might be once a week or once every two months.
             I'm never going to spam you, and you can unsubscribe any time.

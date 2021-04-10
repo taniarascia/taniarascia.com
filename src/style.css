@@ -115,6 +115,10 @@ a.section-button:hover {
   color: var(--heading-color);
 }
 
+.paragraph {
+  max-width: 700px;
+}
+
 @media screen and (min-width: 800px) {
   section {
     margin: 3.5rem 0;
@@ -153,6 +157,11 @@ img {
   display: inline-block;
   max-width: 100%;
   height: auto;
+}
+
+a.link-image,
+a.link-image:hover {
+  border-bottom-color: transparent;
 }
 
 p,
@@ -219,7 +228,7 @@ blockquote {
 }
 
 blockquote p {
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 blockquote *:last-child {
@@ -521,7 +530,7 @@ a code[class*='language-']:hover {
 /* Navbar */
 
 main {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 @media screen and (min-width: 800px) {
@@ -543,7 +552,37 @@ main {
   box-shadow: 0 3px 13px rgba(100, 110, 140, 0.1),
     0 2px 4px rgba(100, 110, 140, 0.15);
   z-index: 2;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.navbar .grid {
+  display: grid;
+}
+
+.button-item {
+  grid-row: first-line / 1;
+  grid-column: 2;
+  align-self: center;
+}
+
+.menu-item {
+  grid-column: 1 / span 2;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar .grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    align-items: center;
+  }
+  .button-item {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .menu-item {
+    grid-column: auto;
+  }
 }
 
 .navbar .flex {
@@ -555,23 +594,20 @@ main {
   margin: 0 0.03rem;
   color: var(--light-background-hover);
   font-weight: 400;
-  font-size: 0.83rem;
+  font-size: 0.9rem;
   border: 1px solid transparent;
   padding: 0 0.2rem;
   background: transparent;
+  line-height: 1;
+  padding: 0.5rem;
 }
 
 .navbar button {
   font-size: 1rem;
-  margin-right: -1rem;
 }
 
 .navbar a .emoji {
   display: none;
-}
-
-.navbar a:first-of-type {
-  margin-left: -1rem;
 }
 
 .navbar a.brand {
@@ -583,6 +619,7 @@ main {
   align-items: center;
   line-height: 1;
   background: transparent;
+  font-size: 1rem;
 }
 
 .navbar a.brand .emoji {
@@ -617,9 +654,9 @@ main {
   }
 
   .navbar a {
-    padding: 0.75rem 1.25rem;
+    padding: 1rem 1.25rem;
     margin: 0 0.25rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--font-color);
   }
@@ -643,12 +680,6 @@ main {
     background: var(--light-background);
     color: var(--dark-font-color);
   }
-  .navbar a.brand:hover {
-    background: var(--light-background) !important;
-  }
-  #dark-mode-button:hover {
-    background: var(--light-background);
-  }
 }
 
 @media print {
@@ -658,14 +689,16 @@ main {
 }
 
 #dark-mode-button {
+  margin-left: auto;
   display: flex;
   border: none;
   padding: 0.2rem 0.7rem 0.2rem 0.5rem;
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   background: transparent;
+  line-height: 1;
 }
 
 #dark-mode-button:focus {
@@ -674,7 +707,6 @@ main {
 
 @media screen and (min-width: 800px) {
   #dark-mode-button {
-    padding: 0.95rem 0.75rem;
     font-size: 1.4rem;
   }
 }

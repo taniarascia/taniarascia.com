@@ -1,4 +1,3 @@
-import sm from '../../content/thumbnails/sm.png'
 import egghead from '../../content/thumbnails/egghead.png'
 import townhall from '../../content/thumbnails/townhall.png'
 import techy from '../../content/thumbnails/techy.png'

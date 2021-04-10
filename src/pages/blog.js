@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Search from '../components/Search'
 import SEO from '../components/SEO'
-
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 

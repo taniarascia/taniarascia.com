@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="flex">
+        <div className="grid">
           <div>
             <Link to="/" className="brand">
               <span className="emoji">
@@ -15,10 +15,15 @@ export default function Nav() {
               Tania Rascia
             </Link>
           </div>
-          <div className="flex">
+
+          <div className="menu-item flex">
             <Link to="/blog">Articles</Link>
             <Link to="/guides">Guides</Link>
+            <Link to="/projects">Projects</Link>
             <Link to="/me">About me</Link>
+          </div>
+
+          <div className="button-item">
             <button
               id="dark-mode-button"
               onClick={(event) => {
