@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
@@ -12,7 +11,13 @@ export default function PageTemplate({ data }) {
 
   return (
     <Layout>
-      <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
+      <Helmet
+        title={`${
+          post.frontmatter.title === 'Tania Rascia'
+            ? 'Resume'
+            : post.frontmatter.title
+        } | ${config.siteTitle}`}
+      />
       <SEO />
       <header>
         <div className="container">

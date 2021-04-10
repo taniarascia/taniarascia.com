@@ -64,19 +64,21 @@ export default function BlogIndex({ data }) {
           <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter.">
-          <p className="paragraph">
-            I send out an email when I create something new. There is no
-            schedule &ndash; it might be once a week or once every two months.
-            I'm never going to spam you, and you can unsubscribe any time.
-          </p>
-          <a
-            href="https://taniarascia.substack.com/subscribe"
-            target="_blank"
-            rel="noreferrer"
-            className="button large"
-          >
-            Get the newsletter
-          </a>
+          <div className="flex">
+            <p className="paragraph">
+              I send out an email when I create something new. I'm never going
+              to spam you, and you can unsubscribe any time.
+            </p>
+            <a
+              href="https://taniarascia.substack.com/subscribe"
+              target="_blank"
+              rel="noreferrer"
+              className="button large"
+              style={{ textAlign: 'center' }}
+            >
+              Get the newsletter
+            </a>
+          </div>
         </Section>
       </div>
     </Layout>

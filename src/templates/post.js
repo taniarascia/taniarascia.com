@@ -8,7 +8,6 @@ import Suggested from '../components/Suggested'
 import SEO from '../components/SEO'
 import Comment from '../components/Comment'
 import Blurb from '../components/Blurb'
-
 import config from '../utils/config'
 import { slugify } from '../utils/helpers'
 

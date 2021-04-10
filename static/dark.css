@@ -51,7 +51,6 @@ a code[class*='language-'] {
 
 a.button {
   border: 2px solid transparent;
-  color: black;
   background: var(--link-color);
 }
 

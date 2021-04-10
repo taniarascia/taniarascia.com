@@ -123,6 +123,7 @@ a.section-button:hover {
   section {
     margin: 3.5rem 0;
   }
+
   h2.section-title {
     font-size: 2rem;
     margin: 0 0 1.5rem;
@@ -440,7 +441,7 @@ a.link:hover {
 a.button {
   display: inline-block;
   border: 2px solid var(--link-color);
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   margin-right: 0.75rem;
   font-weight: 500;
   background: var(--link-color);
@@ -449,6 +450,7 @@ a.button {
   font-size: 1.1rem;
   font-family: var(--code-font-family);
   margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 a.button.large {
@@ -472,8 +474,9 @@ a.button.secondary:hover {
 @media screen and (min-width: 800px) {
   a.button {
     font-size: 1.3rem;
-    padding: 0.8rem 1.2rem;
+    padding: 0.75rem 1.25rem;
   }
+
   a.button.large {
     padding: 1rem 1.5rem;
     font-size: 1.4rem;
@@ -530,7 +533,13 @@ a code[class*='language-']:hover {
 /* Navbar */
 
 main {
-  margin-top: 100px;
+  margin-top: 90px;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    margin-top: 50px;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -540,7 +549,7 @@ main {
 }
 
 .emoji {
-  margin: 0 0.4rem 0 0.1rem;
+  margin: 0 0.4rem 0 0;
 }
 
 .navbar {
@@ -566,20 +575,23 @@ main {
 }
 
 .menu-item {
+  padding: 0.25rem 0;
   grid-column: 1 / span 2;
 }
 
 @media screen and (min-width: 600px) {
   .navbar .grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto 60px;
     grid-template-rows: auto;
     align-items: center;
   }
+
   .button-item {
     grid-row: auto;
     grid-column: auto;
   }
+
   .menu-item {
     grid-column: auto;
   }
@@ -591,15 +603,16 @@ main {
 
 .navbar a {
   border-radius: 0.35rem;
-  margin: 0 0.03rem;
   color: var(--light-background-hover);
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border: 1px solid transparent;
-  padding: 0 0.2rem;
   background: transparent;
   line-height: 1;
-  padding: 0.5rem;
+  margin: 0;
+  padding: 0.5rem 0.4rem;
+  margin: 0 0.25rem;
+  background: rgba(100, 100, 100, 0.3);
 }
 
 .navbar button {
@@ -620,6 +633,7 @@ main {
   line-height: 1;
   background: transparent;
   font-size: 1rem;
+  padding: 0.5rem 0;
 }
 
 .navbar a.brand .emoji {
@@ -631,10 +645,13 @@ main {
   width: 23px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   .navbar a {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     padding: 0.5rem;
+  }
+  .navbar a.brand {
+    font-size: 1.2rem;
   }
 }
 
@@ -655,26 +672,25 @@ main {
 
   .navbar a {
     padding: 1rem 1.25rem;
-    margin: 0 0.25rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: var(--font-color);
+    background: transparent;
   }
+
   .navbar a.brand {
     font-size: 1.5rem;
-    margin-right: 3rem;
     border: none;
     background: transparent !important;
     color: var(--dark-font-color);
   }
+
   .navbar a.brand img {
     height: 30px;
     width: 30px;
     margin-right: 0.25rem;
   }
-  .navbar a:first-of-type {
-    margin-left: -1.5rem;
-  }
+
   .navbar a:hover,
   .navbar a[aria-current='page'] {
     background: var(--light-background);
@@ -692,7 +708,7 @@ main {
   margin-left: auto;
   display: flex;
   border: none;
-  padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
   border-radius: 0.35rem;
   box-sizing: content-box;
   cursor: pointer;
@@ -705,9 +721,15 @@ main {
   outline: none;
 }
 
+@media screen and (min-width: 600px) {
+  #dark-mode-button {
+    font-size: 1.3rem;
+  }
+}
+
 @media screen and (min-width: 800px) {
   #dark-mode-button {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -1381,6 +1403,7 @@ kbd {
   .project h3 {
     font-size: 1.5rem;
   }
+
   .project .description {
     font-size: 1.2rem;
   }
@@ -1545,6 +1568,11 @@ kbd {
   .stack-mobile {
     display: block;
   }
+}
+
+.no-underline {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 ::selection {
