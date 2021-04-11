@@ -18,7 +18,10 @@ export default function ProjectsIndex() {
       <div className="container">
         <header>
           <h1>Projects.</h1>
-          <p className="subtitle">A few open-source projects I've created.</p>
+          <p className="subtitle">
+            A few highlights of my open-source projects. View them all{' '}
+            <a href="https://github.com/taniarascia">on GitHub</a>.
+          </p>
           <h2>TakeNote</h2>
           <h4 className="no-underline">
             A free, open source notes app for the web.
@@ -30,6 +33,9 @@ export default function ProjectsIndex() {
               </i>
             </small>
           </p>
+          <a href="https://takenote.dev" className="link-image" target="_blank">
+            <img src={takeNote} />
+          </a>
           <p>
             I built this app because I wanted a simpler, IDE-like, WYSIWYG-free
             note-taking program that would be accessible from any platform via
@@ -51,9 +57,6 @@ export default function ProjectsIndex() {
           <a href="https://takenote.dev/app" className="button">
             Demo
           </a>
-          <a href="https://takenote.dev" className="link-image" target="_blank">
-            <img src={takeNote} />
-          </a>
 
           <h2>Chip8.js</h2>
           <h4 className="no-underline">
@@ -64,6 +67,13 @@ export default function ProjectsIndex() {
               <i>2019 &mdash; JavaScript, Node, Blessed</i>
             </small>
           </p>
+          <a
+            href="https://taniarascia.github.io/chip8"
+            className="link-image"
+            target="_blank"
+          >
+            <img src={chip8} />
+          </a>
           <p>
             Chip8.js includes a CPU class that handles all the internal logic of
             the emulator, and individual classes written for interfacing with a
@@ -90,13 +100,7 @@ export default function ProjectsIndex() {
           <a href="https://taniarascia.github.io/chip8" className="button">
             Demo
           </a>
-          <a
-            href="https://taniarascia.github.io/chip8"
-            className="link-image"
-            target="_blank"
-          >
-            <img src={chip8} />
-          </a>
+
           <h2>Laconia</h2>
           <h4 className="no-underline">
             An MVC framework from scratch in PHP.
@@ -106,6 +110,9 @@ export default function ProjectsIndex() {
               <i>2018 &mdash; PHP, MySQL</i>
             </small>
           </p>
+          <a href="https://laconia.dev" className="link-image" target="_blank">
+            <img src={laconia} />
+          </a>
           <p>
             In my time of working with custom PHP systems, I noticed a lot of
             extremely messy, haphazardly put-together code, code that had no
@@ -124,9 +131,7 @@ export default function ProjectsIndex() {
           <a href="https://laconia.dev" className="button">
             Demo
           </a>
-          <a href="https://laconia.dev" className="link-image" target="_blank">
-            <img src={laconia} />
-          </a>
+
           <h2>Primitive</h2>
           <h4 className="no-underline">
             A front-end design toolkit for developing responsive web apps.
@@ -134,6 +139,13 @@ export default function ProjectsIndex() {
           <p>
             <i>2016 &mdash; Sass, CSS</i>
           </p>
+          <a
+            href="https://taniarascia.github.io/primitive"
+            className="link-image"
+            target="_blank"
+          >
+            <img src={primitive} />
+          </a>
           <p>
             I made my first websites in the late '90s, when HTML was written in
             uppercase, tables were using for creating layouts, and CSS didn't
@@ -156,13 +168,6 @@ export default function ProjectsIndex() {
           </a>
           <a href="https://taniarascia.github.io/primitive" className="button">
             Demo
-          </a>
-          <a
-            href="https://taniarascia.github.io/primitive"
-            className="link-image"
-            target="_blank"
-          >
-            <img src={primitive} />
           </a>
         </header>
       </div>

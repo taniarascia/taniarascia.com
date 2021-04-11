@@ -73,8 +73,8 @@ export default function BlogIndex({ data }) {
               href="https://taniarascia.substack.com/subscribe"
               target="_blank"
               rel="noreferrer"
-              className="button large"
-              style={{ textAlign: 'center' }}
+              className="button"
+              style={{ textAlign: 'center', marginLeft: '.5rem' }}
             >
               Get the newsletter
             </a>
