@@ -5,12 +5,13 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Posts from '../components/Posts'
 import SEO from '../components/SEO'
-
-import { getSimplifiedPosts, slugify } from '../utils/helpers'
+import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
 export default function CategoryTemplate({ data, pageContext }) {
-  let { cat } = pageContext
+  console.log(pageContext)
+  console.log(data)
+  let { category } = pageContext
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
@@ -18,11 +19,11 @@ export default function CategoryTemplate({ data, pageContext }) {
 
   return (
     <Layout>
-      <Helmet title={`Category: ${cat} | ${config.siteTitle}`} />
+      <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
       <SEO />
       <header>
         <div className="container">
-          <h1>Category: {cat}</h1>
+          <h1>Category: {category}</h1>
           <p className="subtitle">
             <span className="count">{totalCount}</span>
             {message}
@@ -37,10 +38,10 @@ export default function CategoryTemplate({ data, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query CategoryPage($cat: String) {
+  query CategoryPage($category: String) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { categories: { in: [$cat] } } }
+      filter: { frontmatter: { categories: { in: [$category] } } }
     ) {
       totalCount
       edges {
