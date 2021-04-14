@@ -17,7 +17,7 @@ export default function Nav() {
           </div>
 
           <div className="menu-item flex">
-            <Link to="/blog">Articles</Link>
+            <Link to="/blog">Blog</Link>
             <Link to="/guides">Guides</Link>
             <Link to="/projects">Projects</Link>
             <Link to="/me">About me</Link>

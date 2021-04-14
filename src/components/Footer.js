@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="footer flex">
       <section className="container">
         <nav className="footer-links">
-          <Link to="/blog">Articles</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/guides">Guides</Link>
           <a
             href="https://taniarascia.substack.com/subscribe"

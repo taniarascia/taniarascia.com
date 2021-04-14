@@ -3,43 +3,46 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
-import Search from '../components/Search'
+import Posts from '../components/Posts'
 import SEO from '../components/SEO'
-import { getSimplifiedPosts } from '../utils/helpers'
+
+import { getSimplifiedPosts, slugify } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function BlogIndex({ data, ...props }) {
+export default function CategoryTemplate({ data, pageContext }) {
+  let { cat } = pageContext
+  const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
+  const message = totalCount === 1 ? ' post found.' : ' posts found.'
 
   return (
     <Layout>
-      <Helmet title={`Blog | ${config.siteTitle}`} />
-      <SEO customDescription="Articles, tutorials, snippets, musings, and everything else." />
+      <Helmet title={`Category: ${cat} | ${config.siteTitle}`} />
+      <SEO />
       <header>
         <div className="container">
-          <h1>Blog.</h1>
+          <h1>Category: {cat}</h1>
           <p className="subtitle">
-            Posts, tutorials, snippets, musings, notes, and everything else. The
-            archive of everything I've written.
+            <span className="count">{totalCount}</span>
+            {message}
           </p>
         </div>
       </header>
-      <section>
-        <div className="container">
-          <Search posts={simplifiedPosts} {...props} />
-        </div>
+      <section className="container">
+        <Posts data={simplifiedPosts} />
       </section>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query BlogQuery {
+  query CategoryPage($cat: String) {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { template: { eq: "post" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { categories: { in: [$cat] } } }
     ) {
+      totalCount
       edges {
         node {
           id
@@ -49,7 +52,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            tags
             categories
           }
         }

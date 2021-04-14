@@ -172,3 +172,13 @@ pre.language-terminal {
 .blurb {
   background: #111;
 }
+
+a.category {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-bottom: 3px solid var(--light-background-hover);
+}
+a.category:hover {
+  color: white;
+  border-bottom: 3px solid var(--link-color);
+}

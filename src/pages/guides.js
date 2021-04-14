@@ -1,17 +1,34 @@
 import React, { useMemo } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import Guides from '../components/Guides'
 import SEO from '../components/SEO'
-import { getSimplifiedPosts } from '../utils/helpers'
+import { getSimplifiedPosts, slugify } from '../utils/helpers'
 import config from '../utils/config'
 
 export default function GuidesIndex({ data }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(
     () => getSimplifiedPosts(posts, { thumbnails: true }),
+    [posts]
+  )
+
+  const categories = useMemo(
+    () =>
+      posts.reduce((acc, val) => {
+        const currentCategories = val.node.frontmatter.categories
+        if (!acc.some((category) => category.includes(currentCategories))) {
+          return [
+            ...acc,
+            ...currentCategories.filter(
+              (c) => !acc.includes(c) && c !== 'Guides'
+            ),
+          ]
+        }
+        return acc
+      }, []),
     [posts]
   )
 
@@ -30,6 +47,16 @@ export default function GuidesIndex({ data }) {
       </header>
       <section>
         <div className="container">
+          <div className="categories">
+            {categories.map((category) => (
+              <Link
+                to={`/categories/${slugify(category)}`}
+                className="category"
+              >
+                {category}
+              </Link>
+            ))}
+          </div>
           <Guides data={simplifiedPosts} includeTime />
         </div>
       </section>

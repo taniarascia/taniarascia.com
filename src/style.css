@@ -440,7 +440,7 @@ a.link:hover {
 
 a.button {
   display: inline-block;
-  border: 2px solid var(--link-color);
+  border: 3px solid var(--border-color);
   padding: 0.5rem 0.75rem;
   margin: 0 0.25rem;
   font-weight: 500;
@@ -461,7 +461,7 @@ a.button.secondary {
 
 a.button:hover,
 a.button.secondary:hover {
-  border: 2px solid var(--link-color-darker);
+  border: 3px solid var(--border-color);
   background: var(--link-color-darker);
   color: white;
 }
@@ -1362,7 +1362,7 @@ kbd {
 }
 
 .project a:hover h3 {
-  text-decoration: underline;
+  color: var(--light-font-color);
 }
 
 .project h3 {
@@ -1400,6 +1400,36 @@ kbd {
 }
 
 /* Guide */
+
+.categories {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin: 1rem 0;
+}
+
+a.category {
+  font-size: 0.9rem;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border-radius: 12px;
+  background: var(--link-color);
+  color: white;
+}
+
+a.category:hover {
+  background: var(--link-color-darker);
+  color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  .categories {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  a.category {
+    font-size: 1rem;
+  }
+}
 
 .guide-thumbnails {
   display: none;
@@ -1518,7 +1548,6 @@ kbd {
 @media screen and (min-width: 800px) {
   .guide {
     padding: 3rem 0;
-    border-bottom: 3px solid var(--border-color);
   }
 
   .guide p {
