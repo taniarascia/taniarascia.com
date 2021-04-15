@@ -21,7 +21,7 @@ export default function Guides({ data, frontPage, includeTime }) {
       {data.map((guide) => {
         return (
           <div className="guide" key={guide.id}>
-            <div>
+            <div className="guide-section">
               <LinkType guide={guide}>
                 <h2>{guide.title}</h2>
                 {includeTime && <time>{guide.date}</time>}
@@ -41,7 +41,7 @@ export default function Guides({ data, frontPage, includeTime }) {
               </LinkType>
               {guide.description && <p>{guide.description}</p>}
             </div>
-            <div>
+            <div className="image-section">
               <LinkType guide={guide}>
                 {guide.staticThumbnail ? (
                   <img

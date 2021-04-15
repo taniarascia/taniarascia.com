@@ -50,14 +50,13 @@ a code[class*='language-'] {
 }
 
 a.button {
-  border: 2px solid transparent;
-  background: var(--link-color);
+  background: transparent;
 }
 
-a.button.secondary {
-  border-color: var(--light-background-hover);
-  background: var(--light-background-hover);
-  color: white;
+a.button:hover {
+  background: transparent;
+  border-color: var(--link-color);
+  box-shadow: 5px 5px var(--link-color-darker);
 }
 
 .navbar a {
@@ -171,14 +170,4 @@ pre.language-terminal {
 
 .blurb {
   background: #111;
-}
-
-a.category {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  border-bottom: 3px solid var(--light-background-hover);
-}
-a.category:hover {
-  color: white;
-  border-bottom: 3px solid var(--link-color);
 }

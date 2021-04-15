@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
-import Posts from '../components/Posts'
+import Guides from '../components/Guides'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -14,16 +14,19 @@ export default function CategoryTemplate({ data, pageContext }) {
   let { category } = pageContext
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
-  const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
+  const simplifiedPosts = useMemo(
+    () => getSimplifiedPosts(posts, { thumbnails: true }),
+    [posts]
+  )
   const message = totalCount === 1 ? ' post found.' : ' posts found.'
 
   return (
     <Layout>
-      <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
+      <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
       <header>
         <div className="container">
-          <h1>Category: {category}</h1>
+          <h1>{category}</h1>
           <p className="subtitle">
             <span className="count">{totalCount}</span>
             {message}
@@ -31,7 +34,7 @@ export default function CategoryTemplate({ data, pageContext }) {
         </div>
       </header>
       <section className="container">
-        <Posts data={simplifiedPosts} />
+        <Guides data={simplifiedPosts} includeTime />
       </section>
     </Layout>
   )
@@ -51,9 +54,19 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            tags
             categories
+            topic
+            thumbnail {
+              childImageSharp {
+                fixed(width: 100, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

@@ -15,13 +15,16 @@ export default function ProjectsIndex() {
     <Layout>
       <Helmet title={`Projects | ${config.siteTitle}`} />
       <SEO />
-      <div className="container">
+      <div className="container page">
         <header>
           <h1>Projects.</h1>
           <p className="subtitle">
             A few highlights of my open-source projects. View them all{' '}
             <a href="https://github.com/taniarascia">on GitHub</a>.
           </p>
+        </header>
+
+        <section>
           <h2>TakeNote</h2>
           <h4 className="no-underline">
             A free, open source notes app for the web.
@@ -57,7 +60,9 @@ export default function ProjectsIndex() {
           <a href="https://takenote.dev/app" className="button">
             Demo
           </a>
+        </section>
 
+        <section>
           <h2>Chip8.js</h2>
           <h4 className="no-underline">
             A retro game emulator for three platforms.
@@ -100,7 +105,9 @@ export default function ProjectsIndex() {
           <a href="https://taniarascia.github.io/chip8" className="button">
             Demo
           </a>
+        </section>
 
+        <section>
           <h2>Laconia</h2>
           <h4 className="no-underline">
             An MVC framework from scratch in PHP.
@@ -169,7 +176,7 @@ export default function ProjectsIndex() {
           <a href="https://taniarascia.github.io/primitive" className="button">
             Demo
           </a>
-        </header>
+        </section>
       </div>
     </Layout>
   )

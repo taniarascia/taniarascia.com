@@ -51,7 +51,7 @@ export default function GuidesIndex({ data }) {
             {categories.map((category) => (
               <Link
                 to={`/categories/${slugify(category)}`}
-                className="category"
+                className="button"
               >
                 {category}
               </Link>
