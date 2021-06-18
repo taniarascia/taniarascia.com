@@ -64,10 +64,9 @@ export default function BlogIndex({ data }) {
           <Guides data={speaking} frontPage />
         </Section>
         <Section title="Newsletter.">
-          <div className="flex">
+          <div className="flex justify-between">
             <p className="paragraph">
-              I send out an email when I create something new. I'm never going
-              to spam you, and you can unsubscribe any time.
+              I send out an email when I create something new.
             </p>
             <a
               href="https://taniarascia.substack.com/subscribe"

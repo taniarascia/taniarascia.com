@@ -453,7 +453,7 @@ a.button {
   font-weight: 500;
   background: var(--link-color);
   color: white;
-  font-size: 1rem;
+  font-size: .95rem;
   font-family: var(--code-font-family);
   margin-bottom: 0.5rem;
   line-height: 1.3;
@@ -575,7 +575,7 @@ main {
 @media screen and (min-width: 600px) {
   .navbar .grid {
     display: grid;
-    grid-template-columns: auto auto 60px;
+    grid-template-columns: auto 500px 60px;
     grid-template-rows: auto;
     align-items: center;
   }
@@ -587,6 +587,8 @@ main {
 
   .menu-item {
     grid-column: auto;
+    justify-self: flex-end;
+    width: 350px;
   }
 }
 
@@ -689,6 +691,12 @@ main {
   .navbar a[aria-current='page'] {
     background: var(--light-background);
     color: var(--dark-font-color);
+  }
+
+  .menu-item {
+    grid-column: auto;
+    justify-self: flex-end;
+    width: 500px;
   }
 }
 
@@ -887,6 +895,10 @@ tbody tr:nth-child(even) {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .new-post,

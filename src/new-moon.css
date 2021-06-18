@@ -5,7 +5,7 @@
 */
 
 :root {
-  --code-font-family: 'DM Mono', Menlo, 'Roboto Mono', Courier New, monospace;
+  --code-font-family: Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
   --code-font-color: #b3b9c5;
   --code-background-color: #353535;
   --string: #92d192;
