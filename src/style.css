@@ -1211,8 +1211,8 @@ time,
   display: flex !important;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
 }
 
 .tags > a {
