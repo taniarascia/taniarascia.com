@@ -18,6 +18,7 @@
   --transparent-bg: rgba(0, 0, 0, 0.2);
   --light-transparent-bg: rgba(255, 255, 255, 0.05);
   --border-color: #3b3b3b;
+  --subtle-border: rgba(255, 255, 255, 0.1);
 }
 
 h1 {
@@ -58,20 +59,18 @@ a.button:hover {
   border-color: var(--link-color);
   box-shadow: 5px 5px var(--link-color-darker);
 }
-
-.navbar a {
-  color: var(--transparent-text);
+.navbar {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar a:hover,
-.navbar a[aria-current='page'],
-.footer a:hover {
-  color: white;
+.navbar a[aria-current='page'] {
+  color: black;
   border-color: transparent;
 }
 
-.navbar a.brand {
-  color: white;
+.tags > a:hover {
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .filename {
@@ -119,6 +118,10 @@ code {
   border: 2px solid var(--link-color);
 }
 
+header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 header u {
   background: linear-gradient(transparent 85%, #111 0);
 }
@@ -135,6 +138,15 @@ tbody tr:nth-child(odd) {
 
 blockquote {
   color: rgba(255, 255, 255, 0.9);
+}
+
+.post-meta .tags a {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--heading-color);
+}
+.post-meta .tags a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--heading-color);
 }
 
 .new-post {
@@ -157,6 +169,14 @@ blockquote {
 
 .post a:hover {
   border-bottom-color: var(--light-background);
+}
+
+.project a:hover h3 {
+  color: var(--heading-color);
+}
+
+.footer a:hover {
+  border: 1px solid transparent;
 }
 
 /* Inline code */

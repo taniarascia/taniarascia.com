@@ -43,23 +43,18 @@ export default function GuidesIndex({ data }) {
             The missing instruction manuals of the web. Long form articles,
             guides, tutorials, and references about programming and design.
           </p>
-        </div>
-      </header>
-      <section>
-        <div className="container">
           <div className="categories">
             {categories.map((category) => (
-              <Link
-                to={`/categories/${slugify(category)}`}
-                className="button"
-              >
+              <Link to={`/categories/${slugify(category)}`} className="button">
                 {category}
               </Link>
             ))}
           </div>
-          <Guides data={simplifiedPosts} includeTime />
         </div>
-      </section>
+      </header>
+      <div className="container">
+        <Guides data={simplifiedPosts} includeTime />
+      </div>
     </Layout>
   )
 }

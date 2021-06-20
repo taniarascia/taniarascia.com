@@ -41,49 +41,49 @@ export default function PostTemplate({ data, pageContext }) {
     <Layout>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
-      <div className="container">
-        <article>
-          <header className="article-header">
-            <div className="container">
-              <div className="thumb">
-                <div>
-                  <h1>{title}</h1>
-                  <div className="post-meta">
-                    <div>
-                      By <Link to="/me">Tania Rascia</Link> on{' '}
-                      <time>{date}</time>
-                    </div>
-                    {tags && (
-                      <div className="tags">
-                        {tags.map((tag) => (
-                          <Link
-                            key={tag}
-                            to={`/tags/${slugify(tag)}`}
-                            className={`tag-${tag}`}
-                          >
-                            {tag}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+
+      <article>
+        <header className="article-header">
+          <div className="container">
+            <div className="thumb">
+              <div>
+                <h1>{title}</h1>
+                <div className="post-meta">
+                  <div>
+                    By <Link to="/me">Tania Rascia</Link> on <time>{date}</time>
                   </div>
+                  {tags && (
+                    <div className="tags">
+                      {tags.map((tag) => (
+                        <Link
+                          key={tag}
+                          to={`/tags/${slugify(tag)}`}
+                          className={`tag-${tag}`}
+                        >
+                          {tag}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {thumbnail && (
-                  <Img
-                    fixed={thumbnail.childImageSharp.fixed}
-                    className="post-thumbnail"
-                  />
-                )}
               </div>
+              {thumbnail && (
+                <Img
+                  fixed={thumbnail.childImageSharp.fixed}
+                  className="post-thumbnail"
+                />
+              )}
             </div>
             {description && <p className="description">{description}</p>}
-          </header>
+          </div>
+        </header>
+        <div className="container">
           <div
             className="article-post"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-        </article>
-      </div>
+        </div>
+      </article>
       <Blurb title="About the author">
         <p>
           Hey, I'm <Link to="/me">Tania</Link>, a software engineer, writer, and

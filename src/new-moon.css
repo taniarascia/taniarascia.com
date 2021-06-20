@@ -83,7 +83,6 @@ pre[class*='language-'] {
 :not(pre) > code[class*='language-'] {
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 0.35rem;
 }
 
 pre.language-text {

@@ -33,9 +33,9 @@ export default function CategoryTemplate({ data, pageContext }) {
           </p>
         </div>
       </header>
-      <section className="container">
+      <div className="container">
         <Guides data={simplifiedPosts} includeTime />
-      </section>
+      </div>
     </Layout>
   )
 }
