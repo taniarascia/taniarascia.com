@@ -197,6 +197,10 @@ ul {
   ul {
     padding: 0 2rem;
   }
+
+  table {
+    margin-bottom: 2rem;
+  }
 }
 
 ul li p {
@@ -392,11 +396,21 @@ h5 {
   margin-bottom: 0.5rem;
 }
 
+.blurb a.button {
+  display: block;
+}
+
 .avatar {
   display: block;
   max-height: 200px;
   margin: 1.5rem auto 0;
   border: 3px solid var(--border-color);
+}
+
+@media screen and (min-width: 650px) {
+  .blurb a.button {
+    display: inline-block;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -603,19 +617,24 @@ main {
   line-height: 1;
   margin: 0;
   padding: 0.5rem 0.2rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: #2d2d31;
   font-family: var(--heading-font-family);
   letter-spacing: -0.05rem;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.navbar a:first-of-type:hover,
-.navbar a:first-of-type:hover:active,
-.navbar a:first-of-type:hover:focus {
-  background: var(--yellow);
+.navbar a[aria-current='page'] {
+  background: var(--yellow) !important;
   color: var(--navbar-color);
 }
 
+.navbar a:hover,
+.navbar a:hover:active,
+.navbar a:hover:focus {
+  background: var(--yellow-orange);
+  color: var(--navbar-color);
+}
+/* 
 .navbar a:nth-of-type(2n):hover,
 .navbar a:nth-of-type(2n):active,
 .navbar a:nth-of-type(2n):focus {
@@ -635,7 +654,7 @@ main {
 .navbar a:nth-of-type(4n):focus {
   background: var(--red-orange);
   color: var(--navbar-color);
-}
+} */
 
 .navbar button {
   font-size: 1rem;
