@@ -600,29 +600,41 @@ main {
   font-weight: 500;
   font-size: 0.9rem;
   border: 1px solid transparent;
-  background: transparent;
   line-height: 1;
   margin: 0;
   padding: 0.5rem 0.2rem;
-  background: rgba(100, 100, 100, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   font-family: var(--heading-font-family);
   letter-spacing: -0.05rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.navbar a:first-of-type {
+.navbar a:first-of-type:hover,
+.navbar a:first-of-type:hover:active,
+.navbar a:first-of-type:hover:focus {
   background: var(--yellow);
+  color: var(--navbar-color);
 }
 
-.navbar a:nth-of-type(2n) {
+.navbar a:nth-of-type(2n):hover,
+.navbar a:nth-of-type(2n):active,
+.navbar a:nth-of-type(2n):focus {
   background: var(--yellow-orange);
+  color: var(--navbar-color);
 }
 
-.navbar a:nth-of-type(3n) {
+.navbar a:nth-of-type(3n):hover,
+.navbar a:nth-of-type(3n):active,
+.navbar a:nth-of-type(3n):focus {
   background: var(--orange);
+  color: var(--navbar-color);
 }
 
-.navbar a:nth-of-type(4n) {
+.navbar a:nth-of-type(4n):hover,
+.navbar a:nth-of-type(4n):active,
+.navbar a:nth-of-type(4n):focus {
   background: var(--red-orange);
+  color: var(--navbar-color);
 }
 
 .navbar button {
@@ -678,8 +690,7 @@ main {
 
   .navbar a {
     padding: 1rem 1.25rem;
-    font-size: 1.3rem;
-    background: transparent;
+    font-size: 1.2rem;
   }
 
   .navbar a.brand {
