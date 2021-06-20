@@ -135,7 +135,7 @@ a.section-button:hover {
 }
 
 .container {
-  max-width: 1050px;
+  max-width: 950px;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -191,7 +191,7 @@ ul {
   dl,
   table,
   blockquote {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   ul {
@@ -419,7 +419,6 @@ h5 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1050px;
   }
 
   .avatar {
@@ -483,8 +482,8 @@ p.subtitle {
 
 @media screen and (min-width: 800px) {
   p.subtitle {
-    font-size: 1.8rem;
-    line-height: 1.6;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
 }
 
@@ -522,7 +521,7 @@ a code[class*='language-']:hover {
 /* Navbar */
 
 main {
-  margin-top: 90px;
+  margin-top: 95px;
 }
 
 @media screen and (min-width: 800px) {
@@ -590,12 +589,12 @@ main {
 .navbar a {
   color: var(--navbar-color);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border: 1px solid transparent;
   background: transparent;
   line-height: 1;
   margin: 0;
-  padding: 0.5rem 0.4rem;
+  padding: 0.5rem 0.2rem;
   background: rgba(100, 100, 100, 0.3);
   font-family: var(--heading-font-family);
   letter-spacing: -0.05rem;
@@ -1056,7 +1055,7 @@ header u {
   }
 
   header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   header u {
@@ -1069,7 +1068,7 @@ header u {
 
   .article-header h1 {
     padding-top: 0;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     line-height: 1.1;
   }
 
@@ -1078,14 +1077,8 @@ header u {
   }
 
   .article-header .description {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.5;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .article-header h1 {
-    font-size: 2.5rem;
   }
 }
 
@@ -1412,7 +1405,7 @@ kbd {
 
 .categories {
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 0.6rem;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   margin: 2.5rem 0 0 0;
 }
@@ -1424,7 +1417,8 @@ kbd {
 
   .categories a.button {
     padding: 0.75rem 0.5rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin: 0;
   }
 }
 
