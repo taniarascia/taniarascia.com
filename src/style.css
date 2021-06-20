@@ -25,7 +25,7 @@
   --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --heading-font-family: 'DM Mono', Georgia, serif;
+  --heading-font-family: 'DM Mono', Menlo, monospace;
   --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
   --border-color: var(--dark-font-color);
   --yellow: rgba(254, 220, 71, 1);
@@ -302,7 +302,7 @@ h4:not(:first-child) {
 h1 {
   font-size: 1.7rem;
   line-height: 1.1;
-  font-family: 'DM Mono', Georgia, serif;
+  font-family: var(--heading-font-family);
   letter-spacing: -0.15rem;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -311,7 +311,7 @@ h2 {
   font-size: 1.6rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--border-color);
-  font-family: 'DM Mono', Georgia, serif;
+  font-family: var(--heading-font-family);
   letter-spacing: -0.1rem;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -451,7 +451,7 @@ a.button {
   background: var(--link-color);
   color: white;
   font-size: 0.95rem;
-  font-family: 'DM Mono', Georgia, serif;
+  font-family: var(--heading-font-family);
   margin-bottom: 0.5rem;
   line-height: 1.3;
   border: 3px solid var(--border-color);
