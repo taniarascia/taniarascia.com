@@ -66,6 +66,8 @@ export default function BlogIndex({ data }) {
             <a
               className="button github-button"
               href="https://github.com/taniarascia"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ display: 'inline-flex' }}
             >
               <svg
