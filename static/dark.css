@@ -65,7 +65,6 @@ a.button:hover {
 
 .navbar a:hover,
 .navbar a[aria-current='page'] {
-  color: black;
   border-color: transparent;
 }
 
@@ -186,8 +185,4 @@ blockquote {
 
 pre.language-terminal {
   box-shadow: none;
-}
-
-.blurb {
-  background: #111;
 }
