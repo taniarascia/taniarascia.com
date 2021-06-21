@@ -420,7 +420,7 @@ h5 {
 
   .blurb p {
     max-width: 750px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.6;
   }
 
@@ -620,7 +620,7 @@ main {
   background: #2d2d31;
   font-family: var(--heading-font-family);
   letter-spacing: -0.05rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .navbar a[aria-current='page'] {
@@ -672,7 +672,7 @@ main {
   display: flex;
   align-items: center;
   line-height: 1;
-  background: transparent;
+  background: transparent !important;
   font-size: 1rem;
   padding: 0.5rem 0;
 }
