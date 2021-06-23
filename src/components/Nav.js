@@ -47,7 +47,7 @@ export default function Nav() {
                   const link = document.createElement('link')
                   link.rel = 'stylesheet'
                   link.id = 'dark-mode'
-                  link.href = '../dark.css'
+                  link.href = '/dark.css'
 
                   head.appendChild(link)
                 }
