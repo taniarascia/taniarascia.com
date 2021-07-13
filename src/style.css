@@ -294,6 +294,7 @@ h5 {
   color: var(--heading-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-margin-top: 95px;
 }
 
 h1:not(:first-child),
@@ -351,6 +352,14 @@ h5 {
 }
 
 @media screen and (min-width: 800px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    scroll-margin-top: 80px;
+  }
+
   h1 {
     font-size: 3rem;
     letter-spacing: -0.1rem;
