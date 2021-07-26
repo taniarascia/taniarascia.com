@@ -996,6 +996,7 @@ header u {
 .article-header .thumb {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .article-header .thumb div:first-of-type {
