@@ -1,66 +1,51 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import floppy from '../../content/images/floppylogo.png'
 
-export default function Nav() {
+import blog from '../assets/nav-blog.png'
+import floppy from '../assets/nav-floppy.png'
+import github from '../assets/nav-github.png'
+import projects from '../assets/nav-projects.png'
+import search from '../assets/nav-search.png'
+import twitter from '../assets/nav-twitter.png'
+
+const mainNavItems = [
+  { url: '/', icon: floppy, label: 'Home' },
+  { url: '/', icon: search, label: 'Search' },
+  { url: '/blog', icon: blog, label: 'Blog' },
+  { url: '/projects', icon: projects, label: 'Projects' },
+]
+
+const socialNavItems = [
+  { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
+  { url: 'https://twitter.com/taniarascia', icon: twitter, label: 'Twitter' },
+]
+
+export const Nav = () => {
   return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="grid">
-          <div>
-            <Link to="/" className="brand">
-              <span className="emoji">
-                <img src={floppy} alt="Floppy Diskette" />
-              </span>{' '}
-              Tania Rascia
+    <aside className="navbar">
+      <section>
+        <nav>
+          {mainNavItems.map((item) => (
+            <Link to={item.url} key={item.label}>
+              <img src={item.icon} alt={item.label} />
+              <div className="tooltip">{item.label}</div>
             </Link>
-          </div>
-
-          <div className="menu-item">
-            <Link to="/blog">Blog</Link>
-            <Link to="/guides">Guides</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/me">About me</Link>
-          </div>
-
-          <div className="button-item">
-            <button
-              id="dark-mode-button"
-              onClick={(event) => {
-                const theme =
-                  typeof window !== 'undefined' && localStorage.getItem('theme')
-
-                if (theme === 'dark') {
-                  typeof window !== 'undefined' &&
-                    localStorage.removeItem('theme')
-                  const link = document.querySelectorAll('#dark-mode')
-
-                  if (link) {
-                    link.forEach((el) => el.remove())
-                    event.target.textContent = '🌙'
-                  }
-                } else {
-                  typeof window !== 'undefined' &&
-                    localStorage.setItem('theme', 'dark')
-                  event.target.textContent = '☀️'
-                  const head = document.getElementsByTagName('head')[0]
-                  const link = document.createElement('link')
-                  link.rel = 'stylesheet'
-                  link.id = 'dark-mode'
-                  link.href = '/dark.css'
-
-                  head.appendChild(link)
-                }
-              }}
+          ))}
+        </nav>
+        <nav>
+          {socialNavItems.map((item) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              key={item.label}
             >
-              {typeof window !== 'undefined' &&
-              localStorage.getItem('theme') === 'dark'
-                ? '☀️'
-                : '🌙'}
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+              <img src={item.icon} alt={item.label} />
+              <div className="tooltip">{item.label}</div>
+            </a>
+          ))}
+        </nav>
+      </section>
+    </aside>
   )
 }

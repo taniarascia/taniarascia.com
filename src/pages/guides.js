@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/Layout'
+import { Layout } from '../components/Layout'
 import Guides from '../components/Guides'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts, slugify } from '../utils/helpers'
@@ -33,9 +33,10 @@ export default function GuidesIndex({ data }) {
   )
 
   return (
-    <Layout>
+    <>
       <Helmet title={`Guides | ${config.siteTitle}`} />
       <SEO />
+
       <header>
         <div className="container">
           <h1>Guides.</h1>
@@ -52,12 +53,15 @@ export default function GuidesIndex({ data }) {
           </div>
         </div>
       </header>
+
       <div className="container">
         <Guides data={simplifiedPosts} includeTime />
       </div>
-    </Layout>
+    </>
   )
 }
+
+GuidesIndex.Layout = Layout
 
 export const pageQuery = graphql`
   query GuidesQuery {

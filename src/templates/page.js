@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/Layout'
+import { Layout } from '../components/Layout'
 import SEO from '../components/SEO'
 import config from '../utils/config'
 
@@ -10,7 +10,7 @@ export default function PageTemplate({ data }) {
   const post = data.markdownRemark
 
   return (
-    <Layout>
+    <>
       <Helmet
         title={`${
           post.frontmatter.title === 'Tania Rascia'
@@ -30,9 +30,11 @@ export default function PageTemplate({ data }) {
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </section>
-    </Layout>
+    </>
   )
 }
+
+PageTemplate.Layout = Layout
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {

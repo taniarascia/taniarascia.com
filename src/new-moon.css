@@ -7,7 +7,7 @@
 :root {
   --code-font-family: Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
   --code-font-color: #b3b9c5;
-  --code-background-color: #353535;
+  --code-background-color: #2d2d2d;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -25,71 +25,48 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  -webkit-font-smoothing: subpixel-antialiased;
   color: var(--code-font-color);
   font-family: var(--code-font-family);
-  font-size: .9rem;
-
-  text-align: left;
-  white-space: pre-wrap;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  font-weight: 400;
-  line-height: 1.7;
-
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+  font-size: .95rem;
 }
 
-/* Code blocks */
 pre[class*='language-'] {
-  padding: 1.5rem;
-  margin-top: 0.6rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-  overflow: auto;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.06),
-    0 2px 2px rgba(0, 0, 0, 0.06), 0 4px 4px rgba(0, 0, 0, 0.06),
-    0 8px 8px rgba(0, 0, 0, 0.06), 0 16px 16px rgba(0, 0, 0, 0.06);
-}
-
-@media screen and (min-width: 800px) {
-  code[class*='language-'],
-  pre[class*='language-'] {
-    font-size: 1rem;
-  }
-  pre[class*='language-'] {
-    padding: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0.35rem;
-  }
-}
-
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background-color: var(--code-background-color);
+  padding: 1rem;
+  background: var(--code-background-color);
+  font-family: Menlo, monospace;
+  -webkit-font-smoothing: subpixel-antialiased;
+  overflow-x: scroll;
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2px 3px;
+  background: rgba(0, 0, 0, 0.05) !important;
+  font-weight: 600;
+  color: #222 !important;
+  font-size: 1.05rem;
 }
 
 pre.language-text {
-  background: var(--light-background) !important;
+  background: rgba(0, 0, 0, 0.1);
   color: var(--dark-font-color) !important;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: none;
+}
+
+/* Hide line numbers */
+
+pre.language-text,
+pre.language-terminal {
+  padding-left: 1.5rem !important;
+}
+
+pre.language-text .line-numbers-rows,
+pre.language-terminal .line-numbers-rows {
+  display: none;
 }
 
 code.language-text {
@@ -247,37 +224,6 @@ pre.language-terminal::after {
   cursor: help;
 }
 
-.filename {
-  font-size: 0.9rem;
-  margin-bottom: -0.8rem;
-  padding: 0.3rem 1.5rem;
-  line-height: 1;
-  font-family: 'Myriad Pro', sans-serif;
-
-  background: linear-gradient(to bottom, #eaeaea, #d2d2d2);
-  border: 1px solid #b9bcbd;
-  color: #4d494d;
-  z-index: 2;
-
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) inset, 0px 1px 0px #515151;
-  text-align: center;
-}
-
-@media screen and (min-width: 800px) {
-  .filename {
-    padding: 0.3rem 1rem 0.5rem;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
-
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 pre::-moz-selection,
 pre::-moz-selection,
 code::-moz-selection,
@@ -312,4 +258,46 @@ code[class*='language-'] ::selection {
   text-shadow: none;
   color: inherit;
   background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 4.5rem;
+  counter-reset: linenumber;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 1rem !important;
+  font-size: 100%;
+  left: -3.8rem;
+  width: 3rem !important;
+  letter-spacing: -1px;
+  border-right: 1px solid #444;
+  padding-right: 0.5rem;
+}
+
+.line-numbers-rows > span:before {
+  color: #777;
+}
+
+.gatsby-highlight-code-line {
+  margin-left: -1rem;
+  width: 100vw;
+}
+
+.filename {
+  display: flex;
+  align-items: center;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: -1.5rem;
+  background: #222;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  padding: 0.5rem 1.5rem;
+  color: #ccc;
+  line-height: 1;
+  font-size: 0.9rem;
 }

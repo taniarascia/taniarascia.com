@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/Layout'
+import { Layout } from '../components/Layout'
 import Posts from '../components/Posts'
 import SEO from '../components/SEO'
 
@@ -17,7 +17,7 @@ export default function TagTemplate({ data, pageContext }) {
   const message = totalCount === 1 ? ' post found.' : ' posts found.'
 
   return (
-    <Layout>
+    <>
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
       <header>
@@ -32,9 +32,11 @@ export default function TagTemplate({ data, pageContext }) {
       <section className="container">
         <Posts data={simplifiedPosts} />
       </section>
-    </Layout>
+    </>
   )
 }
+
+TagTemplate.Layout = Layout
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {

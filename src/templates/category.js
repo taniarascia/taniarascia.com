@@ -2,15 +2,13 @@ import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/Layout'
+import { Layout } from '../components/Layout'
 import Guides from '../components/Guides'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
 export default function CategoryTemplate({ data, pageContext }) {
-  console.log(pageContext)
-  console.log(data)
   let { category } = pageContext
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
@@ -21,9 +19,10 @@ export default function CategoryTemplate({ data, pageContext }) {
   const message = totalCount === 1 ? ' post found.' : ' posts found.'
 
   return (
-    <Layout>
+    <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
+
       <header>
         <div className="container">
           <h1>{category}</h1>
@@ -33,12 +32,15 @@ export default function CategoryTemplate({ data, pageContext }) {
           </p>
         </div>
       </header>
+
       <div className="container">
         <Guides data={simplifiedPosts} includeTime />
       </div>
-    </Layout>
+    </>
   )
 }
+
+CategoryTemplate.Layout = Layout
 
 export const pageQuery = graphql`
   query CategoryPage($category: String) {

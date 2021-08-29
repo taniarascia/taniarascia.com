@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 
-import Layout from '../components/Layout'
+import { Layout } from '../components/Layout'
 import SEO from '../components/SEO'
 import config from '../utils/config'
 import takeNote from '../../content/images/takenoteproject.png'
@@ -12,7 +12,7 @@ import chip8 from '../../content/images/chip8project.png'
 
 export default function ProjectsIndex() {
   return (
-    <Layout>
+    <>
       <Helmet title={`Projects | ${config.siteTitle}`} />
       <SEO />
       <div className="page">
@@ -200,6 +200,8 @@ export default function ProjectsIndex() {
           </section>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
+
+ProjectsIndex.Layout = Layout
