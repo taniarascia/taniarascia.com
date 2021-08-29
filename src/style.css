@@ -187,12 +187,16 @@ tbody tr:nth-child(odd) {
 }
 
 .sidebar .title {
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   color: white;
   font-weight: 700;
   height: 35px;
+  z-index: 8;
+  background: #222;
 }
 
 .sidebar header {
@@ -206,6 +210,9 @@ tbody tr:nth-child(odd) {
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  position: sticky;
+  top: 35px;
+  z-index: 7;
 }
 
 .sidebar header:hover {
@@ -231,9 +238,17 @@ tbody tr:nth-child(odd) {
   padding: 0.5rem 1rem;
 }
 
-.sidebar a:hover {
+.sidebar nav a:hover {
   background: rgba(255, 255, 255, 0.05);
   color: white;
+}
+
+.sidebar nav a.active {
+  background: var(--primary);
+  color: white;
+}
+.sidebar nav a.active svg path {
+  fill: white;
 }
 
 /* Footer */

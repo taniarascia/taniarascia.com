@@ -50,7 +50,11 @@ export const Sidebar = () => {
                 .filter((post) => (post.categories || []).includes(category))
                 .map((post) => {
                   return (
-                    <Link key={post.title} to={post.slug}>
+                    <Link
+                      key={post.title}
+                      to={post.slug}
+                      activeClassName="active"
+                    >
                       <File />
                       <span>{post.title}</span>
                     </Link>
