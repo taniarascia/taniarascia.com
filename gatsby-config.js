@@ -104,7 +104,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/taniarascia-content/`,
       },
     },
     {
@@ -128,7 +128,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 650,
-              wrapperStyle: (fluidResult) => `max-width: none;`,
+              backgroundColor: 'transparent';
             },
           },
           {

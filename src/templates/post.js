@@ -24,28 +24,24 @@ export default function PostTemplate({ data }) {
 
       <article>
         <header className="container">
-          <div className="thumb">
-            <div>
-              <h1>{title}</h1>
-              <div className="post-meta">
-                <div className="post-details">
-                  By <Link to="/me">Tania Rascia</Link> on <time>{date}</time>
-                </div>
-                {tags && (
-                  <div className="tags">
-                    {tags.map((tag) => (
-                      <Link
-                        key={tag}
-                        to={`/tags/${slugify(tag)}`}
-                        className={`tag-${tag}`}
-                      >
-                        {tag}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+          <h1>{title}</h1>
+          <div className="post-meta">
+            <div className="post-details">
+              By <Link to="/me">Tania Rascia</Link> on <time>{date}</time>
             </div>
+            {tags && (
+              <div className="tags">
+                {tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    to={`/tags/${slugify(tag)}`}
+                    className={`tag-${tag}`}
+                  >
+                    {tag}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
           {description && <p className="description">{description}</p>}
         </header>

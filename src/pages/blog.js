@@ -36,7 +36,7 @@ export default function BlogIndex({ data, ...props }) {
   )
 }
 
-BlogIndex.layout = BlogIndex
+BlogIndex.Layout = Layout
 
 export const pageQuery = graphql`
   query BlogQuery {

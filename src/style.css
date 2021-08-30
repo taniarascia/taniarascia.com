@@ -1,6 +1,12 @@
 :root {
   --primary: #6b74f7;
-  --border: #aaa;
+  --border: #ccc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -80,7 +86,7 @@ td {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 @media screen and (min-width: 800px) {
@@ -100,7 +106,7 @@ tbody tr:nth-child(odd) {
   position: fixed;
   top: 0;
   display: flex;
-  height: calc(100vh - 25px);
+  height: calc(100vh - 28px);
   min-width: 80px;
   background: #333;
   z-index: 10;
@@ -145,7 +151,7 @@ tbody tr:nth-child(odd) {
   font-size: 0.9rem;
   color: white;
   white-space: nowrap;
-  width: 60px;
+  width: 5rem;
   z-index: 11;
 }
 
@@ -178,8 +184,8 @@ tbody tr:nth-child(odd) {
   position: fixed;
   top: 0;
   left: 80px;
-  width: 300px;
-  height: 100vh;
+  width: 320px;
+  height: calc(100vh - 28px);
   background: #222;
   border-right: 1px solid #111;
   overflow-y: auto;
@@ -191,12 +197,14 @@ tbody tr:nth-child(odd) {
   top: 0;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
-  color: white;
+  padding: 0 2.5rem;
+  color: #aaa;
   font-weight: 700;
   height: 35px;
   z-index: 8;
   background: #222;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 .sidebar header {
@@ -204,6 +212,7 @@ tbody tr:nth-child(odd) {
   grid-template-columns: 1.5rem auto;
   align-items: center;
   background: #161616;
+  border-bottom: 1px solid #222;
   padding: 0.5rem 1rem;
   color: #eee;
   font-size: 0.8rem;
@@ -216,7 +225,7 @@ tbody tr:nth-child(odd) {
 }
 
 .sidebar header:hover {
-  background: rgba(0, 0, 0, 0.15);
+  background: #2a2a2a;
   color: white;
 }
 
@@ -239,14 +248,16 @@ tbody tr:nth-child(odd) {
 }
 
 .sidebar nav a:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: #444;
   color: white;
 }
 
 .sidebar nav a.active {
   background: var(--primary);
   color: white;
+  font-weight: 600;
 }
+
 .sidebar nav a.active svg path {
   fill: white;
 }
@@ -274,7 +285,6 @@ tbody tr:nth-child(odd) {
   display: inline-block;
   max-height: 20px;
   width: auto;
-  padding: 4px 0;
 }
 
 .footer nav {
@@ -286,8 +296,9 @@ tbody tr:nth-child(odd) {
 .footer a,
 .footer span {
   display: flex;
+  align-items: center;
   color: #777;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 28px;
   padding: 0 0.5rem;
 }
@@ -305,13 +316,13 @@ tbody tr:nth-child(odd) {
 /* Content */
 
 main {
-  margin-left: 381px;
+  margin-left: 400px;
   min-height: 100vh;
-  background: #ddd;
+  background: white;
 }
 
 .container {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .file-header {
@@ -340,9 +351,13 @@ main {
 
 /* Article */
 
+article {
+  margin-bottom: 3rem;
+}
+
 article header {
-  background: #ccc;
-  border-bottom: 1px solid #bbb;
+  background: #f0f0f0;
+  border-bottom: 1px solid var(--border);
 }
 
 article h1,
@@ -407,7 +422,7 @@ article .description {
 article p,
 article li,
 article table {
-  font-size: 1.1rem;
+  font-size: 1rem;
   -webkit-font-smoothing: auto;
 }
 
@@ -481,11 +496,58 @@ blockquote p:last-of-type {
 .comments {
   border-top: 1px solid #111;
   background: #333;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 3rem;
 }
 
 .comment-box {
   max-width: 800px;
+}
+
+/* Projects */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 2rem;
+}
+
+.project {
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f0;
+}
+
+.project h2 {
+  border-bottom: none;
+  font-size: 1.5rem !important;
+  margin-bottom: 0;
+}
+
+.project .description {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.project .links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project .stars {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project .stars img {
+  max-width: 20px;
+}
+
+.project .stars img {
+  max-width: 20px;
 }
 
 /* Helpers */
@@ -500,4 +562,19 @@ a.anchor.before:hover {
 
 a.anchor.before svg {
   fill: var(--primary);
+}
+
+a.image-link {
+  border-top: none;
+  border-bottom: none;
+}
+
+a.image-link:hover {
+  border-top: none;
+  border-bottom: none;
+  background: none;
+}
+
+.gatsby-resp-image-wrapper {
+  margin-left: 0 !important;
 }

@@ -27,19 +27,20 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: var(--code-font-color);
   font-family: var(--code-font-family);
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 pre[class*='language-'] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
   padding: 1rem;
   background: var(--code-background-color);
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
   overflow-x: scroll;
+  overflow-y: initial;
 }
 
 /* Inline code */
@@ -52,7 +53,7 @@ pre[class*='language-'] {
 }
 
 pre.language-text {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   color: var(--dark-font-color) !important;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -60,12 +61,14 @@ pre.language-text {
 /* Hide line numbers */
 
 pre.language-text,
-pre.language-terminal {
+pre.language-terminal,
+pre.language-shell {
   padding-left: 1.5rem !important;
 }
 
 pre.language-text .line-numbers-rows,
-pre.language-terminal .line-numbers-rows {
+pre.language-terminal .line-numbers-rows,
+pre.language-shell .line-numbers-rows {
   display: none;
 }
 
@@ -85,6 +88,7 @@ code.language-shell::before {
 }
 
 pre.language-terminal {
+  max-width: 800px;
   position: relative;
   background: white;
   color: #595c62;
@@ -113,7 +117,7 @@ pre.language-terminal::before {
   line-height: 0;
   padding: 15px 0 12px;
   text-indent: 6px;
-  letter-spacing: -9px;
+  letter-spacing: -5px;
   border-bottom: 1px solid #a6a9aa;
 }
 
@@ -124,8 +128,66 @@ pre.language-terminal::after {
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
   position: absolute;
-  top: 6px;
-  right: 0.5rem;
+  top: 8px;
+  right: 0.75rem;
+}
+
+pre::-moz-selection,
+pre::-moz-selection,
+code::-moz-selection,
+code::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre::selection,
+pre::selection,
+code::selection,
+code::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 4.5rem;
+  counter-reset: linenumber;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 1rem !important;
+  font-size: 100%;
+  left: -3.8rem;
+  width: 3rem !important;
+  letter-spacing: -1px;
+  border-right: 1px solid #444;
+  padding-right: 0.5rem;
+}
+
+.line-numbers-rows > span:before {
+  color: #777;
 }
 
 .gatsby-highlight-code-line {
@@ -137,6 +199,23 @@ pre.language-terminal::after {
   padding-left: 1.25rem;
   border-left: 0.25rem solid #748ffc;
 }
+
+.filename {
+  display: flex;
+  align-items: center;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: -1.5rem;
+  background: #222;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  padding: 0.5rem 1.5rem;
+  color: #ccc;
+  line-height: 1;
+  font-size: 0.9rem;
+}
+
+/* Colors */
 
 .token.comment,
 .token.prolog,
@@ -224,80 +303,6 @@ pre.language-terminal::after {
   cursor: help;
 }
 
-pre::-moz-selection,
-pre::-moz-selection,
-code::-moz-selection,
-code::-moz-selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre::selection,
-pre::selection,
-code::selection,
-code::selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-']::-moz-selection,
-pre[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-']::selection,
-code[class*='language-'] ::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 4.5rem;
-  counter-reset: linenumber;
-}
-
-.line-numbers .line-numbers-rows {
-  position: absolute;
-  pointer-events: none;
-  top: 1rem !important;
-  font-size: 100%;
-  left: -3.8rem;
-  width: 3rem !important;
-  letter-spacing: -1px;
-  border-right: 1px solid #444;
-  padding-right: 0.5rem;
-}
-
-.line-numbers-rows > span:before {
-  color: #777;
-}
-
-.gatsby-highlight-code-line {
-  margin-left: -1rem;
-  width: 100vw;
-}
-
-.filename {
-  display: flex;
-  align-items: center;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  margin-bottom: -1.5rem;
-  background: #222;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
-  padding: 0.5rem 1.5rem;
-  color: #ccc;
-  line-height: 1;
-  font-size: 0.9rem;
+.language-jsx .token.class-name {
+  color: var(--tag) !important;
 }

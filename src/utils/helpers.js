@@ -7,7 +7,6 @@ export function getSimplifiedPosts(posts, options = {}) {
     categories: post.node.frontmatter.categories,
     title: post.node.frontmatter.title,
     description: post.node.frontmatter.description,
-    topic: post.node.frontmatter.topic,
     ...(options.thumbnails && {
       thumbnail: post.node.frontmatter.thumbnail.childImageSharp.fixed,
     }),
@@ -15,9 +14,11 @@ export function getSimplifiedPosts(posts, options = {}) {
 }
 
 export function getCategoriesFromPosts(posts) {
-  return posts.reduce((acc, post) => {
-    return [...new Set([...acc, ...(post.categories || [])])]
-  }, [])
+  return posts
+    .reduce((acc, post) => {
+      return [...new Set([...acc, ...(post.categories || [])])]
+    }, [])
+    .sort()
 }
 
 export function slugify(string) {

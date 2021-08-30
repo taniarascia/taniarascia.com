@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import Guides from '../components/Guides'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -33,9 +32,7 @@ export default function CategoryTemplate({ data, pageContext }) {
         </div>
       </header>
 
-      <div className="container">
-        <Guides data={simplifiedPosts} includeTime />
-      </div>
+      <div className="container"></div>
     </>
   )
 }
@@ -61,7 +58,6 @@ export const pageQuery = graphql`
             description
             tags
             categories
-            topic
             thumbnail {
               childImageSharp {
                 fixed(width: 100, height: 100) {

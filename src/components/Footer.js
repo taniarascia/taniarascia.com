@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import netlify from '../../content/thumbnails/netlify.png'
-import gatsby from '../../content/thumbnails/gatsby.png'
-import github from '../../content/thumbnails/github.png'
+import gatsby from '../assets/gatsby.png'
+import github from '../assets/nav-github.png'
 
 const links = [
   {
