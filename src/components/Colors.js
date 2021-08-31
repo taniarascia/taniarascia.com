@@ -16,7 +16,7 @@ export const Colors = () => {
   return (
     <div className="colors">
       {colors.map((color) => (
-        <div onClick={() => onChangeTheme(color)} className="color">
+        <div onClick={() => onChangeTheme(color)} className="color" key={color}>
           <span style={{ background: color }} />
         </div>
       ))}

@@ -137,42 +137,6 @@ pre.language-terminal::after {
   right: 0.75rem;
 }
 
-pre::-moz-selection,
-pre::-moz-selection,
-code::-moz-selection,
-code::-moz-selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre::selection,
-pre::selection,
-code::selection,
-code::selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-']::-moz-selection,
-pre[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-']::selection,
-code[class*='language-'] ::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
 pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 4.5rem;
@@ -309,4 +273,40 @@ pre[class*='language-'].line-numbers {
 
 .language-jsx .token.class-name {
   color: var(--tag) !important;
+}
+
+pre::-moz-selection,
+pre::-moz-selection,
+code::-moz-selection,
+code::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre::selection,
+pre::selection,
+code::selection,
+code::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
 }

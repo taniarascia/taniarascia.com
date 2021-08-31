@@ -30,7 +30,7 @@ const Post = ({ node }) => {
   )
 }
 
-export default function Posts({ data, showYears }) {
+export default function Posts({ data = [], showYears }) {
   const postsByYear = useMemo(() => {
     const collection = {}
 

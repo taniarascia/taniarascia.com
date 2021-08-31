@@ -5,12 +5,10 @@ import blog from '../assets/nav-blog.png'
 import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
 import projects from '../assets/nav-projects.png'
-import search from '../assets/nav-search.png'
 import twitter from '../assets/nav-twitter.png'
 
 const mainNavItems = [
   { url: '/', icon: floppy, label: 'Home' },
-  { url: '/', icon: search, label: 'Search' },
   { url: '/blog', icon: blog, label: 'Blog' },
   { url: '/projects', icon: projects, label: 'Projects' },
 ]

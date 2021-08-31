@@ -160,7 +160,11 @@ module.exports = {
       options: {
         name: 'pages',
         engine: 'flexsearch',
-        engineOptions: 'speed',
+        engineOptions: {
+          encode: 'icase',
+          tokenize: 'forward',
+          async: false,
+        },
         query: `
           {
             allMarkdownRemark(filter: { frontmatter: { template: { eq: "post" } } }) {

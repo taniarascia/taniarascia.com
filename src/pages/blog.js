@@ -3,12 +3,12 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import Posts from '../components/Posts'
+import { Search } from '../components/Search'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function BlogIndex({ data, ...props }) {
+export default function BlogIndex({ data }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
 
@@ -30,7 +30,7 @@ export default function BlogIndex({ data, ...props }) {
 
         <section>
           <div className="container">
-            <Posts data={simplifiedPosts} showYears />
+            <Search data={simplifiedPosts} showYears />
           </div>
         </section>
       </article>

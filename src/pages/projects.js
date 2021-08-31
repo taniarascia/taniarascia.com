@@ -157,7 +157,7 @@ export default function ProjectsIndex() {
               <div className="links tags">
                 {project.writeup && <Link to={project.writeup}>Write-up</Link>}
                 <a
-                  href={`https://github.com/taniarascia/${project.name}`}
+                  href={`https://github.com/taniarascia/${project.slug}`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -185,7 +185,7 @@ export default function ProjectsIndex() {
                   <img src={github} alt="Stargazers" />
                   <span>
                     <a
-                      href={`https://github.com/taniarascia/${project.name}/stargazers`}
+                      href={`https://github.com/taniarascia/${project.slug}/stargazers`}
                     >
                       {repos
                         .find((repo) => repo.name === project.slug)
