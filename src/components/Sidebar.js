@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router'
 
 import { useGetPosts } from '../utils/hooks/useGetPosts'
 import { getSimplifiedPosts, getCategoriesFromPosts } from '../utils/helpers'
-import { Colors } from './Colors'
+import { Minus } from '../assets/Minus'
 import { Caret } from '../assets/Caret'
 import { File } from '../assets/File'
 
@@ -34,6 +34,10 @@ export const Sidebar = () => {
     }
   }
 
+  const onCollapseCategories = () => {
+    setDropdownOpen({})
+  }
+
   useEffect(() => {
     const currentPost = simplifiedPosts.find(
       (post) => post.slug === location.pathname
@@ -55,18 +59,28 @@ export const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="title">
-        <span>Tania Rascia</span>
-        <Colors />
+        <span>Categories</span>
+        <button
+          onClick={onCollapseCategories}
+          className="collapse-categories"
+        >
+          <div>
+            <Minus />
+          </div>
+        </button>
       </div>
 
       <div className="categories">
         {categories.map((category) => {
           return (
             <React.Fragment key={category}>
-              <header onClick={() => onToggleHeader(category)}>
+              <button
+                className="category"
+                onClick={() => onToggleHeader(category)}
+              >
                 <Caret position={dropdownOpen[category] ? 'down' : 'right'} />
                 <span>{category}</span>
-              </header>
+              </button>
 
               <nav className={!dropdownOpen[category] ? 'collapsed' : ''}>
                 {simplifiedPosts

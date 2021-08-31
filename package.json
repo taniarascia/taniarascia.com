@@ -2,7 +2,7 @@
   "name": "taniarascia.com",
   "private": true,
   "version": "5.0.0",
-  "description": "Personal website running on Gatsby, React, and Node.js.",
+  "description": "Tania Rascia's personal website.",
   "author": "Tania Rascia",
   "license": "MIT",
   "scripts": {
@@ -31,7 +31,6 @@
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-transformer-remark": "^4.9.0",
     "gatsby-transformer-sharp": "^3.12.0",
-    "http-server": "^13.0.1",
     "prismjs": "^1.24.1",
     "query-string": "^7.0.1",
     "react": "^17.0.2",

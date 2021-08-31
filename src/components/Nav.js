@@ -6,6 +6,7 @@ import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
 import projects from '../assets/nav-projects.png'
 import twitter from '../assets/nav-twitter.png'
+import moon from '../assets/moon.png'
 
 const mainNavItems = [
   { url: '/', icon: floppy, label: 'Home' },
@@ -18,17 +19,21 @@ const socialNavItems = [
   { url: 'https://twitter.com/taniarascia', icon: twitter, label: 'Twitter' },
 ]
 
-export const Nav = () => {
+export const Nav = ({ onUpdateTheme }) => {
   return (
     <aside className="navbar">
       <section>
         <nav>
           {mainNavItems.map((item) => (
-            <Link to={item.url} key={item.label}>
+            <Link to={item.url} key={item.label} activeClassName="active">
               <img src={item.icon} alt={item.label} />
               <div className="tooltip">{item.label}</div>
             </Link>
           ))}
+          <a href="#!" onClick={onUpdateTheme}>
+            <img src={moon} alt="Theme" />
+            <div className="tooltip">Theme</div>
+          </a>
         </nav>
         <nav>
           {socialNavItems.map((item) => (

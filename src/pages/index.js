@@ -46,7 +46,7 @@ export default function WebsiteIndex({ data }) {
       <SEO />
 
       <div className="hero">
-        <h1>Tania Rascia</h1>
+        <h1>Hey, I'm Tania Rascia</h1>
       </div>
     </>
   )

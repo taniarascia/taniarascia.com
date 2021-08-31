@@ -39,21 +39,21 @@ pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   overflow-x: auto;
   overflow-y: initial;
-  border: 1px solid #111;
+  border: 1px solid var(--black);
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   -webkit-font-smoothing: antialiased;
   padding: 2px 3px;
-  background: rgba(0, 0, 0, 0.25) !important;
+  background: var(--inline-code-background-color) !important;
   font-weight: 600;
-  color: #ddd;
+  color: var(--inline-code-color) !important;
   font-size: 1rem;
 }
 
 a:hover :not(pre) > code[class*='language-'] {
-  color: #111;
+  color: var(--black);
 }
 
 pre.language-text {
@@ -174,9 +174,9 @@ pre[class*='language-'].line-numbers {
   align-items: center;
   margin-bottom: -1.5rem;
   background: #222;
-  border-top: 1px solid #111;
-  border-left: 1px solid #111;
-  border-right: 1px solid #111;
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+  border-right: 1px solid var(--black);
   padding: 0.5rem 1.5rem;
   color: #ccc;
   line-height: 1;

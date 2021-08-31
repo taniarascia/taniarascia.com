@@ -11,7 +11,6 @@ export const Caret = ({ position = 'down' }) => (
     <path
       d="M0,0 l35,50 l35,-50"
       fill="none"
-      stroke="white"
       strokeLinecap="round"
       strokeWidth="5"
     />

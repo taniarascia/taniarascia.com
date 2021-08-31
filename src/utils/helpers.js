@@ -35,7 +35,8 @@ export function slugify(string) {
 
 export function appendComments(commentBox) {
   const commentScript = document.createElement('script')
-  const theme = 'github-dark'
+  const theme =
+    localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'
 
   commentScript.async = true
   commentScript.src = 'https://utteranc.es/client.js'

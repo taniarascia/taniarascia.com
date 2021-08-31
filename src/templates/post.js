@@ -27,10 +27,6 @@ export default function PostTemplate({ data }) {
           <div className="container">
             <h1>{title}</h1>
             <div className="post-meta">
-              <div className="post-details">
-                Written by <Link to="/me">Tania Rascia</Link> on{' '}
-                <time>{date}</time>
-              </div>
               {tags && (
                 <div className="tags">
                   {tags.map((tag) => (
@@ -44,6 +40,10 @@ export default function PostTemplate({ data }) {
                   ))}
                 </div>
               )}
+              <div className="post-details">
+                Written by <Link to="/me">Tania Rascia</Link> on{' '}
+                <time>{date}</time>
+              </div>
             </div>
             {description && <p className="description">{description}</p>}
           </div>

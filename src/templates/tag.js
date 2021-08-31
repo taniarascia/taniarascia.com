@@ -20,18 +20,24 @@ export default function TagTemplate({ data, pageContext }) {
     <>
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
-      <header>
-        <div className="container">
-          <h1>Posts tagged: {tag}</h1>
-          <p className="subtitle">
-            <span className="count">{totalCount}</span>
-            {message}
-          </p>
-        </div>
-      </header>
-      <section className="container">
-        <Posts data={simplifiedPosts} />
-      </section>
+      <article>
+        <header>
+          <div className="container">
+            <h1>
+              <span className="deemphasized">Posts tagged:</span>{' '}
+              <span className="primary-underline">{tag}</span>
+            </h1>
+            <p className="description">
+              <span className="count">{totalCount}</span>
+              {message}
+            </p>
+          </div>
+        </header>
+
+        <section className="container">
+          <Posts data={simplifiedPosts} />
+        </section>
+      </article>
     </>
   )
 }

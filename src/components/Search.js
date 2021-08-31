@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
 import * as queryString from 'query-string'
@@ -9,6 +9,7 @@ import Posts from './Posts'
 
 export const Search = ({ data }) => {
   const location = useLocation()
+  const searchRef = useRef(null)
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || '')
   const { localSearchPages } = useStaticQuery(graphql`
@@ -28,10 +29,12 @@ export const Search = ({ data }) => {
 
   return (
     <>
-      <div className="searchbar">
+      <div className="search-bar">
         <input
+          ref={searchRef}
           id="search"
-          type="search"
+          type="text"
+          className="search-input"
           placeholder="Search for..."
           value={query}
           onChange={(e) => {
@@ -39,12 +42,17 @@ export const Search = ({ data }) => {
             setQuery(e.target.value)
           }}
         />
-        <img src={searchIcon} alt="Search" />
+        <img
+          className="search-icon"
+          src={searchIcon}
+          alt="Search"
+          onClick={() => searchRef.current.focus()}
+        />
       </div>
       <section>
         {query ? (
           results.length > 0 ? (
-            <Posts data={results} showYears />
+            <Posts data={results} showYears query={query} />
           ) : (
             <p style={{ marginTop: '1rem' }}>
               Sorry, nothing matched that search.

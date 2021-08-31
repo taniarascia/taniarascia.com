@@ -170,31 +170,24 @@ export default function ProjectsIndex() {
                 )}
               </div>
               <p className="description">{project.tagline}</p>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                className="image-link"
-              >
-                {/* {project.image && (
-                  <img src={project.image} alt={project.name} />
-                )} */}
-              </a>
-              {repos.find((repo) => repo.name === project.slug) && (
-                <div className="stars">
-                  <img src={github} alt="Stargazers" />
-                  <span>
-                    <a
-                      href={`https://github.com/taniarascia/${project.slug}/stargazers`}
-                    >
-                      {repos
-                        .find((repo) => repo.name === project.slug)
-                        .stargazers_count.toLocaleString()}
-                    </a>
-                    {` stars on GitHub`}
-                  </span>
-                </div>
-              )}
+              <div className="stars">
+                {repos.find((repo) => repo.name === project.slug) && (
+                  <>
+                    <img src={github} alt="Stargazers" />
+                    <span>
+                      <a
+                        href={`https://github.com/taniarascia/${project.slug}/stargazers`}
+                      >
+                        {repos
+                          .find((repo) => repo.name === project.slug)
+                          .stargazers_count.toLocaleString()}
+                      </a>
+                      {` stars on GitHub`}
+                    </span>
+                    <span></span>
+                  </>
+                )}
+              </div>
             </div>
           ))}
         </section>
