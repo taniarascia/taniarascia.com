@@ -7,22 +7,14 @@ import Posts from '../components/Posts'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
-import projects from '../data/projects'
-import interviews from '../data/interviews'
-import speaking from '../data/speaking'
 
-export default function BlogIndex({ data }) {
+export default function WebsiteIndex({ data }) {
   const [followers, setFollowers] = useState(0)
   const latest = data.latest.edges
-  const popular = data.popular.edges
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
-  const simplifiedPopular = useMemo(() => getSimplifiedPosts(popular), [
-    popular,
-  ])
 
   useEffect(() => {
     async function getGithubAPI() {
-      // If you fork this and don't change this, I will find you
       const response = await fetch('https://api.github.com/users/taniarascia')
       const data = await response.json()
 
@@ -52,11 +44,15 @@ export default function BlogIndex({ data }) {
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
+
+      <div className="hero">
+        <h1>Tania Rascia</h1>
+      </div>
     </>
   )
 }
 
-BlogIndex.Layout = Layout
+WebsiteIndex.Layout = Layout
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -64,25 +60,6 @@ export const pageQuery = graphql`
       limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-          }
-        }
-      }
-    }
-    popular: allMarkdownRemark(
-      limit: 20
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: "Popular" } } }
     ) {
       edges {
         node {

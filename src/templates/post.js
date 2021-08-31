@@ -29,8 +29,7 @@ export default function PostTemplate({ data }) {
             <div className="post-meta">
               <div className="post-details">
                 Written by <Link to="/me">Tania Rascia</Link> on{' '}
-                <time>{date}</time> &middot;{' '}
-                <Link to="#comments">Comments</Link>
+                <time>{date}</time>
               </div>
               {tags && (
                 <div className="tags">

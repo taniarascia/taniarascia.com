@@ -399,6 +399,20 @@ main {
   font-size: 0.9rem;
 }
 
+/* Hero */
+
+.hero {
+  height: calc(100vh - 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 5rem;
+}
+
 /* Article */
 
 article {
@@ -701,6 +715,7 @@ a.image-link:hover {
     top: 0;
     left: 0;
     height: 60px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
   }
 
   .navbar section {
