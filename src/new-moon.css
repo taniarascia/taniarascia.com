@@ -37,7 +37,7 @@ pre[class*='language-'] {
   background: var(--code-background-color);
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: initial;
   border: 1px solid #111;
 }

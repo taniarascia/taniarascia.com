@@ -741,3 +741,16 @@ a.image-link:hover {
     display: none;
   }
 }
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393939;
+  border-radius: 0;
+}
