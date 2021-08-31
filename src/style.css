@@ -196,7 +196,7 @@ tbody tr:nth-child(odd) {
   position: fixed;
   top: 0;
   left: 80px;
-  width: 330px;
+  width: 320px;
   height: calc(100vh - 28px);
   background: #222;
   border-right: 1px solid var(--border);
@@ -214,7 +214,7 @@ tbody tr:nth-child(odd) {
   color: #aaa;
   font-weight: 700;
   height: 35px;
-  width: 330px;
+  width: 320px;
   z-index: 8;
   background: #222;
   text-transform: uppercase;
@@ -360,7 +360,7 @@ tbody tr:nth-child(odd) {
 /* Content */
 
 main {
-  margin-left: 410px;
+  margin-left: 400px;
   min-height: 100vh;
 }
 

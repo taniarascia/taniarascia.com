@@ -57,9 +57,9 @@ a:hover :not(pre) > code[class*='language-'] {
 }
 
 pre.language-text {
-  background: rgba(0, 0, 0, 0.1);
+  background: transparent;
   color: #aaa;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
 }
 
 /* Hide line numbers */
