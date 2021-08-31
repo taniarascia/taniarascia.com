@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import Search from '../components/Search'
+import Posts from '../components/Posts'
 import SEO from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -17,21 +17,23 @@ export default function BlogIndex({ data, ...props }) {
       <Helmet title={`Blog | ${config.siteTitle}`} />
       <SEO customDescription="Articles, tutorials, snippets, musings, and everything else." />
 
-      <header>
-        <div className="container">
-          <h1>Blog</h1>
-          <p className="subtitle">
-            Posts, tutorials, snippets, musings, notes, and everything else. The
-            archive of everything I've written.
-          </p>
-        </div>
-      </header>
+      <article className="blog-page">
+        <header>
+          <div className="container">
+            <h1>Blog</h1>
+            <p className="description">
+              Posts, tutorials, snippets, musings, notes, and everything else.
+              The archive of everything I've written.
+            </p>
+          </div>
+        </header>
 
-      <section>
-        <div className="container">
-          <Search posts={simplifiedPosts} {...props} />
-        </div>
-      </section>
+        <section>
+          <div className="container">
+            <Posts data={simplifiedPosts} showYears />
+          </div>
+        </section>
+      </article>
     </>
   )
 }

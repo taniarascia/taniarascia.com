@@ -11,12 +11,26 @@ export default function FourOhFour() {
       <Helmet title={`404 | ${config.siteTitle}`} />
       <SEO />
 
-      <header className="container">
-        <h1>404</h1>
-        <p className="subtitle">This was probably a mistake.</p>
-      </header>
+      <article>
+        <header>
+          <div className="container">
+            <h1>404</h1>
+            <p className="description">This was probably a mistake.</p>
+          </div>
+        </header>
+
+        <section>
+          <div className="container">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              style={{ maxWidth: '400px', margin: '0 auto', display: 'block' }}
+            />
+          </div>
+        </section>
+      </article>
     </>
   )
 }
 
-FourOhFour.template = Layout
+FourOhFour.Layout = Layout

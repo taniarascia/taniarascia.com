@@ -7,7 +7,7 @@
 :root {
   --code-font-family: Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
   --code-font-color: #b3b9c5;
-  --code-background-color: #2d2d2d;
+  --code-background-color: #333;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -33,28 +33,32 @@ pre[class*='language-'] {
 pre[class*='language-'] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  margin-left: -2rem;
-  margin-right: -2rem;
   padding: 1rem;
   background: var(--code-background-color);
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
   overflow-x: scroll;
   overflow-y: initial;
+  border: 1px solid #111;
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
+  -webkit-font-smoothing: antialiased;
   padding: 2px 3px;
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
   font-weight: 600;
-  color: #222 !important;
-  font-size: 1.05rem;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+a:hover :not(pre) > code[class*='language-'] {
+  color: #111;
 }
 
 pre.language-text {
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--dark-font-color) !important;
+  background: rgba(0, 0, 0, 0.1);
+  color: #aaa;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -90,18 +94,19 @@ code.language-shell::before {
 pre.language-terminal {
   max-width: 800px;
   position: relative;
-  background: white;
-  color: #595c62;
+  background: #111;
   padding-top: 3rem;
+  color: #888;
   margin: 2rem 0;
   border-radius: 0.35rem;
-  border: 1px solid #c7c9ca;
+  border: 1px solid #555;
   box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.2),
     0 0.5rem 2rem rgba(51, 51, 51, 0.2);
 }
 
 code.language-terminal {
-  color: #595c62;
+  -webkit-font-smoothing: antialiased;
+  color: var(--primary);
 }
 
 pre.language-terminal::before {
@@ -109,8 +114,8 @@ pre.language-terminal::before {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, #eaeaea, #d2d2d2);
-  color: #b9bcbd;
+  background: linear-gradient(to bottom, black, #111);
+  color: #333;
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
@@ -118,7 +123,7 @@ pre.language-terminal::before {
   padding: 15px 0 12px;
   text-indent: 6px;
   letter-spacing: -5px;
-  border-bottom: 1px solid #a6a9aa;
+  border-bottom: 1px solid #555;
 }
 
 pre.language-terminal::after {
@@ -191,24 +196,23 @@ pre[class*='language-'].line-numbers {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #191919;
+  background-color: #222;
   display: block;
   margin-right: -1rem;
   margin-left: -1.5rem;
   padding-right: 1.5rem;
   padding-left: 1.25rem;
-  border-left: 0.25rem solid #748ffc;
+  border-left: 0.25rem solid var(--primary);
 }
 
 .filename {
   display: flex;
   align-items: center;
-  margin-left: -2rem;
-  margin-right: -2rem;
   margin-bottom: -1.5rem;
   background: #222;
   border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
   padding: 0.5rem 1.5rem;
   color: #ccc;
   line-height: 1;

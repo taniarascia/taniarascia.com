@@ -4,6 +4,7 @@ import { useLocation } from '@reach/router'
 
 import { useGetPosts } from '../utils/hooks/useGetPosts'
 import { getSimplifiedPosts, getCategoriesFromPosts } from '../utils/helpers'
+import { Colors } from './Colors'
 import { Caret } from '../assets/Caret'
 import { File } from '../assets/File'
 
@@ -14,9 +15,10 @@ export const Sidebar = () => {
   const posts = data.allMarkdownRemark.edges
 
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
-  const categories = useMemo(() => getCategoriesFromPosts(simplifiedPosts), [
-    simplifiedPosts,
-  ])
+  const categories = useMemo(
+    () => getCategoriesFromPosts(simplifiedPosts),
+    [simplifiedPosts]
+  )
 
   const onToggleHeader = (category) => {
     if (dropdownOpen[category]) {
@@ -43,8 +45,6 @@ export const Sidebar = () => {
         {}
       )
 
-      console.log(categories)
-
       setDropdownOpen((prev) => ({
         ...prev,
         ...categories,
@@ -54,35 +54,40 @@ export const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="title">TaniaRascia.com</div>
+      <div className="title">
+        <span>Tania Rascia</span>
+        <Colors />
+      </div>
 
-      {categories.map((category) => {
-        return (
-          <React.Fragment key={category}>
-            <header onClick={() => onToggleHeader(category)}>
-              <Caret position={dropdownOpen[category] ? 'down' : 'right'} />
-              <span>{category}</span>
-            </header>
+      <div className="categories">
+        {categories.map((category) => {
+          return (
+            <React.Fragment key={category}>
+              <header onClick={() => onToggleHeader(category)}>
+                <Caret position={dropdownOpen[category] ? 'down' : 'right'} />
+                <span>{category}</span>
+              </header>
 
-            <nav className={!dropdownOpen[category] ? 'collapsed' : ''}>
-              {simplifiedPosts
-                .filter((post) => (post.categories || []).includes(category))
-                .map((post) => {
-                  return (
-                    <Link
-                      key={post.title}
-                      to={post.slug}
-                      activeClassName="active"
-                    >
-                      <File />
-                      <span>{post.title}</span>
-                    </Link>
-                  )
-                })}
-            </nav>
-          </React.Fragment>
-        )
-      })}
+              <nav className={!dropdownOpen[category] ? 'collapsed' : ''}>
+                {simplifiedPosts
+                  .filter((post) => (post.categories || []).includes(category))
+                  .map((post) => {
+                    return (
+                      <Link
+                        key={post.title}
+                        to={post.slug}
+                        activeClassName="active"
+                      >
+                        <File />
+                        <span>{post.title}</span>
+                      </Link>
+                    )
+                  })}
+              </nav>
+            </React.Fragment>
+          )
+        })}
+      </div>
     </aside>
   )
 }

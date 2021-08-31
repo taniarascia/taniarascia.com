@@ -23,27 +23,29 @@ export default function PostTemplate({ data }) {
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
 
       <article>
-        <header className="container">
-          <h1>{title}</h1>
-          <div className="post-meta">
-            <div className="post-details">
-              By <Link to="/me">Tania Rascia</Link> on <time>{date}</time>
-            </div>
-            {tags && (
-              <div className="tags">
-                {tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    to={`/tags/${slugify(tag)}`}
-                    className={`tag-${tag}`}
-                  >
-                    {tag}
-                  </Link>
-                ))}
+        <header>
+          <div className="container">
+            <h1>{title}</h1>
+            <div className="post-meta">
+              <div className="post-details">
+                By <Link to="/me">Tania Rascia</Link> on <time>{date}</time>
               </div>
-            )}
+              {tags && (
+                <div className="tags">
+                  {tags.map((tag) => (
+                    <Link
+                      key={tag}
+                      to={`/tags/${slugify(tag)}`}
+                      className={`tag-${tag}`}
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            {description && <p className="description">{description}</p>}
           </div>
-          {description && <p className="description">{description}</p>}
         </header>
 
         <div
@@ -54,7 +56,9 @@ export default function PostTemplate({ data }) {
       </article>
 
       <section id="comments" className="comments">
-        <Comments commentBox={commentBox} />
+        <div className="container">
+          <Comments commentBox={commentBox} />
+        </div>
       </section>
     </>
   )

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { Link } from 'gatsby'
 
-const Cell = ({ node }) => {
+const Post = ({ node }) => {
   const date = new Date(node.date)
   const oneMonthAgo = new Date()
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
@@ -10,8 +10,6 @@ const Cell = ({ node }) => {
   if (date > oneMonthAgo) {
     isNew = true
   }
-
-  const isPopular = node.categories && node.categories.includes('Popular')
 
   let formattedDate
   if (node.date) {
@@ -22,28 +20,28 @@ const Cell = ({ node }) => {
   }
 
   return (
-    <div className="post" key={node.id}>
-      <Link to={node.slug}>
-        <div className="post-row">
-          {formattedDate && <time>{formattedDate}</time>}
-          <h3>{node.title}</h3>
-        </div>
+    <Link to={node.slug} key={node.id} className={isNew ? 'post new' : 'post'}>
+      <h3>{node.title}</h3>
+      <div>
         {isNew && <div className="new-post">New!</div>}
-        {isPopular && <div className="popular-post">Popular</div>}
-      </Link>
-    </div>
+        {formattedDate && <time>{formattedDate}</time>}
+      </div>
+    </Link>
   )
 }
 
 export default function Posts({ data, showYears }) {
-  const postsByYear = {}
+  const postsByYear = useMemo(() => {
+    const collection = {}
 
-  data.forEach((post) => {
-    const year = post.date?.split(', ')[1]
+    data.forEach((post) => {
+      const year = post.date?.split(', ')[1]
 
-    postsByYear[year] = [...(postsByYear[year] || []), post]
-  })
+      collection[year] = [...(collection[year] || []), post]
+    })
 
+    return collection
+  }, [data])
   const years = useMemo(() => Object.keys(postsByYear).reverse(), [postsByYear])
 
   if (showYears) {
@@ -52,7 +50,7 @@ export default function Posts({ data, showYears }) {
         <h2>{year}</h2>
         <div className="posts">
           {postsByYear[year].map((node) => (
-            <Cell key={node.id} node={node} />
+            <Post key={node.id} node={node} />
           ))}
         </div>
       </section>
@@ -61,7 +59,7 @@ export default function Posts({ data, showYears }) {
     return (
       <div className="posts">
         {data.map((node) => (
-          <Cell key={node.id} node={node} />
+          <Post key={node.id} node={node} />
         ))}
       </div>
     )

@@ -107,6 +107,12 @@ const projectsList = [
     tagline: 'A terminal-based Snake implementation.',
     writeup: '/snake-game-in-javascript',
   },
+  {
+    name: 'Sokoban',
+    slug: 'sokoban',
+    tagline: 'A web-based Sokoban implementation.',
+    url: 'https://taniarascia.github.io/sokoban',
+  },
 ]
 
 export default function ProjectsIndex() {
@@ -134,15 +140,17 @@ export default function ProjectsIndex() {
       <SEO />
 
       <article>
-        <header className="container">
-          <h1>Projects</h1>
-          <p className="description">
-            A few highlights of my open-source projects. View them all{' '}
-            <a href="https://github.com/taniarascia">on GitHub</a>.
-          </p>
+        <header>
+          <div className="container">
+            <h1>Projects</h1>
+            <p className="description">
+              A few highlights of my open-source projects. View them all{' '}
+              <a href="https://github.com/taniarascia">on GitHub</a>.
+            </p>
+          </div>
         </header>
 
-        <section className="projects container">
+        <section className="projects large container">
           {projectsList.map((project) => (
             <div className="project" key={project.name}>
               <h2>{project.name}</h2>
@@ -168,9 +176,9 @@ export default function ProjectsIndex() {
                 rel="noreferrer"
                 className="image-link"
               >
-                {project.image && (
+                {/* {project.image && (
                   <img src={project.image} alt={project.name} />
-                )}
+                )} */}
               </a>
               {repos.find((repo) => repo.name === project.slug) && (
                 <div className="stars">
