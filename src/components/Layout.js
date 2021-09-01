@@ -22,8 +22,20 @@ function setLightTheme(setTheme) {
   document.body.style.backgroundColor = 'white'
 }
 
+function getMainClass(theme, collapsed) {
+  let classString = 'theme'
+  classString += ` ${theme}`
+
+  if (collapsed) {
+    classString += ' collapsed'
+  }
+
+  return classString
+}
+
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
+  const [collapsed, setCollapsed] = useState(false)
 
   const onUpdateTheme = (theme) => {
     theme === 'dark' ? setLightTheme(setTheme) : setDarkTheme(setTheme)
@@ -48,10 +60,10 @@ export const Layout = ({ children }) => {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
 
-      <div className={theme + ' theme'}>
+      <div className={getMainClass(theme, collapsed)}>
         <Nav onUpdateTheme={() => onUpdateTheme(theme)} />
         <Sidebar />
-        <FileHeader />
+        <FileHeader setCollapsed={setCollapsed} />
         <main>{children}</main>
         <Footer />
       </div>

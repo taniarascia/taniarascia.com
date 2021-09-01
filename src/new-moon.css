@@ -62,13 +62,12 @@ a:hover :not(pre) > code[class*='language-'] {
 
 pre.language-text {
   background: transparent;
-  color: #aaa;
   border: 1px solid transparent;
+  padding: 0 !important;
 }
 
 /* Hide line numbers */
 
-pre.language-text,
 pre.language-terminal,
 pre.language-shell {
   padding-left: 1.5rem !important;
@@ -95,15 +94,20 @@ code.language-shell::before {
   color: var(--comment);
 }
 
-pre.language-terminal {
-  max-width: 800px;
+pre[class*='language-'].line-numbers {
   position: relative;
-  background: #111;
+  padding-left: 4.5rem;
+  counter-reset: linenumber;
+}
+
+pre.language-terminal {
+  position: relative;
+  background: var(--reverse);
   padding-top: 3rem;
-  color: #888;
+  color: var(--font-color);
   margin: 2rem 0;
   border-radius: 0.35rem;
-  border: 1px solid #555;
+  border: 1px solid var(--light-border-color);
   box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.2),
     0 0.5rem 2rem rgba(51, 51, 51, 0.2);
 }
@@ -118,8 +122,8 @@ pre.language-terminal::before {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, black, #111);
-  color: #333;
+  background: var(--category-background-color);
+  color: var(--dark-font-color);
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
@@ -127,24 +131,17 @@ pre.language-terminal::before {
   padding: 15px 0 12px;
   text-indent: 6px;
   letter-spacing: -5px;
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid var(--light-border-color);
 }
 
 pre.language-terminal::after {
   content: 'Output';
   line-height: 1;
-  font-family: 'Myriad Pro', sans-serif;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+  font-family: var(--heading-font-family);
   font-size: 0.9rem;
   position: absolute;
-  top: 8px;
+  top: 5px;
   right: 0.75rem;
-}
-
-pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 4.5rem;
-  counter-reset: linenumber;
 }
 
 .line-numbers .line-numbers-rows {
