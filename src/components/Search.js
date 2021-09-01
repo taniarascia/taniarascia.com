@@ -33,7 +33,7 @@ export const Search = ({ data }) => {
         <input
           ref={searchRef}
           id="search"
-          type="text"
+          type="search"
           className="search-input"
           placeholder="Begin typing to search..."
           value={query}
@@ -54,7 +54,7 @@ export const Search = ({ data }) => {
           results.length > 0 ? (
             <Posts data={results} showYears query={query} />
           ) : (
-            <p style={{ marginTop: '1rem' }}>
+            <p style={{ marginTop: '2rem' }}>
               Sorry, nothing matched that search.
             </p>
           )

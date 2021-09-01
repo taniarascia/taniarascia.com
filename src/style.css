@@ -50,8 +50,8 @@
   box-sizing: border-box;
 }
 
-a:focus,
-button:focus {
+a:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--primary);
 }
 
@@ -373,6 +373,16 @@ button.colors.open .colors-dropdown {
   outline: none;
 }
 
+.sidebar button.collapse-categories:focus-visible div,
+.sidebar button.collapse-categories:hover div {
+  border-color: var(--primary);
+}
+
+.sidebar button.collapse-categories:focus-visible svg path,
+.sidebar button.collapse-categories:hover svg path {
+  fill: var(--primary);
+}
+
 .sidebar button.collapse-categories div {
   border: 1px solid var(--dark-font-color);
   padding: 0 0.1rem;
@@ -411,11 +421,16 @@ button.colors.open .colors-dropdown {
   color: var(--bright-font-color);
 }
 
-.sidebar button.category:focus {
+.sidebar button.category:focus-visible {
   outline: none;
   background: var(--primary);
   border-bottom: none;
-  color: var(--black);
+  color: white;
+}
+
+.sidebar button.category:focus {
+  outline: none;
+  color: var(--bright-font-color);
 }
 
 .sidebar button.category svg {
@@ -744,7 +759,8 @@ a.post {
   padding: 0.55rem 1rem;
 }
 
-a.post:hover {
+a.post:hover,
+a.post.new {
   background: var(--dark-opacity);
   border: 1px solid var(--light-border-color);
 }
@@ -754,6 +770,7 @@ a.post h3 {
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--font-color);
+  filter: brightness(1);
 }
 
 a.post:hover h3 {
@@ -779,7 +796,7 @@ a.post time {
   justify-content: center;
   padding: 0.2rem 0.5rem;
   background: var(--primary);
-  color: #111;
+  color: white;
   margin-bottom: 0.5rem;
 }
 
@@ -824,6 +841,7 @@ a.post time {
 .project .stars {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-top: auto;
 }
@@ -879,7 +897,7 @@ a.image-link:hover {
 
 .highlighted {
   background: var(--primary);
-  color: var(--black);
+  color: white;
 }
 
 /* Search */
@@ -902,7 +920,7 @@ a.image-link:hover {
   background: var(--input-background);
   border: 1px solid transparent;
   font-size: 1.1rem;
-  color: white;
+  color: var(--bright-font-color);
   border-radius: 0;
   width: 100%;
 }
@@ -940,6 +958,10 @@ a.image-link:hover {
 ::-moz-selection {
   background: var(--primary);
   color: white;
+}
+
+.search-input::-webkit-search-cancel-button {
+  color: var(--bright-font-color);
 }
 
 /* Mobile Last */
@@ -985,7 +1007,8 @@ a.image-link:hover {
   }
 
   .navbar a:focus,
-  .navbar a.active {
+  .navbar a.active,
+  .navbar button:focus-visible {
     background: var(--navbar-color);
     border-left: none;
     border-right: none;
