@@ -35,7 +35,7 @@ export const Search = ({ data }) => {
           id="search"
           type="text"
           className="search-input"
-          placeholder="Search for..."
+          placeholder="Begin typing to search..."
           value={query}
           onChange={(e) => {
             navigate(e.target.value ? `/blog/?search=${e.target.value}` : '')

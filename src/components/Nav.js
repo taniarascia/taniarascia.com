@@ -30,10 +30,10 @@ export const Nav = ({ onUpdateTheme }) => {
               <div className="tooltip">{item.label}</div>
             </Link>
           ))}
-          <a href="#!" onClick={onUpdateTheme}>
+          <button onClick={onUpdateTheme} className="theme-switcher">
             <img src={moon} alt="Theme" />
             <div className="tooltip">Theme</div>
-          </a>
+          </button>
         </nav>
         <nav>
           {socialNavItems.map((item) => (
