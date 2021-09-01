@@ -17,9 +17,11 @@ export const Layout = ({ children }) => {
     if (theme === 'dark') {
       localStorage.setItem('theme', 'light')
       setTheme('light')
+      document.body.style.backgroundColor = 'white'
     } else {
       localStorage.setItem('theme', 'dark')
       setTheme('dark')
+      document.body.style.backgroundColor = '#272727'
     }
   }
 

@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
 
-const indigo = '#7981f7'
-const yellow = '#ffd479'
-const red = '#f2777a'
-const green = '#92d192'
+const indigo = '#757FF8'
+const yellow = '#ffb038'
+const red = '#ff5a55'
+const green = '#74CF74'
 
 const colors = [
   { name: 'Indigo', color: indigo },
@@ -65,11 +65,7 @@ export const Colors = () => {
         className={dropdownOpen ? 'colors open' : 'colors'}
         onClick={onOpenDropdown}
       >
-        <span>
-          {dropdownOpen
-            ? colors.find((color) => color.color === primary).name
-            : 'Theme'}
-        </span>
+        <span>Theme</span>
         <div className="color" key={primary}>
           <span style={{ background: primary }} />
         </div>

@@ -37,9 +37,13 @@ pre[class*='language-'] {
   background: var(--code-background-color);
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: initial;
   border: 1px solid var(--black);
+}
+
+pre[class*='language-']:hover {
+  overflow-x: auto;
 }
 
 /* Inline code */
@@ -78,7 +82,7 @@ pre.language-shell .line-numbers-rows {
 
 code.language-text {
   background: var(--light-background) !important;
-  color: var(--dark-font-color) !important;
+  color: var(--font-color) !important;
   box-shadow: none;
 }
 
