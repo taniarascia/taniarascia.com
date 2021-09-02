@@ -10,7 +10,7 @@ import twitter from '../assets/nav-twitter.png'
 const mainNavItems = [
   { url: '/blog', icon: blog, label: 'Blog' },
   { url: '/projects', icon: projects, label: 'Projects' },
-  { url: '/me', icon: floppy, label: 'Tania' },
+  { url: '/me', icon: floppy, label: 'About me' },
 ]
 
 const socialNavItems = [

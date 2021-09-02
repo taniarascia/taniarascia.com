@@ -956,6 +956,12 @@ a.image-link:hover {
   margin-left: 0 !important;
 }
 
+a.gatsby-resp-image-link {
+  border-top: none !important;
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
 .highlighted {
   background: var(--primary);
   color: var(--reverse);
