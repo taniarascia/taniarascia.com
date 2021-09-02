@@ -5,7 +5,7 @@ import * as queryString from 'query-string'
 import { useLocation, navigate } from '@reach/router'
 
 import searchIcon from '../assets/nav-search.png'
-import Posts from './Posts'
+import { Posts } from './Posts'
 
 export const Search = ({ data }) => {
   const location = useLocation()

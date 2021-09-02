@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { Search } from '../components/Search'
-import { SEO }  from '../components/SEO'
+import { SEO } from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -22,8 +22,8 @@ export default function BlogIndex({ data }) {
           <div className="container">
             <h1>Blog</h1>
             <p className="description">
-              Posts, tutorials, snippets, musings, notes, and everything else.
-              The archive of everything I've written.
+              Articles, tutorials, snippets, musings, notes, and everything
+              else. The archive of everything I've written.
             </p>
           </div>
         </header>

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import { SEO }  from '../components/SEO'
+import { SEO } from '../components/SEO'
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
@@ -28,12 +28,10 @@ export default function PageTemplate({ data }) {
           </div>
         </header>
 
-        <section>
-          <div
-            className="container"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        </section>
+        <section
+          className="container"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
     </>
   )

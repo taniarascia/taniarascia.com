@@ -3,9 +3,8 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import Posts from '../components/Posts'
-import { SEO }  from '../components/SEO'
-
+import { SEO } from '../components/SEO'
+import { Posts } from '../components/Posts'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 

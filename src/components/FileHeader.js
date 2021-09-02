@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import { Hamburger } from '../assets/Hamburger'
 import { Colors } from './Colors'
@@ -7,9 +8,9 @@ import moon from '../assets/moon.png'
 export const FileHeader = ({ setCollapsed, onUpdateTheme, theme }) => {
   return (
     <header className="file-header">
-      <div className="file">
+      <Link to="/" className="file">
         <span>TaniaRascia.com</span>
-      </div>
+      </Link>
       <div className="toolbar">
         <Colors />
         <button onClick={onUpdateTheme} className="theme-switcher">

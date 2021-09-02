@@ -23,7 +23,6 @@ export const Post = ({ node, query }) => {
     console.log(title, query)
     if (query) {
       const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i')
-      // const isMatch = (result: NoteItem) => re.test(result.text)
       const highlightStart = title.search(re)
 
       console.log(highlightStart)

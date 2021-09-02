@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 
 import { Post } from './Post'
 
-export default function Posts({ data = [], showYears, query }) {
+export const Posts = ({ data = [], showYears, query }) => {
   const postsByYear = useMemo(() => {
     const collection = {}
 

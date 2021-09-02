@@ -102,6 +102,20 @@ a {
   text-decoration: none;
 }
 
+/* Button */
+
+a.button {
+  display: block;
+  border: 1px solid var(--primary) !important;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+a.button:hover {
+  filter: brightness(1.1);
+}
+
 /* Tables */
 
 table {
@@ -531,6 +545,11 @@ main {
   max-width: 1350px;
 }
 
+.container.small,
+.small {
+  max-width: 550px;
+}
+
 .file-header {
   position: fixed;
   top: 0;
@@ -608,11 +627,26 @@ main {
 
 /* Hero */
 
+.hero header {
+  padding: 2rem 0 0;
+  text-align: left;
+}
+
 .hero h1 {
-  padding: 2rem;
-  text-align: center;
-  color: white;
-  font-size: 3rem;
+  color: var(--bright-font-color);
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p.subtitle {
+  font-size: 1.4rem;
+  color: var(--font-color);
+}
+
+.hero .hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Article */
@@ -693,7 +727,8 @@ article a:hover {
   border-bottom: 2px solid var(--primary);
 }
 
-article li a {
+article li a,
+article li a:hover {
   border-top: none;
   border-bottom: none;
 }
