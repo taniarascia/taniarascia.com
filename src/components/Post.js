@@ -20,12 +20,9 @@ export const Post = ({ node, query }) => {
   }
 
   const getTitle = (title, query) => {
-    console.log(title, query)
     if (query) {
       const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i')
       const highlightStart = title.search(re)
-
-      console.log(highlightStart)
 
       if (highlightStart !== -1) {
         const highlightEnd = highlightStart + query.length

@@ -827,6 +827,10 @@ a.post.new {
   border: 1px solid var(--light-border-color);
 }
 
+a.post.new {
+  margin: 0.5rem 0;
+}
+
 a.post h3 {
   margin: 0;
   font-size: 1.1rem;
@@ -1086,20 +1090,16 @@ a.gatsby-resp-image-link {
 
   .navbar a,
   .navbar button {
-    border-left: none;
-    border-right: none;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
+    border-left: none !important;
+    border-right: none !important;
   }
 
   .navbar a:focus,
   .navbar a.active,
   .navbar button:focus-visible {
     background: var(--navbar-color);
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid var(--primary);
-    border-top: 3px solid transparent;
+    border-left: none !important;
+    border-right: none !important;
   }
 
   .navbar button:focus {
@@ -1159,6 +1159,27 @@ a.gatsby-resp-image-link {
 
   .desktop-only {
     display: none !important;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p.subtitle {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  article h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  article .description {
+    font-size: 1.2rem;
   }
 }
 

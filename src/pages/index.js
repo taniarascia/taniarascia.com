@@ -26,20 +26,6 @@ export default function WebsiteIndex({ data }) {
     })
   }, [])
 
-  const Section = ({ title, children, button, ...props }) => (
-    <section {...props}>
-      <h2 className="section-title">
-        {title}
-        {button && (
-          <Link className="section-button" to="/blog">
-            View all
-          </Link>
-        )}
-      </h2>
-      {children}
-    </section>
-  )
-
   return (
     <>
       <Helmet title={config.siteTitle} />
@@ -65,7 +51,7 @@ export default function WebsiteIndex({ data }) {
                 Newsletter
               </a>
               <a href="https://github.com/taniarascia" className="button">
-                {followers.toLocaleString()} GitHub followers
+                {followers.toLocaleString()} followers
               </a>
             </p>
           </div>
