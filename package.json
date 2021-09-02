@@ -1,7 +1,7 @@
 {
   "name": "taniarascia.com",
   "private": true,
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Personal website running on Gatsby, React, and Node.js.",
   "author": "Tania Rascia",
   "license": "MIT",
