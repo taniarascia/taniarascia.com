@@ -7,11 +7,18 @@ export function getSimplifiedPosts(posts, options = {}) {
     categories: post.node.frontmatter.categories,
     title: post.node.frontmatter.title,
     description: post.node.frontmatter.description,
-    topic: post.node.frontmatter.topic,
     ...(options.thumbnails && {
       thumbnail: post.node.frontmatter.thumbnail.childImageSharp.fixed,
     }),
   }))
+}
+
+export function getCategoriesFromPosts(posts) {
+  return posts
+    .reduce((acc, post) => {
+      return [...new Set([...acc, ...(post.categories || [])])]
+    }, [])
+    .sort()
 }
 
 export function slugify(string) {
@@ -24,4 +31,24 @@ export function slugify(string) {
       .map((x) => x.toLowerCase())
       .join('-')
   )
+}
+
+export function appendComments(commentBox) {
+  const commentScript = document.createElement('script')
+  const theme =
+    localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'
+
+  commentScript.async = true
+  commentScript.src = 'https://utteranc.es/client.js'
+  commentScript.setAttribute('repo', 'taniarascia/comments')
+  commentScript.setAttribute('issue-term', 'pathname')
+  commentScript.setAttribute('id', 'utterances')
+  commentScript.setAttribute('theme', theme)
+  commentScript.setAttribute('crossorigin', 'anonymous')
+
+  if (commentBox && commentBox.current) {
+    commentBox.current.appendChild(commentScript)
+  } else {
+    console.log(`Error adding utterances comments on: ${commentBox}`)
+  }
 }

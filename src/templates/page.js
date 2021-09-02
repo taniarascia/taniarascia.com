@@ -2,15 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import { Layout } from '../components/Layout'
+import { SEO } from '../components/SEO'
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
   const post = data.markdownRemark
 
   return (
-    <Layout>
+    <>
       <Helmet
         title={`${
           post.frontmatter.title === 'Tania Rascia'
@@ -19,20 +19,25 @@ export default function PageTemplate({ data }) {
         } | ${config.siteTitle}`}
       />
       <SEO />
-      <header>
-        <div className="container">
-          <h1>{post.frontmatter.title}</h1>
-          <p className="subtitle">{post.frontmatter.description}</p>
-        </div>
-      </header>
-      <section>
-        <div className="container page">
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
-      </section>
-    </Layout>
+
+      <article>
+        <header>
+          <div className="container">
+            <h1>{post.frontmatter.title}</h1>
+            <p className="description">{post.frontmatter.description}</p>
+          </div>
+        </header>
+
+        <section
+          className="container"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </article>
+    </>
   )
 }
+
+PageTemplate.Layout = Layout
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {

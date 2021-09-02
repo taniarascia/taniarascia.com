@@ -1,14 +1,9 @@
-exports.onInitialClientRender = () => {
-  const theme = typeof window !== 'undefined' && localStorage.getItem('theme')
+require('prismjs/plugins/line-numbers/prism-line-numbers.css')
 
-  if (typeof window !== 'undefined' && theme === 'dark') {
-    localStorage.setItem('theme', 'dark')
-    document.getElementById('dark-mode-button').textContent = '☀️'
-    const head = document.getElementsByTagName('head')[0]
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.id = 'dark-mode'
-    link.href = '../dark.css'
-    head.appendChild(link)
-  }
+const React = require('react')
+
+export function wrapPageElement({ element, props }) {
+  const Layout = element.type.Layout ?? React.Fragment
+
+  return <Layout {...props}>{element}</Layout>
 }

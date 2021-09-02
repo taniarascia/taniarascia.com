@@ -3,12 +3,7 @@ import Helmet from 'react-helmet'
 
 import config from '../utils/config'
 
-export default function SEO({
-  postNode,
-  postPath,
-  postSEO,
-  customDescription,
-}) {
+export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
   let title
   let description
   let image = config.siteLogo

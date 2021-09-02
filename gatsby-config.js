@@ -127,8 +127,9 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 650,
-              wrapperStyle: (fluidResult) => `max-width: none;`,
+              maxWidth: 800,
+              // linkImagesToOriginal: false,
+              backgroundColor: 'transparent',
             },
           },
           {
@@ -137,7 +138,7 @@ module.exports = {
               classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
-              showLineNumbers: false,
+              showLineNumbers: true,
               noInlineHighlight: false,
               prompt: {
                 user: 'root',
@@ -159,7 +160,11 @@ module.exports = {
       options: {
         name: 'pages',
         engine: 'flexsearch',
-        engineOptions: 'speed',
+        engineOptions: {
+          encode: 'icase',
+          tokenize: 'forward',
+          async: false,
+        },
         query: `
           {
             allMarkdownRemark(filter: { frontmatter: { template: { eq: "post" } } }) {

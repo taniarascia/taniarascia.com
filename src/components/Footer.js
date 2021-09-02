@@ -2,67 +2,56 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import netlify from '../../content/thumbnails/netlify.png'
-import gatsby from '../../content/thumbnails/gatsby.png'
-import github from '../../content/thumbnails/github.png'
+import gatsby from '../assets/gatsby.png'
+import github from '../assets/nav-github.png'
 
-export default function Footer() {
+const links = [
+  { url: 'https://taniarascia.substack.com/subscribe', label: 'Newsletter' },
+  { url: 'https://ko-fi.com/taniarascia', label: 'Ko-Fi' },
+  { url: 'https://patreon.com/taniarascia', label: 'Patreon' },
+]
+const internalLinks = [{ url: '/rss.xml', label: 'RSS' }]
+const madeWithLinks = [
+  { url: 'https://www.gatsbyjs.org/', label: 'Gatsby', icon: gatsby },
+  { url: 'https://github.com/taniarascia', label: 'GitHub', icon: github },
+  { url: 'https://www.netlify.com', label: 'Netlify', icon: netlify },
+]
+
+export const Footer = () => {
   return (
-    <footer className="footer flex">
-      <section className="container">
-        <nav className="footer-links">
-          <Link to="/blog">Blog</Link>
-          <Link to="/guides">Guides</Link>
-          <a
-            href="https://taniarascia.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Newsletter
-          </a>
-          <Link to="/rss.xml">RSS</Link>
-          <a
-            href="https://ko-fi.com/taniarascia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Donate
-          </a>
-          <a
-            href="https://patreon.com/taniarascia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Patreon
-          </a>
+    <footer className="footer">
+      <section>
+        <nav>
+          <span>Made by Tania Rascia</span>
+          {links.map((link) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={link.url}
+            >
+              {link.label}
+            </a>
+          ))}
+          {internalLinks.map((link) => (
+            <Link to={link.url} key={link.url}>
+              {link.label}
+            </Link>
+          ))}
         </nav>
-        <nav className="flex justify-center">
-          <a
-            href="https://www.gatsbyjs.org/"
-            title="Built with Gatsby"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="img"
-          >
-            <img src={gatsby} className="footer-img" alt="Gatsby" />
-          </a>
-          <a
-            href="https://github.com/taniarascia"
-            title="Open-source on GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="img"
-          >
-            <img src={github} className="footer-img" alt="GitHub" />
-          </a>
-          <a
-            href="https://www.netlify.com/"
-            title="Hosted by Netlify"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="img"
-          >
-            <img src={netlify} className="footer-img" alt="Netlify" />
-          </a>
+        <nav>
+          {madeWithLinks.map((link) => (
+            <a
+              href={link.url}
+              title={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={link.url}
+            >
+              <span>{link.label}</span>
+              <img src={link.icon} alt={link.label} />
+            </a>
+          ))}
         </nav>
       </section>
     </footer>

@@ -2,10 +2,9 @@ import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/Layout'
-import Posts from '../components/Posts'
-import SEO from '../components/SEO'
-
+import { Layout } from '../components/Layout'
+import { SEO } from '../components/SEO'
+import { Posts } from '../components/Posts'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -17,24 +16,33 @@ export default function TagTemplate({ data, pageContext }) {
   const message = totalCount === 1 ? ' post found.' : ' posts found.'
 
   return (
-    <Layout>
+    <>
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
-      <header>
-        <div className="container">
-          <h1>Posts tagged: {tag}</h1>
-          <p className="subtitle">
-            <span className="count">{totalCount}</span>
-            {message}
-          </p>
-        </div>
-      </header>
-      <section className="container">
-        <Posts data={simplifiedPosts} />
-      </section>
-    </Layout>
+
+      <article>
+        <header>
+          <div className="container">
+            <h1>
+              <span className="deemphasized">Posts tagged:</span>{' '}
+              <span className="primary-underline">{tag}</span>
+            </h1>
+            <p className="description">
+              <span className="count">{totalCount}</span>
+              {message}
+            </p>
+          </div>
+        </header>
+
+        <section className="container">
+          <Posts data={simplifiedPosts} />
+        </section>
+      </article>
+    </>
   )
 }
+
+TagTemplate.Layout = Layout
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
