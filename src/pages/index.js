@@ -11,7 +11,6 @@ import config from '../utils/config'
 export default function WebsiteIndex({ data }) {
   const [followers, setFollowers] = useState(0)
   const latest = data.latest.edges
-  console.log(latest)
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
 
   useEffect(() => {

@@ -62,6 +62,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  background: #272727;
 }
 
 p,
