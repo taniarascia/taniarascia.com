@@ -1157,6 +1157,10 @@ a.gatsby-resp-image-link {
     align-items: center;
   }
 
+  .footer a, .footer span {
+    line-height: 1.2;
+  }
+
   .desktop-only {
     display: none !important;
   }
