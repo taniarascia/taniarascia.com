@@ -178,9 +178,10 @@ export default function ProjectsIndex() {
                       <a
                         href={`https://github.com/taniarascia/${project.slug}/stargazers`}
                       >
-                        {repos
-                          .find((repo) => repo.name === project.slug)
-                          .stargazers_count.toLocaleString()}
+                        {Number(
+                          repos.find((repo) => repo.name === project.slug)
+                            .stargazers_count
+                        ).toLocaleString()}
                       </a>
                       {` stars on GitHub`}
                     </span>

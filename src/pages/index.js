@@ -50,9 +50,11 @@ export default function WebsiteIndex({ data }) {
               >
                 Newsletter
               </a>
-              <a href="https://github.com/taniarascia" className="button">
-                {followers.toLocaleString()} followers
-              </a>
+              {followers && (
+                <a href="https://github.com/taniarascia" className="button">
+                  {Number(followers).toLocaleString()} followers
+                </a>
+              )}
             </p>
           </div>
         </header>

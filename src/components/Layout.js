@@ -1,7 +1,3 @@
-import '../style.css'
-import '../new-moon.css'
-import '../light-theme.css'
-
 import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 
@@ -10,6 +6,10 @@ import { Nav } from './Nav'
 import { Sidebar } from './Sidebar'
 import { FileHeader } from './FileHeader'
 import { Footer } from './Footer'
+
+import '../style.css'
+import '../new-moon.css'
+import '../light-theme.css'
 
 function setDarkTheme(setTheme) {
   localStorage.setItem('theme', 'dark')
