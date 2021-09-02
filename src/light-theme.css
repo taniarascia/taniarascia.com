@@ -1,0 +1,32 @@
+.light.theme {
+  --link-color: #111;
+  --border-color: #bbb;
+  --light-border-color: #d0d0d0;
+  --background-color: white;
+  --sidebar-color: #f0f0f0;
+  --navbar-color: #d0d0d0;
+  --sidebar-color-hover: #dedede;
+  --sidebar-color-focus: white;
+  --category-background-color: #ddd;
+  --category-background-color-hover: #ccc;
+  --toolbar-color: #333;
+  --toolbar-background-color: #eee;
+  --tooltip-border-color: #999;
+  --tooltip-background-color: #f0f0f0;
+  --font-color: #343434;
+  --medium-font-color: #555;
+  --dark-font-color: #888;
+  --input-background: #eee;
+  --bright-font-color: #222;
+  --blockquote-background-color: transparent;
+  --blockquote-color: #111;
+  --inline-code-background-color: rgba(0, 0, 0, 0.05);
+  --inline-code-color: #111;
+  --h2-filter: brightness(0.7);
+  --h3-filter: brightness(0.8);
+  --h4-filter: brightness(0.9);
+  --icon-filter: brightness(0.8);
+  --dark-opacity: rgba(0, 0, 0, 0.05);
+  --dark-opacity-hover: rgba(0, 0, 0, 0.1);
+  --reverse: white;
+}

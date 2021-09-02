@@ -52,13 +52,9 @@ pre[class*='language-'] {
   background: var(--code-background-color);
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: initial;
   border: 1px solid var(--black);
-}
-
-pre[class*='language-']:hover {
-  overflow-x: auto;
 }
 
 /* Inline code */

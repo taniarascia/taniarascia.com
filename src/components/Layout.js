@@ -1,5 +1,6 @@
 import '../style.css'
 import '../new-moon.css'
+import '../light-theme.css'
 
 import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
@@ -61,9 +62,13 @@ export const Layout = ({ children }) => {
       </Helmet>
 
       <div className={getMainClass(theme, collapsed)}>
-        <Nav onUpdateTheme={() => onUpdateTheme(theme)} />
+        <Nav />
         <Sidebar />
-        <FileHeader setCollapsed={setCollapsed} />
+        <FileHeader
+          setCollapsed={setCollapsed}
+          onUpdateTheme={() => onUpdateTheme(theme)}
+          theme={theme}
+        />
         <main>{children}</main>
         <Footer />
       </div>

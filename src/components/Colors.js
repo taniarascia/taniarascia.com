@@ -65,7 +65,7 @@ export const Colors = () => {
         className={dropdownOpen ? 'colors open' : 'colors'}
         onClick={onOpenDropdown}
       >
-        <span>Theme</span>
+        <span>{colors.find((color) => color.color === primary).name}</span>
         <div className="color" key={primary}>
           <span style={{ background: primary }} />
         </div>
