@@ -108,7 +108,7 @@ a.button {
   display: block;
   border: 1px solid var(--primary) !important;
   background: var(--primary);
-  color: white;
+  color: var(--reverse);
   padding: 0.5rem 1rem;
 }
 
@@ -415,7 +415,7 @@ button.colors.open .colors-dropdown {
   outline: none;
   background: var(--primary);
   border-bottom: none;
-  color: white;
+  color: var(--reverse);
 }
 
 .sidebar button.category:focus {
@@ -722,7 +722,7 @@ article a {
 article a:hover {
   font-weight: 600;
   background: var(--primary);
-  color: white;
+  color: var(--reverse);
   border-top: 2px solid var(--primary);
   border-bottom: 2px solid var(--primary);
 }
@@ -857,7 +857,7 @@ a.post time {
   justify-content: center;
   padding: 0.2rem 0.5rem;
   background: var(--primary);
-  color: white;
+  color: var(--reverse);
   margin-bottom: 0.5rem;
 }
 
@@ -958,7 +958,7 @@ a.image-link:hover {
 
 .highlighted {
   background: var(--primary);
-  color: white;
+  color: var(--reverse);
 }
 
 /* Search */
@@ -1013,12 +1013,12 @@ a.image-link:hover {
 
 ::selection {
   background: var(--primary);
-  color: white;
+  color: var(--reverse);
 }
 
 ::-moz-selection {
   background: var(--primary);
-  color: white;
+  color: var(--reverse);
 }
 
 .search-input::-webkit-search-cancel-button {
