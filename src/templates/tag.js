@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import Posts from '../components/Posts'
-import SEO from '../components/SEO'
+import { SEO }  from '../components/SEO'
 
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -20,6 +20,7 @@ export default function TagTemplate({ data, pageContext }) {
     <>
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
+
       <article>
         <header>
           <div className="container">

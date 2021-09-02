@@ -4,10 +4,6 @@ import { Hamburger } from '../assets/Hamburger'
 import { Colors } from './Colors'
 import moon from '../assets/moon.png'
 
-function cap(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
-
 export const FileHeader = ({ setCollapsed, onUpdateTheme, theme }) => {
   return (
     <header className="file-header">
@@ -17,7 +13,7 @@ export const FileHeader = ({ setCollapsed, onUpdateTheme, theme }) => {
       <div className="toolbar">
         <Colors />
         <button onClick={onUpdateTheme} className="theme-switcher">
-          <span>{cap(theme)}</span>
+          <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
           <img src={moon} alt="Theme" />
         </button>
         <button

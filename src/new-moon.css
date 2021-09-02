@@ -21,6 +21,7 @@
   --class: #e1a6f2;
   --tag: #6ab0f3;
   --error: #f2777a;
+  --terminal-color: var(--primary);
 }
 
 code[class*='language-'],
@@ -125,7 +126,7 @@ pre.language-terminal {
 
 code.language-terminal {
   -webkit-font-smoothing: antialiased;
-  color: var(--primary);
+  color: var(--terminal-color);
 }
 
 pre.language-terminal::before {

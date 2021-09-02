@@ -61,6 +61,7 @@ body {
   font-family: var(--font-family);
   font-size: 1rem;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 p,
@@ -90,7 +91,6 @@ h2,
 h3,
 h4,
 h5 {
-  -webkit-font-smoothing: antialiased;
   font-family: var(--heading-font-family);
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
@@ -284,36 +284,6 @@ tbody tr:nth-child(odd) {
   text-transform: uppercase;
   font-size: 0.85rem;
   border-right: 1px solid var(--border-color);
-}
-
-.file-header button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0 0.75rem;
-  border: none;
-  background: transparent;
-  color: var(--font-color);
-  cursor: pointer;
-}
-
-.file-header button:hover {
-  background: var(--dark-opacity);
-  color: var(--font-color);
-}
-
-.file-header button:focus {
-  outline: none;
-}
-
-.file-header button span {
-  font-size: 0.9rem;
-}
-
-.file-header button svg rect {
-  fill: var(--font-color);
 }
 
 button.colors .colors-dropdown {
@@ -572,7 +542,37 @@ main {
   height: 35px;
   background: var(--toolbar-background-color);
   z-index: 9;
-  padding-right: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+.file-header button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  border: none;
+  background: transparent;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.file-header button:hover {
+  background: var(--dark-opacity);
+  color: var(--font-color);
+}
+
+.file-header button:focus {
+  outline: none;
+}
+
+.file-header button span {
+  font-size: 0.9rem;
+}
+
+.file-header button svg rect {
+  fill: var(--font-color);
 }
 
 .file {
@@ -599,7 +599,11 @@ main {
 }
 
 .toolbar button {
-  border-right: 1px solid var(--background-color);
+  border-left: 1px solid var(--background-color);
+}
+
+.toolbar button:first-of-type {
+  border-left: 1px solid transparent;
 }
 
 /* Hero */
@@ -940,7 +944,7 @@ a.image-link:hover {
   padding: 0.75rem 1rem;
   line-height: 1.1;
   background: var(--input-background);
-  border: 1px solid transparent;
+  border: 1px solid var(--border-color);
   font-size: 1.1rem;
   color: var(--bright-font-color);
   border-radius: 0;
@@ -1044,7 +1048,6 @@ a.image-link:hover {
     border-right: none;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
-    padding: 0.75rem;
   }
 
   .navbar a:focus,
