@@ -104,7 +104,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/taniarascia-content/`,
+        path: `${__dirname}/content/`,
       },
     },
     {
