@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import { SEO }  from '../components/SEO'
+import { SEO } from '../components/SEO'
 import config from '../utils/config'
 
 export default function FourOhFour() {
@@ -21,11 +21,7 @@ export default function FourOhFour() {
 
         <section>
           <div className="container">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              style={{ maxWidth: '400px', margin: '0 auto', display: 'block' }}
-            />
+            <img src="/logo.png" alt="Logo" className="not-found-image" />
           </div>
         </section>
       </article>

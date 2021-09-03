@@ -60,7 +60,9 @@ export default function WebsiteIndex({ data }) {
         </header>
 
         <div className="container">
-          <h2>Latest Articles</h2>
+          <h2 className="flex-header">
+            <span>Latest Articles</span> <Link to="/blog">View All</Link>
+          </h2>
           <Posts data={simplifiedLatest} />
           <h2>Newsletter</h2>
           <p>

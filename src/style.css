@@ -34,6 +34,8 @@
   --dark-opacity: rgba(0, 0, 0, 0.2);
   --dark-opacity-hover: rgba(0, 0, 0, 0.3);
   --reverse: #111;
+  --scrollbar: var(--border-color);
+  --scrollbar-track: var(--light-border-color);
 
   /* Font */
   --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
@@ -277,6 +279,7 @@ tbody tr:nth-child(odd) {
   background: var(--sidebar-color);
   border-right: 1px solid var(--border-color);
   overflow-y: hidden;
+  overflow-x: hidden;
   z-index: 9;
 }
 
@@ -290,7 +293,7 @@ tbody tr:nth-child(odd) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem 0 2.5rem;
+  padding: 0 0.5rem 0 2.5rem;
   color: var(--font-color);
   font-weight: 600;
   height: 35px;
@@ -404,7 +407,7 @@ button.colors.open .colors-dropdown {
   outline: none;
   background: var(--primary);
   border-bottom: none;
-  color: var(--reverse);
+  color: var(--reverse) !important;
 }
 
 .sidebar button.category:focus {
@@ -422,6 +425,10 @@ button.colors.open .colors-dropdown {
 
 .sidebar button.category:focus svg path {
   stroke: var(--bright-font-color);
+}
+
+.sidebar button.category:focus-visible svg path {
+  stroke: var(--reverse);
 }
 
 .sidebar nav {
@@ -823,6 +830,7 @@ a.post.new {
 
 a.post.new {
   margin: 0.5rem 0;
+  border-left: 3px solid var(--primary);
 }
 
 a.post h3 {
@@ -966,6 +974,21 @@ a.gatsby-resp-image-link {
   color: var(--reverse);
 }
 
+.not-found-image {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.flex-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.flex-header a {
+  font-size: 1rem;
+}
+
 /* Search */
 
 .search-bar {
@@ -1008,11 +1031,11 @@ a.gatsby-resp-image-link {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background: var(--border-color);
+  background: var(--scrollbar);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--light-border-color);
+  background: var(--scrollbar-track);
   border-radius: 0;
 }
 
@@ -1070,7 +1093,8 @@ a.gatsby-resp-image-link {
     top: 35px;
     left: 0;
     height: 60px;
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--light-border-color);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     z-index: 9;
   }
 

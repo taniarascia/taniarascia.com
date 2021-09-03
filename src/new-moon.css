@@ -66,6 +66,7 @@ pre[class*='language-'] {
   font-weight: 600;
   color: var(--inline-code-color) !important;
   font-size: 1rem;
+  white-space: pre-wrap;
 }
 
 a:hover :not(pre) > code[class*='language-'] {
@@ -325,9 +326,13 @@ code[class*='language-'] ::selection {
 }
 
 @media screen and (max-width: 1000px) {
-  pre[class*='language-'] {
+  pre[class*='language-'],
+  .filename {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
+  }
+  pre[class*='language-'].line-numbers {
+    padding-left: 3.5rem;
   }
   code[class*='language-'],
   pre[class*='language-'] {

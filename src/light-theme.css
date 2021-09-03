@@ -7,7 +7,7 @@
   --navbar-color: #ddd;
   --sidebar-color-hover: #dedede;
   --sidebar-color-focus: white;
-  --category-background-color: #d0d0d0;
+  --category-background-color: #d5d5d5;
   --category-background-color-hover: #c0c0c0;
   --toolbar-color: #333;
   --toolbar-background-color: #eee;
@@ -30,4 +30,6 @@
   --dark-opacity-hover: rgba(0, 0, 0, 0.1);
   --reverse: white;
   --terminal-color: var(--bright-font-color);
+  --scrollbar: #888;
+  --scrollbar-track: #bbb;
 }
