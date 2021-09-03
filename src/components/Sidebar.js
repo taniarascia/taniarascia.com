@@ -60,7 +60,11 @@ export const Sidebar = () => {
     <aside className="sidebar">
       <div className="title">
         <span>Categories</span>
-        <button onClick={onCollapseCategories} className="collapse-categories">
+        <button
+          onClick={onCollapseCategories}
+          className="collapse-categories"
+          title="Collapse Categories"
+        >
           <div>
             <Minus />
           </div>

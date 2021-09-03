@@ -22,9 +22,9 @@
   --blockquote-color: #111;
   --inline-code-background-color: rgba(0, 0, 0, 0.05);
   --inline-code-color: #111;
-  --h2-filter: brightness(0.7);
-  --h3-filter: brightness(0.8);
-  --h4-filter: brightness(0.9);
+  --h2-filter: brightness(0.8);
+  --h3-filter: brightness(0.9);
+  --h4-filter: brightness(0.95);
   --icon-filter: brightness(0.8);
   --dark-opacity: rgba(0, 0, 0, 0.05);
   --dark-opacity-hover: rgba(0, 0, 0, 0.1);

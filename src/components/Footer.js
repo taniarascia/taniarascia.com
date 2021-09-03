@@ -22,7 +22,7 @@ export const Footer = () => {
     <footer className="footer">
       <section>
         <nav>
-          <span>Made by Tania Rascia</span>
+          <span className="desktop-only">Made by Tania Rascia</span>
           {links.map((link) => (
             <a
               href={link.url}

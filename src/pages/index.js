@@ -62,6 +62,13 @@ export default function WebsiteIndex({ data }) {
         <div className="container">
           <h2>Latest Articles</h2>
           <Posts data={simplifiedLatest} />
+          <h2>Newsletter</h2>
+          <p>
+            Subscribe to the{' '}
+            <a href="https://taniarascia.substack.com/subscribe">newsletter</a>{' '}
+            to get my latest content by email. Not on any set schedule.
+            Unsubscribe anytime.
+          </p>
         </div>
       </article>
     </>
@@ -73,7 +80,7 @@ WebsiteIndex.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 3
+      limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {

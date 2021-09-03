@@ -57,6 +57,7 @@ export default function PostTemplate({ data }) {
       </article>
 
       <section id="comments" className="comments container">
+        <h2>Comments</h2>
         <Comments commentBox={commentBox} />
       </section>
     </>

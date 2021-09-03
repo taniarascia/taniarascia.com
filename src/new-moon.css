@@ -323,3 +323,14 @@ code[class*='language-'] ::selection {
   color: inherit;
   background: rgba(150, 150, 150, 0.3) !important;
 }
+
+@media screen and (max-width: 1000px) {
+  pre[class*='language-'] {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+  code[class*='language-'],
+  pre[class*='language-'] {
+    font-size: 0.9rem;
+  }
+}
