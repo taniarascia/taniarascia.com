@@ -277,7 +277,6 @@ tbody tr:nth-child(odd) {
   width: 320px;
   height: calc(100vh - 28px);
   background: var(--sidebar-color);
-  border-right: 1px solid var(--border-color);
   overflow-y: hidden;
   overflow-x: hidden;
   z-index: 9;
