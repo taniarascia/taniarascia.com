@@ -8,6 +8,8 @@ import { SEO } from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
+import github from '../assets/nav-github.png'
+
 export default function WebsiteIndex({ data }) {
   const [followers, setFollowers] = useState(0)
   const latest = data.latest.edges
@@ -44,15 +46,13 @@ export default function WebsiteIndex({ data }) {
               the years.
             </p>
             <p className="hero-buttons">
-              <a
-                href="https://taniarascia.substack.com/subscribe"
-                className="button"
-              >
-                Newsletter
-              </a>
               {followers && (
-                <a href="https://github.com/taniarascia" className="button">
-                  {Number(followers).toLocaleString()} followers
+                <a
+                  href="https://github.com/taniarascia"
+                  className="button icon-button"
+                >
+                  <img src={github} alt="GitHub" />
+                  {Number(followers).toLocaleString()} GitHub followers
                 </a>
               )}
             </p>
@@ -66,10 +66,16 @@ export default function WebsiteIndex({ data }) {
           <Posts data={simplifiedLatest} />
           <h2>Newsletter</h2>
           <p>
-            Subscribe to the{' '}
-            <a href="https://taniarascia.substack.com/subscribe">newsletter</a>{' '}
-            to get my latest content by email. Not on any set schedule.
-            Unsubscribe anytime.
+            Subscribe to the newsletter to get my latest content by email. Not
+            on any set schedule. Unsubscribe anytime.
+          </p>
+          <p className="hero-buttons">
+            <a
+              href="https://taniarascia.substack.com/subscribe"
+              className="button"
+            >
+              Get the Newsletter
+            </a>
           </p>
         </div>
       </article>

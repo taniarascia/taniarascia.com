@@ -24,7 +24,7 @@
   --bright-font-color: #eee;
   --input-background: #393939;
   --blockquote-background-color: rgba(0, 0, 0, 0.4);
-  --blockquote-color: var(--dark-font-color);
+  --blockquote-color: var(--light-font-color);
   --black: #111;
   --inline-code-background-color: rgba(0, 0, 0, 0.2);
   --inline-code-color: #eee;
@@ -117,6 +117,16 @@ a.button {
 
 a.button:hover {
   filter: brightness(1.1);
+}
+
+a.button.icon-button {
+  display: flex;
+  align-items: center;
+}
+
+a.button.icon-button img {
+  margin-right: 0.5rem;
+  max-height: 30px;
 }
 
 /* Tables */
