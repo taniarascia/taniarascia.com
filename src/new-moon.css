@@ -350,3 +350,11 @@ code[class*='language-'] ::selection {
     margin-bottom: -1.5rem;
   }
 }
+
+@media screen and (min-width: 1350px) {
+  pre[class*='language-'],
+  .filename {
+    margin-left: -7.5rem;
+    margin-right: -7.5rem;
+  }
+}

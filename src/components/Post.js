@@ -44,7 +44,10 @@ export const Post = ({ node, query }) => {
 
   return (
     <Link to={node.slug} key={node.id} className={isNew ? 'post new' : 'post'}>
-      {getTitle(node.title, query)}
+      <span>
+        <span className="new-badge">{isNew && 'New!'}</span>
+        {getTitle(node.title, query)}
+      </span>
       <div>{formattedDate && <time>{formattedDate}</time>}</div>
     </Link>
   )

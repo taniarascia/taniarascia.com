@@ -36,6 +36,7 @@
   --reverse: #111;
   --scrollbar: var(--border-color);
   --scrollbar-track: var(--light-border-color);
+  --yellow: #ffb038;
 
   /* Font */
   --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
@@ -842,8 +843,27 @@ a.post.new {
 }
 
 a.post.new {
-  margin: 0.5rem 0;
-  border-left: 3px solid var(--primary);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--yellow);
+  border-left: 6px solid var(--yellow);
+  background: transparent;
+}
+
+a.post.new:hover {
+  background: var(--dark-opacity);
+}
+
+a.post.new time {
+  color: var(--yellow) !important;
+}
+
+a.post.new h3 {
+  color: var(--bright-font-color);
+}
+
+a.post.new .new-badge {
+  color: var(--yellow);
 }
 
 a.post h3 {
@@ -869,16 +889,6 @@ a.post time {
   font-size: 0.8rem;
   font-weight: 400;
   color: var(--dark-font-color);
-}
-
-.new-post {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2rem 0.5rem;
-  background: var(--primary);
-  color: var(--reverse);
-  margin-bottom: 0.5rem;
 }
 
 /* Projects */

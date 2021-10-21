@@ -148,11 +148,6 @@ blockquote {
   color: var(--heading-color);
 }
 
-.new-post {
-  background: #72ce6e;
-  color: black;
-}
-
 .popular-post {
   background: #4263eb;
   color: white;
