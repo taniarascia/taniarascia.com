@@ -36,9 +36,9 @@ pre[class*='language-'] {
   word-wrap: normal;
   line-height: 1.5;
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
 
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -53,9 +53,7 @@ pre[class*='language-'] {
   background: var(--code-background-color);
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
-  overflow-x: auto;
-  overflow-y: initial;
-  border: 1px solid var(--black);
+  overflow: initial;
 }
 
 /* Inline code */
@@ -173,13 +171,31 @@ pre.language-terminal::after {
   color: #777;
 }
 
+.gatsby-highlight {
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding-left: 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--black);
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: 100%;
+}
+
 .gatsby-highlight-code-line {
   background-color: #222;
   display: block;
   margin-right: -1rem;
-  margin-left: -1.5rem;
+  margin-left: -0.75rem;
   padding-right: 1.5rem;
-  padding-left: 1.25rem;
+  padding-left: 0.5rem;
   border-left: 0.25rem solid var(--primary);
 }
 
@@ -356,5 +372,10 @@ code[class*='language-'] ::selection {
   .filename {
     margin-left: -7.5rem;
     margin-right: -7.5rem;
+  }
+
+  .gatsby-highlight-code-line {
+    margin-left: -1.5rem;
+    padding-left: 1.25rem;
   }
 }
