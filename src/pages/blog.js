@@ -14,16 +14,19 @@ export default function BlogIndex({ data }) {
 
   return (
     <>
-      <Helmet title={`Blog | ${config.siteTitle}`} />
-      <SEO customDescription="Articles, tutorials, snippets, musings, and everything else." />
+      <Helmet title={`Articles | ${config.siteTitle}`} />
+      <SEO
+        customDescription="Tutorials, technical articles, snippets, reference materials, and all
+              development-related resources I've written."
+      />
 
       <article className="blog-page">
         <header>
           <div className="container">
-            <h1>Blog</h1>
+            <h1>Articles</h1>
             <p className="description">
-              Articles, tutorials, snippets, musings, notes, and everything
-              else. The archive of everything I've written.
+              Tutorials, technical articles, snippets, reference materials, and
+              all development-related resources I've written.
             </p>
           </div>
         </header>

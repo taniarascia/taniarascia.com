@@ -8,23 +8,22 @@ import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
   const post = data.markdownRemark
+  const { title, description, slug } = post.frontmatter
 
   return (
     <>
       <Helmet
-        title={`${
-          post.frontmatter.title === 'Tania Rascia'
-            ? 'Resume'
-            : post.frontmatter.title
-        } | ${config.siteTitle}`}
+        title={`${title === 'Tania Rascia' ? 'Resume' : title} | ${
+          config.siteTitle
+        }`}
       />
       <SEO />
 
-      <article>
+      <article id={slug}>
         <header>
-          <div className="container">
-            <h1>{post.frontmatter.title}</h1>
-            <p className="description">{post.frontmatter.description}</p>
+          <div className="container" style={{ paddingBottom: 0 }}>
+            <h1>{title}</h1>
+            <p className="description">{description}</p>
           </div>
         </header>
 
@@ -46,6 +45,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        slug
       }
     }
   }

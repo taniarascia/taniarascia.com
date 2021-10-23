@@ -8,7 +8,7 @@ import projects from '../assets/nav-projects.png'
 import twitter from '../assets/nav-twitter.png'
 
 const mainNavItems = [
-  { url: '/blog', icon: blog, label: 'Blog' },
+  { url: '/blog', icon: blog, label: 'Articles' },
   { url: '/projects', icon: projects, label: 'Projects' },
   { url: '/me', icon: floppy, label: 'About me' },
 ]

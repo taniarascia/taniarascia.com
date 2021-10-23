@@ -117,10 +117,7 @@ pre.language-terminal {
   padding-top: 3rem;
   color: var(--font-color);
   margin: 2rem 0;
-  border-radius: 0.35rem;
-  border: 1px solid var(--light-border-color);
-  box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.2),
-    0 0.5rem 2rem rgba(51, 51, 51, 0.2);
+  white-space: normal;
 }
 
 code.language-terminal {
@@ -143,16 +140,6 @@ pre.language-terminal::before {
   text-indent: 6px;
   letter-spacing: -5px;
   border-bottom: 1px solid var(--light-border-color);
-}
-
-pre.language-terminal::after {
-  content: 'Output';
-  line-height: 1;
-  font-family: var(--heading-font-family);
-  font-size: 0.9rem;
-  position: absolute;
-  top: 5px;
-  right: 0.75rem;
 }
 
 .line-numbers .line-numbers-rows {
@@ -186,7 +173,8 @@ pre.language-terminal::after {
   float: left;
   margin-top: 0;
   margin-bottom: 0;
-  min-width: 100%;
+  min-width: calc(100% + 1.5rem);
+  margin-right: 1.5rem;
 }
 
 .gatsby-highlight-code-line {
@@ -341,41 +329,34 @@ code[class*='language-'] ::selection {
   background: rgba(150, 150, 150, 0.3) !important;
 }
 
-@media screen and (max-width: 1000px) {
-  pre[class*='language-'],
-  .filename {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-  pre[class*='language-'].line-numbers {
-    padding-left: 3.5rem;
-  }
-  code[class*='language-'],
-  pre[class*='language-'] {
-    font-size: 0.9rem;
-  }
-  pre[class*='language-'] {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  pre[class*='language-text'] {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .filename {
-    margin-bottom: -1.5rem;
-  }
+pre[class*='language-'],
+.filename {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+pre[class*='language-'].line-numbers {
+  padding-left: 3.5rem;
+}
+
+pre[class*='language-'] {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+pre[class*='language-text'] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.filename {
+  margin-bottom: -1.5rem;
 }
 
 @media screen and (min-width: 1350px) {
-  pre[class*='language-'],
+  .gatsby-highlight,
   .filename {
     margin-left: -7.5rem;
     margin-right: -7.5rem;
-  }
-
-  .gatsby-highlight-code-line {
-    margin-left: -1.5rem;
-    padding-left: 1.25rem;
   }
 }

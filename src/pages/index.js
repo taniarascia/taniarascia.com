@@ -64,6 +64,49 @@ export default function WebsiteIndex({ data }) {
             <span>Latest Articles</span> <Link to="/blog">View All</Link>
           </h2>
           <Posts data={simplifiedLatest} />
+
+          <h2>Sitemap</h2>
+
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blog">Articles</Link> - Tutorials, technical articles,
+              snippets, and reference materials.
+            </li>
+            <li>
+              <Link to="/projects">Projects</Link> - A few highlights of my
+              open-source projects.
+            </li>
+            <li>
+              <Link to="/me">About me</Link> - A little about me and links to
+              talks, interviews, etc.
+            </li>
+            <li>
+              <Link to="/resume">Resume</Link> - My professional experience (I'm
+              not looking).
+            </li>
+            <li>
+              <strong>Other stuff</strong>
+              <ul>
+                <li>
+                  <a href="https://ko-fi.com/taniarascia">Ko-fi</a> - Buy me a
+                  coffee
+                </li>
+                <li>
+                  <a href="https://taniarascia.substack.com/subscribe">
+                    Newsletter
+                  </a>{' '}
+                  - Get occasional updates
+                </li>
+                <li>
+                  <Link to="/rss.xml">RSS feed</Link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
           <h2>Newsletter</h2>
           <p>
             Subscribe to the newsletter to get my latest content by email. Not
