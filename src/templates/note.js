@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
@@ -18,6 +18,9 @@ export default function NoteTemplate({ data }) {
       <article id={slug}>
         <header>
           <div className="container" style={{ paddingBottom: 0 }}>
+            <p>
+              <Link to="/notes">Back to Notes</Link>
+            </p>
             <h1>{title}</h1>
             <p>
               <time>{date}</time>
