@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useLocation } from '@reach/router'
 import Helmet from 'react-helmet'
 
 import favicon from '../assets/nav-floppy.png'
@@ -23,7 +24,7 @@ function setLightTheme(setTheme) {
   document.body.style.backgroundColor = 'white'
 }
 
-function getMainClass(theme, collapsed) {
+function getMainClass(theme, collapsed, slug) {
   let classString = 'theme'
   classString += ` ${theme}`
 
@@ -31,12 +32,18 @@ function getMainClass(theme, collapsed) {
     classString += ' collapsed'
   }
 
+  if (slug.includes('notes')) {
+    classString += ' no-sidebar'
+  }
+
   return classString
 }
 
 export const Layout = ({ children }) => {
+  const location = useLocation()
   const [theme, setTheme] = useState('dark')
   const [collapsed, setCollapsed] = useState(false)
+  const slug = location.pathname
 
   const onUpdateTheme = (theme) => {
     theme === 'dark' ? setLightTheme(setTheme) : setDarkTheme(setTheme)
@@ -61,9 +68,9 @@ export const Layout = ({ children }) => {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
 
-      <div className={getMainClass(theme, collapsed)}>
+      <div className={getMainClass(theme, collapsed, slug)}>
         <Nav />
-        <Sidebar />
+        {!slug.includes('notes') && <Sidebar />}
         <FileHeader
           setCollapsed={setCollapsed}
           onUpdateTheme={() => onUpdateTheme(theme)}

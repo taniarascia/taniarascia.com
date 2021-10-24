@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from '@reach/router'
 import { Link } from 'gatsby'
 
 import { Hamburger } from '../assets/Hamburger'
@@ -6,15 +7,20 @@ import { Colors } from './Colors'
 import moon from '../assets/moon.png'
 
 export const FileHeader = ({ setCollapsed, onUpdateTheme, theme }) => {
+  const location = useLocation()
+  const slug = location.pathname
+
   return (
     <header className="file-header">
-      <button
-        onClick={() => setCollapsed((prev) => !prev)}
-        className="desktop-only"
-        title="Collapse Sidebar"
-      >
-        <Hamburger />
-      </button>
+      {!slug.includes('/notes') && (
+        <button
+          onClick={() => setCollapsed((prev) => !prev)}
+          className="desktop-only"
+          title="Collapse Sidebar"
+        >
+          <Hamburger />
+        </button>
+      )}
       <Link to="/" className="file">
         <span>TaniaRascia.com</span>
       </Link>

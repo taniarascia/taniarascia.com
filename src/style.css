@@ -544,6 +544,10 @@ main {
   margin-left: 400px;
 }
 
+.no-sidebar main {
+  margin-left: 80px;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -572,6 +576,11 @@ main {
   background: var(--toolbar-background-color);
   z-index: 9;
   padding-right: 0.5rem;
+}
+
+.no-sidebar .file-header {
+  width: calc(100vw - 80px);
+  left: 80px;
 }
 
 .file-header button {

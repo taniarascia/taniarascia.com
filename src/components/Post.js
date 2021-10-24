@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export const Post = ({ node, query }) => {
+export const Post = ({ node, query, prefix }) => {
   const date = new Date(node.date)
   const oneMonthAgo = new Date()
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
@@ -43,7 +43,11 @@ export const Post = ({ node, query }) => {
   }
 
   return (
-    <Link to={node.slug} key={node.id} className={isNew ? 'post new' : 'post'}>
+    <Link
+      to={prefix ? `/${prefix}${node.slug}` : node.slug}
+      key={node.id}
+      className={isNew ? 'post new' : 'post'}
+    >
       <span>
         <span className="new-badge">{isNew && 'New!'}</span>
         {getTitle(node.title, query)}

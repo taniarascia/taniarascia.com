@@ -73,8 +73,6 @@ a:hover :not(pre) > code[class*='language-'] {
 
 pre.language-text {
   background: transparent;
-  border: 1px solid transparent;
-  padding: 0 !important;
 }
 
 /* Hide line numbers */
@@ -113,7 +111,7 @@ pre[class*='language-'].line-numbers {
 
 pre.language-terminal {
   position: relative;
-  background: var(--reverse);
+  background: var(--sidebar-color);
   padding-top: 3rem;
   color: var(--font-color);
   margin: 2rem 0;
@@ -166,7 +164,6 @@ pre.language-terminal::before {
   margin-right: -1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border: 1px solid var(--black);
 }
 
 .gatsby-highlight pre[class*='language-'] {
@@ -192,9 +189,6 @@ pre.language-terminal::before {
   align-items: center;
   margin-bottom: -2rem;
   background: #222;
-  border-top: 1px solid var(--black);
-  border-left: 1px solid var(--black);
-  border-right: 1px solid var(--black);
   padding: 0.5rem 1.5rem;
   color: #ccc;
   line-height: 1;
@@ -344,19 +338,26 @@ pre[class*='language-'] {
   margin-bottom: 1.5rem;
 }
 
-pre[class*='language-text'] {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .filename {
   margin-bottom: -1.5rem;
 }
 
 @media screen and (min-width: 1350px) {
+  .gatsby-highlight {
+    margin-bottom: 2rem;
+  }
+
+  .filename {
+    margin-top: 2rem;
+  }
+
   .gatsby-highlight,
   .filename {
     margin-left: -7.5rem;
     margin-right: -7.5rem;
+  }
+
+  pre.language-text.line-numbers {
+    padding-left: 7.5rem !important;
   }
 }

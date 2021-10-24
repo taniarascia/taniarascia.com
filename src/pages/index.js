@@ -76,6 +76,9 @@ export default function WebsiteIndex({ data }) {
               snippets, and reference materials.
             </li>
             <li>
+              <Link to="/notes">Notes</Link> - Anything else I want to write.
+            </li>
+            <li>
               <Link to="/projects">Projects</Link> - A few highlights of my
               open-source projects.
             </li>
