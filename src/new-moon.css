@@ -116,11 +116,14 @@ pre.language-terminal {
   color: var(--font-color);
   margin: 2rem 0;
   white-space: normal;
+  -webkit-text-size-adjust: none;
 }
 
 code.language-terminal {
   -webkit-font-smoothing: antialiased;
   color: var(--terminal-color);
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 pre.language-terminal::before {
@@ -165,6 +168,9 @@ pre.language-terminal::before {
   margin-right: -1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  max-width: 999999px;
 }
 
 .gatsby-highlight pre[class*='language-'] {
