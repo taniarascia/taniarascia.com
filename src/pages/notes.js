@@ -29,7 +29,7 @@ export default function NoteIndex({ data }) {
 
         <section>
           <div className="container">
-            <Posts data={simplifiedPosts} prefix="notes" />
+            <Posts data={simplifiedPosts} showYears prefix="notes" />
           </div>
         </section>
       </article>

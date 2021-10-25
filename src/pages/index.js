@@ -91,7 +91,7 @@ export default function WebsiteIndex({ data }) {
               not looking).
             </li>
             <li>
-              <strong>Other stuff</strong>
+              <strong>Links</strong>
               <ul>
                 <li>
                   <a href="https://ko-fi.com/taniarascia">Ko-fi</a> - Buy me a
@@ -102,6 +102,14 @@ export default function WebsiteIndex({ data }) {
                     Newsletter
                   </a>{' '}
                   - Get occasional updates
+                </li>
+                <li>
+                  <a href="https://github.com/taniarascia">GitHub</a> - Open
+                  source projects
+                </li>
+                <li>
+                  <a href="https://twitter.com/taniarascia">Twitter</a> - Random
+                  thoughts
                 </li>
                 <li>
                   <Link to="/rss.xml">RSS feed</Link>

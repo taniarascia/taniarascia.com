@@ -28,7 +28,7 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: var(--code-font-color);
   font-family: var(--code-font-family);
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
