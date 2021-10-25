@@ -157,6 +157,7 @@ pre.language-terminal::before {
 }
 
 .gatsby-highlight {
+  font-size: 0.9rem;
   overflow-y: hidden;
   overflow-x: auto;
   padding-left: 1.5rem;

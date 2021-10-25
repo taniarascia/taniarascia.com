@@ -20,7 +20,7 @@
   --tooltip-background-color: #232323;
   --font-color: #b3b9c5;
   --medium-font-color: #aaa;
-  --dark-font-color: #888;
+  --dark-font-color: #8f949d;
   --bright-font-color: #eee;
   --input-background: #393939;
   --blockquote-background-color: rgba(0, 0, 0, 0.4);
@@ -701,7 +701,7 @@ article h5 {
 article .description {
   font-size: 1.4rem;
   margin-bottom: 0;
-  color: #999;
+  color: var(--dark-font-color);
 }
 
 .post-details {
@@ -903,10 +903,17 @@ a.post time {
 /* Projects */
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  justify-content: center;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    grid-gap: 2rem;
+  }
 }
 
 .project {
@@ -1307,4 +1314,11 @@ a.gatsby-resp-image-link {
 
 #resume section li {
   margin-bottom: 0.5rem;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--primary);
+  margin-bottom: 2rem;
 }

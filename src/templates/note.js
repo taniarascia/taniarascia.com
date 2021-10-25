@@ -23,7 +23,10 @@ export default function NoteTemplate({ data }) {
             </p>
             <h1>{title}</h1>
             <p>
-              <time>{date}</time>
+              <div className="post-details">
+                Written by <Link to="/me">Tania Rascia</Link> on{' '}
+                <time>{date}</time>
+              </div>
             </p>
           </div>
         </header>
@@ -32,6 +35,19 @@ export default function NoteTemplate({ data }) {
           className="container"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+
+        <section>
+          <div className="container">
+            <div className="divider" />
+            <p>
+              Comments? Feel free to{' '}
+              <a href="mailto:hello[at]taniarascia[dot]com">email me</a>.
+            </p>
+            <p>
+              <Link to="/notes">Back to Notes</Link>
+            </p>
+          </div>
+        </section>
       </article>
     </>
   )
