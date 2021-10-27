@@ -75,6 +75,10 @@ pre.language-text {
   background: transparent;
 }
 
+pre.language-text.line-numbers {
+  padding-left: 1.5rem !important;
+}
+
 /* Hide line numbers */
 
 pre.language-terminal,
