@@ -12,7 +12,7 @@ export const FileHeader = ({ setCollapsed, onUpdateTheme, theme }) => {
 
   return (
     <header className="file-header">
-      {!slug.includes('/notes') && (
+      {!(slug.includes('/notes') || slug.includes('/resume')) && (
         <button
           onClick={() => setCollapsed((prev) => !prev)}
           className="desktop-only"

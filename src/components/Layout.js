@@ -32,7 +32,7 @@ function getMainClass(theme, collapsed, slug) {
     classString += ' collapsed'
   }
 
-  if (slug.includes('notes')) {
+  if (slug.includes('/notes') || slug.includes('/resume')) {
     classString += ' no-sidebar'
   }
 
@@ -70,7 +70,7 @@ export const Layout = ({ children }) => {
 
       <div className={getMainClass(theme, collapsed, slug)}>
         <Nav />
-        {!slug.includes('notes') && <Sidebar />}
+        {!(slug.includes('/notes') || slug.includes('/resume')) && <Sidebar />}
         <FileHeader
           setCollapsed={setCollapsed}
           onUpdateTheme={() => onUpdateTheme(theme)}
