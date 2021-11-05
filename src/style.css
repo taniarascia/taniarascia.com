@@ -1126,6 +1126,14 @@ a.gatsby-resp-image-link {
 /* Mobile Last */
 
 @media screen and (max-width: 1000px) {
+  ul {
+    padding-left: 1.5rem;
+  }
+  
+  ul ul {
+    padding-left: 3rem;
+  }
+
   p,
   ol,
   ul,
