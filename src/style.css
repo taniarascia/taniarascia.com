@@ -86,6 +86,14 @@ button {
   cursor: pointer;
 }
 
+ul {
+  padding-left: 0;
+}
+
+ul ul {
+  padding-left: 1.5rem;
+}
+
 ul li p {
   margin: 0;
 }
