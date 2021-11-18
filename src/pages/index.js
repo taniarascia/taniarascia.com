@@ -41,7 +41,7 @@ export default function WebsiteIndex({ data }) {
               I'm a <strong>software engineer</strong> in{' '}
               <strong>Chicago</strong>. I love building open-source{' '}
               <Link to="/projects">projects</Link> and sharing{' '}
-              <Link to="/blog">my knowledge</Link>. This website is my digital
+              <Link to="/blog">what I learn</Link>. This website is my digital
               garden — a compendium of the things I've learned and created over
               the years.
             </p>
@@ -69,9 +69,6 @@ export default function WebsiteIndex({ data }) {
 
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
               <Link to="/blog">Articles</Link> - Tutorials, technical articles,
               snippets, and reference materials.
             </li>
@@ -83,33 +80,30 @@ export default function WebsiteIndex({ data }) {
               open-source projects.
             </li>
             <li>
+              <Link to="/resume">Resume</Link> - My professional experience (I'm
+              not currently looking).
+            </li>
+            <li>
               <Link to="/me">About me</Link> - A little about me and links to
               talks, interviews, etc.
-            </li>
-            <li>
-              <Link to="/resume">Resume</Link> - My professional experience (I'm
-              not looking).
-            </li>
-            <li>
-              <strong>Links</strong>
               <ul>
                 <li>
                   <a href="https://ko-fi.com/taniarascia">Ko-fi</a> - Buy me a
-                  coffee
+                  coffee.
                 </li>
                 <li>
                   <a href="https://taniarascia.substack.com/subscribe">
                     Newsletter
                   </a>{' '}
-                  - Get occasional updates
+                  - Get occasional updates.
                 </li>
                 <li>
                   <a href="https://github.com/taniarascia">GitHub</a> - Open
-                  source projects
+                  source projects.
                 </li>
                 <li>
                   <a href="https://twitter.com/taniarascia">Twitter</a> - Random
-                  thoughts
+                  thoughts.
                 </li>
                 <li>
                   <Link to="/rss.xml">RSS feed</Link>

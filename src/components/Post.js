@@ -48,7 +48,7 @@ export const Post = ({ node, query, prefix }) => {
       key={node.id}
       className={isNew ? 'post new' : 'post'}
     >
-      <span>
+      <span className="flex" style={{ alignItems: 'baseline' }}>
         <span className="new-badge">{isNew && 'New!'}</span>
         {getTitle(node.title, query)}
       </span>

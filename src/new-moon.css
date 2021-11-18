@@ -364,11 +364,11 @@ pre[class*='language-'] {
 
   .gatsby-highlight,
   .filename {
-    margin-left: -7.5rem;
-    margin-right: -7.5rem;
+    margin-left: -3.5rem;
+    margin-right: -3.5rem;
   }
 
   pre.language-text.line-numbers {
-    padding-left: 7.5rem !important;
+    padding-left: 3.5rem !important;
   }
 }

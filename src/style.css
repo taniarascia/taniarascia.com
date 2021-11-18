@@ -87,19 +87,11 @@ button {
 }
 
 ul {
-  padding-left: 0;
-}
-
-ul ul {
   padding-left: 1.5rem;
 }
 
-blockquote ul {
-  padding-left: 1.5rem;
-}
-
-blockquote ul ul {
-  padding-left: 3rem;
+ul li {
+  margin-bottom: 0.5rem;
 }
 
 ul li p {
@@ -107,7 +99,7 @@ ul li p {
 }
 
 ul li ul {
-  margin: 0;
+  margin: 0.5rem;
 }
 
 h1,
@@ -864,14 +856,11 @@ a.post {
 a.post:hover,
 a.post.new {
   background: var(--dark-opacity);
-  border: 1px solid var(--light-border-color);
+  border: 1px solid transparent;
 }
 
 a.post.new {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid var(--yellow);
-  border-left: 6px solid var(--yellow);
+  border: 1px solid transparent;
   background: transparent;
 }
 
@@ -889,6 +878,7 @@ a.post.new h3 {
 
 a.post.new .new-badge {
   color: var(--yellow);
+  margin-right: 0.75rem;
 }
 
 a.post h3 {
@@ -1034,6 +1024,18 @@ a.gatsby-resp-image-link {
   margin: 0 auto;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
 .flex-header {
   display: flex;
   align-items: center;
@@ -1062,7 +1064,7 @@ a.gatsby-resp-image-link {
   padding: 0.75rem 1rem;
   line-height: 1.1;
   background: var(--input-background);
-  border: 1px solid var(--border-color);
+  border: 1px solid transparent;
   font-size: 1.1rem;
   color: var(--bright-font-color);
   border-radius: 0;
@@ -1134,14 +1136,6 @@ a.gatsby-resp-image-link {
 /* Mobile Last */
 
 @media screen and (max-width: 1000px) {
-  ul {
-    padding-left: 1.5rem;
-  }
-  
-  ul ul {
-    padding-left: 3rem;
-  }
-
   p,
   ol,
   ul,

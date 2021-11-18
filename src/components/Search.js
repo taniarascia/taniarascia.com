@@ -49,6 +49,7 @@ export const Search = ({ data }) => {
           onClick={() => searchRef.current.focus()}
         />
       </div>
+
       <section>
         {query ? (
           results.length > 0 ? (
