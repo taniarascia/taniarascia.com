@@ -182,7 +182,6 @@ pre.language-terminal::before {
   margin-top: 0;
   margin-bottom: 0;
   min-width: calc(100% + 1.5rem);
-  margin-right: 1.5rem;
 }
 
 .gatsby-highlight-code-line {
