@@ -115,12 +115,13 @@ pre[class*='language-'].line-numbers {
 
 pre.language-terminal {
   position: relative;
-  background: #111;
+  background: var(--reverse);
   padding-top: 3rem;
   color: var(--font-color);
   margin: 2rem 0;
   white-space: normal;
   -webkit-text-size-adjust: none;
+  border: 1px solid var(--category-background-color);
 }
 
 code.language-terminal {
