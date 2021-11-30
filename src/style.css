@@ -73,7 +73,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   margin: 0 0 2rem;
 }
 
@@ -560,7 +560,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  max-width: 750px;
+  max-width: 900px;
 }
 
 .container.large {
@@ -772,17 +772,17 @@ article img {
 }
 
 article h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   padding-bottom: 0.25rem;
   filter: var(--h2-filter);
 }
 
 article h2 code {
-  font-size: 2rem !important;
+  font-size: 2.2rem !important;
 }
 
 article h3 {
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   filter: var(--h3-filter);
 }
 
@@ -814,7 +814,7 @@ h4:not(:first-child) {
 
 blockquote {
   padding: 1rem;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--tooltip-border-color);
   background: var(--blockquote-background-color);
 }
 

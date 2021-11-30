@@ -21,7 +21,7 @@
   --class: #e1a6f2;
   --tag: #6ab0f3;
   --error: #f2777a;
-  --terminal-color: var(--primary);
+  --terminal-color: var(--code-font-color);
 }
 
 code[class*='language-'],
@@ -115,7 +115,7 @@ pre[class*='language-'].line-numbers {
 
 pre.language-terminal {
   position: relative;
-  background: var(--sidebar-color);
+  background: #111;
   padding-top: 3rem;
   color: var(--font-color);
   margin: 2rem 0;
