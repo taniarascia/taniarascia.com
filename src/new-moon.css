@@ -5,7 +5,6 @@
 */
 
 :root {
-  --code-font-family: Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
   --code-font-color: #b3b9c5;
   --code-background-color: #333;
   --string: #92d192;
@@ -28,7 +27,7 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: var(--code-font-color);
   font-family: var(--code-font-family);
-  font-size: 0.9rem !important;
+  font-size: .9rem !important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;

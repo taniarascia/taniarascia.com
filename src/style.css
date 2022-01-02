@@ -39,13 +39,15 @@
   --yellow: #ffb038;
 
   /* Font */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue',
-    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --heading-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --code-font-family: Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
+  --font-family: 'GT Walsheim', -apple-system, BlinkMacSystemFont, 'Inter',
+    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --heading-font-family: 'GT Walsheim Bold', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --code-font-family: 'GT Pressura Mono', Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
 }
 
 *,
@@ -60,11 +62,11 @@ button:focus-visible {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   font-family: var(--font-family);
   font-size: 1rem;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
   background: var(--background-color);
 }
 
@@ -73,7 +75,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.18rem;
+  font-size: 1.2rem;
   margin: 0 0 2rem;
 }
 

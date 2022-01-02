@@ -1,4 +1,5 @@
 .light.theme {
+  --heading-font-color: #222;
   --link-color: #111;
   --border-color: #bbb;
   --light-border-color: #d0d0d0;
@@ -13,7 +14,7 @@
   --toolbar-background-color: #f0f0f0;
   --tooltip-border-color: #999;
   --tooltip-background-color: #f0f0f0;
-  --font-color: #343434;
+  --font-color: #454545;
   --medium-font-color: #555;
   --dark-font-color: #888;
   --input-background: transparent;
