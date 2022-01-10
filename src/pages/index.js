@@ -8,7 +8,7 @@ import { SEO } from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
-import looking from '../assets/looking.png'
+import looking from '../assets/me.jpg'
 
 export default function WebsiteIndex({ data }) {
   const [followers, setFollowers] = useState(0)
@@ -47,7 +47,7 @@ export default function WebsiteIndex({ data }) {
                   created over the years.
                 </p>
               </div>
-              <img src={looking} alt="Me" className="main-image" />
+              <img src={looking} alt="Me" className="main-image desktop-only" />
             </div>
             <p className="hero-buttons">
               <Link to="/me" className="button">

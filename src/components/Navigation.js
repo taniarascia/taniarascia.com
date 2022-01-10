@@ -30,9 +30,11 @@ export const Navigation = ({ setCollapsed, onUpdateTheme, theme }) => {
       >
         <Hamburger />
       </button>
-      <Link to="/" className="brand">
-        <span>Tania Rascia</span>
-      </Link>
+      <nav>
+        <Link to="/" className="brand">
+          <span>Tania Rascia</span>
+        </Link>
+      </nav>
       <div>
         <nav>
           {mainNavItems.map((item) => (
@@ -59,7 +61,9 @@ export const Navigation = ({ setCollapsed, onUpdateTheme, theme }) => {
         </nav>
         <button onClick={onUpdateTheme} className="theme-switcher">
           <img src={moon} alt="Theme" />
-          <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+          <span className="desktop-only">
+            {theme === 'dark' ? 'Dark' : 'Light'}
+          </span>
         </button>
       </div>
     </header>

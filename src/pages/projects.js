@@ -5,11 +5,13 @@ import { Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import config from '../utils/config'
-import takeNote from '../../content/images/takenoteproject.png'
+import takeNote from '../../content/thumbnails/tn.png'
 import laconia from '../../content/images/laconiaproject.png'
 import primitive from '../../content/images/primitiveproject.png'
 import chip8 from '../../content/images/chip8project.png'
+import newMoon from '../../content/images/new-moon.svg'
 import github from '../assets/nav-github.png'
+import tr from '../assets/logo.png'
 
 const projectsList = [
   {
@@ -27,6 +29,13 @@ const projectsList = [
     The app allows plain text or markdown with previews, syncing,
     internal wiki style note-linking, drag-and-drop, prettier, syntax
     highlighting, light/dark mode, search, categorizing, and more!`,
+  },
+  {
+    name: 'New Moon',
+    image: newMoon,
+    slug: 'new-moon',
+    tagline: 'The optimized dark theme for web development.',
+    url: 'https://taniarascia.github.io/new-moon',
   },
   {
     name: 'Chip8',
@@ -84,23 +93,20 @@ const projectsList = [
     HTML elements, such as buttons, forms, tables, lists, and
     typography.`,
   },
+
   {
     name: 'tania.dev',
     slug: 'taniarascia.com',
     tagline: 'The source of this website.',
     url: 'https://tania.dev',
+    image: tr,
   },
   {
     name: 'webpack Boilerplate',
     slug: 'webpack-boilerplate',
     tagline: 'A sensible webpack 5 boilerplate.',
   },
-  {
-    name: 'New Moon',
-    slug: 'new-moon',
-    tagline: 'The optimized dark theme for web development.',
-    url: 'https://taniarascia.github.io/new-moon',
-  },
+
   {
     name: 'Snek',
     slug: 'snek',
@@ -154,6 +160,7 @@ export default function ProjectsIndex() {
           {projectsList.map((project) => (
             <div className="project" key={project.name}>
               <h2>{project.name}</h2>
+              {project.image && <img src={project.image} alt={project.name} />}
               <div className="links tags">
                 {project.writeup && <Link to={project.writeup}>Write-up</Link>}
                 <a

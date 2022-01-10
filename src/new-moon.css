@@ -73,6 +73,9 @@ a:hover :not(pre) > code[class*='language-'] {
 
 pre.language-text {
   background: transparent;
+  margin-left: -1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0;
 }
 
 pre.language-text.line-numbers {
@@ -191,7 +194,6 @@ pre.language-terminal::before {
   display: block;
   margin-right: -1rem;
   margin-left: -1.25rem;
-  padding-right: 1.5rem;
   padding-left: 1rem;
   border-left: 0.25rem solid #74cf74;
 }
@@ -208,6 +210,7 @@ pre.language-terminal::before {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   padding-bottom: 0.9rem;
+  font-family: var(--heading-font-family);
 }
 
 /* Colors */

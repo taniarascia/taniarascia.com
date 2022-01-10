@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Source+Serif+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
 
 :root {
   /* Colors */
@@ -36,7 +36,7 @@
   --yellow: #ffd479;
 
   /* Font */
-  --font-family: 'PT Serif', -apple-system, BlinkMacSystemFont, 'Inter',
+  --font-family: 'Source Serif Pro', -apple-system, BlinkMacSystemFont, 'Inter',
     'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
@@ -112,7 +112,7 @@ h5 {
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
   color: var(--heading-font-color);
-  scroll-margin-top: 60px;
+  scroll-margin-top: 80px;
 }
 
 h3,
@@ -163,6 +163,8 @@ table {
   max-width: 100%;
   overflow-x: auto;
   border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: var(--heading-font-family);
 }
 
 thead,
@@ -171,15 +173,15 @@ tbody {
 }
 
 th {
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--light-border-color);
 }
 
 tfoot th {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--light-border-color);
 }
 
 td {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--light-border-color);
 }
 
 th,
@@ -197,7 +199,7 @@ tbody tr:nth-child(odd) {
 @media screen and (min-width: 800px) {
   table {
     display: table;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--light-border-color);
   }
 
   thead,
@@ -280,7 +282,7 @@ tbody tr:nth-child(odd) {
   font-weight: 700;
   cursor: pointer;
   position: sticky;
-  top: 35px;
+  top: 55px;
   z-index: 7;
   border-radius: 0;
 }
@@ -363,6 +365,10 @@ tbody tr:nth-child(odd) {
   padding: 1rem 0;
 }
 
+.hero .flex-content {
+  align-items: center;
+}
+
 /* Content */
 
 .container {
@@ -382,13 +388,6 @@ tbody tr:nth-child(odd) {
 }
 
 /* Top bar */
-
-.brand {
-  padding-right: 1.5rem;
-  color: var(--bright-font-color);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
 
 .navigation {
   position: fixed;
@@ -421,6 +420,7 @@ tbody tr:nth-child(odd) {
   cursor: pointer;
   line-height: 0;
   margin: 0 1rem;
+  font-weight: 500;
 }
 
 .navigation button:hover {
@@ -448,7 +448,7 @@ tbody tr:nth-child(odd) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 0.5rem;
   height: 100%;
 }
 
@@ -459,10 +459,20 @@ tbody tr:nth-child(odd) {
   color: var(--font-color);
   gap: 0.5rem;
   font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.navigation nav a.brand {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .navigation nav a:hover {
   color: var(--bright-font-color);
+  background: var(--dark-opacity);
 }
 
 .navigation nav img {
@@ -574,10 +584,11 @@ article .description {
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 8px;
+  background: var(--reverse);
 }
 
 .tags a:hover {
-  background: transparent;
+  background: var(--reverse);
   border: 1px solid var(--primary);
   color: var(--primary);
 }
@@ -775,8 +786,16 @@ a.post time {
 .project h2 {
   border-bottom: none;
   font-size: 1.5rem;
-  margin-bottom: 0;
   text-align: center;
+  margin-bottom: 0;
+}
+
+.project img {
+  margin-top: 0.5rem;
+  max-width: 100%;
+  max-height: 150px;
+  height: auto;
+  object-fit: contain;
 }
 
 .project .description {
@@ -880,7 +899,6 @@ a.gatsby-resp-image-link {
 .flex-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 1rem;
 }
 
@@ -1039,7 +1057,7 @@ main {
 
 /* Mobile Last */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   p,
   ol,
   ul,
@@ -1049,6 +1067,20 @@ main {
     margin: 0 0 1.5rem;
   }
 
+  .flex-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    margin-top: 60px;
+  }
+
+  ul,
+  ol {
+    padding-left: 1rem;
+  }
+
   .sidebar,
   .navigation nav.social-nav {
     display: none;
@@ -1056,20 +1088,36 @@ main {
 
   .navigation {
     padding-right: 0;
-    flex-direction: space-between;
+    justify-content: space-between;
   }
 
-  .toolbar {
-    margin-left: 0;
+  .navigation nav {
+    gap: 0.5rem;
   }
 
   .navigation nav a {
     flex-direction: column;
     gap: 0.25rem;
+    font-size: 0.8rem;
+    padding: 0 0.25rem;
   }
 
-  .brand {
-    margin-left: 1.5rem;
+  .navigation nav a:hover {
+    background: transparent;
+  }
+
+  .navigation button.theme-switcher {
+    margin-right: 0.5rem;
+  }
+
+  .navigation nav a.brand {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .toolbar {
+    margin-left: 0;
   }
 
   .navbar img {
@@ -1101,6 +1149,10 @@ main {
     font-size: 1.2rem;
   }
 
+  .hero .flex-content {
+    align-items: flex-start;
+  }
+
   .main-image {
     width: 150px;
   }
@@ -1109,9 +1161,17 @@ main {
     padding: 1.5rem;
   }
 
+  article {
+    margin-bottom: 0;
+  }
+
   article h1 {
     font-size: 2.2rem;
     line-height: 1.2;
+  }
+
+  article h2 {
+    font-size: 2rem;
   }
 
   article header {
