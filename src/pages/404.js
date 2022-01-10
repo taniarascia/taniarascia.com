@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import config from '../utils/config'
+import floppy from '../assets/nav-floppy.png'
 
 export default function FourOhFour() {
   return (
@@ -21,7 +22,7 @@ export default function FourOhFour() {
 
         <section>
           <div className="container">
-            <img src="/logo.png" alt="Logo" className="not-found-image" />
+            <img src={floppy} alt="404" className="not-found-image" />
           </div>
         </section>
       </article>

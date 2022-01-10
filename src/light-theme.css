@@ -1,19 +1,19 @@
-.light.theme {
+.light {
+  --primary: #7d87ff;
+  --secondary: #444;
   --heading-font-color: #222;
   --link-color: #111;
   --border-color: #bbb;
-  --light-border-color: #d0d0d0;
+  --light-border-color: #e0e0e0;
   --background-color: white;
   --sidebar-color: #f0f0f0;
-  --navbar-color: #ddd;
+  --navbar-color: rgba(0, 0, 0, 0.8);
   --sidebar-color-hover: #dedede;
   --sidebar-color-focus: white;
   --category-background-color: #d5d5d5;
   --category-background-color-hover: #c0c0c0;
   --toolbar-color: #333;
   --toolbar-background-color: #f0f0f0;
-  --tooltip-border-color: #999;
-  --tooltip-background-color: #f0f0f0;
   --font-color: #454545;
   --medium-font-color: #555;
   --dark-font-color: #888;
@@ -23,14 +23,16 @@
   --blockquote-color: #111;
   --inline-code-background-color: rgba(0, 0, 0, 0.05);
   --inline-code-color: #111;
-  --h2-filter: brightness(0.8);
-  --h3-filter: brightness(0.9);
-  --h4-filter: brightness(0.95);
   --icon-filter: brightness(0.8);
-  --dark-opacity: rgba(0, 0, 0, 0.05);
+  --dark-opacity: rgba(0, 0, 0, 0.03);
   --dark-opacity-hover: rgba(0, 0, 0, 0.1);
   --reverse: white;
   --terminal-color: var(--bright-font-color);
   --scrollbar: #888;
   --scrollbar-track: #bbb;
+  --yellow: #e59e32;
+}
+
+.footer {
+  background: transparent;
 }

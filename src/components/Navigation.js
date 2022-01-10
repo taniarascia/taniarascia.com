@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import { Hamburger } from '../assets/Hamburger'
+import moon from '../assets/moon.png'
 import blog from '../assets/nav-blog.png'
 import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
@@ -18,10 +20,20 @@ const socialNavItems = [
   { url: 'https://twitter.com/taniarascia', icon: twitter, label: 'Twitter' },
 ]
 
-export const Nav = () => {
+export const Navigation = ({ setCollapsed, onUpdateTheme, theme }) => {
   return (
-    <aside className="navbar">
-      <section>
+    <header className="navigation">
+      <button
+        onClick={() => setCollapsed((prev) => !prev)}
+        className="desktop-only"
+        title="Collapse Sidebar"
+      >
+        <Hamburger />
+      </button>
+      <Link to="/" className="brand">
+        <span>Tania Rascia</span>
+      </Link>
+      <div>
         <nav>
           {mainNavItems.map((item) => (
             <Link to={item.url} key={item.label} activeClassName="active">
@@ -30,7 +42,9 @@ export const Nav = () => {
             </Link>
           ))}
         </nav>
-        <nav>
+      </div>
+      <div className="toolbar">
+        <nav className="social-nav">
           {socialNavItems.map((item) => (
             <a
               href={item.url}
@@ -43,7 +57,11 @@ export const Nav = () => {
             </a>
           ))}
         </nav>
-      </section>
-    </aside>
+        <button onClick={onUpdateTheme} className="theme-switcher">
+          <img src={moon} alt="Theme" />
+          <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
+        </button>
+      </div>
+    </header>
   )
 }

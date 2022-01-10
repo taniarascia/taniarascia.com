@@ -4,7 +4,6 @@ import { useLocation } from '@reach/router'
 
 import { useGetPosts } from '../utils/hooks/useGetPosts'
 import { getSimplifiedPosts, getCategoriesFromPosts } from '../utils/helpers'
-import { Minus } from '../assets/Minus'
 import { Caret } from '../assets/Caret'
 import { File } from '../assets/File'
 
@@ -34,10 +33,6 @@ export const Sidebar = () => {
     }
   }
 
-  const onCollapseCategories = () => {
-    setDropdownOpen({})
-  }
-
   useEffect(() => {
     const currentPost = simplifiedPosts.find(
       (post) => post.slug === location.pathname
@@ -58,19 +53,6 @@ export const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="title">
-        <span>Categories</span>
-        <button
-          onClick={onCollapseCategories}
-          className="collapse-categories"
-          title="Collapse Categories"
-        >
-          <div>
-            <Minus />
-          </div>
-        </button>
-      </div>
-
       <div className="categories">
         {categories.map((category) => {
           return (

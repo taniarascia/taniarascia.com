@@ -24,7 +24,7 @@ export default function TagTemplate({ data, pageContext }) {
         <header>
           <div className="container">
             <h1>
-              <span className="deemphasized">Posts tagged:</span>{' '}
+              <span>Posts tagged:</span>{' '}
               <span className="primary-underline">{tag}</span>
             </h1>
             <p className="description">

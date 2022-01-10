@@ -6,7 +6,7 @@
 
 :root {
   --code-font-color: #b3b9c5;
-  --code-background-color: #333;
+  --code-background-color: #2b2b2b;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -27,7 +27,7 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: var(--code-font-color);
   font-family: var(--code-font-family);
-  font-size: .9rem !important;
+  font-size: 0.9rem !important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -53,6 +53,7 @@ pre[class*='language-'] {
   font-family: Menlo, monospace;
   -webkit-font-smoothing: subpixel-antialiased;
   overflow: initial;
+  border-radius: 8px;
 }
 
 /* Inline code */
@@ -108,7 +109,7 @@ code.language-shell::before {
 
 pre[class*='language-'].line-numbers {
   position: relative;
-  padding-left: 4.5rem;
+  padding-left: 4rem;
   counter-reset: linenumber;
 }
 
@@ -120,7 +121,9 @@ pre.language-terminal {
   margin: 2rem 0;
   white-space: normal;
   -webkit-text-size-adjust: none;
-  border: 1px solid var(--category-background-color);
+  border: 1px solid var(--category-background-color-hover);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 code.language-terminal {
@@ -144,7 +147,9 @@ pre.language-terminal::before {
   padding: 15px 0 12px;
   text-indent: 6px;
   letter-spacing: -5px;
-  border-bottom: 1px solid var(--light-border-color);
+  border-bottom: 1px solid var(--category-background-color-hover);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .line-numbers .line-numbers-rows {
@@ -167,9 +172,6 @@ pre.language-terminal::before {
   font-size: 0.9rem;
   overflow-y: hidden;
   overflow-x: auto;
-  padding-left: 1.5rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   -webkit-text-size-adjust: none;
@@ -181,28 +183,31 @@ pre.language-terminal::before {
   float: left;
   margin-top: 0;
   margin-bottom: 0;
-  min-width: calc(100% + 1.5rem);
+  min-width: 100%;
 }
 
 .gatsby-highlight-code-line {
   background-color: #222;
   display: block;
   margin-right: -1rem;
-  margin-left: -0.75rem;
+  margin-left: -1.25rem;
   padding-right: 1.5rem;
-  padding-left: 0.5rem;
-  border-left: 0.25rem solid var(--primary);
+  padding-left: 1rem;
+  border-left: 0.25rem solid #74cf74;
 }
 
 .filename {
   display: flex;
   align-items: center;
   margin-bottom: -2rem;
-  background: #222;
+  background: #171717;
   padding: 0.5rem 1.5rem;
   color: #ccc;
   line-height: 1;
   font-size: 0.9rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-bottom: 0.9rem;
 }
 
 /* Colors */
@@ -333,23 +338,13 @@ code[class*='language-'] ::selection {
   background: rgba(150, 150, 150, 0.3) !important;
 }
 
-pre[class*='language-'],
-.filename {
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-}
-
-pre[class*='language-'].line-numbers {
-  padding-left: 3.5rem;
-}
-
 pre[class*='language-'] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .filename {
-  margin-bottom: -1.5rem;
+  margin-bottom: -1.9rem;
 }
 
 @media screen and (min-width: 1350px) {
@@ -359,15 +354,5 @@ pre[class*='language-'] {
 
   .filename {
     margin-top: 2rem;
-  }
-
-  .gatsby-highlight,
-  .filename {
-    margin-left: -3.5rem;
-    margin-right: -3.5rem;
-  }
-
-  pre.language-text.line-numbers {
-    padding-left: 3.5rem !important;
   }
 }

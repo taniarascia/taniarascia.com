@@ -3,9 +3,8 @@ import { useLocation } from '@reach/router'
 import Helmet from 'react-helmet'
 
 import favicon from '../assets/nav-floppy.png'
-import { Nav } from './Nav'
 import { Sidebar } from './Sidebar'
-import { FileHeader } from './FileHeader'
+import { Navigation } from './Navigation'
 import { Footer } from './Footer'
 
 import '../style.css'
@@ -15,7 +14,7 @@ import '../light-theme.css'
 function setDarkTheme(setTheme) {
   localStorage.setItem('theme', 'dark')
   setTheme('dark')
-  document.body.style.backgroundColor = '#272727'
+  document.body.style.backgroundColor = '#202020'
 }
 
 function setLightTheme(setTheme) {
@@ -24,16 +23,11 @@ function setLightTheme(setTheme) {
   document.body.style.backgroundColor = 'white'
 }
 
-function getMainClass(theme, collapsed, slug) {
-  let classString = 'theme'
-  classString += ` ${theme}`
+function getMainClass(theme, collapsed) {
+  let classString = theme
 
   if (collapsed) {
     classString += ' collapsed'
-  }
-
-  if (slug.includes('/notes') || slug.includes('/resume')) {
-    classString += ' no-sidebar'
   }
 
   return classString
@@ -42,7 +36,7 @@ function getMainClass(theme, collapsed, slug) {
 export const Layout = ({ children }) => {
   const location = useLocation()
   const [theme, setTheme] = useState('dark')
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
   const slug = location.pathname
 
   const onUpdateTheme = (theme) => {
@@ -50,12 +44,7 @@ export const Layout = ({ children }) => {
   }
 
   useEffect(() => {
-    const primaryColor = localStorage.getItem('primary')
     const savedTheme = localStorage.getItem('theme')
-
-    if (primaryColor) {
-      document.documentElement.style.setProperty('--primary', primaryColor)
-    }
 
     if (savedTheme) {
       savedTheme === 'dark' ? setDarkTheme(setTheme) : setLightTheme(setTheme)
@@ -69,9 +58,8 @@ export const Layout = ({ children }) => {
       </Helmet>
 
       <div className={getMainClass(theme, collapsed, slug)}>
-        <Nav />
-        {!(slug.includes('/notes') || slug.includes('/resume')) && <Sidebar />}
-        <FileHeader
+        <Sidebar />
+        <Navigation
           setCollapsed={setCollapsed}
           onUpdateTheme={() => onUpdateTheme(theme)}
           theme={theme}
