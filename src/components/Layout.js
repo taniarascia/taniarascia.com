@@ -14,7 +14,7 @@ import '../light-theme.css'
 function setDarkTheme(setTheme) {
   localStorage.setItem('theme', 'dark')
   setTheme('dark')
-  document.body.style.backgroundColor = '#202020'
+  document.body.style.backgroundColor = '#252525'
 }
 
 function setLightTheme(setTheme) {

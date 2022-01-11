@@ -67,8 +67,8 @@ pre[class*='language-'] {
   white-space: pre-wrap;
 }
 
-a:hover :not(pre) > code[class*='language-'] {
-  color: var(--black);
+article a:hover code {
+  color: var(--reverse) !important;
 }
 
 pre.language-text {

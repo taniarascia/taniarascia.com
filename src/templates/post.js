@@ -10,7 +10,7 @@ import { slugify, appendComments } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { tags, title, description, date } = post.frontmatter
+  const { tags, title, date } = post.frontmatter
   const commentBox = React.createRef()
 
   useEffect(() => {
@@ -45,7 +45,6 @@ export default function PostTemplate({ data }) {
                 </div>
               )}
             </div>
-            {description && <p className="description">{description}</p>}
           </div>
         </header>
 

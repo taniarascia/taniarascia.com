@@ -41,10 +41,10 @@ export default function WebsiteIndex({ data }) {
                 <h1>Hey, I'm Tania</h1>
                 <p className="subtitle small">
                   I'm a software engineer in Chicago. I love building
-                  open-source <Link to="/projects">projects</Link> and sharing{' '}
-                  <Link to="/blog">what I learn</Link>. This website is my
-                  digital garden—a compendium of the things I've learned and
-                  created over the years.
+                  open-source <Link to="/projects">projects</Link> and{' '}
+                  <Link to="/blog">writing</Link> about what I learn. This
+                  website is my digital garden—a compendium of the things I've
+                  learned and created over the years.
                 </p>
               </div>
               <img src={looking} alt="Me" className="main-image desktop-only" />
