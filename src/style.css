@@ -3,12 +3,12 @@
 
 :root {
   /* Colors */
-  --primary: #f7aa29;
+  --primary: #ffb038;
   --secondary: #ffd479;
   --link-color: white;
   --border-color: #111;
   --heading-font-color: var(--primary);
-  --background-color: red;
+  --background-color: #252525;
   --sidebar-color: #2b2b2b;
   --navbar-color: rgba(255, 255, 255, 0.8);
   --sidebar-color-hover: #383838;
@@ -64,6 +64,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--font-color);
+  background: var(--background-color);
 }
 
 p,
