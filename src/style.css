@@ -3,7 +3,7 @@
 
 :root {
   /* Colors */
-  --primary: #ffc91e;
+  --primary: #f7aa29;
   --secondary: #ffd479;
   --link-color: white;
   --border-color: #111;
@@ -115,7 +115,8 @@ h5 {
 }
 
 h3,
-h4 {
+h4,
+h5 {
   color: var(--secondary);
   font-weight: 500;
 }
@@ -1085,7 +1086,7 @@ main {
   }
 
   main {
-    margin-top: 90px;
+    margin-top: 60px;
   }
 
   ul,
@@ -1124,10 +1125,14 @@ main {
   }
 
   .navigation nav a.brand {
-    margin-left: 0.5rem;
+    margin-left: 0;
     padding: 0;
     font-size: 0.9rem;
     margin-right: 0;
+  }
+
+  .navigation nav img {
+    max-width: 20px;
   }
 
   .tooltip {
