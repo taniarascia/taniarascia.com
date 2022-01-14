@@ -10,7 +10,7 @@
   --heading-font-color: var(--primary);
   --background-color: #252525;
   --sidebar-color: #2b2b2b;
-  --navbar-color: rgba(255, 255, 255, 0.8);
+  --navbar-color: #181818;
   --sidebar-color-hover: #383838;
   --sidebar-color-focus: #444;
   --category-background-color: #161616;
@@ -26,8 +26,8 @@
   --blockquote-background-color: rgba(0, 0, 0, 0.4);
   --blockquote-color: var(--light-font-color);
   --black: #111;
-  --inline-code-background-color: rgba(0, 0, 0, 0.2);
-  --inline-code-color: #eee;
+  --inline-code-background-color: rgba(255, 255, 255, 0.08);
+  --inline-code-color: #b3b9c5;
   --dark-opacity: rgba(0, 0, 0, 0.2);
   --dark-opacity-hover: rgba(0, 0, 0, 0.3);
   --reverse: #111;
@@ -175,6 +175,10 @@ table {
   font-family: var(--heading-font-family);
 }
 
+table :not(pre) > code[class*='language-'] {
+  font-size: 0.95rem !important;
+}
+
 thead,
 tbody {
   white-space: nowrap;
@@ -202,6 +206,14 @@ td {
 
 tbody tr:nth-child(odd) {
   background-color: var(--dark-opacity);
+}
+
+tbody tr:last-child td:first-of-type {
+  border-bottom-left-radius: 8px;
+}
+
+tbody tr:last-child td:last-of-type {
+  border-bottom-right-radius: 8px;
 }
 
 @media screen and (min-width: 800px) {
@@ -406,7 +418,7 @@ tbody tr:nth-child(odd) {
   width: 100%;
   display: flex;
   align-items: center;
-  background: var(--toolbar-background-color);
+  background: var(--navbar-color);
   border-bottom: 1px solid var(--light-border-color);
   z-index: 9;
   padding: 0.5rem 1rem;
@@ -489,6 +501,10 @@ tbody tr:nth-child(odd) {
   max-width: 25px;
 }
 
+.navigation button.theme-switcher {
+  min-width: 85px;
+}
+
 .theme-switcher img {
   max-width: 20px;
 }
@@ -543,7 +559,7 @@ article header {
 }
 
 article h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
   color: var(--bright-font-color);
@@ -576,6 +592,11 @@ article .container {
   margin: 0.5rem 0;
   color: var(--dark-font-color);
   font-family: var(--heading-font-family);
+  font-size: 0.9rem;
+}
+
+.post-details a {
+  border-bottom: none;
 }
 
 .tags {
@@ -1095,6 +1116,10 @@ main {
     padding-left: 1rem;
   }
 
+  .hero header {
+    padding: 0.5rem 0 0;
+  }
+
   .sidebar,
   .navigation nav.social-nav {
     display: none;
@@ -1123,6 +1148,7 @@ main {
   .navigation button.theme-switcher {
     margin-left: 0;
     margin-right: 0.5rem;
+    min-width: auto;
   }
 
   .navigation nav a.brand {

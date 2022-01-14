@@ -25,12 +25,12 @@ export default function PostTemplate({ data }) {
       <article>
         <header>
           <div className="container">
+            <div className="post-details">
+              Written by <Link to="/me">Tania Rascia</Link> on{' '}
+              <time>{date}</time>
+            </div>
             <h1>{title}</h1>
             <div className="post-meta">
-              <div className="post-details">
-                Written by <Link to="/me">Tania Rascia</Link> on{' '}
-                <time>{date}</time>
-              </div>
               {tags && (
                 <div className="tags">
                   {tags.map((tag) => (

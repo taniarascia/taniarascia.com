@@ -62,7 +62,9 @@ export const Navigation = ({ setCollapsed, onUpdateTheme, theme }) => {
         <button onClick={onUpdateTheme} className="theme-switcher">
           <img src={moon} alt="Theme" />
           <span className="desktop-only">
-            {theme === 'dark' ? 'Dark' : 'Light'}
+            {theme === 'dark' && 'Dark'}
+            {theme === 'light' && 'Light'}
+            {theme === 'sepia' && 'Sepia'}
           </span>
         </button>
       </div>

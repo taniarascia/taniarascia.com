@@ -118,6 +118,7 @@ const projectsList = [
     slug: 'sokoban',
     tagline: 'A web-based Sokoban implementation.',
     url: 'https://taniarascia.github.io/sokoban',
+    writeup: '/sokoban-game',
   },
 ]
 

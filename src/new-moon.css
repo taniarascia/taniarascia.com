@@ -6,7 +6,7 @@
 
 :root {
   --code-font-color: #b3b9c5;
-  --code-background-color: #2b2b2b;
+  --code-background-color: #2d2d2d;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -63,7 +63,7 @@ pre[class*='language-'] {
   background: var(--inline-code-background-color) !important;
   font-weight: 600;
   color: var(--inline-code-color) !important;
-  font-size: 1rem;
+  font-size: 1rem !important;
   white-space: pre-wrap;
 }
 

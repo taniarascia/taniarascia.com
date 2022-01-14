@@ -33,10 +33,17 @@ export function slugify(string) {
   )
 }
 
+export function getTheme() {
+  const theme = localStorage.getItem('theme')
+
+  if (theme === 'dark') return 'github-dark'
+  if (theme === 'sepia') return 'gruvbox-dark'
+  if (theme === 'light') return 'github-light'
+}
+
 export function appendComments(commentBox) {
   const commentScript = document.createElement('script')
-  const theme =
-    localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'
+  const theme = getTheme()
 
   commentScript.async = true
   commentScript.src = 'https://utteranc.es/client.js'

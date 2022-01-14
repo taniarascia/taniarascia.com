@@ -11,7 +11,7 @@ import github from '../assets/nav-github.png'
 import looking from '../assets/me.jpg'
 
 export default function WebsiteIndex({ data }) {
-  const [followers, setFollowers] = useState(0)
+  const [followers, setFollowers] = useState(null)
   const latest = data.latest.edges
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
 

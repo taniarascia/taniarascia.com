@@ -10,6 +10,7 @@ import { Footer } from './Footer'
 import '../style.css'
 import '../new-moon.css'
 import '../light-theme.css'
+import '../sepia-theme.css'
 
 function setDarkTheme(setTheme) {
   localStorage.setItem('theme', 'dark')
@@ -21,6 +22,12 @@ function setLightTheme(setTheme) {
   localStorage.setItem('theme', 'light')
   setTheme('light')
   document.body.style.backgroundColor = 'white'
+}
+
+function setSepiaTheme(setTheme) {
+  localStorage.setItem('theme', 'sepia')
+  setTheme('sepia')
+  document.body.style.backgroundColor = '#f1e2c0'
 }
 
 function getMainClass(theme, collapsed) {
@@ -40,15 +47,21 @@ export const Layout = ({ children }) => {
   const slug = location.pathname
 
   const onUpdateTheme = (theme) => {
-    theme === 'dark' ? setLightTheme(setTheme) : setDarkTheme(setTheme)
+    if (theme === 'dark') {
+      setSepiaTheme(setTheme)
+    } else if (theme === 'light') {
+      setDarkTheme(setTheme)
+    } else if (theme === 'sepia') {
+      setLightTheme(setTheme)
+    }
   }
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
 
-    if (savedTheme) {
-      savedTheme === 'dark' ? setDarkTheme(setTheme) : setLightTheme(setTheme)
-    }
+    if (savedTheme === 'dark') setDarkTheme(setTheme)
+    if (savedTheme === 'sepia') setSepiaTheme(setTheme)
+    if (savedTheme === 'light') setLightTheme(setTheme)
   }, [])
 
   return (

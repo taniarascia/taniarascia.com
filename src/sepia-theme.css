@@ -1,0 +1,38 @@
+.sepia {
+  --primary: #6c71c4;
+  --secondary: #cb4b16;
+  --heading-font-color: #211806;
+  --link-color: #332810;
+  --border-color: #332810;
+  --light-border-color: #6b4a00;
+  --background-color: #ebdbb2;
+  --sidebar-color: #fef0cf;
+  --navbar-color: #f0d69a;
+  --sidebar-color-hover: #f0d69a;
+  --sidebar-color-focus: #fff6e3;
+  --category-background-color: #d8ba76;
+  --category-background-color-hover: #c8a961;
+  --toolbar-color: #332810;
+  --toolbar-background-color: #fdf6e3;
+  --font-color: #372e19;
+  --medium-font-color: #6b4a00;
+  --dark-font-color: #6b4a00;
+  --input-background: transparent;
+  --bright-font-color: #211806;
+  --blockquote-background-color: rgba(0, 0, 0, 0.02);
+  --blockquote-color: #111;
+  --inline-code-background-color: rgba(0, 0, 0, 0.05);
+  --inline-code-color: #111;
+  --icon-filter: brightness(0.8);
+  --dark-opacity: rgba(0, 0, 0, 0.03);
+  --dark-opacity-hover: rgba(0, 0, 0, 0.1);
+  --reverse: #fdf6e3;
+  --terminal-color: var(--bright-font-color);
+  --scrollbar: #a48337;
+  --scrollbar-track: #c8a961;
+  --yellow: #e59e32;
+}
+
+.footer {
+  background: transparent;
+}
