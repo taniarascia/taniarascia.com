@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-export const Post = ({ node, query, prefix }) => {
+export const Post = ({ node, query, prefix, hideDate, yearOnly }) => {
   const date = new Date(node.date)
   const oneMonthAgo = new Date()
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
@@ -12,11 +13,14 @@ export const Post = ({ node, query, prefix }) => {
   }
 
   let formattedDate
+  let formattedYear
   if (node.date) {
     const dateArr = node.date.split(' ')
-    dateArr.pop()
+    const year = dateArr.pop()
+
     dateArr[0] = dateArr[0].slice(0, 3)
     formattedDate = dateArr.join(' ').slice(0, -1)
+    formattedYear = year
   }
 
   const getTitle = (title, query) => {
@@ -42,17 +46,24 @@ export const Post = ({ node, query, prefix }) => {
     return <h3>{title}</h3>
   }
 
+  console.log(node.thumbnail)
+
   return (
     <Link
       to={prefix ? `/${prefix}${node.slug}` : node.slug}
       key={node.id}
       className={isNew ? 'post new' : 'post'}
     >
-      <span className="flex" style={{ alignItems: 'baseline' }}>
-        <span className="new-badge">{isNew && 'New!'}</span>
+      <span className="flex" style={{ alignItems: 'center' }}>
+        <Img fixed={node.thumbnail} style={{ marginRight: '1rem' }} />
         {getTitle(node.title, query)}
+        <span className="new-badge">{isNew && 'New!'}</span>
       </span>
-      <div>{formattedDate && <time>{formattedDate}</time>}</div>
+      <div>
+        {formattedDate && !hideDate && (
+          <time>{yearOnly ? formattedYear : formattedDate}</time>
+        )}
+      </div>
     </Link>
   )
 }

@@ -2,7 +2,14 @@ import React, { useMemo } from 'react'
 
 import { Post } from './Post'
 
-export const Posts = ({ data = [], showYears, query, prefix }) => {
+export const Posts = ({
+  data = [],
+  showYears,
+  query,
+  prefix,
+  hideDate,
+  yearOnly,
+}) => {
   const postsByYear = useMemo(() => {
     const collection = {}
 
@@ -31,7 +38,14 @@ export const Posts = ({ data = [], showYears, query, prefix }) => {
     return (
       <div className="posts">
         {data.map((node) => (
-          <Post key={node.id} node={node} query={query} prefix={prefix} />
+          <Post
+            key={node.id}
+            node={node}
+            query={query}
+            prefix={prefix}
+            hideDate={hideDate}
+            yearOnly={yearOnly}
+          />
         ))}
       </div>
     )

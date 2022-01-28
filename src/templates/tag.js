@@ -28,7 +28,7 @@ export default function TagTemplate({ data, pageContext }) {
               <span className="primary-underline">{tag}</span>
             </h1>
             <p className="description">
-              <span className="count">{totalCount}</span>
+              <span className="count bright">{totalCount}</span>
               {message}
             </p>
           </div>

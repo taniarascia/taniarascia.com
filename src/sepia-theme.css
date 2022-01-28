@@ -8,7 +8,8 @@
   --background-color: #ebdbb2;
   --sidebar-color: #fef0cf;
   --navbar-color: #f0d69a;
-  --sidebar-color-hover: #f0d69a;
+  --navbar-color-hover: #e2c175;
+  --sidebar-color-hover: #eed18e;
   --sidebar-color-focus: #fff6e3;
   --category-background-color: #d8ba76;
   --category-background-color-hover: #c8a961;
@@ -31,8 +32,11 @@
   --scrollbar: #a48337;
   --scrollbar-track: #c8a961;
   --yellow: #e59e32;
+  --button-color: var(--primary);
 }
 
-.footer {
-  background: transparent;
+.sepia .comments {
+  background: #2a2725;
+  padding: 2rem;
+  border-radius: 8px;
 }

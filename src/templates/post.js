@@ -50,13 +50,13 @@ export default function PostTemplate({ data }) {
 
         <div
           id={post.fields.slug}
-          className="container"
+          className="container post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>
 
       <section id="comments" className="comments container">
-        <h2>Comments</h2>
+        <h3>Comments</h3>
         <Comments commentBox={commentBox} />
       </section>
     </>

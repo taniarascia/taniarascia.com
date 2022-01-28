@@ -71,7 +71,7 @@ export const Layout = ({ children }) => {
       </Helmet>
 
       <div className={getMainClass(theme, collapsed, slug)}>
-        <Sidebar />
+        <Sidebar setCollapsed={setCollapsed} />
         <Navigation
           setCollapsed={setCollapsed}
           onUpdateTheme={() => onUpdateTheme(theme)}

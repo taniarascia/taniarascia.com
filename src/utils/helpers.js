@@ -5,10 +5,12 @@ export function getSimplifiedPosts(posts, options = {}) {
     slug: post.node.fields.slug,
     tags: post.node.frontmatter.tags,
     categories: post.node.frontmatter.categories,
-    title: post.node.frontmatter.title,
+    title: options.shortTitle
+      ? post.node.frontmatter.shortTitle
+      : post.node.frontmatter.title,
     description: post.node.frontmatter.description,
     ...(options.thumbnails && {
-      thumbnail: post.node.frontmatter.thumbnail.childImageSharp.fixed,
+      thumbnail: post.node.frontmatter?.thumbnail?.childImageSharp?.fixed,
     }),
   }))
 }
@@ -39,6 +41,8 @@ export function getTheme() {
   if (theme === 'dark') return 'github-dark'
   if (theme === 'sepia') return 'gruvbox-dark'
   if (theme === 'light') return 'github-light'
+
+  return 'github-dark'
 }
 
 export function appendComments(commentBox) {

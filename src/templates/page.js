@@ -21,7 +21,7 @@ export default function PageTemplate({ data }) {
 
       <article id={slug}>
         <header>
-          <div className="container" style={{ paddingBottom: 0 }}>
+          <div className="container">
             <h1>{title}</h1>
             <p className="description">{description}</p>
           </div>

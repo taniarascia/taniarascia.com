@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import netlify from '../../content/thumbnails/netlify.png'
 import gatsby from '../assets/gatsby.png'
@@ -9,8 +8,8 @@ const links = [
   { url: 'https://taniarascia.substack.com/subscribe', label: 'Newsletter' },
   { url: 'https://ko-fi.com/taniarascia', label: 'Ko-Fi' },
   { url: 'https://patreon.com/taniarascia', label: 'Patreon' },
+  { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS' },
 ]
-const internalLinks = [{ url: '/rss.xml', label: 'RSS' }]
 const madeWithLinks = [
   { url: 'https://www.gatsbyjs.org/', label: 'Gatsby', icon: gatsby },
   { url: 'https://github.com/taniarascia', label: 'GitHub', icon: github },
@@ -32,11 +31,6 @@ export const Footer = () => {
             >
               {link.label}
             </a>
-          ))}
-          {internalLinks.map((link) => (
-            <Link to={link.url} key={link.url}>
-              {link.label}
-            </Link>
           ))}
         </nav>
         <nav>

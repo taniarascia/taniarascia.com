@@ -8,6 +8,7 @@
   --background-color: white;
   --sidebar-color: #f0f0f0;
   --navbar-color: #f0f0f0;
+  --navbar-color-hover: #ddd;
   --sidebar-color-hover: #dedede;
   --sidebar-color-focus: white;
   --category-background-color: #d5d5d5;
@@ -31,8 +32,5 @@
   --scrollbar: #888;
   --scrollbar-track: #bbb;
   --yellow: #e59e32;
-}
-
-.footer {
-  background: transparent;
+  --button-color: var(--primary);
 }

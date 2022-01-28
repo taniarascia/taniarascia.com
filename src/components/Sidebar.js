@@ -7,7 +7,7 @@ import { getSimplifiedPosts, getCategoriesFromPosts } from '../utils/helpers'
 import { Caret } from '../assets/Caret'
 import { File } from '../assets/File'
 
-export const Sidebar = () => {
+export const Sidebar = ({ setCollapsed }) => {
   const location = useLocation()
   const [dropdownOpen, setDropdownOpen] = useState({})
   const data = useGetPosts()
@@ -44,10 +44,7 @@ export const Sidebar = () => {
         {}
       )
 
-      setDropdownOpen((prev) => ({
-        ...prev,
-        ...categories,
-      }))
+      setDropdownOpen((prev) => ({ ...prev, ...categories }))
     }
   }, [simplifiedPosts, location])
 
@@ -74,6 +71,7 @@ export const Sidebar = () => {
                         key={post.title}
                         to={post.slug}
                         activeClassName="active"
+                        onClick={() => setCollapsed(true)}
                       >
                         <File />
                         <span>{post.title}</span>

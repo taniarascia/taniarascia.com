@@ -23,50 +23,47 @@ const socialNavItems = [
 export const Navigation = ({ setCollapsed, onUpdateTheme, theme }) => {
   return (
     <header className="navigation">
-      <button
-        onClick={() => setCollapsed((prev) => !prev)}
-        className="desktop-only"
-        title="Collapse Sidebar"
-      >
-        <Hamburger />
-      </button>
-      <nav>
-        <Link to="/" className="brand">
-          <span>Tania Rascia</span>
-        </Link>
-      </nav>
-      <div>
-        <nav>
-          {mainNavItems.map((item) => (
-            <Link to={item.url} key={item.label} activeClassName="active">
-              <img src={item.icon} alt={item.label} />
-              <div className="tooltip">{item.label}</div>
-            </Link>
-          ))}
+      <div className="navigation-inner">
+        <nav className="brand-section">
+          <button
+            onClick={() => setCollapsed((prev) => !prev)}
+            className="desktop-only collapse-button"
+            title="Collapse Sidebar"
+          >
+            <Hamburger />
+          </button>
+
+          <Link to="/" className="brand">
+            <span>Tania Rascia</span>
+          </Link>
         </nav>
-      </div>
-      <div className="toolbar">
-        <nav className="social-nav">
-          {socialNavItems.map((item) => (
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noreferrer"
-              key={item.label}
-            >
-              <img src={item.icon} alt={item.label} />
-              <div className="tooltip">{item.label}</div>
-            </a>
-          ))}
-        </nav>
-        <button onClick={onUpdateTheme} className="theme-switcher">
-          <img src={moon} alt="Theme" />
-          <span className="desktop-only">
-            {theme === 'dark' && 'Dark'}
-            {theme === 'light' && 'Light'}
-            {theme === 'sepia' && 'Sepia'}
-          </span>
-        </button>
+        <div>
+          <nav>
+            {mainNavItems.map((item) => (
+              <Link to={item.url} key={item.label} activeClassName="active">
+                <img src={item.icon} alt={item.label} />
+                <div className="tooltip">{item.label}</div>
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <div className="toolbar-section">
+          <nav className="social-nav">
+            {socialNavItems.map((item) => (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                key={item.label}
+              >
+                <img src={item.icon} alt={item.label} />
+              </a>
+            ))}
+          </nav>
+          <button onClick={onUpdateTheme} className="theme-switcher">
+            <img src={moon} alt="Theme" />
+          </button>
+        </div>
       </div>
     </header>
   )

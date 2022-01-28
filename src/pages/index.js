@@ -8,12 +8,19 @@ import { SEO } from '../components/SEO'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
+import floppy from '../assets/nav-floppy.png'
 import looking from '../assets/me.jpg'
 
 export default function WebsiteIndex({ data }) {
   const [followers, setFollowers] = useState(null)
   const latest = data.latest.edges
+  const highlights = data.highlights.edges
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
+  const simplifiedHighlights = useMemo(
+    () =>
+      getSimplifiedPosts(highlights, { shortTitle: true, thumbnails: true }),
+    [highlights]
+  )
 
   useEffect(() => {
     async function getGithubAPI() {
@@ -38,7 +45,7 @@ export default function WebsiteIndex({ data }) {
           <div className="container">
             <div className="flex-content">
               <div>
-                <h1>Hey, I'm Tania</h1>
+                <h1>Hey, I'm Tania.</h1>
                 <p className="subtitle small">
                   I'm a software engineer in Chicago. I love building
                   open-source <Link to="/projects">projects</Link> and{' '}
@@ -50,18 +57,22 @@ export default function WebsiteIndex({ data }) {
               <img src={looking} alt="Me" className="main-image desktop-only" />
             </div>
             <p className="hero-buttons">
-              <Link to="/me" className="button">
-                About me
+              <Link to="/me" className="hero-button">
+                <img src={floppy} alt="Me" />
+                More about me
               </Link>
               {followers && (
                 <a
                   href="https://github.com/taniarascia"
-                  className="button icon-button"
                   target="_blank"
+                  className="hero-button"
                   rel="noreferrer"
                 >
                   <img src={github} alt="GitHub" />
-                  {Number(followers).toLocaleString()} on GitHub
+                  <span className="bright">
+                    {Number(followers).toLocaleString()}
+                  </span>
+                  {' followers on GitHub'}
                 </a>
               )}
             </p>
@@ -73,6 +84,11 @@ export default function WebsiteIndex({ data }) {
             <span>Latest Articles</span> <Link to="/blog">View All</Link>
           </h2>
           <Posts data={simplifiedLatest} />
+
+          <h2 className="main-header">
+            <span>Highlights</span> <Link to="/blog">View All</Link>
+          </h2>
+          <Posts data={simplifiedHighlights} yearOnly />
 
           <h2 className="main-header">Newsletter</h2>
           <div className="flex-content">
@@ -100,7 +116,7 @@ WebsiteIndex.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 5
+      limit: 7
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
@@ -114,6 +130,33 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             tags
+          }
+        }
+      }
+    }
+    highlights: allMarkdownRemark(
+      limit: 99
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { categories: { eq: "Highlight" } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            shortTitle
+            tags
+            thumbnail {
+              childImageSharp {
+                fixed(width: 25, height: 25) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
