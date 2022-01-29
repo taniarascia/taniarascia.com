@@ -1126,7 +1126,7 @@ main {
   ul,
   table,
   blockquote {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     margin: 0 0 1.5rem;
   }
 
@@ -1171,7 +1171,6 @@ main {
 
   .navigation button.theme-switcher {
     margin-left: 0;
-    margin-right: 0.5rem;
     min-width: auto;
   }
 
@@ -1217,11 +1216,11 @@ main {
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .hero header {
-    padding: 0.5rem 0 0;
+    padding: 1.5rem 0 0;
   }
 
   .hero .container {
@@ -1239,6 +1238,7 @@ main {
   .hero .hero-buttons {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
   }
 
   .main-image {
@@ -1246,7 +1246,11 @@ main {
   }
 
   .container {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  .navigation-inner {
+    padding: 0 1rem;
   }
 
   article {
@@ -1268,6 +1272,14 @@ main {
 
   article .description {
     font-size: 1.3rem;
+  }
+
+  a.post h3 {
+    font-size: 1rem;
+  }
+
+  .project img {
+    max-height: 50px;
   }
 }
 

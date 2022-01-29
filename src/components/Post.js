@@ -46,8 +46,6 @@ export const Post = ({ node, query, prefix, hideDate, yearOnly }) => {
     return <h3>{title}</h3>
   }
 
-  console.log(node.thumbnail)
-
   return (
     <Link
       to={prefix ? `/${prefix}${node.slug}` : node.slug}
@@ -55,7 +53,12 @@ export const Post = ({ node, query, prefix, hideDate, yearOnly }) => {
       className={isNew ? 'post new' : 'post'}
     >
       <span className="flex" style={{ alignItems: 'center' }}>
-        <Img fixed={node.thumbnail} style={{ marginRight: '1rem' }} />
+        {node.thumbnail && (
+          <Img
+            fixed={node.thumbnail}
+            style={{ marginRight: '1rem', minWidth: '25px' }}
+          />
+        )}
         {getTitle(node.title, query)}
         <span className="new-badge">{isNew && 'New!'}</span>
       </span>
