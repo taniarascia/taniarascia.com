@@ -427,6 +427,7 @@ tbody tr:last-child td:last-of-type {
   font-family: var(--heading-font-family);
   height: 100%;
   justify-content: space-between;
+  max-width: var(--page-width);
 }
 
 .navigation button {
@@ -1120,7 +1121,7 @@ main {
 
 /* Mobile Last */
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 840px) {
   p,
   ol,
   ul,
