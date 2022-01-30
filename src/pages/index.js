@@ -54,7 +54,7 @@ export default function WebsiteIndex({ data }) {
                   learned and created over the years.
                 </p>
               </div>
-              <img src={looking} alt="Me" className="main-image desktop-only" />
+              <img src={looking} alt="Me" className="main-image" />
             </div>
             <p className="hero-buttons">
               <Link to="/me" className="hero-button">

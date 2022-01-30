@@ -470,7 +470,7 @@ tbody tr:last-child td:last-of-type {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   height: 100%;
 }
 
@@ -479,12 +479,16 @@ tbody tr:last-child td:last-of-type {
   align-items: center;
   justify-content: center;
   color: var(--font-color);
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-size: 0.9rem;
   padding: 0.5rem;
   border-radius: 8px;
   font-weight: 500;
   line-height: 1.1;
+}
+
+.navigation nav a.active {
+  color: var(--bright-font-color);
 }
 
 .navigation nav a.brand {
@@ -1121,7 +1125,7 @@ main {
 
 /* Mobile Last */
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 800px) {
   p,
   ol,
   ul,
@@ -1173,6 +1177,7 @@ main {
   .navigation button.theme-switcher {
     margin-left: 0;
     min-width: auto;
+    margin-right: -0.5rem;
   }
 
   .navigation nav a.brand {
@@ -1221,7 +1226,7 @@ main {
   }
 
   .hero header {
-    padding: 1.5rem 0 0;
+    padding: 1rem 0 0;
   }
 
   .hero .container {
@@ -1243,7 +1248,16 @@ main {
   }
 
   .main-image {
+    margin: 0 0 1rem 0;
     width: 150px;
+  }
+
+  .flex-content div {
+    order: 2;
+  }
+
+  .flex-content img {
+    order: 1;
   }
 
   .container {
@@ -1268,7 +1282,7 @@ main {
   }
 
   article header {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
 
   article .description {

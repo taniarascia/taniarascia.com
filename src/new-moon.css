@@ -78,21 +78,40 @@ pre.language-text {
   padding-bottom: 0;
 }
 
-pre.language-text.line-numbers {
-  padding-left: 1.5rem !important;
-}
-
-/* Hide line numbers */
-
-pre.language-terminal,
-pre.language-shell {
-  padding-left: 1.5rem !important;
-}
-
-pre.language-text .line-numbers-rows,
-pre.language-terminal .line-numbers-rows,
-pre.language-shell .line-numbers-rows {
+.line-numbers-rows {
   display: none;
+}
+
+pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 1rem;
+  counter-reset: linenumber;
+}
+
+@media screen and (min-width: 800px) {
+  .line-numbers-rows {
+    display: block;
+  }
+  pre.language-text.line-numbers {
+    padding-left: 1.5rem !important;
+  }
+
+  pre[class*='language-'].line-numbers {
+    padding-left: 4rem;
+  }
+
+  /* Hide line numbers */
+
+  pre.language-terminal,
+  pre.language-shell {
+    padding-left: 1.5rem !important;
+  }
+
+  pre.language-text .line-numbers-rows,
+  pre.language-terminal .line-numbers-rows,
+  pre.language-shell .line-numbers-rows {
+    display: none;
+  }
 }
 
 code.language-text {
@@ -108,12 +127,6 @@ pre.language-text code.language-text {
 code.language-shell::before {
   content: '$ ';
   color: var(--comment);
-}
-
-pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 4rem;
-  counter-reset: linenumber;
 }
 
 pre.language-terminal {
@@ -192,9 +205,10 @@ pre.language-terminal::before {
 .gatsby-highlight-code-line {
   background-color: #222;
   display: block;
-  margin-right: -1rem;
   margin-left: -1.25rem;
+  margin-right: -1rem;
   padding-left: 1rem;
+  padding-right: 1rem;
   border-left: 0.25rem solid #74cf74;
 }
 
@@ -348,14 +362,4 @@ pre[class*='language-'] {
 
 .filename {
   margin-bottom: -1.9rem;
-}
-
-@media screen and (min-width: 1350px) {
-  .gatsby-highlight {
-    margin-bottom: 2rem;
-  }
-
-  .filename {
-    margin-top: 2rem;
-  }
 }
