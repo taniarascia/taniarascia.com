@@ -18,8 +18,6 @@ export default function PostTemplate({ data }) {
     appendComments(commentBox)
   }, [commentBox])
 
-  console.log(thumbnail)
-
   return (
     <>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
