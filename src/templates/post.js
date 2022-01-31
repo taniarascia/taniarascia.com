@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
@@ -10,12 +11,14 @@ import { slugify, appendComments } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { tags, title, date } = post.frontmatter
+  const { tags, title, date, thumbnail } = post.frontmatter
   const commentBox = React.createRef()
 
   useEffect(() => {
     appendComments(commentBox)
   }, [commentBox])
+
+  console.log(thumbnail)
 
   return (
     <>
@@ -26,6 +29,14 @@ export default function PostTemplate({ data }) {
         <header>
           <div className="container">
             <div className="post-details">
+              {thumbnail && (
+                <div>
+                  <Img
+                    fixed={thumbnail.childImageSharp?.fixed}
+                    className="post-image"
+                  />
+                </div>
+              )}
               Written by <Link to="/me">Tania Rascia</Link> on{' '}
               <time>{date}</time>
             </div>

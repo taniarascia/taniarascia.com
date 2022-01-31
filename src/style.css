@@ -624,6 +624,10 @@ article .description {
   font-family: var(--heading-font-family);
 }
 
+.post-image {
+  margin-bottom: 1rem;
+}
+
 .post-details {
   margin: 0.5rem 0;
   color: var(--dark-font-color);
@@ -1245,6 +1249,11 @@ main {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .post-image {
+    max-width: 75px;
+    max-height: 75px;
   }
 
   .main-image {
