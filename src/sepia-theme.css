@@ -41,3 +41,7 @@
   border-radius: 8px;
   margin-bottom: 2rem;
 }
+
+.sepia pre[class*='language-'] {
+  border-color: var(--heading-font-color);
+}

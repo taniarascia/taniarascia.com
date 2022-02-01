@@ -34,3 +34,17 @@
   --yellow: #e59e32;
   --button-color: var(--primary);
 }
+
+.light pre[class*='language-'] {
+  border-color: var(--heading-font-color);
+}
+
+.light pre.language-terminal,
+.light table {
+  border-color: var(--border-color);
+}
+
+.light blockquote {
+  border-color: var(--border-color);
+  border-left-color: var(--primary);
+}

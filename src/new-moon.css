@@ -6,7 +6,7 @@
 
 :root {
   --code-font-color: #b3b9c5;
-  --code-background-color: #2d2d2d;
+  --code-background-color: #353535;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -54,6 +54,7 @@ pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   overflow: initial;
   border-radius: 8px;
+  border: 1px solid var(--light-border-color);
 }
 
 /* Inline code */
@@ -137,7 +138,7 @@ pre.language-terminal {
   margin: 2rem 0;
   white-space: normal;
   -webkit-text-size-adjust: none;
-  border: 1px solid var(--category-background-color-hover);
+  border: 1px solid var(--light-border-color);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -163,7 +164,7 @@ pre.language-terminal::before {
   padding: 15px 0 12px;
   text-indent: 6px;
   letter-spacing: -5px;
-  border-bottom: 1px solid var(--category-background-color-hover);
+  border-bottom: 1px solid var(--light-border-color);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
