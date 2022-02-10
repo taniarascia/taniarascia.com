@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=Inconsolata&family=Roboto+Mono&display=swap');
 
 :root {
   /* Colors */
@@ -39,14 +38,14 @@
   --page-width: 850px;
 
   /* Font */
-  --font-family: 'Source Serif Pro', -apple-system, BlinkMacSystemFont, 'Inter',
+  --font-family: 'IBM Plex Serif', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
   --heading-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --code-font-family: Menlo, 'DM Mono', 'Roboto Mono', Courier New, monospace;
+  --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 }
 
 *,
@@ -75,7 +74,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin: 0 0 2rem;
   color: var(--font-color);
 }

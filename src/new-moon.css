@@ -98,7 +98,7 @@ pre[class*='language-'].line-numbers {
   }
 
   pre[class*='language-'].line-numbers {
-    padding-left: 4rem;
+    padding-left: 3.5rem;
   }
 
   /* Hide line numbers */
