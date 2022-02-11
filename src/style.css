@@ -177,6 +177,7 @@ table {
   border-radius: 8px;
   font-size: 0.95rem;
   font-family: var(--heading-font-family);
+  -webkit-text-size-adjust: none;
 }
 
 table :not(pre) > code[class*='language-'] {
@@ -224,11 +225,18 @@ tbody tr:last-child td:last-of-type {
   table {
     display: table;
     border: 1px solid var(--light-border-color);
+    -webkit-text-size-adjust: none;
   }
 
   thead,
   tbody {
     white-space: normal;
+    -webkit-text-size-adjust: none;
+  }
+
+  th,
+  td {
+    -webkit-text-size-adjust: none;
   }
 }
 
