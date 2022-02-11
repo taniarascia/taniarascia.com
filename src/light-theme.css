@@ -48,3 +48,7 @@
   border-color: var(--border-color);
   border-left-color: var(--primary);
 }
+
+.light .filename {
+  border: 1px solid #171717;
+}

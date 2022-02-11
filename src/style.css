@@ -553,7 +553,7 @@ tbody tr:last-child td:last-of-type {
 }
 
 .hero h1 {
-  color: var(--bright-font-color);
+  color: var(--secondary);
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }

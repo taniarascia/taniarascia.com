@@ -99,7 +99,7 @@ pre[class*='language-'].line-numbers {
   }
 
   pre[class*='language-'].line-numbers {
-    padding-left: 3.5rem;
+    padding-left: 4rem;
   }
 
   /* Hide line numbers */
@@ -219,6 +219,7 @@ pre.language-terminal::before {
   align-items: center;
   margin-bottom: -2rem;
   background: #171717;
+  border: 1px solid var(--light-border-color);
   padding: 0.5rem 1.5rem;
   color: #ccc;
   line-height: 1;
