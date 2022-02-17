@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=Inconsolata&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
 
 :root {
   /* Colors */
@@ -38,10 +38,9 @@
   --page-width: 850px;
 
   /* Font */
-  --font-family: 'IBM Plex Serif', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+  --font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
+    Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --heading-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -74,7 +73,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin: 0 0 2rem;
   color: var(--font-color);
 }
