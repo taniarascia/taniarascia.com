@@ -39,8 +39,7 @@ export default function PostTemplate({ data }) {
               <time>{date}</time>
             </div>
             <h1>{title}</h1>
-            <div className="post-meta">
-              {tags && (
+            {tags && (
                 <div className="tags">
                   {tags.map((tag) => (
                     <Link
@@ -53,7 +52,6 @@ export default function PostTemplate({ data }) {
                   ))}
                 </div>
               )}
-            </div>
           </div>
         </header>
 
