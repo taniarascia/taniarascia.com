@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Roboto+Mono&family=Source+Serif+Pro:wght@400;700&display=swap');
 
 :root {
   /* Colors */
@@ -20,7 +20,7 @@
   --toolbar-color: #eee;
   --font-color: #b3b9c5;
   --medium-font-color: #aaa;
-  --dark-font-color: #8f949d;
+  --dark-font-color: #838891;
   --bright-font-color: #eee;
   --input-background: #393939;
   --blockquote-background-color: rgba(0, 0, 0, 0.4);
@@ -38,10 +38,15 @@
   --page-width: 850px;
 
   /* Font */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
-    Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --heading-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  --font-family: 'Source Serif Pro', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', serif,
+    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --heading-font-family: 'Manrope', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --post-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
@@ -73,7 +78,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   margin: 0 0 2rem;
   color: var(--font-color);
 }
@@ -85,7 +90,7 @@ button {
   border: none;
   background: transparent;
   cursor: pointer;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   border-radius: 8px;
 }
 
@@ -552,13 +557,13 @@ tbody tr:last-child td:last-of-type {
 }
 
 .hero h1 {
-  color: var(--secondary);
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
 .hero p.subtitle {
-  font-size: 1.4rem;
+  color: var(--dark-font-color);
+  font-size: 1.3rem;
 }
 
 .hero .hero-buttons {
@@ -625,7 +630,7 @@ article .description {
   font-size: 1.45rem;
   margin-bottom: 0;
   color: var(--dark-font-color);
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
 }
 
 .post-image {
@@ -742,7 +747,7 @@ blockquote {
   border-left: 4px solid var(--primary);
   background: var(--blockquote-background-color);
   border-radius: 8px;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
 }
 
 blockquote p {
@@ -779,7 +784,7 @@ a.post {
   grid-gap: 1rem;
   align-items: center;
   border: 1px solid transparent;
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1rem;
   margin-left: -1rem;
   margin-right: -1rem;
 }
@@ -788,7 +793,7 @@ a.post:hover,
 a.post.new {
   background: var(--dark-opacity);
   border: 1px solid transparent;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   border-radius: 8px;
 }
 
@@ -820,6 +825,7 @@ a.post h3 {
   font-weight: 500;
   color: var(--font-color);
   filter: brightness(1);
+  font-family: var(--post-font-family);
 }
 
 a.post:hover h3 {
@@ -886,7 +892,7 @@ a.post time {
   margin-bottom: 1rem;
   text-align: center;
   color: var(--font-color);
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
 }
 
 .project .links {
@@ -1091,7 +1097,7 @@ main {
   background: var(--navbar-color);
   border-top: 1px solid var(--light-border-color);
   padding: 3rem 0;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
 }
 
 .footer section {
