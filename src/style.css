@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Roboto+Mono&family=Source+Serif+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Roboto+Mono&family=IBM+Plex+Serif:wght@400;600&display=swap');
 
 :root {
   /* Colors */
@@ -38,7 +38,7 @@
   --page-width: 850px;
 
   /* Font */
-  --font-family: 'Source Serif Pro', -apple-system, BlinkMacSystemFont,
+  --font-family: 'IBM Plex Serif', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', serif,
     'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
@@ -129,9 +129,13 @@ h5 {
   font-weight: 500;
 }
 
+h4 {
+  letter-spacing: 0.05rem;
+}
+
 a {
   text-decoration: none;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
 }
 
 /* Button */
@@ -142,7 +146,7 @@ a.button {
   background: var(--button-color);
   color: var(--reverse);
   padding: 0.75rem 1.25rem;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   border-radius: 8px;
   text-align: center;
   line-height: 1.2;
@@ -180,7 +184,7 @@ table {
   overflow-x: auto;
   border-radius: 8px;
   font-size: 0.95rem;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   -webkit-text-size-adjust: none;
 }
 
@@ -435,7 +439,7 @@ tbody tr:last-child td:last-of-type {
   display: flex;
   align-items: center;
   padding: 0.5rem 1.5rem;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   height: 100%;
   justify-content: space-between;
   max-width: var(--page-width);
@@ -640,7 +644,7 @@ article .description {
 .post-details {
   margin: 0.5rem 0;
   color: var(--dark-font-color);
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   font-size: 0.9rem;
 }
 
@@ -649,7 +653,7 @@ article .description {
 }
 
 .tags {
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -721,7 +725,7 @@ article h3 code {
 }
 
 article h4 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   padding-bottom: 0.25rem;
   text-transform: uppercase;
 }
@@ -784,7 +788,7 @@ a.post {
   grid-gap: 1rem;
   align-items: center;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   margin-left: -1rem;
   margin-right: -1rem;
 }
@@ -1145,7 +1149,7 @@ main {
   ul,
   table,
   blockquote {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0 0 1.5rem;
   }
 
@@ -1309,7 +1313,7 @@ main {
   }
 
   a.post h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .project img {
