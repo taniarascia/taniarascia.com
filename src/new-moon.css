@@ -227,7 +227,7 @@ pre.language-terminal::before {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   padding-bottom: 0.9rem;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
 }
 
 /* Colors */
