@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Roboto+Mono&family=IBM+Plex+Serif:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik:wght@400;500&display=swap');
 
 :root {
   /* Colors */
@@ -38,11 +38,10 @@
   --page-width: 850px;
 
   /* Font */
-  --font-family: 'IBM Plex Serif', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', serif,
-    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
-  --heading-font-family: 'Manrope', -apple-system, BlinkMacSystemFont,
+  --font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Roboto', Roboto, Arial, 'Noto Sans', serif, 'Apple Color Emoji', 'Segoe UI',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --heading-font-family: 'Rubik', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
@@ -64,11 +63,11 @@ button:focus-visible {
 }
 
 body {
-  --webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   font-family: var(--font-family);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--font-color);
   background: var(--navbar-color);
 }
@@ -78,7 +77,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin: 0 0 2rem;
   color: var(--font-color);
 }
@@ -119,17 +118,18 @@ h5 {
   line-height: 1.2;
   color: var(--heading-font-color);
   scroll-margin-top: 80px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3,
 h4,
 h5 {
   color: var(--secondary);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h4 {
+  font-weight: 400;
   letter-spacing: 0.05rem;
 }
 
@@ -568,6 +568,7 @@ tbody tr:last-child td:last-of-type {
 .hero p.subtitle {
   color: var(--dark-font-color);
   font-size: 1.3rem;
+  font-family: var(--post-font-family);
 }
 
 .hero .hero-buttons {
@@ -613,7 +614,7 @@ article header {
 
 article h1 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 0.75rem;
   color: var(--bright-font-color);
 }
@@ -631,7 +632,7 @@ article h4 {
 }
 
 article .description {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   margin-bottom: 0;
   color: var(--dark-font-color);
   font-family: var(--post-font-family);

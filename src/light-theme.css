@@ -52,3 +52,7 @@
 .light .filename {
   border: 1px solid #171717;
 }
+
+.light a.anchor.before svg {
+  fill: var(--primary);
+}
