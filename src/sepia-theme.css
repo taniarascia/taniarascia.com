@@ -45,3 +45,7 @@
 .sepia pre[class*='language-'] {
   border-color: var(--heading-font-color);
 }
+
+.sepia a.anchor.before svg {
+  fill: var(--secondary);
+}
