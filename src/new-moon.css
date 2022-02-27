@@ -6,7 +6,7 @@
 
 :root {
   --code-font-color: #b3b9c5;
-  --code-background-color: #353535;
+  --code-background-color: #373c47;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -59,13 +59,14 @@ pre[class*='language-'] {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   padding: 2px 3px;
   background: var(--inline-code-background-color) !important;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--inline-code-color) !important;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
   white-space: pre-wrap;
+  border-radius: 6px;
 }
 
 article a:hover code {
@@ -178,12 +179,12 @@ pre.language-terminal::before {
   left: -3.8rem;
   width: 3rem !important;
   letter-spacing: -1px;
-  border-right: 1px solid #444;
+  border-right: 1px solid rgba(245, 250, 255, 0.1);
   padding-right: 0.5rem;
 }
 
 .line-numbers-rows > span:before {
-  color: #777;
+  color: rgba(245, 250, 255, 0.3);
 }
 
 .gatsby-highlight {
@@ -205,7 +206,7 @@ pre.language-terminal::before {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #222;
+  background-color: #24272e;
   display: block;
   margin-left: -1.25rem;
   margin-right: -1rem;
@@ -221,7 +222,7 @@ pre.language-terminal::before {
   background: #171717;
   border: 1px solid var(--light-border-color);
   padding: 0.5rem 1.5rem;
-  color: #ccc;
+  color: rgba(245, 250, 255, 0.8);
   line-height: 1;
   font-size: 0.9rem;
   border-top-left-radius: 8px;

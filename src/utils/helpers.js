@@ -38,7 +38,7 @@ export function slugify(string) {
 export function getTheme() {
   const theme = localStorage.getItem('theme')
 
-  if (theme === 'dark') return 'github-dark'
+  if (theme === 'dark') return 'dark-blue'
   if (theme === 'sepia') return 'gruvbox-dark'
   if (theme === 'light') return 'github-light'
 

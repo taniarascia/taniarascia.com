@@ -16,7 +16,6 @@
   --toolbar-color: #332810;
   --toolbar-background-color: #fdf6e3;
   --font-color: #372e19;
-  --medium-font-color: #6b4a00;
   --dark-font-color: #6b4a00;
   --input-background: transparent;
   --bright-font-color: #211806;
@@ -33,6 +32,15 @@
   --scrollbar-track: #c8a961;
   --yellow: #e59e32;
   --button-color: var(--primary);
+  --button-font-color: white;
+}
+
+.sepia p,
+.sepia ol,
+.sepia ul,
+.sepia table,
+.sepia blockquote {
+  -webkit-font-smoothing: auto;
 }
 
 .sepia .comments {
