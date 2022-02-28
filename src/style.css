@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600&family=Quicksand&family=Roboto+Mono&family=Rubik:wght@300;400;500&family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Open+Sans:wght@400;600&family=Roboto+Mono&display=swap');
 
 :root {
   /* Colors */
@@ -39,7 +39,7 @@
 
   /* Font */
   --font-family: 'Open Sans', 'Source Sans 3', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', serif,
+    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
   --heading-font-family: 'League Spartan', -apple-system, BlinkMacSystemFont,
@@ -633,6 +633,7 @@ article h4 {
 article .description {
   font-size: 1.4rem;
   margin-bottom: 0;
+  line-height: 1.4;
   color: var(--dark-font-color);
 }
 
@@ -1150,7 +1151,7 @@ main {
   ul,
   table,
   blockquote {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 0 0 1.5rem;
   }
 
@@ -1297,7 +1298,7 @@ main {
   }
 
   article h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     line-height: 1.2;
   }
 
@@ -1310,7 +1311,7 @@ main {
   }
 
   article .description {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   a.post h3 {

@@ -15,7 +15,7 @@ import '../sepia-theme.css'
 function setDarkTheme(setTheme) {
   localStorage.setItem('theme', 'dark')
   setTheme('dark')
-  document.body.style.backgroundColor = '#252525'
+  document.body.style.backgroundColor = '#282c34'
 }
 
 function setLightTheme(setTheme) {
@@ -59,7 +59,7 @@ export const Layout = ({ children }) => {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
 
-    if (savedTheme === 'dark') setDarkTheme(setTheme)
+    if (savedTheme === 'dark' || !savedTheme) setDarkTheme(setTheme)
     if (savedTheme === 'sepia') setSepiaTheme(setTheme)
     if (savedTheme === 'light') setLightTheme(setTheme)
   }, [])
