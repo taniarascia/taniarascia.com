@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600&family=Quicksand&family=Roboto+Mono&family=Rubik:wght@300;400;500&family=Source+Sans+3&display=swap');
 
 :root {
   /* Colors */
@@ -7,41 +7,42 @@
   --link-color: white;
   --border-color: #111;
   --heading-font-color: var(--primary);
-  --background-color: #252525;
-  --sidebar-color: #2b2b2b;
-  --navbar-color: #181818;
-  --navbar-color-hover: #272727;
-  --sidebar-color-hover: #383838;
-  --sidebar-color-focus: #444;
-  --category-background-color: #161616;
-  --category-background-color-hover: #1f1f1f;
-  --light-border-color: #444;
+  --background-color: #282c34;
+  --sidebar-color: #373d49;
+  --navbar-color: #1c1e24;
+  --navbar-color-hover: #21242c;
+  --sidebar-color-hover: #464e5f;
+  --sidebar-color-focus: #57637c;
+  --category-background-color: #1c1e24;
+  --category-background-color-hover: #24272e;
+  --light-border-color: rgba(255, 255, 255, 0.1);
   --toolbar-background-color: #181818;
   --toolbar-color: #eee;
-  --font-color: #b3b9c5;
-  --medium-font-color: #aaa;
-  --dark-font-color: #838891;
+  --font-color: #d0d5df;
+  --dark-font-color: rgba(235, 240, 255, 0.5);
   --bright-font-color: #eee;
-  --input-background: #393939;
-  --blockquote-background-color: rgba(0, 0, 0, 0.4);
-  --blockquote-color: var(--dark-font-color);
+  --input-background: rgba(0, 0, 0, 0.3);
+  --blockquote-background-color: rgba(0, 0, 0, 0.3);
+  --blockquote-color: #b3b9c5;
   --black: #111;
-  --inline-code-background-color: rgba(255, 255, 255, 0.08);
-  --inline-code-color: #b3b9c5;
+  --inline-code-background-color: #393e4b;
+  --inline-code-color: #d0d5df;
   --dark-opacity: rgba(0, 0, 0, 0.2);
   --dark-opacity-hover: rgba(0, 0, 0, 0.3);
-  --reverse: #111;
-  --scrollbar: var(--border-color);
-  --scrollbar-track: var(--light-border-color);
+  --reverse: var(--background-color);
+  --scrollbar: var(--navbar-color);
+  --scrollbar-track: var(--sidebar-color-hover);
   --yellow: #ffd479;
   --button-color: #6b76f3;
+  --button-font-color: white;
   --page-width: 850px;
 
   /* Font */
-  --font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    'Roboto', Roboto, Arial, 'Noto Sans', serif, 'Apple Color Emoji', 'Segoe UI',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --heading-font-family: 'Rubik', -apple-system, BlinkMacSystemFont,
+  --font-family: 'Open Sans', 'Source Sans 3', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', serif,
+    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --heading-font-family: 'League Spartan', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
@@ -67,7 +68,7 @@ body {
   margin: 0;
   font-family: var(--font-family);
   font-size: 1rem;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--font-color);
   background: var(--navbar-color);
 }
@@ -77,7 +78,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   margin: 0 0 2rem;
   color: var(--font-color);
 }
@@ -135,7 +136,6 @@ h4 {
 
 a {
   text-decoration: none;
-  font-family: var(--post-font-family);
 }
 
 /* Button */
@@ -144,7 +144,7 @@ a.button {
   display: block;
   border: 1px solid var(--button-color) !important;
   background: var(--button-color);
-  color: var(--reverse);
+  color: var(--button-font-color);
   padding: 0.75rem 1.25rem;
   font-family: var(--post-font-family);
   border-radius: 8px;
@@ -155,6 +155,7 @@ a.button {
 }
 
 a.button:hover {
+  color: var(--button-font-color);
   background: var(--button-color);
   filter: brightness(1.2);
 }
@@ -375,9 +376,9 @@ tbody tr:last-child td:last-of-type {
   align-items: center;
   font-size: 0.85rem;
   line-height: 1.2;
-  color: var(--medium-font-color);
+  color: var(--font-color);
   padding: 0.4rem 1rem;
-  font-family: var(--heading-font-family);
+  font-family: var(--post-font-family);
   border-left: 3px solid transparent;
 }
 
@@ -562,13 +563,11 @@ tbody tr:last-child td:last-of-type {
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero p.subtitle {
-  color: var(--dark-font-color);
-  font-size: 1.3rem;
-  font-family: var(--post-font-family);
+  font-size: 1.2rem;
 }
 
 .hero .hero-buttons {
@@ -613,8 +612,8 @@ article header {
 }
 
 article h1 {
-  font-size: 2.5rem;
-  font-weight: 500;
+  font-size: 2.6rem;
+  font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--bright-font-color);
 }
@@ -623,7 +622,7 @@ article h2,
 article h3,
 article h4,
 article h5 {
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1rem 0;
 }
 
 article h4 {
@@ -635,7 +634,6 @@ article .description {
   font-size: 1.4rem;
   margin-bottom: 0;
   color: var(--dark-font-color);
-  font-family: var(--post-font-family);
 }
 
 .post-image {
@@ -691,7 +689,7 @@ article a {
 
 article a:hover {
   background: var(--primary);
-  color: var(--reverse);
+  color: var(--background-color);
   border-top: 2px solid var(--primary);
   border-bottom: 2px solid var(--primary);
 }
@@ -708,21 +706,22 @@ article img {
 }
 
 article h2 {
-  font-size: 1.9rem;
+  font-size: 2.2rem;
   padding-bottom: 0.25rem;
+  font-weight: 600;
 }
 
-article h2 code {
-  font-size: 2.2rem !important;
+article h2 code[class*='language-'] {
+  font-size: 2rem !important;
   border-bottom: 1px solid var(--border-color);
 }
 
 article h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
-article h3 code {
-  font-size: 1.6rem !important;
+article h3 code[class*='language-'] {
+  font-size: 1.8rem !important;
 }
 
 article h4 {
@@ -731,8 +730,8 @@ article h4 {
   text-transform: uppercase;
 }
 
-article h4 code {
-  font-size: 1.25rem !important;
+article h4 code[class*='language-'] {
+  font-size: 1rem !important;
 }
 
 article h5 {
@@ -997,6 +996,7 @@ a.gatsby-resp-image-link {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--light-border-color);
+  font-weight: 400;
 }
 
 .main-header a {
@@ -1328,6 +1328,10 @@ main {
   text-align: left;
 }
 
+#resume .container {
+  padding-top: 0;
+}
+
 #resume section h2,
 #resume section h3,
 #resume section h4,
@@ -1340,6 +1344,7 @@ main {
   margin-top: 2.5rem;
   font-size: 1.1rem;
   text-transform: uppercase;
+  font-weight: 400;
   border-bottom: 1px solid var(--light-border-color);
 }
 
@@ -1347,18 +1352,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #resume section h3 span {
   display: block;
   font-size: 1rem;
   font-weight: 400;
-}
-
-#resume section h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
 }
 
 #resume section p,
