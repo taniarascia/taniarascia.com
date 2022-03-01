@@ -1323,6 +1323,27 @@ main {
   }
 }
 
+#lists h2 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+#lists h3 {
+  margin-top: 0;
+}
+
+#lists img {
+  float: left;
+  height: 200px;
+  width: 200px;
+  margin-right: 1rem;
+}
+
+#lists p {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--light-border-color);
+}
+
 /* Resume */
 
 #resume header {

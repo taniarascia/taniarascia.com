@@ -70,7 +70,8 @@ pre[class*='language-'] {
 }
 
 article a:hover code {
-  color: var(--reverse) !important;
+  background: transparent !important;
+  color: var(--background-color) !important;
 }
 
 pre.language-text {
