@@ -32,7 +32,7 @@ export default function NoteTemplate({ data }) {
         </header>
 
         <section
-          className="container"
+          className="container notes"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>

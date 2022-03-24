@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Open+Sans:wght@400;600&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap');
 
 :root {
   /* Colors */
@@ -10,7 +10,7 @@
   --background-color: #282c34;
   --sidebar-color: #373d49;
   --navbar-color: #1c1e24;
-  --navbar-color-hover: #21242c;
+  --navbar-color-hover: #272a33;
   --sidebar-color-hover: #464e5f;
   --sidebar-color-focus: #57637c;
   --category-background-color: #1c1e24;
@@ -38,14 +38,12 @@
   --page-width: 850px;
 
   /* Font */
-  --font-family: 'Open Sans', 'Source Sans 3', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
-  --heading-font-family: 'League Spartan', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', 'Roboto', Roboto, Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --heading-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --post-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Roboto', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -65,6 +63,7 @@ button:focus-visible {
 
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   font-family: var(--font-family);
   font-size: 1rem;
@@ -78,7 +77,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   margin: 0 0 2rem;
   color: var(--font-color);
 }
@@ -130,8 +129,7 @@ h5 {
 }
 
 h4 {
-  font-weight: 400;
-  letter-spacing: 0.05rem;
+  font-weight: 600;
 }
 
 a {
@@ -563,7 +561,7 @@ tbody tr:last-child td:last-of-type {
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero p.subtitle {
@@ -707,22 +705,23 @@ article img {
 }
 
 article h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding-bottom: 0.25rem;
   font-weight: 600;
+  border-bottom: 1px solid var(--light-border-color);
 }
 
 article h2 code[class*='language-'] {
-  font-size: 2rem !important;
+  font-size: 1.8rem !important;
   border-bottom: 1px solid var(--border-color);
 }
 
 article h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 article h3 code[class*='language-'] {
-  font-size: 1.8rem !important;
+  font-size: 1.6rem !important;
 }
 
 article h4 {
@@ -776,7 +775,19 @@ blockquote ul:last-of-type {
   font-size: 1.75rem;
 }
 
+.comments.container {
+  padding-top: 0;
+}
+
 /* Posts */
+
+.notes p,
+.notes ul,
+.notes ol,
+.notes li {
+  font-family: Georgia;
+  font-size: 1.2rem;
+}
 
 .blog-page h2 {
   margin-top: 2.5rem;
@@ -997,7 +1008,6 @@ a.gatsby-resp-image-link {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--light-border-color);
-  font-weight: 400;
 }
 
 .main-header a {
