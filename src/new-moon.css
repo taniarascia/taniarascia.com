@@ -76,7 +76,8 @@ article a:hover code {
 
 pre.language-text {
   background: transparent;
-  margin-left: -1.5rem;
+  margin-left: 0;
+  padding-left: 0;
   padding-top: 0.5rem;
   padding-bottom: 0;
   border: none;
@@ -367,4 +368,12 @@ pre[class*='language-'] {
 
 .filename {
   margin-bottom: -1.9rem;
+}
+
+@media screen and (max-width: 600px) {
+  .gatsby-highlight,
+  .filename {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
 }
