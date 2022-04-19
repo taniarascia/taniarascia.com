@@ -369,11 +369,3 @@ pre[class*='language-'] {
 .filename {
   margin-bottom: -1.9rem;
 }
-
-@media screen and (max-width: 600px) {
-  .gatsby-highlight,
-  .filename {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
