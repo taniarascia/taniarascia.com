@@ -10,6 +10,7 @@ import laconia from '../../content/images/laconiaproject.png'
 import primitive from '../../content/images/primitiveproject.png'
 import chip8 from '../../content/images/chip8project.png'
 import newMoon from '../../content/images/new-moon.svg'
+import keyboardAccordion from '../../content/images/keyboardaccordionlogo.png'
 import github from '../assets/nav-github.png'
 import tr from '../assets/logo.png'
 
@@ -29,6 +30,14 @@ const projectsList = [
     The app allows plain text or markdown with previews, syncing,
     internal wiki style note-linking, drag-and-drop, prettier, syntax
     highlighting, light/dark mode, search, categorizing, and more!`,
+  },
+  {
+    name: 'Keyboard Accordion',
+    slug: 'accordion',
+    tagline: 'Play the accordion with your computer keyboard!',
+    image: keyboardAccordion,
+    url: 'https://www.keyboardaccordion.com',
+    writeup: '/musical-instrument-web-audio-api',
   },
   {
     name: 'New Moon',
