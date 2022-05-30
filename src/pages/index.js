@@ -170,6 +170,18 @@ export default function WebsiteIndex({ data }) {
             })}
           </div>
         </section>
+
+        <section className="segment">
+          <h2 className="heading">
+            <div>
+              <div className="title">Stay in touch</div>
+              <div className="description">
+                I like to build stuff for fun. Here are a few of the write-ups
+                I've made for my open-source projects.
+              </div>
+            </div>
+          </h2>
+        </section>
       </div>
     </>
   )

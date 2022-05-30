@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@300;400;500;700&display=swap');
 
 :root {
   --font-family--base: 'Inter', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', Arial, sans-serif;
   --font-family--monospace: 'IBM Plex Mono', Menlo, monospace;
+  --font-family--heading: 'IBM Plex Mono', Menlo, monospace;
   --font-color--base: #444;
   --font-color--muted: #777;
   --font-color--heading: #111;
@@ -58,7 +59,6 @@ h4,
 h5 {
   color: var(--font-color--heading);
   line-height: 1.1;
-  font-family: var(--font-family--heading);
   margin-top: 0;
   margin-bottom: var(--margin);
   font-weight: 600;
@@ -103,7 +103,7 @@ a.button:hover {
 }
 
 .segment {
-  margin: 5rem 0;
+  margin: 6rem 0;
 }
 
 .segment h2.heading {
@@ -225,9 +225,11 @@ a.button:hover {
 
 .hero h1 {
   margin-bottom: 0.75rem;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1;
   font-weight: 700;
+  letter-spacing: -0.05rem;
+  font-family: var(--font-family--heading);
 }
 
 /* Card */
@@ -244,7 +246,6 @@ a.button:hover {
   font-size: 1.1rem;
   line-height: 1.2;
   color: var(--font-color--base);
-  font-family: var(--font-family--heading);
   font-weight: 600;
   margin: 0.25rem 0 0.5rem;
 }
