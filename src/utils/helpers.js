@@ -35,6 +35,10 @@ export function slugify(string) {
   )
 }
 
+export function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 export function getTheme() {
   const theme = localStorage.getItem('theme')
 

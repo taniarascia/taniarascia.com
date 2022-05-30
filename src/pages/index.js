@@ -9,7 +9,7 @@ import { projectHighlights } from '../data/project-highlights'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
-import looking from '../assets/me.jpg'
+import { slugify } from '../utils/helpers'
 
 export default function WebsiteIndex({ data }) {
   const [followers, setFollowers] = useState(null)
@@ -83,14 +83,25 @@ export default function WebsiteIndex({ data }) {
           <div className="post-preview">
             {simplifiedLatest.map((post) => {
               return (
-                <div className="card">
+                <div className="anchored card">
                   <time>{post.date}</time>
                   <Link className="card-header" to={post.slug}>
                     {post.title}
                   </Link>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
+                  <div className="anchored categories">
+                    {post.categories
+                      .filter((cat) => cat !== 'Highlight')
+                      .map((cat) => {
+                        return (
+                          <Link
+                            className="cat"
+                            to={`/categories/${slugify(cat)}`}
+                          >
+                            {cat}
+                          </Link>
+                        )
+                      })}
+                  </div>
                 </div>
               )
             })}
@@ -154,16 +165,23 @@ export default function WebsiteIndex({ data }) {
                 <div className="card">
                   <div>
                     <time>{project.date}</time>
-                    <h2>{project.name}</h2>
+                    <a
+                      className="card-header"
+                      href={`https://github.com/taniarascia/${project.slug}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.name}
+                    </a>
                     <p>{project.tagline}</p>
                   </div>
                   <div className="links">
                     <Link className="button" to={project.writeup}>
                       Write-up
                     </Link>
-                    <Link className="button flex" to={project.url}>
+                    <a className="button flex" href={project.url}>
                       Demo
-                    </Link>
+                    </a>
                   </div>
                 </div>
               )
@@ -206,6 +224,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             tags
+            categories
           }
         }
       }

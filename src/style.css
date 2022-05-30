@@ -8,6 +8,7 @@
   --font-color--base: #444;
   --font-color--muted: #777;
   --font-color--heading: #111;
+  --font-color--bright: #111;
 
   --border-color: #e0e0e0;
   --border-color-hover: #a0a0a0;
@@ -15,9 +16,19 @@
 
   --card-background-color: #f6f6f6;
   --card-background-color-hover: #e0e0e0;
+  --button-background-color: white;
 
   --margin: 1.5rem;
   --content-width: 1300px;
+  --content-width--small: 550px;
+
+  --red: #f34646;
+  --orange: #ff7e22;
+  --yellow: #fca62a;
+  --blue: #07a7e6;
+  --green: #51b681;
+  --pink: #e855b3;
+  --indigo: #4e56e5;
 }
 
 *,
@@ -67,7 +78,7 @@ h5 {
 button,
 a.button {
   -webkit-appearance: none;
-  background: white;
+  background: var(--button-background-color);
   display: inline-flex;
   align-items: center;
   padding: 0.6rem 1rem;
@@ -89,7 +100,7 @@ a.button img {
 
 button:hover,
 a.button:hover {
-  color: var(--font-color--heading);
+  color: var(--font-color--bright);
   border-color: var(--border-color-hover);
 }
 
@@ -122,7 +133,7 @@ a.button:hover {
   font-size: 1.1rem;
   color: var(--font-color--muted);
   font-weight: 400;
-  max-width: 600px;
+  max-width: var(--content-width--small);
   line-height: 1.4;
 }
 
@@ -161,19 +172,28 @@ a.button:hover {
   align-items: center;
 }
 
-.navigation a.name {
+.navigation a.brand {
   font-size: 1.4rem;
-  color: var(--font-color--heading);
+  color: --font-color--bright;
   display: flex;
   align-items: center;
   line-height: 1.2;
   font-weight: 600;
 }
 
-.navigation a.name .subtitle {
+.navigation a.brand .name {
+  color: var(--font-color--bright);
+}
+
+.navigation a.brand:hover .name {
+  text-decoration: underline;
+}
+
+.navigation a.brand .subtitle {
   color: var(--font-color--muted);
   font-size: 0.9rem;
   font-weight: 400;
+  text-decoration: none;
 }
 
 .navigation .logo {
@@ -187,7 +207,8 @@ a.button:hover {
   gap: 2rem;
 }
 
-.navigation a.item {
+.navigation a.item,
+.navigation button.item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,16 +219,22 @@ a.button:hover {
   border-radius: var(--border-radius);
   border: 1px solid transparent;
   color: var(--font-color--base);
+  padding: 0;
+  line-height: 1;
 }
 
-.navigation a.item img {
+.navigation a.item img,
+.navigation button.item img {
   display: inline-block;
   height: 30px;
   width: 30px;
+  max-height: none;
+  margin: 0;
 }
 
-.navigation a.item:hover {
-  color: var(--font-color--heading);
+.navigation a.item:hover,
+.navigation button.item:hover {
+  color: var(--font-color--bright);
   text-decoration: underline;
 }
 
@@ -228,7 +255,7 @@ a.button:hover {
   font-size: 3.5rem;
   line-height: 1;
   font-weight: 700;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.1rem;
   font-family: var(--font-family--heading);
 }
 
@@ -238,6 +265,11 @@ a.button:hover {
   border-radius: 4px;
   background: var(--card-background-color);
   padding: var(--margin);
+  position: relative;
+}
+
+.card.anchored {
+  padding-bottom: 3.5rem;
 }
 
 .card a.card-header,
@@ -289,6 +321,7 @@ a.button:hover {
 .tags,
 .links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -298,17 +331,35 @@ a.tag {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   color: var(--font-color--muted);
+  background: var(--button-background-color);
 }
 
 a.tag:hover {
-  color: var(--font-color--heading);
+  color: var(--font-color--bright);
   border-color: var(--border-color-hover);
+}
+
+.categories.anchored {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+a.cat {
+  font-family: var(--font-family--monospace);
+  font-size: 0.8rem;
+  color: var(--font-color--muted);
+}
+
+a.cat:hover {
+  color: var(--font-color--bright);
+  text-decoration: underline;
 }
 
 /* Helpers */
 
 .width.small {
-  max-width: 600px;
+  max-width: var(--content-width--small);
 }
 
 .flex {
