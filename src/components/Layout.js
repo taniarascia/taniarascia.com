@@ -3,32 +3,10 @@ import { useLocation } from '@reach/router'
 import Helmet from 'react-helmet'
 
 import favicon from '../assets/nav-floppy.png'
-import { Sidebar } from './Sidebar'
 import { Navigation } from './Navigation'
 import { Footer } from './Footer'
 
 import '../style.css'
-import '../new-moon.css'
-import '../light-theme.css'
-import '../sepia-theme.css'
-
-function setDarkTheme(setTheme) {
-  localStorage.setItem('theme', 'dark')
-  setTheme('dark')
-  document.body.style.backgroundColor = '#282c34'
-}
-
-function setLightTheme(setTheme) {
-  localStorage.setItem('theme', 'light')
-  setTheme('light')
-  document.body.style.backgroundColor = 'white'
-}
-
-function setSepiaTheme(setTheme) {
-  localStorage.setItem('theme', 'sepia')
-  setTheme('sepia')
-  document.body.style.backgroundColor = '#f1e2c0'
-}
 
 function getMainClass(theme, collapsed) {
   let classString = theme
@@ -46,22 +24,10 @@ export const Layout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(true)
   const slug = location.pathname
 
-  const onUpdateTheme = (theme) => {
-    if (theme === 'dark') {
-      setSepiaTheme(setTheme)
-    } else if (theme === 'light') {
-      setDarkTheme(setTheme)
-    } else if (theme === 'sepia') {
-      setLightTheme(setTheme)
-    }
-  }
+  const onUpdateTheme = (theme) => {}
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-
-    if (savedTheme === 'dark' || !savedTheme) setDarkTheme(setTheme)
-    if (savedTheme === 'sepia') setSepiaTheme(setTheme)
-    if (savedTheme === 'light') setLightTheme(setTheme)
+    // const savedTheme = localStorage.getItem('theme')
   }, [])
 
   return (
@@ -71,14 +37,13 @@ export const Layout = ({ children }) => {
       </Helmet>
 
       <div className={getMainClass(theme, collapsed, slug)}>
-        <Sidebar setCollapsed={setCollapsed} />
         <Navigation
           setCollapsed={setCollapsed}
           onUpdateTheme={() => onUpdateTheme(theme)}
           theme={theme}
         />
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   )

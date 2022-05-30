@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
-import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
+import { projectHighlights } from '../data/project-highlights'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
-import floppy from '../assets/nav-floppy.png'
 import looking from '../assets/me.jpg'
 
 export default function WebsiteIndex({ data }) {
@@ -40,73 +40,137 @@ export default function WebsiteIndex({ data }) {
       <Helmet title={config.siteTitle} />
       <SEO />
 
-      <article className="hero">
-        <header>
-          <div className="container">
-            <div className="flex-content">
-              <div>
-                <h1>Hey, I'm Tania.</h1>
-                <p className="subtitle small">
-                  I'm a software engineer in Chicago. I love building
-                  open-source <Link to="/projects">projects</Link> and{' '}
-                  <Link to="/blog">writing</Link> about what I learn. This
-                  website is my digital garden—a compendium of the things I've
-                  learned and created over the years.
-                </p>
-              </div>
-              <img src={looking} alt="Me" className="main-image" />
-            </div>
-            <p className="hero-buttons">
-              <Link to="/me" className="hero-button">
-                <img src={floppy} alt="Me" />
-                More about me
-              </Link>
-              {followers && (
-                <a
-                  href="https://github.com/taniarascia"
-                  target="_blank"
-                  className="hero-button"
-                  rel="noreferrer"
-                >
-                  <img src={github} alt="GitHub" />
-                  <span className="bright">
-                    {Number(followers).toLocaleString()}
-                  </span>
-                  {' followers on GitHub'}
-                </a>
-              )}
+      <div className="container">
+        <header className="hero">
+          <div className="small width">
+            <h1>Hi, I'm Tania.</h1>
+            <p>
+              I'm a software engineer, open-sourcerer, and aspiring
+              accordionist. I like to read sci-fi books, ride my bike around the
+              city, record music, and write about the things that interest me.
             </p>
+            <p>This is my digital garden.</p>
           </div>
+          {/* <img src={looking} alt="Me" className="main-image" /> */}
+          {followers && (
+            <a
+              href="https://github.com/taniarascia"
+              className="button"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={github} alt="GitHub" />
+              <span className="bright">
+                {Number(followers).toLocaleString()}
+              </span>
+            </a>
+          )}
         </header>
 
-        <div className="container">
-          <h2 className="main-header">
-            <span>Latest Articles</span> <Link to="/blog">View All</Link>
+        <section className="segment">
+          <h2 className="heading">
+            <div>
+              <div className="title">Recent posts</div>
+              <div className="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </div>
+            </div>
+            <Link className="button" to="/blog">
+              View all
+            </Link>
           </h2>
-          <Posts data={simplifiedLatest} />
 
-          <h2 className="main-header">
-            <span>Highlights</span> <Link to="/blog">View All</Link>
-          </h2>
-          <Posts data={simplifiedHighlights} yearOnly />
-
-          <h2 className="main-header">Newsletter</h2>
-          <div className="flex-content">
-            <p>
-              Subscribe to the newsletter to get my latest content by email. Not
-              on any set schedule. Unsubscribe anytime.
-            </p>
-            <p className="hero-buttons">
-              <a
-                href="https://taniarascia.substack.com/subscribe"
-                className="button"
-              >
-                Subscribe
-              </a>
-            </p>
+          <div className="post-preview">
+            {simplifiedLatest.map((post) => {
+              return (
+                <div className="card">
+                  <time>{post.date}</time>
+                  <Link className="card-header" to={post.slug}>
+                    {post.title}
+                  </Link>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              )
+            })}
           </div>
-        </div>
-      </article>
+        </section>
+
+        <section className="segment">
+          <h2 className="heading">
+            <div>
+              <div className="title">Greatest hits</div>
+              <div className="description">
+                A few of the most popular articles, guides, tutorials, and
+                reference materials I've written over the years.
+              </div>
+            </div>
+          </h2>
+
+          <div className="highlight-preview">
+            {simplifiedHighlights.map((post) => {
+              return (
+                <div className="muted card flex">
+                  {post.thumbnail && <Img fixed={post.thumbnail} />}
+                  <div>
+                    <time>{post.date}</time>
+                    <Link className="card-header" to={post.slug}>
+                      {post.title}
+                    </Link>
+                    <div className="tags">
+                      {post.tags.map((tag) => {
+                        return (
+                          <Link className="tag" to={`/tags/${tag}`}>
+                            {tag}
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+
+        <section className="segment">
+          <h2 className="heading">
+            <div>
+              <div className="title">Side projects</div>
+              <div className="description">
+                I like to build stuff for fun. Here are a few of the write-ups
+                I've made for my open-source projects.
+              </div>
+            </div>
+            <Link className="button" to="/projects">
+              View all
+            </Link>
+          </h2>
+
+          <div className="post-preview">
+            {projectHighlights.map((project) => {
+              return (
+                <div className="card">
+                  <div>
+                    <time>{project.date}</time>
+                    <h2>{project.name}</h2>
+                    <p>{project.tagline}</p>
+                  </div>
+                  <div className="links">
+                    <Link className="button" to={project.writeup}>
+                      Write-up
+                    </Link>
+                    <Link className="button flex" to={project.url}>
+                      Demo
+                    </Link>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      </div>
     </>
   )
 }
@@ -116,7 +180,7 @@ WebsiteIndex.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 7
+      limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
@@ -135,7 +199,7 @@ export const pageQuery = graphql`
       }
     }
     highlights: allMarkdownRemark(
-      limit: 99
+      limit: 12
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { categories: { eq: "Highlight" } } }
     ) {
@@ -152,7 +216,7 @@ export const pageQuery = graphql`
             tags
             thumbnail {
               childImageSharp {
-                fixed(width: 25, height: 25) {
+                fixed(width: 45, height: 45) {
                   ...GatsbyImageSharpFixed
                 }
               }
