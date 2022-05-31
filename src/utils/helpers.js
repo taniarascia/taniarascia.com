@@ -15,10 +15,10 @@ export function getSimplifiedPosts(posts, options = {}) {
   }))
 }
 
-export function getCategoriesFromPosts(posts) {
+export function getTaxonomyFromPosts(posts, taxonomy) {
   return posts
     .reduce((acc, post) => {
-      return [...new Set([...acc, ...(post.categories || [])])]
+      return [...new Set([...acc, ...(post[taxonomy] || [])])]
     }, [])
     .sort()
 }
@@ -39,26 +39,15 @@ export function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export function getTheme() {
-  const theme = localStorage.getItem('theme')
-
-  if (theme === 'dark') return 'dark-blue'
-  if (theme === 'sepia') return 'gruvbox-dark'
-  if (theme === 'light') return 'github-light'
-
-  return 'github-dark'
-}
-
 export function appendComments(commentBox) {
   const commentScript = document.createElement('script')
-  const theme = getTheme()
 
   commentScript.async = true
   commentScript.src = 'https://utteranc.es/client.js'
   commentScript.setAttribute('repo', 'taniarascia/comments')
   commentScript.setAttribute('issue-term', 'pathname')
   commentScript.setAttribute('id', 'utterances')
-  commentScript.setAttribute('theme', theme)
+  commentScript.setAttribute('theme', 'github-light')
   commentScript.setAttribute('crossorigin', 'anonymous')
 
   if (commentBox && commentBox.current) {

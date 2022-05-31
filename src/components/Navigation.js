@@ -19,8 +19,6 @@ const socialNavItems = [
   { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
 ]
 
-const themeItems = [{ icon: moon, label: 'Theme' }]
-
 export const Navigation = ({ onUpdateTheme, theme }) => {
   return (
     <section className="navigation">
@@ -50,7 +48,7 @@ export const Navigation = ({ onUpdateTheme, theme }) => {
               <span>{item.label}</span>
             </a>
           ))}
-          <button className="item">
+          <button className="item" onClick={onUpdateTheme}>
             <img src={moon} alt={`${theme} theme`} />
             <span>{capitalize(theme)}</span>
           </button>

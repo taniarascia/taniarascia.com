@@ -5,10 +5,12 @@ import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
+import { Heading } from '../components/Heading'
 import { projectHighlights } from '../data/project-highlights'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
+import floppy from '../assets/nav-floppy.png'
 import { slugify } from '../utils/helpers'
 
 export default function WebsiteIndex({ data }) {
@@ -41,44 +43,59 @@ export default function WebsiteIndex({ data }) {
       <SEO />
 
       <div className="container">
-        <header className="hero">
-          <div className="small width">
-            <h1>Hi, I'm Tania.</h1>
-            <p>
-              I'm a software engineer, open-sourcerer, and aspiring
-              accordionist. I like to read sci-fi books, ride my bike around the
-              city, record music, and write about the things that interest me.
-            </p>
-            <p>This is my digital garden.</p>
+        <header className="hero home">
+          <div className="top">
+            <div className="padding pattern">
+              <div className="hero-prelude">Hi, my name is...</div>
+              <h1>Tania Rascia</h1>
+            </div>
           </div>
-          {/* <img src={looking} alt="Me" className="main-image" /> */}
-          {followers && (
-            <a
-              href="https://github.com/taniarascia"
-              className="button"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={github} alt="GitHub" />
-              <span className="bright">
-                {Number(followers).toLocaleString()}
-              </span>
-            </a>
-          )}
+          <div className="lines">
+            <div className="line blue" />
+            <div className="line purple" />
+            <div className="line violet" />
+            <div className="line lavender" />
+            <div className="line pink" />
+          </div>
+          <div className="bottom padding">
+            <div className="flex space-between align-end">
+              <div>
+                <p className="small width">
+                  I'm a software engineer, open-sourcerer, and aspiring
+                  accordionist. I like to read sci-fi books, ride my bike around
+                  the city, record music, and write about the things that
+                  interest me. This is my digital garden.
+                </p>
+              </div>
+              <div className="flex">
+                <Link to="/me" className="vhs-button">
+                  <div className="bold">More</div>
+                  <div className="light">About me</div>
+                </Link>
+                {followers && (
+                  <a
+                    href="https://github.com/taniarascia"
+                    className="vhs-button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="bold">
+                      {Number(followers).toLocaleString()}
+                    </div>
+                    <div className="light">Followers</div>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         </header>
 
         <section className="segment">
-          <h2 className="heading">
-            <div>
-              <div className="title">Recent posts</div>
-              <div className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </div>
-            </div>
-            <Link className="button" to="/blog">
-              View all
-            </Link>
-          </h2>
+          <Heading
+            title="Recent posts"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            slug="/blog"
+          />
 
           <div className="post-preview">
             {simplifiedLatest.map((post) => {
@@ -109,15 +126,11 @@ export default function WebsiteIndex({ data }) {
         </section>
 
         <section className="segment">
-          <h2 className="heading">
-            <div>
-              <div className="title">Greatest hits</div>
-              <div className="description">
-                A few of the most popular articles, guides, tutorials, and
-                reference materials I've written over the years.
-              </div>
-            </div>
-          </h2>
+          <Heading
+            title="Greatest hits"
+            description="A few of the most popular articles, guides, tutorials, and
+            reference materials I've written over the years."
+          />
 
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
@@ -146,18 +159,12 @@ export default function WebsiteIndex({ data }) {
         </section>
 
         <section className="segment">
-          <h2 className="heading">
-            <div>
-              <div className="title">Side projects</div>
-              <div className="description">
-                I like to build stuff for fun. Here are a few of the write-ups
-                I've made for my open-source projects.
-              </div>
-            </div>
-            <Link className="button" to="/projects">
-              View all
-            </Link>
-          </h2>
+          <Heading
+            title="Side projects"
+            description=" I like to build stuff for fun. Here are a few of the write-ups
+            I've made for my open-source projects."
+            slug="/projects"
+          />
 
           <div className="post-preview">
             {projectHighlights.map((project) => {
@@ -190,15 +197,7 @@ export default function WebsiteIndex({ data }) {
         </section>
 
         <section className="segment">
-          <h2 className="heading">
-            <div>
-              <div className="title">Stay in touch</div>
-              <div className="description">
-                I like to build stuff for fun. Here are a few of the write-ups
-                I've made for my open-source projects.
-              </div>
-            </div>
-          </h2>
+          <Heading title="Stay in touch" description="Lorem" />
         </section>
       </div>
     </>

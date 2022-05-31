@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
+import { Hero } from '../components/Hero'
 import config from '../utils/config'
 import takeNote from '../../content/thumbnails/tn.png'
 import laconia from '../../content/images/laconiaproject.png'
@@ -133,6 +134,8 @@ const projectsList = [
 
 export default function ProjectsIndex() {
   const [repos, setRepos] = useState([])
+  const title = 'Projects'
+  const description = 'Lorem'
 
   useEffect(() => {
     async function getStars() {
@@ -152,64 +155,54 @@ export default function ProjectsIndex() {
 
   return (
     <>
-      <Helmet title={`Projects | ${config.siteTitle}`} />
+      <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
 
-      <article>
-        <header>
-          <div className="container">
-            <h1>Projects</h1>
-            <p className="description">
-              A few highlights of my open-source projects. View them all{' '}
-              <a href="https://github.com/taniarascia">on GitHub</a>.
-            </p>
-          </div>
-        </header>
+      <Hero title={title} description={description} />
 
-        <section className="projects large container">
-          {projectsList.map((project) => (
-            <div className="project" key={project.name}>
-              <h2>{project.name}</h2>
-              {project.image && <img src={project.image} alt={project.name} />}
-              <div className="links tags">
-                {project.writeup && <Link to={project.writeup}>Write-up</Link>}
-                <a
-                  href={`https://github.com/taniarascia/${project.slug}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source
+      <div className="container">
+        {projectsList.map((project) => (
+          <div className="project" key={project.name}>
+            <h2>{project.name}</h2>
+            {project.image && <img src={project.image} alt={project.name} />}
+            <div className="links tags">
+              {project.writeup && <Link to={project.writeup}>Write-up</Link>}
+              <a
+                href={`https://github.com/taniarascia/${project.slug}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Source
+              </a>
+              {project.url && (
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  Demo
                 </a>
-                {project.url && (
-                  <a href={project.url} target="_blank" rel="noreferrer">
-                    Demo
-                  </a>
-                )}
-              </div>
-              <p className="description">{project.tagline}</p>
-              <div className="stars">
-                {repos.find((repo) => repo.name === project.slug) && (
-                  <>
-                    <img src={github} alt="Stargazers" />
-                    <span>
-                      <a
-                        href={`https://github.com/taniarascia/${project.slug}/stargazers`}
-                      >
-                        {Number(
-                          repos.find((repo) => repo.name === project.slug)
-                            .stargazers_count
-                        ).toLocaleString()}
-                      </a>
-                      {` stars on GitHub`}
-                    </span>
-                    <span></span>
-                  </>
-                )}
-              </div>
+              )}
             </div>
-          ))}
-        </section>
-      </article>
+            <p className="description">{project.tagline}</p>
+            <div className="stars">
+              {repos.find((repo) => repo.name === project.slug) && (
+                <>
+                  <img src={github} alt="Stargazers" />
+                  <span>
+                    <a
+                      href={`https://github.com/taniarascia/${project.slug}/stargazers`}
+                    >
+                      {Number(
+                        repos.find((repo) => repo.name === project.slug)
+                          .stargazers_count
+                      ).toLocaleString()}
+                    </a>
+                    {` stars on GitHub`}
+                  </span>
+                  <span></span>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   )
 }

@@ -10,10 +10,17 @@ import '../style.css'
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
 
-  const onUpdateTheme = (theme) => {}
+  const onUpdateTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
+  }
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
+
+    setTheme(savedTheme)
   }, [])
 
   return (

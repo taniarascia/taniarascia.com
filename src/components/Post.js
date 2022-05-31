@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
-export const Post = ({ node, query, prefix, hideDate, yearOnly }) => {
+export const Post = ({ node, query, prefix }) => {
   const date = new Date(node.date)
   const oneMonthAgo = new Date()
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
@@ -43,6 +42,7 @@ export const Post = ({ node, query, prefix, hideDate, yearOnly }) => {
       }
       return <h3>{title}</h3>
     }
+
     return <h3>{title}</h3>
   }
 
@@ -50,23 +50,10 @@ export const Post = ({ node, query, prefix, hideDate, yearOnly }) => {
     <Link
       to={prefix ? `/${prefix}${node.slug}` : node.slug}
       key={node.id}
-      className={isNew ? 'post new' : 'post'}
+      className="post"
     >
-      <span className="flex" style={{ alignItems: 'center' }}>
-        {node.thumbnail && (
-          <Img
-            fixed={node.thumbnail}
-            style={{ marginRight: '1rem', minWidth: '25px' }}
-          />
-        )}
-        {getTitle(node.title, query)}
-        <span className="new-badge">{isNew && 'New!'}</span>
-      </span>
-      <div>
-        {formattedDate && !hideDate && (
-          <time>{yearOnly ? formattedYear : formattedDate}</time>
-        )}
-      </div>
+      {getTitle(node.title, query)}
+      <time>{formattedDate}</time>
     </Link>
   )
 }

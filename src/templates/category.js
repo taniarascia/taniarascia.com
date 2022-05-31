@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
+import { Hero } from '../components/Hero'
+import { PostSidebarLayout } from '../components/PostSidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -19,22 +21,11 @@ export default function CategoryTemplate({ data, pageContext }) {
     <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
+      <Hero title={category} description={`${totalCount} ${message}`} hasBack />
 
-      <article>
-        <header>
-          <div className="container">
-            <h1>{category}</h1>
-            <p className="description">
-              <span className="count">{totalCount}</span>
-              {message}
-            </p>
-          </div>
-        </header>
-
-        <section className="container">
-          <Posts data={simplifiedPosts} />
-        </section>
-      </article>
+      <PostSidebarLayout>
+        <Posts data={simplifiedPosts} />
+      </PostSidebarLayout>
     </>
   )
 }

@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
+import { Hero } from '../components/Hero'
+import { PostSidebarLayout } from '../components/PostSidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -20,24 +22,11 @@ export default function TagTemplate({ data, pageContext }) {
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
 
-      <article>
-        <header>
-          <div className="container">
-            <h1>
-              <span>Posts tagged:</span>{' '}
-              <span className="primary-underline">{tag}</span>
-            </h1>
-            <p className="description">
-              <span className="count bright">{totalCount}</span>
-              {message}
-            </p>
-          </div>
-        </header>
+      <Hero title={tag} description={`${totalCount} ${message}`} />
 
-        <section className="container">
-          <Posts data={simplifiedPosts} />
-        </section>
-      </article>
+      <PostSidebarLayout>
+        <Posts data={simplifiedPosts} />
+      </PostSidebarLayout>
     </>
   )
 }

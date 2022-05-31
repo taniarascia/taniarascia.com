@@ -29,12 +29,12 @@ export const Search = ({ data }) => {
 
   return (
     <>
-      <div className="search-bar">
+      <div className="search-container">
         <input
           ref={searchRef}
           id="search"
           type="search"
-          className="search-input"
+          className="search"
           placeholder="Begin typing to search..."
           value={query}
           onChange={(e) => {
@@ -50,19 +50,17 @@ export const Search = ({ data }) => {
         />
       </div>
 
-      <section>
-        {query ? (
-          results.length > 0 ? (
-            <Posts data={results} showYears query={query} />
-          ) : (
-            <p style={{ marginTop: '2rem' }}>
-              Sorry, nothing matched that search.
-            </p>
-          )
+      {query ? (
+        results.length > 0 ? (
+          <Posts data={results} showYears query={query} />
         ) : (
-          <Posts data={data} showYears />
-        )}
-      </section>
+          <p style={{ marginTop: '2rem' }}>
+            Sorry, nothing matched that search.
+          </p>
+        )
+      ) : (
+        <Posts data={data} showYears />
+      )}
     </>
   )
 }
