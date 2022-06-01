@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import moon from '../assets/moon.png'
+// import moon from '../assets/moon.png'
 import blog from '../assets/nav-blog.png'
 import floppyLogo from '../assets/floppylogo.png'
 import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
 import projects from '../assets/nav-projects.png'
-import { capitalize } from '../utils/helpers'
 
 const mainNavItems = [
   { url: '/me', icon: floppy, label: 'About me' },
@@ -36,22 +35,20 @@ export const Navigation = ({ onUpdateTheme, theme }) => {
               to={item.url}
               key={item.label}
               activeClassName="active"
-              className="item"
+              className={`item ${item.label}`}
             >
-              <img src={item.icon} alt={item.label} />
+              {/* <img src={item.icon} alt={item.label} /> */}
               <span>{item.label}</span>
             </Link>
           ))}
-          {socialNavItems.map((item) => (
+          {/* {socialNavItems.map((item) => (
             <a href={item.url} key={item.label} className="item">
-              <img src={item.icon} alt={item.label} />
               <span>{item.label}</span>
             </a>
-          ))}
-          <button className="item" onClick={onUpdateTheme}>
+          ))} */}
+          {/* <button className="item" onClick={onUpdateTheme}>
             <img src={moon} alt={`${theme} theme`} />
-            <span>{capitalize(theme)}</span>
-          </button>
+          </button> */}
         </nav>
       </div>
     </section>

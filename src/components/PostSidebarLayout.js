@@ -4,7 +4,7 @@ import { PostSidebar } from './PostSidebar'
 
 export const PostSidebarLayout = ({ children }) => {
   return (
-    <section className="segment container page">
+    <section className="container page">
       <div className="grid">
         <div>{children}</div>
         <div>

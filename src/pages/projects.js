@@ -158,51 +158,56 @@ export default function ProjectsIndex() {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
 
-      <Hero title={title} description={description} />
-
-      <div className="container">
-        {projectsList.map((project) => (
-          <div className="project" key={project.name}>
-            <h2>{project.name}</h2>
-            {project.image && <img src={project.image} alt={project.name} />}
-            <div className="links tags">
-              {project.writeup && <Link to={project.writeup}>Write-up</Link>}
-              <a
-                href={`https://github.com/taniarascia/${project.slug}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Source
-              </a>
-              {project.url && (
-                <a href={project.url} target="_blank" rel="noreferrer">
-                  Demo
-                </a>
-              )}
-            </div>
-            <p className="description">{project.tagline}</p>
-            <div className="stars">
-              {repos.find((repo) => repo.name === project.slug) && (
-                <>
-                  <img src={github} alt="Stargazers" />
-                  <span>
-                    <a
-                      href={`https://github.com/taniarascia/${project.slug}/stargazers`}
-                    >
-                      {Number(
-                        repos.find((repo) => repo.name === project.slug)
-                          .stargazers_count
-                      ).toLocaleString()}
-                    </a>
-                    {` stars on GitHub`}
-                  </span>
-                  <span></span>
-                </>
-              )}
+      <header className="hero">
+        <div className="top">
+          <div className="hero-padding pattern">
+            <div className="container">
+              <div className="hero-prelude">Open-source</div>
+              <h1>Projects</h1>
             </div>
           </div>
-        ))}
-      </div>
+          <div className="lines vertical">
+            <div className="line red1" />
+            <div className="line red2" />
+            <div className="line red3" />
+            <div className="line red4" />
+            <div className="line red5" />
+          </div>
+        </div>
+      </header>
+
+      <section className="segment">
+        <div className="container">
+          <div className="highlight-preview">
+            {projectsList.map((project) => {
+              return (
+                <div className="muted card">
+                  <div>
+                    <time>{project.date}</time>
+                    <a
+                      className="card-header"
+                      href={`https://github.com/taniarascia/${project.slug}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.name}
+                    </a>
+                    <p>{project.tagline}</p>
+                  </div>
+                  <div className="links">
+                    <Link className="button" to={project.writeup}>
+                      Write-up
+                    </Link>
+                    <a className="button flex" href={project.url}>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -20,14 +20,27 @@ export default function PageTemplate({ data }) {
       />
       <SEO />
 
-      <Hero title={title} description={description} />
+      <header className="hero">
+        <div className="top">
+          <div className="hero-padding pattern">
+            <div className="container">
+              <div className="hero-prelude">Highest Quality</div>
+              <h1>{title}</h1>
+            </div>
+          </div>
+          <div className="lines vertical">
+            <div className="line blue1" />
+            <div className="line blue2" />
+            <div className="line blue3" />
+            <div className="line blue4" />
+            <div className="line blue5" />
+          </div>
+        </div>
+      </header>
 
       <section className="segment container page">
         <div className="grid">
-          <div
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            style={{ marginTop: '3rem' }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </section>
     </>

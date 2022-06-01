@@ -19,7 +19,7 @@ const madeWithLinks = [
 export const Footer = () => {
   return (
     <footer className="footer">
-      <section>
+      {/* <section>
         <nav>
           <span className="desktop-only">Made by Tania Rascia</span>
           {links.map((link) => (
@@ -47,7 +47,7 @@ export const Footer = () => {
             </a>
           ))}
         </nav>
-      </section>
+      </section> */}
     </footer>
   )
 }

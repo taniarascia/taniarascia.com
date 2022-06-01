@@ -6,7 +6,7 @@
 
 :root {
   --code-font-color: #b3b9c5;
-  --code-background-color: #373c47;
+  --code-background-color: #2d2d2d;
   --string: #92d192;
   --variable: #f2777a;
   --property: #abb2bf;
@@ -23,17 +23,21 @@
   --terminal-color: var(--code-font-color);
 }
 
+pre {
+  border: 0;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   color: var(--code-font-color);
-  font-family: var(--code-font-family);
+  font-family: 'Menlo', var(--font-family--monospace);
   font-size: 0.9rem !important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.6;
 
   -moz-tab-size: 2;
   -o-tab-size: 2;
@@ -46,41 +50,42 @@ pre[class*='language-'] {
 }
 
 pre[class*='language-'] {
+  -webkit-font-smoothing: subpixel-antialiased;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background: var(--code-background-color);
-  font-family: Menlo, monospace;
-  -webkit-font-smoothing: subpixel-antialiased;
   overflow: initial;
-  border-radius: 8px;
-  border: 1px solid var(--light-border-color);
-}
-
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-  -webkit-font-smoothing: subpixel-antialiased;
-  padding: 2px 3px;
-  background: var(--inline-code-background-color) !important;
-  font-weight: 500;
-  color: var(--inline-code-color) !important;
-  font-size: 0.95rem !important;
-  white-space: pre-wrap;
-  border-radius: 6px;
-}
-
-article a:hover code {
-  background: transparent !important;
-  color: var(--background-color) !important;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 16px 32px, rgb(0 0 0 / 8%) 0px 8px 20px;
 }
 
 pre.language-text {
+  -webkit-font-smoothing: subpixel-antialiased;
   background: transparent;
   margin-left: 0;
   padding-left: 0;
   padding-top: 0.5rem;
   padding-bottom: 0;
   border: none;
+}
+
+code.language-text {
+  color: var(--font-color--base);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: var(--card-background-color);
+  color: var(--font-color--base);
+  padding: 0.2rem 0.3rem;
+  font-weight: 500;
+  font-size: 1rem !important;
+}
+
+:not(pre) > a code[class*='language-'] {
+  color: var(--indigo);
 }
 
 .line-numbers-rows {
@@ -117,16 +122,6 @@ pre[class*='language-'].line-numbers {
   pre.language-shell .line-numbers-rows {
     display: none;
   }
-}
-
-code.language-text {
-  background: var(--light-background) !important;
-  color: var(--font-color) !important;
-  box-shadow: none;
-}
-
-pre.language-text code.language-text {
-  border: none;
 }
 
 code.language-shell::before {
@@ -198,6 +193,7 @@ pre.language-terminal::before {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   max-width: 999999px;
+  border-radius: 4px;
 }
 
 .gatsby-highlight pre[class*='language-'] {
@@ -208,12 +204,11 @@ pre.language-terminal::before {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #24272e;
+  background-color: #111;
   display: block;
-  margin-left: -1.25rem;
-  margin-right: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.25rem;
   border-left: 0.25rem solid #74cf74;
 }
 
@@ -221,15 +216,15 @@ pre.language-terminal::before {
   display: flex;
   align-items: center;
   margin-bottom: -2rem;
-  background: #171717;
-  border: 1px solid var(--light-border-color);
-  padding: 0.5rem 1.5rem;
-  color: rgba(245, 250, 255, 0.8);
+  background: linear-gradient(180deg, #535353 0%, #414141 100%);
+  padding: 0.5rem 1.5rem 0.9rem;
+  color: #cacaca;
+  justify-content: center;
   line-height: 1;
   font-size: 0.9rem;
+  font-weight: 400;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding-bottom: 0.9rem;
   font-family: var(--post-font-family);
 }
 
@@ -359,11 +354,6 @@ code[class*='language-'] ::selection {
   text-shadow: none;
   color: inherit;
   background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-'] {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .filename {

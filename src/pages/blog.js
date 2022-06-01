@@ -21,7 +21,23 @@ export default function BlogIndex({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
 
-      <Hero title={title} description={description} section="writing" />
+      <header className="hero">
+        <div className="top">
+          <div className="hero-padding pattern">
+            <div className="container">
+              <div className="hero-prelude">Notes and tutorials</div>
+              <h1>Writing</h1>
+            </div>
+          </div>
+          <div className="lines vertical">
+            <div className="line green1" />
+            <div className="line green2" />
+            <div className="line green3" />
+            <div className="line green4" />
+            <div className="line green5" />
+          </div>
+        </div>
+      </header>
 
       <PostSidebarLayout>
         <Posts data={simplifiedPosts} showYears />

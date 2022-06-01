@@ -22,6 +22,7 @@ export const PostSidebar = () => {
                   key={category.name}
                   to={`/categories/${slugify(category.name)}`}
                   className="category"
+                  activeClassName="active"
                 >
                   <div className="name">{category.name}</div>
                   <div className="count">{category.totalCount}</div>

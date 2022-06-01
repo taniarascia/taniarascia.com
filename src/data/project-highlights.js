@@ -3,7 +3,7 @@ export const projectHighlights = [
     name: 'Keyboard Accordion',
     date: '2022',
     slug: 'accordion',
-    tagline: 'Play the accordion with your computer keyboard!',
+    tagline: 'Play the accordion with your keyboard!',
     url: 'https://www.keyboardaccordion.com',
     writeup: '/musical-instrument-web-audio-api',
   },

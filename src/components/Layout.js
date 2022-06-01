@@ -6,6 +6,7 @@ import { Navigation } from './Navigation'
 import { Footer } from './Footer'
 
 import '../style.css'
+import '../new-moon.css'
 
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
@@ -32,7 +33,7 @@ export const Layout = ({ children }) => {
       <div className={theme}>
         <Navigation onUpdateTheme={() => onUpdateTheme(theme)} theme={theme} />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   )

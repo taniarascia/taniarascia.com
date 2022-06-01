@@ -25,7 +25,7 @@ export const Posts = ({
 
   if (showYears) {
     return years.map((year) => (
-      <section key={year}>
+      <section key={year} className="segment">
         <h2>{year}</h2>
         <div className="posts">
           {postsByYear[year].map((node) => (
@@ -36,18 +36,20 @@ export const Posts = ({
     ))
   } else {
     return (
-      <div className="posts">
-        {data.map((node) => (
-          <Post
-            key={node.id}
-            node={node}
-            query={query}
-            prefix={prefix}
-            hideDate={hideDate}
-            yearOnly={yearOnly}
-          />
-        ))}
-      </div>
+      <section className="segment small">
+        <div className="posts">
+          {data.map((node) => (
+            <Post
+              key={node.id}
+              node={node}
+              query={query}
+              prefix={prefix}
+              hideDate={hideDate}
+              yearOnly={yearOnly}
+            />
+          ))}
+        </div>
+      </section>
     )
   }
 }

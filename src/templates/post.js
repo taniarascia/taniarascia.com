@@ -23,51 +23,41 @@ export default function PostTemplate({ data }) {
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
 
-      <article>
-        <header>
-          <div className="container">
-            <div className="post-details">
-              {thumbnail && (
-                <div>
-                  <Img
-                    fixed={thumbnail.childImageSharp?.fixed}
-                    className="post-image"
-                  />
-                </div>
-              )}
-              Written by <Link to="/me">Tania Rascia</Link> on{' '}
-              <time>{date}</time>
+      <header className="post hero">
+        <div className="top">
+          <div className="hero-padding pattern">
+            <div className="container">
+              <div className="hero-prelude">
+                Written by <span className="highlight">Tania Rascia</span> on{' '}
+                <span className="highlight">{date}</span>
+              </div>
+              <h1>{title}</h1>
             </div>
-            <h1>{title}</h1>
-            <div className="post-meta">
-              {tags && (
-                <div className="tags">
-                  {tags.map((tag) => (
-                    <Link
-                      key={tag}
-                      to={`/tags/${slugify(tag)}`}
-                      className={`tag-${tag}`}
-                    >
-                      {tag}
-                    </Link>
-                  ))}
-                </div>
-              )}
+            <div className="lines vertical">
+              <div className="line rainbow1" />
+              <div className="line rainbow2" />
+              <div className="line rainbow3" />
+              <div className="line rainbow4" />
+              <div className="line rainbow5" />
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
+      <section className="segment container page">
         <div
           id={post.fields.slug}
-          className="container post-content"
+          className="medium width"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      </article>
-
-      <section id="comments" className="comments container">
-        <h3>Comments</h3>
-        <Comments commentBox={commentBox} />
       </section>
+
+      <div className="container">
+        <section id="comments" className="comments medium width">
+          <h3>Comments</h3>
+          <Comments commentBox={commentBox} />
+        </section>
+      </div>
     </>
   )
 }
@@ -98,3 +88,26 @@ export const pageQuery = graphql`
     }
   }
 `
+
+/* {thumbnail && (
+                <div>
+                  <Img
+                    fixed={thumbnail.childImageSharp?.fixed}
+                    className="post-image"
+                  />
+                </div>
+              )} */
+
+/* {tags && (
+                <div className="tags">
+                  {tags.map((tag) => (
+                    <Link
+                      key={tag}
+                      to={`/tags/${slugify(tag)}`}
+                      className={`tag-${tag}`}
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                </div>
+              )} */
