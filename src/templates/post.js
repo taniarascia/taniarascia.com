@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
+import { Hero } from '../components/Hero'
 import { Comments } from '../components/Comments'
 import config from '../utils/config'
 import { slugify, appendComments } from '../utils/helpers'
@@ -22,41 +23,26 @@ export default function PostTemplate({ data }) {
     <>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
-
-      <header className="post hero">
-        <div className="top">
-          <div className="hero-padding pattern">
-            <div className="container">
-              <div className="hero-prelude">
-                Written by <span className="highlight">Tania Rascia</span> on{' '}
-                <span className="highlight">{date}</span>
-              </div>
-              <h1>{title}</h1>
-            </div>
-            <div className="lines vertical">
-              <div className="line rainbow1" />
-              <div className="line rainbow2" />
-              <div className="line rainbow3" />
-              <div className="line rainbow4" />
-              <div className="line rainbow5" />
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section className="segment container page">
-        <div
-          id={post.fields.slug}
-          className="medium width"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </section>
+      <Hero title={title} post />
 
       <div className="container">
-        <section id="comments" className="comments medium width">
-          <h3>Comments</h3>
-          <Comments commentBox={commentBox} />
-        </section>
+        <div className="grid">
+          <div>
+            <section className="segment small">
+              <div
+                id={post.fields.slug}
+                className="post-content"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+            </section>
+
+            <section id="comments" className="segment comments">
+              <h3>Comments</h3>
+              <Comments commentBox={commentBox} />
+            </section>
+          </div>
+          <div>Hello</div>
+        </div>
       </div>
     </>
   )
@@ -95,19 +81,5 @@ export const pageQuery = graphql`
                     fixed={thumbnail.childImageSharp?.fixed}
                     className="post-image"
                   />
-                </div>
-              )} */
-
-/* {tags && (
-                <div className="tags">
-                  {tags.map((tag) => (
-                    <Link
-                      key={tag}
-                      to={`/tags/${slugify(tag)}`}
-                      className={`tag-${tag}`}
-                    >
-                      {tag}
-                    </Link>
-                  ))}
                 </div>
               )} */

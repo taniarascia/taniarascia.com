@@ -36,7 +36,7 @@ export const Posts = ({
     ))
   } else {
     return (
-      <section className="segment small">
+      <section className="segment">
         <div className="posts">
           {data.map((node) => (
             <Post

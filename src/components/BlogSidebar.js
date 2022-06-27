@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { slugify } from '../utils/helpers'
 import { useGetTaxonomies } from '../utils/hooks/useGetTaxonomies'
 
-export const PostSidebar = () => {
+export const BlogSidebar = () => {
   const data = useGetTaxonomies()
   const categories = data.categories.group
   const tags = data.tags.group
@@ -13,7 +13,7 @@ export const PostSidebar = () => {
     <aside className="post-sidebar">
       <div className="post-sidebar-card">
         <h2>Categories</h2>
-        <div className="vertical-list">
+        <div className="list">
           {categories
             .filter((category) => category.name !== 'Highlight')
             .map((category) => {
@@ -41,6 +41,7 @@ export const PostSidebar = () => {
                 key={tag.name}
                 to={`/tags/${slugify(tag.name)}`}
                 className="tag"
+                activeClassName="active"
               >
                 {tag.name}
               </Link>

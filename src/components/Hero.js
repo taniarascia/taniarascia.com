@@ -1,19 +1,30 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
-export const Hero = ({ prelude, title, description, hasBack, section }) => {
+export const Hero = ({
+  highlight,
+  subTitle,
+  title,
+  post,
+  color = 'rainbow',
+}) => {
   return (
-    <div className="container">
-      <header className={`hero ${section}`}>
-        {hasBack && (
-          <Link to="/blog" className="prelude">
-            &lt; Back
-          </Link>
-        )}
-        {prelude && <div className="hero-prelude">{prelude}</div>}
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </header>
-    </div>
+    <header className="hero">
+      <div className="container">
+        {/* {subTitle && (
+          <div className="sub-title">
+            {highlight && <span className="highlight">{highlight}</span>}
+            {subTitle}
+          </div>
+        )} */}
+        {title && <h1 className={post ? 'post-title' : ''}>{title}</h1>}
+      </div>
+      {!post && (
+        <div className="lines diagonal underneath">
+          {Array.from(Array(5)).map((_, i) => (
+            <div key={_} className={`line ${color}-${i + 1}`} />
+          ))}
+        </div>
+      )}
+    </header>
   )
 }

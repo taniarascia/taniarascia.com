@@ -5,15 +5,14 @@ import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
+import { Hero } from '../components/Hero'
 import { Heading } from '../components/Heading'
-import { projectHighlights } from '../data/project-highlights'
+import { projects } from '../data/projects'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
-import github from '../assets/nav-github.png'
-import floppy from '../assets/nav-floppy.png'
 import { slugify } from '../utils/helpers'
 
-export default function WebsiteIndex({ data }) {
+export default function Index({ data }) {
   const [followers, setFollowers] = useState(null)
   const latest = data.latest.edges
   const highlights = data.highlights.edges
@@ -41,70 +40,58 @@ export default function WebsiteIndex({ data }) {
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
-
-      <header className="hero home">
-        <div className="top">
-          <div className="hero-padding pattern">
-            <div className="container">
-              <div className="hero-prelude">Hi, my name is...</div>
-              <h1>Tania Rascia</h1>
-            </div>
-          </div>
-          <div className="lines vertical">
-            <div className="line rainbow1" />
-            <div className="line rainbow2" />
-            <div className="line rainbow3" />
-            <div className="line rainbow4" />
-            <div className="line rainbow5" />
-          </div>
+      <Hero subTitle="Hi, my name is" title="Hi, I'm Tania" />
+      <div className="container">
+        <div className="segment small width">
+          <p className="hero-description">
+            I'm a software engineer, writer, and aspiring accordionist. I like
+            to read science fiction, ride my bike, record music, and write about
+            the things that interest me.
+          </p>
+          <p className="hero-description">This is my digital garden.</p>
         </div>
-
-        <div className="bottom">
-          <div className="dots">
-            <div className="padding">
-              <div className="flex space-between align-end container">
-                <div>
-                  <div className="small width">
-                    <p>
-                      I'm a software engineer, open-sourcerer, and aspiring
-                      accordionist. I like to read sci-fi books, ride my bike
-                      around the city, record music, and write about the things
-                      that interest me. This is my digital garden.
-                    </p>
-                  </div>
+      </div>
+      <div className="vhs"></div>
+      {/* <div className="bottom">
+        <div className="dots">
+          <div className="padding">
+            <div className="flex space-between align-end container">
+              <div>
+                <div className="small width">
+                  <p>
+                    I'm a software engineer, open-sourcerer, and aspiring
+                    accordionist. I like to read sci-fi books, ride my bike
+                    around the city, record music, and write about the things
+                    that interest me. This is my digital garden.
+                  </p>
                 </div>
-                <div className="flex">
-                  <Link to="/me" className="vhs-button">
-                    <div className="bold">More</div>
-                    <div className="light">About me</div>
-                  </Link>
-                  {followers && (
-                    <a
-                      href="https://github.com/taniarascia"
-                      className="vhs-button"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <div className="bold">
-                        {Number(followers).toLocaleString()}
-                      </div>
-                      <div className="light">Followers</div>
-                    </a>
-                  )}
-                </div>
+              </div>
+              <div className="flex">
+                <Link to="/me" className="vhs-button">
+                  <div className="bold">More</div>
+                  <div className="light">About me</div>
+                </Link>
+                {followers && (
+                  <a
+                    href="https://github.com/taniarascia"
+                    className="vhs-button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="bold">
+                      {Number(followers).toLocaleString()}
+                    </div>
+                    <div className="light">watching</div>
+                  </a>
+                )}
               </div>
             </div>
           </div>
         </div>
-      </header>
-
+      </div> */}
       <div className="container">
         <section className="segment">
-          <Heading
-            title="Recent posts"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            slug="/blog"
-          />
+          <Heading title="Latest Posts" slug="/blog" />
 
           <div className="post-preview">
             {simplifiedLatest.map((post) => {
@@ -135,11 +122,7 @@ export default function WebsiteIndex({ data }) {
         </section>
 
         <section className="segment">
-          <Heading
-            title="Greatest hits"
-            description="A few of the most popular articles, guides, tutorials, and
-            reference materials I've written over the years."
-          />
+          <Heading title="Greatest Hits" />
 
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
@@ -170,52 +153,49 @@ export default function WebsiteIndex({ data }) {
         </section>
 
         <section className="segment">
-          <Heading
-            title="Side projects"
-            description=" I like to build stuff for fun. Here are a few of the write-ups
-            I've made for my open-source projects."
-            slug="/projects"
-          />
+          <Heading title="Side Projects" slug="/projects" />
 
           <div className="post-preview">
-            {projectHighlights.map((project) => {
-              return (
-                <div className="anchored card">
-                  <div>
-                    <time>{project.date}</time>
-                    <a
-                      className="card-header"
-                      href={`https://github.com/taniarascia/${project.slug}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {project.name}
-                    </a>
-                    <p>{project.tagline}</p>
+            {projects
+              .filter((project) => project.highlight)
+              .map((project) => {
+                return (
+                  <div className="anchored card">
+                    <div>
+                      <time>{project.date}</time>
+                      <a
+                        className="card-header"
+                        href={`https://github.com/taniarascia/${project.slug}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.name}
+                      </a>
+                      <p>{project.tagline}</p>
+                    </div>
+                    <div className="anchored links">
+                      <Link className="button" to={project.writeup}>
+                        Article
+                      </Link>
+                      <a className="button flex" href={project.url}>
+                        Demo
+                      </a>
+                    </div>
                   </div>
-                  <div className="anchored links">
-                    <Link className="button" to={project.writeup}>
-                      Write-up
-                    </Link>
-                    <a className="button flex" href={project.url}>
-                      Demo
-                    </a>
-                  </div>
-                </div>
-              )
-            })}
+                )
+              })}
           </div>
         </section>
 
         <section className="segment">
-          <Heading title="Stay in touch" description="Lorem" />
+          <Heading title="Stay in touch" />
         </section>
       </div>
     </>
   )
 }
 
-WebsiteIndex.Layout = Layout
+Index.Layout = Layout
 
 export const pageQuery = graphql`
   query IndexQuery {

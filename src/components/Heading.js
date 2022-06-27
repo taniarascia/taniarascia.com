@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 
 export const Heading = ({ title, description, slug }) => {
   return (
-    <h2 className="heading">
+    <h2 className="home-heading">
       <div>
         <div className="title">{title}</div>
-        <div className="description">{description}</div>
+        {description && <div className="description">{description}</div>}
       </div>
       {slug && (
         <Link className="button" to={slug}>

@@ -6,7 +6,7 @@ import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
 import { Hero } from '../components/Hero'
-import { PostSidebarLayout } from '../components/PostSidebarLayout'
+import { SidebarLayout } from '../components/SidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -16,38 +16,17 @@ export default function CategoryTemplate({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const message =
-    totalCount === 1
-      ? ' post found with the category:'
-      : ' posts found with the category:'
+    totalCount === 1 ? ' post categorized as:' : ' posts categorized as:'
 
   return (
     <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
+      <Hero highlight={totalCount} subTitle={message} title={category} />
 
-      <header className="hero">
-        <div className="top">
-          <div className="hero-padding pattern">
-            <div className="container">
-              <div className="hero-prelude">
-                <span className="highlight">{totalCount}</span> {message}
-              </div>
-              <h1>{category}</h1>
-            </div>
-          </div>
-          <div className="lines vertical">
-            <div className="line green1" />
-            <div className="line green2" />
-            <div className="line green3" />
-            <div className="line green4" />
-            <div className="line green5" />
-          </div>
-        </div>
-      </header>
-
-      <PostSidebarLayout>
+      <SidebarLayout>
         <Posts data={simplifiedPosts} />
-      </PostSidebarLayout>
+      </SidebarLayout>
     </>
   )
 }

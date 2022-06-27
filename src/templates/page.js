@@ -13,34 +13,17 @@ export default function PageTemplate({ data }) {
 
   return (
     <>
-      <Helmet
-        title={`${title === 'Tania Rascia' ? 'Resume' : title} | ${
-          config.siteTitle
-        }`}
-      />
-      <SEO />
+      <Helmet title={`${title} | ${config.siteTitle}`} />
+      <SEO customDescription={description} />
 
-      <header className="hero">
-        <div className="top">
-          <div className="hero-padding pattern">
-            <div className="container">
-              <div className="hero-prelude">Highest Quality</div>
-              <h1>{title}</h1>
-            </div>
-          </div>
-          <div className="lines vertical">
-            <div className="line blue1" />
-            <div className="line blue2" />
-            <div className="line blue3" />
-            <div className="line blue4" />
-            <div className="line blue5" />
-          </div>
-        </div>
-      </header>
+      <Hero subTitle={description} title={title} color="blue" />
 
-      <section className="segment container page">
+      <section className="small segment container">
         <div className="grid">
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div
+            className="post-content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
         </div>
       </section>
     </>

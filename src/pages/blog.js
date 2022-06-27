@@ -5,48 +5,31 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
-import { PostSidebarLayout } from '../components/PostSidebarLayout'
+import { SidebarLayout } from '../components/SidebarLayout'
 import { Hero } from '../components/Hero'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function BlogIndex({ data }) {
+export default function Blog({ data }) {
   const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const title = 'Writing'
-  const description = 'Lorem'
+  const description = 'Notes and tutorials'
 
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
+      <Hero subTitle={description} title={title} color="green" />
 
-      <header className="hero">
-        <div className="top">
-          <div className="hero-padding pattern">
-            <div className="container">
-              <div className="hero-prelude">Notes and tutorials</div>
-              <h1>Writing</h1>
-            </div>
-          </div>
-          <div className="lines vertical">
-            <div className="line green1" />
-            <div className="line green2" />
-            <div className="line green3" />
-            <div className="line green4" />
-            <div className="line green5" />
-          </div>
-        </div>
-      </header>
-
-      <PostSidebarLayout>
+      <SidebarLayout>
         <Posts data={simplifiedPosts} showYears />
-      </PostSidebarLayout>
+      </SidebarLayout>
     </>
   )
 }
 
-BlogIndex.Layout = Layout
+Blog.Layout = Layout
 
 export const blogQuery = graphql`
   query BlogQuery {

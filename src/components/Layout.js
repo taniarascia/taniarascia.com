@@ -5,7 +5,13 @@ import favicon from '../assets/nav-floppy.png'
 import { Navigation } from './Navigation'
 import { Footer } from './Footer'
 
-import '../style.css'
+import '../styles/variables.css'
+import '../styles/base.css'
+import '../styles/buttons.css'
+import '../styles/navigation.css'
+import '../styles/patterns.css'
+import '../styles/layout.css'
+import '../styles/projects.css'
 import '../new-moon.css'
 
 export const Layout = ({ children }) => {
