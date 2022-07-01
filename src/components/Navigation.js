@@ -21,18 +21,15 @@ const socialNavItems = [
 ]
 
 const findColor = (path) => {
-  switch (path) {
-    case '/':
-      return 'rainbow'
-    case '/me':
-      return 'blue'
-    case '/blog':
-      return 'green'
-    case '/projects':
-      return 'red'
-    default:
-      return ''
-  }
+  if (path === '/') return 'rainbow'
+  if (path === '/me') return 'blue'
+  if (
+    path === '/blog' ||
+    path.includes('/categories/') ||
+    path.includes('/tags/')
+  )
+    return 'green'
+  if (path === '/projects') return 'red'
 }
 
 export const Navigation = () => {

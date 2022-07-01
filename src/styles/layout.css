@@ -62,7 +62,7 @@
 /* Hero */
 
 .hero {
-  background: var(--navbar);
+  background: var(--gray-8);
   padding: 2rem 0;
   position: relative;
   overflow: hidden;
@@ -85,13 +85,17 @@
 }
 
 p.hero-description {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  color: var(--gray-6);
+  -webkit-font-smoothing: antialiased;
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: var(--gray-4);
+  font-weight: 500;
 }
 
 .hero .sub-title {
-  color: rgba(0, 0, 0, 0.5);
+  -webkit-font-smoothing: antialiased;
+  color: var(--gray-5);
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.1rem;
@@ -113,8 +117,19 @@ p.hero-description {
 
 .project-preview {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .project-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project-preview {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .post-preview .card p {

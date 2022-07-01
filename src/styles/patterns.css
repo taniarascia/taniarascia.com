@@ -20,10 +20,11 @@
 /* Lines */
 
 .lines.diagonal {
-  transform: rotate(-35deg);
+  /* transform: rotate(-35deg); */
+  transform: rotate(-90deg);
   position: absolute;
   top: 0;
-  right: -180px;
+  right: -220px;
   height: 100%;
   width: 100%;
 }
@@ -32,13 +33,17 @@
   height: 10px;
 }
 
-.lines.underneath {
-  right: -106px;
+.lines.in-hero-index {
+  right: -333px;
+}
+
+.lines.in-hero {
+  right: -271px;
 }
 
 .line {
   margin-top: -2px;
-  height: 60px;
+  height: 80px;
 }
 
 /* Colors */

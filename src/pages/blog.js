@@ -14,7 +14,7 @@ export default function Blog({ data }) {
   const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const title = 'Writing'
-  const description = 'Notes and tutorials'
+  const description = 'Notes & tutorials'
 
   return (
     <>

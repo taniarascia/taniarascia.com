@@ -40,18 +40,10 @@ export default function Index({ data }) {
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <Hero subTitle="Hi, my name is" title="Hi, I'm Tania" />
-      <div className="container">
-        <div className="segment small width">
-          <p className="hero-description">
-            I'm a software engineer, writer, and aspiring accordionist. I like
-            to read science fiction, ride my bike, record music, and write about
-            the things that interest me.
-          </p>
-          <p className="hero-description">This is my digital garden.</p>
-        </div>
-      </div>
-      <div className="vhs"></div>
+      <Hero index title="Hi, I'm Tania">
+        I'm a software engineer, writer, and aspiring accordionist. This is my
+        digital garden.
+      </Hero>
       {/* <div className="bottom">
         <div className="dots">
           <div className="padding">
