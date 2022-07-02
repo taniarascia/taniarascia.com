@@ -1,4 +1,4 @@
-export const projects = [
+export const projectsList = [
   {
     name: 'taniarascia.com',
     date: '2022',

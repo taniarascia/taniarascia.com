@@ -4,11 +4,12 @@
  Source: https://github.com/taniarascia/new-moon
 */
 
+/* Light */
 :root {
-  --code-font-color: #0e2a35;
+  --code-font-color: #232529;
   --code-background-color: var(--gray-0);
   --string: #3b9039;
-  --variable: #e45649;
+  --variable: #383a41;
   --property: #565656;
   --number: #da7430;
   --operator: #a87200;
@@ -150,6 +151,7 @@ code.language-terminal {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   white-space: pre-wrap;
+  word-break: break-all;
 }
 
 pre.language-terminal::before {

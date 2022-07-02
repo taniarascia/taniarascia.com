@@ -6,7 +6,6 @@ import { Layout } from '../components/Layout'
 import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
 import { SidebarLayout } from '../components/SidebarLayout'
-import { Hero } from '../components/Hero'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -20,9 +19,11 @@ export default function Blog({ data }) {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
-      <Hero subTitle={description} title={title} color="green" />
 
       <SidebarLayout>
+        <div className="hero">
+          <h1>{title}</h1>
+        </div>
         <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
     </>

@@ -8,13 +8,11 @@ import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Hero } from '../components/Hero'
 import config from '../utils/config'
-import { projects } from '../data/projects'
+import { projectsList } from '../data/projectsList'
 
 export default function Projects() {
   const [repos, setRepos] = useState([])
   const title = 'Projects'
-
-  console.log(repos)
 
   useEffect(() => {
     async function getStars() {
@@ -36,12 +34,12 @@ export default function Projects() {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
-      <Hero subTitle="Open-source" title={title} color="red" />
+      <Hero title={title} color="red" />
 
       <section className="segment">
         <div className="container">
           <div className="project-preview">
-            {projects.map((project) => {
+            {projectsList.map((project) => {
               return (
                 <div className="card anchored large">
                   <div className="stars">

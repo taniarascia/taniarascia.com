@@ -10,7 +10,7 @@ export const Hero = ({
   index,
 }) => {
   return (
-    <header className="hero">
+    <header className={`hero ${index ? 'index' : ''}`}>
       <div className="container">
         {subTitle && (
           <div className="sub-title">
@@ -19,15 +19,15 @@ export const Hero = ({
           </div>
         )}
         {title && <h1 className={post ? 'post-title' : ''}>{title}</h1>}
-        {children && <p className="hero-description small width">{children}</p>}
+        {children && children}
       </div>
-      {!post && (
+      {/* {!post && color !== 'none' && (
         <div className={`lines diagonal in-hero${index ? '-index' : ''}`}>
           {Array.from(Array(5)).map((_, i) => (
             <div key={_} className={`line ${color}-${i + 1}`} />
           ))}
         </div>
-      )}
+      )} */}
     </header>
   )
 }

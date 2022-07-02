@@ -1,19 +1,18 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
-import { Hero } from '../components/Hero'
 import { Heading } from '../components/Heading'
-import { projects } from '../data/projects'
+import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import { slugify } from '../utils/helpers'
+import me from '../../content/images/tania2020small.jpg'
 
 export default function Index({ data }) {
-  const [followers, setFollowers] = useState(null)
   const latest = data.latest.edges
   const highlights = data.highlights.edges
   const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
@@ -23,64 +22,22 @@ export default function Index({ data }) {
     [highlights]
   )
 
-  useEffect(() => {
-    async function getGithubAPI() {
-      const response = await fetch('https://api.github.com/users/taniarascia')
-      const data = await response.json()
-
-      return data
-    }
-
-    getGithubAPI().then((data) => {
-      setFollowers(data.followers)
-    })
-  }, [])
-
   return (
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <Hero index title="Hi, I'm Tania">
-        I'm a software engineer, writer, and aspiring accordionist. This is my
-        digital garden.
-      </Hero>
-      {/* <div className="bottom">
-        <div className="dots">
-          <div className="padding">
-            <div className="flex space-between align-end container">
-              <div>
-                <div className="small width">
-                  <p>
-                    I'm a software engineer, open-sourcerer, and aspiring
-                    accordionist. I like to read sci-fi books, ride my bike
-                    around the city, record music, and write about the things
-                    that interest me. This is my digital garden.
-                  </p>
-                </div>
-              </div>
-              <div className="flex">
-                <Link to="/me" className="vhs-button">
-                  <div className="bold">More</div>
-                  <div className="light">About me</div>
-                </Link>
-                {followers && (
-                  <a
-                    href="https://github.com/taniarascia"
-                    className="vhs-button"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="bold">
-                      {Number(followers).toLocaleString()}
-                    </div>
-                    <div className="light">watching</div>
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
+      <div className="container hero-grid">
+        <div>
+          <img src={me} alt="Tania Rascia" className="hero-image" />
         </div>
-      </div> */}
+        <div className="hero small width">
+          <h1>Hi, I'm Tania</h1>
+          <p className="hero-description">
+            I'm a software developer who occasionally creates open-source
+            projects. I like accordions, board games, and comedy.
+          </p>
+        </div>
+      </div>
       <div className="container">
         <section className="segment">
           <Heading title="Latest Posts" slug="/blog" />
@@ -114,7 +71,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment">
-          <Heading title="Greatest Hits" />
+          <Heading title="Popular Tutorials" />
 
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
@@ -126,17 +83,6 @@ export default function Index({ data }) {
                     <Link className="card-header" to={post.slug}>
                       {post.title}
                     </Link>
-                    <div className="tags">
-                      {post.tags
-                        .filter((tag, i) => i < 3)
-                        .map((tag) => {
-                          return (
-                            <Link className="tag" to={`/tags/${tag}`}>
-                              {tag}
-                            </Link>
-                          )
-                        })}
-                    </div>
                   </div>
                 </div>
               )
@@ -148,7 +94,7 @@ export default function Index({ data }) {
           <Heading title="Side Projects" slug="/projects" />
 
           <div className="post-preview">
-            {projects
+            {projectsList
               .filter((project) => project.highlight)
               .map((project) => {
                 return (
@@ -181,6 +127,20 @@ export default function Index({ data }) {
 
         <section className="segment">
           <Heading title="Stay in touch" />
+          <p>
+            If I write something new, I'll let you know via newsletter. I don't
+            update often, and don't spam ever.
+          </p>
+          <p>
+            <a
+              href="https://taniarascia.substack.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button"
+            >
+              Subscribe to the Newsletter
+            </a>
+          </p>
         </section>
       </div>
     </>

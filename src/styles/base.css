@@ -97,7 +97,8 @@ h5 {
 
 h1:not(:first-child),
 h2:not(:first-child),
-h3:not(:first-child) {
+h3:not(:first-child),
+h4:not(:first-child) {
   margin-top: 3rem;
 }
 
@@ -138,10 +139,6 @@ h4 code {
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
-  background: var(--navbar);
-  color: white;
-  padding: 0.4rem 0.6rem;
-  border-radius: var(--border-radius);
 }
 
 h5 {

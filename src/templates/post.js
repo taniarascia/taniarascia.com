@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
-import { Hero } from '../components/Hero'
+import { PostSidebar } from '../components/PostSidebar'
 import { Comments } from '../components/Comments'
 import config from '../utils/config'
-import { slugify, appendComments } from '../utils/helpers'
+import { appendComments } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { tags, title, date, thumbnail } = post.frontmatter
+  const { tags, categories, title, date, thumbnail } = post.frontmatter
   const commentBox = React.createRef()
 
   useEffect(() => {
@@ -23,11 +22,13 @@ export default function PostTemplate({ data }) {
     <>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
-      <Hero title={title} post />
 
       <div className="container">
         <div className="grid">
-          <div>
+          <div className="article-content">
+            <div className="post-header medium width">
+              <h1>{title}</h1>
+            </div>
             <section className="segment small">
               <div
                 id={post.fields.slug}
@@ -41,7 +42,15 @@ export default function PostTemplate({ data }) {
               <Comments commentBox={commentBox} />
             </section>
           </div>
-          <div>Hello</div>
+
+          <div>
+            <PostSidebar
+              date={date}
+              tags={tags}
+              categories={categories}
+              thumbnail={thumbnail}
+            />
+          </div>
         </div>
       </div>
     </>
@@ -62,6 +71,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+        categories
         description
         thumbnail {
           childImageSharp {
@@ -74,12 +84,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-/* {thumbnail && (
-                <div>
-                  <Img
-                    fixed={thumbnail.childImageSharp?.fixed}
-                    className="post-image"
-                  />
-                </div>
-              )} */

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { useLocation } from '@reach/router'
 
 import { ExternalLinkIcon } from '../assets/ExternalLinkIcon'
 import blog from '../assets/nav-blog.png'
@@ -20,22 +19,7 @@ const socialNavItems = [
   { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
 ]
 
-const findColor = (path) => {
-  if (path === '/') return 'rainbow'
-  if (path === '/me') return 'blue'
-  if (
-    path === '/blog' ||
-    path.includes('/categories/') ||
-    path.includes('/tags/')
-  )
-    return 'green'
-  if (path === '/projects') return 'red'
-}
-
 export const Navigation = () => {
-  const location = useLocation()
-  const color = findColor(location.pathname)
-
   return (
     <section className="navigation">
       <div className="container">
@@ -68,13 +52,6 @@ export const Navigation = () => {
           ))}
         </nav>
       </div>
-      {color && (
-        <div className="lines diagonal">
-          {Array.from(Array(5)).map((_, i) => (
-            <div key={_} className={`line ${color}-${i + 1}`} />
-          ))}
-        </div>
-      )}
     </section>
   )
 }
