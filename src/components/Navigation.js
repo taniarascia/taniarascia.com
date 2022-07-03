@@ -19,7 +19,7 @@ const socialNavItems = [
   { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
 ]
 
-export const Navigation = () => {
+export const Navigation = ({ theme, onUpdateTheme }) => {
   return (
     <section className="navigation">
       <div className="container">
@@ -53,6 +53,9 @@ export const Navigation = () => {
             </a>
           ))}
         </nav>
+        <button className="theme-toggle" onClick={onUpdateTheme}>
+          {theme === 'dark' ? 'Dark' : 'Light'}
+        </button>
       </div>
     </section>
   )

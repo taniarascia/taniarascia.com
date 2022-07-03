@@ -84,11 +84,23 @@
   border-bottom-color: var(--rainbow-1);
 }
 
-@media screen and (min-width: 550px) {
-  .navigation .container {
-    align-items: flex-end;
-  }
+button.theme-toggle {
+  margin-left: auto;
+  padding: 0 0.5rem;
+  background: var(--gray-8);
+  border-color: var(--gray-7);
+  color: var(--gray-0);
+}
 
+button.theme-toggle:hover {
+  margin-left: auto;
+  padding: 0 0.5rem;
+  background: var(--gray-7);
+  border-color: var(--gray-6);
+  color: white;
+}
+
+@media screen and (min-width: 550px) {
   .navigation a.brand {
     display: flex;
     align-items: center;

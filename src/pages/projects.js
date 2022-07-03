@@ -41,7 +41,7 @@ export default function Projects() {
           <div className="project-preview">
             {projectsList.map((project) => {
               return (
-                <div className="card anchored large">
+                <div className="card anchored large" key={project.slug}>
                   <div className="stars">
                     {repos.find((repo) => repo.name === project.slug) && (
                       <div className="star">

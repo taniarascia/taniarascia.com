@@ -70,6 +70,7 @@
   --border-radius: 4px;
 
   /* Elements */
+  --background-color: white;
   --card-background-color: var(--gray-05);
   --button-background-color: white;
   --marker: #da66b7;

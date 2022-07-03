@@ -39,7 +39,7 @@ export default function Index({ data }) {
           <div className="post-preview">
             {simplifiedLatest.map((post) => {
               return (
-                <div className="anchored card">
+                <div className="anchored card" key={post.slug}>
                   <time>{post.date}</time>
                   <Link className="card-header" to={post.slug}>
                     {post.title}
@@ -52,6 +52,7 @@ export default function Index({ data }) {
                           <Link
                             className="cat"
                             to={`/categories/${slugify(cat)}`}
+                            key={slugify(cat)}
                           >
                             {cat}
                           </Link>
@@ -70,7 +71,7 @@ export default function Index({ data }) {
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
               return (
-                <div className="muted card flex">
+                <div className="muted card flex" key={`popular-${post.slug}`}>
                   {post.thumbnail && <Img fixed={post.thumbnail} />}
                   <div>
                     <time>{post.date}</time>
@@ -92,7 +93,7 @@ export default function Index({ data }) {
               .filter((project) => project.highlight)
               .map((project) => {
                 return (
-                  <div className="anchored card">
+                  <div className="anchored card" key={project.slug}>
                     <div>
                       <time>{project.date}</time>
                       <a
