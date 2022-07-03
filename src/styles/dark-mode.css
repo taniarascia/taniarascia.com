@@ -25,6 +25,10 @@
 
   --code-font-color: #b3b9c5;
   --code-background-color: var(--gray-9);
+  --terminal-background-color: #111;
+  --terminal-color: var(--rainbow-4);
+  --terminal-bar: -webkit-linear-gradient(top, #444, #222);
+  --terminal-border: var(--border-color);
   --string: #92d192;
   --variable: #f2777a;
   --property: #b3b9c5;

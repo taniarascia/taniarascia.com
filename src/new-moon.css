@@ -8,6 +8,9 @@
 :root {
   --code-font-color: #232529;
   --code-background-color: var(--gray-0);
+  --terminal-background-color: white;
+  --terminal-bar: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+  --terminal-border: #cecbce;
   --string: #3b9039;
   --variable: #383a41;
   --property: #565656;
@@ -118,16 +121,16 @@ code.language-shell::before {
   padding-top: 3rem;
   white-space: unset;
   -webkit-text-size-adjust: none;
-  border: 1px solid #cecbce;
+  border: 1px solid var(--terminal-border);
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background: white;
+  background: var(--terminal-background-color);
   max-width: 100%;
 }
 
 code.language-terminal {
   -webkit-font-smoothing: antialiased;
-  color: var(--font-color-base);
+  color: var(--terminal-color);
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   white-space: pre-wrap;
@@ -139,11 +142,11 @@ pre.language-terminal::before {
   position: absolute;
   top: 0;
   left: 0;
-  background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: var(--terminal-bar);
   padding: 0.5rem 1.5rem 0.7rem;
   color: #a19ea1;
   border-top: 1px solid white;
-  border-bottom: 1px solid #8e8a8e;
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
