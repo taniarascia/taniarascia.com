@@ -15,8 +15,11 @@
   --year: var(--rainbow-4);
   --post-time-color: var(--rainbow-4);
   --link: #a4a9ff;
+  --link-hover-color: #222;
   --blockquote-background: var(--gray-9);
   --marker: #e77cc7;
+  --file-background: rgba(0, 0, 0, 0.2);
+  --inline-code-background-color: rgba(0, 0, 0, 0.2);
 
   --code-font-color: #b3b9c5;
   --code-background-color: var(--gray-9);
@@ -31,6 +34,6 @@
   --keyword: #ffeea6;
   --attribute: #ffd479;
   --class: #e1a6f2;
-  --tag: #fca369;
+  --tag: #6ab0f3;
   --error: #b0292c;
 }

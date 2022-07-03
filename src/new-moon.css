@@ -76,15 +76,20 @@ code.language-text {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
-  background: var(--card-background-color);
+  background: var(--inline-code-background-color);
   color: var(--font-color-base);
   padding: 0.2rem 0.3rem;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
 }
 
 :not(pre) > a code[class*='language-'] {
-  color: var(--indigo);
+  color: var(--link);
+}
+
+:not(pre) > a code[class*='language-']:hover {
+  color: var(--link-hover-color);
 }
 
 code.language-shell::before {
@@ -188,7 +193,7 @@ pre.language-terminal::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e9ecef;
+  background: var(--file-background);
   padding: 0.3rem 1rem;
   color: var(--font-color-base);
   line-height: 1.5;

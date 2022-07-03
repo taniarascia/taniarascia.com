@@ -137,7 +137,7 @@ p.hero-description {
 
 .post-content a:hover {
   background: var(--link);
-  color: var(--indigo-muted);
+  color:var(--link-hover-color);
   text-decoration: none;
 }
 
