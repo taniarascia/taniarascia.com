@@ -34,9 +34,11 @@ export const Layout = ({ children }) => {
         )}
       </Helmet>
 
-      <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
-      <main>{children}</main>
-      <Footer />
+      <div className="layout">
+        <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   )
 }
