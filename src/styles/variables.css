@@ -80,12 +80,14 @@
   --year: var(--gray-8);
   --star: var(--gray-6);
   --post-time-color: var(--gray-6);
+  --card-time-color: var(--font-color-muted);
+  --highlight-color: var(--indigo);
   --blockquote-background: var(--indigo-muted);
   --file-background: #e9ecef;
   --inline-code-background-color: rgba(0, 0, 0, 0.05);
 
   /* Sizs */
-  --content-width: 1200px;
+  --content-width: 1160px;
   --content-width--small: 550px;
   --content-width--medium: 700px;
 }

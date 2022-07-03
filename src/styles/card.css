@@ -46,7 +46,7 @@
 .card time {
   display: block;
   font-family: var(--font-family-monospace);
-  color: var(--font-color-muted);
+  color: var(--card-time-color);
   font-size: 0.8rem;
 }
 
@@ -55,6 +55,10 @@
   padding: 1rem;
   border: 1px solid var(--border-color);
   align-items: center;
+}
+
+.card.muted time {
+  color: var(--font-color-muted);
 }
 
 .card.muted h2 {

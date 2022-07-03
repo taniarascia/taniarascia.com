@@ -65,10 +65,9 @@ export const PostSidebar = ({
           I'm a software developer by day, and I've written hundreds of articles
           and tutorials about things that interest me in my spare time. This
           site is and has always been free of ads, trackers, social media,
-          affiliates, sponsored posts, and all the other nonsense we're so used
-          to seeing on the web.
+          affiliates, and sponsored posts.
         </p>
-        <p>I hope you enjoy the post!</p>
+        <p>I hope you enjoy the post and have a nice day.</p>
       </div>
     </aside>
   )

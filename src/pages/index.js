@@ -26,13 +26,38 @@ export default function Index({ data }) {
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <div className="container">
+      <div className="container hero-container">
         <Hero title="Hi, I'm Tania">
           <p className="hero-description small width">
-            I'm a software developer who occasionally creates open-source
-            projects. I like accordions, board games, and stand-up comedy.
+            I'm a software developer who creates open-source projects. I like
+            accordions, board games, and stand-up comedy. <br />
+            <br />
+            This is my digital garden. 🌱
           </p>
         </Hero>
+        <div>
+          <div className="circles">
+            <div className="circle rainbow-1" />
+            <div className="circle rainbow-2" />
+            <div className="circle rainbow-3" />
+            <div className="circle rainbow-4" />
+            <div className="circle rainbow-5" />
+          </div>
+          <div className="circles desktop-only">
+            <div className="circle rainbow-1" />
+            <div className="circle rainbow-2" />
+            <div className="circle rainbow-3" />
+            <div className="circle rainbow-4" />
+            <div className="circle rainbow-5" />
+          </div>
+          <div className="circles desktop-only">
+            <div className="circle rainbow-1" />
+            <div className="circle rainbow-2" />
+            <div className="circle rainbow-3" />
+            <div className="circle rainbow-4" />
+            <div className="circle rainbow-5" />
+          </div>
+        </div>
       </div>
       <div className="container">
         <section className="segment">

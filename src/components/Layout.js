@@ -12,6 +12,7 @@ import '../styles/navigation.css'
 import '../styles/card.css'
 import '../styles/layout.css'
 import '../styles/projects.css'
+import '../styles/patterns.css'
 import '../new-moon.css'
 import '../styles/dark-mode.css'
 

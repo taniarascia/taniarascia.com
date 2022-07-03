@@ -1,5 +1,17 @@
 /* Colors */
 
+.circles {
+  display: flex;
+  gap: 1rem;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  margin: 0.5rem 0;
+  border-radius: 50%;
+}
+
 .red-1 {
   background: var(--red-1);
 }
