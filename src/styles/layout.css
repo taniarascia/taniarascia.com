@@ -44,13 +44,13 @@ p.hero-description {
 }
 
 .hero .sub-title {
-  color: var(--gray-8);
+  color: var(--font-color-muted);
   font-weight: 500;
   font-size: 1.1rem;
 }
 
 .highlight {
-  color: var(--indigo);
+  color: var(--link);
 }
 
 /* Preview */

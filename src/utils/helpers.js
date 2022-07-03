@@ -26,7 +26,7 @@ export function getTaxonomyFromPosts(posts, taxonomy) {
 export function slugify(string) {
   return (
     string &&
-    string
+    `${string}`
       .match(
         /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
       )
@@ -41,13 +41,17 @@ export function capitalize(string) {
 
 export function appendComments(commentBox) {
   const commentScript = document.createElement('script')
+  const theme = localStorage.getItem('theme')
 
   commentScript.async = true
   commentScript.src = 'https://utteranc.es/client.js'
   commentScript.setAttribute('repo', 'taniarascia/comments')
   commentScript.setAttribute('issue-term', 'pathname')
   commentScript.setAttribute('id', 'utterances')
-  commentScript.setAttribute('theme', 'github-light')
+  commentScript.setAttribute(
+    'theme',
+    theme === 'dark' ? 'dark-blue' : 'github-light'
+  )
   commentScript.setAttribute('crossorigin', 'anonymous')
 
   if (commentBox && commentBox.current) {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Hero = ({ highlight, subTitle, title, post, children }) => {
+export const Hero = ({ highlight, subTitle, title, children }) => {
   return (
     <header className="hero">
       {subTitle && (

@@ -12,6 +12,8 @@ export const PostSidebar = ({
 }) => {
   const category = categories?.filter((category) => category !== 'Highlight')
 
+  console.log(category)
+
   return (
     <aside className="post-sidebar">
       {thumbnail && (
