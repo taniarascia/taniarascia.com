@@ -15,7 +15,9 @@ export default function PageTemplate({ data }) {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
-      <Hero title={title} />
+      <div className="container">
+        <Hero title={title} />
+      </div>
 
       <section className="small segment container">
         <div

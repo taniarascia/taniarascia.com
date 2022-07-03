@@ -26,12 +26,14 @@ export default function Index({ data }) {
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <Hero title="Hi, I'm Tania">
-        <p className="hero-description small width">
-          I'm a software developer who occasionally creates open-source
-          projects. I like accordions, board games, and stand-up comedy.
-        </p>
-      </Hero>
+      <div className="container">
+        <Hero title="Hi, I'm Tania">
+          <p className="hero-description small width">
+            I'm a software developer who occasionally creates open-source
+            projects. I like accordions, board games, and stand-up comedy.
+          </p>
+        </Hero>
+      </div>
       <div className="container">
         <section className="segment">
           <Heading title="Latest Posts" slug="/blog" />

@@ -34,7 +34,9 @@ export default function Projects() {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
-      <Hero title={title} color="red" />
+      <div className="container">
+        <Hero title={title} color="red" />
+      </div>
 
       <section className="segment">
         <div className="container">

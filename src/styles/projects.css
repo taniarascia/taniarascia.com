@@ -3,7 +3,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8rem;
-  color: var(--font-color-muted);
+  color: var(--star);
   font-family: var(--font-family-monospace);
 }
 

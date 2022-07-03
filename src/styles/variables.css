@@ -74,7 +74,11 @@
   --card-background-color: var(--gray-05);
   --button-background-color: white;
   --marker: #da66b7;
+  --link: var(--indigo);
   --navbar: var(--gray-9);
+  --year: var(--gray-8);
+  --star: var(--gray-6);
+  --post-time-color: var(--gray-6);
 
   /* Sizs */
   --content-width: 1200px;

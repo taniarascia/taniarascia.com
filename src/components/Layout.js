@@ -13,6 +13,7 @@ import '../styles/card.css'
 import '../styles/layout.css'
 import '../styles/projects.css'
 import '../new-moon.css'
+import '../styles/dark-mode.css'
 
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
@@ -37,7 +38,7 @@ export const Layout = ({ children }) => {
       </Helmet>
 
       <div className={`layout-wrapper ${theme}`}>
-        <Navigation onUpdateTheme={() => onUpdateTheme(theme)} theme={theme} />
+        <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
         <main>{children}</main>
         <Footer />
       </div>

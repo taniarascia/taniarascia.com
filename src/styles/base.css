@@ -7,7 +7,7 @@
 html {
   font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
-  color: var(--font-color-base);
+
   line-height: 1.6;
   font-size: 16px;
   font-weight: normal;
@@ -20,8 +20,17 @@ body {
 }
 
 a {
-  color: var(--indigo);
+  color: var(--link);
   text-decoration: none;
+}
+
+p,
+ul,
+ol,
+ul,
+table,
+blockquote {
+  color: var(--font-color-base);
 }
 
 p,
@@ -179,7 +188,6 @@ table {
   border: 1px solid var(--border-color);
   display: table;
   border-collapse: separate;
-  border-radius: var(--border-radius);
   border-spacing: 0;
   max-width: 100%;
   overflow-x: auto;

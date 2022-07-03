@@ -33,7 +33,7 @@ p.hero-description {
   margin-top: 1.5rem;
   font-size: 1.3rem;
   line-height: 1.4;
-  color: var(--gray-8);
+  color: var(--font-color-muted);
   font-weight: 500;
 }
 
@@ -94,6 +94,10 @@ p.hero-description {
   margin-bottom: 1rem;
 }
 
+.project-preview .card time {
+  color: var(--star);
+}
+
 .post-preview > div {
   flex: 1;
 }
@@ -128,12 +132,11 @@ p.hero-description {
 /* Pages */
 
 .post-content a {
-  color: var(--indigo);
   text-decoration: underline;
 }
 
 .post-content a:hover {
-  background: var(--indigo);
+  background: var(--link);
   color: var(--indigo-muted);
   text-decoration: none;
 }
@@ -143,6 +146,10 @@ a.anchor {
 }
 
 /* Posts */
+
+.year {
+  color: var(--year);
+}
 
 a.post {
   display: grid;
@@ -172,7 +179,7 @@ a.post time {
   display: block;
   margin-left: auto;
   font-family: var(--font-family-monospace);
-  color: var(--font-color-muted);
+  color: var(--post-time-color);
   font-size: 0.8rem;
   font-weight: 500;
 }
@@ -398,8 +405,6 @@ a.category.active .count {
 /* Footer */
 
 .footer {
-  background: var(--navbar-color);
-  border-top: 1px solid var(--light-border-color);
   padding: 3rem 0;
   font-family: var(--post-font-family);
 }
@@ -427,18 +432,14 @@ a.category.active .count {
 .footer span {
   display: flex;
   align-items: center;
-  color: var(--dark-font-color);
+  color: var(--font-color-base);
   font-size: 0.9rem;
   line-height: 1.2;
   padding: 0 0.5rem;
 }
 
-.footer span {
-  color: var(--toolbar-color);
-}
-
 .footer a:hover {
-  color: var(--link-color);
+  text-decoration: underline;
 }
 
 /* Gatsby */
