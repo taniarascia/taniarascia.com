@@ -43,14 +43,12 @@ export default function PostTemplate({ data }) {
             </section>
           </div>
 
-          <div>
-            <PostSidebar
-              date={date}
-              tags={tags}
-              categories={categories}
-              thumbnail={thumbnail}
-            />
-          </div>
+          <PostSidebar
+            date={date}
+            tags={tags}
+            categories={categories}
+            thumbnail={thumbnail}
+          />
         </div>
       </div>
     </>

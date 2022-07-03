@@ -21,9 +21,9 @@ export default function Blog({ data }) {
       <SEO customDescription={description} />
 
       <SidebarLayout>
-        <div className="hero">
+        <header className="hero">
           <h1>{title}</h1>
-        </div>
+        </header>
         <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
     </>

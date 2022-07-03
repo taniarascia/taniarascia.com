@@ -36,7 +36,7 @@ export const Layout = ({ children }) => {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
 
-      <div className={theme}>
+      <div className={`layout-wrapper ${theme}`}>
         <Navigation onUpdateTheme={() => onUpdateTheme(theme)} theme={theme} />
         <main>{children}</main>
         <Footer />

@@ -3,7 +3,7 @@
 .card {
   border-radius: var(--border-radius);
   background: var(--card-background-color);
-  padding: 1.5rem;
+  padding: 1rem;
   position: relative;
 }
 
@@ -59,4 +59,10 @@
 
 .card.muted h2 {
   margin: 0.25rem 0 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .card {
+    padding: 1.5rem;
+  }
 }

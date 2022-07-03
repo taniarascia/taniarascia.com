@@ -10,7 +10,7 @@ export const Hero = ({ highlight, subTitle, title, post, children }) => {
             {subTitle}
           </div>
         )}
-        {title && <h1 className={post ? 'post-title' : ''}>{title}</h1>}
+        {title && <h1>{title}</h1>}
         {children && children}
       </div>
     </header>

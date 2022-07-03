@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Heading } from '../components/Heading'
+import { Hero } from '../components/Hero'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -25,16 +26,12 @@ export default function Index({ data }) {
     <>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <div className="container hero-grid">
-        <div className="hero small width">
-          <h1>Hi, I'm Tania</h1>
-          <p className="hero-description">
-            I'm a software developer who occasionally creates open-source
-            projects. I like accordions, board games, and comedy.{' '}
-            <Link to="/me">More about me</Link>.
-          </p>
-        </div>
-      </div>
+      <Hero title="Hi, I'm Tania">
+        <p className="hero-description small width">
+          I'm a software developer who occasionally creates open-source
+          projects. I like accordions, board games, and stand-up comedy.
+        </p>
+      </Hero>
       <div className="container">
         <section className="segment">
           <Heading title="Latest Posts" slug="/blog" />
