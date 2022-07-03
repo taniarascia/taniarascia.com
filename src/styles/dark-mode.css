@@ -14,5 +14,23 @@
   --star: var(--rainbow-5);
   --year: var(--rainbow-4);
   --post-time-color: var(--rainbow-4);
-  --link: var(--indigo-light);
+  --link: #a4a9ff;
+  --blockquote-background: var(--gray-9);
+  --marker: #e77cc7;
+
+  --code-font-color: #b3b9c5;
+  --code-background-color: var(--gray-9);
+  --string: #92d192;
+  --variable: #f2777a;
+  --property: #b3b9c5;
+  --number: #fca369;
+  --operator: #ac8d58;
+  --punctuation: #c7cdd7;
+  --comment: #777c85;
+  --function: #76d4d6;
+  --keyword: #ffeea6;
+  --attribute: #ffd479;
+  --class: #e1a6f2;
+  --tag: #fca369;
+  --error: #b0292c;
 }

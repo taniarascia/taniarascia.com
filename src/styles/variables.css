@@ -79,6 +79,7 @@
   --year: var(--gray-8);
   --star: var(--gray-6);
   --post-time-color: var(--gray-6);
+  --blockquote-background: var(--indigo-muted);
 
   /* Sizs */
   --content-width: 1200px;

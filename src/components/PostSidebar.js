@@ -10,7 +10,7 @@ export const PostSidebar = ({
   categories = [],
   thumbnail,
 }) => {
-  const category = categories.filter((category) => category !== 'Highlight')[0]
+  const category = categories?.filter((category) => category !== 'Highlight')
 
   return (
     <aside className="post-sidebar">
@@ -25,12 +25,16 @@ export const PostSidebar = ({
           <li>Published {date}</li>
         </ul>
 
-        <h2>Category</h2>
-        <ul>
-          <li>
-            <Link to={`/categories/${slugify(category)}`}>{category}</Link>
-          </li>
-        </ul>
+        {category && (
+          <>
+            <h2>Category</h2>
+            <ul>
+              <li>
+                <Link to={`/categories/${slugify(category)}`}>{category}</Link>
+              </li>
+            </ul>
+          </>
+        )}
 
         <h2>Tags</h2>
         <div className="tags">

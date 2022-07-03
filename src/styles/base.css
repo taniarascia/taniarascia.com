@@ -76,7 +76,7 @@ blockquote {
   border-left: 4px solid var(--indigo-light);
   margin-left: 0;
   padding: 1rem;
-  background: var(--indigo-muted);
+  background: var(--blockquote-background);
   border-radius: var(--border-radius);
 }
 
