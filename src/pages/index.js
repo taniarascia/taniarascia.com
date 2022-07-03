@@ -35,7 +35,7 @@ export default function Index({ data }) {
             This is my digital garden. 🌱
           </p>
         </Hero>
-        <div>
+        <div className="decoration">
           <div className="circles">
             <div className="circle rainbow-1" />
             <div className="circle rainbow-2" />

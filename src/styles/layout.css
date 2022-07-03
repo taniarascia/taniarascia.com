@@ -17,8 +17,12 @@ main {
   .hero-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
   }
+}
+
+.decoration {
+  width: 60%;
 }
 
 .hero {
