@@ -34,7 +34,7 @@ export const Layout = ({ children }) => {
         )}
       </Helmet>
 
-      <div className="layout">
+      <div id="layout">
         <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
         <main>{children}</main>
         <Footer />
