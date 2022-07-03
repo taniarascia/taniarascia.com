@@ -77,11 +77,11 @@
   --link: var(--indigo);
   --link-hover-color: var(--indigo-muted);
   --navbar: var(--gray-9);
-  --year: var(--gray-8);
-  --star: var(--gray-6);
+  --year: var(--green);
+  --star: var(--yellow);
   --post-time-color: var(--gray-6);
   --card-time-color: var(--font-color-muted);
-  --highlight-color: var(--indigo);
+  --highlight-color: var(--green);
   --blockquote-background: var(--indigo-muted);
   --file-background: #e9ecef;
   --inline-code-background-color: rgba(0, 0, 0, 0.05);
@@ -519,12 +519,14 @@ button.theme-toggle:hover {
   position: relative;
 }
 
-.card.anchored {
-  padding-bottom: 3.5rem;
-}
+@media screen and (min-width: 700px) {
+  .card.anchored {
+    padding-bottom: 3.5rem;
+  }
 
-.card.anchored.large {
-  padding-bottom: 5rem;
+  .card.anchored.large {
+    padding-bottom: 5rem;
+  }
 }
 
 .card a.card-header,
@@ -690,7 +692,7 @@ p.hero-description {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   .project-preview {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -915,11 +917,13 @@ a.tag.active {
   font-weight: 600;
 }
 
-.categories.anchored,
-.links.anchored {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
+@media screen and (min-width: 700px) {
+  .categories.anchored,
+  .links.anchored {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
 }
 
 a.cat {
