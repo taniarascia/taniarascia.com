@@ -227,16 +227,28 @@ img {
 }
 
 .segment {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .segment.small {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .segment.large {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 700px) {
+  .segment {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .segment.small {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }

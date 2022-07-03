@@ -44,7 +44,7 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
             <a
               href={item.url}
               key={item.label}
-              className={`item ${slugify(item.label)}`}
+              className={`desktop-only item ${slugify(item.label)}`}
               target="_blank"
               rel="noreferrer"
             >
