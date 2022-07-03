@@ -19,7 +19,7 @@ export default function PostTemplate({ data }) {
   }, [commentBox])
 
   return (
-    <>
+    <div>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
 
@@ -51,7 +51,7 @@ export default function PostTemplate({ data }) {
           />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

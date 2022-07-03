@@ -7,35 +7,36 @@ import { Footer } from './Footer'
 
 import '../styles/style.css'
 import '../styles/new-moon.css'
-import '../styles/dark-mode.css'
 
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
 
   const onUpdateTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
-
+    window.localStorage.setItem('theme', newTheme)
     setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
   }
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
+    const savedTheme = window.localStorage.getItem('theme')
 
-    setTheme(savedTheme)
+    if (savedTheme) {
+      setTheme(savedTheme)
+    }
   }, [])
 
   return (
-    <>
+    <div>
       <Helmet>
         <link rel="shortcut icon" type="image/png" href={favicon} />
+        {theme === 'dark' && (
+          <link rel="stylesheet" type="text/css" href="/dark-mode.css" />
+        )}
       </Helmet>
 
-      <section className={theme + ' layout'}>
-        <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
-        <main>{children}</main>
-        <Footer />
-      </section>
-    </>
+      <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
+      <main>{children}</main>
+      <Footer />
+    </div>
   )
 }

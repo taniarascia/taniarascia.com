@@ -26,14 +26,14 @@ export const PostSidebar = ({
         </ul>
 
         {category && (
-          <>
+          <div>
             <h2>Category</h2>
             <ul>
               <li>
                 <Link to={`/categories/${slugify(category)}`}>{category}</Link>
               </li>
             </ul>
-          </>
+          </div>
         )}
 
         <h2>Tags</h2>

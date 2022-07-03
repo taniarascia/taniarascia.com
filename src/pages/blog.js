@@ -16,7 +16,7 @@ export default function Blog({ data }) {
   const description = 'Notes & tutorials'
 
   return (
-    <>
+    <div>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
 
@@ -26,7 +26,7 @@ export default function Blog({ data }) {
         </header>
         <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
-    </>
+    </div>
   )
 }
 

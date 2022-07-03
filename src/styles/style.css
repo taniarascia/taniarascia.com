@@ -111,6 +111,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background: var(--background-color);
 }
 
 a {
@@ -346,13 +347,6 @@ img {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-}
-
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: var(--background-color);
 }
 
 /* Buttons */

@@ -12,7 +12,7 @@ export default function PageTemplate({ data }) {
   const { title, description } = post.frontmatter
 
   return (
-    <>
+    <div>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
       <div className="container">
@@ -25,7 +25,7 @@ export default function PageTemplate({ data }) {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </section>
-    </>
+    </div>
   )
 }
 

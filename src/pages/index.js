@@ -23,7 +23,7 @@ export default function Index({ data }) {
   )
 
   return (
-    <>
+    <div>
       <Helmet title={config.siteTitle} />
       <SEO />
 
@@ -168,7 +168,7 @@ export default function Index({ data }) {
           </p>
         </section>
       </div>
-    </>
+    </div>
   )
 }
 

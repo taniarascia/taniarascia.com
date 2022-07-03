@@ -8,13 +8,13 @@ import config from '../utils/config'
 
 export default function FourOhFour() {
   return (
-    <>
+    <div>
       <Helmet title={`404 | ${config.siteTitle}`} />
       <SEO />
       <Hero title="404">
         <p className="hero-description">Not found.</p>
       </Hero>
-    </>
+    </div>
   )
 }
 

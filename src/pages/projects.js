@@ -31,7 +31,7 @@ export default function Projects() {
   }, [])
 
   return (
-    <>
+    <div>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
       <div className="container">
@@ -102,7 +102,7 @@ export default function Projects() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

@@ -19,7 +19,7 @@ export default function CategoryTemplate({ data, pageContext }) {
     totalCount === 1 ? ' post categorized as:' : ' posts categorized as:'
 
   return (
-    <>
+    <div>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
 
@@ -27,7 +27,7 @@ export default function CategoryTemplate({ data, pageContext }) {
         <Hero highlight={totalCount} subTitle={message} title={category} />
         <Posts data={simplifiedPosts} />
       </SidebarLayout>
-    </>
+    </div>
   )
 }
 
