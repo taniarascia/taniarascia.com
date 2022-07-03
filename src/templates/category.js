@@ -25,7 +25,7 @@ export default function CategoryTemplate({ data, pageContext }) {
 
       <SidebarLayout>
         <Hero highlight={totalCount} subTitle={message} title={category} />
-        <Posts data={simplifiedPosts} />
+        <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
     </div>
   )

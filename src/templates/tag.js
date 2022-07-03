@@ -24,7 +24,7 @@ export default function TagTemplate({ data, pageContext }) {
 
       <SidebarLayout>
         <Hero highlight={totalCount} subTitle={message} title={tag} />
-        <Posts data={simplifiedPosts} />
+        <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
     </div>
   )
