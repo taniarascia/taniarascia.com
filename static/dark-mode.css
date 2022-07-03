@@ -15,6 +15,7 @@
   --year: var(--rainbow-4);
   --post-time-color: var(--rainbow-4);
   --card-time-color: var(--rainbow-1);
+  --project-time-color: var(--star);
   --link: #a4a9ff;
   --link-hover-color: #222;
   --blockquote-background: var(--gray-9);
@@ -29,6 +30,7 @@
   --terminal-color: var(--rainbow-4);
   --terminal-bar: -webkit-linear-gradient(top, #444, #222);
   --terminal-border: var(--border-color);
+  --terminal-accent: var(--gray-6);
   --string: #92d192;
   --variable: #f2777a;
   --property: #b3b9c5;

@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { slugify } from '../utils/helpers'
+import me from '../../content/images/tania2020small.jpg'
 
 export const PostSidebar = ({
   tags = [],
@@ -19,6 +20,21 @@ export const PostSidebar = ({
           <Img fixed={thumbnail.childImageSharp?.fixed} />
         </div>
       )}
+      <div className="post-sidebar-card">
+        <h2>About me</h2>
+        <img src={me} alt="Tania" className="sidebar-avatar" />
+        <p>
+          Hello and thanks for visiting! My name is{' '}
+          <Link to="/me">Tania Rascia</Link>, and this is my website and digital
+          garden. 🌱
+        </p>
+        <p>
+          I'm a software developer who writes articles and tutorials about
+          things that interest me. This site is and has always been free of ads,
+          trackers, social media, affiliates, and sponsored posts.
+        </p>
+        <p>I hope you enjoy the post and have a nice day.</p>
+      </div>
       <div className="post-sidebar-card">
         <h2>Details</h2>
         <ul>
@@ -51,21 +67,6 @@ export const PostSidebar = ({
             )
           })}
         </div>
-      </div>
-
-      <div className="post-sidebar-card">
-        <h2>About me</h2>
-        <p>
-          Hello and thanks for visiting! My name is Tania Rascia, and this is my
-          website and digital garden.
-        </p>
-        <p>
-          I'm a software developer by day, and I've written hundreds of articles
-          and tutorials about things that interest me in my spare time. This
-          site is and has always been free of ads, trackers, social media,
-          affiliates, and sponsored posts.
-        </p>
-        <p>I hope you enjoy the post and have a nice day.</p>
       </div>
     </aside>
   )

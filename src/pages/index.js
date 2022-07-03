@@ -29,7 +29,7 @@ export default function Index({ data }) {
 
       <div className="container">
         <div className="hero-wrapper">
-          <Hero title="Hi, I'm Tania">
+          <Hero title="Hi, I'm Tania" index>
             <p className="hero-description small width">
               I'm a software developer who creates open-source projects. I like
               accordions, board games, and stand-up comedy. <br />
@@ -46,18 +46,25 @@ export default function Index({ data }) {
               <div className="circle rainbow-5" />
             </div>
             <div className="circles desktop-only">
-              <div className="circle rainbow-1" />
               <div className="circle rainbow-2" />
               <div className="circle rainbow-3" />
               <div className="circle rainbow-4" />
               <div className="circle rainbow-5" />
+              <div className="circle rainbow-1" />
             </div>
             <div className="circles desktop-only">
-              <div className="circle rainbow-1" />
-              <div className="circle rainbow-2" />
               <div className="circle rainbow-3" />
               <div className="circle rainbow-4" />
               <div className="circle rainbow-5" />
+              <div className="circle rainbow-1" />
+              <div className="circle rainbow-2" />
+            </div>
+            <div className="circles desktop-only">
+              <div className="circle rainbow-4" />
+              <div className="circle rainbow-5" />
+              <div className="circle rainbow-1" />
+              <div className="circle rainbow-2" />
+              <div className="circle rainbow-3" />
             </div>
           </div>
         </div>

@@ -81,6 +81,7 @@
   --star: var(--yellow);
   --post-time-color: var(--gray-6);
   --card-time-color: var(--font-color-muted);
+  --project-time-color: var(--font-color-muted);
   --highlight-color: var(--green);
   --blockquote-background: var(--indigo-muted);
   --file-background: #e9ecef;
@@ -322,6 +323,12 @@ img {
   margin-right: auto;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .segment {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -344,8 +351,8 @@ img {
   }
 
   .segment.small {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -411,7 +418,7 @@ a.button:hover {
 .navigation .logo {
   height: 22px;
   width: 22px;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .navigation nav {
@@ -472,7 +479,7 @@ a.button:hover {
 
 button.theme-toggle {
   margin-left: auto;
-  padding: 0 0.5rem;
+  padding: 0.4rem 0.5rem;
   background: var(--gray-8);
   border-color: var(--gray-7);
   color: var(--gray-0);
@@ -594,6 +601,12 @@ main {
   width: 100%;
 }
 
+@media screen and (min-width: 700px) {
+  .hero.index {
+    padding: 3.5rem 0 2rem;
+  }
+}
+
 .hero h1 {
   font-size: 2rem;
   line-height: 1.1;
@@ -697,7 +710,7 @@ p.hero-description {
 }
 
 .project-preview .card time {
-  color: var(--star);
+  color: var(--project-time-color);
 }
 
 .post-preview > div {
@@ -825,10 +838,6 @@ a.post time {
 
 /* Sidebar */
 
-.post-sidebar {
-  margin-top: 2rem;
-}
-
 .post-sidebar-card {
   background: var(--card-background-color);
   padding: 1.5rem;
@@ -860,6 +869,14 @@ a.post time {
 
 .post-sidebar a:hover {
   text-decoration: underline;
+}
+
+.sidebar-avatar {
+  display: block;
+  border-radius: 50%;
+  max-height: 100px;
+  max-width: 100px;
+  margin-bottom: 1rem;
 }
 
 .list a {
@@ -995,12 +1012,12 @@ a.category.active .count {
 /* Article */
 
 .post-image {
-  margin: 0 auto;
+  margin-top: 2rem;
   text-align: center;
 }
 
 .post-header {
-  padding: 2rem 0 1rem;
+  padding: 2rem 0 0.5rem;
 }
 
 .post-header h1 {

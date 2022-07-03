@@ -10,6 +10,7 @@
   --code-background-color: var(--gray-0);
   --terminal-background-color: white;
   --terminal-bar: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+  --terminal-accent: white;
   --terminal-border: #cecbce;
   --string: #3b9039;
   --variable: #383a41;
@@ -145,7 +146,7 @@ pre.language-terminal::before {
   background: var(--terminal-bar);
   padding: 0.5rem 1.5rem 0.7rem;
   color: #a19ea1;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--terminal-accent);
   border-bottom: 1px solid var(--border-color);
   width: 100%;
   font-size: 2.5rem;

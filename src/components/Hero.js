@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Hero = ({ highlight, subTitle, title, children }) => {
+export const Hero = ({ highlight, subTitle, title, children, index }) => {
   return (
-    <header className="hero">
+    <header className={`hero ${index ? 'index' : ''}`}>
       {subTitle && (
         <div className="sub-title">
           {highlight && <span className="highlight">{highlight}</span>}
