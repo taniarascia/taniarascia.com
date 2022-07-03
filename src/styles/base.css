@@ -102,6 +102,7 @@ h5 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: 600;
+  scroll-margin-top: 80px;
 }
 
 h1:not(:first-child),
@@ -232,8 +233,8 @@ img {
 }
 
 .segment.small {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .segment.large {

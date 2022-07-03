@@ -26,6 +26,7 @@
 .navigation .logo {
   height: 22px;
   width: 22px;
+  margin-right: 1rem;
 }
 
 .navigation nav {
@@ -50,7 +51,7 @@
   border-radius: 0;
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
-  margin: 0 0.4rem;
+  margin: 0 0.5rem;
 }
 
 .navigation a.brand {
@@ -101,9 +102,8 @@ button.theme-toggle:hover {
 }
 
 @media screen and (min-width: 550px) {
-  .navigation a.item,
-  .navigation button.item {
-    margin: 0 0.5rem;
+  .navigation .logo {
+    margin-right: 0;
   }
 
   .navigation a.brand {

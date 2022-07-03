@@ -6,10 +6,23 @@
 }
 
 .circle {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  min-height: 40px;
   margin: 0.5rem 0;
   border-radius: 50%;
+}
+
+@media screen and (min-width: 700px) {
+  .circle {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0.5rem 0;
+    border-radius: 50%;
+  }
 }
 
 .red-1 {

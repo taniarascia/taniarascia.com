@@ -165,8 +165,14 @@ p.hero-description {
   text-decoration: none;
 }
 
-a.anchor {
-  background: transparent;
+a.anchor,
+a.anchor:hover {
+  color: var(--link);
+  background: transparent !important;
+}
+
+a.anchor svg {
+  fill: var(--link);
 }
 
 /* Posts */
@@ -193,9 +199,9 @@ a.post:hover h3 {
 
 a.post h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--font-color-heading);
-  font-weight: 600;
+  font-weight: 500;
   font-family: var(--font-family-base);
   line-height: 1.3;
 }
@@ -207,6 +213,13 @@ a.post time {
   color: var(--post-time-color);
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+@media screen and (min-width: 700px) {
+  a.post h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
 }
 
 /* Grid */
