@@ -5,15 +5,8 @@ import favicon from '../assets/nav-floppy.png'
 import { Navigation } from './Navigation'
 import { Footer } from './Footer'
 
-import '../styles/variables.css'
-import '../styles/base.css'
-import '../styles/buttons.css'
-import '../styles/navigation.css'
-import '../styles/card.css'
-import '../styles/layout.css'
-import '../styles/projects.css'
-import '../styles/patterns.css'
-import '../new-moon.css'
+import '../styles/style.css'
+import '../styles/new-moon.css'
 import '../styles/dark-mode.css'
 
 export const Layout = ({ children }) => {
@@ -38,11 +31,11 @@ export const Layout = ({ children }) => {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
 
-      <div className={`layout-wrapper ${theme}`}>
+      <section className={theme + ' layout'}>
         <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
         <main>{children}</main>
         <Footer />
-      </div>
+      </section>
     </>
   )
 }
