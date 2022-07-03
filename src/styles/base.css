@@ -160,19 +160,17 @@ h2.home-heading {
 }
 
 h2.home-heading .title {
-  font-size: 2rem;
+  font-size: 1.4rem;
   margin-bottom: 0.75rem;
   font-family: var(--font-family-base);
   font-weight: 700;
   letter-spacing: -0.03rem;
 }
 
-h2.home-heading .description {
-  font-size: 1rem;
-  color: var(--font-color-muted);
-  font-weight: 400;
-  max-width: var(--content-width--small);
-  line-height: 1.4;
+@media screen and (min-width: 800px) {
+  h2.home-heading .title {
+    font-size: 1.6rem;
+  }
 }
 
 /* Table */

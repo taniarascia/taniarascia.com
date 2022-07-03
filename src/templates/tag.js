@@ -21,12 +21,7 @@ export default function TagTemplate({ data, pageContext }) {
     <>
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
-      <Hero
-        highlight={totalCount}
-        subTitle={message}
-        title={tag}
-        color="green"
-      />
+      <Hero highlight={totalCount} subTitle={message} title={tag} />
 
       <SidebarLayout>
         <Posts data={simplifiedPosts} />

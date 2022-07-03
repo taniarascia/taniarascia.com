@@ -7,13 +7,10 @@
   padding: 1rem 0;
   height: 60px;
   background: var(--navbar);
-  overflow: hidden;
 }
 
 .navigation .container {
   display: flex;
-  align-items: flex-end;
-  gap: 5rem;
 }
 
 .navigation a,
@@ -23,7 +20,7 @@
 }
 
 .navigation a.item.brand:hover {
-  border-color: var(--rainbow-2);
+  border-bottom-color: var(--rainbow-2);
 }
 
 .navigation .logo {
@@ -33,6 +30,7 @@
 
 .navigation nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 0.25rem;
 }
@@ -48,24 +46,15 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
   padding: 0;
-  line-height: 1;
   border: none;
   border-radius: 0;
+  border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
-  padding: 0.1rem;
   margin: 0 0.5rem;
 }
 
 .navigation a.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  line-height: 1.2;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: white;
-  margin: 0 1.5rem 0 0.25rem;
-  border-bottom: 2px solid transparent;
+  display: none;
 }
 
 .navigation a.item:hover,
@@ -77,20 +66,38 @@
 
 .navigation a.item.about-me:hover,
 .navigation a.item.about-me.active {
-  border-color: var(--rainbow-3);
+  border-bottom-color: var(--rainbow-3);
 }
 
 .navigation a.item.writing:hover,
 .navigation a.item.writing.active {
-  border-color: var(--rainbow-4);
+  border-bottom-color: var(--rainbow-4);
 }
 
 .navigation a.item.projects:hover,
 .navigation a.item.projects.active {
-  border-color: var(--rainbow-5);
+  border-bottom-color: var(--rainbow-5);
 }
 
 .navigation a.item.git-hub:hover,
 .navigation a.item.git-hub.active {
-  border-color: var(--rainbow-1);
+  border-bottom-color: var(--rainbow-1);
+}
+
+@media screen and (min-width: 550px) {
+  .navigation .container {
+    align-items: flex-end;
+  }
+
+  .navigation a.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.2;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 1.5rem 0 0.25rem;
+    border-bottom: 2px solid transparent;
+  }
 }

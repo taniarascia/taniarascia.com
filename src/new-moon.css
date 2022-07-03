@@ -87,31 +87,6 @@ code.language-text {
   color: var(--indigo);
 }
 
-.line-numbers-rows {
-  display: none;
-}
-
-pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 1rem;
-  counter-reset: linenumber;
-}
-
-@media screen and (min-width: 800px) {
-  .line-numbers-rows {
-    display: block;
-  }
-  pre.language-text.line-numbers {
-    padding-left: 1.5rem !important;
-  }
-
-  pre[class*='language-'].line-numbers {
-    padding-left: 4rem;
-  }
-
-  /* Hide line numbers */
-}
-
 code.language-shell::before {
   content: '$ ';
   color: var(--comment);
@@ -174,22 +149,6 @@ pre.language-terminal::before {
   border-bottom: 1px solid var(--border-color);
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-}
-
-.line-numbers .line-numbers-rows {
-  position: absolute;
-  pointer-events: none;
-  top: 1rem !important;
-  font-size: 100%;
-  left: -3.8rem;
-  width: 3rem !important;
-  letter-spacing: -1px;
-  border-right: 1px solid rgba(245, 250, 255, 0.1);
-  padding-right: 0.5rem;
-}
-
-.line-numbers-rows > span:before {
-  color: rgba(245, 250, 255, 0.3);
 }
 
 .gatsby-highlight {

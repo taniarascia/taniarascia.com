@@ -10,7 +10,6 @@ import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import { slugify } from '../utils/helpers'
-import me from '../../content/images/tania2020small.jpg'
 
 export default function Index({ data }) {
   const latest = data.latest.edges
@@ -27,14 +26,12 @@ export default function Index({ data }) {
       <Helmet title={config.siteTitle} />
       <SEO />
       <div className="container hero-grid">
-        <div>
-          <img src={me} alt="Tania Rascia" className="hero-image" />
-        </div>
         <div className="hero small width">
           <h1>Hi, I'm Tania</h1>
           <p className="hero-description">
             I'm a software developer who occasionally creates open-source
-            projects. I like accordions, board games, and comedy.
+            projects. I like accordions, board games, and comedy.{' '}
+            <Link to="/me">More about me</Link>.
           </p>
         </div>
       </div>

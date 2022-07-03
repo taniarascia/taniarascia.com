@@ -22,12 +22,7 @@ export default function CategoryTemplate({ data, pageContext }) {
     <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
-      <Hero
-        highlight={totalCount}
-        subTitle={message}
-        title={category}
-        color="green"
-      />
+      <Hero highlight={totalCount} subTitle={message} title={category} />
 
       <SidebarLayout>
         <Posts data={simplifiedPosts} />

@@ -47,9 +47,16 @@ export const PostSidebar = ({ tags, date, categories, thumbnail }) => {
       <div className="post-sidebar-card">
         <h2>About me</h2>
         <p>
-          Hello, thanks for visiting the site! My name is Tania Rascia, and this
-          is my website and digital garden.
+          Hello and thanks for visiting! My name is Tania Rascia, and this is my
+          website and digital garden.
         </p>
+        <p>
+          I'm a software developer by day, and I've written hundreds of articles
+          and tutorials about things that interest me in my spare time. This site is and has
+          always been free of ads, trackers, social media, affiliates, sponsored
+          posts, and all the other nonsense we're so used to seeing on the web.
+        </p>
+        <p>I hope you enjoy the post!</p>
       </div>
     </aside>
   )

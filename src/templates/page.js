@@ -15,16 +15,13 @@ export default function PageTemplate({ data }) {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
-
-      <Hero subTitle={description} title={title} color="blue" />
+      <Hero title={title} />
 
       <section className="small segment container">
-        <div className="grid">
-          <div
-            className="post-content"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        </div>
+        <div
+          className="post-content medium width"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </section>
     </>
   )

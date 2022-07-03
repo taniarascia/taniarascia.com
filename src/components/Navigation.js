@@ -24,7 +24,9 @@ export const Navigation = () => {
     <section className="navigation">
       <div className="container">
         <nav>
-          <img src={floppyLogo} className="logo" alt="Tania Rascia" />
+          <Link to="/">
+            <img src={floppyLogo} className="logo" alt="Tania Rascia" />
+          </Link>
           <Link to="/" className="item brand">
             <span>Tania Rascia</span>
           </Link>
