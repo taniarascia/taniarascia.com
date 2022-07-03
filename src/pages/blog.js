@@ -1,52 +1,40 @@
 import React, { useMemo } from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
-import { Search } from '../components/Search'
+import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
+import { SidebarLayout } from '../components/SidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function BlogIndex({ data }) {
-  const posts = data.allMarkdownRemark.edges
+export default function Blog({ data }) {
+  const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
+  const title = 'Writing'
+  const description = 'Notes & tutorials'
 
   return (
     <>
-      <Helmet title={`Articles | ${config.siteTitle}`} />
-      <SEO
-        customDescription="Tutorials, technical articles, snippets, reference materials, and all
-              development-related resources I've written."
-      />
+      <Helmet title={`${title} | ${config.siteTitle}`} />
+      <SEO customDescription={description} />
 
-      <article className="blog-page">
-        <header>
-          <div className="container">
-            <h1>Articles</h1>
-            <p className="description">
-              Tutorials, technical articles, snippets, reference materials, and
-              all development-related resources I've written. See{' '}
-              <Link to="/notes">Notes</Link> for everything else.
-            </p>
-          </div>
+      <SidebarLayout>
+        <header className="hero">
+          <h1>{title}</h1>
         </header>
-
-        <section>
-          <div className="container">
-            <Search data={simplifiedPosts} showYears />
-          </div>
-        </section>
-      </article>
+        <Posts data={simplifiedPosts} showYears />
+      </SidebarLayout>
     </>
   )
 }
 
-BlogIndex.Layout = Layout
+Blog.Layout = Layout
 
-export const pageQuery = graphql`
+export const blogQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(
+    posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {

@@ -1,0 +1,106 @@
+/* Colors */
+
+.circles {
+  display: flex;
+  gap: 1rem;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0.5rem 0;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 700px) {
+  .circle {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0.5rem 0;
+    border-radius: 50%;
+  }
+}
+
+.red-1 {
+  background: var(--red-1);
+}
+
+.red-2 {
+  background: var(--red-2);
+}
+
+.red-3 {
+  background: var(--red-3);
+}
+
+.red-4 {
+  background: var(--red-4);
+}
+
+.red-5 {
+  background: var(--red-5);
+}
+
+.green-1 {
+  background: var(--green-1);
+}
+
+.green-2 {
+  background: var(--green-2);
+}
+
+.green-3 {
+  background: var(--green-3);
+}
+
+.green-4 {
+  background: var(--green-4);
+}
+
+.green-5 {
+  background: var(--green-5);
+}
+
+.blue-1 {
+  background: var(--blue-1);
+}
+
+.blue-2 {
+  background: var(--blue-2);
+}
+
+.blue-3 {
+  background: var(--blue-3);
+}
+
+.blue-4 {
+  background: var(--blue-4);
+}
+
+.blue-5 {
+  background: var(--blue-5);
+}
+
+.rainbow-1 {
+  background: var(--rainbow-1);
+}
+
+.rainbow-2 {
+  background: var(--rainbow-2);
+}
+
+.rainbow-3 {
+  background: var(--rainbow-3);
+}
+
+.rainbow-4 {
+  background: var(--rainbow-4);
+}
+
+.rainbow-5 {
+  background: var(--rainbow-5);
+}

@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
+import { Hero } from '../components/Hero'
+import { SidebarLayout } from '../components/SidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -13,31 +15,17 @@ export default function TagTemplate({ data, pageContext }) {
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
-  const message = totalCount === 1 ? ' post found.' : ' posts found.'
+  const message = totalCount === 1 ? ' post tagged:' : ' posts tagged:'
 
   return (
     <>
       <Helmet title={`Posts tagged: ${tag} | ${config.siteTitle}`} />
       <SEO />
 
-      <article>
-        <header>
-          <div className="container">
-            <h1>
-              <span>Posts tagged:</span>{' '}
-              <span className="primary-underline">{tag}</span>
-            </h1>
-            <p className="description">
-              <span className="count bright">{totalCount}</span>
-              {message}
-            </p>
-          </div>
-        </header>
-
-        <section className="container">
-          <Posts data={simplifiedPosts} />
-        </section>
-      </article>
+      <SidebarLayout>
+        <Hero highlight={totalCount} subTitle={message} title={tag} />
+        <Posts data={simplifiedPosts} />
+      </SidebarLayout>
     </>
   )
 }

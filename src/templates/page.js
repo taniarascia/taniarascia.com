@@ -4,34 +4,27 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
+import { Hero } from '../components/Hero'
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, description, slug } = post.frontmatter
+  const { title, description } = post.frontmatter
 
   return (
     <>
-      <Helmet
-        title={`${title === 'Tania Rascia' ? 'Resume' : title} | ${
-          config.siteTitle
-        }`}
-      />
-      <SEO />
+      <Helmet title={`${title} | ${config.siteTitle}`} />
+      <SEO customDescription={description} />
+      <div className="container">
+        <Hero title={title} />
+      </div>
 
-      <article id={slug}>
-        <header>
-          <div className="container">
-            <h1>{title}</h1>
-            <p className="description">{description}</p>
-          </div>
-        </header>
-
-        <section
-          className="container"
+      <section className="small segment container">
+        <div
+          className="post-content medium width"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      </article>
+      </section>
     </>
   )
 }
@@ -44,7 +37,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        description
         slug
       }
     }

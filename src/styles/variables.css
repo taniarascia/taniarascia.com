@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700;900&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  /* Colors */
+  --gray-0: #f8f9fa;
+  --gray-05: #f3f6f9;
+  --gray-1: #f1f3f5;
+  --gray-2: #e9ecef;
+  --gray-3: #dee2e6;
+  --gray-4: #ced4da;
+  --gray-5: #adb5bd;
+  --gray-6: #868e96;
+  --gray-7: #495057;
+  --gray-8: #343a40;
+  --gray-9: #212529;
+
+  --green: #51b681;
+  --green-1: #95cd7f;
+  --green-2: #73b18a;
+  --green-3: #4d8994;
+  --green-4: #30619d;
+  --green-5: #30379d;
+
+  --red: #f34646;
+  --red-1: #efcf4a;
+  --red-2: #e0a944;
+  --red-3: #d37d36;
+  --red-4: #cd583c;
+  --red-5: #ab2e3f;
+
+  --blue: #07a7e6;
+  --blue-1: #70bdee;
+  --blue-2: #618be1;
+  --blue-3: #5b5ed5;
+  --blue-4: #623ac6;
+  --blue-5: #58119f;
+
+  --rainbow-1: #da66b7;
+  --rainbow-2: #7549f0;
+  --rainbow-3: #4989c6;
+  --rainbow-4: #72bf8d;
+  --rainbow-5: #f4c950;
+
+  --orange: #ff7e22;
+  --yellow: #fca62a;
+  --pink: #e855b3;
+  --purple: #623ac6;
+  --indigo: #5a43f1;
+  --indigo-dark: #4509cf;
+  --indigo-light: #969bf6;
+  --indigo-muted: #f1f2fd;
+
+  /* Font family */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-family-monospace: 'IBM Plex Mono', Menlo, monospace;
+  --font-family-heading: 'Merriweather', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Arial, sans-serif;
+
+  /* Font color */
+  --font-color-base: var(--gray-7);
+  --font-color-muted: var(--gray-6);
+  --font-color-heading: var(--gray-8);
+  --font-color-bright: var(--gray-9);
+  --font-color-hero-heading: var(--gray-0);
+
+  /* Borders */
+  --border-color: var(--gray-3);
+  --border-color-hover: var(--gray-6);
+  --border-radius: 4px;
+
+  /* Elements */
+  --background-color: white;
+  --card-background-color: var(--gray-05);
+  --button-background-color: white;
+  --marker: #da66b7;
+  --link: var(--indigo);
+  --link-hover-color: var(--indigo-muted);
+  --navbar: var(--gray-9);
+  --year: var(--gray-8);
+  --star: var(--gray-6);
+  --post-time-color: var(--gray-6);
+  --card-time-color: var(--font-color-muted);
+  --highlight-color: var(--indigo);
+  --blockquote-background: var(--indigo-muted);
+  --file-background: #e9ecef;
+  --inline-code-background-color: rgba(0, 0, 0, 0.05);
+
+  /* Sizs */
+  --content-width: 1160px;
+  --content-width--small: 550px;
+  --content-width--medium: 700px;
+}

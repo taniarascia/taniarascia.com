@@ -1,0 +1,41 @@
+.dark {
+  --background-color: var(--gray-8);
+  --card-background-color: var(--gray-9);
+
+  --font-color-heading: var(--gray-1);
+  --font-color-base: var(--gray-2);
+  --font-color-muted: var(--gray-4);
+  --font-color-bright: white;
+
+  --border-color: var(--gray-7);
+  --border-color-hover: var(--gray-6);
+
+  --button-background-color: var(--gray-8);
+  --star: var(--rainbow-5);
+  --year: var(--rainbow-4);
+  --post-time-color: var(--rainbow-4);
+  --card-time-color: var(--rainbow-1);
+  --link: #a4a9ff;
+  --link-hover-color: #222;
+  --blockquote-background: var(--gray-9);
+  --marker: #e77cc7;
+  --file-background: rgba(0, 0, 0, 0.2);
+  --inline-code-background-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: var(--rainbow-4);
+
+  --code-font-color: #b3b9c5;
+  --code-background-color: var(--gray-9);
+  --string: #92d192;
+  --variable: #f2777a;
+  --property: #b3b9c5;
+  --number: #fca369;
+  --operator: #ac8d58;
+  --punctuation: #c7cdd7;
+  --comment: #777c85;
+  --function: #76d4d6;
+  --keyword: #ffeea6;
+  --attribute: #ffd479;
+  --class: #e1a6f2;
+  --tag: #6ab0f3;
+  --error: #b0292c;
+}

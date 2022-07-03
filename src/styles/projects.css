@@ -1,0 +1,23 @@
+.star {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--star);
+  font-family: var(--font-family-monospace);
+}
+
+.star a {
+  color: var(--font-color-muted);
+}
+
+.star a:hover {
+  color: var(--font-color-bright);
+  text-decoration: underline;
+}
+
+.stars {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}

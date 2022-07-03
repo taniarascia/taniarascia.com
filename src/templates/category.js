@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
+import { Hero } from '../components/Hero'
+import { SidebarLayout } from '../components/SidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -13,28 +15,18 @@ export default function CategoryTemplate({ data, pageContext }) {
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
-  const message = totalCount === 1 ? ' post found.' : ' posts found.'
+  const message =
+    totalCount === 1 ? ' post categorized as:' : ' posts categorized as:'
 
   return (
     <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
 
-      <article>
-        <header>
-          <div className="container">
-            <h1>{category}</h1>
-            <p className="description">
-              <span className="count">{totalCount}</span>
-              {message}
-            </p>
-          </div>
-        </header>
-
-        <section className="container">
-          <Posts data={simplifiedPosts} />
-        </section>
-      </article>
+      <SidebarLayout>
+        <Hero highlight={totalCount} subTitle={message} title={category} />
+        <Posts data={simplifiedPosts} />
+      </SidebarLayout>
     </>
   )
 }

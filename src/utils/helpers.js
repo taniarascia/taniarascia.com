@@ -15,10 +15,10 @@ export function getSimplifiedPosts(posts, options = {}) {
   }))
 }
 
-export function getCategoriesFromPosts(posts) {
+export function getTaxonomyFromPosts(posts, taxonomy) {
   return posts
     .reduce((acc, post) => {
-      return [...new Set([...acc, ...(post.categories || [])])]
+      return [...new Set([...acc, ...(post[taxonomy] || [])])]
     }, [])
     .sort()
 }
@@ -26,7 +26,7 @@ export function getCategoriesFromPosts(posts) {
 export function slugify(string) {
   return (
     string &&
-    string
+    `${string}`
       .match(
         /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
       )
@@ -35,26 +35,23 @@ export function slugify(string) {
   )
 }
 
-export function getTheme() {
-  const theme = localStorage.getItem('theme')
-
-  if (theme === 'dark') return 'dark-blue'
-  if (theme === 'sepia') return 'gruvbox-dark'
-  if (theme === 'light') return 'github-light'
-
-  return 'github-dark'
+export function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 export function appendComments(commentBox) {
   const commentScript = document.createElement('script')
-  const theme = getTheme()
+  const theme = localStorage.getItem('theme')
 
   commentScript.async = true
   commentScript.src = 'https://utteranc.es/client.js'
   commentScript.setAttribute('repo', 'taniarascia/comments')
   commentScript.setAttribute('issue-term', 'pathname')
   commentScript.setAttribute('id', 'utterances')
-  commentScript.setAttribute('theme', theme)
+  commentScript.setAttribute(
+    'theme',
+    theme === 'dark' ? 'dark-blue' : 'github-light'
+  )
   commentScript.setAttribute('crossorigin', 'anonymous')
 
   if (commentBox && commentBox.current) {

@@ -1,70 +1,62 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Hamburger } from '../assets/Hamburger'
-import moon from '../assets/moon.png'
+import { ExternalLinkIcon } from '../assets/ExternalLinkIcon'
 import blog from '../assets/nav-blog.png'
+import floppyLogo from '../assets/floppylogo.png'
 import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
 import projects from '../assets/nav-projects.png'
-import twitter from '../assets/nav-twitter.png'
+import { slugify } from '../utils/helpers'
 
 const mainNavItems = [
-  { url: '/blog', icon: blog, label: 'Articles' },
-  { url: '/projects', icon: projects, label: 'Projects' },
   { url: '/me', icon: floppy, label: 'About me' },
+  { url: '/blog', icon: blog, label: 'Writing' },
+  { url: '/projects', icon: projects, label: 'Projects' },
 ]
 
 const socialNavItems = [
   { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
-  { url: 'https://twitter.com/taniarascia', icon: twitter, label: 'Twitter' },
 ]
 
-export const Navigation = ({ setCollapsed, onUpdateTheme, theme }) => {
+export const Navigation = ({ theme, onUpdateTheme }) => {
   return (
-    <header className="navigation">
-      <div className="navigation-inner">
-        <nav className="brand-section">
-          <button
-            onClick={() => setCollapsed((prev) => !prev)}
-            className="desktop-only collapse-button"
-            title="Collapse Sidebar"
-          >
-            <Hamburger />
-          </button>
-
-          <Link to="/" className="brand">
+    <section className="navigation">
+      <div className="container">
+        <nav>
+          <Link to="/">
+            <img src={floppyLogo} className="logo" alt="Tania Rascia" />
+          </Link>
+          <Link to="/" className="item brand">
             <span>Tania Rascia</span>
           </Link>
+          {mainNavItems.map((item) => (
+            <Link
+              to={item.url}
+              key={item.label}
+              activeClassName="active"
+              className={`item ${slugify(item.label)}`}
+            >
+              <span>{item.label}</span>
+            </Link>
+          ))}
+          {socialNavItems.map((item) => (
+            <a
+              href={item.url}
+              key={item.label}
+              className={`desktop-only item ${slugify(item.label)}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>{item.label}</span>
+              <ExternalLinkIcon />
+            </a>
+          ))}
         </nav>
-        <div>
-          <nav>
-            {mainNavItems.map((item) => (
-              <Link to={item.url} key={item.label} activeClassName="active">
-                <img src={item.icon} alt={item.label} />
-                <div className="tooltip">{item.label}</div>
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="toolbar-section">
-          <nav className="social-nav">
-            {socialNavItems.map((item) => (
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noreferrer"
-                key={item.label}
-              >
-                <img src={item.icon} alt={item.label} />
-              </a>
-            ))}
-          </nav>
-          <button onClick={onUpdateTheme} className="theme-switcher">
-            <img src={moon} alt="Theme" />
-          </button>
-        </div>
+        <button className="theme-toggle" onClick={onUpdateTheme}>
+          {theme === 'dark' ? 'Dark' : 'Light'}
+        </button>
       </div>
-    </header>
+    </section>
   )
 }

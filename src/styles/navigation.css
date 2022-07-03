@@ -1,0 +1,120 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 1rem 0;
+  height: 60px;
+  background: var(--navbar);
+}
+
+.navigation .container {
+  display: flex;
+}
+
+.navigation a,
+.navigation a:hover {
+  text-decoration: none;
+  background: transparent;
+}
+
+.navigation a.item.brand:hover {
+  border-bottom-color: var(--rainbow-2);
+}
+
+.navigation .logo {
+  height: 22px;
+  width: 22px;
+  margin-right: 1rem;
+}
+
+.navigation nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
+.navigation a.item,
+.navigation button.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  margin: 0 0.5rem;
+}
+
+.navigation a.brand {
+  display: none;
+}
+
+.navigation a.item:hover,
+.navigation button.item:hover,
+.navigation a.item.active,
+.navigation button.item.active {
+  color: white;
+}
+
+.navigation a.item.about-me:hover,
+.navigation a.item.about-me.active {
+  border-bottom-color: var(--rainbow-3);
+}
+
+.navigation a.item.writing:hover,
+.navigation a.item.writing.active {
+  border-bottom-color: var(--rainbow-4);
+}
+
+.navigation a.item.projects:hover,
+.navigation a.item.projects.active {
+  border-bottom-color: var(--rainbow-5);
+}
+
+.navigation a.item.git-hub:hover,
+.navigation a.item.git-hub.active {
+  border-bottom-color: var(--rainbow-1);
+}
+
+button.theme-toggle {
+  margin-left: auto;
+  padding: 0 0.5rem;
+  background: var(--gray-8);
+  border-color: var(--gray-7);
+  color: var(--gray-0);
+}
+
+button.theme-toggle:hover {
+  margin-left: auto;
+  padding: 0 0.5rem;
+  background: var(--gray-7);
+  border-color: var(--gray-6);
+  color: white;
+}
+
+@media screen and (min-width: 550px) {
+  .navigation .logo {
+    margin-right: 0;
+  }
+
+  .navigation a.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.2;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 1.5rem 0 0.25rem;
+    border-bottom: 2px solid transparent;
+  }
+}

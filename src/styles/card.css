@@ -1,0 +1,72 @@
+/* Card */
+
+.card {
+  border-radius: var(--border-radius);
+  background: var(--card-background-color);
+  padding: 1rem;
+  position: relative;
+}
+
+.card.anchored {
+  padding-bottom: 3.5rem;
+}
+
+.card.anchored.large {
+  padding-bottom: 5rem;
+}
+
+.card a.card-header,
+.card h2 {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-family: var(--font-family-base);
+  color: var(--font-color-heading);
+  font-weight: 700;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+.card a.card-header:hover,
+.card h2:hover {
+  text-decoration: underline;
+  color: var(--font-color-bright);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--font-color-muted);
+  font-family: var(--font-family-base);
+}
+
+.card time {
+  display: block;
+  font-family: var(--font-family-monospace);
+  color: var(--card-time-color);
+  font-size: 0.8rem;
+}
+
+.card.muted {
+  background: transparent;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.card.muted time {
+  color: var(--font-color-muted);
+}
+
+.card.muted h2 {
+  margin: 0.25rem 0 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
