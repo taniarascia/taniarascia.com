@@ -4,7 +4,12 @@ import Img from 'gatsby-image'
 
 import { slugify } from '../utils/helpers'
 
-export const PostSidebar = ({ tags, date, categories, thumbnail }) => {
+export const PostSidebar = ({
+  tags = [],
+  date,
+  categories = [],
+  thumbnail,
+}) => {
   const category = categories.filter((category) => category !== 'Highlight')[0]
 
   return (
