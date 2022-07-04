@@ -7,6 +7,7 @@ import floppyLogo from '../assets/floppylogo.png'
 import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
 import projects from '../assets/nav-projects.png'
+import moon from '../assets/moon.png'
 import { slugify } from '../utils/helpers'
 
 const mainNavItems = [
@@ -24,37 +25,42 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
     <section className="navigation">
       <div className="container">
         <nav>
-          <Link to="/">
-            <img src={floppyLogo} className="logo" alt="Tania Rascia" />
-          </Link>
           <Link to="/" className="item brand">
+            <img src={floppyLogo} className="logo" alt="Tania Rascia" />
             <span>Tania Rascia</span>
           </Link>
           {mainNavItems.map((item) => (
-            <Link
-              to={item.url}
-              key={item.label}
-              activeClassName="active"
-              className={`item ${slugify(item.label)}`}
-            >
-              <span>{item.label}</span>
-            </Link>
+            <div className="nav-item-outer">
+              <img src={item.icon} alt={item.label} className="nav-image" />
+              <Link
+                to={item.url}
+                key={item.label}
+                activeClassName="active"
+                className={`item ${slugify(item.label)}`}
+              >
+                <span>{item.label}</span>
+              </Link>
+            </div>
           ))}
+
           {socialNavItems.map((item) => (
-            <a
-              href={item.url}
-              key={item.label}
-              className={`desktop-only item ${slugify(item.label)}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>{item.label}</span>
-              <ExternalLinkIcon />
-            </a>
+            <div className="nav-item-outer">
+              <img src={item.icon} alt={item.label} className="nav-image" />
+              <a
+                href={item.url}
+                key={item.label}
+                className={`desktop-only item ${slugify(item.label)}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{item.label}</span>
+                <ExternalLinkIcon />
+              </a>
+            </div>
           ))}
         </nav>
         <button className="theme-toggle" onClick={onUpdateTheme}>
-          {theme === 'dark' ? 'Dark' : 'Light'}
+          <img src={moon} alt="Theme" /> {theme === 'dark' ? 'Dark' : 'Light'}
         </button>
       </div>
     </section>

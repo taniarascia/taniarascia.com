@@ -379,7 +379,7 @@ a.button {
 button img,
 a.button img {
   max-height: 20px;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
 }
 
 button:hover,
@@ -396,8 +396,7 @@ a.button:hover {
   left: 0;
   width: 100%;
   z-index: 3;
-  padding: 1rem 0;
-  height: 60px;
+  padding: 0.75rem 0;
   background: var(--navbar);
 }
 
@@ -415,10 +414,15 @@ a.button:hover {
   border-bottom-color: var(--rainbow-2);
 }
 
+.navigation .item.brand span {
+  display: none;
+}
+
 .navigation .logo {
   height: 22px;
   width: 22px;
-  margin-right: 0.5rem;
+  min-height: 22px;
+  min-width: 22px;
 }
 
 .navigation nav {
@@ -446,8 +450,29 @@ a.button:hover {
   margin: 0 0.5rem;
 }
 
-.navigation a.brand {
+.nav-item-outer {
+  display: flex;
+  align-items: center;
+}
+
+.nav-image {
   display: none;
+  height: 22px;
+  width: 22px;
+  min-height: 22px;
+  min-width: 22px;
+}
+
+.navigation a.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.2;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0.5rem 0 0.25rem;
+  border-bottom: 2px solid transparent;
 }
 
 .navigation a.item:hover,
@@ -486,28 +511,31 @@ button.theme-toggle {
 }
 
 button.theme-toggle:hover {
-  margin-left: auto;
-  padding: 0 0.5rem;
   background: var(--gray-7);
   border-color: var(--gray-6);
   color: white;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 850px) {
+  .nav-image {
+    display: block;
+  }
+
+  .navigation .item.brand span {
+    display: block;
+  }
+
   .navigation .logo {
+    display: none;
     margin-right: 0;
   }
 
   .navigation a.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    line-height: 1.2;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: white;
     margin: 0 1.5rem 0 0.25rem;
-    border-bottom: 2px solid transparent;
+  }
+
+  .navigation nav {
+    gap: 0.75rem;
   }
 }
 
