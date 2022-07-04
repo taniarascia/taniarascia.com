@@ -60,7 +60,8 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
           ))}
         </nav>
         <button className="theme-toggle" onClick={onUpdateTheme}>
-          <img src={moon} alt="Theme" /> {theme === 'dark' ? 'Dark' : 'Light'}
+          <img src={moon} alt="Theme" />{' '}
+          <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
         </button>
       </div>
     </section>

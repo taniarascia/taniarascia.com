@@ -414,7 +414,8 @@ a.button:hover {
   border-bottom-color: var(--rainbow-2);
 }
 
-.navigation .item.brand span {
+.navigation .item.brand span,
+.theme-toggle span {
   display: none;
 }
 
@@ -502,6 +503,10 @@ a.button:hover {
   border-bottom-color: var(--rainbow-1);
 }
 
+button.theme-toggle img {
+  margin: 0;
+}
+
 button.theme-toggle {
   margin-left: auto;
   padding: 0.4rem 0.5rem;
@@ -517,11 +522,16 @@ button.theme-toggle:hover {
 }
 
 @media screen and (min-width: 850px) {
+  button.theme-toggle img {
+    margin-right: 0.25rem;
+  }
+
   .nav-image {
     display: block;
   }
 
-  .navigation .item.brand span {
+  .navigation .item.brand span,
+  .theme-toggle span {
     display: block;
   }
 
