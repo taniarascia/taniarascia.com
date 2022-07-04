@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
-import { Hero } from '../components/Hero'
+import { AboutSidebar } from '../components/AboutSidebar'
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
@@ -16,15 +16,22 @@ export default function PageTemplate({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
       <div className="container">
-        <Hero title={title} />
-      </div>
+        <div className="grid">
+          <div className="article-content">
+            <div className="post-header medium width">
+              <h1>{title}</h1>
+            </div>
+            <section className="segment small">
+              <div
+                className="post-content"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+            </section>
+          </div>
 
-      <section className="small segment container">
-        <div
-          className="post-content medium width"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </section>
+          <AboutSidebar />
+        </div>
+      </div>
     </div>
   )
 }
