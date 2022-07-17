@@ -102,6 +102,7 @@
 html {
   font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   line-height: 1.6;
   font-size: 16px;
@@ -545,7 +546,7 @@ button.theme-toggle:hover {
   }
 
   .navigation nav {
-    gap: 0.75rem;
+    gap: 1.5rem;
   }
 }
 
