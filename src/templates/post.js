@@ -11,7 +11,8 @@ import { appendComments } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { tags, categories, title, date, thumbnail } = post.frontmatter
+  const { tags, categories, title, date, thumbnail, comments_off } =
+    post.frontmatter
   const commentBox = React.createRef()
 
   useEffect(() => {
@@ -37,10 +38,12 @@ export default function PostTemplate({ data }) {
               />
             </section>
 
-            <section id="comments" className="segment comments">
-              <h3>Comments</h3>
-              <Comments commentBox={commentBox} />
-            </section>
+            {!comments_off && (
+              <section id="comments" className="segment comments">
+                <h3>Comments</h3>
+                <Comments commentBox={commentBox} />
+              </section>
+            )}
           </div>
 
           <PostSidebar
@@ -71,6 +74,7 @@ export const pageQuery = graphql`
         tags
         categories
         description
+        comments_off
         thumbnail {
           childImageSharp {
             fixed(width: 150, height: 150) {
