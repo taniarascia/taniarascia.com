@@ -73,13 +73,13 @@ export default function Projects() {
                   </div>
                   <div className="links anchored">
                     {project.writeup && (
-                      <Link className="button" to={project.writeup}>
+                      <Link className="button small" to={project.writeup}>
                         Article
                       </Link>
                     )}
                     {project.url && (
                       <a
-                        className="button flex"
+                        className="button small flex"
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"

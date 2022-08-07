@@ -47,6 +47,7 @@ export const projectsList = [
     slug: 'new-moon',
     tagline: 'The optimized dark theme for web development.',
     url: 'https://taniarascia.github.io/new-moon',
+    highlight: true,
   },
   {
     name: 'Laconia',

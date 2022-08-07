@@ -80,7 +80,7 @@
   --year: var(--green);
   --star: var(--yellow);
   --post-time-color: var(--gray-6);
-  --card-time-color: var(--font-color-muted);
+  --card-time-color: var(--rainbow-1);
   --project-time-color: var(--font-color-muted);
   --highlight-color: var(--green);
   --blockquote-background: var(--indigo-muted);
@@ -88,7 +88,7 @@
   --inline-code-background-color: rgba(0, 0, 0, 0.05);
 
   /* Sizs */
-  --content-width: 1160px;
+  --content-width: 1000px;
   --content-width--small: 550px;
   --content-width--medium: 700px;
 }
@@ -375,6 +375,18 @@ a.button {
   color: var(--font-color-base);
   border: 1px solid var(--border-color);
   gap: 0.25rem;
+}
+
+button.large,
+a.button.large {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+button.small,
+a.button.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
 }
 
 button img,
@@ -703,10 +715,6 @@ p.hero-description {
   }
 }
 
-.decoration {
-  width: 60%;
-}
-
 /* Preview */
 
 .highlight-preview {
@@ -765,12 +773,6 @@ p.hero-description {
   .post-preview {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .post-preview {
-    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -861,7 +863,7 @@ a.post time {
 @media screen and (min-width: 1000px) {
   .grid {
     display: grid;
-    grid-template-columns: auto 280px;
+    grid-template-columns: auto 260px;
     gap: 5rem;
   }
 }
@@ -879,7 +881,7 @@ a.post time {
 
 .post-sidebar-card {
   background: var(--card-background-color);
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: var(--border-radius);
   margin: 2rem 0;
 }
@@ -1175,12 +1177,10 @@ a.gatsby-resp-image-link {
 
 @media screen and (min-width: 700px) {
   .circle {
-    height: 50px;
-    width: 50px;
-    min-width: 50px;
-    min-height: 50px;
-    margin: 0.5rem 0;
-    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    min-height: 40px;
   }
 }
 

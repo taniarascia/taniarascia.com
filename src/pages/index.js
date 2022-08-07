@@ -66,6 +66,13 @@ export default function Index({ data }) {
               <div className="circle rainbow-2" />
               <div className="circle rainbow-3" />
             </div>
+            <div className="circles desktop-only">
+              <div className="circle rainbow-5" />
+              <div className="circle rainbow-1" />
+              <div className="circle rainbow-2" />
+              <div className="circle rainbow-3" />
+              <div className="circle rainbow-4" />
+            </div>
           </div>
         </div>
       </div>
@@ -168,7 +175,7 @@ export default function Index({ data }) {
               href="https://taniarascia.substack.com/subscribe"
               target="_blank"
               rel="noopener noreferrer"
-              className="button"
+              className="button large"
             >
               Subscribe to the Newsletter
             </a>
@@ -184,7 +191,7 @@ Index.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 5
+      limit: 6
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
