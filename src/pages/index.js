@@ -151,9 +151,11 @@ export default function Index({ data }) {
                       <p>{project.tagline}</p>
                     </div>
                     <div className="anchored links">
-                      <Link className="button" to={project.writeup}>
-                        Article
-                      </Link>
+                      {project.writeup && (
+                        <Link className="button" to={project.writeup}>
+                          Article
+                        </Link>
+                      )}
                       <a className="button flex" href={project.url}>
                         Demo
                       </a>
