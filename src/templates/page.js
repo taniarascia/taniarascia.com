@@ -18,7 +18,7 @@ export default function PageTemplate({ data }) {
       <div className="container">
         <div className="grid">
           <div className="article-content">
-            <div className="post-header medium width">
+            <div className="hero">
               <h1>{title}</h1>
             </div>
             <section className="segment small">

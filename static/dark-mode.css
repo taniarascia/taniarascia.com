@@ -23,6 +23,16 @@
   --file-background: rgba(0, 0, 0, 0.2);
   --inline-code-background-color: rgba(0, 0, 0, 0.2);
   --highlight-color: var(--rainbow-4);
+  --navbar: var(--gray-9);
+  --navbar-border: var(--gray-7);
+  --navbar-color: var(--gray-4);
+  --navbar-color-hover: white;
+  --theme-button-background: var(--gray-8);
+  --theme-button-background-hover: var(--gray-7);
+  --theme-button-border: var(--gray-7);
+  --theme-button-border-hover: var(--gray-6);
+  --theme-button-color: var(--gray-0);
+  --theme-button-color-hover: white;
 
   --code-font-color: #b3b9c5;
   --code-background-color: var(--gray-9);
