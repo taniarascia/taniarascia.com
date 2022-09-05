@@ -25,6 +25,7 @@
   --class: #a346a0;
   --tag: #365ccd;
   --error: #b0292c;
+  --code-link-hover: var(--link);
 }
 
 pre {
@@ -36,7 +37,7 @@ pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   color: var(--code-font-color);
   font-family: 'Menlo', var(--font-family-monospace);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -84,8 +85,9 @@ code.language-text {
   color: var(--font-color-base);
   padding: 0.2rem 0.3rem;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-radius: 4px;
+  border: 2px solid var(--border-color);
 }
 
 :not(pre) > a code[class*='language-'] {
@@ -93,7 +95,7 @@ code.language-text {
 }
 
 :not(pre) > a code[class*='language-']:hover {
-  color: var(--link-hover-color);
+  color: var(--code-link-hover);
 }
 
 code.language-shell::before {
@@ -144,7 +146,6 @@ pre.language-terminal::before {
   top: 0;
   left: 0;
   background: var(--terminal-bar);
-  padding: 0.5rem 1.5rem 0.7rem;
   color: #a19ea1;
   border-top: 1px solid var(--terminal-accent);
   border-bottom: 1px solid var(--border-color);
@@ -166,8 +167,8 @@ pre.language-terminal::before {
   text-size-adjust: none;
   border-radius: 4px;
   overflow: auto;
-  padding: 1rem;
-  margin: 1.5rem 0;
+  padding: 1.25rem;
+  margin: 1.75rem 0;
   max-width: 100%;
 }
 
@@ -187,9 +188,9 @@ pre.language-terminal::before {
 .gatsby-highlight-code-line {
   background-color: rgb(116, 207, 116, 0.15);
   display: block;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding-left: calc(1rem - 4px);
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  padding-left: calc(1.25rem - 4px);
   border-left: 4px solid #74cf74;
 }
 
@@ -201,11 +202,11 @@ pre.language-terminal::before {
   padding: 0.3rem 1rem;
   color: var(--font-color-base);
   line-height: 1.5;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 500;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  margin-bottom: -1.5rem;
+  margin-bottom: -1.8rem;
   max-width: 100%;
 }
 
@@ -265,7 +266,6 @@ pre.language-terminal::before {
 
 .token.atrule,
 .token.keyword {
-  font-weight: 600;
   color: var(--keyword);
 }
 

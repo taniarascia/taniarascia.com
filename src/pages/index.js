@@ -29,50 +29,24 @@ export default function Index({ data }) {
 
       <div className="container">
         <div className="hero-wrapper">
-          <Hero title="Hi, I'm Tania" index>
+          <Hero title="Hey, I'm Tania!" index>
             <p className="hero-description small width">
-              I'm a software developer who creates open-source projects. I like
-              accordions, board games, and stand-up comedy. <br />
+              Welcome to my digital garden. 🌱
               <br />
-              This is my digital garden. 🌱
+              <br />
+              I'm a software developer who creates open-source projects and
+              writes about code, design, and life. I like accordions, outer
+              space, board games, and stand-up comedy.
+              <br />
+              <br />
+              Check out <Link to="/projects">my projects</Link> and{' '}
+              <Link to="/blog">articles I've written</Link> on subjects like
+              game design, security, front end development, or find out{' '}
+              <Link to="/me">more about me</Link>.
             </p>
           </Hero>
           <div className="decoration">
-            <div className="circles">
-              <div className="circle rainbow-1" />
-              <div className="circle rainbow-2" />
-              <div className="circle rainbow-3" />
-              <div className="circle rainbow-4" />
-              <div className="circle rainbow-5" />
-            </div>
-            <div className="circles desktop-only">
-              <div className="circle rainbow-2" />
-              <div className="circle rainbow-3" />
-              <div className="circle rainbow-4" />
-              <div className="circle rainbow-5" />
-              <div className="circle rainbow-1" />
-            </div>
-            <div className="circles desktop-only">
-              <div className="circle rainbow-3" />
-              <div className="circle rainbow-4" />
-              <div className="circle rainbow-5" />
-              <div className="circle rainbow-1" />
-              <div className="circle rainbow-2" />
-            </div>
-            <div className="circles desktop-only">
-              <div className="circle rainbow-4" />
-              <div className="circle rainbow-5" />
-              <div className="circle rainbow-1" />
-              <div className="circle rainbow-2" />
-              <div className="circle rainbow-3" />
-            </div>
-            <div className="circles desktop-only">
-              <div className="circle rainbow-5" />
-              <div className="circle rainbow-1" />
-              <div className="circle rainbow-2" />
-              <div className="circle rainbow-3" />
-              <div className="circle rainbow-4" />
-            </div>
+            <p>Empty space</p>
           </div>
         </div>
       </div>

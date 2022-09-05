@@ -29,11 +29,10 @@ export const PostSidebar = ({
           garden. 🌱
         </p>
         <p>
-          I'm a software developer who writes articles and tutorials about
-          things that interest me. This site is and has always been free of ads,
-          trackers, social media, affiliates, and sponsored posts.
+          I'm a software developer who creates open-source projects and writes
+          about code, design, and life. This site is and has always been free of
+          ads, trackers, social media, affiliates, and sponsored posts.
         </p>
-        <p>I hope you enjoy the post and have a nice day.</p>
       </div>
       <div className="post-sidebar-card">
         <h2>Details</h2>

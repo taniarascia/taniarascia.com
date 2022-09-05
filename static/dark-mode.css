@@ -54,4 +54,5 @@
   --class: #e1a6f2;
   --tag: #6ab0f3;
   --error: #b0292c;
+  --code-link-hover: var(--link-hover-color);
 }
