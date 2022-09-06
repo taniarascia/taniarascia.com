@@ -88,7 +88,7 @@ export default function Projects() {
                       </a>
                     )}
                     <a
-                      className="button flex"
+                      className="button small flex"
                       href={`https://github.com/taniarascia/${project.slug}`}
                       target="_blank"
                       rel="noreferrer"

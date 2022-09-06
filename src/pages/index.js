@@ -41,7 +41,7 @@ export default function Index({ data }) {
               <br />
               Check out <Link to="/projects">my projects</Link> and{' '}
               <Link to="/blog">articles I've written</Link> on subjects like
-              game design, security, front end development, or find out{' '}
+              game design, security, front end development, or learn{' '}
               <Link to="/me">more about me</Link>.
             </p>
           </Hero>
