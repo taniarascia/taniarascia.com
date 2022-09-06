@@ -37,7 +37,7 @@ pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   color: var(--code-font-color);
   font-family: 'Menlo', var(--font-family-monospace);
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -53,6 +53,13 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+}
+
+@media screen and (min-width: 800px) {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    font-size: 0.9rem;
+  }
 }
 
 pre[class*='language-'] {

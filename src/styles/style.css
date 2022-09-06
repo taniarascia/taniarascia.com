@@ -139,7 +139,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: var(--font-color-base);
 }
 
@@ -241,7 +241,7 @@ h2 + h3 {
 }
 
 h2 {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   margin: 0 0 1rem;
   font-weight: 700;
   padding-bottom: 0.4rem;
@@ -251,11 +251,11 @@ h2 {
 }
 
 h2 code {
-  font-size: 1.9rem !important;
+  font-size: 2rem !important;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 900;
   margin-bottom: 1.25rem;
   color: var(--font-color-heading);
@@ -264,6 +264,16 @@ h3 {
 
 h3 code {
   font-size: 1.5rem !important;
+}
+
+@media screen and (min-width: 800px) {
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
 }
 
 h4,
@@ -458,10 +468,6 @@ a.button:hover {
   background: transparent;
 }
 
-.navigation a.item.brand:hover {
-  border-bottom-color: var(--rainbow-2);
-}
-
 .navigation .item.brand span,
 .theme-toggle span {
   display: none;
@@ -590,7 +596,7 @@ a.button:hover {
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 800px) {
   .theme-toggle button img {
     margin-right: 0.25rem;
   }
@@ -619,9 +625,38 @@ a.button:hover {
   .navigation .container {
     height: var(--navbar-height-large);
   }
+
+  .navigation a.item.brand:hover {
+    border-color: var(--theme-button-border-hover);
+    background: var(--theme-button-background-hover);
+  }
 }
 
 /* Card */
+
+.star {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--star);
+  font-family: var(--font-family-monospace);
+}
+
+.star a {
+  color: var(--font-color-muted);
+}
+
+.star a:hover {
+  color: var(--font-color-bright);
+  text-decoration: underline;
+}
+
+.stars {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
 
 .card {
   border-radius: var(--border-radius);
@@ -672,7 +707,7 @@ a.button:hover {
   display: block;
   font-family: var(--font-family-monospace);
   color: var(--card-time-color);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .card.muted {
@@ -693,6 +728,11 @@ a.button:hover {
 @media screen and (min-width: 700px) {
   .card {
     padding: 1.5rem;
+  }
+
+  .stars {
+    top: 1.5rem;
+    right: 1.5rem;
   }
 }
 
@@ -930,7 +970,7 @@ a.post time {
   margin-left: auto;
   font-family: var(--font-family-monospace);
   color: var(--post-time-color);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
 }
 
@@ -1011,7 +1051,7 @@ a.post time {
 .list a {
   background-color: transparent;
   color: var(--font-color-base);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.1rem 0.3rem;
   margin: 0 -0.3rem;
@@ -1034,7 +1074,7 @@ a.post time {
 }
 
 a.tag {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 400;
   padding: 0.2rem 0.4rem;
   border: 1px solid var(--border-color);
@@ -1097,7 +1137,7 @@ a.category.active .count {
 
 .category .count {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--font-color-muted);
   font-family: var(--font-family-monospace);
 }
@@ -1214,30 +1254,6 @@ a.category.active .count {
 
 .footer a:hover {
   text-decoration: underline;
-}
-
-.star {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--star);
-  font-family: var(--font-family-monospace);
-}
-
-.star a {
-  color: var(--font-color-muted);
-}
-
-.star a:hover {
-  color: var(--font-color-bright);
-  text-decoration: underline;
-}
-
-.stars {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
 }
 
 /* Gatsby */
