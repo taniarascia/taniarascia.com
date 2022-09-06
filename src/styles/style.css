@@ -294,6 +294,7 @@ h5 {
 }
 
 h2.home-heading {
+  margin-top: 3rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -304,7 +305,7 @@ h2.home-heading {
 
 h2.home-heading .title {
   font-size: 1.4rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   font-family: var(--font-family-base);
   font-weight: 700;
 }
@@ -574,7 +575,7 @@ a.button:hover {
 }
 
 .theme-toggle button {
-  padding: 0.6rem 0.8rem;
+  padding: 0.4rem 0.5rem;
   background: var(--theme-button-background);
   border-color: var(--theme-button-border);
   color: var(--theme-button-color);
@@ -605,7 +606,8 @@ a.button:hover {
     margin: 0 0.3rem;
   }
 
-  .navigation a.item.brand {
+  .navigation a.item.brand,
+  .theme-toggle button {
     font-size: 1.1rem;
     padding: 0.6rem 0.8rem;
   }
