@@ -705,7 +705,7 @@ main {
 /* Hero */
 
 .hero {
-  padding: 0.5rem 0;
+  padding: 1.5rem 0;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -718,7 +718,7 @@ main {
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1.1;
   font-weight: 700;
   color: var(--font-color-heading);
