@@ -10,6 +10,7 @@
   --gray-4: #ced4da;
   --gray-5: #adb5bd;
   --gray-6: #868e96;
+  --gray-65: #555a61;
   --gray-7: #4b5056;
   --gray-8: #31363b;
   --gray-9: #212529;
@@ -62,6 +63,7 @@
   --font-color-base: var(--gray-7);
   --font-color-muted: var(--gray-6);
   --font-color-heading: var(--gray-8);
+  --font-color-heading3: var(--gray-7);
   --font-color-bright: var(--gray-9);
   --font-color-hero-heading: var(--gray-0);
 
@@ -96,6 +98,7 @@
   --theme-button-border-hover: var(--gray-5);
   --theme-button-color: var(--gray-7);
   --theme-button-color-hover: var(--gray-9);
+  --category-link: #dd4eb2;
 
   /* Sizs */
   --content-width: 1160px;
@@ -139,7 +142,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--font-color-base);
 }
 
@@ -193,7 +196,7 @@ main {
 
 blockquote {
   margin: 2rem 0;
-  border-left: 4px solid var(--indigo-light);
+  border-left: 6px solid var(--indigo-light);
   margin-left: 0;
   padding: 1.5rem;
   background: var(--blockquote-background);
@@ -212,6 +215,11 @@ blockquote p:last-of-type {
 
 blockquote ul {
   margin-top: 1.5rem;
+}
+
+blockquote strong {
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 /* Headings */
@@ -241,7 +249,7 @@ h2 + h3 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin: 0 0 1rem;
   font-weight: 700;
   padding-bottom: 0.4rem;
@@ -251,14 +259,14 @@ h2 {
 }
 
 h2 code {
-  font-size: 2rem !important;
+  font-size: 1.6rem !important;
 }
 
 h3 {
   font-size: 1.4rem;
   font-weight: 900;
   margin-bottom: 1.25rem;
-  color: var(--font-color-heading);
+  color: var(--font-color-heading3);
   font-family: var(--font-family-heading);
 }
 
@@ -271,8 +279,16 @@ h3 code {
     font-size: 2.1rem;
   }
 
+  h2 code {
+    font-size: 2rem !important;
+  }
+
   h3 {
     font-size: 1.6rem;
+  }
+
+  h3 code {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -683,7 +699,7 @@ a.button:hover {
 .card h2 {
   display: block;
   font-size: 1.1rem;
-  line-height: 1.2;
+  line-height: 1.3;
   font-family: var(--font-family-base);
   color: var(--font-color-heading);
   font-weight: 700;
@@ -749,7 +765,7 @@ main {
 /* Hero */
 
 .hero {
-  padding: 1.5rem 0;
+  padding: 1rem 0 0;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -762,7 +778,7 @@ main {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   line-height: 1.1;
   font-weight: 700;
   color: var(--font-color-heading);
@@ -782,6 +798,7 @@ main {
 p.hero-description {
   -webkit-font-smoothing: antialiased;
   margin-top: 1.5rem;
+  margin-bottom: 0;
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--font-color-base);
@@ -834,8 +851,8 @@ p.hero-description a:hover {
 
   .decoration p {
     margin: 0;
-    color: var(--border-color);
-    font-weight: 600;
+    color: var(--font-color-muted);
+    font-weight: 500;
     text-align: center;
   }
 }
@@ -850,7 +867,7 @@ p.hero-description a:hover {
 
 .highlight-preview {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -897,7 +914,7 @@ p.hero-description a:hover {
 
 .post-preview {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -1018,7 +1035,7 @@ a.post time {
 }
 
 .post-sidebar h2 {
-  color: var(--font-color-muted);
+  color: var(--font-color-base);
   font-size: 0.9rem;
   border: none;
   margin: 0 0 1rem;
@@ -1113,7 +1130,7 @@ a.tag.active {
 a.cat {
   font-family: var(--font-family-monospace);
   font-size: 0.8rem;
-  color: var(--font-color-muted);
+  color: var(--category-link);
   text-decoration: underline;
 }
 
@@ -1195,9 +1212,9 @@ a.category.active .count {
 
 .post-header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.05rem;
 }
 
@@ -1208,6 +1225,7 @@ a.category.active .count {
 
   .post-header h1 {
     font-size: 2.6rem;
+    line-height: 1.2;
   }
 }
 
