@@ -46,7 +46,7 @@ export default function Index({ data }) {
             </p>
           </Hero>
           <div className="decoration">
-            <p>Empty space</p>
+            <img src="/ram.png" alt="Ram" className="image" />
           </div>
         </div>
       </div>

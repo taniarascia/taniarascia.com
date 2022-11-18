@@ -836,16 +836,16 @@ p.hero-description a:hover {
 @media screen and (min-width: 700px) {
   .hero-wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
   }
 
   .decoration {
     display: block;
-    padding: 3rem;
-    border-radius: var(--border-radius);
-    border: 4px dashed var(--border-color);
+    /* padding: 3rem; */
+    /* border-radius: var(--border-radius); */
+    /* border: 4px dashed var(--border-color); */
     white-space: nowrap;
   }
 
@@ -859,7 +859,7 @@ p.hero-description a:hover {
 
 @media screen and (min-width: 900px) {
   .decoration {
-    padding: 5rem;
+    /* padding: 5rem; */
   }
 }
 
@@ -1391,4 +1391,8 @@ a.gatsby-resp-image-link {
 
 .rainbow-5 {
   background: var(--rainbow-5);
+}
+
+.image {
+  max-width: 100%;
 }
