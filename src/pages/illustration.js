@@ -14,6 +14,7 @@ const images = [
   { url: '/illustrations/Ram.png', title: 'RAM Ram' },
   { url: '/illustrations/MechaRam.png', title: 'Mecha Ram' },
   { url: '/illustrations/Oddish.png', title: 'Oddish' },
+  { url: '/illustrations/Bulbasaur.png', title: 'Bulbasaur' },
 ]
 
 export default function Illustration() {

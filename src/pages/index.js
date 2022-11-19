@@ -34,12 +34,13 @@ export default function Index({ data }) {
               Welcome to my digital garden. 🌱
               <br />
               <br />
-              I'm a software developer who makes open-source projects and writes
-              about code, design, and life. I like accordions, drawing, outer
-              space, reading, and gaming.
+              I'm a software developer in Chicago. I make{' '}
+              <Link to="/projects">open-source projects</Link> and{' '}
+              <Link to="/blog">write</Link> about code, design, and life. I like
+              accordions, drawing, sci-fi, reading, and gaming.
               <br />
               <br />
-              Find out <Link to="/me">more about me</Link>!
+              More <Link to="/me">about me</Link>.
             </p>
           </Hero>
           <div className="decoration">
@@ -52,8 +53,9 @@ export default function Index({ data }) {
           </div>
         </div>
       </div>
+
       <div className="container">
-        <section className="segment">
+        <section className="segment first">
           <Heading title="Latest Posts" slug="/blog" />
 
           <Posts data={simplifiedLatest} newspaper />

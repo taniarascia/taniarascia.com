@@ -317,7 +317,7 @@ h5 {
 }
 
 h2.home-heading {
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -327,7 +327,7 @@ h2.home-heading {
 }
 
 h2.home-heading .title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
   font-family: var(--font-family-base);
   font-weight: 700;
@@ -400,8 +400,8 @@ img {
 }
 
 .segment {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .segment.small {
@@ -412,6 +412,10 @@ img {
 .segment.large {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+
+.segment.first {
+  margin-top: 3rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -461,6 +465,8 @@ a.button.small {
 
 button img,
 a.button img {
+  min-height: 20px;
+  min-width: 20px;
   max-height: 20px;
   margin-right: 0.25rem;
 }
@@ -610,7 +616,7 @@ a.button:hover {
 }
 
 .theme-toggle button {
-  padding: 0.5rem;
+  padding: 0.25rem;
   background: var(--theme-button-background);
   border-color: var(--theme-button-border);
   color: var(--theme-button-color);
@@ -667,6 +673,10 @@ a.button:hover {
   .navigation .container {
     height: var(--navbar-height-large);
   }
+
+  .theme-toggle button {
+    padding: 0.5rem;
+  }
 }
 
 /* Card */
@@ -716,12 +726,12 @@ a.button:hover {
 .card a.card-header,
 .card h2 {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.3;
   font-family: var(--font-family-base);
   color: var(--font-color-heading);
   font-weight: 700;
-  margin: 0.25rem 0 0.5rem;
+  margin: 0.1rem 0 0.5rem;
   padding: 0;
   border: 0;
   text-decoration: none;
@@ -745,7 +755,7 @@ a.button:hover {
   display: block;
   font-family: var(--font-family-monospace);
   color: var(--card-time-color);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: -0.01rem;
 }
 
@@ -767,6 +777,11 @@ a.button:hover {
 @media screen and (min-width: 700px) {
   .card {
     padding: 1.5rem;
+  }
+
+  .card a.card-header,
+  .card h2 {
+    font-size: 1.1rem;
   }
 
   .card.muted {
@@ -804,7 +819,7 @@ main {
 }
 
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.1;
   font-weight: 700;
   color: var(--font-color-heading);
@@ -841,7 +856,7 @@ p.hero-description a:hover {
 
 @media screen and (min-width: 1060px) {
   p.hero-description {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -912,7 +927,7 @@ p.hero-description a:hover {
 }
 
 .image-preview {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .image-thumbnail {
@@ -924,8 +939,12 @@ p.hero-description a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .image-preview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .image-thumbnail {
-    height: 200px;
+    height: 220px;
   }
 }
 
@@ -1002,7 +1021,7 @@ a.anchor svg {
 
 a.post {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   padding: 0.4rem 0;
   background: transparent;
   text-decoration: none;
@@ -1027,7 +1046,7 @@ a.post time {
   display: block;
   font-family: var(--font-family-monospace);
   color: var(--post-time-color);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
 }
