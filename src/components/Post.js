@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export const Post = ({ node, prefix }) => {
+export const Post = ({ node, prefix, newspaper }) => {
   let formattedDate
 
   if (node.date) {
@@ -18,8 +18,17 @@ export const Post = ({ node, prefix }) => {
       key={node.id}
       className="post"
     >
-      <h3>{node.title}</h3>
-      <time>{formattedDate}</time>
+      {newspaper ? (
+        <>
+          <time>{formattedDate}</time>
+          <h3>{node.title}</h3>
+        </>
+      ) : (
+        <>
+          <h3>{node.title}</h3>
+          <time style={{ marginLeft: 'auto' }}>{formattedDate}</time>
+        </>
+      )}
     </Link>
   )
 }

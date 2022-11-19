@@ -9,7 +9,7 @@ import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, description } = post.frontmatter
+  const { title, description, slug } = post.frontmatter
 
   return (
     <div>
@@ -29,7 +29,7 @@ export default function PageTemplate({ data }) {
             </section>
           </div>
 
-          <AboutSidebar />
+          {slug.includes('me') && <AboutSidebar />}
         </div>
       </div>
     </div>

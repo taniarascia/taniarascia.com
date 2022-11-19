@@ -4,13 +4,13 @@ import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
+import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
 import { Heading } from '../components/Heading'
 import { Hero } from '../components/Hero'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
-import { slugify } from '../utils/helpers'
 
 export default function Index({ data }) {
   const latest = data.latest.edges
@@ -34,19 +34,21 @@ export default function Index({ data }) {
               Welcome to my digital garden. 🌱
               <br />
               <br />
-              I'm a software developer who creates open-source projects and
-              writes about code, design, and life. I like accordions, outer
-              space, board games, and stand-up comedy.
+              I'm a software developer who makes open-source projects and writes
+              about code, design, and life. I like accordions, drawing, outer
+              space, reading, and gaming.
               <br />
               <br />
-              Check out <Link to="/projects">my projects</Link> and{' '}
-              <Link to="/blog">articles I've written</Link> on subjects like
-              game design, security, front end development, or learn{' '}
-              <Link to="/me">more about me</Link>.
+              Find out <Link to="/me">more about me</Link>!
             </p>
           </Hero>
           <div className="decoration">
-            <img src="/ram.png" alt="Ram" className="image" />
+            <img
+              src="/ram.png"
+              alt="RAM Ram"
+              className="image"
+              title="RAM Ram"
+            />
           </div>
         </div>
       </div>
@@ -54,33 +56,7 @@ export default function Index({ data }) {
         <section className="segment">
           <Heading title="Latest Posts" slug="/blog" />
 
-          <div className="post-preview">
-            {simplifiedLatest.map((post) => {
-              return (
-                <div className="anchored card" key={post.slug}>
-                  <time>{post.date}</time>
-                  <Link className="card-header" to={post.slug}>
-                    {post.title}
-                  </Link>
-                  <div className="anchored categories">
-                    {post.categories
-                      .filter((cat) => cat !== 'Highlight')
-                      .map((cat) => {
-                        return (
-                          <Link
-                            className="cat"
-                            to={`/categories/${slugify(cat)}`}
-                            key={slugify(cat)}
-                          >
-                            {cat}
-                          </Link>
-                        )
-                      })}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <Posts data={simplifiedLatest} newspaper />
         </section>
 
         <section className="segment">
@@ -167,7 +143,7 @@ Index.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 6
+      limit: 10
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
