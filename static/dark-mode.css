@@ -22,7 +22,7 @@
   --link-hover-color: #222;
   --blockquote-background: rgba(120, 120, 255, 0.15);
   --marker: #e77cc7;
-  --file-background: rgba(0, 0, 0, 0.2);
+  --file-background: #333;
   --inline-code-background-color: rgba(0, 0, 0, 0.2);
   --highlight-color: var(--rainbow-4);
   --navbar: var(--gray-9);

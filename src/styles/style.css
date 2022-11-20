@@ -410,8 +410,8 @@ img {
 }
 
 .segment.large {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .segment.first {
@@ -422,6 +422,11 @@ img {
   .segment {
     margin-top: 3rem;
     margin-bottom: 3rem;
+  }
+
+  .segment.large {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 
   .segment.small {

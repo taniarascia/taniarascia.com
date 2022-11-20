@@ -61,7 +61,7 @@ export default function Index({ data }) {
           <Posts data={simplifiedLatest} newspaper />
         </section>
 
-        <section className="segment">
+        <section className="segment large">
           <Heading title="Popular Tutorials" />
 
           <div className="highlight-preview">
@@ -81,7 +81,7 @@ export default function Index({ data }) {
           </div>
         </section>
 
-        <section className="segment">
+        <section className="segment large">
           <Heading title="Side Projects" slug="/projects" />
 
           <div className="post-preview">
@@ -118,7 +118,7 @@ export default function Index({ data }) {
           </div>
         </section>
 
-        <section className="segment">
+        <section className="segment large">
           <Heading title="Stay in touch" />
           <p>
             If I write something new, I'll let you know via newsletter. I don't
