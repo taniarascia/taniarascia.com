@@ -101,6 +101,8 @@
   --theme-button-color: var(--gray-7);
   --theme-button-color-hover: var(--gray-9);
   --category-link: #dd4eb2;
+  --scrollbar-color: var(--gray-1);
+  --scrollbar-track: var(--gray-4);
 
   /* Sizs */
   --content-width: 1160px;
@@ -327,7 +329,7 @@ h2.home-heading {
 }
 
 h2.home-heading .title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 0;
   font-family: var(--font-family-base);
   font-weight: 700;
@@ -859,13 +861,6 @@ p.hero-description a:hover {
   text-decoration: none;
 }
 
-@media screen and (min-width: 1060px) {
-  p.hero-description {
-    margin-bottom: 0;
-    font-size: 1.05rem;
-  }
-}
-
 .hero .sub-title {
   color: var(--font-color-muted);
   font-weight: 500;
@@ -887,6 +882,11 @@ p.hero-description a:hover {
     grid-template-columns: 3fr 2fr;
     align-items: center;
     gap: 1.5rem;
+  }
+
+  p.hero-description {
+    margin-bottom: 0;
+    font-size: 1.2rem;
   }
 }
 
@@ -1045,7 +1045,7 @@ a.post time {
   .posts.newspaper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
+    column-gap: 3rem;
   }
 
   a.post h3 {
@@ -1473,4 +1473,15 @@ a.gatsby-resp-image-link {
 mark {
   font-weight: 600;
   background: var(--red-1);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 2px;
 }

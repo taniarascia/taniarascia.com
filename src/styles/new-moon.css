@@ -68,7 +68,7 @@ pre[class*='language-'] {
   padding: 1rem;
   background: var(--code-background-color);
   overflow: initial;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 pre.language-text {
@@ -115,11 +115,19 @@ code.language-shell::before {
   background: var(--code-background-color);
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  border-radius: 6px;
+  border-radius: 0;
   overflow: auto;
   padding: 1.5rem;
-  margin: 2.5rem 0;
-  max-width: 100%;
+  margin: 2.5rem -1.5rem;
+  max-width: calc(100% + 2.5rem);
+}
+
+@media screen and (min-width: 700px) {
+  .gatsby-highlight {
+    margin: 2.5rem 0;
+    max-width: 100%;
+    border-radius: 6px;
+  }
 }
 
 .gatsby-highlight[data-language='terminal'] {
@@ -138,10 +146,19 @@ code.language-shell::before {
 .gatsby-highlight-code-line {
   background-color: rgb(116, 207, 116, 0.15);
   display: block;
-  margin-left: -1.5rem;
+  margin-left: -1rem;
   margin-right: -1.5rem;
-  padding-left: calc(1.25rem - 4px);
+  padding-left: calc(1rem - 4px);
   border-left: 4px solid #74cf74;
+}
+
+@media screen and (min-width: 700px) {
+  .gatsby-highlight-code-line {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: calc(1.5rem - 4px);
+    border-left: 4px solid #74cf74;
+  }
 }
 
 .gatsby-highlight pre[class*='language-'] {
@@ -206,16 +223,27 @@ pre.language-terminal::before {
   align-items: center;
   justify-content: center;
   background: var(--file-background);
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 1rem 0.8rem;
   color: var(--font-color-base);
   line-height: 1.5;
   font-size: 0.9rem;
   font-weight: 500;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 0;
   margin-bottom: -2.8rem;
-  max-width: 100%;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  max-width: calc(100% + 2.5rem);
   padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .filename {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
 }
 
 /* Colors */

@@ -37,6 +37,9 @@
   --theme-button-color-hover: white;
   --category-link: var(--font-color-muted);
 
+  --scrollbar-color: var(--gray-65);
+  --scrollbar-track: var(--gray-7);
+
   --code-font-color: #b3b9c5;
   --code-background-color: var(--gray-8);
   --terminal-background-color: #111;

@@ -119,7 +119,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Stay in touch" />
+          <Heading title="Newsletter" />
           <p>
             If I write something new, I'll let you know via newsletter. I don't
             update often, and don't spam ever.
