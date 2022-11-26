@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   /* Colors */
@@ -56,8 +56,8 @@
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', Arial, sans-serif;
   --font-family-monospace: Menlo, 'IBM Plex Mono', Menlo, monospace;
-  --font-family-heading: 'Merriweather', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', Arial, sans-serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Arial, sans-serif;
   --font-family-nav: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
     sans-serif;
 
@@ -268,8 +268,8 @@ h2 code {
 }
 
 h3 {
-  font-size: 1.4rem;
-  font-weight: 900;
+  font-size: 1.5rem;
+  font-weight: 400;
   margin-bottom: 1.25rem;
   color: var(--font-color-heading3);
   font-family: var(--font-family-heading);
@@ -293,11 +293,11 @@ h3 code {
   }
 
   h3 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
 
   h3 code {
-    font-size: 1.5rem !important;
+    font-size: 1.8rem !important;
   }
 }
 
