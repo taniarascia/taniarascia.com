@@ -165,7 +165,7 @@ p,
 ul,
 ol {
   -webkit-font-smoothing: auto;
-  line-height: 1.75;
+  line-height: 1.7;
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
@@ -200,6 +200,7 @@ main {
 
 blockquote {
   margin: 2rem 0;
+  border: 1px solid var(--indigo-light);
   border-left: 6px solid var(--indigo-light);
   margin-left: 0;
   padding: 1.5rem;
@@ -213,7 +214,7 @@ blockquote p {
   font-weight: 400;
 }
 
-blockquote p:last-of-type {
+blockquote *:last-child {
   margin: 0;
 }
 

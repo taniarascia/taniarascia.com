@@ -62,7 +62,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Popular Tutorials" />
+          <Heading title="Popular" />
 
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
@@ -82,7 +82,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Side Projects" slug="/projects" />
+          <Heading title="Projects" slug="/projects" />
 
           <div className="post-preview">
             {projectsList

@@ -20,7 +20,7 @@
   --project-time-color: var(--star);
   --link: #8e93fb;
   --link-hover-color: #222;
-  --blockquote-background: rgba(120, 120, 255, 0.15);
+  --blockquote-background: rgba(120, 120, 240, 0.05);
   --marker: #e77cc7;
   --file-background: #161616;
   --inline-code-background-color: rgba(0, 0, 0, 0.2);
@@ -62,5 +62,5 @@
   --tag: #59abf7;
   --error: #b0292c;
   --code-link-hover: var(--link-hover-color);
-  --highlight-code-color: rgb(116, 207, 116, 0.1);
+  --highlight-code-color: rgb(116, 207, 136, 0.1);
 }
