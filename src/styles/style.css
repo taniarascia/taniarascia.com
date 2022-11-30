@@ -37,11 +37,11 @@
   --blue-4: #623ac6;
   --blue-5: #58119f;
 
-  --rainbow-1: #da66b7;
-  --rainbow-2: #7549f0;
+  --rainbow-1: #e879f9;
+  --rainbow-2: #936df9;
   --rainbow-3: #4989c6;
-  --rainbow-4: #5fd0a5;
-  --rainbow-5: #fccb44;
+  --rainbow-4: #5eddac;
+  --rainbow-5: #f8cb4e;
 
   --orange: #ff7e22;
   --yellow: #fca62a;
@@ -76,7 +76,7 @@
 
   /* Elements */
   --background-color: white;
-  --card-background-color: var(--gray-05);
+  --card-background-color: var(--gray-0);
   --button-background-color: white;
   --marker: var(--rainbow-1);
   --link: var(--indigo);
@@ -293,11 +293,12 @@ h3 code {
   }
 
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.02rem;
   }
 
   h3 code {
-    font-size: 1.8rem !important;
+    font-size: 1.85rem !important;
   }
 }
 
@@ -762,7 +763,7 @@ a.button:hover {
   display: block;
   font-family: var(--font-family-monospace);
   color: var(--card-time-color);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: -0.01rem;
 }
 
@@ -851,6 +852,7 @@ p.hero-description {
   line-height: 1.6;
   color: var(--font-color-base);
   font-weight: 500;
+  letter-spacing: -0.01rem;
 }
 
 p.hero-description a {
@@ -1036,7 +1038,7 @@ a.post time {
   display: block;
   font-family: var(--font-family-monospace);
   color: var(--post-time-color);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
 }
