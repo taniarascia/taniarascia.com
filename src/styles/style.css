@@ -41,11 +41,11 @@
   --rainbow-2: #936df9;
   --rainbow-3: #4989c6;
   --rainbow-4: #5eddac;
-  --rainbow-5: #f8cb4e;
+  --rainbow-5: #f6cd5d;
 
   --orange: #ff7e22;
   --yellow: #fca62a;
-  --pink: #e855b3;
+  --pink: #e77cc7;
   --purple: #623ac6;
   --indigo: #5a43f1;
   --indigo-dark: #4509cf;
@@ -78,7 +78,7 @@
   --background-color: white;
   --card-background-color: var(--gray-0);
   --button-background-color: white;
-  --marker: var(--rainbow-1);
+  --marker: var(--pink);
   --link: var(--indigo);
   --link-hover-color: var(--indigo-muted);
   --navbar: var(--gray-1);
@@ -223,7 +223,8 @@ blockquote ul {
 }
 
 blockquote strong {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
   font-weight: 700;
 }
 
@@ -239,7 +240,7 @@ h5 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 3rem;
 }
 
 h1:not(:first-child),
@@ -447,11 +448,11 @@ a.button {
   background: var(--button-background-color);
   display: inline-flex;
   align-items: center;
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1.2rem;
   font-family: var(--font-family-nav);
   line-height: 1;
   border-radius: 24px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   font-weight: 500;
   color: var(--font-color-base);
@@ -462,8 +463,9 @@ a.button {
 
 button.large,
 a.button.large {
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.75rem;
   font-size: 1.1rem;
+  font-weight: 400;
 }
 
 button.small,
@@ -705,7 +707,8 @@ a.button:hover {
 
 .star a:hover {
   color: var(--font-color-bright);
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 .stars {
@@ -748,7 +751,8 @@ a.button:hover {
 
 .card a.card-header:hover,
 .card h2:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
   color: var(--font-color-bright);
 }
 
@@ -857,7 +861,8 @@ p.hero-description {
 }
 
 p.hero-description a {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 p.hero-description a:hover {
@@ -991,7 +996,8 @@ p.hero-description a:hover {
 /* Pages */
 
 .post-content a {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 .post-content a:hover {
@@ -1023,7 +1029,11 @@ a.post {
 a.post:hover,
 a.post:hover h3 {
   color: var(--font-color-bright);
-  text-decoration: underline;
+}
+
+a.post:hover h3 {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 a.post h3 {
@@ -1091,7 +1101,7 @@ a.post time {
 }
 
 .post-sidebar h2 {
-  color: var(--gray-6);
+  color: var(--font-color-heading);
   font-size: 0.9rem;
   border: none;
   margin: 0 0 1rem;
@@ -1114,7 +1124,12 @@ a.post time {
 }
 
 .post-sidebar a {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+.post-sidebar a:hover {
+  text-decoration: none;
 }
 
 .sidebar-avatar {
@@ -1163,7 +1178,7 @@ a.tag {
 
 a.tag:hover {
   color: var(--font-color-bright);
-  border-color: var(--border-color-hover);
+  border-color: var(--highlight-color);
   text-decoration: none;
 }
 
@@ -1180,18 +1195,6 @@ a.tag.active {
     bottom: 1.5rem;
     left: 1.5rem;
   }
-}
-
-a.cat {
-  font-family: var(--font-family-monospace);
-  font-size: 0.8rem;
-  color: var(--category-link);
-  text-decoration: underline;
-}
-
-a.cat:hover {
-  color: var(--font-color-bright);
-  text-decoration: underline;
 }
 
 a.category {
@@ -1343,7 +1346,8 @@ a.category.active .count {
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 /* Gatsby */

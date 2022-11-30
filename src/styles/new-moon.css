@@ -20,10 +20,10 @@
   --operator: #a87200;
   --punctuation: #5c6d74;
   --comment: #869496;
-  --function: #0174a5;
-  --keyword: #111;
+  --function: #0582b7;
+  --keyword: #a208ba;
   --attribute: #a87200;
-  --class: #a346a0;
+  --class: #c52387;
   --tag: #365ccd;
   --error: #b0292c;
   --code-link-hover: var(--link);
@@ -147,6 +147,10 @@ code.language-shell::before {
   margin-right: -1.5rem;
   padding-left: calc(1rem - 4px);
   border-left: 4px solid #74cf74;
+}
+
+.gatsby-highlight-code-line .gatsby-highlight-code-line {
+  background-color: transparent;
 }
 
 @media screen and (min-width: 700px) {
@@ -311,7 +315,6 @@ pre.language-terminal::before {
 
 .token.atrule,
 .token.keyword {
-  font-weight: 600;
   color: var(--keyword);
 }
 

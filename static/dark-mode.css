@@ -16,9 +16,9 @@
   --button-background-color: var(--gray-8);
 
   --post-time-color: var(--rainbow-4);
-  --card-time-color: var(--rainbow-1);
+  --card-time-color: var(--pink);
   --project-time-color: var(--star);
-  --link: #8e93fb;
+  --link: #9ca0fa;
   --link-hover-color: #222;
   --blockquote-background: rgba(120, 120, 240, 0.05);
   --marker: #e77cc7;
