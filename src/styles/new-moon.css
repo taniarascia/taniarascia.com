@@ -109,13 +109,13 @@ code.language-shell::before {
   text-size-adjust: none;
   border-radius: 0;
   overflow: auto;
-  margin: 2.5rem -1.5rem;
+  margin: 1.5rem -1.5rem;
   max-width: calc(100% + 2.5rem);
 }
 
 @media screen and (min-width: 700px) {
   .gatsby-highlight {
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
     max-width: 100%;
     border-radius: 6px;
   }
@@ -241,7 +241,7 @@ pre.language-terminal::before {
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 0;
-  margin-bottom: -2.8rem;
+  margin-bottom: -1.9rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
   max-width: calc(100% + 2.5rem);

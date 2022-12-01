@@ -59,7 +59,7 @@
   --keyword: var(--rainbow-1);
   --attribute: #fed06d;
   --class: var(--rainbow-2);
-  --tag: #59abf7;
+  --tag: var(--rainbow-3);
   --error: #b0292c;
   --code-link-hover: var(--link-hover-color);
   --highlight-code-color: rgb(116, 207, 136, 0.1);
