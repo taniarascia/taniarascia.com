@@ -104,6 +104,7 @@ code.language-shell::before {
 }
 
 .gatsby-highlight {
+  border: 1px solid var(--code-border-color);
   background: var(--code-background-color);
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -132,6 +133,7 @@ code.language-shell::before {
 }
 
 .gatsby-highlight[data-language='text'] {
+  border: none;
   background: transparent;
   padding: 0;
   margin-top: 0;
@@ -169,7 +171,6 @@ code.language-shell::before {
   overflow: initial;
   float: left;
   min-width: 100%;
-  border: 1px solid var(--code-border-color);
 }
 
 .gatsby-highlight::after {

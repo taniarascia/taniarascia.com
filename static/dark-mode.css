@@ -5,9 +5,9 @@
   --year: var(--rainbow-4);
 
   --font-color-heading: white;
-  --font-color-heading3: var(--gray-1);
-  --font-color-base: var(--gray-3);
-  --font-color-muted: var(--gray-4);
+  --font-color-heading3: white;
+  --font-color-base: var(--gray-2);
+  --font-color-muted: var(--gray-5);
   --font-color-bright: white;
 
   --border-color: var(--gray-7);
