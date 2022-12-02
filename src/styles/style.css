@@ -157,6 +157,7 @@ blockquote {
   ul,
   table,
   blockquote {
+    letter-spacing: -0.01rem;
     font-size: 1.05rem;
   }
 }
