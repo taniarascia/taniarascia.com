@@ -5,7 +5,7 @@ import gatsby from '../assets/gatsby.png'
 import github from '../assets/nav-github.png'
 
 const links = [
-  { url: 'https://taniarascia.substack.com/subscribe', label: 'Newsletter' },
+  { url: 'https://taniarascia.substack.com', label: 'Newsletter' },
   { url: 'https://ko-fi.com/taniarascia', label: 'Ko-Fi' },
   { url: 'https://patreon.com/taniarascia', label: 'Patreon' },
   { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS' },

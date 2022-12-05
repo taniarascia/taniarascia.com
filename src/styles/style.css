@@ -16,7 +16,7 @@
   --gray-9: #1f1f1f;
   --gray-10: #181818;
 
-  --green: #51b681;
+  --green: #14ae73;
   --green-1: #95cd7f;
   --green-2: #73b18a;
   --green-3: #4d8994;
@@ -475,6 +475,17 @@ a.button.small {
   font-size: 0.9rem;
 }
 
+a.button.highlighted {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--highlight-color);
+}
+
+a.button.highlighted:hover {
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+}
+
 button img,
 a.button img {
   min-height: 20px;
@@ -754,6 +765,10 @@ a.button:hover {
   line-height: 1.5;
   color: var(--font-color-muted);
   font-family: var(--font-family-base);
+}
+
+.card.single p {
+  margin: 0 0 1.5rem;
 }
 
 .card time {
@@ -1472,6 +1487,15 @@ a.gatsby-resp-image-link {
 mark {
   font-weight: 600;
   background: var(--red-1);
+}
+
+.text-muted {
+  color: var(--font-color-muted);
+}
+
+.text-large,
+p.text-large {
+  font-size: 1.2rem;
 }
 
 ::-webkit-scrollbar {

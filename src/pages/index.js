@@ -38,9 +38,6 @@ export default function Index({ data }) {
               <Link to="/projects">open-source projects</Link> and{' '}
               <Link to="/blog">write</Link> about code, design, and life. I like
               accordions, drawing, sci-fi, reading, and gaming.
-              <br />
-              <br />
-              More <Link to="/me">about me</Link>.
             </p>
           </Hero>
           <div className="decoration">
@@ -121,15 +118,14 @@ export default function Index({ data }) {
         <section className="segment large">
           <Heading title="Newsletter" />
           <p>
-            If I write something new, I'll let you know via newsletter. I don't
-            update often, and don't spam ever.
+            Sign up to get updates when I write something new. No spam ever.
           </p>
           <p>
             <a
-              href="https://taniarascia.substack.com/subscribe"
+              href="https://taniarascia.substack.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="button large"
+              className="button large highlighted"
             >
               Subscribe to the Newsletter
             </a>
@@ -145,7 +141,7 @@ Index.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 10
+      limit: 12
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {

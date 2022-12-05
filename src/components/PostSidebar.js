@@ -34,8 +34,9 @@ export const PostSidebar = ({
           ads, trackers, social media, affiliates, and sponsored posts.
         </p>
       </div>
+
       <div className="post-sidebar-card">
-        <h2>Details</h2>
+        <h2>Post Details</h2>
         <ul>
           <li>Published {date}</li>
         </ul>
@@ -66,6 +67,23 @@ export const PostSidebar = ({
             )
           })}
         </div>
+      </div>
+
+      <div className="post-sidebar-card">
+        <h2>Newsletter</h2>
+        <p>
+          Get updates when I write something new! No spam, I respect your inbox.
+        </p>
+        <p>
+          <a
+            href="https://taniarascia.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button highlighted"
+          >
+            Subscribe to the Newsletter
+          </a>
+        </p>
       </div>
     </aside>
   )

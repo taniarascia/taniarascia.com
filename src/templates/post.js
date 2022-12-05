@@ -38,6 +38,24 @@ export default function PostTemplate({ data }) {
               />
             </section>
 
+            <section id="comments" className="segment">
+              <div className="card single">
+                <h3>Newsletter</h3>
+                <p className="text-large">
+                  If you liked this post, sign up to get updates in your email
+                  when I write something new! No spam ever.
+                </p>
+                <a
+                  href="https://taniarascia.substack.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button highlighted large"
+                >
+                  Subscribe to the Newsletter
+                </a>
+              </div>
+            </section>
+
             {!comments_off && (
               <section id="comments" className="segment comments">
                 <h3>Comments</h3>
