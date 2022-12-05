@@ -384,6 +384,16 @@ img {
   max-width: 100%;
 }
 
+mark {
+  font-weight: 600;
+  background: var(--red-1);
+}
+
+u {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
 /* Containers */
 
 .container {
@@ -1482,11 +1492,6 @@ a.gatsby-resp-image-link {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-}
-
-mark {
-  font-weight: 600;
-  background: var(--red-1);
 }
 
 .text-muted {
