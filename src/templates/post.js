@@ -49,7 +49,7 @@ export default function PostTemplate({ data }) {
                   href="https://taniarascia.substack.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button highlighted large"
+                  className="button highlighted"
                 >
                   Subscribe to the Newsletter
                 </a>

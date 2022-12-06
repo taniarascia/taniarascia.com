@@ -471,6 +471,7 @@ a.button {
   border: 1px solid var(--border-color);
   gap: 0.25rem;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 button.large,
@@ -779,11 +780,17 @@ a.button:hover {
 }
 
 .card.single {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .card.single p {
   margin: 0 0 1.5rem;
+}
+
+@media screen and (min-width: 700px) {
+  .card.single {
+    padding: 2rem;
+  }
 }
 
 .card time {

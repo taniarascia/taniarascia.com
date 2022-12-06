@@ -104,7 +104,8 @@ code.language-shell::before {
 }
 
 .gatsby-highlight {
-  border: 1px solid var(--code-border-color);
+  border-top: 1px solid var(--code-border-color);
+  border-bottom: 1px solid var(--code-border-color);
   background: var(--code-background-color);
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -116,6 +117,7 @@ code.language-shell::before {
 
 @media screen and (min-width: 700px) {
   .gatsby-highlight {
+    border: 1px solid var(--code-border-color);
     margin: 1.5rem 0;
     max-width: 100%;
     border-radius: 6px;
@@ -247,7 +249,8 @@ pre.language-terminal::before {
   margin-right: -1.5rem;
   max-width: calc(100% + 2.5rem);
   padding-bottom: 0.8rem;
-  border: 1px solid var(--code-border-color);
+  border-top: 1px solid var(--code-border-color);
+  border-bottom: 1px solid var(--code-border-color);
 }
 
 @media screen and (min-width: 700px) {
@@ -257,6 +260,7 @@ pre.language-terminal::before {
     max-width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    border: 1px solid var(--code-border-color);
   }
 }
 
