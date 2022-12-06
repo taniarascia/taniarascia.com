@@ -777,6 +777,10 @@ a.button:hover {
   font-family: var(--font-family-base);
 }
 
+.card.single {
+  padding: 2rem;
+}
+
 .card.single p {
   margin: 0 0 1.5rem;
 }
@@ -1498,9 +1502,9 @@ a.gatsby-resp-image-link {
   color: var(--font-color-muted);
 }
 
-.text-large,
-p.text-large {
-  font-size: 1.2rem;
+.text-medium,
+p.text-medium {
+  font-size: 1rem;
 }
 
 ::-webkit-scrollbar {

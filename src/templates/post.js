@@ -41,7 +41,7 @@ export default function PostTemplate({ data }) {
             <section id="comments" className="segment">
               <div className="card single">
                 <h3>Newsletter</h3>
-                <p className="text-large">
+                <p className="text-medium">
                   If you liked this post, sign up to get updates in your email
                   when I write something new! No spam ever.
                 </p>
