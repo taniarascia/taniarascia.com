@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { slugify } from '../utils/helpers'
+import { getFormattedDate, slugify } from '../utils/helpers'
 import me from '../../content/images/tania2020small.jpg'
 
 export const PostSidebar = ({
@@ -12,6 +12,7 @@ export const PostSidebar = ({
   thumbnail,
 }) => {
   const category = categories?.filter((category) => category !== 'Highlight')
+  const formattedDate = getFormattedDate(date)
 
   return (
     <aside className="post-sidebar">
@@ -38,7 +39,7 @@ export const PostSidebar = ({
       <div className="post-sidebar-card">
         <h2>Post Details</h2>
         <ul>
-          <li>Published {date}</li>
+          <li>Published {formattedDate}</li>
         </ul>
 
         {category && (

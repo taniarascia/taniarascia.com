@@ -60,3 +60,15 @@ export function appendComments(commentBox) {
     console.log(`Error adding utterances comments on: ${commentBox}`)
   }
 }
+
+export function getFormattedDate(date) {
+  const dateArr = date.split(' ')
+  if (dateArr[1].startsWith('0')) {
+    dateArr[1] = dateArr[1].slice(1, 2)
+  } else {
+    dateArr[1] = dateArr[1].slice(0, 2)
+  }
+  dateArr[1] += ','
+
+  return dateArr.join(' ')
+}

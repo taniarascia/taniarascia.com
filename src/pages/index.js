@@ -42,7 +42,7 @@ export default function Index({ data }) {
             <br />
             <p>
               <small className="text-muted">
-                <em>Last updated: December 5th, 2022</em>
+                <em>Last updated: December 9th, 2022</em>
               </small>
             </p>
           </Hero>
@@ -50,7 +50,7 @@ export default function Index({ data }) {
             <img
               src="/ram.png"
               alt="RAM Ram"
-              className="image"
+              className="image hero-image"
               title="RAM Ram"
             />
           </div>
@@ -147,7 +147,7 @@ Index.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 12
+      limit: 6
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {

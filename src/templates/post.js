@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
@@ -28,6 +29,11 @@ export default function PostTemplate({ data }) {
         <div className="grid">
           <div className="article-content">
             <div className="post-header medium width">
+              {thumbnail && (
+                <div className="mobile-post-image">
+                  <Img fixed={thumbnail.childImageSharp?.fixed} />
+                </div>
+              )}
               <h1>{title}</h1>
             </div>
             <section className="segment small">

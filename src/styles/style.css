@@ -37,7 +37,7 @@
   --blue-4: #623ac6;
   --blue-5: #58119f;
 
-  --rainbow-1: #e879f9;
+  --rainbow-1: #ff67f7;
   --rainbow-2: #936df9;
   --rainbow-3: #59abf7;
   --rainbow-4: #5eddac;
@@ -45,7 +45,7 @@
 
   --orange: #ff7e22;
   --yellow: #fca62a;
-  --pink: #e77cc7;
+  --pink: #f57ad0;
   --purple: #673ece;
   --indigo: #5a43f1;
   --indigo-dark: #4509cf;
@@ -267,6 +267,11 @@ h2 {
   letter-spacing: -0.05rem;
 }
 
+h2.year {
+  border-bottom: none;
+  font-size: 2rem;
+}
+
 h2 code {
   font-size: 1.6rem !important;
 }
@@ -294,6 +299,11 @@ h3 code {
 
   h2 code {
     font-size: 1.9rem !important;
+  }
+
+  h2.year {
+    border-bottom: none;
+    font-size: 2.3rem;
   }
 
   h3 {
@@ -808,7 +818,13 @@ a.button:hover {
   align-items: center;
 }
 
+.card.muted .gatsby-image-wrapper {
+  max-height: 35px !important;
+  max-width: 35px !important;
+}
+
 .card.muted time {
+  display: none;
   color: var(--font-color-muted);
 }
 
@@ -819,6 +835,10 @@ a.button:hover {
 @media screen and (min-width: 700px) {
   .card {
     padding: 1.5rem;
+  }
+
+  .card.muted time {
+    display: block;
   }
 
   .card a.card-header,
@@ -847,17 +867,15 @@ main {
 
 /* Hero */
 
+.hero-wrapper {
+  display: grid;
+}
+
 .hero {
   padding: 1rem 0 0;
   position: relative;
   overflow: hidden;
   width: 100%;
-}
-
-@media screen and (min-width: 700px) {
-  .hero.index {
-    padding: 5rem 0 3rem;
-  }
 }
 
 .hero h1 {
@@ -866,16 +884,6 @@ main {
   font-weight: 700;
   color: var(--font-color-heading);
   margin: 0;
-}
-
-@media screen and (min-width: 700px) {
-  .hero {
-    padding: 3rem 0 0.5rem;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
 }
 
 p.hero-description {
@@ -905,17 +913,8 @@ p.hero-description a:hover {
   margin-bottom: 0.5rem;
 }
 
-.highlight {
-  color: var(--highlight-color);
-}
-
-.hero-wrapper {
-  display: block;
-}
-
 @media screen and (min-width: 700px) {
   .hero-wrapper {
-    display: grid;
     grid-template-columns: 3fr 2fr;
     align-items: center;
     gap: 1.5rem;
@@ -925,6 +924,22 @@ p.hero-description a:hover {
     margin-bottom: 0;
     font-size: 1.2rem;
   }
+
+  .hero {
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero.index {
+    padding: 5rem 0 3rem;
+  }
+}
+
+.highlight {
+  color: var(--highlight-color);
 }
 
 /* Preview */
@@ -975,7 +990,7 @@ p.hero-description a:hover {
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1060px) {
   .project-preview {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1053,6 +1068,11 @@ a.post {
   padding: 0.4rem 0;
   background: transparent;
   text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+a.post:last-of-type {
+  border: none;
 }
 
 a.post:hover,
@@ -1075,19 +1095,24 @@ a.post h3 {
 }
 
 a.post time {
-  display: block;
+  display: none;
   font-family: var(--font-family-monospace);
   color: var(--post-time-color);
   font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
+  margin-left: auto;
 }
 
 @media screen and (min-width: 700px) {
   .posts.newspaper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
+    /* grid-template-columns: 1fr 1fr; */
+    column-gap: 2rem;
+  }
+
+  a.post time {
+    display: block;
   }
 
   a.post h3 {
@@ -1306,6 +1331,21 @@ a.category.active .count {
   text-align: center;
 }
 
+.mobile-post-image {
+  margin-bottom: 1rem;
+}
+
+.mobile-post-image .gatsby-image-wrapper {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+@media screen and (min-width: 1060px) {
+  .mobile-post-image {
+    display: none;
+  }
+}
+
 .post-header {
   padding: 1rem 0 0.5rem;
 }
@@ -1320,7 +1360,7 @@ a.category.active .count {
 
 @media screen and (min-width: 700px) {
   .post-header {
-    padding: 3rem 0 1.5rem;
+    /* padding: 3rem 0 1.5rem; */
   }
 
   .post-header h1 {
@@ -1496,6 +1536,16 @@ a.gatsby-resp-image-link {
 
 .image {
   max-width: 100%;
+}
+
+.hero-image {
+  max-width: 250px;
+}
+
+@media screen and (min-width: 700px) {
+  .hero-image {
+    max-width: 100%;
+  }
 }
 
 .image-thumbnail {
