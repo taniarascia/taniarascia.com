@@ -230,6 +230,26 @@ blockquote strong {
   font-weight: 700;
 }
 
+blockquote.quotation {
+  background: transparent;
+  border: none;
+  border-left: 12px solid var(--border-color);
+  border-radius: 0;
+  font-family: 'Georgia';
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 0 0 0 1.5rem;
+  color: var(--font-color-base);
+}
+
+blockquote.quotation cite {
+  margin-top: 0.5rem;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: block;
+}
+
 /* Headings */
 
 h1,
@@ -1557,7 +1577,7 @@ a.gatsby-resp-image-link {
 }
 
 .text-muted {
-  color: var(--font-color-muted);
+  color: var(--font-color-base);
 }
 
 .text-medium,

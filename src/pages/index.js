@@ -42,7 +42,7 @@ export default function Index({ data }) {
             <br />
             <p>
               <small className="text-muted">
-                <em>Last updated: December 9th, 2022</em>
+                <em>Last updated: December 29th, 2022</em>
               </small>
             </p>
           </Hero>
