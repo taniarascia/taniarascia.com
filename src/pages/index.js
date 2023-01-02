@@ -39,12 +39,6 @@ export default function Index({ data }) {
               <Link to="/blog">write</Link> about code, design, and life. I like
               accordions, drawing, sci-fi, reading, and gaming.
             </p>
-            <br />
-            <p>
-              <small className="text-muted">
-                <em>Last updated: December 29th, 2022</em>
-              </small>
-            </p>
           </Hero>
           <div className="decoration">
             <img
