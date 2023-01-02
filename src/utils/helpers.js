@@ -39,7 +39,8 @@ export function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export function appendComments(commentBox) {
+export function appendComments() {
+  const commentDiv = document.getElementById('append-comments-here')
   const commentScript = document.createElement('script')
   const theme = localStorage.getItem('theme')
 
@@ -54,10 +55,12 @@ export function appendComments(commentBox) {
   )
   commentScript.setAttribute('crossorigin', 'anonymous')
 
-  if (commentBox && commentBox.current) {
-    commentBox.current.appendChild(commentScript)
+  console.log(commentDiv)
+
+  if (!commentDiv.firstChild) {
+    commentDiv.appendChild(commentScript)
   } else {
-    console.log(`Error adding utterances comments on: ${commentBox}`)
+    console.error('Error adding utterances comments')
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
@@ -8,17 +8,11 @@ import { SEO } from '../components/SEO'
 import { PostSidebar } from '../components/PostSidebar'
 import { Comments } from '../components/Comments'
 import config from '../utils/config'
-import { appendComments } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
   const { tags, categories, title, date, thumbnail, comments_off } =
     post.frontmatter
-  const commentBox = React.createRef()
-
-  useEffect(() => {
-    appendComments(commentBox)
-  }, [commentBox])
 
   return (
     <div>
@@ -65,7 +59,7 @@ export default function PostTemplate({ data }) {
             {!comments_off && (
               <section id="comments" className="segment comments">
                 <h3>Comments</h3>
-                <Comments commentBox={commentBox} />
+                <Comments />
               </section>
             )}
           </div>

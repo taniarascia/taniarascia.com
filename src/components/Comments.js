@@ -1,5 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export const Comments = ({ commentBox }) => {
-  return <div ref={commentBox} />
+import { appendComments } from '../utils/helpers'
+
+export const Comments = () => {
+  useEffect(() => {
+    appendComments()
+  }, [])
+
+  return <div id="append-comments-here" />
 }
