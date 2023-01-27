@@ -38,7 +38,7 @@
   --blue-5: #58119f;
 
   --rainbow-1: #ff67f7;
-  --rainbow-2: #936df9;
+  --rainbow-2: #9b78fa;
   --rainbow-3: #59abf7;
   --rainbow-4: #5eddac;
   --rainbow-5: #f6cd5d;
@@ -78,7 +78,7 @@
   --background-color: #eee;
   --card-background-color: var(--gray-0);
   --button-background-color: var(--gray-05);
-  --marker: var(--pink);
+  --marker: var(--indigo);
   --link: var(--indigo);
   --link-hover-color: var(--indigo-muted);
   --navbar: var(--gray-1);
@@ -146,7 +146,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--font-color-base);
 }
 
@@ -277,7 +277,7 @@ h2 + h3 {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   margin: 0 0 1rem;
   font-weight: 700;
   padding-bottom: 0.4rem;
@@ -293,7 +293,7 @@ h2.year {
 }
 
 h2 code {
-  font-size: 1.6rem !important;
+  font-size: 1.7rem !important;
 }
 
 h3 {
@@ -305,7 +305,7 @@ h3 {
 }
 
 h3 code {
-  font-size: 1.5rem !important;
+  font-size: 1.4rem !important;
 }
 
 @media screen and (min-width: 700px) {
@@ -340,7 +340,7 @@ h4,
 h4 code {
   color: var(--font-color-base);
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -390,7 +390,7 @@ table {
   max-width: 100%;
   overflow-x: auto;
   width: 100%;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -494,7 +494,7 @@ a.button {
   font-family: var(--font-family-nav);
   line-height: 1;
   border-radius: 24px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
   font-weight: 500;
   color: var(--font-color-base);
@@ -741,7 +741,7 @@ a.button:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--star);
   font-family: var(--font-family-monospace);
 }
@@ -827,7 +827,7 @@ a.button:hover {
   display: block;
   font-family: var(--font-family-monospace);
   color: var(--card-time-color);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: -0.01rem;
 }
 
@@ -1151,7 +1151,7 @@ a.post time {
   .grid {
     display: grid;
     grid-template-columns: auto 300px;
-    gap: 5rem;
+    gap: 6rem;
   }
 }
 

@@ -13,7 +13,7 @@
   --terminal-bar: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
   --terminal-accent: white;
   --terminal-border: #cecbce;
-  --string: #3b9039;
+  --string: #229020;
   --variable: #383a41;
   --property: #565656;
   --number: #da7430;
@@ -39,7 +39,7 @@ pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   color: var(--code-font-color);
   font-family: 'Menlo', var(--font-family-monospace);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -85,7 +85,7 @@ code.language-text {
   color: var(--font-color-base);
   padding: 0.2rem 0.3rem;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1rem;
   border-radius: 4px;
   border: 1px solid var(--border-color);
 }
@@ -241,7 +241,7 @@ pre.language-terminal::before {
   padding: 0.4rem 1rem 0.8rem;
   color: var(--font-color-base);
   line-height: 1.5;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 0;
   margin-bottom: -1.9rem;

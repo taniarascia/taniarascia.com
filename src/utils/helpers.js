@@ -55,8 +55,6 @@ export function appendComments() {
   )
   commentScript.setAttribute('crossorigin', 'anonymous')
 
-  console.log(commentDiv)
-
   if (!commentDiv.firstChild) {
     commentDiv.appendChild(commentScript)
   } else {

@@ -56,9 +56,9 @@
   --punctuation: #c7cdd7;
   --comment: #777c85;
   --function: #28e3e6;
-  --keyword: var(--rainbow-1);
+  --keyword: var(--rainbow-2);
   --attribute: #fed06d;
-  --class: var(--rainbow-2);
+  --class: var(--rainbow-1);
   --tag: var(--rainbow-3);
   --error: #b0292c;
   --code-link-hover: var(--link-hover-color);
