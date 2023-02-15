@@ -493,7 +493,7 @@ a.button {
   padding: 0.75rem 1.2rem;
   font-family: var(--font-family-nav);
   line-height: 1;
-  border-radius: 24px;
+  border-radius: var(--border-radius);
   font-size: 1rem;
   cursor: pointer;
   font-weight: 500;
@@ -1218,7 +1218,7 @@ a.post time {
 
 .sidebar-avatar {
   display: block;
-  border-radius: 50%;
+  border-radius: var(--border-radius);
   max-height: 100px;
   max-width: 100px;
   margin-bottom: 1rem;
