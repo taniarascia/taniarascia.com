@@ -920,7 +920,7 @@ p.hero-description a:hover {
 
 @media screen and (min-width: 700px) {
   .hero-wrapper {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 4fr 2fr;
     align-items: center;
     gap: 1.5rem;
   }
@@ -1268,6 +1268,7 @@ a.category.active .count {
 .width.small {
   max-width: var(--content-width--small);
 }
+
 .width.medium {
   max-width: var(--content-width--medium);
 }

@@ -22,7 +22,7 @@ const socialNavItems = [
   { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
 ]
 
-export const Navigation = ({ theme, onUpdateTheme }) => {
+export const Navigation = ({ onUpdateTheme }) => {
   return (
     <section className="navigation">
       <div className="container">

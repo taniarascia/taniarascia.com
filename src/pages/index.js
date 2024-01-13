@@ -32,12 +32,6 @@ export default function Index({ data }) {
           <Hero title="Hey, I'm Tania!" index>
             <p className="hero-description small width">
               Welcome to my digital garden. 🌱
-              <br />
-              <br />
-              I'm a software developer in Chicago. I make{' '}
-              <Link to="/projects">open-source projects</Link> and{' '}
-              <Link to="/blog">write</Link> about code, design, and life. I like
-              accordions, drawing, sci-fi, reading, and gaming.
             </p>
           </Hero>
           <div className="decoration">
@@ -59,7 +53,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Popular" />
+          <Heading title="Tutorials" />
 
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
