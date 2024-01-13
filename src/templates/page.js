@@ -4,12 +4,11 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
-import { AboutSidebar } from '../components/AboutSidebar'
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, description, slug } = post.frontmatter
+  const { title, description } = post.frontmatter
 
   return (
     <div>
@@ -28,8 +27,6 @@ export default function PageTemplate({ data }) {
               />
             </section>
           </div>
-
-          {slug.includes('me') && <AboutSidebar />}
         </div>
       </div>
     </div>

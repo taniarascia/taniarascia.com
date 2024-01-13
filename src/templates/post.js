@@ -24,7 +24,7 @@ export default function PostTemplate({ data }) {
           <div className="article-content">
             <div className="post-header medium width">
               {thumbnail && (
-                <div className="mobile-post-image">
+                <div className="header-post-image">
                   <Img fixed={thumbnail.childImageSharp?.fixed} />
                 </div>
               )}
@@ -38,7 +38,7 @@ export default function PostTemplate({ data }) {
               />
             </section>
 
-            <section id="comments" className="segment">
+            <section id="newsletter">
               <div className="card single">
                 <h3>Newsletter</h3>
                 <p className="text-medium">
@@ -56,6 +56,8 @@ export default function PostTemplate({ data }) {
               </div>
             </section>
 
+            <PostSidebar date={date} tags={tags} categories={categories} />
+
             {!comments_off && (
               <section id="comments" className="segment comments">
                 <h3>Comments</h3>
@@ -63,13 +65,6 @@ export default function PostTemplate({ data }) {
               </section>
             )}
           </div>
-
-          <PostSidebar
-            date={date}
-            tags={tags}
-            categories={categories}
-            thumbnail={thumbnail}
-          />
         </div>
       </div>
     </div>

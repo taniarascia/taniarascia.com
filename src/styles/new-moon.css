@@ -70,7 +70,7 @@ pre[class*='language-'] {
   padding: 1rem;
   background: var(--code-background-color);
   overflow: initial;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 code.language-text {
@@ -120,7 +120,7 @@ code.language-shell::before {
     border: 1px solid var(--code-border-color);
     margin: 1.5rem 0;
     max-width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -188,7 +188,7 @@ code.language-shell::before {
   white-space: unset;
   -webkit-text-size-adjust: none;
   border: 1px solid var(--terminal-border);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--terminal-background-color);
   max-width: 100%;
 }

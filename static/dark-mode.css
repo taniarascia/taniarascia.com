@@ -1,8 +1,8 @@
 :root {
   --background-color: var(--gray-10);
   --card-background-color: var(--gray-9);
-  --star: var(--rainbow-5);
-  --year: var(--rainbow-4);
+  --star: var(--light-yellow);
+  --year: var(--green);
 
   --font-color-heading: white;
   --font-color-heading3: white;
@@ -15,16 +15,16 @@
 
   --button-background-color: var(--gray-8);
 
-  --post-time-color: var(--rainbow-4);
-  --card-time-color: var(--pink);
-  --project-time-color: var(--star);
+  --post-time-color: var(--green);
+  --card-time-color: var(--green);
+  --project-time-color: var(--green);
   --link: #9ca0fa;
   --link-hover-color: #222;
   --blockquote-background: rgba(120, 120, 240, 0.05);
-  --marker: #e77cc7;
+  --marker: var(--green);
   --file-background: #161616;
   --inline-code-background-color: rgba(0, 0, 0, 0.2);
-  --highlight-color: var(--rainbow-4);
+  --highlight-color: var(--green);
   --navbar: var(--gray-9);
   --navbar-border: var(--gray-7);
   --navbar-color: var(--gray-4);
@@ -48,18 +48,18 @@
   --terminal-bar: -webkit-linear-gradient(top, #282828, #222);
   --terminal-border: var(--border-color);
   --terminal-accent: var(--gray-6);
-  --string: var(--rainbow-4);
-  --variable: var(--rainbow-2);
+  --string: var(--green);
+  --variable: var(--lavendar);
   --property: #b3b9c5;
   --number: #fca369;
   --operator: #637187;
   --punctuation: #c7cdd7;
   --comment: #777c85;
   --function: #28e3e6;
-  --keyword: var(--rainbow-2);
+  --keyword: var(--lavendar);
   --attribute: #fed06d;
-  --class: var(--rainbow-1);
-  --tag: var(--rainbow-3);
+  --class: var(--violet);
+  --tag: var(--blue);
   --error: #b0292c;
   --code-link-hover: var(--link-hover-color);
   --highlight-code-color: rgb(116, 207, 136, 0.1);
