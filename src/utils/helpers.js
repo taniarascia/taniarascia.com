@@ -71,5 +71,7 @@ export function getFormattedDate(date) {
   }
   dateArr[1] += ','
 
-  return dateArr.join(' ')
+  // return dateArr.join(' ')
+
+  return dateArr[0] + ' ' + dateArr[2]
 }

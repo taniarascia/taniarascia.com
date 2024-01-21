@@ -12,7 +12,7 @@ import config from '../utils/config'
 export default function Blog({ data }) {
   const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
-  const title = 'Writing'
+  const title = 'Blog'
   const description = 'Notes & tutorials'
 
   return (
@@ -47,8 +47,8 @@ export const blogQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            tags
-            categories
+            # tags
+            # categories
           }
         }
       }

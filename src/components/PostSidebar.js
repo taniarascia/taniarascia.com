@@ -17,28 +17,23 @@ export const PostSidebar = ({ tags = [], date, categories = [] }) => {
           garden. 🌱
         </p>
         <p>
-          I'm a software developer who creates open-source projects and writes
-          about code, design, and life. This site is and has always been free of
-          ads, trackers, social media, affiliates, and sponsored posts.
+          I'm a software developer who makes open-source projects and writes
+          about life, code, design, and more. This site is and has always been
+          free of ads, trackers, social media, affiliates, and sponsored posts.
         </p>
       </div>
 
       <div className="post-sidebar-card">
         <h2>Post Details</h2>
         <ul>
-          <li>Published {formattedDate}</li>
+          <li>
+            <strong>Published: </strong> {formattedDate}
+          </li>
+          <li>
+            <strong>Category: </strong>
+            <Link to={`/categories/${slugify(category)}`}>{category}</Link>
+          </li>
         </ul>
-
-        {category && (
-          <div>
-            <h2>Category</h2>
-            <ul>
-              <li>
-                <Link to={`/categories/${slugify(category)}`}>{category}</Link>
-              </li>
-            </ul>
-          </div>
-        )}
 
         <h2>Tags</h2>
         <div className="tags">
@@ -55,6 +50,15 @@ export const PostSidebar = ({ tags = [], date, categories = [] }) => {
             )
           })}
         </div>
+        <p style={{ marginTop: '1.5rem' }}>
+          <a
+            href="https://taniarascia.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe to the Newsletter
+          </a>
+        </p>
       </div>
     </aside>
   )

@@ -29,9 +29,11 @@ export default function Index({ data }) {
 
       <div className="container">
         <div className="hero-wrapper">
-          <Hero title="Hey, I'm Tania!" index>
+          <Hero title="Hey, I'm Tania" index>
             <p className="hero-description small width">
-              Welcome to my digital garden. 🌱
+              I'm a software developer who makes open-source projects and writes
+              about life, code, design, and more. Welcome to my digital garden.
+              🌱
             </p>
           </Hero>
           <div className="decoration">
@@ -53,7 +55,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Tutorials" />
+          <Heading title="Highlights" />
 
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
@@ -99,7 +101,12 @@ export default function Index({ data }) {
                           Article
                         </Link>
                       )}
-                      <a className="button flex" href={project.url}>
+                      <a
+                        className="button flex"
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         Demo
                       </a>
                     </div>
@@ -107,23 +114,6 @@ export default function Index({ data }) {
                 )
               })}
           </div>
-        </section>
-
-        <section className="segment large">
-          <Heading title="Newsletter" />
-          <p>
-            Sign up to get updates when I write something new. No spam ever.
-          </p>
-          <p>
-            <a
-              href="https://taniarascia.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button large highlighted"
-            >
-              Subscribe to the Newsletter
-            </a>
-          </p>
         </section>
       </div>
     </div>

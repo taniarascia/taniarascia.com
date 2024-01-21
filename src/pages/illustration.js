@@ -20,7 +20,7 @@ const images = [
 ]
 
 export default function Illustration() {
-  const title = 'Illustration'
+  const title = 'Art'
 
   return (
     <div>
