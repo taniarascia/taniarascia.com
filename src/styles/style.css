@@ -875,7 +875,6 @@ main {
 .decoration {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   order: 1;
 }
 
@@ -931,8 +930,9 @@ p.hero-description a:hover {
     order: 1;
   }
 
-  .descoration {
+  .decoration {
     order: 2;
+    justify-content: flex-end;
   }
 
   .hero h1 {
