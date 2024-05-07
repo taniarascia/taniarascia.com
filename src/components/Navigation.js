@@ -6,7 +6,9 @@ import search from '../assets/nav-search.png'
 import floppy from '../assets/nav-floppy.png'
 import github from '../assets/nav-github.png'
 import projects from '../assets/nav-projects.png'
-import moon from '../assets/moon.png'
+// import moon from '../assets/moon.png'
+import moonIcon from '../assets/moon-new.png'
+import sunIcon from '../assets/sun-new.png'
 import { slugify } from '../utils/helpers'
 
 const mainNavItems = [
@@ -20,7 +22,9 @@ const socialNavItems = [
   { url: 'https://github.com/taniarascia', icon: github, label: 'GitHub' },
 ]
 
-export const Navigation = ({ onUpdateTheme }) => {
+export const Navigation = ({ onUpdateTheme, theme }) => {
+const themeIconSrc = theme === 'dark' ? sunIcon : moonIcon;  
+
   return (
     <section className="navigation">
       <div className="container">
@@ -62,7 +66,7 @@ export const Navigation = ({ onUpdateTheme }) => {
         </nav>
         <div className="theme-toggle">
           <button onClick={onUpdateTheme}>
-            <img src={moon} alt="Theme" />
+            <img src={themeIconSrc} alt="Theme" />
           </button>
         </div>
       </div>
