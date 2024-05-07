@@ -23,7 +23,7 @@ const socialNavItems = [
 ]
 
 export const Navigation = ({ onUpdateTheme, theme }) => {
-const themeIconSrc = theme === 'dark' ? sunIcon : moonIcon;  
+const themeIcon = theme === 'dark' ? sunIcon : moonIcon;  
 
   return (
     <section className="navigation">
@@ -66,7 +66,7 @@ const themeIconSrc = theme === 'dark' ? sunIcon : moonIcon;
         </nav>
         <div className="theme-toggle">
           <button onClick={onUpdateTheme}>
-            <img src={themeIconSrc} alt="Theme" />
+            <img src={themeIcon} alt="Theme" />
           </button>
         </div>
       </div>
