@@ -7,8 +7,7 @@ import floppy from '../assets/floppylogo.png'
 
 const links = [
   { url: 'https://taniarascia.substack.com', label: 'Newsletter' },
-  { url: 'https://ko-fi.com/taniarascia', label: 'Ko-Fi' },
-  { url: 'https://patreon.com/taniarascia', label: 'Patreon' },
+  { url: 'https://ko-fi.com/taniarascia', label: 'Buy Me a Coffee' },
   { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS' },
 ]
 const madeWithLinks = [
@@ -45,8 +44,8 @@ export const Footer = () => {
               rel="noopener noreferrer"
               key={link.url}
             >
-              <span>{link.label}</span>
               <img src={link.icon} alt={link.label} />
+              <span>{link.label}</span>
             </a>
           ))}
         </nav>

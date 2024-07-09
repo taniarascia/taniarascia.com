@@ -54,7 +54,6 @@ export const projectsList = [
     date: '2018',
     slug: 'laconia',
     tagline: 'An MVC framework from scratch in PHP.',
-    url: 'https://laconia.dev',
   },
   {
     name: 'Primitive',

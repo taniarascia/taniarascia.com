@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export const Heading = ({ title, description, slug }) => {
+export const Heading = ({ title, buttonText, description, slug }) => {
   return (
     <h2 className="home-heading">
       <div>
@@ -10,7 +10,7 @@ export const Heading = ({ title, description, slug }) => {
       </div>
       {slug && (
         <Link className="button" to={slug}>
-          View all
+          {buttonText}
         </Link>
       )}
     </h2>

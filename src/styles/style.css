@@ -9,8 +9,8 @@
   --gray-3: #ddd;
   --gray-4: #bbb;
   --gray-5: #999;
-  --gray-6: #666;
-  --gray-65: #555;
+  --gray-6: #575757;
+  --gray-65: #525252;
   --gray-7: #2c2c2c;
   --gray-8: #252525;
   --gray-9: #1f1f1f;
@@ -19,10 +19,10 @@
   --green: #5eddac;
   --orange: #ff7e22;
   --yellow: #fca62a;
-  --light-yellow: #f6cd5d;
+  --light-yellow: #fed06d;
   --pink: #f57ad0;
-  --lavendar: #9b78fa;
-  --violet: #ff67f7;
+  --lavender: #a180f9;
+  --violet: #ff75f8;
   --blue: #59abf7;
   --purple: #673ece;
   --indigo: #5a43f1;
@@ -50,11 +50,13 @@
   /* Borders */
   --border-color: var(--gray-3);
   --border-color-hover: var(--gray-4);
-  --border-radius: 10px;
+  --border-radius: 12px;
 
   /* Elements */
   --background-color: white;
   --card-background-color: var(--gray-0);
+  --button-border-color-hover: var(--gray-5);
+  --button-border-color: var(--gray-4);
   --button-background-color: var(--gray-05);
   --marker: var(--border-color-hover);
   --link: var(--indigo);
@@ -68,8 +70,8 @@
   --star: var(--yellow);
   --post-time-color: var(--gray-6);
   --card-time-color: var(--gray-5);
-  --project-time-color: var(--font-color-muted);
-  --highlight-color: var(--green);
+  --project-time-color: var(--gray-6);
+  --highlight-color: var(--yellow);
   --blockquote-background: var(--indigo-muted);
   --file-background: #eee;
   --inline-code-background-color: var(--gray-0);
@@ -78,7 +80,7 @@
   --scrollbar-track: var(--gray-4);
 
   /* Sizs */
-  --content-width: 780px;
+  --content-width: 860px;
   --content-width--small: 560px;
   --content-width--medium: 700px;
   --navbar-height-small: 60px;
@@ -145,7 +147,7 @@ ol {
 }
 
 ul {
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 ul li ul,
@@ -175,7 +177,6 @@ main {
 blockquote {
   margin: 2rem 0;
   border: 1px solid var(--indigo-light);
-  border-left: 6px solid var(--indigo-light);
   margin-left: 0;
   padding: 1.5rem;
   background: var(--blockquote-background);
@@ -234,7 +235,7 @@ h5 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 2.5rem;
 }
 
 h1:not(:first-child),
@@ -311,10 +312,10 @@ h3 code {
 h4,
 h4 code {
   color: var(--font-color-base);
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 h5 {
@@ -472,7 +473,7 @@ a.button {
   cursor: pointer;
   font-weight: 500;
   color: var(--font-color-base);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--button-border-color);
   gap: 0.25rem;
   letter-spacing: 0;
   white-space: nowrap;
@@ -503,7 +504,7 @@ a.button img {
 button:hover,
 a.button:hover {
   color: var(--font-color-bright);
-  border-color: var(--border-color-hover);
+  border-color: var(--button-border-color-hover);
 }
 
 button:active,
@@ -549,18 +550,6 @@ a.button:active {
   background: transparent;
 }
 
-.navigation .item.brand span,
-.theme-toggle span {
-  display: none;
-}
-
-.logo {
-  height: 36px;
-  width: 36px;
-  min-height: 36px;
-  min-width: 36px;
-}
-
 .navigation nav {
   display: flex;
   align-items: center;
@@ -573,7 +562,15 @@ a.button:active {
   align-items: center;
 }
 
+.navigation .logo {
+  height: 18px;
+  width: 18px;
+  min-height: 18px;
+  min-width: 18px;
+}
+
 .nav-image {
+  display: none;
   height: 16px;
   width: 16px;
   min-height: 16px;
@@ -585,66 +582,38 @@ a.button:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.25rem;
+  padding: 0.25rem 0.15rem;
+  gap: 0.5rem;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--navbar-color);
-  padding: 0.3rem 0.35rem;
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  transition: transform 0.2s ease-in-out;
 }
 
 .navigation a.item.brand {
-  display: none;
-  gap: 0.4rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--font-color-bright);
   line-height: 1;
   padding: 0;
-  border: none;
 }
 
-.navigation a.item.brand:hover {
-  background: transparent;
-}
-
-.navigation a.item:hover,
-.navigation button.item:hover {
-  background: var(--button-background-color);
-  border-color: var(--border-color-hover);
-  color: var(--navbar-color-hover);
-}
-
-.navigation a.item.active,
-.navigation button.item.active {
-  background: var(--button-background-color);
-  border-color: var(--border-color);
-  color: var(--font-color-bright);
-}
-
-.navigation a.item:active,
-.navigation button.item:active {
-  transform: scale(0.95);
-}
-
-.theme-toggle {
-  align-self: center;
+.navigation a.item.brand span {
+  white-space: nowrap;
 }
 
 .theme-toggle button img {
   margin: 0;
 }
 
-.theme-toggle button {
-  border-radius: 50%;
-  padding: 0.4rem;
-}
-
 .git-hub {
   gap: 0.5rem;
+}
+
+.theme-toggle button {
+  padding: 0.4rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -667,9 +636,8 @@ a.button:active {
 
   .navigation a.item.brand {
     display: inline-flex;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0;
-    margin-bottom: 1.5rem;
   }
 
   .navigation a.item.brand span,
@@ -677,7 +645,15 @@ a.button:active {
     display: block;
   }
 
+  .navigation .logo {
+    height: 22px;
+    width: 22px;
+    min-height: 22px;
+    min-width: 22px;
+  }
+
   .nav-image {
+    display: block;
     height: 20px;
     width: 20px;
     min-height: 20px;
@@ -685,7 +661,7 @@ a.button:active {
   }
 
   .navigation nav {
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .navigation,
@@ -693,13 +669,25 @@ a.button:active {
     height: auto;
   }
 
-  .theme-toggle {
-    align-self: flex-end;
+  .navigation a.item.brand:hover {
+    background: transparent;
+  }
+
+  .navigation a.item:hover,
+  .navigation button.item:hover {
+    background: var(--button-background-color);
+    color: var(--navbar-color-hover);
+  }
+
+  .navigation a.item.active,
+  .navigation button.item.active {
+    background: var(--button-background-color);
+    color: var(--font-color-bright);
   }
 
   .theme-toggle button {
-    /* border-radius: 50%; */
-    padding: 0.75rem;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -731,7 +719,7 @@ a.button:active {
 }
 
 .card {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--button-border-color);
   border-radius: var(--border-radius);
   background: var(--card-background-color);
   padding: 1rem;
@@ -756,7 +744,6 @@ a.button:active {
   font-family: var(--font-family-base);
   font-weight: 500;
   color: var(--font-color-heading);
-  margin: 0.1rem 0 0.5rem;
   padding: 0;
   border: 0;
   text-decoration: none;
@@ -771,7 +758,7 @@ a.button:active {
 
 .card p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: var(--font-color-muted);
   font-family: var(--font-family-base);
@@ -791,6 +778,7 @@ a.button:active {
   color: var(--card-time-color);
   font-size: 0.9rem;
   letter-spacing: -0.01rem;
+  margin-bottom: 0.25rem;
 }
 
 .card.muted {
@@ -840,8 +828,7 @@ a.button:active {
 
   .card.muted {
     background: transparent;
-    padding: 1rem;
-    border: 1px solid var(--border-color);
+    padding: 1rem 0;
     align-items: center;
   }
 
@@ -991,7 +978,7 @@ p.hero-description a:hover {
 }
 
 .post-preview .card p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-preview .card time {
@@ -1007,13 +994,6 @@ p.hero-description a:hover {
   gap: 1rem;
 }
 
-@media screen and (min-width: 700px) {
-  .post-preview {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}
-
 .post-preview > div {
   flex: 1;
 }
@@ -1021,6 +1001,18 @@ p.hero-description a:hover {
 .post-preview a.button {
   font-size: 0.9rem;
   padding: 0.5rem 0.6rem;
+}
+
+@media screen and (min-width: 700px) {
+  .post-preview {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .post-preview a.button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 /* Pages */
@@ -1044,6 +1036,10 @@ a.anchor:hover {
 
 a.anchor svg {
   fill: var(--link);
+}
+
+a.anchor.before {
+  padding-right: 0.5rem;
 }
 
 /* Posts */
@@ -1134,7 +1130,7 @@ a.post time {
 }
 
 .post-sidebar-card {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--button-border-color);
   background: var(--card-background-color);
   padding: 1rem;
   border-radius: var(--border-radius);
@@ -1152,15 +1148,11 @@ a.post time {
 
 .post-sidebar p,
 .post-sidebar ul {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .post-sidebar p:last-of-type {
   margin-bottom: 0;
-}
-
-.post-sidebar .tags {
-  gap: 0.3rem;
 }
 
 .post-sidebar a {
@@ -1218,8 +1210,8 @@ a.post time {
 a.tag {
   font-size: 0.8rem;
   font-weight: 400;
-  padding: 0.2rem 0.4rem;
-  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--button-border-color);
   border-radius: var(--border-radius);
   color: var(--font-color-base);
   background: var(--button-background-color) !important;
@@ -1228,7 +1220,7 @@ a.tag {
 
 a.tag:hover {
   color: var(--font-color-bright);
-  border-color: var(--highlight-color);
+  border-color: var(--button-border-color-hover);
   text-decoration: none;
 }
 
@@ -1386,23 +1378,29 @@ a.category.active .count {
 
 .footer img {
   display: inline-block;
-  max-height: 20px;
+  max-height: 28px;
   width: auto;
 }
 
 .footer nav {
   display: flex;
-  gap: 0.25rem;
+  gap: 1.25rem;
   margin: 0 1rem;
+}
+
+.footer nav img {
+  display: inline-block;
+  max-height: 18px;
+  width: auto;
 }
 
 .footer a,
 .footer span {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   color: var(--font-color-base);
   font-size: 0.9rem;
-  padding: 0 0.5rem;
 }
 
 .footer span {

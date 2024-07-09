@@ -32,8 +32,7 @@ export default function Index({ data }) {
           <Hero title="Hey, I'm Tania" index>
             <p className="hero-description small width">
               I'm a software developer who makes open-source projects and writes
-              about life, code, design, and more. Welcome to my digital garden.
-              🌱
+              about code and life. Welcome to my digital garden.
             </p>
           </Hero>
           <div className="decoration">
@@ -49,7 +48,7 @@ export default function Index({ data }) {
 
       <div className="container">
         <section className="segment first">
-          <Heading title="Latest Posts" slug="/blog" />
+          <Heading title="Latest Posts" slug="/blog" buttonText="All Posts" />
 
           <Posts data={simplifiedLatest} newspaper />
         </section>
@@ -61,7 +60,11 @@ export default function Index({ data }) {
             {simplifiedHighlights.map((post) => {
               return (
                 <div className="muted card flex" key={`popular-${post.slug}`}>
-                  {post.thumbnail && <Img fixed={post.thumbnail} />}
+                  {post.thumbnail && (
+                    <Link className="card-header" to={post.slug}>
+                      <Img fixed={post.thumbnail} />
+                    </Link>
+                  )}
                   <div>
                     <time>{post.date}</time>
                     <Link className="card-header" to={post.slug}>
@@ -75,7 +78,11 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment large">
-          <Heading title="Projects" slug="/projects" />
+          <Heading
+            title="Projects"
+            slug="/projects"
+            buttonText="All Projects"
+          />
 
           <div className="post-preview">
             {projectsList

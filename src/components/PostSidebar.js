@@ -14,12 +14,12 @@ export const PostSidebar = ({ tags = [], date, categories = [] }) => {
         <p>
           Hello and thanks for visiting! My name is{' '}
           <Link to="/me">Tania Rascia</Link>, and this is my website and digital
-          garden. 🌱
+          garden.
         </p>
         <p>
           I'm a software developer who makes open-source projects and writes
-          about life, code, design, and more. This site is and has always been
-          free of ads, trackers, social media, affiliates, and sponsored posts.
+          about code and life. This site is and has always been free of ads,
+          trackers, social media, affiliates, and sponsored posts.
         </p>
       </div>
 
