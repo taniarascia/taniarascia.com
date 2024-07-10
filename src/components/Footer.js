@@ -7,7 +7,7 @@ import floppy from '../assets/floppylogo.png'
 
 const links = [
   { url: 'https://taniarascia.substack.com', label: 'Newsletter' },
-  { url: 'https://ko-fi.com/taniarascia', label: 'Buy Me a Coffee' },
+  { url: 'https://ko-fi.com/taniarascia', label: 'Donate a Coffee' },
   { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS' },
 ]
 const madeWithLinks = [
@@ -21,7 +21,7 @@ export const Footer = () => {
     <footer className="footer">
       <section>
         <span>
-          <img src={floppy} className="logo" alt="Tania Rascia" />
+          <img src={floppy} className="logo" alt="Tania Rascia" title="💾" />
         </span>
         <nav>
           {links.map((link) => (
@@ -43,6 +43,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               key={link.url}
+              className="button"
             >
               <img src={link.icon} alt={link.label} />
               <span>{link.label}</span>

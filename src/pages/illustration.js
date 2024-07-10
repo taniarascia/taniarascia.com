@@ -35,7 +35,7 @@ export default function Illustration() {
           <div className="image-preview">
             {images.map((image) => {
               return (
-                <div className="card" key={image.url}>
+                <div className="card muted" key={image.url}>
                   <a href={image.url} target="_blank" rel="noreferrer">
                     <h2>{image.title}</h2>
 

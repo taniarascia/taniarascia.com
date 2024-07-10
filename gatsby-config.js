@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Tania Rascia',
+    title: "Tania Rascia's Personal Website",
     author: {
       name: 'Tania Rascia',
     },
@@ -21,13 +21,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Tania Rascia',
+        name: "Tania Rascia's Personal Website",
         short_name: 'Tania Rascia',
         description:
           'Software engineer and open source creator. This is my digital garden.',
         start_url: '/',
         background_color: 'white',
-        theme_color: '#6b76f3',
+        theme_color: '#fed06d',
         display: 'minimal-ui',
         icon: `static/logo.png`,
       },

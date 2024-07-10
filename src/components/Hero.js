@@ -1,6 +1,13 @@
 import React from 'react'
 
-export const Hero = ({ highlight, subTitle, title, children, index }) => {
+export const Hero = ({
+  highlight,
+  subTitle,
+  title,
+  description,
+  children,
+  index,
+}) => {
   return (
     <header className={`hero ${index ? 'index' : ''}`}>
       {subTitle && (
@@ -10,6 +17,8 @@ export const Hero = ({ highlight, subTitle, title, children, index }) => {
         </div>
       )}
       {title && <h1>{title}</h1>}
+      {description && <p className="hero-description">{description}</p>}
+
       {children && children}
     </header>
   )

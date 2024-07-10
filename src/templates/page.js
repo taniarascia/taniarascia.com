@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
+import { Hero } from '../components/Hero'
 import { SEO } from '../components/SEO'
 import config from '../utils/config'
 
@@ -17,12 +18,10 @@ export default function PageTemplate({ data }) {
       <div className="container">
         <div className="grid">
           <div className="article-content">
-            <div className="hero">
-              <h1>{title}</h1>
-            </div>
+            <Hero title={title} />
             <section className="segment small">
               <div
-                className="post-content"
+                className="page-content"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
             </section>

@@ -14,6 +14,7 @@ export const Layout = ({ children }) => {
   const onUpdateTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     window.localStorage.setItem('theme', newTheme)
+
     setTheme(newTheme)
   }
 

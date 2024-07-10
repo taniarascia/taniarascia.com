@@ -13,6 +13,8 @@ import { projectsList } from '../data/projectsList'
 export default function Projects() {
   const [repos, setRepos] = useState([])
   const title = 'Projects'
+  const description =
+    "Open-source projects I've made over the years, including this website, an emulator, and various games, apps, frameworks, and boilerplates."
 
   useEffect(() => {
     async function getStars() {
@@ -35,7 +37,7 @@ export default function Projects() {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
       <div className="container">
-        <Hero title={title} color="red" />
+        <Hero title={title} color="red" description={description} />
       </div>
 
       <section className="segment">

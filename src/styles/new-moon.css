@@ -83,7 +83,7 @@ code.language-text {
   -webkit-font-smoothing: subpixel-antialiased;
   background: var(--inline-code-background-color);
   color: var(--font-color-base);
-  padding: 2px 3px;
+  padding: 3px 6px;
   font-weight: 500;
   font-size: 1rem;
   border-radius: 6px;

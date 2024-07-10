@@ -12,9 +12,7 @@ export default function FourOhFour() {
       <Helmet title={`404 | ${config.siteTitle}`} />
       <SEO />
       <div className="container">
-        <Hero title="404">
-          <p className="hero-description">Not found.</p>
-        </Hero>
+        <Hero title="404" description="Not found." />
       </div>
     </div>
   )

@@ -13,12 +13,16 @@ import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
 export default function Index({ data }) {
-  const latest = data.latest.edges
+  const latestNotes = data.latestNotes.edges
+  const latestArticles = data.latestArticles.edges
   const highlights = data.highlights.edges
-  const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest])
+  const notes = useMemo(() => getSimplifiedPosts(latestNotes), [latestNotes])
+  const articles = useMemo(
+    () => getSimplifiedPosts(latestArticles),
+    [latestArticles]
+  )
   const simplifiedHighlights = useMemo(
-    () =>
-      getSimplifiedPosts(highlights, { shortTitle: true, thumbnails: true }),
+    () => getSimplifiedPosts(highlights, { thumbnails: true }),
     [highlights]
   )
 
@@ -29,12 +33,12 @@ export default function Index({ data }) {
 
       <div className="container">
         <div className="hero-wrapper">
-          <Hero title="Hey, I'm Tania" index>
-            <p className="hero-description small width">
-              I'm a software developer who makes open-source projects and writes
-              about code and life. Welcome to my digital garden!
-            </p>
-          </Hero>
+          <Hero
+            title="Hey, I'm Tania"
+            index
+            description="I'm a software developer who makes open-source projects and writes
+              about code and life."
+          />
           <div className="decoration">
             <img
               src="/ram.png"
@@ -48,9 +52,19 @@ export default function Index({ data }) {
 
       <div className="container">
         <section className="segment first">
-          <Heading title="Latest Posts" slug="/blog" buttonText="All Posts" />
+          <Heading title="Notes" slug="/blog" buttonText="All Notes" />
 
-          <Posts data={simplifiedLatest} newspaper />
+          <Posts data={notes} newspaper />
+        </section>
+
+        <section className="segment">
+          <Heading
+            title="Articles"
+            slug="/articles"
+            buttonText="All Articles"
+          />
+
+          <Posts data={articles} newspaper />
         </section>
 
         <section className="segment large">
@@ -131,10 +145,40 @@ Index.Layout = Layout
 
 export const pageQuery = graphql`
   query IndexQuery {
-    latest: allMarkdownRemark(
-      limit: 6
+    latestNotes: allMarkdownRemark(
+      limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { template: { eq: "post" } } }
+      filter: {
+        frontmatter: {
+          template: { eq: "post" }
+          categories: { eq: "Personal" }
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            tags
+            categories
+          }
+        }
+      }
+    }
+    latestArticles: allMarkdownRemark(
+      limit: 5
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: {
+          template: { eq: "post" }
+          categories: { eq: "Technical" }
+        }
+      }
     ) {
       edges {
         node {
@@ -165,7 +209,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            shortTitle
             tags
             thumbnail {
               childImageSharp {

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Hero } from '../components/Hero'
@@ -10,12 +10,12 @@ import { SidebarLayout } from '../components/SidebarLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function Articles({ data }) {
+export default function Notes({ data }) {
   const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
-  const title = 'Articles'
+  const title = 'Notes'
   const description =
-    'Guides, references, and tutorials on programming, web development, and design.'
+    'Personal notes about life, music, art, projects, and everything else I want to write about.'
 
   return (
     <div>
@@ -24,29 +24,22 @@ export default function Articles({ data }) {
 
       <SidebarLayout>
         <Hero title={title} description={description} />
-        <Link
-          to="/tags"
-          className="button small"
-          style={{ marginTop: '0.5rem' }}
-        >
-          View All Tags
-        </Link>
         <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
     </div>
   )
 }
 
-Articles.Layout = Layout
+Notes.Layout = Layout
 
-export const articlesQuery = graphql`
-  query ArticlesQuery {
+export const notesQuery = graphql`
+  query NotesQuery {
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {
           template: { eq: "post" }
-          categories: { eq: "Technical" }
+          categories: { eq: "Personal" }
         }
       }
     ) {

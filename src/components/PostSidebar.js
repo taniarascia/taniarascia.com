@@ -50,15 +50,19 @@ export const PostSidebar = ({ tags = [], date, categories = [] }) => {
             )
           })}
         </div>
-        <p style={{ marginTop: '1.5rem' }}>
-          <a
-            href="https://taniarascia.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Subscribe to the Newsletter
-          </a>
-        </p>
+
+        <div style={{ marginTop: '1.5rem' }}>
+          <h2>Newsletter</h2>
+          <p>
+            <a
+              href="https://taniarascia.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Subscribe to the Newsletter
+            </a>
+          </p>
+        </div>
       </div>
     </aside>
   )
