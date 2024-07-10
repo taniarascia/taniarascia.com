@@ -52,7 +52,7 @@ export default function Index({ data }) {
 
       <div className="container">
         <section className="segment first">
-          <Heading title="Notes" slug="/blog" buttonText="All Notes" />
+          <Heading title="Notes" slug="/notes" buttonText="All Notes" />
 
           <Posts data={notes} newspaper />
         </section>
@@ -60,7 +60,7 @@ export default function Index({ data }) {
         <section className="segment">
           <Heading
             title="Articles"
-            slug="/articles"
+            slug="/blog"
             buttonText="All Articles"
           />
 
