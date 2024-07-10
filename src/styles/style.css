@@ -661,10 +661,10 @@ a.button:active {
 }
 
 .navigation .logo {
-  height: 18px;
-  width: 18px;
-  min-height: 18px;
-  min-width: 18px;
+  height: 20px;
+  width: 20px;
+  min-height: 20px;
+  min-width: 20px;
 }
 
 .navigation .nav-image {
@@ -676,6 +676,7 @@ a.button:active {
 }
 
 .theme-toggle button {
+  margin-left: 0.5rem;
   padding: 0.3rem;
 }
 
@@ -760,7 +761,6 @@ a.button:active {
   }
 
   .theme-toggle button {
-    margin-left: 0.5rem;
     padding: 0.5rem;
   }
 }
@@ -973,6 +973,7 @@ p.hero-description {
   }
 
   .hero {
+    padding: 1.5rem 0 1rem;
     order: 1;
   }
 
@@ -1378,10 +1379,6 @@ a.category.active .count {
   text-align: center;
 }
 
-.header-post-image {
-  margin-bottom: 1rem;
-}
-
 .header-post-image .gatsby-image-wrapper {
   max-height: 50px;
   max-width: 50px;
@@ -1392,7 +1389,7 @@ a.category.active .count {
 }
 
 .post-header h1 {
-  margin: 0;
+  margin: 1rem 0 0;
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.2;

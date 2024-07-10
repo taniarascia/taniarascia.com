@@ -11,7 +11,7 @@ const mainNavItems = [
   { url: '/notes', icon: blog, label: 'Notes' },
   { url: '/blog', icon: blog, label: 'Articles' },
   { url: '/projects', icon: projects, label: 'Projects' },
-  { url: '/me', icon: search, label: 'About' },
+  { url: '/me', icon: search, label: 'About Me' },
 ]
 
 export const Navigation = ({ onUpdateTheme }) => {
