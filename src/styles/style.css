@@ -43,7 +43,7 @@
   --font-color-base: var(--gray-7);
   --font-color-muted: var(--gray-6);
   --font-color-heading: var(--gray-9);
-  --font-color-heading3: var(--gray-7);
+  --font-color-heading3: var(--gray-8);
   --font-color-bright: var(--gray-9);
   --font-color-hero-description: var(--gray-7);
 
@@ -86,7 +86,7 @@
   --content-width--medium: 700px;
   --navbar-height-small: 60px;
 
-  --primary-color: var(--light-yellow);
+  --primary-color: var(--indigo);
 }
 
 *,
@@ -452,8 +452,8 @@ th:last-of-type {
 }
 
 .segment {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .segment.small {
@@ -589,7 +589,7 @@ a.button:active {
   justify-content: space-between;
   gap: 0.5rem;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   margin-left: 0.5rem;
 }
 
@@ -616,7 +616,6 @@ a.button:active {
 }
 
 .navigation a.item.brand {
-  gap: 0.6rem;
   font-size: 1rem;
   font-weight: 600;
   color: var(--font-color-bright);
@@ -632,6 +631,10 @@ a.button:active {
 @media screen and (min-width: 500px) {
   .navigation nav {
     margin-left: 1.5rem;
+  }
+
+  .navigation a.item.brand {
+    gap: 0.6rem;
   }
 
   .navigation a.item.brand span {
@@ -676,7 +679,8 @@ a.button:active {
 }
 
 .theme-toggle button {
-  padding: 0.3rem;
+  padding: 0.4rem;
+  margin-left: 0.5rem;
 }
 
 .theme-toggle button img {
@@ -723,6 +727,7 @@ a.button:active {
     display: inline-flex;
     font-size: 1.1rem;
     padding: 0;
+    gap: 0.75rem;
   }
 
   .navigation a.item.brand span,
@@ -922,6 +927,10 @@ main {
   order: 2;
 }
 
+.hero.index {
+  padding: 1rem 0;
+}
+
 .decoration {
   display: flex;
   align-items: center;
@@ -942,7 +951,7 @@ p.hero-description {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--font-color-hero-description);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .hero-description a {
@@ -1265,6 +1274,25 @@ a.post time {
 
 /* Tags and categories */
 
+.alphabetical-tags {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.alphabetical-tags:last-child {
+  border-bottom: none;
+}
+
+.alphabetical-tags h3 {
+  width: 30px;
+  margin: 0;
+  color: var(--primary-color);
+}
+
 .tags,
 .links {
   display: flex;
@@ -1278,7 +1306,7 @@ a.tag {
   padding: 0.2rem 0.5rem;
   border: 1px solid var(--button-border-color);
   border-radius: var(--border-radius);
-  color: var(--font-color-base);
+  color: var(--font-color-heading3);
   background: var(--button-background-color) !important;
   text-decoration: none;
 }

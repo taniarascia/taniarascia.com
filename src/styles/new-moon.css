@@ -81,13 +81,13 @@ code.language-text {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
-  background: var(--inline-code-background-color);
+  /* background: var(--inline-code-background-color); */
   color: var(--font-color-base);
-  padding: 3px 6px;
+  /* padding: 3px 6px; */
   font-weight: 500;
   font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--button-border-color);
+  /* border-radius: 6px; */
+  /* border: 1px solid var(--button-border-color); */
 }
 
 :not(pre) > a code[class*='language-'] {

@@ -1,4 +1,5 @@
 :root {
+  --primary-color: var(--light-yellow);
   --background-color: var(--gray-10);
   --navbar-background-color: var(--gray-9);
   --card-background-color: var(--gray-9);

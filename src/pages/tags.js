@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import config from '../utils/config'
@@ -28,15 +28,11 @@ export default function Tags({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
 
       <SidebarLayout>
-        <Hero
-          title={title}
-          highlight={tags.length}
-          subTitle=" alphabetically sorted"
-        />
+        <Hero title={title} />
         <section className="segment">
           {Object.entries(groupTags).map(([key, value]) => {
             return (
-              <Fragment key={key}>
+              <div key={key} className="alphabetical-tags">
                 <h3>{key.toUpperCase()}</h3>
                 <div className="tags">
                   {value.map((tag) => {
@@ -52,7 +48,7 @@ export default function Tags({ data }) {
                     )
                   })}
                 </div>
-              </Fragment>
+              </div>
             )
           })}
         </section>

@@ -23,14 +23,20 @@ export default function Articles({ data }) {
       <SEO customDescription={description} />
 
       <SidebarLayout>
-        <Hero title={title} description={description} />
-        <Link
-          to="/tags"
-          className="button small"
-          style={{ marginTop: '0.5rem' }}
-        >
-          View All Tags
-        </Link>
+        <Hero
+          title={title}
+          description={
+            <>
+              <p>{description}</p>
+              <p>
+                <Link to="/tags" className="button small">
+                  View All Tags
+                </Link>
+              </p>
+            </>
+          }
+        />
+
         <Posts data={simplifiedPosts} showYears />
       </SidebarLayout>
     </div>
