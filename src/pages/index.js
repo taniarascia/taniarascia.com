@@ -32,7 +32,7 @@ export default function Index({ data }) {
           <Hero title="Hey, I'm Tania" index>
             <p className="hero-description small width">
               I'm a software developer who makes open-source projects and writes
-              about code and life. Welcome to my digital garden.
+              about code and life. Welcome to my digital garden!
             </p>
           </Hero>
           <div className="decoration">

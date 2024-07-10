@@ -43,11 +43,11 @@ export const Navigation = ({ onUpdateTheme }) => {
           ))}
 
           {socialNavItems.map((item) => (
-            <div className="nav-item-outer" key={item.url}>
+            <div className="nav-item-outer desktop-only" key={item.url}>
               <a
                 href={item.url}
                 key={item.label}
-                className={`desktop-only item ${slugify(item.label)}`}
+                className={`item ${slugify(item.label)}`}
                 target="_blank"
                 rel="noreferrer"
               >
