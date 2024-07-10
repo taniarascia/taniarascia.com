@@ -265,7 +265,7 @@ h5 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  scroll-margin-top: 2.5rem;
+  scroll-margin-top: 6rem;
   font-family: var(--font-family-heading);
 }
 
@@ -302,7 +302,7 @@ h2 code {
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   color: var(--font-color-heading3);
 }
 
@@ -953,6 +953,17 @@ p.hero-description {
   font-weight: 400;
 }
 
+.hero-description a {
+  text-decoration: none;
+}
+
+.hero-description a:hover,
+.hero-description a:hover {
+  color: var(--post-color-hover);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
 .hero .sub-title {
   color: var(--font-color-muted);
   font-weight: 500;
@@ -1005,6 +1016,7 @@ p.hero-description {
 @media screen and (min-width: 700px) {
   .highlight-preview {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
     column-gap: 1.5rem;
   }
 }
@@ -1077,17 +1089,20 @@ p.hero-description {
   margin-top: 1rem;
 }
 
-.post-content a,
-.page-content a {
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
+.page-content a,
+.post-content a {
+  text-decoration: none;
 }
 
-.post-content a:hover,
-.page-content a:hover {
+.post-content a:hover {
   background: var(--link);
   color: var(--link-color-hover);
-  text-decoration: none;
+}
+
+.page-content a:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  color: var(--post-color-hover);
 }
 
 @media screen and (min-width: 700px) {

@@ -33,12 +33,18 @@ export default function Index({ data }) {
 
       <div className="container">
         <div className="hero-wrapper">
-          <Hero
-            title="Hey, I'm Tania"
-            index
-            description="I'm a software developer who makes open-source projects and writes
-              about code and life."
-          />
+          <Hero title="Hey, I'm Tania" index>
+            <p className="hero-description">
+              I'm a software developer who makes open-source projects and writes
+              about code and life.
+            </p>
+            <p className="hero-description">
+              On this site, you can check out all the{' '}
+              <Link to="/blog">technical articles</Link> I've written, read some
+              of my <Link to="/notes">personal notes</Link>, or learn more{' '}
+              <Link to="/me">about me</Link>.
+            </p>
+          </Hero>
           <div className="decoration">
             <img
               src="/ram.png"
@@ -58,11 +64,7 @@ export default function Index({ data }) {
         </section>
 
         <section className="segment">
-          <Heading
-            title="Articles"
-            slug="/blog"
-            buttonText="All Articles"
-          />
+          <Heading title="Articles" slug="/blog" buttonText="All Articles" />
 
           <Posts data={articles} newspaper />
         </section>
