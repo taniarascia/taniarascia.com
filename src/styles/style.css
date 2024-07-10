@@ -19,7 +19,7 @@
   --green: #5eddac;
   --orange: #ff7e22;
   --yellow: #fca62a;
-  --light-yellow: #fed06d;
+  --light-yellow: #fcd37a;
   --pink: #f57ad0;
   --lavender: #a180f9;
   --violet: #ff75f8;
@@ -590,7 +590,7 @@ a.button:active {
   gap: 0.5rem;
   width: 100%;
   max-width: 300px;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .navigation a,
@@ -661,10 +661,10 @@ a.button:active {
 }
 
 .navigation .logo {
-  height: 20px;
-  width: 20px;
-  min-height: 20px;
-  min-width: 20px;
+  height: 22px;
+  width: 22px;
+  min-height: 22px;
+  min-width: 22px;
 }
 
 .navigation .nav-image {
@@ -676,7 +676,6 @@ a.button:active {
 }
 
 .theme-toggle button {
-  margin-left: 0.5rem;
   padding: 0.3rem;
 }
 
@@ -704,13 +703,6 @@ a.button:active {
 
   .navigation .nav-wrapper {
     display: block;
-  }
-
-  .navigation .logo {
-    height: 22px;
-    width: 22px;
-    min-height: 22px;
-    min-width: 22px;
   }
 
   .navigation .nav-image {
