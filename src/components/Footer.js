@@ -43,7 +43,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               key={link.url}
-              className="button"
+              className="button small"
             >
               <img src={link.icon} alt={link.label} />
               <span>{link.label}</span>
