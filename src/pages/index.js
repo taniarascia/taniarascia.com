@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
@@ -17,6 +17,7 @@ export default function Index({ data }) {
   const latestArticles = data.latestArticles.edges
   const highlights = data.highlights.edges
   const notes = useMemo(() => getSimplifiedPosts(latestNotes), [latestNotes])
+  const colors = ['light-yellow', 'blue', 'green', 'pink', 'lavender']
   const articles = useMemo(
     () => getSimplifiedPosts(latestArticles),
     [latestArticles]
@@ -25,6 +26,22 @@ export default function Index({ data }) {
     () => getSimplifiedPosts(highlights, { thumbnails: true }),
     [highlights]
   )
+
+  const handleUpdateColor = (color) => {
+    const cssRoot = document.querySelector(':root')
+    cssRoot.style.setProperty('--selected-color', `var(--${color})`)
+    localStorage.setItem('selected-color', color)
+  }
+
+  useEffect(() => {
+    if (localStorage.getItem('selected-color')) {
+      const cssRoot = document.querySelector(':root')
+      cssRoot.style.setProperty(
+        '--selected-color',
+        `var(--${localStorage.getItem('selected-color')})`
+      )
+    }
+  }, [])
 
   return (
     <div>
@@ -43,6 +60,16 @@ export default function Index({ data }) {
               <Link to="/blog">technical articles</Link> I've written, read some
               of my <Link to="/notes">personal notes</Link>, or learn more{' '}
               <Link to="/me">about me</Link>.
+            </p>
+            <p className="flex hero-description">
+              {colors.map((color) => (
+                <div
+                  key={color}
+                  className="circle"
+                  style={{ background: `var(--${color})` }}
+                  onClick={() => handleUpdateColor(color)}
+                />
+              ))}
             </p>
           </Hero>
           <div className="decoration">
@@ -71,7 +98,6 @@ export default function Index({ data }) {
 
         <section className="segment large">
           <Heading title="Highlights" />
-
           <div className="highlight-preview">
             {simplifiedHighlights.map((post) => {
               return (

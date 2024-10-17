@@ -1,9 +1,8 @@
 :root {
-  --primary-color: var(--light-yellow);
+  --primary-color: var(--selected-color);
   --background-color: var(--gray-10);
   --navbar-background-color: var(--gray-9);
   --card-background-color: var(--gray-9);
-  --year: var(--green);
 
   --font-color-heading: white;
   --font-color-heading3: white;
@@ -23,11 +22,10 @@
   --card-time-color: var(--primary-color);
   --link: var(--primary-color);
   --link-color-hover: #222;
-  --post-color-hover: #ffeea6;
+  --post-color-hover: white;
   --blockquote-background: rgba(120, 120, 240, 0.08);
-  /* --marker: var(--green); */
   --file-background: #222;
-  --inline-code-background-color: rgba(0, 0, 0, 0.2);
+  --inline-code-background-color: rgba(255, 255, 255, 0.1);
   --highlight-color: var(--primary-color);
   --navbar: var(--gray-9);
   --navbar-background-hover: var(--gray-8);

@@ -21,7 +21,7 @@
   --yellow: #fca62a;
   --light-yellow: #fcd37a;
   --pink: #f57ad0;
-  --lavender: #a180f9;
+  --lavender: #a586fb;
   --violet: #ff75f8;
   --blue: #59abf7;
   --purple: #673ece;
@@ -29,6 +29,7 @@
   --indigo-dark: #431dee;
   --indigo-light: #a6aaff;
   --indigo-muted: #f1f2fd;
+  --selected-color: var(--light-yellow);
 
   /* Font family */
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,
@@ -68,14 +69,13 @@
   --navbar-color: var(--gray-8);
   --navbar-color-hover: var(--gray-9);
   --navbar-background-hover: var(--gray-1);
-  --year: var(--green);
   --star: var(--yellow);
   --post-time-color: var(--gray-6);
   --card-time-color: var(--gray-6);
   --highlight-color: var(--yellow);
   --blockquote-background: var(--indigo-muted);
   --file-background: #eee;
-  --inline-code-background-color: var(--gray-0);
+  --inline-code-background-color: rgba(0, 0, 0, 0.1);
   --category-link: #dd4eb2;
   --scrollbar-color: var(--gray-3);
   --scrollbar-track: var(--gray-4);
@@ -940,7 +940,7 @@ main {
 .hero h1 {
   font-size: 2.2rem;
   line-height: 1.1;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--font-color-heading);
   margin: 0;
 }
@@ -1018,7 +1018,7 @@ p.hero-description {
   .highlight-preview {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1rem;
-    column-gap: 1.5rem;
+    column-gap: 1.75rem;
   }
 }
 
@@ -1369,6 +1369,10 @@ a.category.active .count {
   max-width: var(--content-width--medium);
 }
 
+.gap {
+  gap: 0.5rem;
+}
+
 .flex {
   display: flex;
   gap: 1rem;
@@ -1550,6 +1554,13 @@ a.gatsby-resp-image-link {
 .text-medium,
 p.text-medium {
   font-size: 1rem;
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
