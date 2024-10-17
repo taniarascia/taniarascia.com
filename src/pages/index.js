@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from 'react'
+import React, { useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
@@ -32,16 +32,6 @@ export default function Index({ data }) {
     cssRoot.style.setProperty('--selected-color', `var(--${color})`)
     localStorage.setItem('selected-color', color)
   }
-
-  useEffect(() => {
-    if (localStorage.getItem('selected-color')) {
-      const cssRoot = document.querySelector(':root')
-      cssRoot.style.setProperty(
-        '--selected-color',
-        `var(--${localStorage.getItem('selected-color')})`
-      )
-    }
-  }, [])
 
   return (
     <div>
