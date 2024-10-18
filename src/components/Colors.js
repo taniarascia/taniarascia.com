@@ -4,13 +4,13 @@ const colors = ['blue', 'green', 'light-yellow', 'pink', 'lavender']
 
 export const Colors = () => {
   const [savedColor, setSavedColor] = useState(
-    localStorage.getItem('selected-color') || 'yellow'
+    window.localStorage.getItem('selected-color') || 'yellow'
   )
 
   const handleUpdateColor = (color) => {
     const cssRoot = document.querySelector(':root')
     cssRoot.style.setProperty('--selected-color', `var(--${color})`)
-    localStorage.setItem('selected-color', color)
+    window.localStorage.setItem('selected-color', color)
 
     setSavedColor(color)
   }

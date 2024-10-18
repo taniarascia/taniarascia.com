@@ -13,14 +13,14 @@ export const Layout = ({ children }) => {
 
   const onUpdateTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('theme', newTheme)
+    window.localStorage.setItem('theme', newTheme)
 
     setTheme(newTheme)
   }
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    const savedColor = localStorage.getItem('selected-color')
+    const savedTheme = window.localStorage.getItem('theme')
+    const savedColor = window.localStorage.getItem('selected-color')
 
     if (savedTheme) {
       setTheme(savedTheme)
@@ -30,7 +30,7 @@ export const Layout = ({ children }) => {
       const cssRoot = document.querySelector(':root')
       cssRoot.style.setProperty(
         '--selected-color',
-        `var(--${localStorage.getItem('selected-color')})`
+        `var(--${window.localStorage.getItem('selected-color')})`
       )
     }
   }, [])
