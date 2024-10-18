@@ -13,14 +13,14 @@ export const Layout = ({ children }) => {
 
   const onUpdateTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
-    window.localStorage.setItem('theme', newTheme)
+    localStorage.setItem('theme', newTheme)
 
     setTheme(newTheme)
   }
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem('theme')
-    const savedColor = window.localStorage.getItem('selected-color')
+    const savedTheme = localStorage.getItem('theme')
+    const savedColor = localStorage.getItem('selected-color')
 
     if (savedTheme) {
       setTheme(savedTheme)

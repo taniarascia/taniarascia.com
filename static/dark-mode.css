@@ -1,5 +1,11 @@
 :root {
-  --primary-color: var(--selected-color);
+  /* Theme */
+  --green: #5eddac;
+  --light-yellow: #fcd37a;
+  --pink: #f57ad0;
+  --lavender: #a586fb;
+  --blue: #59abf7;
+
   --background-color: var(--gray-10);
   --navbar-background-color: var(--gray-9);
   --card-background-color: var(--gray-9);
@@ -23,6 +29,7 @@
   --link: var(--primary-color);
   --link-color-hover: #222;
   --post-color-hover: white;
+  --blockquote-border-color: var(--indigo-light);
   --blockquote-background: rgba(120, 120, 240, 0.08);
   --file-background: #222;
   --inline-code-background-color: rgba(255, 255, 255, 0.1);

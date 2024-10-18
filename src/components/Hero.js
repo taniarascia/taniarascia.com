@@ -17,9 +17,9 @@ export const Hero = ({
         </div>
       )}
       {title && <h1>{title}</h1>}
-      {description && <p className="hero-description">{description}</p>}
+      {description && <div className="hero-description">{description}</div>}
 
-      {children && children}
+      {children}
     </header>
   )
 }

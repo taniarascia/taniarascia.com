@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
+  /* Theme */
+  --green: #229020;
+  --light-yellow: #a87200;
+  --pink: #c52387;
+  --lavender: #a208ba;
+  --blue: #365ccd;
+  --selected-color: var(--light-yellow);
+
   /* Colors */
   --gray-0: #f9f9f9;
   --gray-05: #f6f6f6;
@@ -16,20 +24,14 @@
   --gray-9: #1f1f1f;
   --gray-10: #181818;
 
-  --green: #5eddac;
-  --orange: #ff7e22;
   --yellow: #fca62a;
-  --light-yellow: #fcd37a;
-  --pink: #f57ad0;
-  --lavender: #a586fb;
+  --orange: #ff7e22;
   --violet: #ff75f8;
-  --blue: #59abf7;
   --purple: #673ece;
   --indigo: #4e5dff;
   --indigo-dark: #431dee;
   --indigo-light: #a6aaff;
-  --indigo-muted: #f1f2fd;
-  --selected-color: var(--light-yellow);
+  --indigo-muted: #c7ccff;
 
   /* Font family */
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,
@@ -61,9 +63,9 @@
   --button-border-color: var(--gray-4);
   --button-background-color: var(--gray-05);
   --marker: var(--border-color-hover);
-  --link: var(--indigo);
-  --link-color-hover: var(--indigo-muted);
-  --post-color-hover: var(--indigo-dark);
+  --link: var(--primary-color);
+  --link-color-hover: white;
+  --post-color-hover: var(--primary-color);
   --navbar: var(--gray-1);
   --navbar-border: var(--gray-2);
   --navbar-color: var(--gray-8);
@@ -73,7 +75,8 @@
   --post-time-color: var(--gray-6);
   --card-time-color: var(--gray-6);
   --highlight-color: var(--yellow);
-  --blockquote-background: var(--indigo-muted);
+  --blockquote-border-color: VAR(--gray-5);
+  --blockquote-background: rgba(0, 0, 0, 0.05);
   --file-background: #eee;
   --inline-code-background-color: rgba(0, 0, 0, 0.1);
   --category-link: #dd4eb2;
@@ -86,7 +89,7 @@
   --content-width--medium: 700px;
   --navbar-height-small: 60px;
 
-  --primary-color: var(--indigo);
+  --primary-color: var(--selected-color);
 }
 
 *,
@@ -206,7 +209,7 @@ time {
 
 blockquote {
   margin: 2rem 0;
-  border: 1px solid var(--indigo-light);
+  border: 1px solid var(--blockquote-border-color);
   margin-left: 0;
   padding: 1.5rem;
   background: var(--blockquote-background);
@@ -541,9 +544,11 @@ a.button.primary:hover {
 }
 
 button:hover,
-a.button:hover {
+a.button:hover,
+.button:hover {
   color: var(--font-color-bright);
   border-color: var(--button-border-color-hover);
+  text-transform: none;
 }
 
 button:active,
@@ -623,6 +628,10 @@ a.button:active {
   padding: 0;
 }
 
+.navigation a.item.brand:hover {
+  border-color: transparent;
+}
+
 .navigation a.item.brand span {
   display: none;
   white-space: nowrap;
@@ -653,7 +662,7 @@ a.button:active {
 
 .navigation a.item.active,
 .navigation button.item.active {
-  color: var(--font-color-bright);
+  color: var(--primary-color);
 }
 
 .navigation .nav-item-outer {
@@ -688,6 +697,13 @@ a.button:active {
 }
 
 @media screen and (min-width: 700px) {
+  .navigation .logo {
+    height: 24px;
+    width: 24px;
+    min-height: 24px;
+    min-width: 24px;
+  }
+
   .navigation {
     padding: 1.25rem 0;
     /* position: static; */
@@ -741,20 +757,20 @@ a.button:active {
 
   .navigation a.item:hover,
   .navigation button.item:hover {
-    background: var(--button-background-color);
     color: var(--navbar-color-hover);
+    border: 1px solid transparent;
   }
 
   .navigation a.item.active,
   .navigation button.item.active {
-    background: var(--button-background-color);
-    color: var(--font-color-bright);
-    border: 1px solid var(--button-border-color);
+    background-color: var(--button-background-color);
+    border-color: var(--button-border-color);
+    color: var(--navbar-color-hover);
   }
 
   .navigation a.item.active:hover,
   .navigation button.item.active:hover {
-    border-color: var(--button-border-color-hover);
+    color: var(--navbar-color-hover);
   }
 
   .theme-toggle button {
@@ -945,9 +961,9 @@ main {
   margin: 0;
 }
 
-p.hero-description {
+.hero-description {
   -webkit-font-smoothing: antialiased;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--font-color-hero-description);
@@ -979,7 +995,7 @@ p.hero-description {
     gap: 1.5rem;
   }
 
-  p.hero-description {
+  .hero-description {
     margin: 1.5rem 0 0;
     font-size: 1.2rem;
   }
@@ -1428,7 +1444,7 @@ a.category.active .count {
 }
 
 .post-header h1 {
-  margin: 1rem 0 0;
+  margin: 1rem 0 1.5rem;
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.2;
@@ -1557,10 +1573,46 @@ p.text-medium {
 }
 
 .circle {
-  height: 30px;
-  width: 30px;
+  position: relative;
+  height: 22px;
+  width: 22px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  min-height: 16px;
+  min-width: 16px;
+  top: 3px;
+  left: 3px;
+  background-color: var(--background-color);
+  border-radius: 50%;
+}
+
+.circle.active::before {
+  content: none;
+}
+
+@media screen and (min-width: 700px) {
+  .circle {
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+  }
+
+  .circle::before {
+    height: 20px;
+    width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    top: 4px;
+    left: 4px;
+  }
 }
 
 ::-webkit-scrollbar {

@@ -8,6 +8,7 @@ import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
 import { Heading } from '../components/Heading'
 import { Hero } from '../components/Hero'
+import { Colors } from '../components/Colors'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -17,7 +18,7 @@ export default function Index({ data }) {
   const latestArticles = data.latestArticles.edges
   const highlights = data.highlights.edges
   const notes = useMemo(() => getSimplifiedPosts(latestNotes), [latestNotes])
-  const colors = ['light-yellow', 'blue', 'green', 'pink', 'lavender']
+
   const articles = useMemo(
     () => getSimplifiedPosts(latestArticles),
     [latestArticles]
@@ -26,12 +27,6 @@ export default function Index({ data }) {
     () => getSimplifiedPosts(highlights, { thumbnails: true }),
     [highlights]
   )
-
-  const handleUpdateColor = (color) => {
-    const cssRoot = document.querySelector(':root')
-    cssRoot.style.setProperty('--selected-color', `var(--${color})`)
-    localStorage.setItem('selected-color', color)
-  }
 
   return (
     <div>
@@ -51,16 +46,9 @@ export default function Index({ data }) {
               of my <Link to="/notes">personal notes</Link>, or learn more{' '}
               <Link to="/me">about me</Link>.
             </p>
-            <p className="flex hero-description">
-              {colors.map((color) => (
-                <div
-                  key={color}
-                  className="circle"
-                  style={{ background: `var(--${color})` }}
-                  onClick={() => handleUpdateColor(color)}
-                />
-              ))}
-            </p>
+            <div className="flex hero-description">
+              <Colors />
+            </div>
           </Hero>
           <div className="decoration">
             <img
