@@ -3,9 +3,12 @@ import React, { useState } from 'react'
 const colors = ['blue', 'green', 'light-yellow', 'pink', 'lavender']
 
 export const Colors = () => {
-  const [savedColor, setSavedColor] = useState(
-    window.localStorage.getItem('selected-color') || 'yellow'
-  )
+  const savedColorState =
+    typeof window !== 'undefined'
+      ? localStorage.getItem('selected-color') || 'yellow'
+      : 'yellow'
+
+  const [savedColor, setSavedColor] = useState(savedColorState)
 
   const handleUpdateColor = (color) => {
     const cssRoot = document.querySelector(':root')
