@@ -1,14 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const colors = ['blue', 'green', 'light-yellow', 'pink', 'lavender']
 
 export const Colors = () => {
-  const savedColorState =
-    typeof window !== 'undefined'
-      ? localStorage.getItem('selected-color') || 'yellow'
-      : 'yellow'
-
-  const [savedColor, setSavedColor] = useState(savedColorState)
+  const [savedColor, setSavedColor] = useState('yellow')
 
   const handleUpdateColor = (color) => {
     const cssRoot = document.querySelector(':root')
@@ -17,6 +12,14 @@ export const Colors = () => {
 
     setSavedColor(color)
   }
+
+  useEffect(() => {
+    const storedColor = localStorage.getItem('selected-color')
+
+    if (storedColor) {
+      setSavedColor(localStorage.getItem('selected-color'))
+    }
+  }, [])
 
   return colors.map((color) => (
     <div
