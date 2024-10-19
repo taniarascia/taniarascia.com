@@ -56,6 +56,8 @@
   --border-radius: 12px;
 
   /* Elements */
+  --new-background: var(--button-background-color);
+  --new-text: var(--font-color-bright);
   --background-color: var(--gray-2);
   --navbar-background-color: var(--gray-0);
   --card-background-color: var(--gray-0);
@@ -1186,6 +1188,23 @@ a.post time {
   display: none;
   color: var(--post-time-color);
   margin-left: auto;
+}
+
+a.post time.new-post {
+  font-weight: 600;
+  color: var(--new-text);
+}
+
+.new-post-pill {
+  font-family: var(--font-family-base);
+  display: inline-block;
+  background: var(--new-background);
+  color: var(--gray-10);
+  border-radius: 4px;
+  padding: 4px 8px;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width: 700px) {

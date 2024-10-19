@@ -62,16 +62,16 @@ export default function Index({ data }) {
       </div>
 
       <div className="container">
-        <section className="segment first">
-          <Heading title="Notes" slug="/notes" buttonText="All Notes" />
-
-          <Posts data={notes} newspaper />
-        </section>
-
         <section className="segment">
           <Heading title="Articles" slug="/blog" buttonText="All Articles" />
 
           <Posts data={articles} newspaper />
+        </section>
+
+        <section className="segment first">
+          <Heading title="Notes" slug="/notes" buttonText="All Notes" />
+
+          <Posts data={notes} newspaper />
         </section>
 
         <section className="segment large">

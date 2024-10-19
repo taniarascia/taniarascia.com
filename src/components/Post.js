@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'gatsby'
 
-import { getFormattedDate } from '../utils/helpers'
+import { isNewPost, getFormattedDate } from '../utils/helpers'
 
 export const Post = ({ node, prefix, newspaper }) => {
   let formattedDate
@@ -18,6 +18,8 @@ export const Post = ({ node, prefix, newspaper }) => {
     }
   }
 
+  const newPost = useMemo(() => isNewPost(node.date), [node.date])
+
   return (
     <Link
       to={prefix ? `/${prefix}${node.slug}` : node.slug}
@@ -25,7 +27,9 @@ export const Post = ({ node, prefix, newspaper }) => {
       className="post"
     >
       <h3>{node.title}</h3>
-      <time>{formattedDate}</time>
+      <time className={newPost ? 'new-post' : ''}>
+        {formattedDate} {newPost && <div className="new-post-pill">New!</div>}
+      </time>
     </Link>
   )
 }

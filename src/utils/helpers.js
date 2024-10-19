@@ -73,3 +73,12 @@ export function getFormattedDate(date) {
 
   return dateArr[0] + ' ' + dateArr[2]
 }
+
+export function isNewPost(date) {
+  const postDate = new Date(date)
+  const today = new Date()
+  const diffTime = Math.abs(today - postDate)
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
+
+  if (diffDays < 40) return true
+}

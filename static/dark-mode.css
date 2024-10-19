@@ -43,6 +43,9 @@
   --scrollbar-color: var(--gray-65);
   --scrollbar-track: var(--gray-7);
 
+  --new-background: var(--light-yellow);
+  --new-text: var(--light-yellow);
+
   --code-font-color: #b3b9c5;
   --code-background-color: #131313;
   --code-border-color: var(--gray-65);
