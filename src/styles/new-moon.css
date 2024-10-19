@@ -82,7 +82,7 @@ code.language-text {
 :not(pre) > code[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   background: var(--inline-code-background-color);
-  color: var(--font-color-base);
+  color: var(--font-color-bright);
   padding: 2px 4px;
   font-weight: 500;
   font-size: 1rem;
@@ -394,4 +394,30 @@ code[class*='language-'] ::selection {
   text-shadow: none;
   color: inherit;
   background: rgba(150, 150, 150, 0.3) !important;
+}
+
+/* https://dylanatsmith.com/wrote/styling-the-kbd-element */
+kbd {
+  background-color: var(--button-background-color);
+  color: var(--font-color-base);
+  border-radius: 0.25rem;
+  border: 1px solid var(--button-border-color);
+  box-shadow: 0 2px 0 1px var(--button-border-color);
+  font-family: var(--font-family);
+  cursor: default;
+  font-size: 0.75em;
+  line-height: 1;
+  min-width: 0.75rem;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  padding: 2px 5px;
+  margin: 0 2px;
+  position: relative;
+  top: -1px;
+}
+
+kbd:hover {
+  box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
+  top: 1px;
 }

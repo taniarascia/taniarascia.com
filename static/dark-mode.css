@@ -25,12 +25,11 @@
   --button-background-color: var(--gray-8);
 
   --post-time-color: var(--gray-5);
-  --card-time-color: var(--primary-color);
   --link: var(--primary-color);
   --link-color-hover: #222;
   --post-color-hover: white;
-  --blockquote-border-color: var(--indigo-light);
-  --blockquote-background: rgba(120, 120, 240, 0.08);
+  --blockquote-border-color: var(--primary-color);
+  --blockquote-background: rgba(130, 130, 130, 0.08);
   --file-background: #222;
   --inline-code-background-color: rgba(255, 255, 255, 0.1);
   --highlight-color: var(--primary-color);

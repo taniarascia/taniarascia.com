@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { getFormattedDate, slugify } from '../utils/helpers'
+import { slugify } from '../utils/helpers'
 
 export const PostSidebar = ({ tags = [], date, categories = [] }) => {
   const category = categories?.filter((category) => category !== 'Highlight')
-  const formattedDate = getFormattedDate(date)
 
   return (
     <aside className="post-sidebar">
@@ -27,7 +26,7 @@ export const PostSidebar = ({ tags = [], date, categories = [] }) => {
         <h2>Post Details</h2>
         <ul>
           <li>
-            <strong>Published: </strong> {formattedDate}
+            <strong>Published: </strong> {date}
           </li>
           <li>
             <strong>Category: </strong>
