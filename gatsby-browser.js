@@ -1,3 +1,5 @@
+require('prismjs/plugins/line-numbers/prism-line-numbers.css')
+
 const React = require('react')
 
 export function wrapPageElement({ element, props }) {

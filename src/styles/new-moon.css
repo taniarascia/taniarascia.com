@@ -421,3 +421,36 @@ kbd:hover {
   box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
   top: 1px;
 }
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding: 1.5rem 3rem;
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers .line-numbers-rows {
+  border-right: 1px solid var(--code-border-color);
+  padding: 1.5rem 0;
+  /* background: var(--file-background); */
+}
+.gatsby-highlight
+  pre[class*='language-'].line-numbers
+  .line-numbers-rows
+  > span {
+  padding-left: 15px;
+}
+
+.gatsby-highlight
+  pre[class*='language-'].line-numbers
+  .line-numbers-rows
+  > span::before {
+  color: var(--font-color-extra-muted);
+  padding-right: 10px;
+}
+
+@media screen and (min-width: 700px) {
+  .gatsby-highlight
+    pre[class*='language-'].line-numbers
+    .line-numbers-rows
+    > span {
+    padding-left: 10px;
+  }
+}

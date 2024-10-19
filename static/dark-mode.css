@@ -14,6 +14,7 @@
   --font-color-heading3: white;
   --font-color-base: var(--gray-4);
   --font-color-muted: var(--gray-5);
+  --font-color-extra-muted: var(--gray-6);
   --font-color-bright: white;
   --font-color-hero-description: var(--gray-4);
 

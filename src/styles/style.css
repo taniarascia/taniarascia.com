@@ -45,6 +45,7 @@
   /* Font color */
   --font-color-base: var(--gray-7);
   --font-color-muted: var(--gray-6);
+  --font-color-extra-muted: var(--gray-4);
   --font-color-heading: var(--gray-9);
   --font-color-heading3: var(--gray-8);
   --font-color-bright: var(--gray-9);
