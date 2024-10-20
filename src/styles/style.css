@@ -134,7 +134,7 @@ ol,
 ul,
 table,
 blockquote {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--font-color-base);
 }
 
@@ -154,7 +154,7 @@ p,
 ul,
 ol {
   -webkit-font-smoothing: auto;
-  line-height: 1.625;
+  line-height: 1.7;
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
@@ -287,7 +287,7 @@ h2 + h3 {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   margin: 0 0 1rem;
   font-weight: 700;
   padding-bottom: 0.4rem;
@@ -440,7 +440,7 @@ th:last-of-type {
 
 .container {
   max-width: var(--content-width);
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1033,6 +1033,10 @@ main {
   gap: 0.5rem;
 }
 
+.highlight-preview .card a.card-header {
+  margin-bottom: 0;
+}
+
 @media screen and (min-width: 700px) {
   .highlight-preview {
     grid-template-columns: repeat(2, 1fr);
@@ -1465,7 +1469,7 @@ a.category.active .count {
 
 .post-header h1 {
   margin: 1rem 0 1.5rem;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.2;
 }

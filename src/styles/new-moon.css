@@ -39,7 +39,7 @@ pre[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   color: var(--code-font-color);
   font-family: 'Menlo', var(--font-family-monospace);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -82,11 +82,11 @@ code.language-text {
 :not(pre) > code[class*='language-'] {
   -webkit-font-smoothing: subpixel-antialiased;
   background: var(--inline-code-background-color);
-  color: var(--font-color-bright);
+  color: var(--font-color-base);
   padding: 2px 4px;
   font-weight: 500;
-  font-size: 1rem;
-  border-radius: 4px;
+  font-size: 0.9rem;
+  border-radius: 6px;
   /* border: 1px solid var(--button-border-color); */
 }
 
@@ -112,7 +112,7 @@ code.language-shell::before {
   border-radius: 0;
   overflow: auto;
   margin: 1.5rem -1.5rem;
-  max-width: calc(100% + 2.5rem);
+  max-width: calc(100% + 3rem);
 }
 
 @media screen and (min-width: 700px) {
@@ -147,7 +147,7 @@ code.language-shell::before {
 .gatsby-highlight-code-line {
   background-color: var(--highlight-code-color);
   display: block;
-  margin-left: -1rem;
+  margin-left: -1.5rem;
   margin-right: -1.5rem;
   padding-left: calc(1rem - 4px);
   border-left: 4px solid #74cf74;
@@ -237,7 +237,7 @@ pre.language-terminal::before {
   align-items: center;
   justify-content: center;
   background: var(--file-background);
-  padding: 0.4rem 1rem 0.8rem;
+  padding: 0.2rem 1rem 0;
   color: var(--font-color-base);
   line-height: 1.5;
   font-size: 1rem;
@@ -245,8 +245,8 @@ pre.language-terminal::before {
   border-radius: 0;
   margin-bottom: -1.9rem;
   margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  max-width: calc(100% + 2.5rem);
+  margin-right: -1.5em;
+  max-width: calc(100% + 3rem);
   padding-bottom: 0.8rem;
   border-top: 1px solid var(--code-border-color);
   border-bottom: 1px solid var(--code-border-color);
