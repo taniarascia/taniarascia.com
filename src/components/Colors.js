@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const colors = ['blue', 'green', 'light-yellow', 'pink', 'lavender']
 
 export const Colors = () => {
-  const [savedColor, setSavedColor] = useState('yellow')
+  const [savedColor, setSavedColor] = useState('lavender')
 
   const handleUpdateColor = (color) => {
     const cssRoot = document.querySelector(':root')

@@ -7,7 +7,7 @@
   --pink: #c52387;
   --lavender: #a208ba;
   --blue: #365ccd;
-  --selected-color: var(--light-yellow);
+  --selected-color: var(--lavender);
 
   /* Colors */
   --gray-0: #f9f9f9;
@@ -512,6 +512,7 @@ a.button {
   gap: 0.25rem;
   white-space: nowrap;
   transition: transform 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 button.large,
@@ -541,17 +542,18 @@ a.button.primary {
   font-weight: 700;
 }
 
-button.primary:hover,
-a.button.primary:hover {
-  border-color: var(--yellow);
-}
-
 button:hover,
 a.button:hover,
 .button:hover {
   color: var(--font-color-bright);
   border-color: var(--button-border-color-hover);
   text-transform: none;
+  text-decoration: none !important;
+}
+
+button.primary:hover,
+a.button.primary:hover {
+  border-color: var(--yellow);
 }
 
 button:active,
