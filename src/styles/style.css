@@ -7,7 +7,7 @@
   --pink: #c52387;
   --lavender: #a208ba;
   --blue: #365ccd;
-  --selected-color: var(--lavender);
+  --selected-color: var(--blue);
 
   /* Colors */
   --gray-0: #f9f9f9;
@@ -59,13 +59,13 @@
   /* Elements */
   --new-background: var(--button-background-color);
   --new-text: var(--font-color-bright);
-  --background-color: var(--gray-2);
+  --background-color: white;
   --navbar-background-color: var(--gray-0);
   --card-background-color: var(--gray-0);
   --button-border-color-hover: var(--gray-5);
   --button-border-color: var(--gray-4);
   --button-background-color: var(--gray-05);
-  --marker: var(--border-color-hover);
+  --marker: var(--gray-5);
   --link: var(--primary-color);
   --link-color-hover: white;
   --post-color-hover: var(--primary-color);
@@ -78,16 +78,16 @@
   --post-time-color: var(--gray-6);
   --card-time-color: var(--primary-color);
   --highlight-color: var(--yellow);
-  --blockquote-border-color: VAR(--gray-5);
-  --blockquote-background: rgba(0, 0, 0, 0.05);
+  --blockquote-border-color: var(--primary-color);
+  --blockquote-background: rgba(124, 145, 252, 0.15);
   --file-background: #eee;
-  --inline-code-background-color: rgba(0, 0, 0, 0.1);
+  --inline-code-background-color: rgba(0, 0, 0, 0.05);
   --category-link: #dd4eb2;
   --scrollbar-color: var(--gray-3);
   --scrollbar-track: var(--gray-4);
 
   /* Sizs */
-  --content-width: 860px;
+  --content-width: 780px;
   --content-width--small: 560px;
   --content-width--medium: 700px;
   --navbar-height-small: 60px;
@@ -145,7 +145,7 @@ blockquote {
   ul,
   table,
   blockquote {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.625;
   }
 }
@@ -171,7 +171,7 @@ ol li ol {
 
 li {
   line-height: 1.5;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   padding-left: 0.25rem;
 }
 
@@ -213,6 +213,7 @@ time {
 blockquote {
   margin: 2rem 0;
   border: 1px solid var(--blockquote-border-color);
+  border-left: 6px solid var(--blockquote-border-color);
   margin-left: 0;
   padding: 1.5rem;
   background: var(--blockquote-background);
@@ -318,7 +319,7 @@ h3 code {
 
 @media screen and (min-width: 700px) {
   main {
-    margin-top: 8rem;
+    margin-top: 6rem;
   }
 
   h2 {
@@ -500,7 +501,7 @@ a.button {
   background: var(--button-background-color);
   display: inline-flex;
   align-items: center;
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 0.75rem;
   font-family: var(--font-family-nav);
   line-height: 1;
   border-radius: var(--border-radius);
@@ -565,7 +566,7 @@ a.button:active {
   button,
   a.button {
     font-size: 1rem;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.75rem;
   }
 }
 
@@ -710,7 +711,7 @@ a.button:active {
   }
 
   .navigation {
-    padding: 1.25rem 0;
+    padding: 0.75rem 0;
     /* position: static; */
     height: auto;
   }
@@ -740,13 +741,14 @@ a.button:active {
 
   .navigation a.item {
     font-size: 1rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.75rem;
     gap: 0.5rem;
+    height: 38px;
   }
 
   .navigation a.item.brand {
     display: inline-flex;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     padding: 0;
     gap: 0.75rem;
   }
@@ -975,17 +977,6 @@ main {
   font-weight: 500;
 }
 
-.hero-description a {
-  text-decoration: none;
-}
-
-.hero-description a:hover,
-.hero-description a:hover {
-  color: var(--post-color-hover);
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-}
-
 .hero .sub-title {
   color: var(--font-color-muted);
   font-weight: 500;
@@ -1120,15 +1111,16 @@ main {
   text-decoration: none;
 }
 
-.post-content a:hover {
+.post-content a:hover,
+.page-content a:hover,
+.hero-description a:hover {
   background: var(--link);
   color: var(--link-color-hover);
 }
 
-.page-content a:hover {
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  color: var(--post-color-hover);
+.hero-description a.button:hover {
+  color: var(--font-color-bright);
+  background: var(--button-background-color);
 }
 
 @media screen and (min-width: 700px) {
@@ -1171,15 +1163,14 @@ a.post:hover h3,
 a.post:hover time {
   color: var(--font-color-bright);
 }
-
 a.post:hover,
 a.post:hover h3 {
   color: var(--post-color-hover);
 }
 
 a.post:hover h3 {
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
+  background: var(--link);
+  color: var(--link-color-hover);
 }
 
 a.post h3 {
@@ -1226,7 +1217,7 @@ a.post time.new-post {
   }
 
   a.post h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
   }
 }
@@ -1466,20 +1457,20 @@ a.category.active .count {
 }
 
 .post-header {
-  padding: 2rem 0 1rem;
+  padding: 2rem 0 0;
 }
 
 .post-header h1 {
   margin: 1rem 0 1.5rem;
   font-size: 1.7rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
 }
 
 @media screen and (min-width: 700px) {
   .post-header {
     padding-top: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 0;
   }
 
   .header-post-image .gatsby-image-wrapper {

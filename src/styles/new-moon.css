@@ -240,10 +240,10 @@ pre.language-terminal::before {
   padding: 0.2rem 1rem 0;
   color: var(--font-color-base);
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border-radius: 0;
-  margin-bottom: -1.9rem;
+  margin-bottom: -2rem;
   margin-left: -1.5rem;
   margin-right: -1.5em;
   max-width: calc(100% + 3rem);

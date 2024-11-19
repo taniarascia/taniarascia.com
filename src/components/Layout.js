@@ -20,18 +20,9 @@ export const Layout = ({ children }) => {
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('theme')
-    const savedColor = window.localStorage.getItem('selected-color')
 
     if (savedTheme) {
       setTheme(savedTheme)
-    }
-
-    if (savedColor) {
-      const cssRoot = document.querySelector(':root')
-      cssRoot.style.setProperty(
-        '--selected-color',
-        `var(--${window.localStorage.getItem('selected-color')})`
-      )
     }
   }, [])
 

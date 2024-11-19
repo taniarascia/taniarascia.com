@@ -8,7 +8,6 @@ import { SEO } from '../components/SEO'
 import { PostSidebar } from '../components/PostSidebar'
 import { Comments } from '../components/Comments'
 import config from '../utils/config'
-import { Colors } from '../components/Colors'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
@@ -30,9 +29,6 @@ export default function PostTemplate({ data }) {
                 </div>
               )}
               <h1>{title}</h1>
-              <div className="flex gap">
-                <Colors />
-              </div>
             </div>
             <section className="segment small">
               <div
