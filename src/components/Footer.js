@@ -8,7 +8,7 @@ import floppy from '../assets/floppylogo.png'
 const links = [
   { url: 'https://taniarascia.substack.com', label: 'Newsletter' },
   { url: 'https://bsky.app/profile/tania.dev', label: 'Bluesky' },
-  { url: 'https://ko-fi.com/taniarascia', label: 'Donate a Coffee' },
+  { url: 'https://ko-fi.com/taniarascia', label: 'Buy Me a Coffee' },
   { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS' },
 ]
 const madeWithLinks = [

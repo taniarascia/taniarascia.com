@@ -290,7 +290,7 @@ h2 + h3 {
 h2 {
   font-size: 1.6rem;
   margin: 0 0 1rem;
-  font-weight: 700;
+  font-weight: 800;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border-color);
   font-family: var(--font-family-nav);
@@ -308,7 +308,7 @@ h2 code {
 
 h3 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   color: var(--font-color-heading3);
 }
@@ -459,8 +459,8 @@ th:last-of-type {
 }
 
 .segment {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .segment.small {
@@ -578,7 +578,7 @@ a.button:active {
   left: 0;
   width: 100%;
   z-index: 3;
-  background: var(--background-color);
+  background: var(--navbar-background-color);
   height: var(--navbar-height-small);
   font-family: var(--font-family-nav);
   border-bottom: 1px solid var(--border-color);
@@ -617,7 +617,7 @@ a.button:active {
   align-items: center;
   padding: 0.25rem 0.15rem;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
   font-weight: 500;
   color: var(--navbar-color);
@@ -696,6 +696,8 @@ a.button:active {
 .theme-toggle button {
   padding: 0.4rem;
   margin-left: 0.5rem;
+  border: 0;
+  background: transparent;
 }
 
 .theme-toggle button img {
@@ -1011,7 +1013,7 @@ main {
   }
 
   .hero.index {
-    padding: 5rem 0 3rem;
+    padding: 3rem 0;
   }
 }
 
@@ -1457,7 +1459,7 @@ a.category.active .count {
 }
 
 .post-header {
-  padding: 2rem 0 0;
+  padding: 2rem 0 1rem;
 }
 
 .post-header h1 {
@@ -1470,7 +1472,7 @@ a.category.active .count {
 @media screen and (min-width: 700px) {
   .post-header {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 0.5rem;
   }
 
   .header-post-image .gatsby-image-wrapper {

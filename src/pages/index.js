@@ -34,19 +34,16 @@ export default function Index({ data }) {
 
       <div className="container">
         <div className="hero-wrapper">
-          <Hero title="Hey, I'm Tania" index>
+          <Hero title="Hey, I'm Tania!" index>
             <p className="hero-description">
-              I'm a software developer who makes open-source projects and writes
-              about code and life.
+              I'm a software dev who writes and makes open-source projects.
+              Thanks for visiting my digital garden! 🌱
             </p>
             <p className="hero-description">
               On this site, you can check out all the{' '}
-              <Link to="/blog">technical articles</Link> I've written, read some
-              of my <Link to="/notes">personal notes</Link>, or learn more{' '}
-              <Link to="/me">about me</Link>.
-            </p>
-            <p className="hero-description">
-              Thanks for visiting my digital garden! 🌱
+              <Link to="/blog">articles</Link> I've written, read some of my{' '}
+              <Link to="/notes">notes</Link>, or learn more{' '}
+              <Link to="/me">about me</Link> 💾.
             </p>
           </Hero>
           <div className="decoration">
