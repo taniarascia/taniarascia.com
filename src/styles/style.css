@@ -60,7 +60,7 @@
   --new-background: var(--button-background-color);
   --new-text: var(--font-color-bright);
   --background-color: white;
-  --navbar-background-color: var(--gray-0);
+  --navbar-background-color: white;
   --card-background-color: var(--gray-0);
   --button-border-color-hover: var(--gray-5);
   --button-border-color: var(--gray-4);
@@ -290,7 +290,7 @@ h2 + h3 {
 h2 {
   font-size: 1.6rem;
   margin: 0 0 1rem;
-  font-weight: 800;
+  font-weight: 700;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border-color);
   font-family: var(--font-family-nav);
@@ -1465,7 +1465,7 @@ a.category.active .count {
 .post-header h1 {
   margin: 1rem 0 1.5rem;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.2;
 }
 
