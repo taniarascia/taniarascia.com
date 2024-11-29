@@ -34,20 +34,25 @@ export default function Index({ data }) {
       <SEO />
 
       <PageLayout>
-        <div className="hero-wrapper">
-          <Hero title="Hey, I'm Tania!" type="index">
-            <p className="hero-description">
-              I'm a software dev who writes and makes open-source projects.
-              Thanks for visiting my digital garden! 🌱
-            </p>
-            <p className="hero-description">
-              On this site, you can check out all the{' '}
-              <Link to="/blog">articles</Link> I've written, read some of my{' '}
-              <Link to="/notes">notes</Link>, or learn more{' '}
-              <Link to="/me">about me</Link> 💾.
-            </p>
-          </Hero>
-        </div>
+        <Hero title="Hey, I'm Tania!" type="index">
+          <div className="hero-wrapper">
+            <div>
+              <p className="hero-description">
+                I'm a software engineer who writes and makes open-source
+                projects. I'm also into weight lifting, reading, DDR, retro
+                video games, music, and the power of friendship.
+              </p>
+
+              <p className="hero-description">
+                On this site, you can check out all the{' '}
+                <Link to="/blog">articles</Link> I've written, read some of my{' '}
+                <Link to="/notes">notes</Link>, or learn more{' '}
+                <Link to="/me">about me</Link> 💾.
+              </p>
+            </div>
+            <img src="/ram.png" className="hero-image" alt="RAM Ram" />
+          </div>
+        </Hero>
 
         <section className="section-index">
           <Heading

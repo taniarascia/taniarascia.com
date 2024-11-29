@@ -87,6 +87,11 @@ code.language-shell::before {
   color: var(--comment);
 }
 
+pre.language-text {
+  background: transparent;
+  padding: 0;
+}
+
 /* Terminal */
 
 .gatsby-highlight pre.language-terminal {
@@ -160,7 +165,10 @@ pre.language-terminal::after {
 /* Highlight line */
 
 .gatsby-highlight-code-line {
-  background-color: rgb(116, 207, 116, 0.15);
+  background-color: light-dark(
+    rgb(116, 207, 116, 0.2),
+    rgb(116, 207, 116, 0.1)
+  );
   display: block;
   margin-left: -1.5rem;
   margin-right: -1.5rem;

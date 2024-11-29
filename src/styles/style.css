@@ -568,8 +568,11 @@ a.navbar-icon {
 .sidebar-title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   height: var(--navbar-height);
   margin-left: 1rem;
+  padding-right: 1rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -589,7 +592,13 @@ a.sidebar-title-link {
 }
 
 .sidebar-section {
-  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+
+  &:last-child {
+    border: none;
+  }
 
   p,
   h2 {
@@ -605,6 +614,10 @@ a.sidebar-title-link {
   p {
     font-size: 14px;
     line-height: 1.5;
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -627,12 +640,16 @@ a.sidebar-title-link {
   p {
     font-size: 14px;
   }
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .avatar {
   border-radius: var(--border-radius);
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 
 /* Sidebar */
@@ -701,9 +718,10 @@ a.sidebar-title-link {
 }
 
 .post-sidebar-section {
-  padding: 0 1rem;
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   border-bottom: 1px solid var(--color-border);
 
   p {
@@ -711,6 +729,7 @@ a.sidebar-title-link {
   }
 
   &:last-of-type {
+    margin-bottom: 0;
     border-bottom: none;
   }
 }
@@ -804,6 +823,12 @@ a.sidebar-title-link {
 
 /* Hero */
 
+.hero-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 .hero {
   margin-bottom: 3rem;
 
@@ -839,7 +864,7 @@ a.sidebar-title-link {
   justify-content: space-between;
 
   h2 {
-    margin-top: 0.5rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
   }
 
@@ -860,6 +885,12 @@ a.sidebar-title-link {
   font-size: 1.1rem;
   color: var(--color-text-muted);
   font-weight: 500;
+}
+
+.hero-image {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 /* Posts */
@@ -886,6 +917,11 @@ a.post {
 }
 
 @media screen and (min-width: 1020px) {
+  .hero-wrapper {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
   a.post {
     flex-direction: row;
     justify-content: space-between;
@@ -921,7 +957,7 @@ a time.new-post {
   border-bottom: 1px solid var(--color-border);
 
   &:last-of-type {
-    border: none;
+    border-bottom: none;
   }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 import floppy from '../assets/nav-floppy.png'
 
 export const Sidebar = () => {
@@ -78,18 +79,15 @@ export const Sidebar = () => {
             <h2>About me</h2>
             <div className="sidebar-content">
               <p>
-                Hey, I'm Tania. I've been making websites since 1998 and this is
-                my site.
+                Hey, I'm Tania. I've been making websites since 1998. Thanks for
+                visiting my corner of the web.
               </p>
             </div>
           </section>
 
           <section className="sidebar-section">
             <h2>Stay in touch</h2>
-            <p>Get an update when I write something new.</p>
-            <p>
-              <a href="/rss.xml">RSS feed</a>
-            </p>
+            <p>Get an update when I write something new!</p>
             <a
               href="https://taniarascia.substack.com"
               targt="_blank"
@@ -97,6 +95,9 @@ export const Sidebar = () => {
             >
               Email Signup
             </a>
+            <p>
+              <a href="/rss.xml">RSS feed</a>
+            </p>
           </section>
 
           <section className="sidebar-section">
