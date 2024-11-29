@@ -1,7 +1,7 @@
 {
   "name": "taniarascia.com",
   "private": true,
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "Tania Rascia's personal website.",
   "author": "Tania Rascia",
   "license": "MIT",
@@ -36,6 +36,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-social-icons": "^6.18.0",
     "react-use-flexsearch": "^0.1.1"
   },
   "devDependencies": {

@@ -1,55 +1,39 @@
-import React from 'react'
+import React, { useState, useMemo, useEffect, useLayoutEffect } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
-import { PostSidebar } from '../components/PostSidebar'
+import { PostLayout } from '../components/PostLayout'
 import { Comments } from '../components/Comments'
+import { Hero } from '../components/Hero'
 import config from '../utils/config'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { tags, categories, title, date, thumbnail, comments_off } =
-    post.frontmatter
+  const { title, comments_off } = post.frontmatter
 
   return (
-    <div>
+    <>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
 
-      <div className="container">
-        <div className="grid">
-          <div className="article-content">
-            <div className="post-header medium width">
-              {thumbnail && (
-                <div className="header-post-image">
-                  <Img fixed={thumbnail.childImageSharp?.fixed} />
-                </div>
-              )}
-              <h1>{title}</h1>
-            </div>
-            <section className="segment small">
-              <div
-                id={post.fields.slug}
-                className="post-content"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-            </section>
+      <PostLayout post={post}>
+        <Hero title={title} type="post" />
 
-            <PostSidebar date={date} tags={tags} categories={categories} />
-
-            {!comments_off && (
-              <section id="comments" className="segment comments">
-                <h3>Comments</h3>
-                <Comments />
-              </section>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+        <div
+          className="main-article"
+          id={post.fields.slug}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        {!comments_off && (
+          <section id="comments" className="comments">
+            <Comments />
+          </section>
+        )}
+      </PostLayout>
+    </>
   )
 }
 
@@ -60,6 +44,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
+      tableOfContents
       fields {
         slug
       }
@@ -72,7 +57,7 @@ export const pageQuery = graphql`
         comments_off
         thumbnail {
           childImageSharp {
-            fixed(width: 150, height: 150) {
+            fixed(width: 75, height: 75) {
               ...GatsbyImageSharpFixed
             }
           }

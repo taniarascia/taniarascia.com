@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import favicon from '../assets/nav-floppy.png'
 import { Navigation } from './Navigation'
 import { Footer } from './Footer'
+import { Sidebar } from './Sidebar'
 
 import '../styles/style.css'
 import '../styles/new-moon.css'
@@ -11,9 +12,9 @@ import '../styles/new-moon.css'
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
 
-  const onUpdateTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
+  const handleUpdateTheme = (newTheme) => {
     window.localStorage.setItem('theme', newTheme)
+    document.documentElement.style.setProperty('color-scheme', newTheme)
 
     setTheme(newTheme)
   }
@@ -23,6 +24,7 @@ export const Layout = ({ children }) => {
 
     if (savedTheme) {
       setTheme(savedTheme)
+      document.documentElement.style.setProperty('color-scheme', savedTheme)
     }
   }, [])
 
@@ -30,15 +32,15 @@ export const Layout = ({ children }) => {
     <div>
       <Helmet>
         <link rel="shortcut icon" type="image/png" href={favicon} />
-        {theme === 'dark' && (
-          <link rel="stylesheet" type="text/css" href="/dark-mode.css" />
-        )}
       </Helmet>
 
       <div id="layout" className="layout">
-        <Navigation onUpdateTheme={onUpdateTheme} theme={theme} />
-        <main>{children}</main>
-        <Footer />
+        <Navigation handleUpdateTheme={handleUpdateTheme} theme={theme} />
+        <Sidebar />
+        <div className="main-wrapper">
+          <div className="main-container">{children}</div>
+          <Footer />
+        </div>
       </div>
     </div>
   )

@@ -1,15 +1,15 @@
 import React from 'react'
 
+import floppy from '../assets/floppylogo.png'
 import netlify from '../../content/thumbnails/netlify.png'
 import gatsby from '../assets/gatsby.png'
 import github from '../assets/nav-github.png'
-import floppy from '../assets/floppylogo.png'
 
 const links = [
-  { url: 'https://taniarascia.substack.com', label: 'Newsletter' },
+  { url: 'https://taniarascia.substack.com', label: 'Email signup' },
+  { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS feed' },
   { url: 'https://bsky.app/profile/tania.dev', label: 'Bluesky' },
-  { url: 'https://ko-fi.com/taniarascia', label: 'Buy Me a Coffee' },
-  { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS' },
+  { url: 'https://ko-fi.com/taniarascia', label: 'Buy me a coffee' },
 ]
 const madeWithLinks = [
   { url: 'https://www.gatsbyjs.org', label: 'Gatsby', icon: gatsby },
@@ -20,23 +20,21 @@ const madeWithLinks = [
 export const Footer = () => {
   return (
     <footer className="footer">
-      <section>
-        <span>
-          <img src={floppy} className="logo" alt="Tania Rascia" title="💾" />
-        </span>
-        <nav>
+      <section className="footer-section">
+        <nav className="footer-menu">
           {links.map((link) => (
             <a
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
               key={link.url}
+              className="footer-link"
             >
               {link.label}
             </a>
           ))}
         </nav>
-        <nav>
+        <nav className="footer-menu-buttons">
           {madeWithLinks.map((link) => (
             <a
               href={link.url}
@@ -51,6 +49,11 @@ export const Footer = () => {
             </a>
           ))}
         </nav>
+        <div className="footer-made-by">
+          Made with
+          <img src={floppy} className="footer-logo" alt="Floppy diskette" /> by
+          Tania Rascia
+        </div>
       </section>
     </footer>
   )

@@ -60,18 +60,21 @@ export function appendComments() {
   }
 }
 
-export function getFormattedDate(date) {
+export function getFormattedDate(date, option = 2) {
   const dateArr = date.split(' ')
   if (dateArr[1].startsWith('0')) {
     dateArr[1] = dateArr[1].slice(1, 2)
   } else {
     dateArr[1] = dateArr[1].slice(0, 2)
   }
+
+  if (option === 1) {
+    return dateArr[0] + ' ' + dateArr[option]
+  }
+
   dateArr[1] += ','
 
-  // return dateArr.join(' ')
-
-  return dateArr[0] + ' ' + dateArr[2]
+  return dateArr[0] + ' ' + dateArr[option]
 }
 
 export function isNewPost(date) {

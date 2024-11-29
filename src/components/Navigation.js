@@ -1,48 +1,91 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import { SocialIcon } from 'react-social-icons'
 
-import floppy from '../assets/floppylogo.png'
-import blog from '../assets/nav-blog.png'
-import search from '../assets/nav-search.png'
-import projects from '../assets/nav-projects.png'
-import moon from '../assets/moon.png'
+import floppy from '../assets/nav-floppy.png'
+import { Moon } from '../assets/Moon'
+import { Sun } from '../assets/Sun'
+import { Menu } from '../assets/Menu'
 
-const mainNavItems = [
-  { url: '/notes', icon: blog, label: 'Notes' },
-  { url: '/blog', icon: blog, label: 'Articles' },
-  { url: '/projects', icon: projects, label: 'Projects' },
-  { url: '/me', icon: search, label: 'About Me' },
+const links = [
+  { url: '/notes', label: 'Notes' },
+  { url: '/blog', label: 'Articles' },
+  { url: '/projects', label: 'Projects' },
+  { url: '/illustration', label: 'Illustration' },
+  { url: '/me', label: 'About me' },
 ]
 
-export const Navigation = ({ onUpdateTheme }) => {
-  return (
-    <section className="navigation">
-      <div className="container">
-        <Link to="/" className="item brand">
-          <img src={floppy} className="logo" alt="Tania Rascia" />
-          <span>Tania Rascia</span>
-        </Link>
-        <nav>
-          {mainNavItems.map((item) => (
-            <div className="nav-item-outer" key={item.url}>
-              <Link
-                to={item.url}
-                key={item.label}
-                activeClassName="active"
-                className="item"
-              >
-                <span>{item.label}</span>
-              </Link>
-            </div>
-          ))}
+const socialLinks = [
+  { url: 'https://github.com/taniarascia' },
+  { url: 'https://bsky.app/profile/tania.dev' },
+]
 
-          <div className="theme-toggle">
-            <button onClick={onUpdateTheme}>
-              <img src={moon} alt="Theme" />
-            </button>
-          </div>
-        </nav>
+export const Navigation = ({ handleUpdateTheme, theme }) => {
+  const [navOpen, setNavOpen] = useState(false)
+
+  const handleToggleMobileNav = () => {
+    setNavOpen((prev) => !prev)
+  }
+
+  return (
+    <header className="navbar">
+      <div className="navbar-title">
+        <div className="navbar-title-content">
+          <Link to="/" className="navbar-title-link">
+            <span>
+              <img
+                src={floppy}
+                className="sidebar-logo"
+                alt="Tania Rascia"
+                title="💾"
+              />
+            </span>
+            <span>Tania Rascia</span>
+          </Link>
+        </div>
       </div>
-    </section>
+      <div className="navbar-wrapper">
+        <div className="navbar-container">
+          <section className="navbar-section navbar-section-search"></section>
+          <section className="navbar-section">
+            <button
+              className="navbar-button nav-menu-button"
+              onClick={handleToggleMobileNav}
+            >
+              <Menu />
+            </button>
+            <nav className={`navbar-menu nav-items ${navOpen ? 'active' : ''}`}>
+              {links.map((link) => (
+                <Link key={link.url} to={link.url} activeClassName="active">
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <nav className="navbar-menu social">
+              {socialLinks.map((link) => (
+                <SocialIcon
+                  target="_blank"
+                  key={link.url}
+                  url={link.url}
+                  fgColor="currentColor"
+                  bgColor="transparent"
+                  className="navbar-icon"
+                />
+              ))}
+              <button
+                className="navbar-button theme-switch-button"
+                onClick={() => {
+                  const newTheme = theme === 'dark' ? 'light' : 'dark'
+
+                  handleUpdateTheme(newTheme)
+                }}
+              >
+                {theme === 'dark' ? <Sun /> : <Moon />}
+              </button>
+            </nav>
+          </section>
+        </div>
+      </div>
+    </header>
   )
 }

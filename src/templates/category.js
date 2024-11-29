@@ -6,7 +6,7 @@ import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
 import { Hero } from '../components/Hero'
-import { SidebarLayout } from '../components/SidebarLayout'
+import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -19,15 +19,20 @@ export default function CategoryTemplate({ data, pageContext }) {
     totalCount === 1 ? ' post categorized as:' : ' posts categorized as:'
 
   return (
-    <div>
+    <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
       <SEO />
 
-      <SidebarLayout>
-        <Hero highlight={totalCount} subTitle={message} title={category} />
+      <PageLayout>
+        <Hero
+          highlight={totalCount}
+          subTitle={message}
+          title={category}
+          type="taxonomy"
+        />
         <Posts data={simplifiedPosts} showYears />
-      </SidebarLayout>
-    </div>
+      </PageLayout>
+    </>
   )
 }
 

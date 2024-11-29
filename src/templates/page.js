@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { Hero } from '../components/Hero'
 import { SEO } from '../components/SEO'
+import { PageLayout } from '../components/PageLayout'
 import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
@@ -12,23 +13,15 @@ export default function PageTemplate({ data }) {
   const { title, description } = post.frontmatter
 
   return (
-    <div>
+    <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
-      <div className="container">
-        <div className="grid">
-          <div className="article-content">
-            <Hero title={title} />
-            <section className="segment small">
-              <div
-                className="page-content"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>
+
+      <PageLayout>
+        <Hero title={title} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </PageLayout>
+    </>
   )
 }
 

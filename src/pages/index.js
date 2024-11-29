@@ -8,6 +8,7 @@ import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
 import { Heading } from '../components/Heading'
 import { Hero } from '../components/Hero'
+import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
@@ -28,13 +29,13 @@ export default function Index({ data }) {
   )
 
   return (
-    <div>
+    <>
       <Helmet title={config.siteTitle} />
       <SEO />
 
-      <div className="container">
+      <PageLayout>
         <div className="hero-wrapper">
-          <Hero title="Hey, I'm Tania!" index>
+          <Hero title="Hey, I'm Tania!" type="index">
             <p className="hero-description">
               I'm a software dev who writes and makes open-source projects.
               Thanks for visiting my digital garden! 🌱
@@ -46,86 +47,76 @@ export default function Index({ data }) {
               <Link to="/me">about me</Link> 💾.
             </p>
           </Hero>
-          <div className="decoration">
-            <img
-              src="/ram.png"
-              alt="RAM Ram"
-              className="image hero-image"
-              title="RAM Ram"
-            />
-          </div>
         </div>
-      </div>
 
-      <div className="container">
-        <section className="segment">
-          <Heading title="Articles" slug="/blog" buttonText="All Articles" />
-
+        <section className="section-index">
+          <Heading
+            title="Articles"
+            description="Guides, references, and tutorials."
+          />
           <Posts data={articles} newspaper />
         </section>
 
-        <section className="segment first">
-          <Heading title="Notes" slug="/notes" buttonText="All Notes" />
-
+        <section className="section-index">
+          <Heading
+            title="Notes"
+            description="Personal notes about life, music, art, and whatnot."
+          />
           <Posts data={notes} newspaper />
         </section>
 
-        <section className="segment large">
-          <Heading title="Highlights" />
-          <div className="highlight-preview">
+        <section className="section-index">
+          <Heading
+            title="In-depth"
+            description="Long-form tutorials on a variety of development topics."
+          />
+          <div className="cards">
             {simplifiedHighlights.map((post) => {
               return (
-                <div className="muted card flex" key={`popular-${post.slug}`}>
-                  {post.thumbnail && (
-                    <Link className="card-header" to={post.slug}>
-                      <Img fixed={post.thumbnail} />
-                    </Link>
-                  )}
-                  <div>
-                    <time>{post.date}</time>
-                    <Link className="card-header" to={post.slug}>
-                      {post.title}
-                    </Link>
-                  </div>
-                </div>
+                <Link
+                  to={post.slug}
+                  className="card card-highlight"
+                  key={`popular-${post.slug}`}
+                >
+                  {post.thumbnail && <Img fixed={post.thumbnail} />}
+                  <div>{post.title}</div>
+                </Link>
               )
             })}
           </div>
         </section>
 
-        <section className="segment large">
+        <section>
           <Heading
             title="Projects"
             slug="/projects"
             buttonText="All Projects"
+            description="Open-source projects I've worked on over the years."
           />
 
-          <div className="post-preview">
+          <div className="cards">
             {projectsList
               .filter((project) => project.highlight)
               .map((project) => {
                 return (
-                  <div className="anchored card" key={project.slug}>
-                    <div>
-                      <time>{project.date}</time>
-                      <a
-                        className="card-header"
-                        href={`https://github.com/taniarascia/${project.slug}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {project.name}
-                      </a>
-                      <p>{project.tagline}</p>
-                    </div>
-                    <div className="anchored links">
+                  <div className="card" key={`hightlight-${project.slug}`}>
+                    <time>{project.date}</time>
+                    <a
+                      href={`https://github.com/taniarascia/${project.slug}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.name}
+                    </a>
+                    <p>{project.tagline}</p>
+                    <div className="card-links">
                       {project.writeup && (
-                        <Link className="button" to={project.writeup}>
+                        <Link className="button small" to={project.writeup}>
                           Article
                         </Link>
                       )}
                       <a
-                        className="button flex"
+                        className="button small"
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
@@ -138,8 +129,8 @@ export default function Index({ data }) {
               })}
           </div>
         </section>
-      </div>
-    </div>
+      </PageLayout>
+    </>
   )
 }
 
@@ -214,7 +205,7 @@ export const pageQuery = graphql`
             tags
             thumbnail {
               childImageSharp {
-                fixed(width: 45, height: 45) {
+                fixed(width: 40, height: 40) {
                   ...GatsbyImageSharpFixed
                 }
               }

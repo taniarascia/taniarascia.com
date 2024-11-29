@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Tania Rascia's Personal Website",
+        name: "Tania Rascia's Website",
         short_name: 'Tania Rascia',
         description:
           'Software engineer and open source creator. This is my digital garden.',

@@ -6,10 +6,10 @@ export const Hero = ({
   title,
   description,
   children,
-  index,
+  type = 'page',
 }) => {
   return (
-    <header className={`hero ${index ? 'index' : ''}`}>
+    <header className={`hero hero-${type}`}>
       {subTitle && (
         <div className="sub-title">
           {highlight && <span className="highlight">{highlight}</span>}

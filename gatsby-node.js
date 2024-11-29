@@ -18,7 +18,7 @@ const createPages = async ({ graphql, actions }) => {
 
   const blogPage = path.resolve('./src/templates/post.js')
   const pagePage = path.resolve('./src/templates/page.js')
-  const tagPage = path.resolve('./src/templates/tag.js')
+  const tagPage = path.resolve('./src/templates/topic.js')
   const categoryPage = path.resolve('./src/templates/category.js')
 
   const result = await graphql(
@@ -106,7 +106,7 @@ const createPages = async ({ graphql, actions }) => {
   const tagList = Array.from(tagSet)
   tagList.forEach((tag) => {
     createPage({
-      path: `/tags/${slugify(tag)}/`,
+      path: `/topics/${slugify(tag)}/`,
       component: tagPage,
       context: {
         tag,

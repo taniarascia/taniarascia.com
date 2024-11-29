@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 
 export const Heading = ({ title, buttonText, description, slug }) => {
   return (
-    <h2 className="home-heading">
+    <heading className="heading">
       <div>
-        <div className="title">{title}</div>
+        <h2>{title}</h2>
         {description && <div className="description">{description}</div>}
       </div>
       {slug && (
@@ -13,6 +13,6 @@ export const Heading = ({ title, buttonText, description, slug }) => {
           {buttonText}
         </Link>
       )}
-    </h2>
+    </heading>
   )
 }

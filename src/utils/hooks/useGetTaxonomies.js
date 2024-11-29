@@ -16,6 +16,33 @@ export const useGetTaxonomies = () => {
           totalCount
         }
       }
+
+      highlights: allMarkdownRemark(
+        limit: 12
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { categories: { eq: "Highlight" } } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              tags
+              thumbnail {
+                childImageSharp {
+                  fixed(width: 25, height: 25) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `)
 

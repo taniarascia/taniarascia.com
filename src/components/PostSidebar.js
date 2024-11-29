@@ -1,67 +1,84 @@
-import React from 'react'
+import React, { useState, useLayoutEffect, useEffect } from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
+import { useActiveHash } from '../utils/hooks/useActiveHash'
 import { slugify } from '../utils/helpers'
 
-export const PostSidebar = ({ tags = [], date, categories = [] }) => {
-  const category = categories?.filter((category) => category !== 'Highlight')
+export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
+  const [tocLinks, setTocLinks] = useState([])
+
+  useLayoutEffect(() => {
+    const anchors = document.querySelectorAll(`.table-of-contents a`)
+    const ids = []
+    anchors.forEach((a) => {
+      ids.push(a.hash.replace('#', ''))
+    }, [])
+
+    setTocLinks(ids)
+  }, [toc])
+
+  const activeHash = useActiveHash(tocLinks)
+
+  useEffect(() => {
+    if (activeHash) {
+      const anchors = document.querySelectorAll('.table-of-contents a')
+      anchors.forEach((a) => {
+        a.classList.remove('active')
+      })
+      const activeLink = document.querySelector(
+        `.table-of-contents a[href$="${'#' + activeHash}"]`
+      )
+
+      if (activeLink) {
+        activeLink.classList.add('active')
+      }
+    }
+  }, [activeHash])
 
   return (
     <aside className="post-sidebar">
-      <div className="post-sidebar-card">
-        <h2>About me</h2>
-        <p>
-          Hello and thanks for visiting! My name is{' '}
-          <Link to="/me">Tania Rascia</Link>, and this is my website and digital
-          garden.
-        </p>
-        <p>
-          I'm a software developer who makes open-source projects and writes
-          about code and life. This site is and has always been free of ads,
-          trackers, social media, affiliates, and sponsored posts.
-        </p>
-      </div>
+      <div className="post-sidebar-content">
+        {thumbnail && (
+          <div className="post-sidebar-thumbnail">
+            <Img fixed={thumbnail?.childImageSharp?.fixed} />
+          </div>
+        )}
 
-      <div className="post-sidebar-card">
-        <h2>Post Details</h2>
-        <ul>
-          <li>
-            <strong>Published: </strong> {date}
-          </li>
-          <li>
-            <strong>Category: </strong>
-            <Link to={`/categories/${slugify(category)}`}>{category}</Link>
-          </li>
-        </ul>
+        <section className="post-sidebar-section">
+          <h2>Published</h2>
+          <div className="post-sidebar-offset">
+            <p>{date}</p>
+          </div>
+        </section>
 
-        <h2>Tags</h2>
-        <div className="tags">
-          {tags.map((tag) => {
-            return (
-              <Link
-                key={tag}
-                to={`/tags/${slugify(tag)}`}
-                className="tag"
-                activeClassName="active"
-              >
-                {tag}
-              </Link>
-            )
-          })}
-        </div>
+        <section className="post-sidebar-section">
+          <h2>Topics</h2>
+          <div className="post-sidebar-offset">
+            <div className="tags">
+              {tags.map((tag) => {
+                return (
+                  <Link
+                    key={tag}
+                    to={`/topics/${slugify(tag)}`}
+                    className="button small"
+                    activeClassName="active"
+                  >
+                    {tag}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
 
-        <div style={{ marginTop: '1.5rem' }}>
-          <h2>Newsletter</h2>
-          <p>
-            <a
-              href="https://taniarascia.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Subscribe to the Newsletter
-            </a>
-          </p>
-        </div>
+        <section className="post-sidebar-section">
+          <h2>In This Article</h2>
+          <nav
+            className="table-of-contents"
+            dangerouslySetInnerHTML={{ __html: toc }}
+          />
+        </section>
       </div>
     </aside>
   )

@@ -6,7 +6,7 @@ import { Hero } from '../components/Hero'
 import { Layout } from '../components/Layout'
 import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
-import { SidebarLayout } from '../components/SidebarLayout'
+import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -18,19 +18,19 @@ export default function Articles({ data }) {
     'Guides, references, and tutorials on programming, web development, and design.'
 
   return (
-    <div>
+    <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
 
-      <SidebarLayout>
+      <PageLayout>
         <Hero
           title={title}
           description={
             <>
-              <p>{description}</p>
+              <div className="hero-description">{description}</div>
               <p>
-                <Link to="/tags" className="button small">
-                  View All Tags
+                <Link to="/topics" className="button">
+                  Explore Topics
                 </Link>
               </p>
             </>
@@ -38,8 +38,8 @@ export default function Articles({ data }) {
         />
 
         <Posts data={simplifiedPosts} showYears />
-      </SidebarLayout>
-    </div>
+      </PageLayout>
+    </>
   )
 }
 

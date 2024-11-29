@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Hero } from '../components/Hero'
+import { PageLayout } from '../components/PageLayout'
 import config from '../utils/config'
 
 const images = [
@@ -23,35 +24,35 @@ export default function Illustration() {
   const title = 'Art'
 
   return (
-    <div>
+    <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
-      <div className="container">
-        <Hero title={title} color="red" />
-      </div>
 
-      <section className="segment">
-        <div className="container">
-          <div className="image-preview">
-            {images.map((image) => {
-              return (
-                <div className="card muted" key={image.url}>
-                  <a href={image.url} target="_blank" rel="noreferrer">
-                    <h2>{image.title}</h2>
+      <PageLayout>
+        <Hero
+          title={title}
+          description="I don't draw much, but here's a few illustrations."
+        />
 
-                    <div
-                      className="image-thumbnail"
-                      style={{ backgroundImage: `url('${image.url}')` }}
-                      alt={image.title}
-                    />
-                  </a>
-                </div>
-              )
-            })}
-          </div>
+        <div className="cards">
+          {images.map((image) => {
+            return (
+              <div className="card" key={image.url}>
+                <a href={image.url} target="_blank" rel="noreferrer">
+                  <div>{image.title}</div>
+
+                  <div
+                    className="image-thumbnail"
+                    style={{ backgroundImage: `url('${image.url}')` }}
+                    alt={image.title}
+                  />
+                </a>
+              </div>
+            )
+          })}
         </div>
-      </section>
-    </div>
+      </PageLayout>
+    </>
   )
 }
 

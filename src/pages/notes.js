@@ -6,7 +6,7 @@ import { Hero } from '../components/Hero'
 import { Layout } from '../components/Layout'
 import { Posts } from '../components/Posts'
 import { SEO } from '../components/SEO'
-import { SidebarLayout } from '../components/SidebarLayout'
+import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
@@ -15,18 +15,18 @@ export default function Notes({ data }) {
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const title = 'Notes'
   const description =
-    'Personal notes about life, music, art, projects, and everything else I want to write about.'
+    'Personal notes about life, music, art, projects, and everything else.'
 
   return (
-    <div>
+    <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
 
-      <SidebarLayout>
+      <PageLayout>
         <Hero title={title} description={description} />
         <Posts data={simplifiedPosts} showYears />
-      </SidebarLayout>
-    </div>
+      </PageLayout>
+    </>
   )
 }
 

@@ -8,11 +8,7 @@ export const Post = ({ node, prefix, newspaper }) => {
 
   if (node.date) {
     if (!newspaper) {
-      const dateArr = node.date.split(' ')
-      dateArr.pop()
-
-      dateArr[0] = dateArr[0].slice(0, 3)
-      formattedDate = dateArr.join(' ').slice(0, -1)
+      formattedDate = getFormattedDate(node.date, 1)
     } else {
       formattedDate = getFormattedDate(node.date)
     }
@@ -26,9 +22,10 @@ export const Post = ({ node, prefix, newspaper }) => {
       key={node.id}
       className="post"
     >
-      <h3>{node.title}</h3>
+      <p>{node.title}</p>
       <time className={newPost ? 'new-post' : ''}>
-        {formattedDate} {newPost && <div className="new-post-pill">New!</div>}
+        {formattedDate}
+        {/* {formattedDate} {newPost && <div className="new-post-pill">New!</div>} */}
       </time>
     </Link>
   )

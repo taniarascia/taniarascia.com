@@ -1,33 +1,35 @@
-/*
- New Moon Theme by Tania Rascia
- https://taniarascia.github.io/new-moon
- Source: https://github.com/taniarascia/new-moon
-*/
-
-/* Light */
 :root {
-  --code-font-color: #232529;
-  --code-background-color: var(--gray-0);
-  --code-border-color: var(--gray-3);
-  --terminal-background-color: white;
-  --terminal-bar: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
-  --terminal-accent: white;
-  --terminal-border: #cecbce;
-  --string: #229020;
-  --variable: #383a41;
-  --property: #565656;
-  --number: #da7430;
-  --operator: #a87200;
-  --punctuation: #5c6d74;
-  --comment: #869496;
-  --function: #0582b7;
-  --keyword: #a208ba;
-  --attribute: #a87200;
-  --class: #c52387;
-  --tag: #365ccd;
-  --error: #b0292c;
-  --code-link-hover: var(--link);
-  --highlight-code-color: rgb(116, 207, 116, 0.2);
+  --string: light-dark(#229020, #92d192);
+  --variable: light-dark(#383a41, white);
+  --property: light-dark(#565656, #b3b9c5);
+  --number: light-dark(#da7430, #fca369);
+  --operator: light-dark(#a87200, #ac8d58);
+  --punctuation: light-dark(#5c6d74, #c7cdd7);
+  --comment: light-dark(#869496, #777c85);
+  --function: light-dark(#0582b7, #76d4d6);
+  --keyword: light-dark(#a208ba, #ffeea6);
+  --attribute: light-dark(#a87200, #ffd479);
+  --class: light-dark(#c52387, #6ab0f3);
+  --tag: light-dark(#365ccd, #6ab0f3);
+  --error: light-dark(#b0292c, #f2777a);
+
+  --terminal-bar: light-dark(
+    linear-gradient(top, #ebebeb, #d5d5d5),
+    linear-gradient(top, #282828, #222)
+  );
+  --terminal-accent: light-dark(white, var(--gray-6));
+
+  --color-background-inline-code: light-dark(
+    rgba(0, 0, 0, 0.08),
+    rgba(255, 255, 255, 0.08)
+  );
+  --color-background-terminal: light-dark(var(--gray-1), var(--gray-10));
+  --color-background-filename: light-dark(var(--gray-2), var(--gray-11));
+}
+
+/* Code blocks */
+code {
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 pre {
@@ -36,190 +38,99 @@ pre {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  -webkit-font-smoothing: subpixel-antialiased;
-  color: var(--code-font-color);
-  font-family: 'Menlo', var(--font-family-monospace);
-  font-size: 0.8rem;
+  color: var(--font-color);
+  font-family: var(--font-family-monospace);
+  font-size: 14px;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.55;
-
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
+  line-height: 1.6;
   tab-size: 2;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
-}
-
-@media screen and (min-width: 700px) {
-  code[class*='language-'],
-  pre[class*='language-'] {
-    font-size: 0.9rem;
-  }
 }
 
 pre[class*='language-'] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: var(--code-background-color);
-  overflow: initial;
+  padding: 1.5rem;
+  background: var(--color-background-code);
   border-radius: var(--border-radius);
-}
-
-code.language-text {
-  border: none;
-  color: var(--font-color-base);
+  overflow: initial;
+  font-weight: 400;
+  overflow-x: auto;
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  -webkit-font-smoothing: subpixel-antialiased;
-  background: var(--inline-code-background-color);
-  color: var(--font-color-base);
+  background: var(--color-background-inline-code);
+  color: var(--color-text);
   padding: 2px 4px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.9rem;
   border-radius: 6px;
-  /* border: 1px solid var(--button-border-color); */
 }
 
 :not(pre) > a code[class*='language-'] {
-  color: var(--link);
+  color: var(--color-text-link);
 }
 
 :not(pre) > a code[class*='language-']:hover {
-  color: var(--code-link-hover);
+  color: var(--color-text-link-hover);
 }
+
+/* Shell */
 
 code.language-shell::before {
   content: '$ ';
   color: var(--comment);
 }
 
-.gatsby-highlight {
-  border-top: 1px solid var(--code-border-color);
-  border-bottom: 1px solid var(--code-border-color);
-  background: var(--code-background-color);
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  border-radius: 0;
-  overflow: auto;
-  margin: 1.5rem -1.5rem;
-  max-width: calc(100% + 3rem);
-}
-
-@media screen and (min-width: 700px) {
-  .gatsby-highlight {
-    border: 1px solid var(--code-border-color);
-    margin: 1.5rem 0;
-    max-width: 100%;
-    border-radius: var(--border-radius);
-  }
-}
-
-.gatsby-highlight[data-language='terminal'] {
-  box-shadow: none;
-  padding: 0;
-  background: transparent;
-  overflow: auto;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 20px, rgba(0, 0, 0, 0.03) 0px 5px 7px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.gatsby-highlight[data-language='text'] {
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.gatsby-highlight-code-line {
-  background-color: var(--highlight-code-color);
-  display: block;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  padding-left: calc(1rem - 4px);
-  border-left: 4px solid #74cf74;
-}
-
-.gatsby-highlight-code-line .gatsby-highlight-code-line {
-  background-color: transparent;
-}
-
-@media screen and (min-width: 700px) {
-  .gatsby-highlight-code-line {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: calc(1.5rem - 4px);
-    border-left: 4px solid #74cf74;
-  }
-}
-
-.gatsby-highlight pre[class*='language-'] {
-  background-color: transparent;
-  margin: 0;
-  padding: 1.5rem;
-  overflow: initial;
-  float: left;
-  min-width: 100%;
-}
-
-.gatsby-highlight::after {
-  content: '';
-  clear: both;
-  display: table;
-}
+/* Terminal */
 
 .gatsby-highlight pre.language-terminal {
+  -webkit-text-size-adjust: none;
   padding: 1rem;
   position: relative;
   padding-top: 3rem;
   white-space: unset;
-  -webkit-text-size-adjust: none;
   border-radius: var(--border-radius);
-  background: var(--terminal-background-color);
+  background: var(--color-background-terminal);
   max-width: 100%;
-}
-
-.gatsby-highlight pre.language-text {
-  background: transparent;
-  -webkit-font-smoothing: subpixel-antialiased;
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  color: var(--terminal-color);
+  border: 1px solid var(--color-border);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 20px, rgba(0, 0, 0, 0.03) 0px 5px 7px;
 }
 
 code.language-terminal {
   -webkit-font-smoothing: antialiased;
-  color: var(--terminal-color);
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   white-space: pre-wrap;
   word-break: break-all;
+
+  &::before {
+    content: '\2022';
+    position: absolute;
+    top: 16px;
+    left: 40px;
+    color: #62c354;
+    font-size: 2.5rem;
+    line-height: 0;
+    text-indent: 6px;
+    letter-spacing: -5px;
+    z-index: 7;
+  }
 }
 
 pre.language-terminal::before {
-  content: '\2022 \2022 \2022';
+  content: '\2022';
   position: absolute;
   top: 0;
   left: 0;
   background: var(--terminal-bar);
-  color: #a19ea1;
+  color: #ed6a5e;
   border-top: 1px solid var(--terminal-accent);
-  border-bottom: 1px solid var(--border-color);
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
@@ -227,45 +138,85 @@ pre.language-terminal::before {
   padding: 15px 0 12px;
   text-indent: 6px;
   letter-spacing: -5px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--color-border);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
+}
+
+pre.language-terminal::after {
+  content: '\2022';
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  color: #f5bf4f;
+  font-size: 2.5rem;
+  line-height: 0;
+  text-indent: 6px;
+  letter-spacing: -5px;
+}
+
+/* 
+
+/* Highlight line */
+
+.gatsby-highlight-code-line {
+  background-color: rgb(116, 207, 116, 0.15);
+  display: block;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: calc(1rem + 4px);
+  border-left: 4px solid #74cf74;
+}
+
+.gatsby-highlight-code-line .gatsby-highlight-code-line {
+  background-color: transparent;
+}
+
+/* Filename */
+
+.filename + .gatsby-highlight pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .filename {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--file-background);
-  padding: 0.2rem 1rem 0;
-  color: var(--font-color-base);
-  line-height: 1.5;
-  font-size: 0.9rem;
+  background: var(--color-background-filename);
+  color: var(--color-text);
+  font-size: 14px;
   font-weight: 500;
-  border-radius: 0;
-  margin-bottom: -2rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5em;
-  max-width: calc(100% + 3rem);
-  padding-bottom: 0.8rem;
-  border-top: 1px solid var(--code-border-color);
-  border-bottom: 1px solid var(--code-border-color);
+  padding: 1rem;
+  margin-bottom: -1.5rem;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  border-bottom: 1px solid var(--color-border);
 }
 
-@media screen and (min-width: 700px) {
-  .filename {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    border: 1px solid var(--code-border-color);
-  }
+/* https://dylanatsmith.com/wrote/styling-the-kbd-element */
+kbd {
+  background-color: var(--color-background-button);
+  color: var(--color-text);
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 0 1px var(--color-border);
+  font-family: var(--font-family);
+  cursor: default;
+  font-size: 0.75em;
+  line-height: 1;
+  min-width: 0.75rem;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  padding: 2px 5px;
+  margin: 0 2px;
+  position: relative;
+  top: -1px;
 }
 
-.filename + .gatsby-highlight {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+kbd:hover {
+  box-shadow: 0 1px 0 0.5px var(--color-border);
+  top: 1px;
 }
 
 /* Colors */
@@ -305,7 +256,7 @@ pre.language-terminal::before {
 .token.builtin,
 .token.url,
 .token.inserted {
-  color: var(--code-font-color);
+  color: var(--color-text);
 }
 
 .token.attr-name,
@@ -343,114 +294,4 @@ pre.language-terminal::before {
 
 .token.variable {
   color: var(--variable);
-}
-
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.language-jsx .token.class-name {
-  color: var(--tag) !important;
-}
-
-pre::-moz-selection,
-pre::-moz-selection,
-code::-moz-selection,
-code::-moz-selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre::selection,
-pre::selection,
-code::selection,
-code::selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-']::-moz-selection,
-pre[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-']::selection,
-code[class*='language-'] ::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  color: inherit;
-  background: rgba(150, 150, 150, 0.3) !important;
-}
-
-/* https://dylanatsmith.com/wrote/styling-the-kbd-element */
-kbd {
-  background-color: var(--button-background-color);
-  color: var(--font-color-base);
-  border-radius: 0.25rem;
-  border: 1px solid var(--button-border-color);
-  box-shadow: 0 2px 0 1px var(--button-border-color);
-  font-family: var(--font-family);
-  cursor: default;
-  font-size: 0.75em;
-  line-height: 1;
-  min-width: 0.75rem;
-  width: auto;
-  display: inline-block;
-  text-align: center;
-  padding: 2px 5px;
-  margin: 0 2px;
-  position: relative;
-  top: -1px;
-}
-
-kbd:hover {
-  box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
-  top: 1px;
-}
-
-.gatsby-highlight pre[class*='language-'].line-numbers {
-  padding: 1.5rem 3rem;
-}
-
-.gatsby-highlight pre[class*='language-'].line-numbers .line-numbers-rows {
-  border-right: 1px solid var(--code-border-color);
-  padding: 1.5rem 0;
-  /* background: var(--file-background); */
-}
-.gatsby-highlight
-  pre[class*='language-'].line-numbers
-  .line-numbers-rows
-  > span {
-  padding-left: 15px;
-}
-
-.gatsby-highlight
-  pre[class*='language-'].line-numbers
-  .line-numbers-rows
-  > span::before {
-  color: var(--font-color-extra-muted);
-  padding-right: 10px;
-}
-
-@media screen and (min-width: 700px) {
-  .gatsby-highlight
-    pre[class*='language-'].line-numbers
-    .line-numbers-rows
-    > span {
-    padding-left: 10px;
-  }
 }

@@ -7,6 +7,7 @@ import { StarIcon } from '../assets/StarIcon'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { Hero } from '../components/Hero'
+import { PageLayout } from '../components/PageLayout'
 import config from '../utils/config'
 import { projectsList } from '../data/projectsList'
 
@@ -33,78 +34,73 @@ export default function Projects() {
   }, [])
 
   return (
-    <div>
+    <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO />
-      <div className="container">
-        <Hero title={title} color="red" description={description} />
-      </div>
 
-      <section className="segment">
-        <div className="container">
-          <div className="project-preview">
-            {projectsList.map((project) => {
-              return (
-                <div className="card anchored large" key={project.slug}>
-                  <div className="stars">
-                    {repos.find((repo) => repo.name === project.slug) && (
-                      <div className="star">
-                        <a
-                          href={`https://github.com/taniarascia/${project.slug}/stargazers`}
-                        >
-                          {Number(
-                            repos.find((repo) => repo.name === project.slug)
-                              .stargazers_count
-                          ).toLocaleString()}
-                        </a>
-                        <StarIcon />
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <time>{project.date}</time>
-                    <a
-                      className="card-header"
-                      href={`https://github.com/taniarascia/${project.slug}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {project.name}
-                    </a>
-                    <p>{project.tagline}</p>
-                  </div>
-                  <div className="links anchored">
-                    {project.writeup && (
-                      <Link className="button small" to={project.writeup}>
-                        Article
-                      </Link>
-                    )}
-                    {project.url && (
+      <PageLayout>
+        <Hero title={title} description={description} />
+
+        <div className="cards">
+          {projectsList.map((project) => {
+            return (
+              <div className="card" key={project.slug}>
+                <div className="stars">
+                  {repos.find((repo) => repo.name === project.slug) && (
+                    <div className="star">
                       <a
-                        className="button small flex"
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
+                        href={`https://github.com/taniarascia/${project.slug}/stargazers`}
                       >
-                        Demo <ExternalLinkIcon />
+                        {Number(
+                          repos.find((repo) => repo.name === project.slug)
+                            .stargazers_count
+                        ).toLocaleString()}
                       </a>
-                    )}
+                      <StarIcon />
+                    </div>
+                  )}
+                </div>
+                <time>{project.date}</time>
+                <a
+                  className="card-header"
+                  href={`https://github.com/taniarascia/${project.slug}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {project.name}
+                </a>
+                <p>{project.tagline}</p>
+                <div className="card-links">
+                  {project.writeup && (
+                    <Link className="button small" to={project.writeup}>
+                      Article
+                    </Link>
+                  )}
+                  {project.url && (
                     <a
-                      className="button small flex"
-                      href={`https://github.com/taniarascia/${project.slug}`}
+                      className="button small"
+                      href={project.url}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Source <ExternalLinkIcon />
+                      Demo <ExternalLinkIcon />
                     </a>
-                  </div>
+                  )}
+                  <a
+                    className="button small"
+                    href={`https://github.com/taniarascia/${project.slug}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Source <ExternalLinkIcon />
+                  </a>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
-      </section>
-    </div>
+      </PageLayout>
+    </>
   )
 }
 
