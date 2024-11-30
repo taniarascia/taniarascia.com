@@ -27,6 +27,10 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
     setNavOpen((prev) => !prev)
   }
 
+  const handleCloseMobileNav = () => {
+    setNavOpen(false)
+  }
+
   return (
     <header className="navbar">
       <div className="navbar-title">
@@ -56,7 +60,12 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
             </button>
             <nav className={`navbar-menu nav-items ${navOpen ? 'active' : ''}`}>
               {links.map((link) => (
-                <Link key={link.url} to={link.url} activeClassName="active">
+                <Link
+                  key={link.url}
+                  to={link.url}
+                  activeClassName="active"
+                  onClick={handleCloseMobileNav}
+                >
                   {link.label}
                 </Link>
               ))}

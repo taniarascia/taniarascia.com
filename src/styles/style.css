@@ -312,7 +312,8 @@ a.button {
   height: var(--navbar-height);
 
   /* mobile */
-  background: var(--color-background-navbar);
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -441,17 +442,28 @@ button.navbar-button {
 }
 
 @media screen and (max-width: 899px) {
-  .navbar-menu.nav-items.active {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    margin-top: var(--navbar-height);
-    background: var(--color-background-sidebar);
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  .navbar-menu {
+    &.nav-items {
+      height: calc(100vh - var(--navbar-height));
+      justify-content: center;
+
+      a {
+        font-size: 1.2rem;
+      }
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        margin-top: var(--navbar-height);
+        background: var(--color-background-sidebar);
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
   }
 }
 
@@ -509,10 +521,6 @@ button.navbar-button {
 
   .navbar-wrapper {
     margin-left: var(--sidebar-width);
-  }
-
-  .navbar-container {
-    border-bottom: 1px solid var(--color-border);
   }
 }
 
@@ -825,16 +833,16 @@ a.sidebar-title-link {
 
 .hero-wrapper {
   display: flex;
+  flex-direction: column-reverse;
   align-items: flex-start;
-  flex-direction: column;
 }
 
 .hero {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 
   &.hero-index {
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 
@@ -847,7 +855,7 @@ a.sidebar-title-link {
   &.hero-taxonomy {
     h1 {
       margin-top: 0;
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -855,6 +863,23 @@ a.sidebar-title-link {
     color: var(--color-text-muted);
     font-weight: 500;
     font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hero {
+    margin-bottom: 3rem;
+
+    &.hero-index {
+      h1 {
+        font-size: 2.75rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .hero-image {
+    display: block;
   }
 }
 
@@ -881,13 +906,14 @@ a.sidebar-title-link {
 }
 
 .hero-description {
-  margin: 1.5rem 0;
+  margin: 0 0 1.5rem 0;
   font-size: 1.1rem;
   color: var(--color-text-muted);
   font-weight: 500;
 }
 
 .hero-image {
+  display: none;
   max-width: 200px;
   height: auto;
   margin-bottom: 1rem;
@@ -896,7 +922,7 @@ a.sidebar-title-link {
 /* Posts */
 a.post {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   padding: 8px 0;
   text-decoration: none;
   border-radius: var(--border-radius);
