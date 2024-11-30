@@ -51,7 +51,7 @@ export const Footer = () => {
         </nav>
         <div className="footer-made-by">
           Made with
-          <img src={floppy} className="footer-logo" alt="Floppy diskette" /> by
+          <img src={floppy} className="floppy-logo" alt="Floppy diskette" /> by
           Tania Rascia
         </div>
       </section>

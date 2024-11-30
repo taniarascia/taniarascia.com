@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useLayoutEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
@@ -12,7 +12,7 @@ import config from '../utils/config'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, comments_off } = post.frontmatter
+  const { title, comments_off, thumbnail } = post.frontmatter
 
   return (
     <>
@@ -20,6 +20,12 @@ export default function PostTemplate({ data }) {
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
 
       <PostLayout post={post}>
+        {thumbnail && (
+          <Img
+            fixed={thumbnail?.childImageSharp?.fixed}
+            className="main-article-thumbnail"
+          />
+        )}
         <Hero title={title} type="post" />
 
         <div

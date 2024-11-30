@@ -12,6 +12,7 @@ import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
+import floppy from '../assets/floppylogo.png'
 
 export default function Index({ data }) {
   const latestNotes = data.latestNotes.edges
@@ -38,16 +39,22 @@ export default function Index({ data }) {
           <div className="hero-wrapper">
             <div>
               <p className="hero-description">
-                I'm a software engineer who writes and makes open-source
-                projects. I'm also into weight lifting, reading, DDR, retro
-                video games, music, and the power of friendship.
+                I'm a software engineer and open-source creator. I'm also into
+                weight-lifting, reading, DDR, retro video games, music, and the
+                power of friendship.
               </p>
 
               <p className="hero-description">
                 On this site, you can check out all the{' '}
                 <Link to="/blog">articles</Link> I've written, read some of my{' '}
                 <Link to="/notes">notes</Link>, or learn more{' '}
-                <Link to="/me">about me</Link> 💾.
+                <Link to="/me">about me</Link>{' '}
+                <img
+                  src={floppy}
+                  className="floppy-logo"
+                  alt="Floppy diskette"
+                />
+                .
               </p>
             </div>
             <img src="/ram.png" className="hero-image" alt="RAM Ram" />

@@ -53,7 +53,9 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
           <section className="navbar-section navbar-section-search"></section>
           <section className="navbar-section">
             <button
-              className="navbar-button nav-menu-button"
+              className={`navbar-button nav-menu-button ${
+                navOpen ? 'active' : ''
+              }`}
               onClick={handleToggleMobileNav}
             >
               <Menu />
@@ -71,16 +73,6 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
               ))}
             </nav>
             <nav className="navbar-menu social">
-              {socialLinks.map((link) => (
-                <SocialIcon
-                  target="_blank"
-                  key={link.url}
-                  url={link.url}
-                  fgColor="currentColor"
-                  bgColor="transparent"
-                  className="navbar-icon"
-                />
-              ))}
               <button
                 className="navbar-button theme-switch-button"
                 onClick={() => {
@@ -91,6 +83,16 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
               >
                 {theme === 'dark' ? <Sun /> : <Moon />}
               </button>
+              {socialLinks.map((link) => (
+                <SocialIcon
+                  target="_blank"
+                  key={link.url}
+                  url={link.url}
+                  fgColor="currentColor"
+                  bgColor="transparent"
+                  className="navbar-icon"
+                />
+              ))}
             </nav>
           </section>
         </div>

@@ -9,7 +9,7 @@
   --function: light-dark(#0582b7, #76d4d6);
   --keyword: light-dark(#a208ba, #ffeea6);
   --attribute: light-dark(#a87200, #ffd479);
-  --class: light-dark(#c52387, #6ab0f3);
+  --class: light-dark(#c52387, #e1a6f2);
   --tag: light-dark(#365ccd, #6ab0f3);
   --error: light-dark(#b0292c, #f2777a);
 
@@ -54,12 +54,18 @@ pre[class*='language-'] {
 pre[class*='language-'] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  padding: 1.5rem;
+  padding: 1rem;
   background: var(--color-background-code);
   border-radius: var(--border-radius);
   overflow: initial;
   font-weight: 400;
   overflow-x: auto;
+}
+
+@media screen and (min-width: 900px) {
+  pre[class*='language-'] {
+    padding: 1.5rem;
+  }
 }
 
 /* Inline code */
@@ -194,11 +200,18 @@ pre.language-terminal::after {
   color: var(--color-text);
   font-size: 14px;
   font-weight: 500;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   margin-bottom: -1.5rem;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   border-bottom: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+@media screen and (min-width: 900px) {
+  .filename {
+    padding: 1rem;
+  }
 }
 
 /* https://dylanatsmith.com/wrote/styling-the-kbd-element */

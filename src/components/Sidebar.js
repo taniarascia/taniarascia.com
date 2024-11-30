@@ -10,16 +10,20 @@ export const Sidebar = () => {
       title: 'Making a keyboard accordion',
     },
     {
-      url: '/overview-of-css-concepts/',
-      title: 'Everything to know about CSS',
+      url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
+      title: 'Super Mario memory game',
     },
     {
       url: '/writing-an-emulator-in-javascript-chip8/',
       title: 'Writing an emulator in JS',
     },
     {
-      url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
-      title: 'Super Mario memory game',
+      url: '/javascript-mvc-todo-app',
+      title: 'A simple JavaScript MVC app',
+    },
+    {
+      url: '/overview-of-css-concepts/',
+      title: 'Everything to know about CSS',
     },
     {
       url: '/react-architecture-directory-structure',
@@ -28,10 +32,6 @@ export const Sidebar = () => {
     {
       url: '/building-takenote',
       title: 'Open-source post-mortem',
-    },
-    {
-      url: '/javascript-mvc-todo-app',
-      title: 'A simple JavaScript MVC app',
     },
     {
       url: '/asynchronous-javascript-event-loop-callbacks-promises-async-await/',
