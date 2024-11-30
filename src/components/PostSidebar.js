@@ -49,6 +49,11 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
           <h2>Published</h2>
           <div className="post-sidebar-offset">
             <p>{date}</p>
+            <p>
+              <a href="#comments">
+                View comments
+              </a>
+            </p>
           </div>
         </section>
 

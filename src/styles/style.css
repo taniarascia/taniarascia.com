@@ -163,7 +163,7 @@ h4 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.7rem;
 }
 
 h3 {
@@ -221,21 +221,25 @@ ul {
   padding-left: 1rem;
 }
 
+li {
+  line-height: 1.6;
+  padding-bottom: 0.25rem;
+}
+
 ul li ul,
 ol li ol {
   margin-top: 0;
   margin-bottom: 0;
 }
 
+ul li ul li {
+  padding: 0;
+}
+
 li::marker {
   font-size: 1.1rem;
   line-height: 1;
   color: var(--color-marker);
-}
-
-li {
-  line-height: 1.5;
-  padding-bottom: 0.5rem;
 }
 
 mark {
@@ -299,7 +303,7 @@ a.button {
 
   &.small {
     font-size: 14px;
-    padding: 0.5rem 0.5rem;
+    padding: 6px 10px;
   }
 
   img,
@@ -614,7 +618,7 @@ a.sidebar-title-link {
 }
 
 .sidebar-section {
-  margin: 1.5rem 1rem;
+  margin: 1.5rem 1.5rem 1.5rem 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--color-border);
 
@@ -649,7 +653,7 @@ a.sidebar-title-link {
   gap: 8px;
 
   a {
-    color: var(--color-text);
+    color: var(--color-text-muted);
     font-size: 14px;
 
     &:hover {
@@ -735,15 +739,15 @@ a.sidebar-title-link {
 }
 
 .post-sidebar-thumbnail {
-  padding: 0 1rem;
+  margin: 0 1.5rem;
   margin-bottom: 1rem;
 }
 
 .post-sidebar-section {
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   border-bottom: 1px solid var(--color-border);
 
   p {
@@ -764,12 +768,13 @@ a.sidebar-title-link {
   min-height: calc(100vh - var(--navbar-height));
   overflow-y: hidden;
   width: var(--post-sidebar-width);
-  padding-right: 1rem;
+  margin-right: 1rem;
+  overflow-y: hidden;
 
   &:hover {
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: 0;
+    margin-right: 0;
   }
 
   h2 {
@@ -1214,6 +1219,14 @@ img.image-float {
     max-width: 300px;
     height: auto;
   }
+}
+
+/* Commets */
+
+.comments {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: var(--navbar-height);
 }
 
 /* Footer */

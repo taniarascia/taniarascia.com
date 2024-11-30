@@ -35,6 +35,7 @@ export default function PostTemplate({ data }) {
         />
         {!comments_off && (
           <section id="comments" className="comments">
+            <h3>Comments</h3>
             <Comments />
           </section>
         )}

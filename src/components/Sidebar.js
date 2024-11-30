@@ -88,6 +88,11 @@ export const Sidebar = () => {
           <section className="sidebar-section">
             <h2>Stay in touch</h2>
             <p>Get an update when I write something new!</p>
+            <p>
+              <a href="/rss.xml">RSS feed</a>
+              <br />
+              <a href="/me#contact">Contact</a>
+            </p>
             <a
               href="https://taniarascia.substack.com"
               targt="_blank"
@@ -95,9 +100,6 @@ export const Sidebar = () => {
             >
               Email Signup
             </a>
-            <p>
-              <a href="/rss.xml">RSS feed</a>
-            </p>
           </section>
 
           <section className="sidebar-section">
