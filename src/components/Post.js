@@ -23,10 +23,7 @@ export const Post = ({ node, prefix, newspaper }) => {
       className="post"
     >
       <p>{node.title}</p>
-      <time className={newPost ? 'new-post' : ''}>
-        {formattedDate}
-        {/* {formattedDate} {newPost && <div className="new-post-pill">New!</div>} */}
-      </time>
+      <time className={newPost ? 'new-post' : ''}>{formattedDate}</time>
     </Link>
   )
 }

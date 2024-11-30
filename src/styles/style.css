@@ -27,7 +27,7 @@
   --color-background: light-dark(white, var(--gray-9));
   --color-background-button: light-dark(
     rgba(0, 0, 0, 0.05),
-    rgba(var(--primary-rgb), 0.08)
+    rgba(255, 255, 255, 0.05)
   );
   --color-background-navbar: light-dark(var(--gray-05), var(--gray-10));
   --color-background-sidebar: light-dark(var(--gray-05), var(--gray-10));
@@ -163,11 +163,11 @@ h4 {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 h4 {
@@ -189,6 +189,7 @@ h4,
 h5 {
   color: var(--color-text-emphasized);
   scroll-margin-top: calc(var(--navbar-height) + 2.5rem);
+  line-height: 1.3;
 }
 
 h2,
@@ -224,6 +225,10 @@ ul {
 li {
   line-height: 1.6;
   padding-bottom: 0.25rem;
+
+  p {
+    margin-top: 0;
+  }
 }
 
 ul li ul,
@@ -320,7 +325,7 @@ a.button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   height: var(--navbar-height);
 
@@ -574,7 +579,7 @@ a.navbar-icon {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 11;
   padding-left: calc((100vw - var(--layout-width)) / 2);
   height: 100vh;
   background: var(--color-background-sidebar);
@@ -862,7 +867,7 @@ a.sidebar-title-link {
 
   &.hero-index {
     h1 {
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
   }
 
@@ -914,7 +919,6 @@ a.sidebar-title-link {
   }
 
   .description {
-    font-size: 1.1rem;
     margin-bottom: 1.5rem;
   }
 }
@@ -928,8 +932,6 @@ a.sidebar-title-link {
 .hero-description {
   margin: 0 0 1.5rem 0;
   font-size: 1.1rem;
-  color: var(--color-text-muted);
-  font-weight: 500;
 }
 
 .hero-image {
@@ -1004,8 +1006,8 @@ a time.new-post {
 }
 
 .year {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--color-border);
 
   &:last-of-type {
@@ -1014,12 +1016,6 @@ a time.new-post {
 }
 
 /* Article */
-
-.main-article {
-  h2 {
-    font-weight: 700;
-  }
-}
 
 .main-article-thumbnail {
   margin-bottom: 1rem;
@@ -1287,9 +1283,5 @@ a.footer-link {
 
   .footer-menu {
     display: flex;
-  }
-
-  a.footer-link {
-    font-size: 1rem;
   }
 }

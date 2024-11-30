@@ -50,9 +50,7 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
           <div className="post-sidebar-offset">
             <p>{date}</p>
             <p>
-              <a href="#comments">
-                View comments
-              </a>
+              <a href="#comments">View comments</a>
             </p>
           </div>
         </section>
@@ -77,13 +75,15 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
           </div>
         </section>
 
-        <section className="post-sidebar-section">
-          <h2>In This Article</h2>
-          <nav
-            className="table-of-contents"
-            dangerouslySetInnerHTML={{ __html: toc }}
-          />
-        </section>
+        {toc && (
+          <section className="post-sidebar-section">
+            <h2>In This Article</h2>
+            <nav
+              className="table-of-contents"
+              dangerouslySetInnerHTML={{ __html: toc }}
+            />
+          </section>
+        )}
       </div>
     </aside>
   )

@@ -83,5 +83,5 @@ export function isNewPost(date) {
   const diffTime = Math.abs(today - postDate)
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
 
-  if (diffDays < 40) return true
+  if (diffDays < 50) return true
 }

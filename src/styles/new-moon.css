@@ -110,7 +110,7 @@ pre.language-text {
   background: var(--color-background-terminal);
   max-width: 100%;
   border: 1px solid var(--color-border);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 20px, rgba(0, 0, 0, 0.03) 0px 5px 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 20px, rgba(0, 0, 0, 0.3) 0px 5px 15px;
 }
 
 code.language-terminal {
