@@ -931,7 +931,7 @@ a.sidebar-title-link {
 
 .hero-description {
   margin: 0 0 1.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .hero-image {
@@ -943,6 +943,10 @@ a.sidebar-title-link {
     display: block;
     float: none;
     max-width: 200px;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
   }
 }
 

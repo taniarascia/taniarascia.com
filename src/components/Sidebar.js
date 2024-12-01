@@ -90,6 +90,14 @@ export const Sidebar = () => {
             <h2>Stay in touch</h2>
             <p>Get an update when I write something new!</p>
             <p>
+              <a
+                href="https://go.bsky.app/SmEWb8G"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                🦋 Bluesky starter park
+              </a>
+              <br />
               <a href="/rss.xml">RSS feed</a>
               <br />
               <a href="/me#contact">Contact</a>

@@ -39,9 +39,14 @@ export default function Index({ data }) {
           <div className="hero-wrapper">
             <div>
               <p className="hero-description">
-                I'm a software engineer and open-source creator. I'm also into
-                weight-lifting, reading, DDR, retro video games, music, and the
-                power of friendship.
+                I'm a principal software engineer, open-source creator, and
+                former professional chef. I've been making websites since 1998
+                and writing on this blog for the past decade.
+              </p>
+              <p className="hero-description">
+                I enjoy weight-lifting, reading sci-fi and fantasy, playing
+                retro video games, and spending time with my partner and
+                friends.
               </p>
 
               <p className="hero-description">

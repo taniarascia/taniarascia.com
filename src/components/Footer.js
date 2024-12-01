@@ -1,6 +1,5 @@
 import React from 'react'
 
-import floppy from '../assets/floppylogo.png'
 import netlify from '../../content/thumbnails/netlify.png'
 import gatsby from '../assets/gatsby.png'
 import github from '../assets/nav-github.png'
@@ -49,11 +48,7 @@ export const Footer = () => {
             </a>
           ))}
         </nav>
-        <div className="footer-made-by">
-          Made with
-          <img src={floppy} className="floppy-logo" alt="Floppy diskette" /> by
-          Tania Rascia
-        </div>
+        <div className="footer-made-by">Made with ❤️ by Tania Rascia</div>
       </section>
     </footer>
   )
