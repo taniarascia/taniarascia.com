@@ -58,6 +58,7 @@ export const Sidebar = () => {
       title: 'Everything I knew (5 years ago)',
     },
   ]
+
   return (
     <aside className="sidebar">
       <div className="sidebar-wrapper">
@@ -79,8 +80,8 @@ export const Sidebar = () => {
             <h2>About me</h2>
             <div className="sidebar-content">
               <p>
-                Hey, I'm Tania. I've been making websites since 1998. Thanks for
-                visiting my corner of the web.
+                I'm <Link to="/me">Tania</Link>, software engineer and
+                open-source creator. This is my digital garden. 🌱
               </p>
             </div>
           </section>
