@@ -164,10 +164,18 @@ h4 {
 
 h2 {
   font-size: 1.6rem;
+
+  code {
+    font-size: 1.6rem !important;
+  }
 }
 
 h3 {
   font-size: 1.4rem;
+
+  code {
+    font-size: 1.4rem !important;
+  }
 }
 
 h4 {
@@ -175,9 +183,14 @@ h4 {
   padding-bottom: 0.25rem;
   font-weight: 500;
   border-bottom: 1px solid var(--color-border);
+
+  code {
+    font-size: 1.25rem !important;
+  }
 }
 
-h5 {
+h5,
+h5 code {
   font-size: 1rem;
   text-transform: uppercase;
 }
@@ -628,6 +641,7 @@ a.sidebar-title-link {
   border-bottom: 1px solid var(--color-border);
 
   &:last-child {
+    padding-bottom: 0;
     border: none;
   }
 
