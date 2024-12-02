@@ -6,6 +6,7 @@ import floppy from '../assets/nav-floppy.png'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
+import { Close } from '../assets/Close'
 
 const links = [
   { url: '/notes', label: 'Notes' },
@@ -58,7 +59,7 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
               }`}
               onClick={handleToggleMobileNav}
             >
-              <Menu />
+              {navOpen ? <Close /> : <Menu />}
             </button>
             <nav className={`navbar-menu nav-items ${navOpen ? 'active' : ''}`}>
               {links.map((link) => (

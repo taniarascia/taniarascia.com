@@ -7,55 +7,55 @@ export const Sidebar = () => {
   const links = [
     {
       url: '/musical-instrument-web-audio-api',
-      title: 'Making a keyboard accordion',
+      title: 'Keyboard accordion',
     },
     {
       url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
       title: 'Super Mario memory game',
     },
     {
+      url: '/animorphs',
+      title: 'The lore of Animorphs',
+    },
+    {
       url: '/writing-an-emulator-in-javascript-chip8/',
-      title: 'Writing an emulator in JS',
+      title: 'JavaScript emulator',
     },
     {
       url: '/javascript-mvc-todo-app',
-      title: 'A simple JavaScript MVC app',
+      title: 'MVC basics',
     },
     {
       url: '/overview-of-css-concepts/',
-      title: 'Everything to know about CSS',
+      title: 'CSS guidebook',
     },
     {
       url: '/react-architecture-directory-structure',
-      title: 'Organizing a React application',
+      title: 'React architecture',
     },
     {
       url: '/building-takenote',
-      title: 'Open-source post-mortem',
+      title: 'TakeNote post-mortem',
     },
     {
       url: '/asynchronous-javascript-event-loop-callbacks-promises-async-await/',
-      title: 'All about the event loop',
+      title: 'The event loop',
     },
     {
       url: '/setting-up-a-brand-new-mac-for-development',
-      title: 'macOS Setup for FE devs',
-    },
-    {
-      url: '/front-end-tables-sort-filter-paginate',
-      title: 'Sorting, filtering, pagination',
+      title: 'macOS Setup',
     },
     {
       url: '/schema-based-form-system',
-      title: 'A schema-based form system',
-    },
-    {
-      url: '/content-editable-elements-in-javascript-react/',
-      title: 'Content editable gotchas',
+      title: 'Schema-based form system',
     },
     {
       url: '/everything-i-know-as-a-software-developer-without-a-degree',
-      title: 'Everything I knew (5 years ago)',
+      title: 'Everything I knew (in 2019)',
+    },
+    {
+      url: '/topics',
+      title: 'All topics',
     },
   ]
 
@@ -95,16 +95,15 @@ export const Sidebar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                🦋 Bluesky starter park
+                Bluesky 🦋 starter park
               </a>
               <br />
               <a href="/rss.xml">RSS feed</a>
-              <br />
-              <a href="/me#contact">Contact</a>
             </p>
             <a
               href="https://taniarascia.substack.com"
-              targt="_blank"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button"
             >
               Email Signup

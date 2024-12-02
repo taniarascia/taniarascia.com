@@ -27,7 +27,7 @@ module.exports = {
           'Software engineer and open source creator. This is my digital garden.',
         start_url: '/',
         background_color: 'white',
-        // theme_color: '#fed06d',
+        // theme_color: '#959af8',
         display: 'minimal-ui',
         icon: `static/logo.png`,
       },
@@ -136,7 +136,7 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
-              inlineCodeMarker: null,
+              inlineCodeMarker: '>',
               aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,

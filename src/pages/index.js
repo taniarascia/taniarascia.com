@@ -39,9 +39,9 @@ export default function Index({ data }) {
           <div className="hero-wrapper">
             <div>
               <p className="hero-description">
-                I'm a principal software engineer, open-source creator, and
-                former professional chef. I've been making websites since 1998
-                and writing on this blog for the past decade.
+                I'm a software engineer, open-source creator, and former
+                professional chef. I've been making websites since 1998 and
+                writing on this blog for the past decade.
               </p>
               <p className="hero-description">
                 I enjoy weight-lifting, reading sci-fi and fantasy, playing
@@ -77,7 +77,7 @@ export default function Index({ data }) {
         <section className="section-index">
           <Heading
             title="Notes"
-            description="Personal notes about life, music, art, and whatnot."
+            description="Personal notes about life, music, projects, and everything else."
           />
           <Posts data={notes} newspaper />
         </section>

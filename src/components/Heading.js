@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export const Heading = ({ title, buttonText, description, slug }) => {
+export const Heading = ({ title, buttonText, description, slug, ...props }) => {
   return (
-    <heading className="heading">
+    <header className="heading">
       <div>
         <h2>{title}</h2>
         {description && <div className="description">{description}</div>}
@@ -13,6 +13,6 @@ export const Heading = ({ title, buttonText, description, slug }) => {
           {buttonText}
         </Link>
       )}
-    </heading>
+    </header>
   )
 }
