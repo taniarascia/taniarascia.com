@@ -682,7 +682,7 @@ a.sidebar-title-link {
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 
   a {
     color: var(--color-text-muted);
@@ -1328,4 +1328,12 @@ a.footer-link {
   .footer-menu {
     display: flex;
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.gap {
+  gap: 0.75rem;
 }

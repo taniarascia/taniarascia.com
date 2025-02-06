@@ -49,6 +49,19 @@ export default function Index({ data }) {
                 retro video games, and spending time with my partner and
                 friends.
               </p>
+              <p className="flex gap">
+                <Link className="button" to="/me">
+                  About Me
+                </Link>
+                <a
+                  className="button"
+                  href="https://taniarascia.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Newsletter
+                </a>
+              </p>
             </div>
           </div>
         </Hero>
@@ -71,7 +84,7 @@ export default function Index({ data }) {
 
         <section className="section-index">
           <Heading
-            title="In-depth"
+            title="In-Depth"
             description="Long-form tutorials on a variety of development topics."
           />
           <div className="cards">

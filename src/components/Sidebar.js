@@ -7,39 +7,39 @@ export const Sidebar = () => {
   const links = [
     {
       url: '/musical-instrument-web-audio-api',
-      title: 'Keyboard accordion',
+      title: 'Keyboard Accordion',
     },
     {
       url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
-      title: 'Super Mario memory game',
+      title: 'Super Mario Memory Game',
     },
     {
       url: '/animorphs',
-      title: 'The lore of Animorphs',
+      title: 'The Lore of Animorphs',
     },
     {
       url: '/writing-an-emulator-in-javascript-chip8/',
-      title: 'JavaScript emulator',
+      title: 'JavaScript Emulator',
     },
     {
       url: '/javascript-mvc-todo-app',
-      title: 'MVC basics',
+      title: 'MVC Basics',
     },
     {
       url: '/overview-of-css-concepts/',
-      title: 'CSS guidebook',
+      title: 'CSS Guidebook',
     },
     {
       url: '/react-architecture-directory-structure',
-      title: 'React architecture',
+      title: 'React Architecture',
     },
     {
       url: '/building-takenote',
-      title: 'TakeNote post-mortem',
+      title: 'TakeNote Post-mortem',
     },
     {
       url: '/asynchronous-javascript-event-loop-callbacks-promises-async-await/',
-      title: 'The event loop',
+      title: 'The Event Loop',
     },
     {
       url: '/setting-up-a-brand-new-mac-for-development',
@@ -47,11 +47,11 @@ export const Sidebar = () => {
     },
     {
       url: '/schema-based-form-system',
-      title: 'Schema-based form system',
+      title: 'Schema-based Forms',
     },
     {
       url: '/everything-i-know-as-a-software-developer-without-a-degree',
-      title: 'Everything I knew (in 2019)',
+      title: 'Everything I Knew (in 2019)',
     },
     {
       url: '/topics',
@@ -95,10 +95,10 @@ export const Sidebar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Bluesky 🦋 starter park
+                Bluesky 🦋 Starter Park
               </a>
               <br />
-              <a href="/rss.xml">RSS feed</a>
+              <a href="/rss.xml">RSS Feed</a>
               <br />
               <a
                 href="https://taniarascia.substack.com"

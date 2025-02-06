@@ -13,7 +13,7 @@ const links = [
   { url: '/blog', label: 'Articles' },
   { url: '/projects', label: 'Projects' },
   { url: '/illustration', label: 'Illustration' },
-  { url: '/me', label: 'About me' },
+  { url: '/me', label: 'About Me' },
 ]
 
 const socialLinks = [
