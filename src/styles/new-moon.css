@@ -206,6 +206,9 @@ pre.language-terminal::after {
   border-top-right-radius: var(--border-radius);
   border-bottom: 1px solid var(--color-border);
   font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 900px) {

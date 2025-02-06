@@ -38,6 +38,7 @@ export default function Index({ data }) {
         <Hero title="Hey, I'm Tania!" type="index">
           <div className="hero-wrapper">
             <div>
+              <img src="/ram.png" className="hero-image" alt="RAM Ram" />
               <p className="hero-description">
                 I'm a software engineer, open-source creator, and former
                 professional chef. I've been making websites since 1998 and
@@ -48,21 +49,7 @@ export default function Index({ data }) {
                 retro video games, and spending time with my partner and
                 friends.
               </p>
-
-              <p className="hero-description">
-                On this site, you can check out all the{' '}
-                <Link to="/blog">articles</Link> I've written, read some of my{' '}
-                <Link to="/notes">notes</Link>, or learn more{' '}
-                <Link to="/me">about me</Link>{' '}
-                <img
-                  src={floppy}
-                  className="floppy-logo"
-                  alt="Floppy diskette"
-                />
-                .
-              </p>
             </div>
-            <img src="/ram.png" className="hero-image" alt="RAM Ram" />
           </div>
         </Hero>
 

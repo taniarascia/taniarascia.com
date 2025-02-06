@@ -70,9 +70,13 @@
   --footer-height: 60px;
   --layout-width: 1440px;
   --content-width: 700px;
+  --layout-padding-vertical: 1.5rem;
+  --layout-padding-horizontal: 1.5rem;
   --page-content-width: 900px;
-  --sidebar-width: 260px;
+  --sidebar-width: 280px;
   --post-sidebar-width: 280px;
+  --font-size: 1rem;
+  --anchor-padding: 0.25rem;
 
   font-family: var(--font-family);
   line-height: 1.5;
@@ -88,6 +92,15 @@
 
   color: var(--color-text);
   background-color: var(--color-background);
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --layout-padding-vertical: 3rem;
+    --layout-padding-horizontal: 2rem;
+    --font-size: 1.05rem;
+    --anchor-padding: 0.5rem;
+  }
 }
 
 *,
@@ -116,7 +129,7 @@ a {
     }
 
     &.before {
-      padding-right: 0.5rem;
+      padding-right: var(--anchor-padding);
     }
   }
 }
@@ -163,7 +176,7 @@ h4 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 
   code {
     font-size: 1.6rem !important;
@@ -179,9 +192,9 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 
   code {
     font-size: 1.25rem !important;
@@ -223,17 +236,11 @@ h4:not(:first-child) {
   margin-top: 2.5rem;
 }
 
-h2:not(:first-child) {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-}
-
 p,
 ul,
 ol {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size);
+  line-height: 1.6;
 }
 
 ul {
@@ -278,7 +285,7 @@ table {
 td,
 th {
   border: 1px solid var(--color-border);
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   background: var(--color-background-sidebar);
 }
 
@@ -354,7 +361,7 @@ a.button {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0 2rem;
+  padding: 0 0.75rem 0 var(--layout-padding-horizontal);
 }
 
 .navbar-title {
@@ -561,6 +568,7 @@ button.navbar-button {
   }
 
   .navbar-wrapper {
+    margin-right: var(--layout-padding-horizontal);
     margin-left: var(--sidebar-width);
   }
 }
@@ -620,7 +628,7 @@ a.navbar-icon {
   justify-content: space-between;
   gap: 1rem;
   height: var(--navbar-height);
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   padding-right: 1rem;
   border-bottom: 1px solid var(--color-border);
 }
@@ -641,7 +649,7 @@ a.sidebar-title-link {
 }
 
 .sidebar-section {
-  margin: 1.5rem 1.5rem 1.5rem 1rem;
+  margin: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--color-border);
 
@@ -658,7 +666,7 @@ a.sidebar-title-link {
   h2 {
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   p {
@@ -746,7 +754,7 @@ a.sidebar-title-link {
 .main-content {
   flex-grow: 1;
   max-width: var(--content-width);
-  padding: 3rem 2rem;
+  padding: var(--layout-padding-vertical) var(--layout-padding-horizontal);
   margin-left: auto;
   margin-right: auto;
 
@@ -775,7 +783,12 @@ a.sidebar-title-link {
   border-bottom: 1px solid var(--color-border);
 
   p {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+
+    &:last-of-type {
+      margin: 0;
+    }
   }
 
   &:last-of-type {
@@ -892,14 +905,14 @@ a.sidebar-title-link {
 
   &.hero-post {
     h1 {
-      font-size: 2rem;
+      font-size: 2.1rem;
     }
   }
 
   &.hero-taxonomy {
     h1 {
       margin-top: 0;
-      font-size: 2.5rem;
+      font-size: 2.75rem;
     }
   }
 
@@ -920,10 +933,6 @@ a.sidebar-title-link {
         margin-bottom: 1.5rem;
       }
     }
-  }
-
-  .hero-image {
-    display: block;
   }
 }
 
@@ -954,14 +963,22 @@ a.sidebar-title-link {
 }
 
 .hero-image {
-  display: none;
+  display: block;
+  float: right;
+  max-width: 100px;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .hero-image {
+    max-width: 200px;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .hero-image {
-    display: block;
-    float: none;
-    max-width: 200px;
+    margin-left: 2.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .hero-description {
@@ -1041,7 +1058,7 @@ a time.new-post {
 /* Article */
 
 .main-article-thumbnail {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 @media screen and (min-width: 1320px) {

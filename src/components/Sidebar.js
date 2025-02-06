@@ -77,7 +77,7 @@ export const Sidebar = () => {
         </div>
         <div className="sidebar-container">
           <section className="sidebar-section">
-            <h2>About me</h2>
+            <h2>About Me</h2>
             <div className="sidebar-content">
               <p>
                 I'm <Link to="/me">Tania</Link>, software engineer and
@@ -87,7 +87,7 @@ export const Sidebar = () => {
           </section>
 
           <section className="sidebar-section">
-            <h2>Stay in touch</h2>
+            <h2>Stay in Touch</h2>
             <p>Get an update when I write something new!</p>
             <p>
               <a
@@ -99,19 +99,19 @@ export const Sidebar = () => {
               </a>
               <br />
               <a href="/rss.xml">RSS feed</a>
+              <br />
+              <a
+                href="https://taniarascia.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Email Signup
+              </a>
             </p>
-            <a
-              href="https://taniarascia.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button"
-            >
-              Email Signup
-            </a>
           </section>
 
           <section className="sidebar-section">
-            <h2>Some of my favorite posts</h2>
+            <h2>Favorites</h2>
             <nav className="sidebar-menu">
               {links.map((link) => (
                 <Link key={link.url} to={link.url}>
