@@ -77,6 +77,10 @@
   --post-sidebar-width: 280px;
   --font-size: 1rem;
   --anchor-padding: 0.25rem;
+  --h1: 2rem;
+  --h2: 1.75rem;
+  --h3: 1.5rem;
+  --h4: 1.1rem;
 
   font-family: var(--font-family);
   line-height: 1.5;
@@ -100,6 +104,10 @@
     --layout-padding-horizontal: 2rem;
     --font-size: 1.05rem;
     --anchor-padding: 0.5rem;
+    --h1: 2.5rem;
+    --h2: 2rem;
+    --h3: 1.75rem;
+    --h4: 1.25rem;
   }
 }
 
@@ -165,7 +173,7 @@ h1 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 700;
-  font-size: 2.25rem;
+  font-size: var(--h1);
   line-height: 1.2;
 }
 
@@ -176,28 +184,26 @@ h4 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: var(--h2);
 
   code {
-    font-size: 1.6rem !important;
+    font-size: var(--h2) !important;
   }
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: var(--h3);
 
   code {
-    font-size: 1.4rem !important;
+    font-size: var(--h3) !important;
   }
 }
 
 h4 {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-size: var(--h4);
 
   code {
-    font-size: 1.25rem !important;
+    font-size: var(--h4) !important;
   }
 }
 
@@ -897,25 +903,6 @@ a.sidebar-title-link {
 .hero {
   margin-bottom: 1.5rem;
 
-  &.hero-index {
-    h1 {
-      font-size: 2.25rem;
-    }
-  }
-
-  &.hero-post {
-    h1 {
-      font-size: 2.1rem;
-    }
-  }
-
-  &.hero-taxonomy {
-    h1 {
-      margin-top: 0;
-      font-size: 2.75rem;
-    }
-  }
-
   .sub-title {
     color: var(--color-text-muted);
     font-weight: 500;
@@ -929,7 +916,6 @@ a.sidebar-title-link {
 
     &.hero-index {
       h1 {
-        font-size: 2.75rem;
         margin-bottom: 1.5rem;
       }
     }
