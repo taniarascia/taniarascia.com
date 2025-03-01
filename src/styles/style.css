@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
-  --primary: #959af8;
+  --primary: #9fa4ff;
   --primary-rgb: 149, 154, 248;
   --green-rgb: 146, 209, 146;
   --yellow: #ffd479;
@@ -585,7 +585,7 @@ button.navbar-button {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1442px) {
   .navbar-title {
     margin-left: calc((100% - var(--layout-width)) / 2);
   }
@@ -691,7 +691,6 @@ a.sidebar-title-link {
   gap: 6px;
 
   a {
-    color: var(--color-text-muted);
     font-size: 14px;
 
     &:hover {
@@ -738,7 +737,7 @@ a.sidebar-title-link {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1442px) {
   .main-wrapper {
     margin-left: calc((100vw - var(--layout-width)) / 2 + var(--sidebar-width));
     margin-right: calc((100vw - var(--layout-width)) / 2);
@@ -835,7 +834,6 @@ a.sidebar-title-link {
 
     a {
       display: block;
-      color: var(--color-text-muted);
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -908,6 +906,11 @@ a.sidebar-title-link {
     font-weight: 500;
     font-size: 1.1rem;
   }
+
+  &.hero-index {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -916,6 +919,7 @@ a.sidebar-title-link {
 
     &.hero-index {
       h1 {
+        font-size: 2.8rem;
         margin-bottom: 1.5rem;
       }
     }
@@ -945,13 +949,14 @@ a.sidebar-title-link {
 
 .hero-description {
   margin: 0 0 1.5rem 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .hero-image {
   display: block;
   float: right;
-  max-width: 100px;
+  margin-left: 1rem;
+  max-width: 125px;
   margin-bottom: 0.5rem;
 }
 
@@ -959,16 +964,16 @@ a.sidebar-title-link {
   .hero-image {
     max-width: 200px;
   }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .hero-image {
     margin-left: 2.5rem;
     margin-bottom: 2.5rem;
-  }
-
-  .hero-description {
-    font-size: 1.1rem;
   }
 }
 

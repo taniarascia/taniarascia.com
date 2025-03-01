@@ -12,7 +12,6 @@ const links = [
   { url: '/notes', label: 'Notes' },
   { url: '/blog', label: 'Articles' },
   { url: '/projects', label: 'Projects' },
-  { url: '/illustration', label: 'Illustration' },
   { url: '/me', label: 'About Me' },
 ]
 
