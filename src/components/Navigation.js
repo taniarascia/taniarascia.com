@@ -40,11 +40,11 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
               <img
                 src={floppy}
                 className="sidebar-logo"
-                alt="Tania Rascia"
+                alt="tania.dev"
                 title="💾"
               />
             </span>
-            <span>Tania Rascia</span>
+            <span>tania.dev</span>
           </Link>
         </div>
       </div>

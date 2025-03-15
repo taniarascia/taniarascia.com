@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&family=Gabarito:wght@400..900&display=swap');
 
 :root {
-  --primary: #9fa4ff;
+  --primary: #9898ff;
+  --primary-hover: #bebeff;
+  --primary-button: #7272f1;
+  --primary-light: #6363f0;
+  --primary-light-hover: #4343be;
   --primary-rgb: 149, 154, 248;
   --green-rgb: 146, 209, 146;
   --yellow: #ffd479;
 
-  --gray-0: #f9f9f9;
+  --gray-0: #fbfbfb;
   --gray-05: #f6f6f6;
   --gray-1: #eee;
   --gray-2: #e6e6e6;
@@ -24,13 +28,9 @@
 
   /* Colors */
   --color-highlighted: light-dark(#31aa2f, var(--yellow));
-  --color-background: light-dark(white, var(--gray-9));
-  --color-background-button: light-dark(
-    rgba(0, 0, 0, 0.05),
-    rgba(255, 255, 255, 0.05)
-  );
+  --color-background: light-dark(white, var(--gray-10));
   --color-background-navbar: light-dark(var(--gray-05), var(--gray-10));
-  --color-background-sidebar: light-dark(var(--gray-05), var(--gray-10));
+  --color-background-sidebar: light-dark(var(--gray-05), var(--gray-9));
   --color-background-code: light-dark(var(--gray-05), var(--gray-10));
   --color-background-blockquote: light-dark(
     rgba(var(--primary-rgb), 0.1),
@@ -38,49 +38,76 @@
   );
   --color-background-navbar-link-hover: light-dark(
     rgba(0, 0, 0, 0.05),
-    rgba(0, 0, 0, 0.25)
+    rgba(255, 255, 255, 0.05)
   );
+  --color-background-card: light-dark(var(--gray-05), var(--gray-9));
 
   --color-text: light-dark(var(--gray-7), var(--gray-3));
   --color-text-emphasized: light-dark(var(--gray-10), var(--gray-0));
   --color-text-muted: light-dark(var(--gray-6), var(--gray-5));
   --color-text-navbar-link: light-dark(var(--gray-7), var(--gray-0));
-  --color-text-navbar-link-hover: light-dark(var(--gray-10), white);
+  --color-text-navbar-link-hover: light-dark(var(--gray-10), var(--primary));
 
-  --color-text-link: light-dark(#4850e5, var(--primary));
-  --color-text-link-hover: light-dark(#363fe3, #c1c3f8);
-  --color-text-button-hover: light-dark(var(--gray-11), var(--primary));
+  --color-text-link: light-dark(var(--primary-light), var(--primary));
+  --color-text-link-hover: light-dark(var(--primary-light-hover), #c1c3f8);
 
-  --color-border: light-dark(var(--gray-3), var(--gray-65));
-  --color-border-hover: light-dark(var(--gray-5), var(--gray-3));
-  --color-border-button-hover: light-dark(var(--gray-5), var(--primary));
+  --color-border: light-dark(var(--gray-2), var(--gray-65));
+  --color-border-hover: light-dark(var(--gray-3), var(--gray-3));
   --color-border-blockquote: light-dark(
     rgba(var(--primary-rgb), 0.8),
     rgba(var(--primary-rgb), 1)
   );
+  --color-border-card: light-dark(var(--gray-2), var(--gray-7));
   --color-marker: light-dark(var(--gray-7), var(--gray-6));
 
-  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-background-button: light-dark(
+    var(--primary-button),
+    rgba(255, 255, 255, 0.05)
+  );
+  --color-background-button-hover: light-dark(
+    var(--primary),
+    rgba(255, 255, 255, 0.05)
+  );
+  --color-border-button: light-dark(var(--primary-button), var(--gray-65));
+  --color-border-button-hover: light-dark(var(--primary), var(--primary));
+  --color-background-button-card: light-dark(
+    var(--primary-button),
+    rgba(0, 0, 0, 0.1)
+  );
+  --color-background-button-card-hover: light-dark(
+    var(--primary),
+    rgba(0, 0, 0, 0.1)
+  );
+  --color-text-button: light-dark(var(--gray-0), var(--gray-0));
+  --color-text-button-hover: light-dark(var(--gray-0), var(--primary));
+  --color-text-button-emphasized: light-dark(var(--gray-0), var(--primary));
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Inter', Avenir,
+    Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Inter',
+    Avenir, Helvetica, Arial, sans-serif;
   --font-family-monospace: Menlo, 'JetBrains Mono', monospace;
 
-  --border-radius: 0.5rem;
+  --border-radius: 10px;
+  --box-shadow-button: rgba(0, 5, 10, 0.24) 0px 3px 8px;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 
   /* Layout */
   --navbar-height: 60px;
   --footer-height: 60px;
   --layout-width: 1440px;
-  --content-width: 700px;
+  --content-width: 720px;
   --layout-padding-vertical: 1.5rem;
   --layout-padding-horizontal: 1.5rem;
   --page-content-width: 900px;
-  --sidebar-width: 280px;
-  --post-sidebar-width: 280px;
+  --sidebar-width: 260px;
+  --post-sidebar-width: 260px;
   --font-size: 1rem;
   --anchor-padding: 0.25rem;
-  --h1: 2rem;
-  --h2: 1.75rem;
-  --h3: 1.5rem;
-  --h4: 1.1rem;
+  --h1: 2.2rem;
+  --h2: 1.8rem;
+  --h3: 1.6rem;
+  --h4: 1.2rem;
 
   font-family: var(--font-family);
   line-height: 1.5;
@@ -104,10 +131,10 @@
     --layout-padding-horizontal: 2rem;
     --font-size: 1.05rem;
     --anchor-padding: 0.5rem;
-    --h1: 2.5rem;
-    --h2: 2rem;
-    --h3: 1.75rem;
-    --h4: 1.25rem;
+    --h1: 2.7rem;
+    --h2: 2.2rem;
+    --h3: 1.8rem;
+    --h4: 1.4rem;
   }
 }
 
@@ -123,7 +150,8 @@ a {
   text-decoration: inherit;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
     color: var(--color-text-link-hover);
   }
 
@@ -154,7 +182,7 @@ a {
   }
 
   .tag-count {
-    color: var(--color-text-link);
+    color: var(--color-text-button-emphasized);
   }
 
   &.active {
@@ -169,12 +197,42 @@ body {
 
 /* Headings */
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-text-emphasized);
+  scroll-margin-top: calc(var(--navbar-height) + 2.5rem);
+  line-height: 1.3;
+  font-family: var(--font-family-heading);
+}
+
 h1 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 700;
   font-size: var(--h1);
   line-height: 1.2;
+}
+
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+table,
+blockquote {
+  margin: 1.5rem 0;
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child) {
+  margin-top: 2.5rem;
 }
 
 h2,
@@ -200,6 +258,7 @@ h3 {
 }
 
 h4 {
+  margin-bottom: 0.5rem;
   font-size: var(--h4);
 
   code {
@@ -211,35 +270,6 @@ h5,
 h5 code {
   font-size: 1rem;
   text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: var(--color-text-emphasized);
-  scroll-margin-top: calc(var(--navbar-height) + 2.5rem);
-  line-height: 1.3;
-}
-
-h2,
-h3,
-h4,
-h5,
-p,
-ul,
-ol,
-table,
-blockquote {
-  margin: 1.5rem 0;
-}
-
-h1:not(:first-child),
-h2:not(:first-child),
-h3:not(:first-child),
-h4:not(:first-child) {
-  margin-top: 2.5rem;
 }
 
 p,
@@ -292,11 +322,15 @@ td,
 th {
   border: 1px solid var(--color-border);
   padding: 0.25rem 0.75rem;
-  background: var(--color-background-sidebar);
 }
 
 th {
+  background: var(--color-background-sidebar);
   border-bottom: 2px solid var(--color-border);
+}
+
+table tr:nth-child(even) {
+  background: var(--color-background-sidebar);
 }
 
 /* Buttons */
@@ -306,26 +340,29 @@ a.button {
   display: inline-flex;
   align-items: center;
   background: var(--color-background-button);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-button);
   padding: 12px 16px;
   line-height: 1;
   border-radius: var(--border-radius);
   font-size: 1rem;
   cursor: pointer;
   font-weight: 500 !important;
-  color: var(--color-text-emphasized);
+  color: var(--color-text-button);
   gap: 0.25rem;
   white-space: nowrap;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
+  text-decoration: none !important;
+  box-shadow: var(--box-shadow-button);
+  transition: 0.1s all ease;
 
   &:hover {
+    background: var(--color-background-button-hover);
     border: 1px solid var(--color-border-button-hover);
     color: var(--color-text-button-hover);
   }
 
   &.active,
   &:hover.active {
+    color: var(--color-text-button-hover);
     background: var(--color-background-navbar-link-hover);
 
     svg {
@@ -339,7 +376,7 @@ a.button {
 
   &.small {
     font-size: 14px;
-    padding: 6px 10px;
+    padding: 0.5rem 0.75rem;
   }
 
   img,
@@ -410,12 +447,12 @@ a.navbar-title-link {
   gap: 2px;
 
   a {
-    transition: all 0.2s ease-in-out;
     white-space: nowrap;
     padding: 0.75rem;
     color: var(--color-text-navbar-link);
     border-radius: var(--border-radius);
     text-decoration: none;
+    font-weight: 500;
 
     &:hover {
       background: var(--color-background-navbar-link-hover);
@@ -456,6 +493,7 @@ button.navbar-button {
   height: 40px;
   width: 40px;
   color: var(--color-text-navbar-link);
+  box-shadow: none;
 
   img {
     margin: 0;
@@ -495,6 +533,7 @@ button.navbar-button {
     &.nav-items {
       height: calc(100vh - var(--navbar-height));
       justify-content: center;
+      padding-bottom: 40vh;
 
       a {
         font-size: 1.2rem;
@@ -536,10 +575,10 @@ button.navbar-button {
   }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1070px) {
   .navbar {
     display: block;
-    background: light-dark(rgba(255, 255, 255, 0.6), rgba(31, 31, 31, 0.6));
+    background: light-dark(rgba(255, 255, 255, 0.6), rgba(24, 24, 24, 0.6));
     backdrop-filter: blur(10px);
     padding: 0;
     border-bottom: none;
@@ -574,7 +613,7 @@ button.navbar-button {
   }
 
   .navbar-wrapper {
-    margin-right: var(--layout-padding-horizontal);
+    margin-right: 1.5rem;
     margin-left: var(--sidebar-width);
   }
 }
@@ -585,7 +624,7 @@ button.navbar-button {
   }
 }
 
-@media screen and (min-width: 1442px) {
+@media screen and (min-width: 1480px) {
   .navbar-title {
     margin-left: calc((100% - var(--layout-width)) / 2);
   }
@@ -621,6 +660,7 @@ a.navbar-icon {
 .sidebar-wrapper {
   min-width: var(--sidebar-width);
   width: var(--sidebar-width);
+  scrollbar-gutter: both-edges;
 
   &:hover {
     overflow-y: auto;
@@ -645,6 +685,7 @@ a.sidebar-title-link {
   gap: 0.75rem;
   color: var(--color-text-navbar-link);
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .sidebar-logo {
@@ -664,15 +705,23 @@ a.sidebar-title-link {
     border: none;
   }
 
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   p,
   h2 {
     margin: 1rem 0;
   }
 
   h2 {
+    font-family: var(--font-family);
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   p {
@@ -691,6 +740,7 @@ a.sidebar-title-link {
   gap: 6px;
 
   a {
+    color: var(--color-text-muted);
     font-size: 14px;
 
     &:hover {
@@ -700,10 +750,6 @@ a.sidebar-title-link {
 }
 
 .sidebar-content {
-  p {
-    font-size: 14px;
-  }
-
   > p:last-child {
     margin-bottom: 0;
   }
@@ -717,7 +763,7 @@ a.sidebar-title-link {
 
 /* Sidebar */
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1070px) {
   .sidebar {
     transform: translate3d(0, 0, 0);
   }
@@ -730,14 +776,14 @@ a.sidebar-title-link {
   padding-top: var(--navbar-height);
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1070px) {
   .main-wrapper {
     min-height: calc(100vh - var(--navbar-height));
     margin-left: var(--sidebar-width);
   }
 }
 
-@media screen and (min-width: 1442px) {
+@media screen and (min-width: 1480px) {
   .main-wrapper {
     margin-left: calc((100vw - var(--layout-width)) / 2 + var(--sidebar-width));
     margin-right: calc((100vw - var(--layout-width)) / 2);
@@ -748,11 +794,10 @@ a.sidebar-title-link {
   display: block;
 }
 
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1370px) {
   .main-container {
     display: flex;
-    gap: 2rem;
-    max-width: calc(100vw - calc(var(--sidebar-width) + 1rem));
+    max-width: calc(100vw - calc(var(--sidebar-width) + 2rem));
   }
 }
 
@@ -784,7 +829,7 @@ a.sidebar-title-link {
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
   margin-left: 1.5rem;
-  margin-right: 0;
+  margin-right: 0.5rem;
   border-bottom: 1px solid var(--color-border);
 
   p {
@@ -810,16 +855,16 @@ a.sidebar-title-link {
   min-height: calc(100vh - var(--navbar-height));
   overflow-y: hidden;
   width: var(--post-sidebar-width);
-  padding-right: 1.5rem;
   overflow-y: hidden;
+  scrollbar-gutter: both-edges;
 
   &:hover {
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: 0.5rem;
   }
 
   h2 {
+    font-family: var(--font-family);
     margin-top: 0;
     margin-bottom: 0.75rem;
     font-size: 1rem;
@@ -838,17 +883,21 @@ a.sidebar-title-link {
       white-space: nowrap;
       overflow: hidden;
       width: calc(var(--post-sidebar-width) - 2rem);
-      padding: 8px 12px;
+      padding: 0.5rem 0.75rem;
       border-radius: var(--border-radius);
       font-size: 14px;
+      color: var(--color-text-muted);
+      font-weight: 400;
 
       &:hover {
-        color: var(--color-text-link-hover);
+        text-decoration: none;
+        color: var(--color-text-link);
+        background: var(--color-background-sidebar);
       }
 
       &.active {
         color: var(--color-text-link);
-        background: var(--color-background-sidebar);
+        background: var(--color-border-card);
       }
     }
 
@@ -937,6 +986,8 @@ a.sidebar-title-link {
   }
 
   .description {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
     margin-bottom: 1.5rem;
   }
 }
@@ -944,7 +995,6 @@ a.sidebar-title-link {
 .section-index {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .hero-description {
@@ -965,8 +1015,8 @@ a.sidebar-title-link {
     max-width: 200px;
   }
 
-  .hero-description {
-    font-size: 1.1rem;
+  .hero-content {
+    max-width: 500px;
   }
 }
 
@@ -974,6 +1024,14 @@ a.sidebar-title-link {
   .hero-image {
     margin-left: 2.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
@@ -983,12 +1041,15 @@ a.post {
   flex-direction: column-reverse;
   padding: 8px 0;
   text-decoration: none;
-  border-radius: var(--border-radius);
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   p {
     font-weight: 600;
     margin: 0;
-    order: 2;
   }
 
   time {
@@ -996,7 +1057,6 @@ a.post {
     width: 150px;
     color: var(--color-text-muted);
     line-height: 1.7;
-    order: 1;
     font-size: 0.9rem;
   }
 }
@@ -1004,15 +1064,14 @@ a.post {
 @media screen and (min-width: 1020px) {
   .hero-wrapper {
     flex-direction: row;
+    justify-content: space-between;
     gap: 3rem;
   }
 
   a.post {
     flex-direction: row;
     justify-content: space-between;
-    margin-left: -8px;
-    margin-right: -8px;
-    padding: 2px 8px;
+    padding: 4px 0;
 
     p {
       order: 1;
@@ -1039,7 +1098,7 @@ a time.new-post {
 .year {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
+  /* border-bottom: 1px solid var(--color-border); */
 
   &:last-of-type {
     border-bottom: none;
@@ -1047,6 +1106,13 @@ a time.new-post {
 }
 
 /* Article */
+
+.main-article {
+  a {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+  }
+}
 
 .main-article-thumbnail {
   margin-bottom: 0.5rem;
@@ -1065,14 +1131,9 @@ a time.new-post {
   gap: 0.5rem;
 }
 
-@media screen and (min-width: 900px) {
-  .cards {
-    gap: 1rem;
-  }
-}
-
 @media screen and (min-width: 1020px) {
   .cards {
+    gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1088,8 +1149,9 @@ a time.new-post {
 .card {
   position: relative;
   padding: 1rem;
-  background: var(--color-background-sidebar);
+  background: var(--color-background-card);
   border-radius: var(--border-radius);
+  border: 1px solid var(--color-border-card);
 
   .card-links {
     display: flex;
@@ -1105,7 +1167,8 @@ a time.new-post {
     display: flex;
     align-items: center;
     gap: 1rem;
-    text-decoration: none;
+    text-decoration: none !important;
+    line-height: 1.3;
 
     div {
       color: var(--color-text-emphasized);
@@ -1131,9 +1194,29 @@ a time.new-post {
   }
 
   p {
+    font-size: 1rem;
     color: var(--color-text);
     line-height: 1.5;
     margin: 0.5rem 0 1rem;
+  }
+
+  a.button,
+  button {
+    background: var(--color-background-button-card);
+
+    &:hover {
+      background: var(--color-background-button-card-hover);
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .card {
+    padding: 1.25rem;
+
+    a {
+      font-size: 1.1rem;
+    }
   }
 }
 

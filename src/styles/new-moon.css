@@ -13,18 +13,21 @@
   --tag: light-dark(#365ccd, #6ab0f3);
   --error: light-dark(#b0292c, #f2777a);
 
-  --terminal-bar: light-dark(
+  --terminal-bar: light-dark(var(--gray-1), var(--gray-9));
+  /* --terminal-bar: light-dark(
     linear-gradient(top, #ebebeb, #d5d5d5),
     linear-gradient(top, #282828, #222)
-  );
+  ); */
   --terminal-accent: light-dark(white, var(--gray-6));
 
   --color-background-inline-code: light-dark(
     rgba(0, 0, 0, 0.08),
     rgba(255, 255, 255, 0.08)
   );
-  --color-background-terminal: light-dark(var(--gray-1), var(--gray-10));
-  --color-background-filename: light-dark(var(--gray-2), var(--gray-11));
+  --color-background-code-block: light-dark(var(--gray-05), var(--gray-8));
+  --color-border-code-block: light-dark(var(--gray-2), var(--gray-7));
+  --color-background-terminal: light-dark(white, var(--gray-11));
+  --color-background-filename: light-dark(var(--gray-1), var(--gray-9));
 }
 
 /* Code blocks */
@@ -55,7 +58,7 @@ pre[class*='language-'] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: var(--color-background-code);
+  background: var(--color-background-code-block);
   border-radius: var(--border-radius);
   overflow: initial;
   font-weight: 400;
@@ -71,7 +74,7 @@ pre[class*='language-'] {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   background: var(--color-background-inline-code);
-  color: var(--color-text);
+  color: var(--color-text-emphasized);
   padding: 2px 4px;
   font-weight: 400;
   font-size: 0.9rem;
@@ -197,7 +200,7 @@ pre.language-terminal::after {
   display: flex;
   align-items: center;
   background: var(--color-background-filename);
-  color: var(--color-text);
+  color: var(--color-text-emphasized);
   font-size: 14px;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -205,7 +208,7 @@ pre.language-terminal::after {
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   border-bottom: 1px solid var(--color-border);
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;
@@ -213,13 +216,13 @@ pre.language-terminal::after {
 
 @media screen and (min-width: 900px) {
   .filename {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
   }
 }
 
 /* https://dylanatsmith.com/wrote/styling-the-kbd-element */
 kbd {
-  background-color: var(--color-background-button);
+  background-color: var(--color-background-sidebar);
   color: var(--color-text);
   border-radius: 0.25rem;
   border: 1px solid var(--color-border);

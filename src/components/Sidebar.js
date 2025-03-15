@@ -22,10 +22,6 @@ export const Sidebar = () => {
       title: 'JavaScript Emulator',
     },
     {
-      url: '/javascript-mvc-todo-app',
-      title: 'MVC Basics',
-    },
-    {
       url: '/overview-of-css-concepts/',
       title: 'CSS Guidebook',
     },
@@ -46,16 +42,8 @@ export const Sidebar = () => {
       title: 'macOS Setup',
     },
     {
-      url: '/schema-based-form-system',
-      title: 'Schema-based Forms',
-    },
-    {
-      url: '/everything-i-know-as-a-software-developer-without-a-degree',
-      title: 'Everything I Knew (in 2019)',
-    },
-    {
       url: '/topics',
-      title: 'All topics',
+      title: 'All Topics',
     },
   ]
 
@@ -68,11 +56,11 @@ export const Sidebar = () => {
               <img
                 src={floppy}
                 className="sidebar-logo"
-                alt="Tania Rascia"
+                alt="tania.dev"
                 title="💾"
               />
             </span>
-            <span>Tania Rascia</span>
+            <span>tania.dev</span>
           </Link>
         </div>
         <div className="sidebar-container">
@@ -87,31 +75,28 @@ export const Sidebar = () => {
           </section>
 
           <section className="sidebar-section">
-            <h2>Stay in Touch</h2>
-            <p>Get an update when I write something new!</p>
-            <p>
-              <a
-                href="https://go.bsky.app/SmEWb8G"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Bluesky 🦋 Starter Park
-              </a>
-              <br />
-              <a href="/rss.xml">RSS Feed</a>
-              <br />
+            <h2>Stay Connected</h2>
+            <p className="sidebar-links">
               <a
                 href="https://taniarascia.substack.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Email Signup
+                Newsletter
               </a>
+              <a
+                href="https://go.bsky.app/SmEWb8G"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bluesky
+              </a>
+              <a href="/rss.xml">RSS Feed</a>
             </p>
           </section>
 
           <section className="sidebar-section">
-            <h2>Favorites</h2>
+            <h2>My Favorites</h2>
             <nav className="sidebar-menu">
               {links.map((link) => (
                 <Link key={link.url} to={link.url}>

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Tania Rascia's Personal Website",
+    title: "Tania's Website",
     author: {
       name: 'Tania Rascia',
     },
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Tania Rascia's Website",
-        short_name: 'Tania Rascia',
+        name: "Tania's Website",
+        short_name: 'tania.dev',
         description:
           'Software engineer and open source creator. This is my digital garden.',
         start_url: '/',
