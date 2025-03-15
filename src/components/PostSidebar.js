@@ -8,8 +8,6 @@ import { slugify } from '../utils/helpers'
 export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
   const [tocLinks, setTocLinks] = useState([])
 
-  console.log(toc)
-
   useLayoutEffect(() => {
     const anchors = document.querySelectorAll(`.table-of-contents a`)
     const ids = []

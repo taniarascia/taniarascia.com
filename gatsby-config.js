@@ -1,15 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: "Tania's Website",
-    author: {
-      name: 'Tania Rascia',
-    },
+    author: { name: 'Tania' },
     pathPrefix: '/',
-    siteUrl: 'https://www.taniarascia.com',
+    siteUrl: 'https://tania.dev',
     description:
       'Software engineer and open-source creator. This is my digital garden.',
-    feedUrl: 'https://www.taniarascia.com/rss.xml',
-    logo: 'https://www.taniarascia.com/logo.png',
+    feedUrl: 'https://tania.dev/rss.xml',
+    logo: 'https://tania.dev/logo.png',
   },
   plugins: [
     // ===================================================================================
@@ -88,7 +86,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'Tania Rascia | RSS Feed',
+            title: 'tania.dev | RSS Feed',
           },
         ],
       },

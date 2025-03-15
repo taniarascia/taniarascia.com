@@ -48,7 +48,7 @@ export const Footer = () => {
             </a>
           ))}
         </nav>
-        <div className="footer-made-by">Made with ❤️ by Tania Rascia</div>
+        <div className="footer-made-by">Made with ❤️ by Tania</div>
       </section>
     </footer>
   )
