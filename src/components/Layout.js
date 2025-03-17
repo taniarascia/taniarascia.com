@@ -37,7 +37,7 @@ export const Layout = ({ children }) => {
       <div id="layout" className="layout">
         <Navigation handleUpdateTheme={handleUpdateTheme} theme={theme} />
         <Sidebar />
-        <div className="main-wrapper">
+        <div className="main-wrapper" id="introduction">
           <div className="main-container">{children}</div>
           <Footer />
         </div>

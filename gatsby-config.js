@@ -130,6 +130,7 @@ module.exports = {
               backgroundColor: 'transparent',
             },
           },
+          'gatsby-remark-prismjs-copy-button',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {

@@ -51,7 +51,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
-      tableOfContents(maxDepth: 2)
+      tableOfContents(maxDepth: 3)
       fields {
         slug
       }

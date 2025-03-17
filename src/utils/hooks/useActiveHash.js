@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export const useActiveHash = (itemIds) => {
-  const [activeHash, setActiveHash] = useState(``)
+export const useActiveHash = (itemIds = []) => {
+  const [activeHash, setActiveHash] = useState('')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,5 +32,5 @@ export const useActiveHash = (itemIds) => {
     }
   }, [itemIds])
 
-  return activeHash
+  return { activeHash, setActiveHash }
 }

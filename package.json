@@ -28,6 +28,7 @@
     "gatsby-remark-autolink-headers": "^4.11.0",
     "gatsby-remark-images": "^5.9.0",
     "gatsby-remark-prismjs": "^5.9.0",
+    "gatsby-remark-prismjs-copy-button": "^0.4.0",
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-transformer-remark": "^4.9.0",
     "gatsby-transformer-sharp": "^3.12.0",

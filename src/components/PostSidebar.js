@@ -9,8 +9,8 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
   const [tocLinks, setTocLinks] = useState([])
 
   useLayoutEffect(() => {
-    const anchors = document.querySelectorAll(`.table-of-contents a`)
-    const ids = []
+    const anchors = document.querySelectorAll('.table-of-contents a')
+    const ids = ['introduction']
     anchors.forEach((a) => {
       ids.push(a.hash.replace('#', ''))
     }, [])
@@ -18,7 +18,7 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
     setTocLinks(ids)
   }, [toc])
 
-  const activeHash = useActiveHash(tocLinks)
+  const { activeHash, setActiveHash } = useActiveHash(tocLinks)
 
   useEffect(() => {
     if (activeHash) {
@@ -78,10 +78,19 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
         {toc && (
           <section className="post-sidebar-section">
             <h2>In This Article</h2>
-            <nav
-              className="table-of-contents"
-              dangerouslySetInnerHTML={{ __html: toc }}
-            />
+            <nav className="table-of-contents">
+              <ul>
+                <li>
+                  <a
+                    href="#introduction"
+                    onClick={() => setActiveHash('introduction')}
+                  >
+                    Introduction
+                  </a>
+                </li>
+              </ul>
+              <div dangerouslySetInnerHTML={{ __html: toc }} />
+            </nav>
           </section>
         )}
       </div>

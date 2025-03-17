@@ -175,7 +175,7 @@ pre.language-terminal::after {
 
 .gatsby-highlight-code-line {
   background-color: light-dark(
-    rgb(116, 207, 116, 0.2),
+    rgb(116, 207, 116, 0.15),
     rgb(116, 207, 116, 0.1)
   );
   display: block;
@@ -212,6 +212,7 @@ pre.language-terminal::after {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;
+  position: relative;
 }
 
 @media screen and (min-width: 900px) {
