@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
+import { PageLayout } from '../components/PageLayout'
 import { SEO } from '../components/SEO'
 import { Hero } from '../components/Hero'
 import config from '../utils/config'
@@ -11,9 +12,11 @@ export default function FourOhFour() {
     <div>
       <Helmet title={`404 | ${config.siteTitle}`} />
       <SEO />
-      <div className="container">
-        <Hero title="404" description="Not found." />
-      </div>
+      <PageLayout>
+        <div className="container">
+          <Hero title="404" description="Not found." />
+        </div>
+      </PageLayout>
     </div>
   )
 }
