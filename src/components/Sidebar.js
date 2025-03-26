@@ -4,23 +4,7 @@ import { Link } from 'gatsby'
 import floppy from '../assets/nav-floppy.png'
 
 export const Sidebar = () => {
-  const links = [
-    {
-      url: '/musical-instrument-web-audio-api',
-      title: 'Keyboard Accordion',
-    },
-    {
-      url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
-      title: 'Super Mario Memory Game',
-    },
-    {
-      url: '/animorphs',
-      title: 'The Lore of Animorphs',
-    },
-    {
-      url: '/writing-an-emulator-in-javascript-chip8/',
-      title: 'JavaScript Emulator',
-    },
+  const deepDives = [
     {
       url: '/overview-of-css-concepts/',
       title: 'CSS Guidebook',
@@ -30,10 +14,6 @@ export const Sidebar = () => {
       title: 'React Architecture',
     },
     {
-      url: '/building-takenote',
-      title: 'TakeNote Post-mortem',
-    },
-    {
       url: '/asynchronous-javascript-event-loop-callbacks-promises-async-await/',
       title: 'The Event Loop',
     },
@@ -41,9 +21,34 @@ export const Sidebar = () => {
       url: '/setting-up-a-brand-new-mac-for-development',
       title: 'macOS Setup',
     },
+  ]
+
+  const projectWriteups = [
     {
-      url: '/topics',
-      title: 'All Topics',
+      url: '/musical-instrument-web-audio-api',
+      title: 'Keyboard Accordion',
+    },
+    {
+      url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
+      title: 'SNES Memory Game',
+    },
+    {
+      url: '/writing-an-emulator-in-javascript-chip8/',
+      title: 'Chip-8 Emulator',
+    },
+    {
+      url: '/building-takenote',
+      title: 'TakeNote App',
+    },
+  ]
+  const funStuff = [
+    {
+      url: '/animorphs',
+      title: 'The Lore of Animorphs',
+    },
+    {
+      url: '/building-my-first-pc/',
+      title: 'Building my First PC',
     },
   ]
 
@@ -96,9 +101,31 @@ export const Sidebar = () => {
           </section>
 
           <section className="sidebar-section">
-            <h2>My Favorites</h2>
+            <h2>Deep Dives</h2>
             <nav className="sidebar-menu">
-              {links.map((link) => (
+              {deepDives.map((link) => (
+                <Link key={link.url} to={link.url}>
+                  {link.title}
+                </Link>
+              ))}
+            </nav>
+          </section>
+
+          <section className="sidebar-section">
+            <h2>Project Writeups</h2>
+            <nav className="sidebar-menu">
+              {projectWriteups.map((link) => (
+                <Link key={link.url} to={link.url}>
+                  {link.title}
+                </Link>
+              ))}
+            </nav>
+          </section>
+
+          <section className="sidebar-section">
+            <h2>Fun Stuff</h2>
+            <nav className="sidebar-menu">
+              {funStuff.map((link) => (
                 <Link key={link.url} to={link.url}>
                   {link.title}
                 </Link>

@@ -661,6 +661,7 @@ a.navbar-icon {
   min-width: var(--sidebar-width);
   width: var(--sidebar-width);
   scrollbar-gutter: both-edges;
+  scrollbar-width: thin;
 
   &:hover {
     overflow-y: auto;
@@ -845,7 +846,6 @@ a.sidebar-title-link {
   }
 
   &:last-of-type {
-    padding-bottom: 0;
     margin-bottom: 0;
     border-bottom: none;
   }
@@ -861,6 +861,7 @@ a.sidebar-title-link {
   width: var(--post-sidebar-width);
   overflow-y: hidden;
   scrollbar-gutter: both-edges;
+  scrollbar-width: none;
 
   &:hover {
     overflow-y: auto;
@@ -887,7 +888,7 @@ a.sidebar-title-link {
       white-space: nowrap;
       overflow: hidden;
       width: calc(var(--post-sidebar-width) - 2rem);
-      padding: 6px 0.75rem;
+      padding: 8px 0.75rem;
       border-radius: 6px;
       font-size: 14px;
       color: var(--color-text-muted);
@@ -1053,7 +1054,7 @@ a.post {
   a.post {
     flex-direction: row;
     justify-content: space-between;
-    padding: 2px 0;
+    padding: 4px 0;
 
     p {
       order: 1;
