@@ -48,7 +48,7 @@ export const Sidebar = () => {
     },
     {
       url: '/building-my-first-pc/',
-      title: 'Building my First PC',
+      title: 'Building My First PC',
     },
   ]
 
