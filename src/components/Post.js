@@ -22,8 +22,10 @@ export const Post = ({ node, prefix, newspaper }) => {
       key={node.id}
       className="post"
     >
-      <p>{node.title}</p>
-      <time className={newPost ? 'new-post' : ''}>{formattedDate}</time>
+      <p>{newPost && <div className="button x-small">✨ New</div>} {node.title}</p>
+      <time>
+        {formattedDate}
+      </time>
     </Link>
   )
 }

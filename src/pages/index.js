@@ -69,14 +69,6 @@ export default function Index({ data }) {
 
         <section className="section-index">
           <Heading
-            title="Articles"
-            description="Guides, references, and tutorials."
-          />
-          <Posts data={articles} newspaper />
-        </section>
-
-        <section className="section-index">
-          <Heading
             title="Notes"
             description="Personal notes about life, music, projects, and everything else."
           />
@@ -85,7 +77,17 @@ export default function Index({ data }) {
 
         <section className="section-index">
           <Heading
-            title="In-Depth"
+            title="Articles"
+            description="Guides, references, and tutorials."
+          />
+          <Posts data={articles} newspaper />
+        </section>
+
+        <section className="section-index">
+          <Heading
+            title="Deep Dives"
+            slug="/topics"
+            buttonText="All Topics"
             description="Long-form tutorials on a variety of development topics."
           />
           <div className="cards">
@@ -157,7 +159,7 @@ Index.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latestNotes: allMarkdownRemark(
-      limit: 5
+      limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {
@@ -182,7 +184,7 @@ export const pageQuery = graphql`
       }
     }
     latestArticles: allMarkdownRemark(
-      limit: 5
+      limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {

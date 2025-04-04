@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Hero } from '../components/Hero'
 import { Layout } from '../components/Layout'
-import { Posts } from '../components/Posts'
+import { Search } from '../components/Search'
 import { SEO } from '../components/SEO'
 import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
@@ -23,21 +23,9 @@ export default function Articles({ data }) {
       <SEO customDescription={description} />
 
       <PageLayout>
-        <Hero
-          title={title}
-          description={
-            <>
-              <div className="hero-description">{description}</div>
-              <p>
-                <Link to="/topics" className="button">
-                  Explore Topics
-                </Link>
-              </p>
-            </>
-          }
-        />
+        <Hero title={title} description={description} hasSearch />
 
-        <Posts data={simplifiedPosts} showYears />
+        <Search data={simplifiedPosts} section="blog" />
       </PageLayout>
     </>
   )

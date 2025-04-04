@@ -83,7 +83,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Demo <ExternalLinkIcon />
+                      Demo
                     </a>
                   )}
                   <a
@@ -92,7 +92,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Source <ExternalLinkIcon />
+                    Source
                   </a>
                 </div>
               </div>

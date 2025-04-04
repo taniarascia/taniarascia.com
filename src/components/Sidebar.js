@@ -1,25 +1,46 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import floppyLogo from '../assets/floppylogo.png'
+import react from '../../content/thumbnails/react.png'
+import css from '../../content/thumbnails/css-new.png'
+import js from '../../content/thumbnails/js.png'
+import mac from '../../content/thumbnails/apple.png'
+import mario from '../../content/thumbnails/mario.png'
+import tn from '../../content/thumbnails/tn.png'
+import accordion from '../../content/images/keyboardaccordionlogo.png'
+import animorphs from '../../content/thumbnails/animorphslogo.png'
+import pc from '../../content/thumbnails/computer.png'
+import bluesky from '../../content/thumbnails/bluesky.png'
+import rss from '../../content/thumbnails/rss.png'
+
 import floppy from '../assets/nav-floppy.png'
 
 export const Sidebar = () => {
-  const deepDives = [
+  const guides = [
+    {
+      url: '/setting-up-a-brand-new-mac-for-development',
+      title: 'macOS Setup',
+      icon: mac,
+    },
     {
       url: '/overview-of-css-concepts/',
       title: 'CSS Guidebook',
+      icon: css,
     },
     {
       url: '/react-architecture-directory-structure',
       title: 'React Architecture',
+      icon: react,
     },
     {
       url: '/asynchronous-javascript-event-loop-callbacks-promises-async-await/',
       title: 'The Event Loop',
+      icon: js,
     },
     {
-      url: '/setting-up-a-brand-new-mac-for-development',
-      title: 'macOS Setup',
+      url: '/topics',
+      title: 'All Topics',
     },
   ]
 
@@ -27,28 +48,34 @@ export const Sidebar = () => {
     {
       url: '/musical-instrument-web-audio-api',
       title: 'Keyboard Accordion',
+      icon: accordion,
     },
     {
       url: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',
       title: 'SNES Memory Game',
+      icon: mario,
     },
     {
       url: '/writing-an-emulator-in-javascript-chip8/',
       title: 'Chip-8 Emulator',
+      icon: js,
     },
     {
       url: '/building-takenote',
       title: 'TakeNote App',
+      icon: tn,
     },
   ]
   const funStuff = [
     {
       url: '/animorphs',
       title: 'The Lore of Animorphs',
+      icon: animorphs,
     },
     {
       url: '/building-my-first-pc/',
       title: 'Building My First PC',
+      icon: pc,
     },
   ]
 
@@ -59,7 +86,7 @@ export const Sidebar = () => {
           <Link to="/" className="sidebar-title-link">
             <span>
               <img
-                src={floppy}
+                src={floppyLogo}
                 className="sidebar-logo"
                 alt="tania.dev"
                 title="💾"
@@ -87,6 +114,7 @@ export const Sidebar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <img src={floppy} alt="Email Newsletter" />
                 Newsletter
               </a>
               <a
@@ -94,17 +122,26 @@ export const Sidebar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Bluesky
+                <img src={bluesky} alt="Bluesky" />
+                Bluesky Starter Pack
               </a>
-              <a href="/rss.xml">RSS Feed</a>
+              <a href="/rss.xml">
+                <img src={rss} alt="RSS" />
+                RSS Feed
+              </a>
             </p>
           </section>
 
           <section className="sidebar-section">
-            <h2>Deep Dives</h2>
+            <h2>Guides</h2>
             <nav className="sidebar-menu">
-              {deepDives.map((link) => (
-                <Link key={link.url} to={link.url}>
+              {guides.map((link) => (
+                <Link key={link.url} to={link.url} activeClassName="active">
+                  {link.icon ? (
+                    <img src={link.icon} alt={link.title} />
+                  ) : (
+                    <div style={{ height: '16px', width: '16px' }} />
+                  )}
                   {link.title}
                 </Link>
               ))}
@@ -115,7 +152,8 @@ export const Sidebar = () => {
             <h2>Project Writeups</h2>
             <nav className="sidebar-menu">
               {projectWriteups.map((link) => (
-                <Link key={link.url} to={link.url}>
+                <Link key={link.url} to={link.url} activeClassName="active">
+                  {link.icon && <img src={link.icon} alt={link.title} />}
                   {link.title}
                 </Link>
               ))}
@@ -126,7 +164,8 @@ export const Sidebar = () => {
             <h2>Fun Stuff</h2>
             <nav className="sidebar-menu">
               {funStuff.map((link) => (
-                <Link key={link.url} to={link.url}>
+                <Link key={link.url} to={link.url} activeClassName="active">
+                  {link.icon && <img src={link.icon} alt={link.title} />}
                   {link.title}
                 </Link>
               ))}

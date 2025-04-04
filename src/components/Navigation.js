@@ -2,17 +2,21 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
 
+import floppyLogo from '../assets/floppylogo.png'
 import floppy from '../assets/nav-floppy.png'
+import blog from '../assets/nav-blog.png'
+import projects from '../assets/nav-projects.png'
+import github from '../assets/nav-github.png'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
 import { Close } from '../assets/Close'
 
 const links = [
-  { url: '/notes', label: 'Notes' },
-  { url: '/blog', label: 'Articles' },
-  { url: '/projects', label: 'Projects' },
-  { url: '/me', label: 'About Me' },
+  { url: '/notes', label: 'Notes', image: blog },
+  { url: '/blog', label: 'Articles', image: projects },
+  { url: '/projects', label: 'Projects', image: github },
+  { url: '/me', label: 'About', image: floppy },
 ]
 
 const socialLinks = [
@@ -38,7 +42,7 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
           <Link to="/" className="navbar-title-link">
             <span>
               <img
-                src={floppy}
+                src={floppyLogo}
                 className="sidebar-logo"
                 alt="tania.dev"
                 title="💾"
@@ -50,7 +54,7 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
       </div>
       <div className="navbar-wrapper">
         <div className="navbar-container">
-          <section className="navbar-section navbar-section-search"></section>
+          <section className="navbar-section navbar-section-search" />
           <section className="navbar-section">
             <button
               className={`navbar-button nav-menu-button ${
@@ -68,6 +72,7 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
                   activeClassName="active"
                   onClick={handleCloseMobileNav}
                 >
+                  <img src={link.image} alt={link.label} />
                   {link.label}
                 </Link>
               ))}

@@ -65,7 +65,7 @@ pre[class*='language-'] {
   overflow-x: auto;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
   pre[class*='language-'] {
     padding: 1.5rem;
   }
@@ -215,7 +215,7 @@ pre.language-terminal::after {
   position: relative;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
   .filename {
     padding: 0.75rem 1rem;
   }

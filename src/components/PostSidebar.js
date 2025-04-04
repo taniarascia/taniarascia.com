@@ -31,6 +31,7 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
       )
 
       if (activeLink) {
+        activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
         activeLink.classList.add('active')
       }
     }

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import { Hero } from '../components/Hero'
 import { Layout } from '../components/Layout'
-import { Posts } from '../components/Posts'
+import { Search } from '../components/Search'
 import { SEO } from '../components/SEO'
 import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
@@ -23,8 +23,8 @@ export default function Notes({ data }) {
       <SEO customDescription={description} />
 
       <PageLayout>
-        <Hero title={title} description={description} />
-        <Posts data={simplifiedPosts} showYears />
+        <Hero title={title} description={description} hasSearch />
+        <Search data={simplifiedPosts} section="notes" />
       </PageLayout>
     </>
   )

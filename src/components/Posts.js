@@ -26,7 +26,7 @@ export const Posts = ({
 
   if (showYears) {
     return years.map((year) => (
-      <section className="year">
+      <section className="year" key={year}>
         <h2>{year}</h2>
         <div className="posts">
           {postsByYear[year].map((node) => (

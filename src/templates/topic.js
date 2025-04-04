@@ -28,6 +28,7 @@ export default function TopicTemplate({ data, pageContext }) {
           subTitle={message}
           title={tag}
           type="taxonomy"
+          breadcrumb={{ value: '/topics', label: 'Topics' }}
         />
         <Posts data={simplifiedPosts} showYears />
       </PageLayout>
