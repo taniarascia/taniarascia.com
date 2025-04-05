@@ -1,27 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export const Heading = ({
-  title,
-  buttonText,
-  description,
-  slug,
-  textButton,
-}) => {
+export const Heading = ({ title, buttonText, description, slug }) => {
   return (
     <header className="heading">
-      <div>
-        <h2>
-          {title}
-          {slug && textButton && <Link to={slug}>{buttonText}</Link>}
-        </h2>
-        {description && <div className="description">{description}</div>}
-      </div>
-      {slug && !textButton && (
-        <Link className="button" to={slug}>
-          {buttonText}
-        </Link>
-      )}
+      <h2>
+        {title}
+        {slug && (
+          <Link className="button small" to={slug}>
+            {buttonText}
+          </Link>
+        )}
+      </h2>
+      {description && <div className="description">{description}</div>}
     </header>
   )
 }
