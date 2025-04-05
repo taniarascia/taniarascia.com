@@ -3,8 +3,9 @@
 :root {
   --primary: #9898ff;
   --primary-hover: #bebeff;
-  --primary-light: #4444dc;
-  --primary-light-hover: #3636c4;
+  --primary-light: #3576b8;
+  --primary-light-hover: #28629d;
+  --primary-light-rgb: 53, 118, 184;
   --primary-rgb: 149, 154, 248;
   --green-rgb: 146, 209, 146;
   --yellow: #ffd479;
@@ -27,6 +28,7 @@
   --gray-12: #0f0f0f;
 
   --beige-0: #fdf6e5;
+  --beige-05: #f9f0db;
   --beige-1: #ede8d7;
   --beige-15: #efe6ca;
   --beige-2: #ded4b2;
@@ -40,7 +42,7 @@
   --color-background-input: light-dark(var(--beige-1), var(--gray-12));
   --color-background-code: light-dark(var(--beige-1), var(--gray-10));
   --color-background-blockquote: light-dark(
-    rgba(var(--primary-rgb), 0.1),
+    rgba(var(--primary-light-rgb), 0.05),
     rgba(var(--primary-rgb), 0.1)
   );
   --color-background-navbar-link-hover: light-dark(
@@ -62,36 +64,36 @@
   --color-border-muted: light-dark(var(--beige-1), var(--gray-9));
   --color-border-hover: light-dark(var(--beige-3), var(--gray-3));
   --color-border-blockquote: light-dark(
-    rgba(var(--primary-rgb), 0.8),
+    rgba(var(--primary-light-rgb), 0.8),
     rgba(var(--primary-rgb), 1)
   );
   --color-border-card: light-dark(var(--beige-2), var(--gray-7));
   --color-marker: light-dark(var(--gray-7), var(--gray-6));
 
   --color-background-button: light-dark(
-    var(--color-background-blockquote),
+    var(--beige-1),
     rgba(255, 255, 255, 0.05)
   );
   --color-background-button-hover: light-dark(
-    var(--primary),
+    var(--primary-light),
     rgba(255, 255, 255, 0.05)
   );
   --color-border-button: light-dark(
-    var(--color-border-blockquote),
+    var(--beige-3),
     var(--gray-65)
   );
-  --color-border-button-hover: light-dark(var(--primary), var(--primary));
+  --color-border-button-hover: light-dark(var(--primary-light), var(--primary));
   --color-background-button-card: light-dark(
     var(--beige-1),
     rgba(0, 0, 0, 0.1)
   );
   --color-background-button-card-hover: light-dark(
-    var(--primary),
+    var(--primary-light),
     rgba(0, 0, 0, 0.1)
   );
-  --color-text-button: light-dark(var(--primary-light), var(--gray-0));
+  --color-text-button: light-dark(var(--gray-8), var(--gray-0));
   --color-text-button-hover: light-dark(var(--gray-0), var(--primary));
-  --color-text-button-emphasized: light-dark(var(--gray-0), var(--primary));
+  --color-text-button-emphasized: light-dark(var(--gray-12), var(--primary));
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Inter', Avenir,
     Helvetica, Arial, sans-serif;
@@ -536,11 +538,11 @@ button.navbar-button {
 
   &.theme-switch-button {
     svg {
-      color: light-dark(var(--primary), #ffd479);
+      color: light-dark(var(--primary-light), #ffd479);
     }
 
     &:hover {
-      color: light-dark(var(--primary), #ffeea6);
+      color: light-dark(var(--primary-light-hover), #ffeea6);
 
       svg {
         color: light-dark(var(--color-text-link), #ffeea6);

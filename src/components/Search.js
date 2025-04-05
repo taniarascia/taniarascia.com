@@ -37,6 +37,7 @@ export const Search = ({ data, section }) => {
           className="searchbar"
           placeholder="Search posts..."
           value={query}
+          autocomplete="off"
           onChange={(event) => {
             navigate(
               event.target.value

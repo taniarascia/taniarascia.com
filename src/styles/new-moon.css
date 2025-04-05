@@ -24,7 +24,7 @@
     rgba(0, 0, 0, 0.08),
     rgba(255, 255, 255, 0.08)
   );
-  --color-background-code-block: light-dark(var(--beige-0), #2d2d2d);
+  --color-background-code-block: light-dark(var(--beige-05), #2d2d2d);
   --color-border-code-block: light-dark(var(--beige-2), var(--gray-7));
   --color-background-terminal: light-dark(white, var(--gray-11));
   --color-background-filename: light-dark(var(--beige-15), var(--gray-9));
@@ -102,6 +102,7 @@ code.language-shell::before {
 pre.language-text {
   background: transparent;
   padding: 0;
+  border-color: transparent;
 }
 
 /* Terminal */
