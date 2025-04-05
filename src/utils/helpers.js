@@ -49,7 +49,7 @@ export function appendComments() {
   commentScript.setAttribute('id', 'utterances')
   commentScript.setAttribute(
     'theme',
-    theme === 'light' ? 'github-light' : 'github-dark'
+    theme === 'light' ? 'gruvbox-dark' : 'github-dark'
   )
   commentScript.setAttribute('crossorigin', 'anonymous')
 

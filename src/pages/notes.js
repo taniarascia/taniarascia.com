@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
+import blog from '../assets/nav-blog.png'
 import { Hero } from '../components/Hero'
 import { Layout } from '../components/Layout'
 import { Search } from '../components/Search'
@@ -23,7 +24,7 @@ export default function Notes({ data }) {
       <SEO customDescription={description} />
 
       <PageLayout>
-        <Hero title={title} description={description} hasSearch />
+        <Hero title={title} description={description} hasSearch image={blog} />
         <Search data={simplifiedPosts} section="notes" />
       </PageLayout>
     </>

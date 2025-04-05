@@ -20,7 +20,7 @@ export const Sidebar = () => {
   const guides = [
     {
       url: '/setting-up-a-brand-new-mac-for-development',
-      title: 'macOS Setup',
+      title: 'macOS Setup for Devs',
       icon: mac,
     },
     {

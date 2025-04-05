@@ -24,10 +24,10 @@
     rgba(0, 0, 0, 0.08),
     rgba(255, 255, 255, 0.08)
   );
-  --color-background-code-block: light-dark(var(--gray-05), var(--gray-8));
-  --color-border-code-block: light-dark(var(--gray-2), var(--gray-7));
+  --color-background-code-block: light-dark(var(--beige-1), #2d2d2d);
+  --color-border-code-block: light-dark(var(--beige-2), var(--gray-7));
   --color-background-terminal: light-dark(white, var(--gray-11));
-  --color-background-filename: light-dark(var(--gray-1), var(--gray-9));
+  --color-background-filename: light-dark(var(--beige-1), var(--gray-9));
 }
 
 /* Code blocks */
@@ -63,6 +63,7 @@ pre[class*='language-'] {
   overflow: initial;
   font-weight: 400;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 @media screen and (min-width: 800px) {

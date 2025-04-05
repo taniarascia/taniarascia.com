@@ -70,7 +70,10 @@ export default function Index({ data }) {
         <section className="section-index">
           <Heading
             title="Notes"
+            slug="/notes"
+            buttonText="See All"
             description="Personal notes about life, music, projects, and everything else."
+            textButton
           />
           <Posts data={notes} newspaper />
         </section>
@@ -78,7 +81,10 @@ export default function Index({ data }) {
         <section className="section-index">
           <Heading
             title="Articles"
+            slug="/blog"
+            buttonText="See All"
             description="Guides, references, and tutorials."
+            textButton
           />
           <Posts data={articles} newspaper />
         </section>
@@ -89,6 +95,7 @@ export default function Index({ data }) {
             slug="/topics"
             buttonText="All Topics"
             description="Long-form tutorials on a variety of development topics."
+            textButton
           />
           <div className="cards">
             {simplifiedHighlights.map((post) => {
@@ -112,6 +119,7 @@ export default function Index({ data }) {
             slug="/projects"
             buttonText="All Projects"
             description="Open-source projects I've worked on over the years."
+            textButton
           />
 
           <div className="cards">

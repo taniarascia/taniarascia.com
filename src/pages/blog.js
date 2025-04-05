@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Hero } from '../components/Hero'
@@ -14,8 +14,14 @@ export default function Articles({ data }) {
   const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const title = 'Articles'
-  const description =
-    'Guides, references, and tutorials on programming, web development, and design.'
+  const description = (
+    <div>
+      {
+        'Guides, references, and tutorials on programming, web development, and design. '
+      }
+      <Link to="/topics">View All Topics.</Link>
+    </div>
+  )
 
   return (
     <>
