@@ -27,20 +27,19 @@
   --gray-11: #111;
   --gray-12: #0f0f0f;
 
-  --beige-0: #fdf6e5;
-  --beige-05: #f9f0db;
-  --beige-1: #ede8d7;
-  --beige-15: #efe6ca;
-  --beige-2: #ded4b2;
-  --beige-3: #c6ba93;
+  --beige-0: #fdf9ee;
+  --beige-1: #fdf6e3;
+  --beige-2: #eee8d5;
+  --beige-3: #ded4b2;
+  --beige-4: #c6ba93;
 
   /* Colors */
   --color-highlighted: light-dark(var(--yellow-dark), var(--yellow));
   --color-background: light-dark(var(--beige-0), var(--gray-10));
-  --color-background-navbar: light-dark(var(--beige-1), var(--gray-10));
-  --color-background-sidebar: light-dark(var(--beige-1), var(--gray-9));
-  --color-background-input: light-dark(var(--beige-1), var(--gray-12));
-  --color-background-code: light-dark(var(--beige-1), var(--gray-10));
+  --color-background-navbar: light-dark(var(--beige-2), var(--gray-10));
+  --color-background-sidebar: light-dark(var(--beige-2), var(--gray-9));
+  --color-background-input: light-dark(var(--beige-2), var(--gray-12));
+  --color-background-code: light-dark(var(--beige-2), var(--gray-10));
   --color-background-blockquote: light-dark(
     rgba(var(--primary-light-rgb), 0.05),
     rgba(var(--primary-rgb), 0.1)
@@ -60,9 +59,9 @@
   --color-text-link: light-dark(var(--primary-light), var(--primary));
   --color-text-link-hover: light-dark(var(--primary-light-hover), #c1c3f8);
 
-  --color-border: light-dark(var(--beige-2), var(--gray-65));
-  --color-border-muted: light-dark(var(--beige-1), var(--gray-9));
-  --color-border-hover: light-dark(var(--beige-3), var(--gray-3));
+  --color-border: light-dark(var(--beige-3), var(--gray-65));
+  --color-border-muted: light-dark(var(--beige-2), var(--gray-9));
+  --color-border-hover: light-dark(var(--beige-4), var(--gray-3));
   --color-border-blockquote: light-dark(
     rgba(var(--primary-light-rgb), 0.8),
     rgba(var(--primary-rgb), 1)
@@ -71,27 +70,26 @@
   --color-marker: light-dark(var(--gray-7), var(--gray-6));
 
   --color-background-button: light-dark(
-    var(--beige-1),
-    rgba(255, 255, 255, 0.05)
-  );
-  --color-background-button-hover: light-dark(
     var(--primary-light),
     rgba(255, 255, 255, 0.05)
   );
-  --color-border-button: light-dark(
-    var(--beige-3),
-    var(--gray-65)
+  --color-background-button-hover: light-dark(
+    var(--primary-light-hover),
+    rgba(255, 255, 255, 0.05)
   );
+  --color-border-button: light-dark(var(--primary-light), var(--gray-65));
   --color-border-button-hover: light-dark(var(--primary-light), var(--primary));
   --color-background-button-card: light-dark(
     var(--beige-1),
     rgba(0, 0, 0, 0.1)
   );
+  --color-text-button-card: light-dark(var(--primary-light), var(--gray-0));
+  --color-text-button-card-hover: light-dark(var(--gray-0), var(--gray-0));
   --color-background-button-card-hover: light-dark(
     var(--primary-light),
     rgba(0, 0, 0, 0.1)
   );
-  --color-text-button: light-dark(var(--gray-8), var(--gray-0));
+  --color-text-button: light-dark(var(--gray-0), var(--gray-0));
   --color-text-button-hover: light-dark(var(--gray-0), var(--primary));
   --color-text-button-emphasized: light-dark(var(--gray-12), var(--primary));
 
@@ -1067,6 +1065,10 @@ a.sidebar-title-link {
     margin-top: 0;
     margin-bottom: 0;
     margin-bottom: 0.5rem;
+
+    .small {
+      margin-top: 0.25rem;
+    }
   }
 
   .description {
@@ -1129,7 +1131,7 @@ a.post {
     border-bottom: none;
   }
 
-  p {
+  > div {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1290,9 +1292,11 @@ a time.new-post {
 
   a.button,
   button {
+    color: var(--color-text-button-card);
     background: var(--color-background-button-card);
 
     &:hover {
+      color: var(--color-text-button-card-hover);
       background: var(--color-background-button-card-hover);
     }
   }
@@ -1582,4 +1586,8 @@ a.footer-link {
     border-color: var(--primary);
     box-shadow: 0 0 1px 1px var(--primary);
   }
+}
+
+.small {
+  font-size: 16px;
 }

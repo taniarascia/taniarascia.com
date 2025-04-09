@@ -45,10 +45,10 @@ export const Post = ({ node, prefix, newspaper, query }) => {
       key={node.id}
       className="post"
     >
-      <p>
+      <div>
         {newPost && <div className="button x-small">✨ New</div>}{' '}
         {getTitle(node.title, query)}
-      </p>
+      </div>
       <time>{formattedDate}</time>
     </Link>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import floppyLogo from '../assets/floppylogo.png'
+import floppy from '../assets/floppylogo.png'
 import react from '../../content/thumbnails/react.png'
 import css from '../../content/thumbnails/css-new.png'
 import js from '../../content/thumbnails/js.png'
@@ -14,7 +14,7 @@ import pc from '../../content/thumbnails/computer.png'
 import bluesky from '../../content/thumbnails/bluesky.png'
 import rss from '../../content/thumbnails/rss.png'
 
-import floppy from '../assets/nav-floppy.png'
+import floppyLogo from '../assets/nav-floppy.png'
 
 export const Sidebar = () => {
   const guides = [

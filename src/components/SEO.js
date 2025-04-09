@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import config from '../utils/config'
 
@@ -15,7 +14,7 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
     description = postNode.excerpt
 
     if (postMeta.thumbnail) {
-      image = postMeta.thumbnail.childImageSharp.fixed.src
+      image = postMeta.thumbnail.childImageSharp.gatsbyImageData.src
     }
 
     postURL = `${config.siteUrl}${postPath}`
@@ -67,25 +66,28 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
       }
     )
   }
-  return (
-    <Helmet>
-      <meta name="description" content={description} />
-      <meta name="image" content={image} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(schemaOrgJSONLD)}
-      </script>
+  return null
 
-      <meta property="og:url" content={postSEO ? postURL : config.siteUrl} />
-      {postSEO && <meta property="og:type" content="article" />}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+  // return (
+  //   <Helmet>
+  //     <meta name="description" content={description} />
+  //     <meta name="image" content={image} />
 
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-    </Helmet>
-  )
+  //     <script type="application/ld+json">
+  //       {JSON.stringify(schemaOrgJSONLD)}
+  //     </script>
+
+  //     <meta property="og:url" content={postSEO ? postURL : config.siteUrl} />
+  //     {postSEO && <meta property="og:type" content="article" />}
+  //     <meta property="og:title" content={title} />
+  //     <meta property="og:description" content={description} />
+  //     <meta property="og:image" content={image} />
+
+  //     <meta name="twitter:card" content="summary" />
+  //     <meta name="twitter:title" content={title} />
+  //     <meta name="twitter:description" content={description} />
+  //     <meta name="twitter:image" content={image} />
+  //   </Helmet>
+  // )
 }

@@ -13,7 +13,6 @@ module.exports = {
     // ===================================================================================
     // Meta
     // ===================================================================================
-
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-netlify',
     {
@@ -93,9 +92,11 @@ module.exports = {
     },
 
     // ===================================================================================
-    // Images and static
+    // Images, styles, and static
     // ===================================================================================
 
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -122,14 +123,6 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-autolink-headers',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 800,
-              // linkImagesToOriginal: false,
-              backgroundColor: 'transparent',
-            },
-          },
           'gatsby-remark-prismjs-copy-button',
           {
             resolve: 'gatsby-remark-prismjs',
