@@ -10,10 +10,11 @@ import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 
-export default function Articles({ data }) {
+export default function Blog({ data }) {
   const posts = data.posts.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
-  const title = 'Articles'
+  const title = 'Blog'
+
   const description = (
     <div>
       {
@@ -27,7 +28,6 @@ export default function Articles({ data }) {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
-
       <PageLayout>
         <Hero title={title} description={description} hasSearch />
 
@@ -37,12 +37,12 @@ export default function Articles({ data }) {
   )
 }
 
-Articles.Layout = Layout
+Blog.Layout = Layout
 
 export const articlesQuery = graphql`
-  query ArticlesQuery {
+  query BlogQuery {
     posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         frontmatter: {
           template: { eq: "post" }
@@ -59,8 +59,6 @@ export const articlesQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            # tags
-            # categories
           }
         }
       }

@@ -25,7 +25,6 @@ export default function Topics({ data }) {
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
-
       <PageLayout>
         <Hero title={title} />
         {Object.entries(groupTags).map(([key, value]) => {
@@ -60,7 +59,7 @@ Topics.Layout = Layout
 export const tagsQuery = graphql`
   query TopicsQuery {
     tags: allMarkdownRemark {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         name: fieldValue
         totalCount
       }

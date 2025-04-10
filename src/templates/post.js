@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import Img from 'gatsby-image'
+
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
@@ -21,9 +22,10 @@ export default function PostTemplate({ data }) {
 
       <PostLayout post={post}>
         {thumbnail && (
-          <Img
-            fixed={thumbnail?.childImageSharp?.fixed}
+          <GatsbyImage
+            image={thumbnail?.childImageSharp?.gatsbyImageData}
             className="main-article-thumbnail"
+            alt="Thumbnail"
           />
         )}
         <Hero title={title} type="post" />
@@ -64,9 +66,7 @@ export const pageQuery = graphql`
         comments_off
         thumbnail {
           childImageSharp {
-            fixed(width: 75, height: 75) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 75, height: 75, layout: FIXED)
           }
         }
       }

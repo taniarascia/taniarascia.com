@@ -36,7 +36,7 @@ Notes.Layout = Layout
 export const notesQuery = graphql`
   query NotesQuery {
     posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         frontmatter: {
           template: { eq: "post" }
@@ -53,8 +53,6 @@ export const notesQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            # tags
-            # categories
           }
         }
       }

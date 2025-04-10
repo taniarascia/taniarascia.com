@@ -13,7 +13,6 @@ module.exports = {
     // ===================================================================================
     // Meta
     // ===================================================================================
-
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-netlify',
     {
@@ -63,27 +62,27 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
-                  limit: 30,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { template: { eq: "post" } } }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { 
-                        slug 
-                      }
-                      frontmatter {
-                        title
-                        date
-                        template
-                      }
+              allMarkdownRemark(
+                limit: 30
+                sort: {frontmatter: {date: DESC}}
+                filter: {frontmatter: {template: {eq: "post"}}}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                      template
                     }
                   }
                 }
               }
+            }
             `,
             output: '/rss.xml',
             title: 'tania.dev | RSS Feed',
@@ -93,10 +92,19 @@ module.exports = {
     },
 
     // ===================================================================================
-    // Images and static
+    // Images, styles, and static
     // ===================================================================================
 
-    'gatsby-plugin-sharp',
+    'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          // placeholder: `dominantColor`,
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -112,6 +120,7 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
+    'gatsby-plugin-image',
 
     // ===================================================================================
     // Markdown
@@ -121,15 +130,14 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-autolink-headers',
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 800,
-              // linkImagesToOriginal: false,
               backgroundColor: 'transparent',
+              maxWidth: 590,
             },
           },
+          'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs-copy-button',
           {
             resolve: 'gatsby-remark-prismjs',

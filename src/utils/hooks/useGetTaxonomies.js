@@ -4,22 +4,20 @@ export const useGetTaxonomies = () => {
   const data = useStaticQuery(graphql`
     query TaxonomyQuery {
       tags: allMarkdownRemark {
-        group(field: frontmatter___tags) {
+        group(field: { frontmatter: { tags: SELECT } }) {
           name: fieldValue
           totalCount
         }
       }
-
       categories: allMarkdownRemark {
-        group(field: frontmatter___categories) {
+        group(field: { frontmatter: { categories: SELECT } }) {
           name: fieldValue
           totalCount
         }
       }
-
       highlights: allMarkdownRemark(
         limit: 12
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { frontmatter: { date: DESC } }
         filter: { frontmatter: { categories: { eq: "Highlight" } } }
       ) {
         edges {
@@ -34,9 +32,7 @@ export const useGetTaxonomies = () => {
               tags
               thumbnail {
                 childImageSharp {
-                  fixed(width: 25, height: 25) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 25, height: 25, layout: FIXED)
                 }
               }
             }

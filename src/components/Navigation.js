@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
 
-import floppyLogo from '../assets/floppylogo.png'
-import floppy from '../assets/nav-floppy.png'
+import floppy from '../assets/floppylogo.png'
+import floppyLogo from '../assets/nav-floppy.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
@@ -14,7 +14,7 @@ import { Close } from '../assets/Close'
 
 const links = [
   { url: '/notes', label: 'Notes', image: blog },
-  { url: '/blog', label: 'Articles', image: projects },
+  { url: '/blog', label: 'Blog', image: projects },
   { url: '/projects', label: 'Projects', image: github },
   { url: '/me', label: 'About', image: floppy },
 ]

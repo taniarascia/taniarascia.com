@@ -7,7 +7,7 @@ export const Heading = ({ title, buttonText, description, slug }) => {
       <h2>
         {title}
         {slug && (
-          <Link className="button small" to={slug}>
+          <Link className="small" to={slug}>
             {buttonText}
           </Link>
         )}

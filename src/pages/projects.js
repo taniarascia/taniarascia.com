@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 
-import { ExternalLinkIcon } from '../assets/ExternalLinkIcon'
 import { StarIcon } from '../assets/StarIcon'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'

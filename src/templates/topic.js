@@ -41,7 +41,7 @@ TopicTemplate.Layout = Layout
 export const pageQuery = graphql`
   query TopicPage($tag: String) {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

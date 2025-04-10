@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import config from '../utils/config'
 
@@ -15,7 +15,7 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
     description = postNode.excerpt
 
     if (postMeta.thumbnail) {
-      image = postMeta.thumbnail.childImageSharp.fixed.src
+      image = postMeta.thumbnail.childImageSharp.gatsbyImageData.src
     }
 
     postURL = `${config.siteUrl}${postPath}`
@@ -67,6 +67,7 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
       }
     )
   }
+
   return (
     <Helmet>
       <meta name="description" content={description} />

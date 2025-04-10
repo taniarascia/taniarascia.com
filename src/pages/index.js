@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
+
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Helmet from 'react-helmet'
-import Img from 'gatsby-image'
 
 import { Layout } from '../components/Layout'
 import { Posts } from '../components/Posts'
@@ -39,8 +40,9 @@ export default function Index({ data }) {
             <div>
               <p className="hero-description">
                 I'm a software engineer, open-source creator, and former
-                professional chef. I've been making websites since 1998 and
-                writing on this blog for the past decade.
+                professional chef. I've been making websites since 1998 and{' '}
+                <Link to="/blog">writing on this blog</Link> for the past
+                decade.
               </p>
               <p className="hero-description">
                 I enjoy weight-lifting, reading sci-fi and fantasy, playing
@@ -79,7 +81,7 @@ export default function Index({ data }) {
 
         <section className="section-index">
           <Heading
-            title="Articles"
+            title="Tech Blog"
             slug="/blog"
             buttonText="See All"
             description="Guides, references, and tutorials."
@@ -102,7 +104,9 @@ export default function Index({ data }) {
                   className="card card-highlight"
                   key={`popular-${post.slug}`}
                 >
-                  {post.thumbnail && <Img fixed={post.thumbnail} />}
+                  {post.thumbnail && (
+                    <GatsbyImage image={post.thumbnail} alt="Thumbnail" />
+                  )}
                   <div>{post.title}</div>
                 </Link>
               )
@@ -164,7 +168,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     latestNotes: allMarkdownRemark(
       limit: 3
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         frontmatter: {
           template: { eq: "post" }
@@ -189,7 +193,7 @@ export const pageQuery = graphql`
     }
     latestArticles: allMarkdownRemark(
       limit: 3
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: {
         frontmatter: {
           template: { eq: "post" }
@@ -214,7 +218,7 @@ export const pageQuery = graphql`
     }
     highlights: allMarkdownRemark(
       limit: 12
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { categories: { eq: "Highlight" } } }
     ) {
       edges {
@@ -229,9 +233,7 @@ export const pageQuery = graphql`
             tags
             thumbnail {
               childImageSharp {
-                fixed(width: 40, height: 40) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(width: 40, height: 40, layout: FIXED)
               }
             }
           }

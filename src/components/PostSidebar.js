@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { useActiveHash } from '../utils/hooks/useActiveHash'
 import { slugify } from '../utils/helpers'
@@ -42,7 +42,10 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
       <div className="post-sidebar-content">
         {thumbnail && (
           <div className="post-sidebar-thumbnail">
-            <Img fixed={thumbnail?.childImageSharp?.fixed} />
+            <GatsbyImage
+              image={thumbnail?.childImageSharp?.gatsbyImageData}
+              alt="Thumbnail"
+            />
           </div>
         )}
 
