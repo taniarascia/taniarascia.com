@@ -62,27 +62,27 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
-                  limit: 30,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { template: { eq: "post" } } }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { 
-                        slug 
-                      }
-                      frontmatter {
-                        title
-                        date
-                        template
-                      }
+              allMarkdownRemark(
+                limit: 30
+                sort: {frontmatter: {date: DESC}}
+                filter: {frontmatter: {template: {eq: "post"}}}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                      template
                     }
                   }
                 }
               }
+            }
             `,
             output: '/rss.xml',
             title: 'tania.dev | RSS Feed',
@@ -96,8 +96,15 @@ module.exports = {
     // ===================================================================================
 
     'gatsby-plugin-postcss',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          // placeholder: `dominantColor`,
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -113,6 +120,7 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
+    'gatsby-plugin-image',
 
     // ===================================================================================
     // Markdown
@@ -122,6 +130,13 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              backgroundColor: 'transparent',
+              maxWidth: 590,
+            },
+          },
           'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs-copy-button',
           {

@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, navigate } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
 import queryString from 'query-string'
-import { useLocation, navigate } from '@reach/router'
+import { useLocation } from '@reach/router'
 
 import searchIcon from '../assets/nav-search.png'
 import { Posts } from './Posts'
@@ -37,13 +37,14 @@ export const Search = ({ data, section }) => {
           className="searchbar"
           placeholder="Search posts..."
           value={query}
-          autocomplete="off"
+          autoComplete="off"
           onChange={(event) => {
-            navigate(
-              event.target.value
-                ? `/${section}/?search=${event.target.value}`
-                : ''
-            )
+            const updatedValue = event.target.value
+              ? `/${section}/?search=${event.target.value}`
+              : ''
+
+            navigate(updatedValue)
+
             setQuery(event.target.value)
           }}
         />

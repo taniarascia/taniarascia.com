@@ -3,6 +3,7 @@
 :root {
   --primary: #9898ff;
   --primary-hover: #bebeff;
+  --primary-light-muted: #508bc6;
   --primary-light: #3576b8;
   --primary-light-hover: #28629d;
   --primary-light-rgb: 53, 118, 184;
@@ -70,14 +71,14 @@
   --color-marker: light-dark(var(--gray-7), var(--gray-6));
 
   --color-background-button: light-dark(
-    var(--primary-light),
+    var(--primary-light-muted),
     rgba(255, 255, 255, 0.05)
   );
   --color-background-button-hover: light-dark(
     var(--primary-light-hover),
     rgba(255, 255, 255, 0.05)
   );
-  --color-border-button: light-dark(var(--primary-light), var(--gray-65));
+  --color-border-button: light-dark(var(--primary-light-muted), var(--gray-65));
   --color-border-button-hover: light-dark(var(--primary-light), var(--primary));
   --color-background-button-card: light-dark(
     var(--beige-1),
@@ -268,7 +269,6 @@ h3 {
 }
 
 h4 {
-  margin-bottom: 0.5rem;
   font-size: var(--h4);
 
   code {

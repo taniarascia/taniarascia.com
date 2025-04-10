@@ -13,18 +13,40 @@ export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
 
   const handleUpdateTheme = (newTheme) => {
+    const html = document.documentElement
     window.localStorage.setItem('theme', newTheme)
     document.documentElement.style.setProperty('color-scheme', newTheme)
+
+    if (newTheme === 'light') {
+      html.classList.add('is-light')
+      html.classList.remove('is-dark')
+    }
+
+    if (newTheme === 'dark') {
+      html.classList.add('is-dark')
+      html.classList.remove('is-light')
+    }
 
     setTheme(newTheme)
   }
 
   useEffect(() => {
+    const html = document.documentElement
     const savedTheme = window.localStorage.getItem('theme')
 
     if (savedTheme) {
       setTheme(savedTheme)
       document.documentElement.style.setProperty('color-scheme', savedTheme)
+
+      if (savedTheme === 'light') {
+        html.classList.add('is-light')
+        html.classList.remove('is-dark')
+      }
+
+      if (savedTheme === 'dark') {
+        html.classList.add('is-dark')
+        html.classList.remove('is-light')
+      }
     }
   }, [])
 

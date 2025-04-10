@@ -40,8 +40,9 @@ export default function Index({ data }) {
             <div>
               <p className="hero-description">
                 I'm a software engineer, open-source creator, and former
-                professional chef. I've been making websites since 1998 and
-                writing on this blog for the past decade.
+                professional chef. I've been making websites since 1998 and{' '}
+                <Link to="/blog">writing on this blog</Link> for the past
+                decade.
               </p>
               <p className="hero-description">
                 I enjoy weight-lifting, reading sci-fi and fantasy, playing
