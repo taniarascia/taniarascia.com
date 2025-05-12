@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
+import { useLocation } from '@reach/router'
 
 import floppy from '../assets/floppylogo.png'
 import floppyLogo from '../assets/nav-floppy.png'
@@ -11,6 +12,7 @@ import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
 import { Close } from '../assets/Close'
+import { Searchbar } from './Searchbar'
 
 const links = [
   { url: '/notes', label: 'Notes', image: blog },
@@ -25,7 +27,10 @@ const socialLinks = [
 ]
 
 export const Navigation = ({ handleUpdateTheme, theme }) => {
+  const location = useLocation()
+  const currentPath = location.pathname
   const [navOpen, setNavOpen] = useState(false)
+  const [query, setQuery] = useState('')
 
   const handleToggleMobileNav = () => {
     setNavOpen((prev) => !prev)
@@ -48,13 +53,24 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
                 title="💾"
               />
             </span>
-            <span>tania.dev</span>
+            <span className="site-name">tania.dev</span>
           </Link>
         </div>
       </div>
       <div className="navbar-wrapper">
         <div className="navbar-container">
-          <section className="navbar-section navbar-section-search" />
+          <section className="navbar-section navbar-section-search">
+            {!currentPath.includes('blog') &&
+              !currentPath.includes('notes') && (
+                <Searchbar
+                  isLocal={false}
+                  query={query}
+                  handleSearch={(event) => {
+                    setQuery(event.target.value)
+                  }}
+                />
+              )}
+          </section>
           <section className="navbar-section">
             <button
               className={`navbar-button nav-menu-button ${

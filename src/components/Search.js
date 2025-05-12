@@ -1,15 +1,16 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql, navigate } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
 import queryString from 'query-string'
 import { useLocation } from '@reach/router'
 
-import searchIcon from '../assets/nav-search.png'
+import { Searchbar } from './Searchbar'
+
 import { Posts } from './Posts'
 
 export const Search = ({ data, section }) => {
   const location = useLocation()
-  const searchRef = useRef(null)
+
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || '')
   const { localSearchPages } = useStaticQuery(graphql`
@@ -29,32 +30,19 @@ export const Search = ({ data, section }) => {
 
   return (
     <>
-      <div className="search-container">
-        <input
-          ref={searchRef}
-          id="search"
-          type="search"
-          className="searchbar"
-          placeholder="Search posts..."
-          value={query}
-          autoComplete="off"
-          onChange={(event) => {
-            const updatedValue = event.target.value
-              ? `/${section}/?search=${event.target.value}`
-              : ''
+      <Searchbar
+        query={query}
+        handleSearch={(event) => {
+          const updatedValue = event.target.value
+            ? `/${section}/?search=${event.target.value}`
+            : ''
 
-            navigate(updatedValue)
+          navigate(updatedValue)
 
-            setQuery(event.target.value)
-          }}
-        />
-        <img
-          className="search-icon"
-          src={searchIcon}
-          alt="Search"
-          onClick={() => searchRef.current.focus()}
-        />
-      </div>
+          setQuery(event.target.value)
+        }}
+        style={{ marginBottom: '2.5rem' }}
+      />
       <section>
         {query ? (
           results.length > 0 ? (

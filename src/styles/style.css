@@ -11,6 +11,12 @@
   --green-rgb: 146, 209, 146;
   --yellow: #ffd479;
   --yellow-dark: #bf8301;
+  --green: #5eddac;
+  --light-yellow: #fcd37a;
+  --pink: #f57ad0;
+  --lavender: #a586fb;
+  --blue: #989dfa;
+  --light-blue: #6ab0f3;
 
   --gray-0: #fbfbfb;
   --gray-05: #f6f6f6;
@@ -61,7 +67,7 @@
   --color-text-link-hover: light-dark(var(--primary-light-hover), #c1c3f8);
 
   --color-border: light-dark(var(--beige-3), var(--gray-65));
-  --color-border-muted: light-dark(var(--beige-2), var(--gray-9));
+  --color-border-muted: light-dark(var(--beige-2), var(--gray-8));
   --color-border-hover: light-dark(var(--beige-4), var(--gray-3));
   --color-border-blockquote: light-dark(
     rgba(var(--primary-light-rgb), 0.8),
@@ -94,8 +100,8 @@
   --color-text-button-hover: light-dark(var(--gray-0), var(--primary));
   --color-text-button-emphasized: light-dark(var(--gray-12), var(--primary));
 
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Inter', Avenir,
-    Helvetica, Arial, sans-serif;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, Avenir, Helvetica,
+    Arial, sans-serif;
   --font-family-heading: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Inter',
     Avenir, Helvetica, Arial, sans-serif;
   --font-family-monospace: Menlo, 'JetBrains Mono', monospace;
@@ -142,7 +148,7 @@
     --layout-padding-horizontal: 2rem;
     --font-size: 1.05rem;
     --anchor-padding: 0.5rem;
-    --h1: 2.7rem;
+    --h1: 2.8rem;
     --h2: 2.2rem;
     --h3: 1.8rem;
     --h4: 1.4rem;
@@ -193,6 +199,13 @@ a {
   }
 
   .tag-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    padding: 3px;
+    border-radius: var(--border-radius);
+    background: var(--color-background-input);
     color: var(--color-text-button-emphasized);
   }
 
@@ -243,7 +256,7 @@ h1:not(:first-child),
 h2:not(:first-child),
 h3:not(:first-child),
 h4:not(:first-child) {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 h2,
@@ -401,6 +414,13 @@ a.button,
     min-width: 20px;
     max-height: 20px;
     margin-right: 0.25rem;
+  }
+
+  &.transparent-button {
+    background: var(--color-background-input);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-emphasized);
+    font-weight: 600;
   }
 }
 
@@ -684,6 +704,7 @@ a.navbar-icon {
   background: var(--color-background-sidebar);
   overflow-y: scroll;
   scrollbar-width: none;
+  border-right: 1px solid var(--color-border-muted);
 
   &:hover {
     overflow-y: auto;
@@ -717,6 +738,7 @@ a.sidebar-title-link {
   color: var(--color-text-navbar-link);
   white-space: nowrap;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .sidebar-logo {
@@ -766,7 +788,7 @@ a.sidebar-title-link {
   h2 {
     font-family: var(--font-family);
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-size: 1rem;
     font-weight: 600;
   }
@@ -883,7 +905,7 @@ a.sidebar-title-link {
   .main-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     margin: 0 auto;
   }
 
@@ -1020,6 +1042,12 @@ a.sidebar-title-link {
 .hero {
   margin-bottom: 1.5rem;
 
+  h1 {
+    width: fit-content;
+    padding-bottom: 0.4rem;
+    border-bottom: 6px solid #f57ad0;
+  }
+
   .sub-title {
     display: flex;
     gap: 0.5rem;
@@ -1056,7 +1084,11 @@ a.sidebar-title-link {
 
 .heading {
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+
+  span {
+    /* border-bottom: 3px solid var(--green); */
+  }
 
   h2 {
     display: flex;
@@ -1148,10 +1180,16 @@ a.post {
     font-size: 0.9rem;
     font-weight: 400;
     order: 1;
+    text-decoration: none;
   }
 }
 
 @media screen and (min-width: 1020px) {
+  .posts {
+    border-left: 2px solid var(--color-border-muted);
+    padding-left: 1.5rem;
+  }
+
   a.post {
     padding: 0.75rem 0;
 
@@ -1167,7 +1205,8 @@ a.post {
       margin-right: -1.5rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
-      border-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
       background: var(--color-background-blockquote);
 
       time {
@@ -1184,9 +1223,10 @@ a time.new-post {
 .year {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  /* border-bottom: 1px solid var(--color-border); */
 
   h2 {
+    /* border-bottom: 3px solid var(--green); */
+    width: fit-content;
     margin-bottom: 0.5rem;
   }
 
@@ -1197,10 +1237,17 @@ a time.new-post {
 
 /* Article */
 
-.main-article {
+.main-article,
+.page-article {
   a {
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
+  }
+
+  h2 {
+    padding-bottom: 0.1rem;
+    width: fit-content;
+    /* border-bottom: 3px solid var(--green); */
   }
 }
 
@@ -1556,13 +1603,33 @@ a.footer-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 2.5rem;
   position: relative;
+
+  &.with-button {
+    gap: 0;
+
+    input,
+    button {
+      height: 36px;
+    }
+
+    input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 0;
+    }
+  }
 }
 
 .search-icon {
   position: absolute;
   left: 0.5rem;
+  top: 0.4rem;
   height: 24px;
   width: 24px;
 }
@@ -1571,10 +1638,10 @@ a.footer-link {
   background: var(--color-background-input);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   box-shadow: none;
-  width: 300px;
+  max-width: 260px;
 
   &:hover {
     border-color: var(--primary);
@@ -1586,8 +1653,24 @@ a.footer-link {
     border-color: var(--primary);
     box-shadow: 0 0 1px 1px var(--primary);
   }
+
+  &.with-icon {
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+  }
 }
 
 .small {
   font-size: 16px;
+}
+
+.site-name {
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+  /* border-bottom: 3px solid var(--light-blue); */
+}
+
+.hidden {
+  display: none;
 }

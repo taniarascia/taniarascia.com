@@ -5,7 +5,7 @@ export const Heading = ({ title, buttonText, description, slug }) => {
   return (
     <header className="heading">
       <h2>
-        {title}
+        <span>{title}</span>
         {slug && (
           <Link className="small" to={slug}>
             {buttonText}

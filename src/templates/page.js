@@ -19,7 +19,10 @@ export default function PageTemplate({ data }) {
 
       <PageLayout>
         <Hero title={title} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className="page-article"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </PageLayout>
     </>
   )

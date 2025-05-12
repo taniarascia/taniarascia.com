@@ -49,19 +49,6 @@ export default function Index({ data }) {
                 retro video games, and spending time with my partner and
                 friends.
               </p>
-              <p className="flex gap">
-                <Link className="button" to="/me">
-                  About Me
-                </Link>
-                <a
-                  className="button"
-                  href="https://taniarascia.substack.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Newsletter
-                </a>
-              </p>
             </div>
             <div>
               <img src="/ram.png" className="hero-image" alt="RAM Ram" />
@@ -81,7 +68,7 @@ export default function Index({ data }) {
 
         <section className="section-index">
           <Heading
-            title="Tech Blog"
+            title="Articles"
             slug="/blog"
             buttonText="See All"
             description="Guides, references, and tutorials."

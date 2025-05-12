@@ -1,11 +1,5 @@
 :root {
   /* Theme */
-  --green: #5eddac;
-  --light-yellow: #fcd37a;
-  --pink: #f57ad0;
-  --lavender: #a586fb;
-  --blue: #989dfa;
-
   --background-color: var(--gray-10);
   --navbar-background-color: var(--gray-10);
   --card-background-color: var(--gray-9);

@@ -92,7 +92,7 @@ export const Sidebar = () => {
                 title="💾"
               />
             </span>
-            <span>tania.dev</span>
+            <span className="site-name">tania.dev</span>
           </Link>
         </div>
         <div className="sidebar-container">
@@ -149,9 +149,9 @@ export const Sidebar = () => {
           </section>
 
           <section className="sidebar-section">
-            <h2>Project Writeups</h2>
+            <h2>Fun Stuff</h2>
             <nav className="sidebar-menu">
-              {projectWriteups.map((link) => (
+              {funStuff.map((link) => (
                 <Link key={link.url} to={link.url} activeClassName="active">
                   {link.icon && <img src={link.icon} alt={link.title} />}
                   {link.title}
@@ -161,9 +161,9 @@ export const Sidebar = () => {
           </section>
 
           <section className="sidebar-section">
-            <h2>Fun Stuff</h2>
+            <h2>Project Writeups</h2>
             <nav className="sidebar-menu">
-              {funStuff.map((link) => (
+              {projectWriteups.map((link) => (
                 <Link key={link.url} to={link.url} activeClassName="active">
                   {link.icon && <img src={link.icon} alt={link.title} />}
                   {link.title}
