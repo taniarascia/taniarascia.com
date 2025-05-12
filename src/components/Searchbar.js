@@ -6,6 +6,7 @@ import searchIcon from '../assets/nav-search.png'
 export const Searchbar = ({
   query,
   handleSearch,
+  setQuery,
   isLocal = true,
   ...props
 }) => {
@@ -18,6 +19,7 @@ export const Searchbar = ({
 
         if (!isLocal) {
           const updatedValue = query ? `/blog?search=${query}` : ''
+          setQuery('')
           navigate(updatedValue)
         }
       }}
@@ -45,7 +47,11 @@ export const Searchbar = ({
           />
         )}
         {!isLocal && (
-          <button type="submit" className="transparent-button">
+          <button
+            type="submit"
+            className="transparent-button"
+            disabled={!query}
+          >
             Go
           </button>
         )}

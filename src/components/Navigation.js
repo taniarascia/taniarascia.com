@@ -65,6 +65,7 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
                 <Searchbar
                   isLocal={false}
                   query={query}
+                  setQuery={setQuery}
                   handleSearch={(event) => {
                     setQuery(event.target.value)
                   }}
