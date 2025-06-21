@@ -38,10 +38,6 @@ export const Sidebar = () => {
       title: 'The Event Loop',
       icon: js,
     },
-    {
-      url: '/topics',
-      title: 'All Topics',
-    },
   ]
 
   const projectWriteups = [
