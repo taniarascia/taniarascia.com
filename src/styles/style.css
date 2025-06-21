@@ -1095,9 +1095,9 @@ a.sidebar-title-link {
   gap: 0.5rem;
   margin-bottom: 2rem;
 
-  span {
+  /* span {
     border-bottom: 3px solid var(--green);
-  }
+  } */
 
   h2 {
     display: flex;
@@ -1246,9 +1246,9 @@ a time.new-post {
   padding-bottom: 1.5rem;
 
   h2 {
-    border-bottom: 3px solid var(--green);
-    width: fit-content;
-    margin-bottom: 0.5rem;
+    /* border-bottom: 3px solid var(--green); */
+    /* width: fit-content; */
+    /* margin-bottom: 0.5rem; */
   }
 
   &:last-of-type {
