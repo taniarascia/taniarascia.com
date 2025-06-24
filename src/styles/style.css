@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&family=Gabarito:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
   --primary: #fcd37a;
@@ -106,7 +106,7 @@
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, Avenir, Helvetica,
     Arial, sans-serif;
-  --font-family-heading: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Inter',
+  --font-family-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Inter',
     Avenir, Helvetica, Arial, sans-serif;
   --font-family-monospace: Menlo, 'JetBrains Mono', monospace;
 
@@ -242,6 +242,7 @@ h1 {
   font-weight: 700;
   font-size: var(--h1);
   line-height: 1.2;
+  letter-spacing: 0.03rem;
 }
 
 h2,
@@ -769,6 +770,7 @@ a.sidebar-title-link {
     gap: 6px;
 
     a {
+      color: var(--color-text-muted);
       display: flex;
       gap: 0.5rem;
       align-items: center;
@@ -1059,6 +1061,7 @@ a.sidebar-title-link {
     h1 {
       border: none;
       padding: 0;
+      line-height: 1.1;
       /* border-left: 8px solid #f57ad0; */
       /* padding-left: 1rem; */
       /* line-height: 1.1; */
@@ -1350,9 +1353,9 @@ a time.new-post {
     }
 
     &:hover {
+      border-color: var(--color-primary);
+
       div {
-        text-decoration-line: underline;
-        text-decoration-thickness: 2px;
         color: var(--color-text-link-hover);
       }
     }

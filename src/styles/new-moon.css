@@ -24,7 +24,7 @@
     rgba(0, 0, 0, 0.05),
     rgba(255, 255, 255, 0.08)
   );
-  --color-background-code-block: light-dark(var(--beige-1), #2d2d2d);
+  --color-background-code-block: light-dark(var(--beige-1), #222222);
   --color-border-code-block: light-dark(var(--beige-2), var(--gray-7));
   --color-background-terminal: light-dark(white, var(--gray-11));
   --color-background-filename: light-dark(var(--beige-2), var(--gray-9));
@@ -211,6 +211,7 @@ pre.language-terminal::after {
   margin-bottom: -1.5rem;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
+  border: 1px solid var(--color-border-code-block);
   border-bottom: 1px solid var(--color-border);
   font-weight: 500;
   white-space: nowrap;

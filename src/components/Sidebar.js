@@ -78,7 +78,7 @@ export const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-wrapper">
-        <div className="sidebar-title">
+        {/* <div className="sidebar-title">
           <Link to="/" className="sidebar-title-link">
             <span>
               <img
@@ -90,7 +90,7 @@ export const Sidebar = () => {
             </span>
             <span className="site-name">tania.dev</span>
           </Link>
-        </div>
+        </div> */}
         <div className="sidebar-container">
           <section className="sidebar-section">
             <h2>About Me</h2>
