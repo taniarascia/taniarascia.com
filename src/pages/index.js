@@ -44,13 +44,14 @@ export default function Index({ data }) {
                 <Link to="/blog">writing on this blog</Link> for the past
                 decade.
               </p>
-              <p className="hero-description">
-                I enjoy weight-lifting, reading sci-fi and fantasy, playing
-                retro video games, and spending time with my partner and
-                friends.
-              </p>
-              <a className="button" type="button">
-                Newsletter
+              <p>Everything here is written by me, not AI.</p>
+              <a
+                href="https://taniarascia.substack.com"
+                className="button"
+                type="button"
+                rel="noreferrer"
+              >
+                Email Newsletter
               </a>
             </div>
             <div>
