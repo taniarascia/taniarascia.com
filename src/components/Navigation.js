@@ -57,67 +57,64 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
           </Link>
         </div>
       </div>
-      <div className="navbar-wrapper">
-        <div className="navbar-container">
-          <section className="navbar-section navbar-section-search">
-            {!currentPath.includes('blog') &&
-              !currentPath.includes('notes') && (
-                <Searchbar
-                  isLocal={false}
-                  query={query}
-                  setQuery={setQuery}
-                  handleSearch={(event) => {
-                    setQuery(event.target.value)
-                  }}
-                />
-              )}
-          </section>
-          <section className="navbar-section">
-            <button
-              className={`navbar-button nav-menu-button ${
-                navOpen ? 'active' : ''
-              }`}
-              onClick={handleToggleMobileNav}
-            >
-              {navOpen ? <Close /> : <Menu />}
-            </button>
-            <nav className={`navbar-menu nav-items ${navOpen ? 'active' : ''}`}>
-              {links.map((link) => (
-                <Link
-                  key={link.url}
-                  to={link.url}
-                  activeClassName="active"
-                  onClick={handleCloseMobileNav}
-                >
-                  <img src={link.image} alt={link.label} />
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-            <nav className="navbar-menu social">
-              <button
-                className="navbar-button theme-switch-button"
-                onClick={() => {
-                  const newTheme = theme === 'dark' ? 'light' : 'dark'
-
-                  handleUpdateTheme(newTheme)
-                }}
+      <div className="navbar-container">
+        <section className="navbar-section navbar-section-search">
+          {!currentPath.includes('blog') && !currentPath.includes('notes') && (
+            <Searchbar
+              isLocal={false}
+              query={query}
+              setQuery={setQuery}
+              handleSearch={(event) => {
+                setQuery(event.target.value)
+              }}
+            />
+          )}
+        </section>
+        <section className="navbar-section">
+          <button
+            className={`navbar-button nav-menu-button ${
+              navOpen ? 'active' : ''
+            }`}
+            onClick={handleToggleMobileNav}
+          >
+            {navOpen ? <Close /> : <Menu />}
+          </button>
+          <nav className={`navbar-menu nav-items ${navOpen ? 'active' : ''}`}>
+            {links.map((link) => (
+              <Link
+                key={link.url}
+                to={link.url}
+                activeClassName="active"
+                onClick={handleCloseMobileNav}
               >
-                {theme === 'dark' ? <Sun /> : <Moon />}
-              </button>
-              {socialLinks.map((link) => (
-                <SocialIcon
-                  target="_blank"
-                  key={link.url}
-                  url={link.url}
-                  fgColor="currentColor"
-                  bgColor="transparent"
-                  className="navbar-icon"
-                />
-              ))}
-            </nav>
-          </section>
-        </div>
+                <img src={link.image} alt={link.label} />
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <nav className="navbar-menu social">
+            <button
+              className="navbar-button theme-switch-button"
+              onClick={() => {
+                const newTheme = theme === 'dark' ? 'light' : 'dark'
+
+                handleUpdateTheme(newTheme)
+              }}
+            >
+              {theme === 'dark' ? <Sun /> : <Moon />}
+            </button>
+            {socialLinks.map((link) => (
+              <SocialIcon
+                target="_blank"
+                key={link.url}
+                url={link.url}
+                fgColor="currentColor"
+                bgColor="transparent"
+                className="navbar-icon"
+              />
+            ))}
+          </nav>
+        </section>
       </div>
     </header>
   )

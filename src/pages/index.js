@@ -49,6 +49,9 @@ export default function Index({ data }) {
                 retro video games, and spending time with my partner and
                 friends.
               </p>
+              <a className="button" type="button">
+                Newsletter
+              </a>
             </div>
             <div>
               <img src="/ram.png" className="hero-image" alt="RAM Ram" />

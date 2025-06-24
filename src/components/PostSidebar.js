@@ -81,7 +81,7 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
 
         {toc && (
           <section className="post-sidebar-section">
-            <h2>In This Article</h2>
+            <h2>Table of Contents</h2>
             <nav className="table-of-contents">
               <ul>
                 <li>

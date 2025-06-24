@@ -14,8 +14,6 @@ import pc from '../../content/thumbnails/computer.png'
 import bluesky from '../../content/thumbnails/bluesky.png'
 import rss from '../../content/thumbnails/rss.png'
 
-import floppyLogo from '../assets/nav-floppy.png'
-
 export const Sidebar = () => {
   const guides = [
     {
@@ -78,19 +76,6 @@ export const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-wrapper">
-        {/* <div className="sidebar-title">
-          <Link to="/" className="sidebar-title-link">
-            <span>
-              <img
-                src={floppyLogo}
-                className="sidebar-logo"
-                alt="tania.dev"
-                title="💾"
-              />
-            </span>
-            <span className="site-name">tania.dev</span>
-          </Link>
-        </div> */}
         <div className="sidebar-container">
           <section className="sidebar-section">
             <h2>About Me</h2>
