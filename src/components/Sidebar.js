@@ -7,6 +7,7 @@ import css from '../../content/thumbnails/css-new.png'
 import js from '../../content/thumbnails/js.png'
 import mac from '../../content/thumbnails/apple.png'
 import mario from '../../content/thumbnails/mario.png'
+import bash from '../../content/thumbnails/bash.png'
 import tn from '../../content/thumbnails/tn.png'
 import accordion from '../../content/images/keyboardaccordionlogo.png'
 import animorphs from '../../content/thumbnails/animorphslogo.png'
@@ -35,6 +36,11 @@ export const Sidebar = () => {
       url: '/asynchronous-javascript-event-loop-callbacks-promises-async-await/',
       title: 'The Event Loop',
       icon: js,
+    },
+    {
+      url: '/how-to-create-and-use-bash-scripts/',
+      title: 'Bash Scripts',
+      icon: bash,
     },
   ]
 
@@ -71,6 +77,11 @@ export const Sidebar = () => {
       title: 'Building My First PC',
       icon: pc,
     },
+    {
+      url: '/2024-into-2025',
+      title: 'My Latest Year in Review',
+      icon: floppy,
+    },
   ]
 
   return (
@@ -95,19 +106,24 @@ export const Sidebar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={floppy} alt="Email Newsletter" />
-                Newsletter
+                <img
+                  src={floppy}
+                  alt="Email Newsletter"
+                  height="16"
+                  width="16"
+                />
+                Email Newsletter
               </a>
               <a
                 href="https://go.bsky.app/SmEWb8G"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={bluesky} alt="Bluesky" />
+                <img src={bluesky} alt="Bluesky" height="16" width="16" />
                 Bluesky Starter Pack
               </a>
               <a href="/rss.xml">
-                <img src={rss} alt="RSS" />
+                <img src={rss} alt="RSS" height="16" width="16" />
                 RSS Feed
               </a>
             </p>

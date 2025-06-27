@@ -18,7 +18,7 @@ const links = [
   { url: '/notes', label: 'Notes', image: blog },
   { url: '/blog', label: 'Blog', image: projects },
   { url: '/projects', label: 'Projects', image: github },
-  { url: '/me', label: 'About', image: floppy },
+  { url: '/me', label: 'About Me', image: floppy },
 ]
 
 const socialLinks = [
@@ -51,10 +51,13 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
                 className="sidebar-logo"
                 alt="tania.dev"
                 title="💾"
+                height="16"
+                width="16"
               />
             </span>
             <span className="site-name">tania.dev</span>
           </Link>
+          {/* <div>Close</div> */}
         </div>
       </div>
       <div className="navbar-container">

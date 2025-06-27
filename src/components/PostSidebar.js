@@ -60,7 +60,12 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
         </section>
 
         <section className="post-sidebar-section">
-          <h2>Topics</h2>
+          <h2 className="flex-align-center gap">
+            <div>Topics</div>
+            <Link to="/topics" className="chip" style={{ fontSize: '0.8rem' }}>
+              View all
+            </Link>
+          </h2>
           <div className="post-sidebar-offset">
             <div className="tags">
               {tags.map((tag) => {

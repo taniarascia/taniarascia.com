@@ -25,31 +25,40 @@ export const Posts = ({
   const years = useMemo(() => Object.keys(postsByYear).reverse(), [postsByYear])
 
   if (showYears) {
-    return years.map((year) => (
-      <section className="year" key={year}>
-        <h2>{year}</h2>
-        <div className="posts">
-          {postsByYear[year].map((node) => (
-            <Post key={node.id} node={node} query={query} prefix={prefix} />
-          ))}
-        </div>
-      </section>
-    ))
-  } else {
-    return (
-      <div className={props.newspaper ? 'posts newspaper' : 'posts'}>
-        {data.map((node) => (
-          <Post
-            key={node.id}
-            node={node}
-            query={query}
-            prefix={prefix}
-            hideDate={hideDate}
-            yearOnly={yearOnly}
-            {...props}
-          />
-        ))}
-      </div>
-    )
+    return years.map((year) => {
+      const postCountByYear = postsByYear[year].length
+
+      return (
+        <section className="year" key={year}>
+          <h2 className="flex gap">
+            <div>{year}</div>
+            <div className="chip">
+              {postCountByYear} {postCountByYear === 1 ? 'post' : 'posts'}
+            </div>
+          </h2>
+          <div className="posts">
+            {postsByYear[year].map((node) => (
+              <Post key={node.id} node={node} query={query} prefix={prefix} />
+            ))}
+          </div>
+        </section>
+      )
+    })
   }
+
+  return (
+    <div className={props.newspaper ? 'posts newspaper' : 'posts'}>
+      {data.map((node) => (
+        <Post
+          key={node.id}
+          node={node}
+          query={query}
+          prefix={prefix}
+          hideDate={hideDate}
+          yearOnly={yearOnly}
+          {...props}
+        />
+      ))}
+    </div>
+  )
 }

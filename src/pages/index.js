@@ -13,6 +13,8 @@ import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
+import newMoon from '../../content/images/new-moon.svg'
+import floppy from '../../content/images/floppylogo.png'
 
 export default function Index({ data }) {
   const latestNotes = data.latestNotes.edges
@@ -35,9 +37,10 @@ export default function Index({ data }) {
       <SEO />
 
       <PageLayout>
-        <Hero title="Hey, I'm Tania!" type="index">
+        <Hero type="index">
           <div className="hero-wrapper">
             <div>
+              <h1>Hey, I'm Tania!</h1>
               <p className="hero-description">
                 I'm a software engineer, open-source creator, and former
                 professional chef. I've been making websites since 1998 and{' '}
@@ -45,14 +48,31 @@ export default function Index({ data }) {
                 decade.
               </p>
               <p>Everything here is written by me, not AI.</p>
-              <a
-                href="https://taniarascia.substack.com"
-                className="button"
-                type="button"
-                rel="noreferrer"
+              <p
+                className="flex-wrap flex-align-center gap"
+                style={{ marginBottom: 0 }}
               >
-                Email Newsletter
-              </a>
+                <a
+                  href="https://taniarascia.substack.com"
+                  className="button"
+                  type="button"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <img src={floppy} alt="New Moon Logo" />
+                  Email Newsletter
+                </a>
+                <a
+                  href="https://taniarascia.github.io/new-moon/"
+                  className="button"
+                  type="button"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <img src={newMoon} alt="New Moon Logo" />
+                  New Moon Syntax Theme
+                </a>
+              </p>
             </div>
             <div>
               <img src="/ram.png" className="hero-image" alt="RAM Ram" />

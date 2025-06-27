@@ -26,22 +26,28 @@ export default function Topics({ data }) {
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <PageLayout>
-        <Hero title={title} />
+        <Hero
+          title={title}
+          description="All the topics I've covered. I write about front and backend software development, design, architecture, and personal topics."
+        />
         {Object.entries(groupTags).map(([key, value]) => {
           return (
             <div key={key} className="alphabetical-tags">
               <h3>{key.toUpperCase()}</h3>
-              <div className="tags">
+              <div className="cards cards-tags">
                 {value.map((tag) => {
                   return (
                     <Link
                       key={tag.name}
                       to={`/topics/${slugify(tag.name)}`}
-                      className="button small"
+                      className="card card-highlight flex-space-between"
                       activeClassName="active"
                     >
                       <span>{tag.name}</span>
-                      <span className="tag-count">{tag.totalCount}</span>
+                      <span className="chip">
+                        {tag.totalCount}{' '}
+                        {tag.totalCount === 1 ? ' post' : ' posts'}
+                      </span>
                     </Link>
                   )
                 })}

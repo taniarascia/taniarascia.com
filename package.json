@@ -17,7 +17,7 @@
     "url": "https://github.com/taniarascia/taniarascia.com"
   },
   "dependencies": {
-    "gatsby": "^5.14.3",
+    "gatsby": "^5.14.5",
     "gatsby-plugin-feed": "^5.14.0",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-layout": "^4.14.0",
