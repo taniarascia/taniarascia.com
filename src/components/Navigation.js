@@ -13,12 +13,14 @@ import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
 import { Close } from '../assets/Close'
 import { Searchbar } from './Searchbar'
+import { IconCollapse } from '../assets/IconCollapse'
+import { IconExpand } from '../assets/IconExpand'
 
 const links = [
   { url: '/notes', label: 'Notes', image: blog },
   { url: '/blog', label: 'Blog', image: projects },
   { url: '/projects', label: 'Projects', image: github },
-  { url: '/me', label: 'About Me', image: floppy },
+  { url: '/me', label: 'About', image: floppy },
 ]
 
 const socialLinks = [
@@ -26,7 +28,12 @@ const socialLinks = [
   { url: 'https://bsky.app/profile/tania.dev' },
 ]
 
-export const Navigation = ({ handleUpdateTheme, theme }) => {
+export const Navigation = ({
+  handleUpdateTheme,
+  theme,
+  handleCollapse,
+  collapsed,
+}) => {
   const location = useLocation()
   const currentPath = location.pathname
   const [navOpen, setNavOpen] = useState(false)
@@ -57,7 +64,11 @@ export const Navigation = ({ handleUpdateTheme, theme }) => {
             </span>
             <span className="site-name">tania.dev</span>
           </Link>
-          {/* <div>Close</div> */}
+          <div className="navbar-collapse">
+            <button className="muted-button icon" onClick={handleCollapse}>
+              {collapsed ? <IconExpand /> : <IconCollapse />}
+            </button>
+          </div>
         </div>
       </div>
       <div className="navbar-container">

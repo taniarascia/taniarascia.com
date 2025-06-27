@@ -12,19 +12,14 @@
   --class: light-dark(#d33682, #e1a6f2);
   --tag: light-dark(#268bd2, #6ab0f3);
   --error: light-dark(#dc322f, #f2777a);
-  /*#6d71be*/
   --terminal-bar: light-dark(var(--gray-1), var(--gray-9));
-  /* --terminal-bar: light-dark(
-    linear-gradient(top, #ebebeb, #d5d5d5),
-    linear-gradient(top, #282828, #222)
-  ); */
   --terminal-accent: light-dark(white, var(--gray-6));
 
   --color-background-inline-code: light-dark(
     rgba(0, 0, 0, 0.05),
     rgba(255, 255, 255, 0.08)
   );
-  --color-background-code-block: light-dark(var(--beige-1), #222222);
+  --color-background-code-block: light-dark(var(--beige-1), #262626);
   --color-border-code-block: light-dark(var(--beige-2), var(--gray-7));
   --color-background-terminal: light-dark(white, var(--gray-11));
   --color-background-filename: light-dark(var(--beige-2), var(--gray-9));

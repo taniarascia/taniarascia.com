@@ -379,6 +379,10 @@ a.button,
     transform: scale(0.95);
   }
 
+  &.icon {
+    padding: 0.25rem;
+  }
+
   &.small {
     font-size: 14px;
     padding: 0.5rem 0.75rem;
@@ -406,6 +410,18 @@ a.button,
 
     &:hover {
       background: var(--color-background-input-hover);
+    }
+  }
+
+  &.muted-button {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--color-text-muted);
+
+    &:hover {
+      background: var(--color-background-button-hover);
+      border: 1px solid var(--color-border-button-hover);
+      color: var(--color-text-button-hover);
     }
   }
 }
@@ -451,6 +467,10 @@ a.button,
   align-items: center;
   height: var(--navbar-height);
   z-index: 3;
+}
+
+.navbar-collapse {
+  display: none;
 }
 
 a.navbar-title-link {
@@ -632,6 +652,10 @@ button.navbar-button {
     padding: 0 1rem 0 0;
   }
 
+  .navbar-collapse {
+    display: block;
+  }
+
   .navbar-container {
     justify-content: space-between;
   }
@@ -639,6 +663,7 @@ button.navbar-button {
   .navbar-title {
     background: var(--color-background-navbar-title);
     border-right: 1px solid var(--color-border-muted);
+    height: calc(100% - 1px);
   }
 
   a.navbar-title-link {
@@ -848,8 +873,21 @@ a.sidebar-title-link {
 
 /* Main */
 
+.layout {
+  &.collapsed {
+    .main-wrapper {
+      margin-left: 0;
+    }
+
+    .sidebar {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+}
+
 .main-wrapper {
   min-height: 100vh;
+  transition: margin 0.3s ease;
   padding-top: var(--navbar-height);
 }
 
@@ -1056,10 +1094,11 @@ a.sidebar-title-link {
   .hero {
     margin-bottom: 3rem;
 
+    &.hero-page,
+    &.hero-taxonomy,
     &.hero-index {
       h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1.5rem;
+        font-size: 3.2rem;
       }
     }
   }
@@ -1704,4 +1743,21 @@ a.footer-link {
   border-radius: var(--border-radius);
   color: var(--color-text-muted);
   font-size: 0.9rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .article-type-wrapper {
+    display: flex;
+    align-items: flex-start;
+
+    .section-index {
+      flex: 1;
+
+      &:nth-of-type(2n) {
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        border-left: 1px solid var(--color-border);
+      }
+    }
+  }
 }
