@@ -74,7 +74,7 @@ export default function Index({ data }) {
                 </a>
               </p>
             </div>
-            <div>
+            <div className="hero-image-container">
               <img src="/ram.png" className="hero-image" alt="RAM Ram" />
             </div>
           </div>

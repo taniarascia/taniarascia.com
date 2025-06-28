@@ -15,6 +15,7 @@ import { Close } from '../assets/Close'
 import { Searchbar } from './Searchbar'
 import { IconCollapse } from '../assets/IconCollapse'
 import { IconExpand } from '../assets/IconExpand'
+import { Dropdown } from './Dropdown'
 
 const links = [
   { url: '/notes', label: 'Notes', image: blog },
@@ -107,6 +108,7 @@ export const Navigation = ({
             ))}
           </nav>
           <nav className="navbar-menu social">
+            {/* <Dropdown /> */}
             <button
               className="navbar-button theme-switch-button"
               onClick={() => {
