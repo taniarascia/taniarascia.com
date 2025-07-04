@@ -15,7 +15,7 @@ import { Close } from '../assets/Close'
 import { Searchbar } from './Searchbar'
 import { IconCollapse } from '../assets/IconCollapse'
 import { IconExpand } from '../assets/IconExpand'
-import { Dropdown } from './Dropdown'
+import { ColorDropdown } from './ColorDropdown'
 
 const links = [
   { url: '/notes', label: 'Notes', image: blog },
@@ -66,7 +66,7 @@ export const Navigation = ({
             <span className="site-name">tania.dev</span>
           </Link>
           <div className="navbar-collapse">
-            <button className="muted-button icon" onClick={handleCollapse}>
+            <button className="navbar-button icon" onClick={handleCollapse}>
               {collapsed ? <IconExpand /> : <IconCollapse />}
             </button>
           </div>
@@ -108,9 +108,8 @@ export const Navigation = ({
             ))}
           </nav>
           <nav className="navbar-menu social">
-            {/* <Dropdown /> */}
             <button
-              className="navbar-button theme-switch-button"
+              className="navbar-button"
               onClick={() => {
                 const newTheme = theme === 'dark' ? 'light' : 'dark'
 
@@ -119,6 +118,7 @@ export const Navigation = ({
             >
               {theme === 'dark' ? <Sun /> : <Moon />}
             </button>
+            <ColorDropdown />
             {socialLinks.map((link) => (
               <SocialIcon
                 target="_blank"

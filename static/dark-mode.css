@@ -38,9 +38,6 @@
   --scrollbar-color: var(--gray-65);
   --scrollbar-track: var(--gray-7);
 
-  --new-background: var(--light-yellow);
-  --new-text: var(--light-yellow);
-
   --code-font-color: #b3b9c5;
   --code-background-color: #202020;
   --code-border-color: var(--gray-65);
@@ -50,7 +47,7 @@
   --terminal-border: var(--border-color);
   --terminal-accent: var(--gray-6);
   --string: #92d192;
-  --variable: var(--lavender);
+  --variable: #a586fb;
   --property: #b3b9c5;
   --number: #fca369;
   --operator: #ac8d58;

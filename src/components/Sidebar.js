@@ -60,11 +60,7 @@ export const Sidebar = () => {
       title: 'Chip-8 Emulator',
       icon: js,
     },
-    {
-      url: '/building-takenote',
-      title: 'TakeNote App',
-      icon: tn,
-    },
+    { url: '/building-takenote', title: 'TakeNote App', icon: tn },
   ]
   const funStuff = [
     {
@@ -86,90 +82,81 @@ export const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-wrapper">
-        <div className="sidebar-container">
-          <section className="sidebar-section">
-            <h2>About Me</h2>
-            <div className="sidebar-content">
-              <p>
-                I'm <Link to="/me">Tania</Link>, software engineer and
-                open-source creator. This is my digital garden. 🌱
-              </p>
-            </div>
-          </section>
-
-          <section className="sidebar-section">
-            <h2>Stay Connected</h2>
-            <p className="sidebar-links">
-              <a
-                href="https://taniarascia.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={floppy}
-                  alt="Email Newsletter"
-                  height="16"
-                  width="16"
-                />
-                Email Newsletter
-              </a>
-              <a
-                href="https://go.bsky.app/SmEWb8G"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={bluesky} alt="Bluesky" height="16" width="16" />
-                Bluesky Starter Pack
-              </a>
-              <a href="/rss.xml">
-                <img src={rss} alt="RSS" height="16" width="16" />
-                RSS Feed
-              </a>
-            </p>
-          </section>
-
-          <section className="sidebar-section">
-            <h2>Guides</h2>
-            <nav className="sidebar-menu">
-              {guides.map((link) => (
-                <Link key={link.url} to={link.url} activeClassName="active">
-                  {link.icon ? (
-                    <img src={link.icon} alt={link.title} />
-                  ) : (
-                    <div style={{ height: '16px', width: '16px' }} />
-                  )}
-                  {link.title}
-                </Link>
-              ))}
-            </nav>
-          </section>
-
-          <section className="sidebar-section">
-            <h2>Fun Stuff</h2>
-            <nav className="sidebar-menu">
-              {funStuff.map((link) => (
-                <Link key={link.url} to={link.url} activeClassName="active">
-                  {link.icon && <img src={link.icon} alt={link.title} />}
-                  {link.title}
-                </Link>
-              ))}
-            </nav>
-          </section>
-
-          <section className="sidebar-section">
-            <h2>Project Writeups</h2>
-            <nav className="sidebar-menu">
-              {projectWriteups.map((link) => (
-                <Link key={link.url} to={link.url} activeClassName="active">
-                  {link.icon && <img src={link.icon} alt={link.title} />}
-                  {link.title}
-                </Link>
-              ))}
-            </nav>
-          </section>
+      <section className="sidebar-section">
+        <h2>About Me</h2>
+        <div className="sidebar-content">
+          <p>
+            I'm <Link to="/me">Tania</Link>, software engineer and open-source
+            creator. This is my digital garden. 🌱
+          </p>
         </div>
-      </div>
+      </section>
+
+      <section className="sidebar-section">
+        <h2>Stay Connected</h2>
+        <p className="sidebar-links">
+          <a
+            href="https://taniarascia.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={floppy} alt="Email Newsletter" height="16" width="16" />
+            Email Newsletter
+          </a>
+          <a
+            href="https://go.bsky.app/SmEWb8G"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={bluesky} alt="Bluesky" height="16" width="16" />
+            Bluesky Starter Pack
+          </a>
+          <a href="/rss.xml">
+            <img src={rss} alt="RSS" height="16" width="16" />
+            RSS Feed
+          </a>
+        </p>
+      </section>
+
+      <section className="sidebar-section">
+        <h2>Guides</h2>
+        <nav className="sidebar-menu">
+          {guides.map((link) => (
+            <Link key={link.url} to={link.url} activeClassName="active">
+              {link.icon ? (
+                <img src={link.icon} alt={link.title} />
+              ) : (
+                <div style={{ height: '16px', width: '16px' }} />
+              )}
+              {link.title}
+            </Link>
+          ))}
+        </nav>
+      </section>
+
+      <section className="sidebar-section">
+        <h2>Fun Stuff</h2>
+        <nav className="sidebar-menu">
+          {funStuff.map((link) => (
+            <Link key={link.url} to={link.url} activeClassName="active">
+              {link.icon && <img src={link.icon} alt={link.title} />}
+              {link.title}
+            </Link>
+          ))}
+        </nav>
+      </section>
+
+      <section className="sidebar-section">
+        <h2>Project Writeups</h2>
+        <nav className="sidebar-menu">
+          {projectWriteups.map((link) => (
+            <Link key={link.url} to={link.url} activeClassName="active">
+              {link.icon && <img src={link.icon} alt={link.title} />}
+              {link.title}
+            </Link>
+          ))}
+        </nav>
+      </section>
     </aside>
   )
 }
