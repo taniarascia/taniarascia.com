@@ -56,7 +56,7 @@ export const Navigation = ({
             <span>
               <img
                 src={floppyLogo}
-                className="sidebar-logo"
+                className="navbar-logo"
                 alt="tania.dev"
                 title="💾"
                 height="16"

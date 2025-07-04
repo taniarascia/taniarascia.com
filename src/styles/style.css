@@ -459,6 +459,13 @@ a.navbar-title-link {
   font-weight: 600;
 }
 
+.navbar-logo {
+  height: 22px;
+  width: 22px;
+  min-height: 22px;
+  min-width: 22px;
+}
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -622,10 +629,6 @@ button.navbar-button {
     height: calc(100% - 1px);
   }
 
-  a.navbar-title-link {
-    margin-left: 0.5rem;
-  }
-
   .navbar-title-content {
     display: flex;
     align-items: center;
@@ -665,45 +668,13 @@ a.navbar-icon {
   width: var(--sidebar-width);
 }
 
-.sidebar-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  height: var(--navbar-height);
-  margin-left: 1.5rem;
-  padding-right: 1rem;
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  background: var(--color-background-sidebar);
-}
-
-a.sidebar-title-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--color-text-navbar-link);
-  white-space: nowrap;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.sidebar-logo {
-  height: 22px;
-  width: 22px;
-  min-height: 22px;
-  min-width: 22px;
-}
-
 .sidebar-section {
   margin: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--color-border-muted);
 
   &:last-child {
-    padding-bottom: 0;
+    padding-bottom: 3rem;
     border: none;
   }
 
@@ -816,13 +787,6 @@ a.sidebar-title-link {
 @media screen and (min-width: 1120px) {
   .sidebar {
     transform: translate3d(0, 0, 0);
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .sidebar-title {
-    margin-right: 1.5rem;
-    padding-right: 0;
   }
 }
 
