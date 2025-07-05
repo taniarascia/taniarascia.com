@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
-  --blockquote-light-rgb: 53, 118, 184;
-  --blockquote-rgb: 149, 154, 248;
-  --green-rgb: 146, 209, 146;
+  --blockquote-light-rgb: 255, 255, 255;
+  --blockquote-rgb: 255, 255, 255;
 
   --gray-0: #fbfbfb;
   --gray-05: #f6f6f6;
@@ -31,15 +30,15 @@
   --yellow: light-dark(#ffce64, #ffd479);
   --theme-yellow: light-dark(#c48914, #ffd479);
   --theme-green: light-dark(#409657, #4fe1a9);
-  --theme-pink: light-dark(#dc408b, #f774d0);
-  --theme-lavender: light-dark(#775fcb, #9792f6);
+  --theme-pink: light-dark(#da3b87, #f774d0);
+  --theme-lavender: light-dark(#6d60d4, #8c96ff);
   --theme-blue: light-dark(#3576b8, #6eb9ff);
 
   /* Colors */
   --color-primary: var(--theme-blue);
   --color-highlighted: var(--yellow);
   --color-background: light-dark(var(--beige-0), var(--gray-10));
-  --color-background-navbar: light-dark(var(--beige-2), var(--gray-10));
+  --color-background-navbar: light-dark(var(--beige-0), var(--gray-10));
   --color-background-navbar-title: light-dark(
     rgba(238, 232, 213, 0.5),
     rgba(15, 15, 15, 0.5)
@@ -49,8 +48,8 @@
   --color-background-input-hover: light-dark(var(--beige-2), var(--gray-10));
   --color-background-code: light-dark(var(--beige-2), var(--gray-10));
   --color-background-blockquote: light-dark(
-    rgba(var(--blockquote-light-rgb), 0.05),
-    rgba(var(--blockquote-rgb), 0.1)
+    rgba(var(--blockquote-light-rgb), 0.6),
+    rgba(var(--blockquote-rgb), 0.05)
   );
   --color-background-navbar-link-hover: light-dark(
     var(--beige-2),
@@ -102,6 +101,7 @@
   --font-family-monospace: Menlo, 'JetBrains Mono', monospace;
 
   --border-radius: 10px;
+  --border-radius-button: 6px;
   --box-shadow-button: rgba(0, 5, 10, 0.15) 0px 3px 8px;
   --box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 
@@ -306,7 +306,7 @@ li::marker {
 
 mark {
   background: var(--yellow);
-  border-radius: 4px;
+  border-radius: var(--border-radius-button);
 }
 
 table {
@@ -430,7 +430,7 @@ a.button,
   height: var(--navbar-height);
 
   /* mobile */
-  background: var(--color-background-sidebar);
+  background: var(--color-background-navbar);
   border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
@@ -492,7 +492,6 @@ a.navbar-title-link {
   a {
     white-space: nowrap;
     padding: 0.75rem 1rem;
-    background: var(--color-background);
     color: var(--color-text-navbar-link);
     border-radius: var(--border-radius);
     text-decoration: none;
@@ -547,8 +546,9 @@ button.navbar-button {
   &.active,
   &:hover.active {
     border: 1px solid var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
     background: var(--color-background-navbar-link-hover);
-    color: var(--color-text-navbar-link-hover);
+    color: var(--color-primary);
   }
 }
 
@@ -575,7 +575,7 @@ button.navbar-button {
         left: 0;
         z-index: 2;
         margin-top: var(--navbar-height);
-        background: var(--color-background-sidebar);
+        background: var(--color-background-navbar);
         box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
       }
     }
@@ -601,16 +601,13 @@ button.navbar-button {
       gap: 0.5rem;
       align-items: center;
       padding: 0.5rem 0.75rem;
-
-      &.active {
-      }
     }
   }
 }
 
 @media screen and (min-width: 1120px) {
   .navbar {
-    background: light-dark(rgba(236, 232, 217, 0), rgba(24, 24, 24, 0.6));
+    background: light-dark(rgba(253, 249, 238, 0.5), rgba(24, 24, 24, 0.6));
     backdrop-filter: blur(10px);
     padding: 0 1rem 0 0;
   }
@@ -647,6 +644,7 @@ button.navbar-button {
 a.navbar-icon {
   height: 40px !important;
   width: 40px !important;
+  background: transparent;
 }
 
 .sidebar {
@@ -738,19 +736,19 @@ a.navbar-icon {
     white-space: nowrap;
     overflow: hidden;
     padding: 6px 0.75rem;
-    border-radius: 6px;
+    border-radius: var(--border-radius-button);
     font-size: 14px;
     color: var(--color-text-muted);
     font-weight: 500;
 
     &:hover {
       text-decoration: none;
-      color: var(--color-text-link);
-      background: var(--color-background);
+      color: var(--color-text-emphasized);
+      background: var(--color-background-navbar);
     }
 
     &.active {
-      background: var(--color-background);
+      background: var(--color-background-navbar);
       color: var(--color-text-link);
     }
 
@@ -762,11 +760,6 @@ a.navbar-icon {
 }
 
 .sidebar-content {
-  a {
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-  }
-
   p {
     line-height: 1.5;
   }
@@ -918,7 +911,7 @@ a.navbar-icon {
       white-space: nowrap;
       overflow: hidden;
       padding: 6px 0.75rem;
-      border-radius: 6px;
+      border-radius: var(--border-radius-button);
       font-size: 14px;
       color: var(--color-text-muted);
       font-weight: 500;
@@ -989,11 +982,6 @@ a.navbar-icon {
   }
 
   &.hero-index {
-    background: var(--color-background-card);
-    border: 1px solid var(--color-border-card);
-    padding: var(--layout-padding-horizontal);
-    border-radius: var(--border-radius);
-    font-size: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 3rem;
   }
@@ -1010,16 +998,27 @@ a.navbar-icon {
     margin-bottom: 3rem;
 
     &.hero-index {
+      background: var(--color-background-card);
+      border: 1px solid var(--color-border);
+      padding: var(--layout-padding-horizontal);
+      border-radius: var(--border-radius);
       margin-left: -2rem;
       margin-right: -2rem;
       margin-bottom: 4rem;
     }
 
     &.hero-page,
-    &.hero-taxonomy,
+    &.hero-taxonomy {
+      h1 {
+        font-size: 3.3rem;
+        font-weight: 800;
+      }
+    }
+
     &.hero-index {
       h1 {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
+        font-weight: 800;
       }
     }
   }
@@ -1043,6 +1042,7 @@ a.navbar-icon {
   }
 
   .description {
+    color: var(--color-text-muted);
     font-size: 1.1rem;
   }
 }
@@ -1059,37 +1059,37 @@ a.navbar-icon {
 }
 
 .hero-image {
-  display: none;
-  max-width: 125px;
+  max-width: 75px;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 @media screen and (min-width: 800px) {
-  .hero-container {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .hero-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
   .hero-image {
-    display: block;
-    position: relative;
     max-width: 125px;
-    z-index: 9;
   }
 
   .heading {
     span {
       border: none;
     }
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
   }
 }
 
@@ -1111,6 +1111,8 @@ a.navbar-icon {
 
   .hero-image {
     display: block;
+    position: relative;
+    z-index: 9;
     max-width: 250px;
   }
 
@@ -1228,6 +1230,8 @@ a time.new-post {
 
 .main-article,
 .page-article {
+  letter-spacing: -0.02rem;
+
   a {
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
@@ -1305,6 +1309,7 @@ a time.new-post {
     line-height: 1.3;
 
     div {
+      font-weight: 600;
       color: var(--color-text-emphasized);
     }
 
@@ -1381,7 +1386,7 @@ a time.new-post {
 blockquote {
   padding: 1rem;
   margin: 1.5rem 0;
-  border: 1px solid var(--color-border-blockquote);
+  border: 2px solid var(--color-border-blockquote);
   border-radius: var(--border-radius);
   background: var(--color-background-blockquote);
   color: var(--color-text-emphasized);
@@ -1569,7 +1574,7 @@ a.footer-link {
       position: absolute;
       top: 0;
       right: 1rem;
-      border-radius: 6px;
+      border-radius: var(--border-radius);
       border: 1px solid var(--color-border);
       background: var(--color-background-navbar);
       color: var(--color-text-muted);
@@ -1649,6 +1654,7 @@ a.footer-link {
   &:focus {
     outline: none;
     border: 1px solid var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
     background: var(--color-background-input-hover);
   }
 
@@ -1694,7 +1700,7 @@ a.footer-link {
       &:nth-of-type(2n) {
         margin-left: 1.5rem;
         padding-left: 1.5rem;
-        border-left: 1px solid var(--color-border);
+        border-left: 1px solid var(--color-border-muted);
       }
     }
   }
@@ -1716,7 +1722,7 @@ a.footer-link {
 
   .dropdown-results {
     position: absolute;
-    top: 40px;
+    top: 44px;
     left: 50%;
     transform: translate(-50%, 0);
     background: var(--color-background-sidebar);

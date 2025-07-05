@@ -76,7 +76,7 @@ pre[class*='language-'] {
   padding: 2px 4px;
   font-weight: 400;
   font-size: 0.9rem;
-  border-radius: 6px;
+  border-radius: var(--border-radius-button);
 }
 
 :not(pre) > a code[class*='language-'] {
@@ -225,7 +225,7 @@ pre.language-terminal::after {
 kbd {
   background-color: var(--color-background-sidebar);
   color: var(--color-text);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius-button);
   border: 1px solid var(--color-border);
   box-shadow: 0 2px 0 1px var(--color-border);
   font-family: var(--font-family);

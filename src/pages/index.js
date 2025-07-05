@@ -44,14 +44,18 @@ export default function Index({ data }) {
               <p className="hero-description">
                 I'm a software engineer, open-source creator, and former
                 professional chef. I've been making websites since 1998 and{' '}
-                <Link to="/blog">writing on this blog</Link> for the past
-                decade.
+                <Link to="/blog">writing on this blog</Link> for over ten years!
               </p>
-              <p>Everything here is written by me, not AI.</p>
+              <p className="hero-description">
+                Everything on this site is written by me, not AI.
+              </p>
               <p
                 className="flex-wrap flex-align-center gap"
                 style={{ marginBottom: 0 }}
               >
+                <Link className="button" to="/me">
+                  <img src={floppy} alt="Floppy Logo" /> About Me
+                </Link>
                 <a
                   href="https://taniarascia.substack.com"
                   className="button"
@@ -59,18 +63,7 @@ export default function Index({ data }) {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <img src={floppy} alt="New Moon Logo" />
-                  Email Newsletter
-                </a>
-                <a
-                  href="https://taniarascia.github.io/new-moon/"
-                  className="button"
-                  type="button"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <img src={newMoon} alt="New Moon Logo" />
-                  New Moon Syntax Theme
+                  <img src={newMoon} alt="New Moon Logo" /> Email Newsletter
                 </a>
               </p>
             </div>
@@ -93,7 +86,7 @@ export default function Index({ data }) {
 
           <section className="section-index">
             <Heading
-              title="Articles"
+              title="Blog"
               slug="/blog"
               buttonText="See All"
               description="Guides, references, and tutorials."

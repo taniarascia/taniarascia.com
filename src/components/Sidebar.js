@@ -14,6 +14,7 @@ import animorphs from '../../content/thumbnails/animorphslogo.png'
 import pc from '../../content/thumbnails/computer.png'
 import bluesky from '../../content/thumbnails/bluesky.png'
 import rss from '../../content/thumbnails/rss.png'
+import newMoon from '../../content/images/new-moon.svg'
 
 export const Sidebar = () => {
   const guides = [
@@ -100,7 +101,7 @@ export const Sidebar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={floppy} alt="Email Newsletter" height="16" width="16" />
+            <img src={newMoon} alt="Email Newsletter" height="16" width="16" />
             Email Newsletter
           </a>
           <a
