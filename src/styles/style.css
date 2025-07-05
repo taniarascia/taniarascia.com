@@ -983,7 +983,7 @@ a.navbar-icon {
 
   &.hero-index {
     margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 
   &.hero-taxonomy {
@@ -1059,7 +1059,7 @@ a.navbar-icon {
 }
 
 .hero-image {
-  max-width: 75px;
+  max-width: 100px;
 }
 
 .hero-container {
