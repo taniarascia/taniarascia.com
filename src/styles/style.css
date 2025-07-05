@@ -35,7 +35,7 @@
   --theme-blue: light-dark(#3576b8, #6eb9ff);
 
   /* Colors */
-  --color-primary: var(--theme-blue);
+  --color-primary: var(--theme-pink);
   --color-highlighted: var(--yellow);
   --color-background: light-dark(var(--beige-0), var(--gray-10));
   --color-background-navbar: light-dark(var(--beige-0), var(--gray-10));
