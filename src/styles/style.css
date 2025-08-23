@@ -1059,6 +1059,7 @@ a.navbar-icon {
 }
 
 .hero-image {
+  width: 100px;
   max-width: 100px;
 }
 
@@ -1079,6 +1080,7 @@ a.navbar-icon {
 
 @media screen and (min-width: 800px) {
   .hero-image {
+    width: 125px;
     max-width: 125px;
   }
 
@@ -1113,6 +1115,7 @@ a.navbar-icon {
     display: block;
     position: relative;
     z-index: 9;
+    width: 250px;
     max-width: 250px;
   }
 

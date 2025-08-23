@@ -11,7 +11,7 @@ import '../styles/new-moon.css'
 
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
 
   const handleUpdateTheme = (newTheme) => {
     const html = document.documentElement
