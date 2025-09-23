@@ -139,7 +139,7 @@
 
 @media screen and (min-width: 600px) {
   :root {
-    --layout-padding-vertical: 3rem;
+    --layout-padding-vertical: 2rem;
     --layout-padding-horizontal: 2rem;
     --font-size: 1.05rem;
     --anchor-padding: 0.5rem;
@@ -224,7 +224,7 @@ h1:not(:first-child),
 h2:not(:first-child),
 h3:not(:first-child),
 h4:not(:first-child) {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 h2 + h3,
@@ -998,26 +998,26 @@ a.navbar-icon {
     margin-bottom: 3rem;
 
     &.hero-index {
-      background: var(--color-background-card);
+      /* background: var(--color-background-card);
       border: 1px solid var(--color-border);
       padding: var(--layout-padding-horizontal);
       border-radius: var(--border-radius);
       margin-left: -2rem;
-      margin-right: -2rem;
-      margin-bottom: 4rem;
+      margin-right: -2rem; */
+      margin-bottom: 6rem;
     }
 
     &.hero-page,
     &.hero-taxonomy {
       h1 {
-        font-size: 3.3rem;
+        font-size: 3rem;
         font-weight: 800;
       }
     }
 
     &.hero-index {
       h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 800;
       }
     }
@@ -1126,18 +1126,14 @@ a.navbar-icon {
   }
 }
 
-.posts,
-.year {
-  max-width: 650px;
-}
-
 /* Posts */
 a.post {
   display: flex;
-  flex-direction: column;
-  padding: 0.75rem 0;
+  flex-direction: row;
+  padding: 0.25rem 0;
   text-decoration: none;
   border-bottom: 1px solid var(--color-border-muted);
+  justify-content: space-between;
 
   &:last-child {
     border-bottom: none;
@@ -1173,11 +1169,12 @@ a.post {
   }
 
   a.post {
-    padding: 0.75rem 0;
+    padding: 0.3rem 0;
 
     time {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 0.5rem;
       order: 2;
     }
@@ -1289,7 +1286,7 @@ a time.new-post {
 
 .card {
   position: relative;
-  padding: 1rem;
+  padding: 0.75rem;
   background: var(--color-background-card);
   border-radius: var(--border-radius);
   border: 1px solid var(--color-border-card);
@@ -1347,7 +1344,7 @@ a time.new-post {
 
 @media screen and (min-width: 1020px) {
   .card {
-    padding: 1.25rem;
+    padding: 1rem;
 
     a {
       font-size: 1.1rem;

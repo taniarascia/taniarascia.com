@@ -31,6 +31,7 @@ export const Search = ({ data, section }) => {
   return (
     <>
       <Searchbar
+        count={data.length}
         query={query}
         handleSearch={(event) => {
           const updatedValue = event.target.value

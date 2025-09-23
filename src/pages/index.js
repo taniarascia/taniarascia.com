@@ -173,7 +173,7 @@ Index.Layout = Layout
 export const pageQuery = graphql`
   query IndexQuery {
     latestNotes: allMarkdownRemark(
-      limit: 3
+      limit: 5
       sort: { frontmatter: { date: DESC } }
       filter: {
         frontmatter: {
@@ -198,7 +198,7 @@ export const pageQuery = graphql`
       }
     }
     latestArticles: allMarkdownRemark(
-      limit: 3
+      limit: 5
       sort: { frontmatter: { date: DESC } }
       filter: {
         frontmatter: {

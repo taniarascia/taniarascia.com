@@ -49,7 +49,7 @@ export const Post = ({ node, prefix, newspaper, query }) => {
         {newPost && <div className="button x-small">✨ New</div>}{' '}
         {getTitle(node.title, query)}
       </div>
-      <time>{formattedDate}</time>
+      {!newspaper && <time>{formattedDate}</time>}
     </Link>
   )
 }

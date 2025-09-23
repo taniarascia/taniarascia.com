@@ -4,6 +4,7 @@ import { navigate } from 'gatsby'
 import searchIcon from '../assets/nav-search.png'
 
 export const Searchbar = ({
+  count,
   query,
   handleSearch,
   setQuery,
@@ -33,7 +34,9 @@ export const Searchbar = ({
           id="search"
           type="search"
           className={`searchbar ${isLocal ? 'with-icon' : ''}`}
-          placeholder="Search posts..."
+          placeholder={
+            isLocal ? `Search ${count} posts...` : 'Search posts...'
+          }
           value={query}
           autoComplete="off"
           onChange={handleSearch}
