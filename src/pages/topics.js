@@ -34,7 +34,7 @@ export default function Topics({ data }) {
           return (
             <div key={key} className="alphabetical-tags">
               <h3>{key.toUpperCase()}</h3>
-              <div className="cards cards-tags">
+              <div className="cards four-columns">
                 {value.map((tag) => {
                   return (
                     <Link

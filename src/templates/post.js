@@ -1,7 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { Layout } from '../components/Layout'
@@ -10,10 +9,11 @@ import { PostLayout } from '../components/PostLayout'
 import { Comments } from '../components/Comments'
 import { Hero } from '../components/Hero'
 import config from '../utils/config'
+import { slugify } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, comments_off, thumbnail } = post.frontmatter
+  const { title, date, comments_off, thumbnail, tags } = post.frontmatter
 
   return (
     <>
@@ -28,7 +28,32 @@ export default function PostTemplate({ data }) {
             alt="Thumbnail"
           />
         )}
-        <Hero title={title} type="post" />
+        <Hero
+          title={title}
+          type="post"
+          date={
+            <div className="flex-align-center gap">
+              <span>{date}</span>
+              <div className="divider" />
+              <a href="#comments">Comments</a>
+            </div>
+          }
+        >
+          <div className="tags">
+            {tags.map((tag) => {
+              return (
+                <Link
+                  key={tag}
+                  to={`/topics/${slugify(tag)}`}
+                  className="button small"
+                  activeClassName="active"
+                >
+                  {tag}
+                </Link>
+              )
+            })}
+          </div>
+        </Hero>
 
         <div
           className="main-article"

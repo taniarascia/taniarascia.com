@@ -16,8 +16,6 @@ const images = [
   { url: '/illustrations/Squirtle.png', title: 'Squirtle' },
   { url: '/illustrations/Wartortle.png', title: 'Wartortle' },
   { url: '/illustrations/Blastoise.png', title: 'Blastoise' },
-  { url: '/illustrations/Oddish.png', title: 'Oddish' },
-  { url: '/illustrations/Bulbasaur.png', title: 'Bulbasaur' },
 ]
 
 export default function Illustration() {

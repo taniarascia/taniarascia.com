@@ -1,14 +1,15 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react'
-import { Link } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { useActiveHash } from '../utils/hooks/useActiveHash'
-import { slugify } from '../utils/helpers'
 
-export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
+export const PostSidebar = ({ toc }) => {
   const [tocLinks, setTocLinks] = useState([])
 
   useLayoutEffect(() => {
+    const margin = document.querySelector('.main-article').offsetTop
+    document
+      .querySelector('.post-sidebar')
+      .setAttribute('style', `padding-top: ${margin - 24}px`)
     const anchors = document.querySelectorAll('.table-of-contents a')
     const ids = ['introduction']
     anchors.forEach((a) => {
@@ -40,66 +41,24 @@ export const PostSidebar = ({ thumbnail, toc, tags = [], date }) => {
   return (
     <aside className="post-sidebar">
       <div className="post-sidebar-content">
-        {thumbnail && (
-          <div className="post-sidebar-thumbnail">
-            <GatsbyImage
-              image={thumbnail?.childImageSharp?.gatsbyImageData}
-              alt="Thumbnail"
-            />
-          </div>
-        )}
-
-        <section className="post-sidebar-section">
-          <h2>Published</h2>
-          <div className="post-sidebar-offset">
-            <p>{date}</p>
-            <p>
-              <a href="#comments">View Comments</a>
-            </p>
-          </div>
-        </section>
-
-        <section className="post-sidebar-section">
-          <h2 className="flex-align-center gap">
-            <div>Topics</div>
-            <Link to="/topics" className="chip" style={{ fontSize: '0.8rem' }}>
-              View all
-            </Link>
-          </h2>
-          <div className="post-sidebar-offset">
-            <div className="tags">
-              {tags.map((tag) => {
-                return (
-                  <Link
-                    key={tag}
-                    to={`/topics/${slugify(tag)}`}
-                    className="button small"
-                    activeClassName="active"
-                  >
-                    {tag}
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
         {toc && (
           <section className="post-sidebar-section">
-            <h2>Table of Contents</h2>
-            <nav className="table-of-contents">
-              <ul>
-                <li>
-                  <a
-                    href="#introduction"
-                    onClick={() => setActiveHash('introduction')}
-                  >
-                    Introduction
-                  </a>
-                </li>
-              </ul>
-              <div dangerouslySetInnerHTML={{ __html: toc }} />
-            </nav>
+            <div className="card post-sidebar-card">
+              <h2>Table of Contents</h2>
+              <nav className="table-of-contents">
+                <ul>
+                  <li>
+                    <a
+                      href="#introduction"
+                      onClick={() => setActiveHash('introduction')}
+                    >
+                      Introduction
+                    </a>
+                  </li>
+                </ul>
+                <div dangerouslySetInnerHTML={{ __html: toc }} />
+              </nav>
+            </div>
           </section>
         )}
       </div>

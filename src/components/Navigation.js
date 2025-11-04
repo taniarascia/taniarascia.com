@@ -13,27 +13,22 @@ import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
 import { Close } from '../assets/Close'
 import { Searchbar } from './Searchbar'
-import { IconCollapse } from '../assets/IconCollapse'
-import { IconExpand } from '../assets/IconExpand'
 import { ColorDropdown } from './ColorDropdown'
 
 const links = [
-  { url: '/notes', label: 'Notes', image: blog },
   { url: '/blog', label: 'Blog', image: projects },
+  { url: '/notes', label: 'Notes', image: blog },
   { url: '/projects', label: 'Projects', image: github },
-  { url: '/me', label: 'About', image: floppy },
+  { url: '/me', label: 'About Me', image: floppy },
 ]
 
-const socialLinks = [
-  { url: 'https://github.com/taniarascia' },
-  { url: 'https://bsky.app/profile/tania.dev' },
-]
+const socialLinks = [{ url: 'https://bsky.app/profile/tania.dev' }]
 
 export const Navigation = ({
   handleUpdateTheme,
   theme,
-  handleCollapse,
-  collapsed,
+  currentColor,
+  setCurrentColor,
 }) => {
   const location = useLocation()
   const currentPath = location.pathname
@@ -65,11 +60,6 @@ export const Navigation = ({
             </span>
             <span className="site-name">tania.dev</span>
           </Link>
-          <div className="navbar-collapse">
-            <button className="navbar-button icon" onClick={handleCollapse}>
-              {collapsed ? <IconExpand /> : <IconCollapse />}
-            </button>
-          </div>
         </div>
       </div>
       <div className="navbar-container">
@@ -118,7 +108,10 @@ export const Navigation = ({
             >
               {theme === 'dark' ? <Sun /> : <Moon />}
             </button>
-            <ColorDropdown />
+            <ColorDropdown
+              currentColor={currentColor}
+              setCurrentColor={setCurrentColor}
+            />
             {socialLinks.map((link) => (
               <SocialIcon
                 target="_blank"

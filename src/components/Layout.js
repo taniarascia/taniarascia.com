@@ -11,7 +11,7 @@ import '../styles/new-moon.css'
 
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
-  const [collapsed, setCollapsed] = useState(true)
+  const [currentColor, setCurrentColor] = useState('var(--theme-pink)')
 
   const handleUpdateTheme = (newTheme) => {
     const html = document.documentElement
@@ -31,21 +31,9 @@ export const Layout = ({ children }) => {
     setTheme(newTheme)
   }
 
-  const handleCollapse = () => {
-    if (collapsed) {
-      window.localStorage.setItem('sidebar-collapsed', 'false')
-      setCollapsed(false)
-    } else {
-      window.localStorage.setItem('sidebar-collapsed', 'true')
-      setCollapsed(true)
-    }
-  }
-
   useEffect(() => {
     const html = document.documentElement
     const savedTheme = window.localStorage.getItem('theme')
-    const savedSidebarCollapsed =
-      window.localStorage.getItem('sidebar-collapsed')
 
     if (savedTheme) {
       setTheme(savedTheme)
@@ -61,10 +49,6 @@ export const Layout = ({ children }) => {
         html.classList.remove('is-light')
       }
     }
-
-    if (savedSidebarCollapsed) {
-      setCollapsed(savedSidebarCollapsed === 'true' ? true : false)
-    }
   }, [])
 
   return (
@@ -73,14 +57,19 @@ export const Layout = ({ children }) => {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
 
-      <div id="layout" className={collapsed ? 'layout collapsed' : 'layout'}>
+      <div id="layout" className="layout">
         <Navigation
           handleUpdateTheme={handleUpdateTheme}
           theme={theme}
-          handleCollapse={handleCollapse}
-          collapsed={collapsed}
+          currentColor={currentColor}
+          setCurrentColor={setCurrentColor}
         />
-        <Sidebar collapsed={collapsed} />
+        <Sidebar
+          handleUpdateTheme={handleUpdateTheme}
+          theme={theme}
+          currentColor={currentColor}
+          setCurrentColor={setCurrentColor}
+        />
         <div className="main-wrapper" id="introduction">
           <div className="main-container">{children}</div>
           <Footer />

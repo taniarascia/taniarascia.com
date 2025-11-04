@@ -73,27 +73,21 @@ export default function Index({ data }) {
           </div>
         </Hero>
 
-        <div className="article-type-wrapper">
-          <section className="section-index">
-            <Heading
-              title="Notes"
-              slug="/notes"
-              buttonText="See All"
-              description="Life, music, projects, and everything else."
-            />
-            <Posts data={notes} newspaper />
-          </section>
+        <section className="section-index">
+          <Heading
+            title="Blog"
+            description="Guides, references, and tutorials."
+          />
+          <Posts data={articles} newspaper />
+        </section>
 
-          <section className="section-index">
-            <Heading
-              title="Blog"
-              slug="/blog"
-              buttonText="See All"
-              description="Guides, references, and tutorials."
-            />
-            <Posts data={articles} newspaper />
-          </section>
-        </div>
+        <section className="section-index">
+          <Heading
+            title="Notes"
+            description="Life, music, projects, and everything else."
+          />
+          <Posts data={notes} newspaper />
+        </section>
 
         <section className="section-index">
           <Heading

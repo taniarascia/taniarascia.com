@@ -5,6 +5,7 @@ export const Hero = ({
   highlight,
   subTitle,
   title,
+  date,
   description,
   children,
   type = 'page',
@@ -29,7 +30,8 @@ export const Hero = ({
           </div>
         </div>
       )}
-      {title && <h1>{title}</h1>}
+      {date && <div className="post-date">{date}</div>}
+      {title && <h1 className={date ? 'has-date' : ''}>{title}</h1>}
       {description && (
         <div
           className="hero-description"

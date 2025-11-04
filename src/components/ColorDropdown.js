@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-export const ColorDropdown = () => {
+export const ColorDropdown = ({ currentColor, setCurrentColor }) => {
   const dropdownRef = useRef()
   const [open, setOpen] = useState(false)
-  const [currentColor, setCurrentColor] = useState('var(--theme-pink)')
   const colors = [
     'var(--theme-pink)',
     'var(--theme-yellow)',

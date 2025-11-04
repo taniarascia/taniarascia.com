@@ -1,15 +1,15 @@
 :root {
-  --string: light-dark(#859900, #92d192);
+  --string: light-dark(#728400, #92d192);
   --variable: light-dark(#0e2a35, white);
   --property: light-dark(#697a82, #b3b9c5);
-  --number: light-dark(#cb4b16, #fca369);
-  --operator: light-dark(#a87200, #ac8d58);
+  --number: light-dark(#b54110, #fca369);
+  --operator: light-dark(#785200, #ac8d58);
   --punctuation: light-dark(#586e75, #c7cdd7);
   --comment: light-dark(#657b83, #777c85);
-  --function: light-dark(#2aa198, #76d4d6);
-  --keyword: light-dark(#d33682, #ffeea6);
-  --attribute: light-dark(#ae8b2d, #ffd479);
-  --class: light-dark(#d33682, #e1a6f2);
+  --function: light-dark(#1a9489, #76d4d6);
+  --keyword: light-dark(#c32c75, #ffeea6);
+  --attribute: light-dark(#916f14, #ffd479);
+  --class: light-dark(#c32c75, #e1a6f2);
   --tag: light-dark(#268bd2, #6ab0f3);
   --error: light-dark(#dc322f, #f2777a);
   --terminal-bar: light-dark(var(--gray-1), var(--gray-9));
@@ -19,10 +19,10 @@
     rgba(0, 0, 0, 0.05),
     rgba(255, 255, 255, 0.08)
   );
-  --color-background-code-block: light-dark(var(--beige-1), #262626);
+  --color-background-code-block: light-dark(var(--beige-1), var(--gray-8));
   --color-border-code-block: light-dark(var(--beige-3), var(--gray-6));
   --color-background-terminal: light-dark(white, var(--gray-11));
-  --color-background-filename: light-dark(var(--beige-2), var(--gray-9));
+  --color-background-filename: light-dark(var(--beige-2), var(--gray-7));
   --color-border-terminal: light-dark(var(--gray-1), var(--color-border));
 }
 
@@ -55,7 +55,6 @@ pre[class*='language-'] {
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: var(--color-background-code-block);
-  border: 1px solid var(--color-border-code-block);
   border-radius: var(--border-radius);
   overflow: initial;
   font-weight: 400;
@@ -76,7 +75,7 @@ pre[class*='language-'] {
   padding: 2px 4px;
   font-weight: 400;
   font-size: 0.9rem;
-  border-radius: var(--border-radius-button);
+  border-radius: var(--border-radius);
 }
 
 :not(pre) > a code[class*='language-'] {
@@ -202,30 +201,23 @@ pre.language-terminal::after {
   color: var(--color-text-emphasized);
   font-size: 14px;
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 1rem;
   margin-bottom: -1.5rem;
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  border: 1px solid var(--color-border-code-block);
   border-bottom: 1px solid var(--color-border);
   font-weight: 500;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;
   position: relative;
-}
-
-@media screen and (min-width: 800px) {
-  .filename {
-    padding: 0.75rem 1rem;
-  }
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 /* https://dylanatsmith.com/wrote/styling-the-kbd-element */
 kbd {
   background-color: var(--color-background-sidebar);
   color: var(--color-text);
-  border-radius: var(--border-radius-button);
+  border-radius: var(--border-radius);
   border: 1px solid var(--color-border);
   box-shadow: 0 2px 0 1px var(--color-border);
   font-family: var(--font-family);
