@@ -58,7 +58,9 @@ export default function PostTemplate({ data }) {
         <div
           className="main-article"
           id={post.fields.slug}
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{
+            __html: `<div class="introduction" id="introduction"></div>${post.html}`,
+          }}
         />
         {!comments_off && (
           <section id="comments" className="comments">

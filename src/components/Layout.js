@@ -70,7 +70,7 @@ export const Layout = ({ children }) => {
           currentColor={currentColor}
           setCurrentColor={setCurrentColor}
         />
-        <div className="main-wrapper" id="introduction">
+        <div className="main-wrapper">
           <div className="main-container">{children}</div>
           <Footer />
         </div>
