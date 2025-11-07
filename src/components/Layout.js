@@ -29,6 +29,9 @@ export const Layout = ({ children }) => {
     }
 
     setTheme(newTheme)
+    window.dispatchEvent(
+      new CustomEvent('themechange', { detail: { theme: newTheme } })
+    )
   }
 
   useEffect(() => {
