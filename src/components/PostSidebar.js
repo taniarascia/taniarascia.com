@@ -43,7 +43,7 @@ export const PostSidebar = ({ toc }) => {
       <div className="post-sidebar-content">
         {toc && (
           <section className="post-sidebar-section">
-            <div className="card post-sidebar-card">
+            <div className="post-sidebar-card">
               <h2>Table of Contents</h2>
               <nav className="table-of-contents">
                 <ul>
