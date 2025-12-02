@@ -32,7 +32,7 @@ export default function PostTemplate({ data }) {
           title={title}
           type="post"
           date={
-            <div className="flex-align-center gap">
+            <div className="small flex-align-center gap">
               <span>{date}</span>
               <div className="divider" />
               <a href="#comments">Comments</a>

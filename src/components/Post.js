@@ -3,11 +3,11 @@ import { Link } from 'gatsby'
 
 import { isNewPost, getFormattedDate } from '../utils/helpers'
 
-export const Post = ({ node, prefix, newspaper, query }) => {
+export const Post = ({ node, prefix, includeYear, query }) => {
   let formattedDate
 
   if (node.date) {
-    if (!newspaper) {
+    if (!includeYear) {
       formattedDate = getFormattedDate(node.date, 1)
     } else {
       formattedDate = getFormattedDate(node.date)
@@ -45,7 +45,7 @@ export const Post = ({ node, prefix, newspaper, query }) => {
       key={node.id}
       className="post"
     >
-      {!newspaper && <time>{formattedDate}</time>}
+      <time>{formattedDate}</time>
       <div>
         {newPost && <div className="button x-small">✨ New</div>}{' '}
         {getTitle(node.title, query)}

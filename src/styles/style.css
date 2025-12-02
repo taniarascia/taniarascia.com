@@ -23,11 +23,11 @@
   --beige-4: #c6ba93;
 
   --yellow: light-dark(#ffce64, #ffd479);
-  --theme-yellow: light-dark(#cb4b16, #ffd479);
-  --theme-green: light-dark(#248a82, #92d992);
-  --theme-pink: light-dark(#d33682, #fd8bc0);
-  --theme-lavender: light-dark(#6468b7, #cba6f7);
-  --theme-blue: light-dark(#316da8, #89b4fa);
+  --theme-yellow: light-dark(#a07926, #ffd479);
+  --theme-green: light-dark(#2d922d, #78d578);
+  --theme-pink: light-dark(#d33682, #fb81ba);
+  --theme-lavender: light-dark(#6468b7, #c393ff);
+  --theme-blue: light-dark(#2f71b4, #72a8ff);
 
   /* Colors */
   --color-primary: var(--theme-pink);
@@ -69,15 +69,15 @@
   --color-border-card: light-dark(var(--beige-3), var(--gray-7));
   --color-marker: light-dark(var(--gray-7), var(--gray-6));
 
-  --color-background-button: light-dark(transparent, var(--gray-8));
+  --color-background-button: light-dark(var(--color-primary), var(--gray-8));
   --color-background-button-hover: light-dark(
-    var(--color-primary),
+    transparent,
     rgba(255, 255, 255, 0.05)
   );
   --color-border-button: light-dark(var(--color-primary), var(--gray-7));
   --color-border-button-hover: var(--color-primary);
-  --color-text-button: light-dark(var(--color-primary), var(--gray-0));
-  --color-text-button-hover: light-dark(white, var(--color-primary));
+  --color-text-button: light-dark(white, var(--gray-0));
+  --color-text-button-hover: light-dark(var(--color-primary), var(--color-primary));
   --color-text-button-emphasized: light-dark(
     var(--gray-11),
     var(--color-primary)
@@ -1163,6 +1163,7 @@ a.post {
   flex-direction: column;
   padding: 6px 0;
   text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
 
   &:last-child {
     border-bottom: none;
@@ -1188,16 +1189,10 @@ a.post {
 }
 
 @media screen and (min-width: 1020px) {
-  .posts {
-    &.newspaper {
-      padding-left: 0;
-      border-left: 0;
-    }
-  }
-
   a.post {
-    flex-direction: row;
-    padding: 3px 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 4px 0;
 
     time {
       display: flex;
@@ -1207,11 +1202,7 @@ a.post {
     }
 
     &:hover {
-      > div {
-        background: var(--color-background-navbar-link-hover);
-        text-decoration-line: underline;
-        text-decoration-thickness: 2px;
-      }
+      background: var(--color-background-navbar-link-hover);
 
       time {
         text-decoration: none;
@@ -1519,6 +1510,8 @@ a.footer-link {
   color: var(--color-text-muted);
 
   &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
     color: var(--color-text-link-hover);
   }
 }

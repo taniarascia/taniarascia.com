@@ -19,7 +19,7 @@ export default function TopicTemplate({ data, pageContext }) {
 
   return (
     <>
-      <Helmet title={`Topic: ${tag} | ${config.siteTitle}`} />
+      <Helmet title={`${tag} | ${config.siteTitle}`} />
       <SEO />
 
       <PageLayout>

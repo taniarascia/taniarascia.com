@@ -47,7 +47,7 @@ export const Posts = ({
   }
 
   return (
-    <div className={props.newspaper ? 'posts newspaper' : 'posts'}>
+    <div className="posts">
       {data.map((node) => (
         <Post
           key={node.id}

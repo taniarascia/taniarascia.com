@@ -20,9 +20,10 @@ export const Hero = ({
       {subTitle && (
         <div className="sub-title">
           {breadcrumb && (
-            <div>
-              <Link to={breadcrumb.value}>{breadcrumb.label}</Link> /
-            </div>
+            <>
+              <Link to={breadcrumb.value}>{breadcrumb.label}</Link>{' '}
+              <span>/</span>
+            </>
           )}
           <div>
             {highlight && <span className="highlight">{highlight}</span>}

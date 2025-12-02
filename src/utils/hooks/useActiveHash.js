@@ -21,14 +21,18 @@ export const useActiveHash = (itemIds = []) => {
       elements.push(document.getElementById(id))
     })
 
-    elements.forEach((element) => {
-      observer.observe(element)
-    })
+    elements
+      .filter((element) => element)
+      .forEach((element) => {
+        observer.observe(element)
+      })
 
     return () => {
-      elements.forEach((element) => {
-        observer.unobserve(element)
-      })
+      elements
+        .filter((element) => element)
+        .forEach((element) => {
+          observer.unobserve(element)
+        })
     }
   }, [itemIds])
 
