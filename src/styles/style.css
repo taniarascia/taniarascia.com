@@ -77,7 +77,10 @@
   --color-border-button: light-dark(var(--color-primary), var(--gray-7));
   --color-border-button-hover: var(--color-primary);
   --color-text-button: light-dark(white, var(--gray-0));
-  --color-text-button-hover: light-dark(var(--color-primary), var(--color-primary));
+  --color-text-button-hover: light-dark(
+    var(--color-primary),
+    var(--color-primary)
+  );
   --color-text-button-emphasized: light-dark(
     var(--gray-11),
     var(--color-primary)
@@ -1476,13 +1479,13 @@ img {
 
 img.image-float {
   margin: 1.25rem 0;
-  max-width: 300px;
   height: auto;
 }
 
 @media screen and (min-width: 800px) {
   img.image-float {
     float: right;
+    max-width: 300px;
     margin: 0 0 1.5rem 1.5rem;
     max-width: 300px;
     height: auto;
@@ -1772,4 +1775,8 @@ a.footer-link {
 
 .introduction {
   scroll-margin-top: 40px;
+}
+
+.strike {
+  text-decoration: line-through;
 }
