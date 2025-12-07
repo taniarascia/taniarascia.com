@@ -32,9 +32,9 @@ export default function Topics({ data }) {
         />
         {Object.entries(groupTags).map(([key, value]) => {
           return (
-            <div key={key} className="alphabetical-tags">
+            <div key={key}>
               <h3>{key.toUpperCase()}</h3>
-              <div className="cards four-columns">
+              <div className="cards with-tags">
                 {value.map((tag) => {
                   return (
                     <Link

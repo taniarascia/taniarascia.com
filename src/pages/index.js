@@ -151,6 +151,14 @@ export default function Index({ data }) {
                       >
                         Demo
                       </a>
+                      <a
+                        className="button small"
+                        href={`https://github.com/taniarascia/${project.slug}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Source
+                      </a>
                     </div>
                   </div>
                 )

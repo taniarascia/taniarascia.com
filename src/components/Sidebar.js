@@ -4,9 +4,6 @@ import { Link } from 'gatsby'
 import { ColorDropdown } from './ColorDropdown'
 import floppyLogo from '../assets/nav-floppy.png'
 import floppy from '../assets/floppylogo.png'
-import bluesky from '../../content/thumbnails/bluesky.png'
-import rss from '../../content/thumbnails/rss.png'
-import newMoon from '../../content/images/new-moon.svg'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
@@ -48,16 +45,19 @@ export const Sidebar = ({
               currentColor={currentColor}
               setCurrentColor={setCurrentColor}
             />
-            <button
-              className="navbar-button"
-              onClick={() => {
-                const newTheme = theme === 'dark' ? 'light' : 'dark'
+            <div className="tooltip-container">
+              <button
+                className="navbar-button"
+                onClick={() => {
+                  const newTheme = theme === 'dark' ? 'light' : 'dark'
 
-                handleUpdateTheme(newTheme)
-              }}
-            >
-              {theme === 'dark' ? <Sun /> : <Moon />}
-            </button>
+                  handleUpdateTheme(newTheme)
+                }}
+              >
+                {theme === 'dark' ? <Sun /> : <Moon />}
+              </button>
+              <div className="tooltip">Theme</div>
+            </div>
           </div>
         </div>
       </section>
@@ -91,21 +91,16 @@ export const Sidebar = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={newMoon} alt="Email Newsletter" height="16" width="16" />
-            Email Newsletter
+            Email signup
           </a>
           <a
             href="https://go.bsky.app/SmEWb8G"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={bluesky} alt="Bluesky" height="16" width="16" />
-            Bluesky Starter Pack
+            Bluesky
           </a>
-          <a href="/rss.xml">
-            <img src={rss} alt="RSS" height="16" width="16" />
-            RSS Feed
-          </a>
+          <a href="/rss.xml">RSS feed</a>
         </p>
       </section>
     </aside>

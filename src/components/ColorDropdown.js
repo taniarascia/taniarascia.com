@@ -4,11 +4,11 @@ export const ColorDropdown = ({ currentColor, setCurrentColor }) => {
   const dropdownRef = useRef()
   const [open, setOpen] = useState(false)
   const colors = [
+    'var(--theme-lavender)',
     'var(--theme-pink)',
     'var(--theme-yellow)',
     'var(--theme-green)',
     'var(--theme-blue)',
-    'var(--theme-lavender)',
   ]
 
   const handleToggle = () => {
@@ -51,7 +51,7 @@ export const ColorDropdown = ({ currentColor, setCurrentColor }) => {
   }, [currentColor])
 
   return (
-    <div className="dropdown" ref={dropdownRef}>
+    <div className="dropdown tooltip-container" ref={dropdownRef}>
       <button
         onClick={handleToggle}
         className={`navbar-button ${open ? 'active' : ''}`}
@@ -75,6 +75,7 @@ export const ColorDropdown = ({ currentColor, setCurrentColor }) => {
           </div>
         </div>
       )}
+      {!open && <div className="tooltip">Color</div>}
     </div>
   )
 }

@@ -11,7 +11,7 @@ import '../styles/new-moon.css'
 
 export const Layout = ({ children }) => {
   const [theme, setTheme] = useState('dark')
-  const [currentColor, setCurrentColor] = useState('var(--theme-pink)')
+  const [currentColor, setCurrentColor] = useState('var(--theme-lavender)')
 
   const handleUpdateTheme = (newTheme) => {
     const html = document.documentElement
