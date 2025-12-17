@@ -45,7 +45,7 @@ export default function PostTemplate({ data }) {
                 <Link
                   key={tag}
                   to={`/topics/${slugify(tag)}`}
-                  className="button small"
+                  className="button secondary small"
                   activeClassName="active"
                 >
                   {tag}
