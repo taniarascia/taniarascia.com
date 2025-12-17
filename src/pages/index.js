@@ -139,12 +139,15 @@ export default function Index({ data }) {
                     <p>{project.tagline}</p>
                     <div className="card-links">
                       {project.writeup && (
-                        <Link className="button small" to={project.writeup}>
+                        <Link
+                          className="button secondary small"
+                          to={project.writeup}
+                        >
                           Article
                         </Link>
                       )}
                       <a
-                        className="button small"
+                        className="button secondary small"
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
@@ -152,7 +155,7 @@ export default function Index({ data }) {
                         Demo
                       </a>
                       <a
-                        className="button small"
+                        className="button secondary small"
                         href={`https://github.com/taniarascia/${project.slug}`}
                         target="_blank"
                         rel="noreferrer"

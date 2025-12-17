@@ -71,13 +71,13 @@ export default function Projects() {
                 <p>{project.tagline}</p>
                 <div className="card-links">
                   {project.writeup && (
-                    <Link className="button small" to={project.writeup}>
+                    <Link className="button secondary small" to={project.writeup}>
                       Article
                     </Link>
                   )}
                   {project.url && (
                     <a
-                      className="button small"
+                      className="button secondary small"
                       href={project.url}
                       target="_blank"
                       rel="noreferrer"
@@ -86,7 +86,7 @@ export default function Projects() {
                     </a>
                   )}
                   <a
-                    className="button small"
+                    className="button secondary small"
                     href={`https://github.com/taniarascia/${project.slug}`}
                     target="_blank"
                     rel="noreferrer"

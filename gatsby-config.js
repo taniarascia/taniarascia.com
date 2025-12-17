@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: "Tania's Website",
-    author: { name: 'Tania' },
+    title: "Tania Rascia's Website",
+    author: { name: 'Tania Rascia' },
     pathPrefix: '/',
-    siteUrl: 'https://tania.dev',
+    siteUrl: 'https://taniarascia.com',
     description:
       'Software engineer and open-source creator. This is my digital garden.',
-    feedUrl: 'https://tania.dev/rss.xml',
-    logo: 'https://tania.dev/logo.png',
+    feedUrl: 'https://taniarascia.com/rss.xml',
+    logo: 'https://taniarascia.com/logo.png',
   },
   plugins: [
     // ===================================================================================
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Tania's Website",
-        short_name: 'tania.dev',
+        name: "Tania Rascia's Website",
+        short_name: 'taniarascia.com',
         description:
           'Software engineer and open source creator. This is my digital garden.',
         start_url: '/',
@@ -85,7 +85,7 @@ module.exports = {
             }
             `,
             output: '/rss.xml',
-            title: 'tania.dev | RSS Feed',
+            title: 'Tania Rascia | RSS Feed',
           },
         ],
       },

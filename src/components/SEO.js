@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet'
 import config from '../utils/config'
 
 export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
-  let title
-  let description
+  let title = config.siteTitle
+  let description = customDescription || config.description
   let image = config.siteLogo
   let postURL
 
@@ -19,9 +19,6 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
     }
 
     postURL = `${config.siteUrl}${postPath}`
-  } else {
-    title = config.siteTitle
-    description = customDescription || config.description
   }
 
   image = `${config.siteUrl}${image}`

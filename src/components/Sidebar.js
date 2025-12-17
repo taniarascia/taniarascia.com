@@ -38,7 +38,7 @@ export const Sidebar = ({
                 width="16"
               />
             </span>
-            <span className="site-name">tania.dev</span>
+            <span className="site-name">Tania Rascia</span>
           </Link>
           <div className="flex-align-center">
             <ColorDropdown

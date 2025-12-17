@@ -1,6 +1,6 @@
 export const projectsList = [
   {
-    name: 'tania.dev',
+    name: 'taniarascia.com',
     date: '2022',
     slug: 'taniarascia.com',
     tagline: 'The source of this website',

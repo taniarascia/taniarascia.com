@@ -23,11 +23,11 @@
   --beige-4: #c6ba93;
 
   --yellow: light-dark(#ffce64, #ffd479);
-  --theme-yellow: light-dark(#a07926, #ffd479);
-  --theme-green: light-dark(#2d922d, #78d578);
-  --theme-pink: light-dark(#d33682, #fb81ba);
-  --theme-lavender: light-dark(#8762ec, #a080f9);
-  --theme-blue: light-dark(#2f71b4, #72a8ff);
+  --theme-yellow: light-dark(#a07926, #feda8b);
+  --theme-green: light-dark(#2d922d, #89e189);
+  --theme-pink: light-dark(#d33682, #fa8ec1);
+  --theme-lavender: light-dark(#6468b7, #a2a6fd);
+  --theme-blue: light-dark(#2f71b4, #81aff9);
 
   /* Colors */
   --color-primary: var(--theme-pink);
@@ -81,8 +81,20 @@
     var(--color-primary),
     var(--color-primary)
   );
-  --color-text-button-emphasized: light-dark(
-    var(--gray-11),
+
+  --color-background-button-secondary: light-dark(
+    var(--beige-2),
+    var(--gray-8)
+  );
+  --color-background-button-secondary-hover: light-dark(
+    transparent,
+    rgba(255, 255, 255, 0.05)
+  );
+  --color-border-button-secondary: light-dark(var(--beige-3), var(--gray-7));
+  --color-border-button-secondary-hover: var(--color-primary);
+  --color-text-button-secondary: light-dark(var(--color-text), var(--gray-0));
+  --color-text-button-secondary-hover: light-dark(
+    var(--color-primary),
     var(--color-primary)
   );
 
@@ -376,6 +388,18 @@ a.button,
     transform: scale(0.95);
   }
 
+  &.secondary {
+    background: var(--color-background-button-secondary);
+    border-color: var(--color-border-button-secondary);
+    color: var(--color-text-button-secondary);
+
+    &:hover {
+      background: var(--color-background-button-secondary-hover);
+      border-color: var(--color-border-button-secondary-hover);
+      color: var(--color-text-button-secondary-hover);
+    }
+  }
+
   &.icon {
     padding: 0.25rem;
   }
@@ -649,6 +673,7 @@ a.navbar-icon {
     color: var(--color-text-emphasized);
     font-size: 18px;
     font-weight: 600;
+    white-space: nowrap;
   }
 }
 
@@ -1701,6 +1726,8 @@ a.footer-link {
 }
 
 .site-name {
+  white-space: nowrap;
+
   &:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;

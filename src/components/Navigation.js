@@ -58,7 +58,7 @@ export const Navigation = ({
                 width="16"
               />
             </span>
-            <span className="site-name">tania.dev</span>
+            <span className="site-name">Tania Rascia</span>
           </Link>
         </div>
       </div>
