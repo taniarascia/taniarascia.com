@@ -170,6 +170,10 @@
   box-sizing: border-box;
 }
 
+html {
+
+}
+
 a {
   font-weight: 500;
   color: var(--color-text-link);
@@ -829,12 +833,12 @@ a.navbar-icon {
 /* Main */
 
 .layout {
-  margin-top: var(--navbar-height);
+  padding-top: var(--navbar-height);
 }
 
 @media screen and (min-width: 1020px) {
   .layout {
-    margin-top: 0;
+    padding-top: 0;
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
     max-width: calc(
@@ -1275,6 +1279,7 @@ a time.new-post {
 .main-article,
 .page-article {
   a {
+    border-radius: 4px;
     text-decoration: underline;
 
     &:hover {
