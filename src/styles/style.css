@@ -1221,8 +1221,8 @@ a.post {
 
 @media screen and (min-width: 1020px) {
   a.post {
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
     padding: 4px 0;
 
     time {
