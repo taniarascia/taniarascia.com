@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 export const Hero = ({
   highlight,
@@ -11,7 +12,10 @@ export const Hero = ({
   type = 'page',
   breadcrumb,
   hasSearch,
+  icon,
+  thumbnail,
 }) => {
+  console.log('===', thumbnail)
   return (
     <header
       className={`hero hero-${type}`}
@@ -32,7 +36,18 @@ export const Hero = ({
         </div>
       )}
       {date && <div className="post-date">{date}</div>}
-      {title && <h1 className={date ? 'has-date' : ''}>{title}</h1>}
+      {title && (
+        <h1 className={date ? 'has-date' : 'flex-align-center large-gap'}>
+          {icon && <img src={icon} alt="Icon" />}
+          {thumbnail && (
+            <GatsbyImage
+              image={thumbnail?.childImageSharp?.gatsbyImageData}
+              alt="Thumbnail"
+            />
+          )}
+          {title}
+        </h1>
+      )}
       {description && (
         <div
           className="hero-description"

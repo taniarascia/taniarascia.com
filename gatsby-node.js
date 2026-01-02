@@ -95,6 +95,7 @@ const createPages = async ({ graphql, actions }) => {
       component: pagePage,
       context: {
         slug: page.node.fields.slug,
+        thumbnail: page.node.frontmatter.thumbnail,
       },
     })
   })

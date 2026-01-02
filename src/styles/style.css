@@ -25,8 +25,8 @@
   --yellow: light-dark(#ffce64, #ffd479);
   --theme-yellow: light-dark(#a07926, #feda8b);
   --theme-green: light-dark(#2d922d, #89e189);
-  --theme-pink: light-dark(#d33682, #fa8ec1);
-  --theme-lavender: light-dark(#6468b7, #a2a6fd);
+  --theme-pink: light-dark(#d33682, #ff8ac1);
+  --theme-lavender: light-dark(#6468b7, #b29df9);
   --theme-blue: light-dark(#2f71b4, #81aff9);
 
   /* Colors */
@@ -171,7 +171,6 @@
 }
 
 html {
-
 }
 
 a {
@@ -1627,6 +1626,10 @@ a.footer-link {
 
 .gap {
   gap: 0.75rem;
+}
+
+.large-gap {
+  gap: 1rem;
 }
 
 .main-article {

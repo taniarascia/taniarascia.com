@@ -8,6 +8,7 @@ import { Search } from '../components/Search'
 import { SEO } from '../components/SEO'
 import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
+import projects from '../assets/nav-projects.png'
 import config from '../utils/config'
 
 export default function Blog({ data }) {
@@ -29,7 +30,7 @@ export default function Blog({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
       <PageLayout>
-        <Hero title={title} description={description} hasSearch />
+        <Hero title={title} description={description} hasSearch icon={projects} />
 
         <Search data={simplifiedPosts} section="blog" />
       </PageLayout>

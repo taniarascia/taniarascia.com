@@ -24,7 +24,7 @@ export default function Notes({ data }) {
       <SEO customDescription={description} />
 
       <PageLayout>
-        <Hero title={title} description={description} hasSearch image={blog} />
+        <Hero title={title} description={description} hasSearch icon={blog} />
         <Search data={simplifiedPosts} section="notes" />
       </PageLayout>
     </>
