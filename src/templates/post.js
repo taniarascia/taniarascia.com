@@ -14,13 +14,14 @@ import { slugify } from '../utils/helpers'
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
   const { title, date, comments_off, thumbnail, tags } = post.frontmatter
+  const isNote = post.frontmatter.categories?.includes('Personal')
 
   return (
     <>
       <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
       <SEO postPath={post.fields.slug} postNode={post} postSEO />
 
-      <PostLayout post={post}>
+      <PostLayout post={post} isNote={isNote}>
         {thumbnail && (
           <GatsbyImage
             image={thumbnail?.childImageSharp?.gatsbyImageData}

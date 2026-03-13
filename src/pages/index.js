@@ -15,6 +15,9 @@ import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import newMoon from '../../content/images/new-moon.svg'
 import floppy from '../../content/images/floppylogo.png'
+import blog from '../assets/nav-blog.png'
+import projects from '../assets/nav-projects.png'
+import github from '../assets/nav-github.png'
 
 export default function Index({ data }) {
   const latestNotes = data.latestNotes.edges
@@ -77,6 +80,7 @@ export default function Index({ data }) {
           <Heading
             title="Blog"
             description="Guides, references, and tutorials."
+            icon={projects}
           />
           <Posts data={articles} />
         </section>
@@ -85,6 +89,7 @@ export default function Index({ data }) {
           <Heading
             title="Notes"
             description="Life, music, projects, and everything else."
+            icon={blog}
           />
           <Posts data={notes} />
         </section>
@@ -120,6 +125,7 @@ export default function Index({ data }) {
             slug="/projects"
             buttonText="All Projects"
             description="Open-source projects I've worked on over the years."
+            icon={github}
           />
 
           <div className="cards">

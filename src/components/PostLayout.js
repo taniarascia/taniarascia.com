@@ -2,13 +2,13 @@ import React from 'react'
 
 import { PostSidebar } from './PostSidebar'
 
-export const PostLayout = ({ post, children }) => {
+export const PostLayout = ({ post, isNote, children }) => {
   const toc = post.tableOfContents
 
   return (
     <>
       <main className="main-content">{children}</main>
-      {toc && <PostSidebar toc={toc} />}
+      {toc && !isNote && <PostSidebar toc={toc} />}
     </>
   )
 }

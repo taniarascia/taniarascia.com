@@ -15,7 +15,6 @@ export const Hero = ({
   icon,
   thumbnail,
 }) => {
-  console.log('===', thumbnail)
   return (
     <header
       className={`hero hero-${type}`}

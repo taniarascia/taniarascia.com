@@ -9,9 +9,11 @@ import { Sidebar } from './Sidebar'
 import '../styles/style.css'
 import '../styles/new-moon.css'
 
-export const Layout = ({ children }) => {
+export const Layout = ({ data, children }) => {
   const [theme, setTheme] = useState('dark')
-  const [currentColor, setCurrentColor] = useState('var(--theme-lavender)')
+  const [currentColor, setCurrentColor] = useState('var(--theme-blue)')
+  const isNote =
+    data?.markdownRemark?.frontmatter?.categories?.includes('Personal')
 
   const handleUpdateTheme = (newTheme) => {
     const html = document.documentElement
@@ -74,7 +76,9 @@ export const Layout = ({ children }) => {
           setCurrentColor={setCurrentColor}
         />
         <div className="main-wrapper">
-          <div className="main-container">{children}</div>
+          <div className={`main-container ${isNote ? 'is-note' : ''}`}>
+            {children}
+          </div>
           <Footer />
         </div>
       </div>

@@ -30,7 +30,7 @@ export const Posts = ({
 
       return (
         <section className="year" key={year}>
-          <h2 className="flex gap">
+          <h2 className="flex-align-center gap">
             <div>{year}</div>
             <div className="chip">
               {postCountByYear} {postCountByYear === 1 ? 'post' : 'posts'}
