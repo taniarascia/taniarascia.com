@@ -11,7 +11,7 @@ import '../styles/new-moon.css'
 
 export const Layout = ({ data, children }) => {
   const [theme, setTheme] = useState('dark')
-  const [currentColor, setCurrentColor] = useState('var(--theme-blue)')
+  const [currentColor, setCurrentColor] = useState('var(--theme-pink)')
   const isNote =
     data?.markdownRemark?.frontmatter?.categories?.includes('Personal')
 

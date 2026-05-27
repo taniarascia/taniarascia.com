@@ -25,8 +25,8 @@
   --yellow: light-dark(#ffce64, #ffd479);
   --theme-yellow: light-dark(#ac7c14, #fcdc97);
   --theme-green: light-dark(#2d922d, #92d192);
-  --theme-pink: light-dark(#d33682, #ff8ac0);
-  --theme-lavender: light-dark(#a455be, #d48ceb);
+  --theme-pink: light-dark(#b12d6c, #fa91c2);
+  --theme-lavender: light-dark(#a455be, #c892e7);
   --theme-blue: light-dark(#2f71b4, #6ab0f3);
 
   /* Colors */
@@ -75,7 +75,7 @@
     var(--color-primary),
     rgba(255, 255, 255, 0.05)
   );
-  --color-border-button: light-dark(var(--beige-3), var(--gray-7));
+  --color-border-button: light-dark(var(--color-primary), var(--gray-7));
   --color-border-button-hover: var(--color-primary);
   --color-text-button: light-dark(var(--color-primary), var(--gray-0));
   --color-text-button-hover: light-dark(white, var(--color-primary));
@@ -102,6 +102,7 @@
     'Outfit', -apple-system, BlinkMacSystemFont, 'DM Sans', Avenir, Helvetica,
     Arial, sans-serif;
   --font-family-monospace: Menlo, 'Google Sans Code', monospace;
+  --font-family-monospace2: 'Google Sans Code', monospace;
 
   --border-radius: 6px;
   --box-shadow-card-dark:
@@ -363,6 +364,38 @@ th {
 
 table tr:nth-child(even) {
   background: var(--color-background-alternate);
+}
+
+.large-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.large-link,
+a.large-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-text-link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-text);
+  text-underline-offset: 6px;
+
+  &:hover {
+    text-decoration-style: dotted !important;
+    text-decoration-color: var(--color-text-emphasized) !important;
+  }
+
+  img {
+    min-height: 20px;
+    min-width: 20px;
+    max-height: 20px;
+    margin-right: 0.25rem;
+  }
 }
 
 /* Buttons */
@@ -812,9 +845,19 @@ a.navbar-icon {
 }
 
 .sidebar-content {
-  a:hover {
-    text-decoration-line: underline;
+  a {
+    border-radius: 4px;
+    text-decoration: underline;
     text-decoration-thickness: 2px;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-text);
+    text-underline-offset: 4px;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration-color: var(--color-text-emphasized);
+      background: var(--color-background-navbar-link-active);
+    }
   }
 
   p {
@@ -1126,7 +1169,7 @@ a.navbar-icon {
     gap: 1rem;
     margin-top: 0;
     margin-bottom: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 
     .small {
       margin-top: 0.25rem;
@@ -1135,7 +1178,7 @@ a.navbar-icon {
 
   .description {
     color: var(--color-text-heading-muted);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1149,9 +1192,18 @@ a.navbar-icon {
   font-size: 1.1rem;
   max-width: 600px;
 
-  a:hover {
+  a {
     text-decoration: underline;
     text-decoration-thickness: 2px;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-text);
+    text-underline-offset: 4px;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration-color: var(--color-text-emphasized);
+      background: var(--color-background-navbar-link-active);
+    }
   }
 }
 
@@ -1173,6 +1225,10 @@ a.navbar-icon {
   flex-direction: column-reverse;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+time {
+  font-family: var(--font-family-monospace2);
 }
 
 @media screen and (min-width: 800px) {
@@ -1232,11 +1288,9 @@ a.post {
   flex-direction: column;
   padding: 6px 0;
   text-decoration: none;
-  border-bottom: 1px solid var(--color-border);
-
-  &:last-child {
-    border-bottom: none;
-  }
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  border-radius: var(--border-radius);
 
   > div {
     display: flex;
@@ -1244,6 +1298,16 @@ a.post {
     gap: 0.5rem;
     font-weight: 600;
     margin: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-text);
+    text-underline-offset: 6px;
+  }
+
+  &:hover div {
+    text-decoration-style: dotted !important;
+    text-decoration-color: var(--color-text-emphasized) !important;
   }
 
   time {
@@ -1251,7 +1315,6 @@ a.post {
     width: 125px;
     min-width: 125px;
     color: var(--color-text-muted);
-    font-family: var(--font-family);
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
@@ -1260,7 +1323,6 @@ a.post {
 
 @media screen and (min-width: 1020px) {
   a.post {
-    flex-direction: row;
     justify-content: flex-start;
     padding: 4px 0;
     font-size: 1.1rem;
@@ -1318,9 +1380,14 @@ a time.new-post {
   a {
     border-radius: 4px;
     text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-text);
+    text-underline-offset: 4px;
     font-weight: 600;
 
     &:hover {
+      text-decoration-color: var(--color-text-emphasized);
       background: var(--color-background-navbar-link-active);
     }
   }
@@ -1785,6 +1852,9 @@ a.footer-link {
   &:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--color-text-emphasized);
+    text-decoration-style: dotted;
   }
 }
 
@@ -1796,6 +1866,7 @@ a.footer-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.2rem;
   padding: 3px 6px;
   border-radius: var(--border-radius);
   color: var(--color-text-muted);
@@ -1805,6 +1876,10 @@ a.footer-link {
   white-space: nowrap;
   border-radius: 16px;
   border: 1px solid var(--color-border);
+}
+
+.chip-highlight {
+  color: var(--color-text-emphasized);
 }
 
 @media screen and (min-width: 1360px) {

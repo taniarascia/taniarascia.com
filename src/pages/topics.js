@@ -45,7 +45,7 @@ export default function Topics({ data }) {
                     >
                       <span>{tag.name}</span>
                       <span className="chip">
-                        {tag.totalCount}{' '}
+                        <span className="chip-highlight">{tag.totalCount}</span>
                         {tag.totalCount === 1 ? ' post' : ' posts'}
                       </span>
                     </Link>

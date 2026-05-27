@@ -79,7 +79,7 @@ pre[class*='language-'] {
 }
 
 :not(pre) > a code[class*='language-'] {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-link);
 }
 

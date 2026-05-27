@@ -13,8 +13,6 @@ import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
-import newMoon from '../../content/images/new-moon.svg'
-import floppy from '../../content/images/floppylogo.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
@@ -52,21 +50,17 @@ export default function Index({ data }) {
               <p className="hero-description">
                 Everything on this site is written by me, not AI.
               </p>
-              <p
-                className="flex-wrap flex-align-center gap"
-                style={{ marginBottom: 0 }}
-              >
-                <Link className="button" to="/me">
-                  <img src={floppy} alt="Floppy Logo" /> About Me
+              <p className="large-links">
+                <Link className="large-link" to="/me">
+                  About Me
                 </Link>
                 <a
                   href="https://taniarascia.substack.com"
-                  className="button"
-                  type="button"
+                  className="large-link"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <img src={newMoon} alt="New Moon Logo" /> Email Newsletter
+                  Email Newsletter
                 </a>
               </p>
             </div>

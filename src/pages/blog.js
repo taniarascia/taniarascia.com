@@ -21,7 +21,9 @@ export default function Blog({ data }) {
       {
         'Guides, references, and tutorials on programming, web development, and design. '
       }
-      <Link to="/topics">View all topics.</Link>
+      <br />
+      <br />
+      <Link to="/topics">All topics</Link>
     </div>
   )
 
@@ -30,7 +32,12 @@ export default function Blog({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
       <PageLayout>
-        <Hero title={title} description={description} hasSearch icon={projects} />
+        <Hero
+          title={title}
+          description={description}
+          hasSearch
+          icon={projects}
+        />
 
         <Search data={simplifiedPosts} section="blog" />
       </PageLayout>

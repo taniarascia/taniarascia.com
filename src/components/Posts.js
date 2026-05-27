@@ -33,7 +33,8 @@ export const Posts = ({
           <h2 className="flex-align-center gap">
             <div>{year}</div>
             <div className="chip">
-              {postCountByYear} {postCountByYear === 1 ? 'post' : 'posts'}
+              <span className="chip-highlight">{postCountByYear}</span>
+              {postCountByYear === 1 ? 'post' : 'posts'}
             </div>
           </h2>
           <div className="posts">
