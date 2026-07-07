@@ -1286,7 +1286,6 @@ time {
 a.post {
   display: flex;
   flex-direction: column;
-  padding: 6px 0;
   text-decoration: none;
   width: fit-content;
   margin-bottom: 0.5rem;
@@ -1298,11 +1297,6 @@ a.post {
     gap: 0.5rem;
     font-weight: 600;
     margin: 0;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-style: dotted;
-    text-decoration-color: var(--color-text);
-    text-underline-offset: 6px;
   }
 
   &:hover div {
