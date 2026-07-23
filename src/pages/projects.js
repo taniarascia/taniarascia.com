@@ -19,16 +19,20 @@ export default function Projects() {
 
   useEffect(() => {
     async function getStars() {
-      const repos = await fetch(
+      const res = await fetch(
         'https://api.github.com/users/taniarascia/repos?per_page=100'
       )
 
-      return repos.json()
+      if (!res.ok) {
+        throw new Error(`GitHub API error: ${res.status}`)
+      }
+
+      return res.json()
     }
 
     getStars()
       .then((data) => {
-        setRepos(data)
+        setRepos(Array.isArray(data) ? data : [])
       })
       .catch((err) => console.error(err))
   }, [])
