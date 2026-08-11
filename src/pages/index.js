@@ -153,7 +153,7 @@ export default function Index({ data }) {
         ))}
 
         <section className="section-index">
-          <Heading title="Recently" slug="/blog" buttonText="All Posts" />
+          <Heading title="Latest" slug="/blog" buttonText="All Posts" />
           <Posts data={recent} />
         </section>
 
