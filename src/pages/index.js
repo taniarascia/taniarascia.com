@@ -16,6 +16,8 @@ import config from '../utils/config'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
+import { Mail } from '../assets/Mail'
+import { User } from '../assets/User'
 
 export default function Index({ data }) {
   const latestNotes = data.latestNotes.edges
@@ -50,19 +52,21 @@ export default function Index({ data }) {
               <p className="hero-description">
                 Everything on this site is written by me, not AI.
               </p>
-              <p className="large-links">
-                <Link className="large-link" to="/me">
+              <div className="hero-buttons">
+                <Link className="button" to="/me">
+                  <User size={18} />
                   About Me
                 </Link>
                 <a
                   href="https://taniarascia.substack.com"
-                  className="large-link"
+                  className="button secondary"
                   rel="noreferrer"
                   target="_blank"
                 >
+                  <Mail size={18} />
                   Email Newsletter
                 </a>
-              </p>
+              </div>
             </div>
             <div className="hero-image-container">
               <img src="/ram.png" className="hero-image" alt="RAM Ram" />

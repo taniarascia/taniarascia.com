@@ -21,9 +21,7 @@ export default function Blog({ data }) {
       {
         'Guides, references, and tutorials on programming, web development, and design. '
       }
-      <br />
-      <br />
-      <Link to="/topics">All topics</Link>
+      <Link to="/topics">View all topics</Link>.
     </div>
   )
 

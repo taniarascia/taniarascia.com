@@ -3,12 +3,20 @@ import React from 'react'
 import netlify from '../../content/thumbnails/netlify.png'
 import gatsby from '../assets/gatsby.png'
 import github from '../assets/nav-github.png'
+import { Mail } from '../assets/Mail'
+import { Rss } from '../assets/Rss'
+import { Bluesky } from '../assets/Bluesky'
+import { Coffee } from '../assets/Coffee'
 
 const links = [
-  { url: 'https://taniarascia.substack.com', label: 'Email signup' },
-  { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS feed' },
-  { url: 'https://bsky.app/profile/tania.dev', label: 'Bluesky' },
-  { url: 'https://ko-fi.com/taniarascia', label: 'Buy me a coffee' },
+  { url: 'https://taniarascia.substack.com', label: 'Email signup', Icon: Mail },
+  { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS feed', Icon: Rss },
+  { url: 'https://bsky.app/profile/tania.dev', label: 'Bluesky', Icon: Bluesky },
+  {
+    url: 'https://ko-fi.com/taniarascia',
+    label: 'Buy me a coffee',
+    Icon: Coffee,
+  },
 ]
 const madeWithLinks = [
   { url: 'https://www.gatsbyjs.org', label: 'Gatsby', icon: gatsby },
@@ -29,6 +37,7 @@ export const Footer = () => {
               key={link.url}
               className="footer-link"
             >
+              <link.Icon size={15} />
               {link.label}
             </a>
           ))}

@@ -9,6 +9,9 @@ import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
+import { Mail } from '../assets/Mail'
+import { Bluesky } from '../assets/Bluesky'
+import { Rss } from '../assets/Rss'
 
 export const Sidebar = ({
   theme,
@@ -91,6 +94,7 @@ export const Sidebar = ({
             target="_blank"
             rel="noopener noreferrer"
           >
+            <Mail size={16} />
             Email signup
           </a>
           <a
@@ -98,9 +102,13 @@ export const Sidebar = ({
             target="_blank"
             rel="noopener noreferrer"
           >
+            <Bluesky size={16} />
             Bluesky
           </a>
-          <a href="/rss.xml">RSS feed</a>
+          <a href="/rss.xml">
+            <Rss size={16} />
+            RSS feed
+          </a>
         </p>
       </section>
     </aside>
