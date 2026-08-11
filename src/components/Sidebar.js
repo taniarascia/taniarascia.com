@@ -7,12 +7,13 @@ import floppy from '../assets/floppylogo.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
-import apple from '../../content/thumbnails/apple.png'
+import { useSidebarImages } from '../utils/hooks/useSidebarImages'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Mail } from '../assets/Mail'
 import { Bluesky } from '../assets/Bluesky'
 import { Rss } from '../assets/Rss'
+import { GitHub } from '../assets/GitHub'
 
 export const Sidebar = ({
   theme,
@@ -20,11 +21,32 @@ export const Sidebar = ({
   currentColor,
   setCurrentColor,
 }) => {
+  const { apple, newMoon } = useSidebarImages()
   const links = [
     { url: '/blog', label: 'Blog', image: projects },
     { url: '/notes', label: 'Notes', image: blog },
     { url: '/projects', label: 'Projects', image: github },
     { url: '/me', label: 'About Me', image: floppy },
+  ]
+  const socialLinks = [
+    {
+      url: 'https://taniarascia.substack.com',
+      label: 'Email signup',
+      Icon: Mail,
+    },
+    {
+      url: 'https://github.com/taniarascia',
+      label: 'GitHub',
+      Icon: GitHub,
+      color: 'light-dark(#08872B, #5FED83)',
+    },
+    {
+      url: 'https://go.bsky.app/SmEWb8G',
+      label: 'Bluesky',
+      Icon: Bluesky,
+      color: '#0085ff',
+    },
+    { url: '/rss.xml', label: 'RSS feed', Icon: Rss, color: '#f26522' },
   ]
 
   return (
@@ -89,42 +111,77 @@ export const Sidebar = ({
 
       <section className="sidebar-section">
         <h2>Stay Connected</h2>
-        <p className="sidebar-links">
-          <a
-            href="https://taniarascia.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Mail size={16} />
-            Email signup
-          </a>
-          <a
-            href="https://go.bsky.app/SmEWb8G"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Bluesky size={16} />
-            Bluesky
-          </a>
-          <a href="/rss.xml">
-            <Rss size={16} />
-            RSS feed
-          </a>
-        </p>
+        <nav className="sidebar-links">
+          {socialLinks.map(({ url, label, Icon, color }) =>
+            url.startsWith('http') ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={url}
+                style={color ? { '--icon-color': color } : undefined}
+              >
+                <Icon size={16} />
+                {label}
+              </a>
+            ) : (
+              <a
+                href={url}
+                key={url}
+                style={color ? { '--icon-color': color } : undefined}
+              >
+                <Icon size={16} />
+                {label}
+              </a>
+            )
+          )}
+        </nav>
       </section>
 
-      <section className="sidebar-section">
+      <section className="sidebar-section sidebar-card">
         <h2 className="flex-align-center gap">
-          <img src={apple} alt="" width="20" height="20" />
+          {newMoon?.publicURL && (
+            <img src={newMoon.publicURL} alt="" width="20" height="20" />
+          )}
+          New Moon Theme
+        </h2>
+        <div className="sidebar-content">
+          <p>
+            I use and maintain{' '}
+            <a
+              href="https://taniarascia.github.io/new-moon/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              New Moon
+            </a>
+            , a dark theme for{' '}
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=taniarascia.new-moon-vscode"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visual Studio Code
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+
+      <section className="sidebar-section sidebar-card">
+        <h2 className="flex-align-center gap">
+          {apple?.publicURL && (
+            <img src={apple.publicURL} alt="" width="20" height="20" />
+          )}
           Setting Up a Mac?
         </h2>
         <div className="sidebar-content">
           <p>
-            I keep a guide on{' '}
+            Read my guide to{' '}
             <Link to="/setting-up-a-brand-new-mac-for-development">
-              setting up a new Mac for development
-            </Link>
-            .
+              setting up a new Mac
+            </Link>{' '}
+            for dev.
           </p>
         </div>
       </section>

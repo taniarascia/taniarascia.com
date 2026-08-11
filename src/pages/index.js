@@ -14,11 +14,21 @@ import { shelvesList } from '../data/shelvesList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
+import floppy from '../assets/floppylogo.png'
 
 export default function Index({ data }) {
   const latestPosts = data.latestPosts.edges
   const postCount = data.postCount.totalCount
   const recent = useMemo(() => getSimplifiedPosts(latestPosts), [latestPosts])
+  const shelfPostsBySlug = useMemo(() => {
+    const map = {}
+
+    data.shelfPosts.nodes.forEach(({ frontmatter }) => {
+      map[frontmatter.slug] = frontmatter
+    })
+
+    return map
+  }, [data.shelfPosts])
 
   return (
     <>
@@ -29,50 +39,67 @@ export default function Index({ data }) {
         <Hero type="index">
           <div className="hero-wrapper">
             <div>
-              <h1>Hey, I'm Tania!</h1>
-              <p className="hero-description">
-                I made my first websites in the late '90s on the public
-                library's dial-up internet - fan pages about
-                Digimon, gaming, and obscure '80s bands.
+              <h1 className="flex-align-center gap">
+                Hey, I'm Tania!
+                <img src={floppy} alt="" width="40" height="40" />
+              </h1>
+              <p className="hero-description hero-tagline">
+                Principal software engineer, writer, all-around nerd.
               </p>
+              <ul className="hero-eras">
+                <li>
+                  <span className="era-dates">1998&ndash;2006</span>
+                  <span>
+                    Built my first websites on the early internet at the public
+                    library, made Digimon fansites, and documented obscure '80s
+                    bands.
+                  </span>
+                </li>
+                <li>
+                  <span className="era-dates">2007&ndash;2014</span>
+                  <span>
+                    <Link to="/from-cooking-to-coding">Professional chef</Link>:
+                    Culinary degree, 60-hour weeks in Chicago kitchens, line
+                    cook to chef-manager by 22.
+                  </span>
+                </li>
+                <li>
+                  <span className="era-dates">2014&ndash;2020</span>
+                  <span>
+                    <Link to="/how-i-made-a-career-change-into-web-development">
+                      Career change
+                    </Link>
+                    : Unpaid intern by day, cook by night, then junior dev to
+                    senior engineer who{' '}
+                    <Link to="/everything-i-know-as-a-software-developer-without-a-degree">
+                      wrote everything down
+                    </Link>{' '}
+                    along the way.
+                  </span>
+                </li>
+                <li>
+                  <span className="era-dates">2021&ndash;now</span>
+                  <span>
+                    <Link to="/resume">Principal software engineer</Link>:
+                    Building design systems, setting technical direction,
+                    shipping features, and still documenting:{' '}
+                    <Link to="/blog">{postCount} posts</Link>,{' '}
+                    <Link to="/me#publications">40+ publications</Link>, and{' '}
+                    <a
+                      href="https://github.com/taniarascia"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      20,000+ stars on GitHub
+                    </a>
+                    .
+                  </span>
+                </li>
+              </ul>
               <p className="hero-description">
-                Somehow, I ended up taking a{' '}
-                <Link to="/from-cooking-to-coding">decade-long detour</Link>{' '}
-                getting a culinary degree (including three months at Olive
-                Garden school in Italy) and being a professional chef (including
-                a stint at Namco's Pac-Man restaurant).
-              </p>
-              <p className="hero-description">
-                Eventually I found my way back,{' '}
-                <Link to="/how-i-made-a-career-change-into-web-development">
-                  starting over as an unpaid intern
-                </Link>{' '}
-                making WordPress sites, working my way through the industry
-                (including being a Taco Bell dev) and becoming the Principal
-                Software Engineer I am today.
-              </p>
-              <p className="hero-description">
-                Meanwhile, I've documented{' '}
-                <Link to="/everything-i-know-as-a-software-developer-without-a-degree">
-                  everything I learned
-                </Link>{' '}
-                since I started in 2015, in {postCount} posts,{' '}
-                <Link to="/me#publications">
-                  40+ articles written for other publications
-                </Link>
-                , dozens of open-source projects with{' '}
-                <a
-                  href="https://github.com/taniarascia"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  20,000+ stars on GitHub
-                </a>
-                , and some art, songs, and personal thoughts scattered around.
-              </p>
-              <p className="hero-description">
-                As ever, this site has no ads, no paywalls, no tracking, and no
-                sponsors.
+                <Link to="/me">Also me</Link>: city explorer, weight-lifter,
+                brick-clicker, accordion enthusiast, Magic gatherer, webmaster,
+                DINK.
               </p>
             </div>
             <div className="hero-image-container">
@@ -94,36 +121,41 @@ export default function Index({ data }) {
               buttonText={shelf.buttonText}
             />
             <div className="posts shelf">
-              {shelf.links.map((link) =>
-                link.url ? (
-                  <a
-                    className="post"
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={link.title}
-                  >
+              {shelf.links.map((link) => {
+                if (link.url) {
+                  return (
+                    <a
+                      className="post"
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={link.title}
+                    >
+                      <div>{link.title}</div>
+                    </a>
+                  )
+                }
+
+                const post = shelfPostsBySlug[link.slug.replace(/^\//, '')]
+                const icon = post?.thumbnail?.publicURL
+
+                return (
+                  <Link className="post" to={link.slug} key={link.slug}>
                     <div>
-                      {link.icon && <img src={link.icon} alt="" />}
-                      {link.title}
-                    </div>
-                  </a>
-                ) : (
-                  <Link className="post" to={link.slug} key={link.title}>
-                    <div>
-                      {link.icon && <img src={link.icon} alt="" />}
-                      {link.title}
+                      {icon && <img src={icon} alt="" width="25" height="25" />}
+                      {link.title ?? post?.title}
                     </div>
                   </Link>
                 )
-              )}
+              })}
             </div>
           </section>
         ))}
 
         <section className="section-index">
           <Heading title="Recently" slug="/blog" buttonText="All Posts" />
-          <Posts data={recent} /></section>
+          <Posts data={recent} />
+        </section>
 
         <section>
           <Heading
@@ -215,6 +247,19 @@ export const pageQuery = graphql`
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       totalCount
+    }
+    shelfPosts: allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "post" } } }
+    ) {
+      nodes {
+        frontmatter {
+          slug
+          title
+          thumbnail {
+            publicURL
+          }
+        }
+      }
     }
   }
 `

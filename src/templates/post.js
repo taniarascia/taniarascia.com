@@ -7,6 +7,7 @@ import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 import { PostLayout } from '../components/PostLayout'
 import { Comments } from '../components/Comments'
+import { AuthorCard } from '../components/AuthorCard'
 import { Hero } from '../components/Hero'
 import config from '../utils/config'
 import { slugify } from '../utils/helpers'
@@ -63,6 +64,7 @@ export default function PostTemplate({ data }) {
             __html: `<div class="introduction" id="introduction"></div>${post.html}`,
           }}
         />
+        <AuthorCard />
         {!comments_off && (
           <section id="comments" className="comments">
             <h3>Comments</h3>
