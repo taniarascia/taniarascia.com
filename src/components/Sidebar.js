@@ -7,6 +7,7 @@ import floppy from '../assets/floppylogo.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
+import apple from '../../content/thumbnails/apple.png'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Mail } from '../assets/Mail'
@@ -110,6 +111,22 @@ export const Sidebar = ({
             RSS feed
           </a>
         </p>
+      </section>
+
+      <section className="sidebar-section">
+        <h2 className="flex-align-center gap">
+          <img src={apple} alt="" width="20" height="20" />
+          Setting Up a Mac?
+        </h2>
+        <div className="sidebar-content">
+          <p>
+            I keep a guide on{' '}
+            <Link to="/setting-up-a-brand-new-mac-for-development">
+              setting up a new Mac for development
+            </Link>
+            .
+          </p>
+        </div>
       </section>
     </aside>
   )

@@ -26,11 +26,11 @@
   --theme-yellow: light-dark(#856005, #fede91);
   --theme-green: light-dark(#147555, #7ade7a);
   --theme-pink: light-dark(#b12d6c, #fa8ccc);
-  --theme-lavender: light-dark(#a32cc4, #ca98fc);
-  --theme-blue: light-dark(#2a67a5, #75bcff);
+  --theme-lavender: light-dark(#a32cc4, #d5aefc);
+  --theme-blue: light-dark(#2a67a5, #8ac6ff);
 
   /* Colors */
-  --color-primary: var(--theme-pink);
+  --color-primary: var(--theme-yellow);
   --color-highlighted: var(--yellow);
   --color-background: light-dark(var(--beige-0), var(--gray-9));
   --color-background-alternate: light-dark(var(--beige-1), var(--gray-11));
@@ -1127,6 +1127,10 @@ a.navbar-icon {
 
   &.hero-index {
     margin-bottom: 2.5rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 
   &.hero-taxonomy {
@@ -1143,9 +1147,11 @@ a.navbar-icon {
     &.hero-index {
       margin-top: 1.5rem;
       margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 700;
         margin-bottom: 1rem;
       }
@@ -1182,14 +1188,15 @@ a.navbar-icon {
   }
 
   .description {
-    color: var(--color-text-heading-muted);
+    color: var(--color-text-muted);
     font-size: 1.05rem;
+    max-width: 65ch;
   }
 }
 
 .section-index {
   padding-bottom: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-description {
@@ -1306,7 +1313,7 @@ time {
     font-size: 0.9rem;
     line-height: 1.5;
     text-align: center;
-    color: var(--color-text-muted);
+    color: var(--color-text);
 
     &::before {
       content: '';
@@ -1330,6 +1337,15 @@ time {
 }
 
 /* Posts */
+.shelf a.post {
+  width: fit-content;
+
+  img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+  }
+}
 a.post {
   display: flex;
   flex-direction: column;
@@ -1338,20 +1354,25 @@ a.post {
   margin-bottom: 0.75rem;
   border-radius: var(--border-radius);
   transition: background 0.15s ease;
+  color: var(--color-text-emphasized);
 
   > div {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     font-weight: 500;
     margin: 0;
+  }
+
+  &:hover {
+    color: var(--color-primary);
   }
 
   &:hover div {
     text-decoration: underline;
     text-decoration-style: dotted;
     text-decoration-thickness: 2px;
-    text-decoration-color: var(--color-text-emphasized);
+    text-decoration-color: var(--color-primary);
     text-underline-offset: 4px;
   }
 

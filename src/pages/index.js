@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import { Link, graphql } from 'gatsby'
 
-import { GatsbyImage } from 'gatsby-plugin-image'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
@@ -11,27 +10,15 @@ import { Heading } from '../components/Heading'
 import { Hero } from '../components/Hero'
 import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
+import { shelvesList } from '../data/shelvesList'
 import { getSimplifiedPosts } from '../utils/helpers'
 import config from '../utils/config'
-import blog from '../assets/nav-blog.png'
-import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
 
 export default function Index({ data }) {
-  const latestNotes = data.latestNotes.edges
-  const latestArticles = data.latestArticles.edges
-  const highlights = data.highlights.edges
+  const latestPosts = data.latestPosts.edges
   const postCount = data.postCount.totalCount
-  const notes = useMemo(() => getSimplifiedPosts(latestNotes), [latestNotes])
-
-  const articles = useMemo(
-    () => getSimplifiedPosts(latestArticles),
-    [latestArticles]
-  )
-  const simplifiedHighlights = useMemo(
-    () => getSimplifiedPosts(highlights, { thumbnails: true }),
-    [highlights]
-  )
+  const recent = useMemo(() => getSimplifiedPosts(latestPosts), [latestPosts])
 
   return (
     <>
@@ -98,48 +85,45 @@ export default function Index({ data }) {
           </div>
         </Hero>
 
-        <section className="section-index">
-          <Heading
-            title="Blog"
-            description="Guides, references, and tutorials."
-            icon={projects}
-          />
-          <Posts data={articles} />
-        </section>
+        {shelvesList.map((shelf) => (
+          <section className="section-index" key={shelf.title}>
+            <Heading
+              title={shelf.title}
+              description={shelf.description}
+              slug={shelf.slug}
+              buttonText={shelf.buttonText}
+            />
+            <div className="posts shelf">
+              {shelf.links.map((link) =>
+                link.url ? (
+                  <a
+                    className="post"
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={link.title}
+                  >
+                    <div>
+                      {link.icon && <img src={link.icon} alt="" />}
+                      {link.title}
+                    </div>
+                  </a>
+                ) : (
+                  <Link className="post" to={link.slug} key={link.title}>
+                    <div>
+                      {link.icon && <img src={link.icon} alt="" />}
+                      {link.title}
+                    </div>
+                  </Link>
+                )
+              )}
+            </div>
+          </section>
+        ))}
 
         <section className="section-index">
-          <Heading
-            title="Notes"
-            description="Life, music, projects, and everything else."
-            icon={blog}
-          />
-          <Posts data={notes} />
-        </section>
-
-        <section className="section-index">
-          <Heading
-            title="Deep Dives"
-            slug="/topics"
-            buttonText="All Topics"
-            description="Long-form tutorials on a variety of development topics."
-          />
-          <div className="cards">
-            {simplifiedHighlights.map((post) => {
-              return (
-                <Link
-                  to={post.slug}
-                  className="card card-highlight"
-                  key={`popular-${post.slug}`}
-                >
-                  {post.thumbnail && (
-                    <GatsbyImage image={post.thumbnail} alt="Thumbnail" />
-                  )}
-                  <div>{post.title}</div>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
+          <Heading title="Recently" slug="/blog" buttonText="All Posts" />
+          <Posts data={recent} /></section>
 
         <section>
           <Heading
@@ -207,40 +191,10 @@ Index.Layout = Layout
 
 export const pageQuery = graphql`
   query IndexQuery {
-    latestNotes: allMarkdownRemark(
-      limit: 5
+    latestPosts: allMarkdownRemark(
+      limit: 4
       sort: { frontmatter: { date: DESC } }
-      filter: {
-        frontmatter: {
-          template: { eq: "post" }
-          categories: { eq: "Personal" }
-        }
-      }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-            categories
-          }
-        }
-      }
-    }
-    latestArticles: allMarkdownRemark(
-      limit: 5
-      sort: { frontmatter: { date: DESC } }
-      filter: {
-        frontmatter: {
-          template: { eq: "post" }
-          categories: { eq: "Technical" }
-        }
-      }
+      filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       edges {
         node {
@@ -261,30 +215,6 @@ export const pageQuery = graphql`
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       totalCount
-    }
-    highlights: allMarkdownRemark(
-      limit: 12
-      sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { categories: { eq: "Highlight" } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 40, height: 40, layout: FIXED)
-              }
-            }
-          }
-        }
-      }
     }
   }
 `
