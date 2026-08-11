@@ -7,6 +7,7 @@ import { Mail } from '../assets/Mail'
 import { Rss } from '../assets/Rss'
 import { Bluesky } from '../assets/Bluesky'
 import { Coffee } from '../assets/Coffee'
+import { Heart } from '../assets/Heart'
 
 const links = [
   { url: 'https://taniarascia.substack.com', label: 'Email signup', Icon: Mail },
@@ -57,7 +58,9 @@ export const Footer = () => {
             </a>
           ))}
         </nav>
-        <div className="footer-made-by">Made with ❤️ by Tania Rascia</div>
+        <div className="footer-made-by">
+          Made with <Heart size={14} /> by Tania Rascia
+        </div>
       </section>
     </footer>
   )

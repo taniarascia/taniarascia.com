@@ -1874,6 +1874,10 @@ a.footer-link {
   display: flex;
   align-items: center;
   gap: 5px;
+
+  svg {
+    color: var(--theme-pink);
+  }
 }
 
 .footer-section {
@@ -1881,11 +1885,24 @@ a.footer-link {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem var(--layout-padding-horizontal);
   gap: 1.5rem;
-  max-width: var(--content-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (min-width: 1020px) {
+  .footer-section {
+    max-width: calc(var(--content-width) + var(--post-sidebar-width));
+    margin-left: 0;
+    padding-left: calc(2 * var(--layout-padding-horizontal));
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .footer-section {
+    padding-left: calc(2 * var(--layout-padding-horizontal) + 1.5rem);
+  }
 }
 
 .footer-menu {

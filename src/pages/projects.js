@@ -9,7 +9,7 @@ import { Hero } from '../components/Hero'
 import { PageLayout } from '../components/PageLayout'
 import config from '../utils/config'
 import { projectsList } from '../data/projectsList'
-import github from '../assets/nav-github.png'
+import projects from '../assets/nav-projects.png'
 
 export default function Projects() {
   const [repos, setRepos] = useState([])
@@ -39,7 +39,7 @@ export default function Projects() {
       <SEO />
 
       <PageLayout>
-        <Hero title={title} description={description} icon={github} />
+        <Hero title={title} description={description} icon={projects} />
 
         <div className="cards">
           {projectsList.map((project) => {

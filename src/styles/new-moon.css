@@ -71,7 +71,7 @@ pre[class*='language-'] {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   background: var(--color-background-inline-code);
-  color: var(--color-text);
+  color: var(--color-text-emphasized);
   padding: 2px 4px;
   font-weight: 400;
   font-size: 0.9rem;

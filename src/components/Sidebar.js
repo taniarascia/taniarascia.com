@@ -6,7 +6,6 @@ import floppyLogo from '../assets/nav-floppy.png'
 import floppy from '../assets/floppylogo.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
-import github from '../assets/nav-github.png'
 import { useSidebarImages } from '../utils/hooks/useSidebarImages'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
@@ -23,9 +22,8 @@ export const Sidebar = ({
 }) => {
   const { apple, newMoon } = useSidebarImages()
   const links = [
-    { url: '/blog', label: 'Blog', image: projects },
-    { url: '/notes', label: 'Notes', image: blog },
-    { url: '/projects', label: 'Projects', image: github },
+    { url: '/blog', label: 'Blog', image: blog },
+    { url: '/projects', label: 'Projects', image: projects },
     { url: '/me', label: 'About Me', image: floppy },
   ]
   const socialLinks = [

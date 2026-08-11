@@ -8,3 +8,15 @@
   from = "/sitemap.xml"
   to = "/sitemap-index.xml"
   status = 301
+
+# Notes merged into the Blog archive (Aug 2026); stray /notes/<slug> deep
+# links map to the real root-level post URLs
+[[redirects]]
+  from = "/notes"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/notes/*"
+  to = "/:splat"
+  status = 301

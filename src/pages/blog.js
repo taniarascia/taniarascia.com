@@ -8,7 +8,7 @@ import { Search } from '../components/Search'
 import { SEO } from '../components/SEO'
 import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
-import projects from '../assets/nav-projects.png'
+import blog from '../assets/nav-blog.png'
 import config from '../utils/config'
 
 export default function Blog({ data }) {
@@ -18,9 +18,7 @@ export default function Blog({ data }) {
 
   const description = (
     <div>
-      {
-        'Guides, references, and tutorials on programming, web development, and design. '
-      }
+      {'Guides, tutorials, and notes on code and life. '}
       <Link to="/topics">View all topics</Link>.
     </div>
   )
@@ -30,12 +28,7 @@ export default function Blog({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
       <PageLayout>
-        <Hero
-          title={title}
-          description={description}
-          hasSearch
-          icon={projects}
-        />
+        <Hero title={title} description={description} hasSearch icon={blog} />
 
         <Search data={simplifiedPosts} section="blog" />
       </PageLayout>
@@ -49,12 +42,7 @@ export const articlesQuery = graphql`
   query BlogQuery {
     posts: allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
-      filter: {
-        frontmatter: {
-          template: { eq: "post" }
-          categories: { eq: "Technical" }
-        }
-      }
+      filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       edges {
         node {

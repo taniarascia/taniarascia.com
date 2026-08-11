@@ -7,7 +7,6 @@ import floppy from '../assets/floppylogo.png'
 import floppyLogo from '../assets/nav-floppy.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
-import github from '../assets/nav-github.png'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
@@ -16,9 +15,8 @@ import { Searchbar } from './Searchbar'
 import { ColorDropdown } from './ColorDropdown'
 
 const links = [
-  { url: '/blog', label: 'Blog', image: projects },
-  { url: '/notes', label: 'Notes', image: blog },
-  { url: '/projects', label: 'Projects', image: github },
+  { url: '/blog', label: 'Blog', image: blog },
+  { url: '/projects', label: 'Projects', image: projects },
   { url: '/me', label: 'About Me', image: floppy },
 ]
 
@@ -64,7 +62,7 @@ export const Navigation = ({
       </div>
       <div className="navbar-container">
         <section className="navbar-section navbar-section-search">
-          {!currentPath.includes('blog') && !currentPath.includes('notes') && (
+          {!currentPath.includes('blog') && (
             <Searchbar
               isLocal={false}
               query={query}
