@@ -1,3 +1,10 @@
 [build]
   publish = "public"
   command = "npm run build"
+
+# The sitemap plugin outputs sitemap-index.xml; keep the long-submitted
+# /sitemap.xml URL working for Google Search Console
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301

@@ -3,11 +3,11 @@ module.exports = {
     title: "Tania Rascia's Website",
     author: { name: 'Tania Rascia' },
     pathPrefix: '/',
-    siteUrl: 'https://taniarascia.com',
+    siteUrl: 'https://www.taniarascia.com',
     description:
       'Software engineer and open-source creator. This is my digital garden.',
-    feedUrl: 'https://taniarascia.com/rss.xml',
-    logo: 'https://taniarascia.com/logo.png',
+    feedUrl: 'https://www.taniarascia.com/rss.xml',
+    logo: 'https://www.taniarascia.com/logo.png',
   },
   plugins: [
     // ===================================================================================
@@ -15,6 +15,12 @@ module.exports = {
     // ===================================================================================
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/',
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

@@ -88,6 +88,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        dateISO: date(formatString: "YYYY-MM-DD")
         tags
         categories
         description
@@ -95,6 +96,11 @@ export const pageQuery = graphql`
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 75, height: 75, layout: FIXED)
+          }
+        }
+        socialImage: thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 150, height: 150, layout: FIXED)
           }
         }
       }

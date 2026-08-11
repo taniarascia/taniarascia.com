@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { getSrc } from 'gatsby-plugin-image'
 
 import config from '../utils/config'
 
@@ -12,10 +13,14 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
   if (postSEO) {
     const postMeta = postNode.frontmatter
     title = postMeta.title
-    description = postNode.excerpt
+    description = postMeta.description || postNode.excerpt
 
-    if (postMeta.thumbnail) {
-      image = postMeta.thumbnail.childImageSharp.gatsbyImageData.src
+    const thumbnailSrc = getSrc(
+      postMeta.socialImage?.childImageSharp?.gatsbyImageData
+    )
+
+    if (thumbnailSrc) {
+      image = thumbnailSrc
     }
 
     postURL = `${config.siteUrl}${postPath}`
@@ -27,8 +32,7 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
       url: config.siteUrl,
-      name: title,
-      alternateName: title,
+      name: config.siteTitle,
     },
   ]
 
@@ -52,15 +56,29 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
       {
         '@context': 'http://schema.org',
         '@type': 'BlogPosting',
-        url: config.siteUrl,
+        url: postURL,
         name: title,
-        alternateName: title,
         headline: title,
         image: {
           '@type': 'ImageObject',
           url: image,
         },
         description,
+        author: {
+          '@type': 'Person',
+          name: config.siteAuthor,
+          url: config.siteUrl,
+        },
+        publisher: {
+          '@type': 'Person',
+          name: config.siteAuthor,
+          url: config.siteUrl,
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': postURL,
+        },
+        datePublished: postNode.frontmatter.dateISO,
       }
     )
   }
@@ -76,6 +94,7 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
 
       <meta property="og:url" content={postSEO ? postURL : config.siteUrl} />
       {postSEO && <meta property="og:type" content="article" />}
+      <meta property="og:site_name" content={config.siteTitle} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />

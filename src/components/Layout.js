@@ -5,11 +5,12 @@ import favicon from '../assets/nav-floppy.png'
 import { Navigation } from './Navigation'
 import { Footer } from './Footer'
 import { Sidebar } from './Sidebar'
+import config from '../utils/config'
 
 import '../styles/style.css'
 import '../styles/new-moon.css'
 
-export const Layout = ({ data, children }) => {
+export const Layout = ({ data, location, children }) => {
   const [theme, setTheme] = useState('dark')
   const [currentColor, setCurrentColor] = useState('var(--theme-pink)')
   const isNote =
@@ -58,8 +59,14 @@ export const Layout = ({ data, children }) => {
 
   return (
     <div>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <link rel="shortcut icon" type="image/png" href={favicon} />
+        {location?.pathname && (
+          <link
+            rel="canonical"
+            href={`${config.siteUrl}${location.pathname}`}
+          />
+        )}
       </Helmet>
 
       <div id="layout" className="layout">
