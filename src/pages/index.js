@@ -16,8 +16,7 @@ import config from '../utils/config'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
 import github from '../assets/nav-github.png'
-import { Mail } from '../assets/Mail'
-import { User } from '../assets/User'
+import floppy from '../assets/nav-floppy.png'
 
 export default function Index({ data }) {
   const latestNotes = data.latestNotes.edges
@@ -54,7 +53,7 @@ export default function Index({ data }) {
               </p>
               <div className="hero-buttons">
                 <Link className="button" to="/me">
-                  <User size={18} />
+                  <img src={floppy} alt="Floppy diskette" />
                   About Me
                 </Link>
                 <a
@@ -63,7 +62,6 @@ export default function Index({ data }) {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <Mail size={18} />
                   Email Newsletter
                 </a>
               </div>
