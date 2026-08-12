@@ -12,6 +12,7 @@ import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { shelvesList } from '../data/shelvesList'
 import { getSimplifiedPosts } from '../utils/helpers'
+import { useContentImages } from '../utils/hooks/useContentImages'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
 import floppy from '../assets/floppylogo.png'
@@ -19,6 +20,7 @@ import floppy from '../assets/floppylogo.png'
 export default function Index({ data }) {
   const latestPosts = data.latestPosts.edges
   const postCount = data.postCount.totalCount
+  const imagesByPath = useContentImages()
   const recent = useMemo(() => getSimplifiedPosts(latestPosts), [latestPosts])
   const shelfPostsBySlug = useMemo(() => {
     const map = {}
@@ -173,13 +175,23 @@ export default function Index({ data }) {
                 return (
                   <div className="card" key={`hightlight-${project.slug}`}>
                     <time>{project.date}</time>
-                    <a
-                      href={`https://github.com/taniarascia/${project.slug}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {project.name}
-                    </a>
+                    <div className="card-title">
+                      {project.image && imagesByPath[project.image] && (
+                        <img
+                          src={imagesByPath[project.image]}
+                          alt=""
+                          width="32"
+                          height="32"
+                        />
+                      )}
+                      <a
+                        href={`https://github.com/taniarascia/${project.slug}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.name}
+                      </a>
+                    </div>
                     <p>{project.tagline}</p>
                     <div className="card-links">
                       {project.writeup && (

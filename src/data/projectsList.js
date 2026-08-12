@@ -4,6 +4,7 @@ export const projectsList = [
     date: '2022',
     slug: 'taniarascia.com',
     tagline: 'The source of this website',
+    image: 'images/floppylogo.png',
   },
   {
     name: 'Keyboard Accordion',
@@ -12,6 +13,7 @@ export const projectsList = [
     tagline: 'Play the accordion online!',
     url: 'https://www.keyboardaccordion.com',
     writeup: '/musical-instrument-web-audio-api',
+    image: 'images/keyboardaccordionlogo.png',
     highlight: true,
   },
   {
@@ -21,6 +23,7 @@ export const projectsList = [
     tagline: 'Open source notes app',
     url: 'https://takenote.dev',
     writeup: '/building-takenote',
+    image: 'thumbnails/tn.png',
     highlight: true,
   },
   {
@@ -30,6 +33,7 @@ export const projectsList = [
     tagline: 'Retro game emulator',
     url: 'https://taniarascia.github.io/chip8',
     writeup: '/writing-an-emulator-in-javascript-chip8',
+    image: 'thumbnails/blinky.png',
     highlight: true,
   },
   {
@@ -39,6 +43,7 @@ export const projectsList = [
     tagline: 'Web-based Sokoban',
     url: 'https://taniarascia.github.io/sokoban',
     writeup: '/sokoban-game',
+    image: 'images/sokoban.png',
     highlight: true,
   },
   {
@@ -47,6 +52,7 @@ export const projectsList = [
     slug: 'new-moon',
     tagline: 'Your new favorite theme',
     url: 'https://taniarascia.github.io/new-moon',
+    image: 'images/new-moon.svg',
     highlight: true,
   },
   {
@@ -61,6 +67,7 @@ export const projectsList = [
     slug: 'primitive',
     tagline: 'A front-end design toolkit',
     url: 'https://taniarascia.github.io/primitive',
+    image: 'images/primitive.png',
   },
   {
     name: 'Snek',
@@ -68,6 +75,7 @@ export const projectsList = [
     slug: 'snek',
     tagline: 'A terminal-based Snake',
     writeup: '/snake-game-in-javascript',
+    image: 'thumbnails/snake.png',
     highlight: true,
   },
   {
@@ -75,6 +83,7 @@ export const projectsList = [
     name: 'webpack Boilerplate',
     slug: 'webpack-boilerplate',
     tagline: 'The webpack 5 boilerplate',
+    image: 'thumbnails/webpack.png',
   },
   {
     name: 'Chat App',

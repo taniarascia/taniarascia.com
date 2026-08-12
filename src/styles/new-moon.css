@@ -1,13 +1,13 @@
 :root {
   --string: light-dark(#728400, #92d192);
   --variable: light-dark(#0e2a35, white);
-  --property: light-dark(#697a82, #b3b9c5);
+  --property: light-dark(#56666d, #b3b9c5);
   --number: light-dark(#b54110, #fca369);
   --operator: light-dark(#785200, #ac8d58);
   --punctuation: light-dark(#586e75, #c7cdd7);
-  --comment: light-dark(#657b83, #777c85);
-  --function: light-dark(#1a9489, #76d4d6);
-  --keyword: light-dark(#c32c75, #ffeea6);
+  --comment: light-dark(#5c7179, #777c85);
+  --function: light-dark(#118b81, #76d4d6);
+  --keyword: light-dark(#b8266d, #ffeea6);
   --attribute: light-dark(#916f14, #ffd479);
   --class: light-dark(#c32c75, #e1a6f2);
   --tag: light-dark(#268bd2, #6ab0f3);
@@ -112,7 +112,9 @@ pre.language-text {
   background: var(--color-background-terminal);
   max-width: 100%;
   border: 1px solid var(--color-border-terminal);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 20px, rgba(0, 0, 0, 0.3) 0px 5px 15px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 15px 20px,
+    rgba(0, 0, 0, 0.3) 0px 5px 15px;
 }
 
 code.language-terminal {

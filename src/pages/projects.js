@@ -9,10 +9,12 @@ import { Hero } from '../components/Hero'
 import { PageLayout } from '../components/PageLayout'
 import config from '../utils/config'
 import { projectsList } from '../data/projectsList'
+import { useContentImages } from '../utils/hooks/useContentImages'
 import projects from '../assets/nav-projects.png'
 
 export default function Projects() {
   const [repos, setRepos] = useState([])
+  const imagesByPath = useContentImages()
   const title = 'Projects'
   const description =
     "Open-source projects I've made over the years, including this website, an emulator, and various games, apps, frameworks, and boilerplates."
@@ -61,14 +63,24 @@ export default function Projects() {
                   )}
                 </div>
                 <time>{project.date}</time>
-                <a
-                  className="card-header"
-                  href={`https://github.com/taniarascia/${project.slug}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {project.name}
-                </a>
+                <div className="card-title">
+                  {project.image && imagesByPath[project.image] && (
+                    <img
+                      src={imagesByPath[project.image]}
+                      alt=""
+                      width="32"
+                      height="32"
+                    />
+                  )}
+                  <a
+                    className="card-header"
+                    href={`https://github.com/taniarascia/${project.slug}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.name}
+                  </a>
+                </div>
                 <p>{project.tagline}</p>
                 <div className="card-links">
                   {project.writeup && (

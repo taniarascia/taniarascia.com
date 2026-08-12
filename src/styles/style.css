@@ -343,6 +343,44 @@ li::marker {
   color: var(--color-marker);
 }
 
+#article-resume {
+  margin-top: -1.5rem;
+
+  .resume-title {
+    font-size: 1.3rem;
+  }
+
+  li {
+    max-width: 65ch;
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+  }
+
+  h2,
+  h3 {
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  h3 + p {
+    margin-top: 0;
+    font-size: 1.1rem;
+
+    em {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #article-resume {
+    margin-top: -2.5rem;
+  }
+}
+
 mark {
   background: var(--yellow);
   border-radius: var(--border-radius);
@@ -479,7 +517,7 @@ a.tag {
   align-items: center;
   gap: 1px;
   font-family: var(--font-family-monospace2);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1;
   padding: 0.3rem 0.65rem;
@@ -1256,7 +1294,7 @@ ul.hero-eras {
   font-size: 1.05rem;
 
   li {
-    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   span.era-dates {
@@ -1472,7 +1510,6 @@ a.post {
   a.post {
     flex-direction: row;
     align-items: baseline;
-    width: calc(100% + 1.25rem);
     margin-bottom: 0;
     margin-inline: -0.625rem;
     padding: 5px 0.625rem;
@@ -1483,10 +1520,9 @@ a.post {
       align-items: center;
       justify-content: flex-start;
       gap: 0.5rem;
-      font-size: 0.85rem;
-      width: 110px;
-      min-width: 110px;
-      font-weight: 500;
+      font-size: 0.9rem;
+      width: 130px;
+      min-width: 130px;
     }
 
     &:hover {
@@ -1597,6 +1633,19 @@ a time.new-post {
   border: 2px solid var(--color-border-card);
   box-shadow: var(--box-shadow);
 
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.25rem 0;
+
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+  }
+
   .card-links {
     display: flex;
     align-items: center;
@@ -1646,7 +1695,7 @@ a time.new-post {
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text);
     line-height: 1.5;
     margin: 0.5rem 0 1rem;
@@ -2006,6 +2055,12 @@ a.footer-link {
   gap: 0.5rem;
   position: relative;
 
+  &:not(.with-button) {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+  }
+
   &.with-button {
     gap: 0;
 
@@ -2057,6 +2112,8 @@ a.footer-link {
 
   &.with-icon {
     padding: 0.5rem 1rem 0.5rem 2.5rem;
+    width: 100%;
+    max-width: 400px;
   }
 }
 

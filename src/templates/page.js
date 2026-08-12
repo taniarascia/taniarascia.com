@@ -10,16 +10,17 @@ import config from '../utils/config'
 
 export default function PageTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, description, thumbnail } = post.frontmatter
+  const { title, htmlTitle, description, thumbnail } = post.frontmatter
 
   return (
     <>
-      <Helmet title={`${title} | ${config.siteTitle}`} />
+      <Helmet title={htmlTitle || `${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
 
       <PageLayout>
         <Hero title={title} thumbnail={thumbnail} />
         <div
+          id={`article-${post.frontmatter.slug}`}
           className="page-article"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        htmlTitle
         slug
         thumbnail {
           childImageSharp {
