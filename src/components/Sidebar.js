@@ -32,19 +32,9 @@ export const Sidebar = ({
       label: 'Email signup',
       Icon: Mail,
     },
-    {
-      url: 'https://github.com/taniarascia',
-      label: 'GitHub',
-      Icon: GitHub,
-      color: 'light-dark(#08872B, #5FED83)',
-    },
-    {
-      url: 'https://go.bsky.app/SmEWb8G',
-      label: 'Bluesky',
-      Icon: Bluesky,
-      color: '#0085ff',
-    },
-    { url: '/rss.xml', label: 'RSS feed', Icon: Rss, color: '#f26522' },
+    { url: 'https://github.com/taniarascia', label: 'GitHub', Icon: GitHub },
+    { url: 'https://go.bsky.app/SmEWb8G', label: 'Bluesky', Icon: Bluesky },
+    { url: '/rss.xml', label: 'RSS feed', Icon: Rss },
   ]
 
   return (
@@ -110,33 +100,29 @@ export const Sidebar = ({
       <section className="sidebar-section">
         <h2>Stay Connected</h2>
         <nav className="sidebar-links">
-          {socialLinks.map(({ url, label, Icon, color }) =>
-            url.startsWith('http') ? (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={url}
-                style={color ? { '--icon-color': color } : undefined}
-              >
-                <Icon size={16} />
-                {label}
-              </a>
-            ) : (
-              <a
-                href={url}
-                key={url}
-                style={color ? { '--icon-color': color } : undefined}
-              >
-                <Icon size={16} />
-                {label}
-              </a>
-            )
-          )}
+          {socialLinks.map(({ url, label, Icon }) => (
+            <div className="tooltip-container" key={url}>
+              {url.startsWith('http') ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                >
+                  <Icon size={20} />
+                </a>
+              ) : (
+                <a href={url} aria-label={label}>
+                  <Icon size={20} />
+                </a>
+              )}
+              <div className="tooltip">{label}</div>
+            </div>
+          ))}
         </nav>
       </section>
 
-      <section className="sidebar-section sidebar-card">
+      <section className="sidebar-card">
         <h2 className="flex-align-center gap">
           {newMoon?.publicURL && (
             <img src={newMoon.publicURL} alt="" width="20" height="20" />
@@ -166,7 +152,7 @@ export const Sidebar = ({
         </div>
       </section>
 
-      <section className="sidebar-section sidebar-card">
+      <section className="sidebar-card">
         <h2 className="flex-align-center gap">
           {apple?.publicURL && (
             <img src={apple.publicURL} alt="" width="20" height="20" />

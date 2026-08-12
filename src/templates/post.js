@@ -14,7 +14,8 @@ import { slugify } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, date, comments_off, thumbnail, tags } = post.frontmatter
+  const { title, date, dateISO, comments_off, thumbnail, tags } =
+    post.frontmatter
   const isNote = post.frontmatter.categories?.includes('Personal')
 
   return (
@@ -35,7 +36,7 @@ export default function PostTemplate({ data }) {
           type="post"
           date={
             <div className="small flex-align-center gap">
-              <span>{date}</span>
+              <time dateTime={dateISO}>{date}</time>
               <div className="divider" />
               <a href="#comments">Comments</a>
             </div>
