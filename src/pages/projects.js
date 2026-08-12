@@ -64,14 +64,14 @@ export default function Projects() {
                 </div>
                 <time>{project.date}</time>
                 <div className="card-title">
-                  {project.image && imagesByPath[project.image] && (
+                  {/* {project.image && imagesByPath[project.image] && (
                     <img
                       src={imagesByPath[project.image]}
                       alt=""
                       width="32"
                       height="32"
                     />
-                  )}
+                  )} */}
                   <a
                     className="card-header"
                     href={`https://github.com/taniarascia/${project.slug}`}

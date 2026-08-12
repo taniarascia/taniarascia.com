@@ -25,7 +25,7 @@
   --yellow: light-dark(#ffce64, #ffd479);
   --theme-yellow: light-dark(#b26a34, #fede91);
   --theme-green: light-dark(#2b9476, #7ade7a);
-  --theme-pink: light-dark(#b12d6c, #fa8ccc);
+  --theme-pink: light-dark(#b12d6c, #fc8eb8);
   --theme-lavender: light-dark(#6a3eba, #d5aefc);
   --theme-blue: light-dark(#2a67a5, #8ac6ff);
 
@@ -579,17 +579,17 @@ a.tag {
 a.navbar-title-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   color: var(--color-text-navbar-link);
   white-space: nowrap;
   font-weight: 600;
 }
 
 .navbar-logo {
-  height: 22px;
-  width: 22px;
-  min-height: 22px;
-  min-width: 22px;
+  height: 20px;
+  width: 20px;
+  min-height: 20px;
+  min-width: 20px;
 }
 
 .navbar-container {
@@ -604,6 +604,7 @@ a.navbar-title-link {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  /* flex-direction: row-reverse; */
 }
 
 .navbar-section-search {
@@ -706,6 +707,10 @@ button.navbar-button {
       }
     }
   }
+
+  .navbar-section {
+    flex-direction: row-reverse;
+  }
 }
 
 @media screen and (min-width: 1020px) {
@@ -803,10 +808,10 @@ a.navbar-icon {
         text-decoration: none;
         color: var(--color-text-emphasized);
         background: var(--color-background-navbar-link-hover);
-      }
 
-      svg {
-        color: var(--icon-color, currentColor);
+        svg {
+          color: var(--color-text-emphasized);
+        }
       }
 
       svg {
@@ -857,6 +862,10 @@ a.navbar-icon {
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
     font-weight: 600;
+
+    + .sidebar-content p {
+      margin-top: 0;
+    }
   }
 
   p {
@@ -1089,9 +1098,10 @@ a.navbar-icon {
 
   h2 {
     margin-top: 0;
-    margin-bottom: 0.75rem;
-    margin-left: 0.75rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var(--font-family-monospace2);
   }
 
   p {
@@ -1251,6 +1261,13 @@ a.navbar-icon {
   gap: 0.5rem;
   margin-bottom: 1.25rem;
 
+  &.small {
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+    }
+  }
+
   .heading-row {
     display: flex;
     align-items: center;
@@ -1278,7 +1295,7 @@ a.navbar-icon {
 }
 
 .hero-description {
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1.5rem 0;
   font-size: 1.05rem;
   max-width: 600px;
 
@@ -1305,6 +1322,16 @@ a.navbar-icon {
   color: var(--color-text-emphasized);
 }
 
+.hero-eras-title {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family-monospace2);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
 ul.hero-eras {
   list-style: none;
   margin: 0 0 1.25rem 0;
@@ -1314,9 +1341,6 @@ ul.hero-eras {
 
   li {
     margin-bottom: 1rem;
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
 
     > span:last-child {
       color: var(--color-text-emphasized);
@@ -1324,11 +1348,10 @@ ul.hero-eras {
   }
 
   span.era-dates {
+    margin-right: 0.35rem;
     font-family: var(--font-family-monospace2);
     font-size: 0.8rem;
     color: var(--color-text-muted);
-    width: 90px;
-    min-width: 90px;
   }
 
   a {
@@ -1347,6 +1370,10 @@ ul.hero-eras {
       background: var(--color-background-navbar-link-active);
     }
   }
+}
+
+.hero-image-container {
+  align-self: center;
 }
 
 .hero-image {
@@ -1431,13 +1458,24 @@ time {
 
   ul.hero-eras {
     font-size: 1.1rem;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    span.era-dates {
+      width: 90px;
+      min-width: 90px;
+      margin-right: 0;
+    }
   }
 
   .hero-image-container {
     position: relative;
     margin-top: 4rem;
     align-self: center;
-
 
     &::before {
       position: absolute;
@@ -2073,7 +2111,7 @@ a.footer-link {
   &:not(.with-button) {
     display: flex;
     width: 100%;
-    max-width: 400px;
+    /* max-width: 400px; */
   }
 
   &.with-button {
@@ -2112,7 +2150,7 @@ a.footer-link {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   box-shadow: none;
-  max-width: 260px;
+  /* max-width: 260px; */
 
   &:hover {
     border-color: var(--color-border-hover);
@@ -2128,7 +2166,7 @@ a.footer-link {
   &.with-icon {
     padding: 0.5rem 1rem 0.5rem 2.5rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
   }
 }
 
@@ -2141,11 +2179,12 @@ a.footer-link {
   font-family: var(--font-family-heading);
   font-size: 18px;
   white-space: nowrap;
+  line-height: 1;
 
   &:hover {
     text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
     text-decoration-color: var(--color-text-emphasized);
   }
 }

@@ -12,15 +12,14 @@ import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { shelvesList } from '../data/shelvesList'
 import { getSimplifiedPosts } from '../utils/helpers'
-import { useContentImages } from '../utils/hooks/useContentImages'
+// import { useContentImages } from '../utils/hooks/useContentImages'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
-import floppy from '../assets/floppylogo.png'
 
 export default function Index({ data }) {
   const latestPosts = data.latestPosts.edges
   const postCount = data.postCount.totalCount
-  const imagesByPath = useContentImages()
+  // const imagesByPath = useContentImages()
   const recent = useMemo(() => getSimplifiedPosts(latestPosts), [latestPosts])
   const shelfPostsBySlug = useMemo(() => {
     const map = {}
@@ -41,19 +40,16 @@ export default function Index({ data }) {
         <Hero type="index">
           <div className="hero-wrapper">
             <div>
-              <h1 className="flex-align-center gap">
-                Hey, I'm Tania!
-                <img src={floppy} alt="" width="40" height="40" />
-              </h1>
+              <h1 className="flex-align-center gap">Hey, I'm Tania!</h1>
               <p className="hero-description hero-tagline">
                 Principal software engineer, writer, all-around nerd.
               </p>
+              <Heading title="A brief timeline" small />
               <ul className="hero-eras">
                 <li>
                   <span className="era-dates">1998&ndash;2006</span>
                   <span>
-                    Built my first websites on the early internet at the public
-                    library, made Digimon fansites, and documented obscure '80s
+                    Geocities kid, forum-goer, gamer, lover of obscure '80s
                     bands.
                   </span>
                 </li>
@@ -72,9 +68,9 @@ export default function Index({ data }) {
                       Career change
                     </Link>
                     : Unpaid intern by day, cook by night, then junior dev to
-                    senior engineer who{' '}
+                    senior engineer.{' '}
                     <Link to="/everything-i-know-as-a-software-developer-without-a-degree">
-                      wrote everything down
+                      Wrote everything down
                     </Link>{' '}
                     along the way.
                   </span>
@@ -99,16 +95,16 @@ export default function Index({ data }) {
                 </li>
               </ul>
               <p className="hero-description">
-                <Link to="/me">Also me</Link>: city explorer, weight-lifter,
-                brick-clicker, accordion enthusiast, Magic gatherer, webmaster,
-                DINK.
+                <Link to="/me">Also</Link>: city explorer, weight-lifter,
+                brick-clicker, accordion enthusiast, biker, Magic gatherer,
+                webmaster.
               </p>
             </div>
             <div className="hero-image-container">
               <img src="/ram.png" className="hero-image" alt="RAM Ram" />
               <aside className="hero-bubble">
                 Can't remember how to spell my name? Just go to{' '}
-                <a href="https://tania.dev">tania.dev</a>
+                <a href="https://tania.dev">tania.dev</a>!
               </aside>
             </div>
           </div>
@@ -176,14 +172,14 @@ export default function Index({ data }) {
                   <div className="card" key={`hightlight-${project.slug}`}>
                     <time>{project.date}</time>
                     <div className="card-title">
-                      {project.image && imagesByPath[project.image] && (
+                      {/* {project.image && imagesByPath[project.image] && (
                         <img
                           src={imagesByPath[project.image]}
                           alt=""
                           width="32"
                           height="32"
                         />
-                      )}
+                      )} */}
                       <a
                         href={`https://github.com/taniarascia/${project.slug}`}
                         target="_blank"

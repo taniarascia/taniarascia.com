@@ -82,7 +82,7 @@ export const shelvesList = [
   {
     title: 'Off the clock',
     description:
-      "Sometimes I write about things that aren't related to programming and development, like an ode to the lore of Animorphs, that time I made an online accordion for the computer keyboard, or when I delved into hardware building my first PC.",
+      "Sometimes I write about things that aren't related to programming, like an ode to the lore of Animorphs, or building my first PC.",
     links: [
       { title: 'The Lore of Animorphs', slug: '/animorphs' },
       {
