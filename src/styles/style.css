@@ -517,7 +517,7 @@ a.tag {
   align-items: center;
   gap: 1px;
   font-family: var(--font-family-monospace2);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   line-height: 1;
   padding: 0.3rem 0.65rem;
@@ -858,10 +858,11 @@ a.navbar-icon {
   }
 
   h2 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
+    font-family: var(--font-family-monospace2);
+    font-size: 1rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
 
     + .sidebar-content p {
       margin-top: 0;
@@ -1099,8 +1100,8 @@ a.navbar-icon {
   h2 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     font-family: var(--font-family-monospace2);
   }
 
@@ -1295,7 +1296,7 @@ a.navbar-icon {
 }
 
 .hero-description {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.75rem 0;
   font-size: 1.05rem;
   max-width: 600px;
 
@@ -1318,8 +1319,11 @@ a.navbar-icon {
 }
 
 .hero-tagline {
-  font-size: 1.15rem;
-  color: var(--color-text-emphasized);
+  font-family: var(--font-family-monospace2);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
 }
 
 .hero-eras-title {
@@ -1373,10 +1377,25 @@ ul.hero-eras {
 }
 
 .hero-image-container {
+  position: relative;
   align-self: center;
+
+  &::before {
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    content: '';
+    background: var(--color-primary);
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+  }
 }
 
 .hero-image {
+  display: block;
+  position: relative;
+  z-index: 9;
   width: 150px;
   max-width: 150px;
   margin: 0 auto;
@@ -1437,11 +1456,6 @@ time {
 }
 
 @media screen and (min-width: 800px) {
-  .hero-image {
-    width: 150px;
-    max-width: 150px;
-  }
-
   .heading {
     span {
       border: none;
@@ -1453,7 +1467,7 @@ time {
   }
 
   .hero-tagline {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   ul.hero-eras {
@@ -1472,39 +1486,39 @@ time {
     }
   }
 
+  .hero-wrapper {
+    a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+/* The index hero measures its own width: when there's room, the RAM sits
+   beside the text; otherwise it drops below instead of smushing the text. */
+.hero-index {
+  container: hero-index / inline-size;
+}
+
+@container hero-index (min-width: 860px) {
+  .hero-wrapper {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
   .hero-image-container {
-    position: relative;
     margin-top: 4rem;
-    align-self: center;
 
     &::before {
-      position: absolute;
       top: 1rem;
-      left: 0;
-      content: '';
-      background: var(--color-primary);
-      border-radius: 50%;
       height: 200px;
       width: 200px;
     }
   }
 
   .hero-image {
-    display: block;
-    position: relative;
-    z-index: 9;
     width: 250px;
     max-width: 250px;
-  }
-
-  .hero-wrapper {
-    flex-direction: row;
-    gap: 3rem;
-
-    a:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-    }
   }
 }
 
@@ -1574,8 +1588,8 @@ a.post {
       justify-content: flex-start;
       gap: 0.5rem;
       font-size: 0.9rem;
-      width: 130px;
-      min-width: 130px;
+      width: 120px;
+      min-width: 120px;
     }
 
     &:hover {
@@ -1752,6 +1766,55 @@ a time.new-post {
     color: var(--color-text);
     line-height: 1.5;
     margin: 0.5rem 0 1rem;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    column-gap: 0.6rem;
+
+    .card-title {
+      grid-row: 1;
+      grid-column: 1;
+      margin: 0;
+    }
+
+    time {
+      grid-row: 1;
+      grid-column: 2;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    p {
+      grid-column: 1 / -1;
+      margin: 0.35rem 0 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .card-links {
+      grid-column: 1 / -1;
+      gap: 1.25rem;
+
+      a.button {
+        padding: 0;
+        background: transparent;
+        border: none;
+        font-size: 0.9rem;
+        color: var(--color-text-link);
+        text-decoration: underline !important;
+        text-decoration-thickness: 1px;
+        text-decoration-color: color-mix(
+          in srgb,
+          var(--color-text-link) 45%,
+          transparent
+        );
+        text-underline-offset: 3px;
+      }
+    }
   }
 }
 

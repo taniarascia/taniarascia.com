@@ -1,6 +1,6 @@
 export const shelvesList = [
   {
-    title: 'Learn from scratch',
+    title: 'Fundamentals',
     description:
       'The guides I wished I had when I was learning how to code. Understanding the fundamentals of CSS, how the command line works, how the DOM works, using APIs, and how to use JavaScript frameworks were all game changers for me.',
     links: [
@@ -60,8 +60,8 @@ export const shelvesList = [
     ],
   },
   {
-    title: 'Under the hood',
-    description: `Although it's not always necessary to reinvent the wheel, I like taking things apart to understand how they work.`,
+    title: 'Reinventing the wheel',
+    description: `It's not always necessary, but I like taking things apart to understand how they work.`,
     links: [
       {
         title: 'Building a Chip-8 Emulator',
