@@ -14,7 +14,7 @@ import { slugify } from '../utils/helpers'
 
 export default function PostTemplate({ data }) {
   const post = data.markdownRemark
-  const { title, date, dateISO, comments_off, thumbnail, tags } =
+  const { title, date, dateISO, comments_off, thumbnail, tags, dated } =
     post.frontmatter
   const isNote = post.frontmatter.categories?.includes('Personal')
 
@@ -58,6 +58,14 @@ export default function PostTemplate({ data }) {
           </div>
         </Hero>
 
+        {dated && (
+          <blockquote className="dated-banner">
+            <strong>Archived</strong>: this post was written in{' '}
+            {dateISO.slice(0, 4)}. The tools and concepts covered belong to an
+            earlier era of the web.
+          </blockquote>
+        )}
+
         <div
           className="main-article"
           id={post.fields.slug}
@@ -96,6 +104,7 @@ export const pageQuery = graphql`
         categories
         description
         comments_off
+        dated
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 75, height: 75, layout: FIXED)

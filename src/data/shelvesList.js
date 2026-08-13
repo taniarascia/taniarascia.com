@@ -2,7 +2,7 @@ export const shelvesList = [
   {
     title: 'Fundamentals',
     description:
-      'The guides I wished I had when I was learning how to code. Understanding the fundamentals of CSS, how the command line works, how the DOM works, using APIs, and how to use JavaScript frameworks were all game changers for me.',
+      'The guides I wished I had when I was learning how to code. I used to call them the missing instruction manuals of the web. These articles were all game changers for my understanding.',
     links: [
       {
         title: 'CSS Fundamentals',
@@ -13,15 +13,32 @@ export const shelvesList = [
         title: 'Introduction to the Command Line',
         slug: '/how-to-use-the-command-line-for-apple-macos-and-linux',
       },
+      {
+        title: 'Introduction to Git for Version Control',
+        slug: '/getting-started-with-git',
+      },
+      {
+        title: 'Writing Bash Scripts',
+        slug: '/how-to-create-and-use-bash-scripts',
+      },
+      {
+        title: 'Setting Up a Mac for Development',
+        slug: '/setting-up-a-brand-new-mac-for-development',
+      },
       { title: 'Introduction to the DOM', slug: '/introduction-to-the-dom' },
       { title: 'Introduction to GraphQL', slug: '/introduction-to-graphql' },
       {
         title: 'How to Connect to an API',
         slug: '/how-to-connect-to-an-api-with-javascript',
       },
+
       { title: 'How to Use React', slug: '/getting-started-with-react' },
       { title: 'How to Use Redux', slug: '/redux-react-guide' },
       { title: 'How to Set Up webpack', slug: '/how-to-use-webpack' },
+      {
+        title: 'WordPress Theme from Scratch',
+        slug: '/developing-a-wordpress-theme-from-scratch',
+      },
     ],
   },
   {
@@ -40,6 +57,10 @@ export const shelvesList = [
         slug: '/bits-bytes-bases-and-a-hex-dump-javascript',
       },
       { title: 'OAuth with PKCE', slug: '/oauth-pkce-authorization' },
+      {
+        title: 'Client-side Authentication',
+        slug: '/full-stack-cookies-localstorage-react-express',
+      },
       { title: 'Data-Driven Forms', slug: '/schema-based-form-system' },
       {
         title: 'ECharts for Data Visualization',
@@ -73,6 +94,14 @@ export const shelvesList = [
       },
       { title: 'Building TakeNote', slug: '/building-takenote' },
       { title: 'Coding a Sokoban Puzzle', slug: '/sokoban-game' },
+      {
+        title: 'Snake Game for the Terminal',
+        slug: '/snake-game-in-javascript',
+      },
+      {
+        title: 'Roll Your Own Comment System',
+        slug: '/add-comments-to-static-site',
+      },
       {
         title: 'Super Mario Memory Game',
         slug: '/how-to-create-a-memory-game-super-mario-with-plain-javascript',

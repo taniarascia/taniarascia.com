@@ -163,6 +163,8 @@ exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type MarkdownRemarkFrontmatter {
       htmlTitle: String
+      format: String
+      dated: Boolean
     }
   `)
 }

@@ -345,32 +345,63 @@ li::marker {
 
 #article-resume {
   margin-top: -1.5rem;
+  max-width: 65ch;
 
   .resume-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+  }
+
+  .resume-title + p {
+    font-size: 0.95rem;
   }
 
   li {
-    max-width: 65ch;
     line-height: 1.5;
     padding-bottom: 0.5rem;
   }
 
-  h2,
-  h3 {
-    margin-top: 1.5rem;
+  h2 {
+    font-family: var(--font-family-monospace2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-border);
+
+    .anchor {
+      display: none;
+    }
   }
 
   h3 {
-    margin-bottom: 0.5rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.25rem;
+    font-size: 1.15rem;
   }
 
   h3 + p {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0 1rem;
     margin-top: 0;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+
+    br {
+      display: none;
+    }
 
     em {
-      font-size: 1rem;
+      font-style: normal;
+      font-family: var(--font-family-monospace2);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
     }
   }
 }
@@ -768,11 +799,12 @@ a.navbar-icon {
   gap: 0.75rem;
 
   .site-name {
-    font-family: var(--font-family-heading);
+    font-family: var(--font-family-monospace2);
     color: var(--color-text-emphasized);
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     white-space: nowrap;
+    line-height: 1;
   }
 }
 
@@ -782,7 +814,6 @@ a.navbar-icon {
   border-bottom: 1px solid var(--color-border);
 
   &:last-of-type {
-    padding-bottom: 3rem;
     border: none;
   }
 
@@ -972,6 +1003,9 @@ a.navbar-icon {
 @media screen and (min-width: 1020px) {
   .sidebar {
     display: block;
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: space-between; */
   }
 }
 
@@ -1319,9 +1353,7 @@ a.navbar-icon {
 }
 
 .hero-tagline {
-  font-family: var(--font-family-monospace2);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.3rem;
   color: var(--color-text);
   line-height: 1.3;
 }
@@ -1467,7 +1499,7 @@ time {
   }
 
   .hero-tagline {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   ul.hero-eras {
@@ -2239,10 +2271,11 @@ a.footer-link {
 }
 
 .site-name {
-  font-family: var(--font-family-heading);
-  font-size: 18px;
+  font-family: var(--font-family-monospace2);
+  font-size: 16px;
   white-space: nowrap;
   line-height: 1;
+  font-weight: 600;
 
   &:hover {
     text-decoration: underline;
