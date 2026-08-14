@@ -8,8 +8,7 @@ export function getSimplifiedPosts(posts, options = {}) {
     title: post.node.frontmatter.title,
     description: post.node.frontmatter.description,
     ...(options.thumbnails && {
-      thumbnail:
-        post.node.frontmatter?.thumbnail?.childImageSharp?.gatsbyImageData,
+      thumbnail: post.node.frontmatter?.thumbnail?.publicURL,
     }),
   }))
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
-import { useLocation } from '@reach/router'
 
 import floppy from '../assets/floppylogo.png'
 import floppyLogo from '../assets/nav-floppy.png'
@@ -11,13 +10,12 @@ import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
 import { Close } from '../assets/Close'
-import { Searchbar } from './Searchbar'
 import { ColorDropdown } from './ColorDropdown'
 
 const links = [
   { url: '/blog', label: 'Blog', image: blog },
   { url: '/projects', label: 'Projects', image: projects },
-  { url: '/me', label: 'About Me', image: floppy },
+  { url: '/me', label: 'About me', image: floppy },
 ]
 
 const socialLinks = [{ url: 'https://bsky.app/profile/tania.dev' }]
@@ -28,10 +26,7 @@ export const Navigation = ({
   currentColor,
   setCurrentColor,
 }) => {
-  const location = useLocation()
-  const currentPath = location.pathname
   const [navOpen, setNavOpen] = useState(false)
-  const [query, setQuery] = useState('')
 
   const handleToggleMobileNav = () => {
     setNavOpen((prev) => !prev)
@@ -61,18 +56,6 @@ export const Navigation = ({
         </div>
       </div>
       <div className="navbar-container">
-        <section className="navbar-section navbar-section-search">
-          {!currentPath.includes('blog') && (
-            <Searchbar
-              isLocal={false}
-              query={query}
-              setQuery={setQuery}
-              handleSearch={(event) => {
-                setQuery(event.target.value)
-              }}
-            />
-          )}
-        </section>
         <section className="navbar-section">
           <button
             className={`navbar-button nav-menu-button ${

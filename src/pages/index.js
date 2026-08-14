@@ -11,7 +11,8 @@ import { Hero } from '../components/Hero'
 import { PageLayout } from '../components/PageLayout'
 import { projectsList } from '../data/projectsList'
 import { shelvesList } from '../data/shelvesList'
-import { getSimplifiedPosts } from '../utils/helpers'
+import { seriesList } from '../data/seriesList'
+import { getSimplifiedPosts, slugify } from '../utils/helpers'
 // import { useContentImages } from '../utils/hooks/useContentImages'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
@@ -20,16 +21,10 @@ export default function Index({ data }) {
   const latestPosts = data.latestPosts.edges
   const postCount = data.postCount.totalCount
   // const imagesByPath = useContentImages()
-  const recent = useMemo(() => getSimplifiedPosts(latestPosts), [latestPosts])
-  const shelfPostsBySlug = useMemo(() => {
-    const map = {}
-
-    data.shelfPosts.nodes.forEach(({ frontmatter }) => {
-      map[frontmatter.slug] = frontmatter
-    })
-
-    return map
-  }, [data.shelfPosts])
+  const recent = useMemo(
+    () => getSimplifiedPosts(latestPosts, { thumbnails: true }),
+    [latestPosts]
+  )
 
   return (
     <>
@@ -110,49 +105,49 @@ export default function Index({ data }) {
           </div>
         </Hero>
 
-        {shelvesList.map((shelf) => (
-          <section className="section-index" key={shelf.title}>
-            <Heading
-              title={shelf.title}
-              description={shelf.description}
-              slug={shelf.slug}
-              buttonText={shelf.buttonText}
-            />
-            <div className="posts shelf">
-              {shelf.links.map((link) => {
-                if (link.url) {
-                  return (
-                    <a
-                      className="post"
-                      href={link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      key={link.title}
-                    >
-                      <div>{link.title}</div>
-                    </a>
-                  )
-                }
-
-                const post = shelfPostsBySlug[link.slug.replace(/^\//, '')]
-                const icon = post?.thumbnail?.publicURL
-
-                return (
-                  <Link className="post" to={link.slug} key={link.slug}>
-                    <div>
-                      {icon && <img src={icon} alt="" width="25" height="25" />}
-                      {link.title ?? post?.title}
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          </section>
-        ))}
-
         <section className="section-index">
           <Heading title="Latest" slug="/blog" buttonText="All Posts" />
-          <Posts data={recent} />
+          <Posts data={recent} detailed />
+        </section>
+
+        <section className="section-index">
+          <Heading
+            title="Shelves"
+            slug="/shelves"
+            buttonText="All Shelves"
+            description="Hand-picked paths through everything I've written."
+          />
+          <div className="cards cards-half">
+            {shelvesList.map((shelf) => (
+              <Link
+                className="card card-highlight card-shelf"
+                to={`/shelves#${slugify(shelf.title)}`}
+                key={shelf.title}
+              >
+                <div className="flex-space-between">
+                  <div className="card-title">{shelf.title}</div>
+                  <div className="chip">
+                    <span className="chip-highlight">{shelf.links.length}</span>
+                  </div>
+                </div>
+                <p>{shelf.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="section-index">
+          <Heading
+            title="Series"
+            description="Some things I wrote span years or dozens of parts."
+          />
+          <div className="posts shelf">
+            {seriesList.map((series) => (
+              <Link className="post" to={series.slug} key={series.slug}>
+                <div>{series.title}</div>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section>
@@ -171,45 +166,24 @@ export default function Index({ data }) {
                 return (
                   <div className="card" key={`hightlight-${project.slug}`}>
                     <time>{project.date}</time>
-                    <div className="card-title">
-                      {/* {project.image && imagesByPath[project.image] && (
-                        <img
-                          src={imagesByPath[project.image]}
-                          alt=""
-                          width="32"
-                          height="32"
-                        />
-                      )} */}
-                      <a
-                        href={`https://github.com/taniarascia/${project.slug}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {project.name}
-                      </a>
-                    </div>
+                    <a
+                      href={`https://github.com/taniarascia/${project.slug}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.name}
+                    </a>
                     <p>{project.tagline}</p>
                     <div className="card-links">
                       {project.writeup && (
-                        <Link
-                          className="button secondary small"
-                          to={project.writeup}
-                        >
-                          Article
-                        </Link>
+                        <Link to={project.writeup}>Article</Link>
                       )}
                       {project.url && (
-                        <a
-                          className="button secondary small"
-                          href={project.url}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
+                        <a href={project.url} target="_blank" rel="noreferrer">
                           Demo
                         </a>
                       )}
                       <a
-                        className="button secondary small"
                         href={`https://github.com/taniarascia/${project.slug}`}
                         target="_blank"
                         rel="noreferrer"
@@ -247,6 +221,9 @@ export const pageQuery = graphql`
             title
             tags
             categories
+            thumbnail {
+              publicURL
+            }
           }
         }
       }
@@ -255,19 +232,6 @@ export const pageQuery = graphql`
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       totalCount
-    }
-    shelfPosts: allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "post" } } }
-    ) {
-      nodes {
-        frontmatter {
-          slug
-          title
-          thumbnail {
-            publicURL
-          }
-        }
-      }
     }
   }
 `

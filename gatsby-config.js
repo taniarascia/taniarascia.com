@@ -188,6 +188,9 @@ module.exports = {
                   tags
                   slug
                   date(formatString: "MMMM DD, YYYY")
+                  thumbnail {
+                    publicURL
+                  }
                 }
                 rawMarkdownBody
               }
@@ -196,7 +199,7 @@ module.exports = {
         `,
         ref: 'id',
         index: ['title', 'tags'],
-        store: ['id', 'slug', 'title', 'tags', 'date'],
+        store: ['id', 'slug', 'title', 'tags', 'date', 'thumbnail'],
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
@@ -206,6 +209,7 @@ module.exports = {
             tags: node.frontmatter.tags,
             categories: node.frontmatter.categories,
             date: node.frontmatter.date,
+            thumbnail: node.frontmatter.thumbnail?.publicURL,
           })),
       },
     },

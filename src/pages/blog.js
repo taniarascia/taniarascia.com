@@ -13,13 +13,16 @@ import config from '../utils/config'
 
 export default function Blog({ data }) {
   const posts = data.posts.edges
-  const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
+  const simplifiedPosts = useMemo(
+    () => getSimplifiedPosts(posts, { thumbnails: true }),
+    [posts]
+  )
   const title = 'Blog'
 
   const description = (
     <div>
       {'Guides, tutorials, and notes on code and life. '}
-      <Link to="/topics">View all topics</Link>.
+      <Link to="/shelves">Browse the shelves</Link>.
     </div>
   )
 
@@ -30,7 +33,7 @@ export default function Blog({ data }) {
       <PageLayout>
         <Hero title={title} description={description} hasSearch icon={blog} />
 
-        <Search data={simplifiedPosts} section="blog" />
+        <Search data={simplifiedPosts} section="blog" detailed />
       </PageLayout>
     </>
   )
@@ -53,6 +56,10 @@ export const articlesQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
+            thumbnail {
+              publicURL
+            }
           }
         }
       }

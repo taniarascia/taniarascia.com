@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { isNewPost, getFormattedDate } from '../utils/helpers'
 
-export const Post = ({ node, prefix, includeYear, query }) => {
+export const Post = ({ node, prefix, includeYear, query, detailed }) => {
   let formattedDate
 
   if (node.date) {
@@ -39,17 +39,47 @@ export const Post = ({ node, prefix, includeYear, query }) => {
     return <div>{title}</div>
   }
 
+  if (detailed) {
+    return (
+      <Link
+        to={prefix ? `/${prefix}${node.slug}` : node.slug}
+        key={node.id}
+        className="post detailed"
+      >
+        <div className="post-thumbnail">
+          {node.thumbnail && <img src={node.thumbnail} alt="" />}
+        </div>
+        <div className="post-info">
+          <div className="post-title">
+            {getTitle(node.title, query)}
+            {newPost && <div className="button x-small">✨ New</div>}
+          </div>
+          <time>{formattedDate}</time>
+        </div>
+        {node.tags && (
+          <div className="post-tags">
+            {node.tags.map((tag) => (
+              <span className="tag" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </Link>
+    )
+  }
+
   return (
     <Link
       to={prefix ? `/${prefix}${node.slug}` : node.slug}
       key={node.id}
       className="post"
     >
-      <time>{formattedDate}</time>
       <div>
         {newPost && <div className="button x-small">✨ New</div>}{' '}
         {getTitle(node.title, query)}
       </div>
+      <time>{formattedDate}</time>
     </Link>
   )
 }

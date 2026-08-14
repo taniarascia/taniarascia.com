@@ -20,11 +20,16 @@ export const Sidebar = ({
   currentColor,
   setCurrentColor,
 }) => {
-  const { apple, newMoon } = useSidebarImages()
+  const { newMoon } = useSidebarImages()
   const links = [
     { url: '/blog', label: 'Blog', image: blog },
     { url: '/projects', label: 'Projects', image: projects },
-    { url: '/me', label: 'About Me', image: floppy },
+    { url: '/me', label: 'About me', image: floppy },
+  ]
+  const subLinks = [
+    { url: '/resume', label: 'Resume' },
+    { url: '/shelves', label: 'Shelves' },
+    { url: 'https://github.com/taniarascia/taniarascia.com', label: 'Source' },
   ]
   const socialLinks = [
     {
@@ -35,6 +40,11 @@ export const Sidebar = ({
     { url: 'https://github.com/taniarascia', label: 'GitHub', Icon: GitHub },
     { url: 'https://go.bsky.app/SmEWb8G', label: 'Bluesky', Icon: Bluesky },
     { url: '/rss.xml', label: 'RSS feed', Icon: Rss },
+    {
+      url: 'https://taniarascia.github.io/new-moon/',
+      label: 'New Moon',
+      image: newMoon?.publicURL,
+    },
   ]
 
   return (
@@ -77,7 +87,6 @@ export const Sidebar = ({
       </section>
 
       <section className="sidebar-section">
-        <h2>About Me</h2>
         <div className="sidebar-content">
           <p>
             I'm <Link to="/me">Tania</Link>, software engineer and open-source
@@ -97,78 +106,56 @@ export const Sidebar = ({
         </nav>
       </section>
 
-      <section className="sidebar-section">
-        <h2>Stay Connected</h2>
-        <nav className="sidebar-links">
-          {socialLinks.map(({ url, label, Icon }) => (
-            <div className="tooltip-container" key={url}>
-              {url.startsWith('http') ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                >
-                  <Icon size={20} />
+      <div className="sidebar-bottom">
+        <section className="sidebar-section">
+          <nav className="sidebar-links">
+            {socialLinks.map(({ url, label, Icon, image }) => (
+              <div className="tooltip-container tooltip-above" key={url}>
+                {url.startsWith('http') ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                  >
+                    {Icon ? (
+                      <Icon size={20} />
+                    ) : (
+                      <img src={image} alt="" width="20" height="20" />
+                    )}
+                  </a>
+                ) : (
+                  <a href={url} aria-label={label}>
+                    {Icon ? (
+                      <Icon size={20} />
+                    ) : (
+                      <img src={image} alt="" width="20" height="20" />
+                    )}
+                  </a>
+                )}
+                <div className="tooltip">{label}</div>
+              </div>
+            ))}
+          </nav>
+        </section>
+
+        <nav className="sidebar-sub-links">
+          {subLinks.map((link, index) => (
+            <React.Fragment key={link.url}>
+              {index > 0 && <div className="divider" />}
+              {link.url.startsWith('http') ? (
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.label}
                 </a>
               ) : (
-                <a href={url} aria-label={label}>
-                  <Icon size={20} />
-                </a>
+                <Link to={link.url} activeClassName="active">
+                  {link.label}
+                </Link>
               )}
-              <div className="tooltip">{label}</div>
-            </div>
+            </React.Fragment>
           ))}
         </nav>
-      </section>
-
-      <section className="sidebar-card">
-        <h2 className="flex-align-center gap">
-          {newMoon?.publicURL && (
-            <img src={newMoon.publicURL} alt="" width="20" height="20" />
-          )}
-          New Moon Theme
-        </h2>
-        <div className="sidebar-content">
-          <p>
-            I use and maintain{' '}
-            <a
-              href="https://taniarascia.github.io/new-moon/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              New Moon
-            </a>
-            , a dark theme for{' '}
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=taniarascia.new-moon-vscode"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visual Studio Code
-            </a>
-            .
-          </p>
-        </div>
-      </section>
-
-      <section className="sidebar-card">
-        <h2 className="flex-align-center gap">
-          {apple?.publicURL && (
-            <img src={apple.publicURL} alt="" width="20" height="20" />
-          )}
-          Setting Up a Mac?
-        </h2>
-        <div className="sidebar-content">
-          <p>
-            Read my guide to{' '}
-            <Link to="/setting-up-a-brand-new-mac-for-development">
-              setting up a new Mac
-            </Link>{' '}
-            for dev.
-          </p>
-        </div>
-      </section>
+      </div>
     </aside>
   )
 }

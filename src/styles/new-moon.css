@@ -22,8 +22,8 @@
   --color-background-code-block: light-dark(var(--beige-1), var(--gray-7));
   --color-border-code-block: light-dark(var(--beige-3), var(--gray-6));
   --color-background-terminal: light-dark(white, var(--gray-11));
-  --color-background-filename: light-dark(var(--beige-2), var(--gray-7));
-  --color-border-terminal: light-dark(var(--gray-1), var(--color-border));
+  --color-background-filename: light-dark(var(--beige-3), var(--gray-8));
+  --color-border-terminal: light-dark(var(--gray-3), var(--gray-6));
 }
 
 /* Code blocks */
@@ -190,6 +190,10 @@ pre.language-terminal::after {
   background-color: transparent;
 }
 
+.gatsby-highlight-code-line .token.comment {
+  color: var(--color-text-muted);
+}
+
 /* Filename */
 
 .filename + .gatsby-highlight pre {
@@ -200,13 +204,13 @@ pre.language-terminal::after {
 .filename {
   display: flex;
   align-items: center;
-  background: var(--color-background-code-block);
+  background: var(--color-background-filename);
   color: var(--color-text-emphasized);
   font-size: 15px;
   font-weight: 500;
   padding: 0.5rem 1rem;
   margin-bottom: -1.5rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-terminal);
   font-weight: 500;
   white-space: nowrap;
   text-overflow: ellipsis;

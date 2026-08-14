@@ -63,46 +63,23 @@ export default function Projects() {
                   )}
                 </div>
                 <time>{project.date}</time>
-                <div className="card-title">
-                  {/* {project.image && imagesByPath[project.image] && (
-                    <img
-                      src={imagesByPath[project.image]}
-                      alt=""
-                      width="32"
-                      height="32"
-                    />
-                  )} */}
-                  <a
-                    className="card-header"
-                    href={`https://github.com/taniarascia/${project.slug}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.name}
-                  </a>
-                </div>
+                <a
+                  className="card-header"
+                  href={`https://github.com/taniarascia/${project.slug}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {project.name}
+                </a>
                 <p>{project.tagline}</p>
                 <div className="card-links">
-                  {project.writeup && (
-                    <Link
-                      className="button secondary small"
-                      to={project.writeup}
-                    >
-                      Article
-                    </Link>
-                  )}
+                  {project.writeup && <Link to={project.writeup}>Article</Link>}
                   {project.url && (
-                    <a
-                      className="button secondary small"
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a href={project.url} target="_blank" rel="noreferrer">
                       Demo
                     </a>
                   )}
                   <a
-                    className="button secondary small"
                     href={`https://github.com/taniarascia/${project.slug}`}
                     target="_blank"
                     rel="noreferrer"

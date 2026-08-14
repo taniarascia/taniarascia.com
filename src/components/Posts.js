@@ -39,7 +39,13 @@ export const Posts = ({
           </h2>
           <div className="posts">
             {postsByYear[year].map((node) => (
-              <Post key={node.id} node={node} query={query} prefix={prefix} />
+              <Post
+                key={node.id}
+                node={node}
+                query={query}
+                prefix={prefix}
+                {...props}
+              />
             ))}
           </div>
         </section>

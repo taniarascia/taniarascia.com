@@ -60,9 +60,9 @@ export default function PostTemplate({ data }) {
 
         {dated && (
           <blockquote className="dated-banner">
-            <strong>Archived</strong>: this post was written in{' '}
-            {dateISO.slice(0, 4)}. The tools and concepts covered belong to an
-            earlier era of the web.
+            <b>This post has been archived</b>. It was written in{' '}
+            {dateISO.slice(0, 4)}, and the tools and concepts it covers belong
+            to an earlier era of the web.
           </blockquote>
         )}
 

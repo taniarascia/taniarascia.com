@@ -20,6 +20,7 @@ const createPages = async ({ graphql, actions }) => {
   const pagePage = path.resolve('./src/templates/page.js')
   const tagPage = path.resolve('./src/templates/topic.js')
   const categoryPage = path.resolve('./src/templates/category.js')
+  const seriesPage = path.resolve('./src/templates/series.js')
 
   const result = await graphql(
     `
@@ -33,6 +34,7 @@ const createPages = async ({ graphql, actions }) => {
                 tags
                 categories
                 template
+                series
               }
               fields {
                 slug
@@ -53,6 +55,7 @@ const createPages = async ({ graphql, actions }) => {
   const pages = all.filter((post) => post.node.frontmatter.template === 'page')
   const tagSet = new Set()
   const categorySet = new Set()
+  const seriesSet = new Set()
 
   // =====================================================================================
   // Posts
@@ -72,6 +75,10 @@ const createPages = async ({ graphql, actions }) => {
       post.node.frontmatter.categories.forEach((category) => {
         categorySet.add(category)
       })
+    }
+
+    if (post.node.frontmatter.series) {
+      seriesSet.add(post.node.frontmatter.series)
     }
 
     createPage({
@@ -129,6 +136,23 @@ const createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // =====================================================================================
+  // Series
+  // =====================================================================================
+
+  const seriesList = Array.from(seriesSet)
+  seriesList.forEach((series) => {
+    createPage({
+      // Lowercase first: slugify splits camelCase, so "JavaScript" would
+      // otherwise become "java-script"
+      path: `/series/${slugify(series.toLowerCase())}/`,
+      component: seriesPage,
+      context: {
+        series,
+      },
+    })
+  })
 }
 
 const createNode = ({ node, actions, getNode }) => {
@@ -165,6 +189,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       htmlTitle: String
       format: String
       dated: Boolean
+      series: String
     }
   `)
 }
