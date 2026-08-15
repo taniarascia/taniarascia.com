@@ -42,20 +42,22 @@ export default function PostTemplate({ data }) {
             </div>
           }
         >
-          <div className="tags">
-            {tags.map((tag) => {
-              return (
-                <Link
-                  key={tag}
-                  to={`/topics/${slugify(tag)}`}
-                  className="tag"
-                  activeClassName="active"
-                >
-                  {tag}
-                </Link>
-              )
-            })}
-          </div>
+          {tags && (
+            <div className="tags">
+              {tags.map((tag) => {
+                return (
+                  <Link
+                    key={tag}
+                    to={`/topics/${slugify(tag)}`}
+                    className="tag"
+                    activeClassName="active"
+                  >
+                    {tag}
+                  </Link>
+                )
+              })}
+            </div>
+          )}
         </Hero>
 
         {dated && (

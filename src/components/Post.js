@@ -3,6 +3,31 @@ import { Link } from 'gatsby'
 
 import { isNewPost, getFormattedDate } from '../utils/helpers'
 
+const highlightMatch = (text, query) => {
+  if (!query) {
+    return text
+  }
+
+  const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i')
+  const highlightStart = text.search(re)
+
+  if (highlightStart === -1) {
+    return text
+  }
+
+  const highlightEnd = highlightStart + query.length
+
+  return (
+    <>
+      {text.slice(0, highlightStart)}
+      <strong className="searched">
+        {text.slice(highlightStart, highlightEnd)}
+      </strong>
+      {text.slice(highlightEnd)}
+    </>
+  )
+}
+
 export const Post = ({ node, prefix, includeYear, query, detailed }) => {
   let formattedDate
 
@@ -16,28 +41,7 @@ export const Post = ({ node, prefix, includeYear, query, detailed }) => {
 
   const newPost = useMemo(() => isNewPost(node.date), [node.date])
 
-  const getTitle = (title, query) => {
-    if (query) {
-      const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i')
-      const highlightStart = title.search(re)
-
-      if (highlightStart !== -1) {
-        const highlightEnd = highlightStart + query.length
-
-        return (
-          <div>
-            {title.slice(0, highlightStart)}
-            <strong className="searched">
-              {title.slice(highlightStart, highlightEnd)}
-            </strong>
-            {title.slice(highlightEnd)}
-          </div>
-        )
-      }
-      return <div>{title}</div>
-    }
-    return <div>{title}</div>
-  }
+  const getTitle = (title, query) => <div>{highlightMatch(title, query)}</div>
 
   if (detailed) {
     return (
@@ -60,7 +64,7 @@ export const Post = ({ node, prefix, includeYear, query, detailed }) => {
           <div className="post-tags">
             {node.tags.map((tag) => (
               <span className="tag" key={tag}>
-                {tag}
+                {highlightMatch(tag, query)}
               </span>
             ))}
           </div>

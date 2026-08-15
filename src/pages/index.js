@@ -13,14 +13,14 @@ import { projectsList } from '../data/projectsList'
 import { shelvesList } from '../data/shelvesList'
 import { seriesList } from '../data/seriesList'
 import { getSimplifiedPosts, slugify } from '../utils/helpers'
-// import { useContentImages } from '../utils/hooks/useContentImages'
+import { useContentImages } from '../utils/hooks/useContentImages'
 import config from '../utils/config'
 import github from '../assets/nav-github.png'
 
 export default function Index({ data }) {
   const latestPosts = data.latestPosts.edges
   const postCount = data.postCount.totalCount
-  // const imagesByPath = useContentImages()
+  const imagesByPath = useContentImages()
   const recent = useMemo(
     () => getSimplifiedPosts(latestPosts, { thumbnails: true }),
     [latestPosts]
@@ -141,10 +141,16 @@ export default function Index({ data }) {
             title="Series"
             description="Some things I wrote span years or dozens of parts."
           />
-          <div className="posts shelf">
+          <div className="series-list">
             {seriesList.map((series) => (
-              <Link className="post" to={series.slug} key={series.slug}>
-                <div>{series.title}</div>
+              <Link to={series.slug} key={series.slug}>
+                <img
+                  src={imagesByPath[series.icon]}
+                  alt=""
+                  width="25"
+                  height="25"
+                />
+                <span>{series.title}</span>
               </Link>
             ))}
           </div>

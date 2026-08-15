@@ -105,6 +105,7 @@
   --font-family-monospace2: 'Google Sans Code', monospace;
 
   --border-radius: 8px;
+  --transition: 0.15s ease;
   --box-shadow-card-dark:
     0px 4px 7px rgba(0, 1, 2, 0.3), 0px 2px 2px rgba(0, 1, 2, 0.3),
     0px 1px 1px rgba(0, 1, 2, 0.3);
@@ -189,6 +190,7 @@ a {
   font-weight: 500;
   color: var(--color-text-link);
   text-decoration: inherit;
+  transition: color var(--transition), background var(--transition);
 
   &:hover {
     color: var(--color-text-link-hover);
@@ -466,7 +468,7 @@ a.button,
   gap: 0.4rem;
   white-space: nowrap;
   text-decoration: none !important;
-  transition: 0.1s all ease;
+  transition: all var(--transition);
 
   &:hover {
     background: var(--color-background-button-hover);
@@ -558,7 +560,7 @@ a.button,
   border-radius: var(--border-radius);
   border: 1.5px solid var(--color-border);
   color: var(--color-text);
-  transition: 0.1s all ease;
+  transition: all var(--transition);
 
   &::before {
     content: '#';
@@ -691,6 +693,7 @@ button.navbar-button {
   width: 38px;
   color: var(--color-text-navbar-link);
   box-shadow: none;
+  transition: all var(--transition);
 
   img {
     margin: 0;
@@ -1607,7 +1610,7 @@ button.quick-filter {
   border: 1.5px solid var(--color-border);
   border-radius: var(--border-radius);
   cursor: pointer;
-  transition: 0.15s all ease;
+  transition: all var(--transition);
 
   img {
     min-height: 30px;
@@ -1650,6 +1653,39 @@ button.quick-filter {
     object-fit: contain;
   }
 }
+
+.series-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-emphasized);
+    text-decoration: none;
+
+    img {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+
+      span {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--color-primary);
+        text-underline-offset: 4px;
+      }
+    }
+  }
+}
 a.post {
   display: flex;
   align-items: baseline;
@@ -1658,7 +1694,7 @@ a.post {
   text-decoration: none;
   margin-bottom: 0.75rem;
   border-radius: var(--border-radius);
-  transition: background 0.15s ease;
+  transition: background var(--transition);
   color: var(--color-text-emphasized);
 
   > div {
@@ -1688,7 +1724,7 @@ a.post {
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
-    transition: color 0.15s ease;
+    transition: color var(--transition);
   }
 }
 
@@ -1896,6 +1932,7 @@ a time.new-post {
   border-radius: var(--border-radius);
   border: 2px solid var(--color-border-card);
   box-shadow: var(--box-shadow);
+  transition: border-color var(--transition);
 
   .card-links {
     display: flex;
@@ -1942,6 +1979,7 @@ a time.new-post {
     div {
       font-weight: 600;
       color: var(--color-text-emphasized);
+      transition: color var(--transition);
     }
 
     &:hover {
@@ -2571,7 +2609,7 @@ a.footer-link {
 
   .tooltip {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition);
     pointer-events: none;
     display: block;
     position: absolute;
