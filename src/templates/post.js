@@ -28,7 +28,7 @@ export default function PostTemplate({ data }) {
           <GatsbyImage
             image={thumbnail?.childImageSharp?.gatsbyImageData}
             className="main-article-thumbnail"
-            alt="Thumbnail"
+            alt=""
           />
         )}
         <Hero

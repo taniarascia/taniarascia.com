@@ -28,7 +28,7 @@ const highlightMatch = (text, query) => {
   )
 }
 
-export const Post = ({ node, prefix, includeYear, query, detailed }) => {
+export const Post = ({ node, prefix, includeYear, query, detailed, number }) => {
   let formattedDate
 
   if (node.date) {
@@ -58,7 +58,10 @@ export const Post = ({ node, prefix, includeYear, query, detailed }) => {
             {getTitle(node.title, query)}
             {newPost && <div className="button x-small">✨ New</div>}
           </div>
-          <time>{formattedDate}</time>
+          {node.date && <time>{formattedDate}</time>}
+          {node.description && (
+            <p className="post-description">{node.description}</p>
+          )}
         </div>
         {node.tags && (
           <div className="post-tags">
@@ -80,6 +83,7 @@ export const Post = ({ node, prefix, includeYear, query, detailed }) => {
       className="post"
     >
       <div>
+        {number && <span className="post-number">{number}.</span>}
         {newPost && <div className="button x-small">✨ New</div>}{' '}
         {getTitle(node.title, query)}
       </div>

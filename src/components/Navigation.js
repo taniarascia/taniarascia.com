@@ -6,6 +6,7 @@ import floppy from '../assets/floppylogo.png'
 import floppyLogo from '../assets/nav-floppy.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
+import search from '../assets/nav-search.png'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Menu } from '../assets/Menu'
@@ -14,6 +15,7 @@ import { ColorDropdown } from './ColorDropdown'
 
 const links = [
   { url: '/blog', label: 'Blog', image: blog },
+  { url: '/shelves', label: 'Shelves', image: search },
   { url: '/projects', label: 'Projects', image: projects },
   { url: '/me', label: 'About me', image: floppy },
 ]
@@ -73,7 +75,7 @@ export const Navigation = ({
                 activeClassName="active"
                 onClick={handleCloseMobileNav}
               >
-                <img src={link.image} alt={link.label} />
+                <img src={link.image} alt="" />
                 {link.label}
               </Link>
             ))}

@@ -53,7 +53,7 @@ export const Footer = () => {
               key={link.url}
               className="button small"
             >
-              <img src={link.icon} alt={link.label} />
+              <img src={link.icon} alt="" />
               <span>{link.label}</span>
             </a>
           ))}

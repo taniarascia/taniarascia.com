@@ -17,11 +17,12 @@ export default function CategoryTemplate({ data, pageContext }) {
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const message =
     totalCount === 1 ? ' post categorized as:' : ' posts categorized as:'
+  const description = `All posts in the ${category} category written by Tania Rascia.`
 
   return (
     <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
-      <SEO />
+      <SEO customDescription={description} />
 
       <PageLayout>
         <Hero

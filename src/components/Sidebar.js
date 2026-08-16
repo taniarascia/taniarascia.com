@@ -6,6 +6,7 @@ import floppyLogo from '../assets/nav-floppy.png'
 import floppy from '../assets/floppylogo.png'
 import blog from '../assets/nav-blog.png'
 import projects from '../assets/nav-projects.png'
+import search from '../assets/nav-search.png'
 import { useSidebarImages } from '../utils/hooks/useSidebarImages'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
@@ -23,12 +24,13 @@ export const Sidebar = ({
   const { newMoon } = useSidebarImages()
   const links = [
     { url: '/blog', label: 'Blog', image: blog },
+    { url: '/shelves', label: 'Shelves', image: search },
     { url: '/projects', label: 'Projects', image: projects },
     { url: '/me', label: 'About me', image: floppy },
   ]
   const subLinks = [
     { url: '/resume', label: 'Resume' },
-    { url: '/shelves', label: 'Shelves' },
+    { url: '/topics', label: 'Topics' },
     { url: 'https://github.com/taniarascia/taniarascia.com', label: 'Source' },
   ]
   const socialLinks = [
@@ -99,7 +101,7 @@ export const Sidebar = ({
         <nav className="sidebar-nav-links">
           {links.map((link) => (
             <Link key={link.url} to={link.url} activeClassName="active">
-              <img src={link.image} alt={link.label} />
+              <img src={link.image} alt="" />
               {link.label}
             </Link>
           ))}

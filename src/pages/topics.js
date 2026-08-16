@@ -7,10 +7,13 @@ import { slugify } from '../utils/helpers'
 import { PageLayout } from '../components/PageLayout'
 import { Layout } from '../components/Layout'
 import { Hero } from '../components/Hero'
+import { SEO } from '../components/SEO'
 
 export default function Topics({ data }) {
   const tags = data.tags.group
   const title = 'Topics'
+  const description =
+    "All the topics I've covered. I write about front and backend software development, design, architecture, and personal topics."
   const groupTags = useMemo(
     () =>
       tags.reduce((letterMap, tag) => {
@@ -25,11 +28,9 @@ export default function Topics({ data }) {
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
+      <SEO customDescription={description} />
       <PageLayout>
-        <Hero
-          title={title}
-          description="All the topics I've covered. I write about front and backend software development, design, architecture, and personal topics."
-        />
+        <Hero title={title} description={description} />
         {Object.entries(groupTags).map(([key, value]) => {
           return (
             <div key={key}>

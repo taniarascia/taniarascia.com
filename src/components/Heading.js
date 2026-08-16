@@ -13,7 +13,7 @@ export const Heading = ({
     <header className={`heading ${small ? 'small' : ''}`}>
       <div className="heading-row">
         <h2>
-          {icon && <img src={icon} alt="Icon" className="heading-icon" />}
+          {icon && <img src={icon} alt="" className="heading-icon" />}
           <span>{title}</span>
         </h2>
         {slug && buttonText && (

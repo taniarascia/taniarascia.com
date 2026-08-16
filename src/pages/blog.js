@@ -18,10 +18,11 @@ export default function Blog({ data }) {
     [posts]
   )
   const title = 'Blog'
+  const description = 'Guides, tutorials, and notes on code and life.'
 
-  const description = (
+  const heroDescription = (
     <div>
-      {'Guides, tutorials, and notes on code and life. '}
+      {`${description} `}
       <Link to="/shelves">Browse the shelves</Link>.
     </div>
   )
@@ -31,7 +32,12 @@ export default function Blog({ data }) {
       <Helmet title={`${title} | ${config.siteTitle}`} />
       <SEO customDescription={description} />
       <PageLayout>
-        <Hero title={title} description={description} hasSearch icon={blog} />
+        <Hero
+          title={title}
+          description={heroDescription}
+          hasSearch
+          icon={blog}
+        />
 
         <Search data={simplifiedPosts} section="blog" detailed />
       </PageLayout>

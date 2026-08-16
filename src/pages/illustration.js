@@ -20,17 +20,15 @@ const images = [
 
 export default function Illustration() {
   const title = 'Art'
+  const description = "I don't draw much, but here's a few illustrations."
 
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
-      <SEO />
+      <SEO customDescription={description} />
 
       <PageLayout>
-        <Hero
-          title={title}
-          description="I don't draw much, but here's a few illustrations."
-        />
+        <Hero title={title} description={description} />
 
         <div className="cards">
           {images.map((image) => {

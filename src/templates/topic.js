@@ -16,11 +16,12 @@ export default function TopicTemplate({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const message = totalCount === 1 ? ' post' : ' posts'
+  const description = `All posts about ${tag} written by Tania Rascia.`
 
   return (
     <>
       <Helmet title={`${tag} | ${config.siteTitle}`} />
-      <SEO />
+      <SEO customDescription={description} />
 
       <PageLayout>
         <Hero

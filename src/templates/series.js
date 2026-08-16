@@ -7,7 +7,9 @@ import { SEO } from '../components/SEO'
 import { Posts } from '../components/Posts'
 import { Hero } from '../components/Hero'
 import { PageLayout } from '../components/PageLayout'
-import { getSimplifiedPosts } from '../utils/helpers'
+import { getSimplifiedPosts, slugify } from '../utils/helpers'
+import { seriesList } from '../data/seriesList'
+import { useContentImages } from '../utils/hooks/useContentImages'
 import config from '../utils/config'
 
 export default function SeriesTemplate({ data, pageContext }) {
@@ -15,12 +17,18 @@ export default function SeriesTemplate({ data, pageContext }) {
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
+  const imagesByPath = useContentImages()
   const message = ' part series'
+  const seriesInfo = seriesList.find(
+    (entry) => entry.slug === `/series/${slugify(series.toLowerCase())}`
+  )
+  const description =
+    seriesInfo?.description ?? `All ${totalCount} parts of the ${series} series.`
 
   return (
     <>
       <Helmet title={`${series} | ${config.siteTitle}`} />
-      <SEO />
+      <SEO customDescription={description} />
 
       <PageLayout>
         <Hero
@@ -28,8 +36,10 @@ export default function SeriesTemplate({ data, pageContext }) {
           subTitle={message}
           title={series}
           type="taxonomy"
+          description={description}
+          icon={seriesInfo && imagesByPath[seriesInfo.icon]}
         />
-        <Posts data={simplifiedPosts} includeYear />
+        <Posts data={simplifiedPosts} includeYear numbered />
       </PageLayout>
     </>
   )

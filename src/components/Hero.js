@@ -37,11 +37,11 @@ export const Hero = ({
       {date && <div className="post-date">{date}</div>}
       {title && (
         <h1 className={date ? 'has-date' : 'flex-align-center large-gap'}>
-          {icon && <img src={icon} alt="Icon" />}
+          {icon && <img src={icon} alt="" />}
           {thumbnail && (
             <GatsbyImage
               image={thumbnail?.childImageSharp?.gatsbyImageData}
-              alt="Thumbnail"
+              alt=""
             />
           )}
           {title}

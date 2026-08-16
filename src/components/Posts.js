@@ -9,6 +9,7 @@ export const Posts = ({
   prefix,
   hideDate,
   yearOnly,
+  numbered,
   ...props
 }) => {
   const postsByYear = useMemo(() => {
@@ -55,7 +56,7 @@ export const Posts = ({
 
   return (
     <div className="posts">
-      {data.map((node) => (
+      {data.map((node, index) => (
         <Post
           key={node.id}
           node={node}
@@ -63,6 +64,7 @@ export const Posts = ({
           prefix={prefix}
           hideDate={hideDate}
           yearOnly={yearOnly}
+          number={numbered ? index + 1 : undefined}
           {...props}
         />
       ))}

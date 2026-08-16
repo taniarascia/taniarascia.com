@@ -1,10 +1,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
 import { getSrc } from 'gatsby-plugin-image'
 
 import config from '../utils/config'
 
 export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
+  const location = useLocation()
+  const pageURL = `${config.siteUrl}${location.pathname}`
+
   let title = config.siteTitle
   let description = customDescription || config.description
   let image = config.siteLogo
@@ -37,63 +41,46 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
   ]
 
   if (postSEO) {
-    schemaOrgJSONLD.push(
-      {
-        '@context': 'http://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            item: {
-              '@id': postURL,
-              name: title,
-              image,
-            },
-          },
-        ],
+    schemaOrgJSONLD.push({
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      url: postURL,
+      name: title,
+      headline: title,
+      image: {
+        '@type': 'ImageObject',
+        url: image,
       },
-      {
-        '@context': 'http://schema.org',
-        '@type': 'BlogPosting',
-        url: postURL,
-        name: title,
-        headline: title,
-        image: {
-          '@type': 'ImageObject',
-          url: image,
-        },
-        description,
-        author: {
-          '@type': 'Person',
-          name: config.siteAuthor,
-          url: config.siteUrl,
-        },
-        publisher: {
-          '@type': 'Person',
-          name: config.siteAuthor,
-          url: config.siteUrl,
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': postURL,
-        },
-        datePublished: postNode.frontmatter.dateISO,
-      }
-    )
+      description,
+      author: {
+        '@type': 'Person',
+        name: config.siteAuthor,
+        url: config.siteUrl,
+      },
+      publisher: {
+        '@type': 'Person',
+        name: config.siteAuthor,
+        url: config.siteUrl,
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': postURL,
+      },
+      datePublished: postNode.frontmatter.dateISO,
+      dateModified: postNode.frontmatter.dateISO,
+    })
   }
 
   return (
     <Helmet>
       <meta name="description" content={description} />
-      <meta name="image" content={image} />
 
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
 
-      <meta property="og:url" content={postSEO ? postURL : config.siteUrl} />
-      {postSEO && <meta property="og:type" content="article" />}
+      <meta property="og:url" content={postSEO ? postURL : pageURL} />
+      <meta property="og:type" content={postSEO ? 'article' : 'website'} />
       <meta property="og:site_name" content={config.siteTitle} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

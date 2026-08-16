@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/Layout'
 import { Posts } from '../components/Posts'
+import { Post } from '../components/Post'
 import { SEO } from '../components/SEO'
 import { Heading } from '../components/Heading'
 import { Hero } from '../components/Hero'
@@ -141,17 +142,19 @@ export default function Index({ data }) {
             title="Series"
             description="Some things I wrote span years or dozens of parts."
           />
-          <div className="series-list">
+          <div className="posts">
             {seriesList.map((series) => (
-              <Link to={series.slug} key={series.slug}>
-                <img
-                  src={imagesByPath[series.icon]}
-                  alt=""
-                  width="25"
-                  height="25"
-                />
-                <span>{series.title}</span>
-              </Link>
+              <Post
+                key={series.slug}
+                detailed
+                node={{
+                  id: series.slug,
+                  slug: series.slug,
+                  title: series.title,
+                  thumbnail: imagesByPath[series.icon],
+                  description: series.description,
+                }}
+              />
             ))}
           </div>
         </section>
