@@ -11,7 +11,18 @@ module.exports = {
     // Meta
     // ===================================================================================
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': [
+            'Referrer-Policy: strict-origin-when-cross-origin',
+            'Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()',
+            "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://utteranc.es; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://utteranc.es https://codesandbox.io; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+          ],
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {

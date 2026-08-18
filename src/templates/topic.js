@@ -8,6 +8,7 @@ import { Posts } from '../components/Posts'
 import { Hero } from '../components/Hero'
 import { PageLayout } from '../components/PageLayout'
 import { getSimplifiedPosts } from '../utils/helpers'
+import { formatTopic } from '../data/topicNames'
 import config from '../utils/config'
 
 export default function TopicTemplate({ data, pageContext }) {
@@ -16,18 +17,19 @@ export default function TopicTemplate({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges
   const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
   const message = totalCount === 1 ? ' post' : ' posts'
-  const description = `All posts about ${tag} written by Tania Rascia.`
+  const topicName = formatTopic(tag)
+  const description = `All posts about ${topicName} written by Tania Rascia.`
 
   return (
     <>
-      <Helmet title={`${tag} | ${config.siteTitle}`} />
-      <SEO customTitle={tag} customDescription={description} />
+      <Helmet title={`${topicName} | ${config.siteTitle}`} />
+      <SEO customTitle={topicName} customDescription={description} />
 
       <PageLayout>
         <Hero
           highlight={totalCount}
           subTitle={message}
-          title={tag}
+          title={topicName}
           type="taxonomy"
           breadcrumb={{ value: '/topics', label: 'Topics' }}
         />

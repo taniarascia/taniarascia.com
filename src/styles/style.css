@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
-
 :root {
   --gray-0: #fbfbfb;
   --gray-1: #eee;
@@ -97,12 +95,13 @@
   --color-text-tag: var(--color-text-heading-muted);
 
   --font-family:
-    -apple-system, BlinkMacSystemFont, Avenir, Helvetica, Arial, sans-serif;
-  --font-family-heading:
-    'Outfit', -apple-system, BlinkMacSystemFont, 'DM Sans', Avenir, Helvetica,
+    -apple-system, BlinkMacSystemFont, 'Google Sans Flex Variable', Helvetica,
     Arial, sans-serif;
-  --font-family-monospace: Menlo, 'Google Sans Code', monospace;
-  --font-family-monospace2: 'Google Sans Code', monospace;
+  --font-family-heading:
+    'Outfit Variable', -apple-system, BlinkMacSystemFont, 'DM Sans', Avenir,
+    Helvetica, Arial, sans-serif;
+  --font-family-monospace: Menlo, 'Google Sans Code Variable', monospace;
+  --font-family-monospace2: 'Google Sans Code Variable', monospace;
 
   --border-radius: 8px;
   --transition: 0.15s ease;
@@ -139,7 +138,7 @@
   --h4: 1.15rem;
 
   font-family: var(--font-family);
-  line-height: 1.5;
+  line-height: 1.55;
   font-weight: 400;
   font-size: 16px;
 
@@ -165,9 +164,6 @@
   }
 }
 
-/* Antialiased text only on dark backgrounds; light keeps subpixel rendering.
-   html.is-dark is set by Layout.js after hydration; the media query covers
-   first paint, where no theme class exists yet. */
 html.is-dark {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1454,10 +1450,14 @@ ul.hero-eras {
   position: relative;
   align-self: center;
 
+  /* The container is as wide as the speech bubble (250px), so position the
+     circle relative to the centered ram image rather than the bubble's left
+     edge — sitting slightly left of the ram's center, like on desktop */
   &::before {
     position: absolute;
     top: 0.6rem;
-    left: 0;
+    left: calc(50% - 15px);
+    transform: translateX(-50%);
     content: '';
     background: var(--color-primary);
     border-radius: 50%;
@@ -1585,6 +1585,8 @@ time {
 
     &::before {
       top: 1rem;
+      left: 0;
+      transform: none;
       height: 200px;
       width: 200px;
     }
