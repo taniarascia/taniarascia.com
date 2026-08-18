@@ -2,12 +2,9 @@ module.exports = {
   siteMetadata: {
     title: "Tania Rascia's Website",
     author: { name: 'Tania Rascia' },
-    pathPrefix: '/',
     siteUrl: 'https://www.taniarascia.com',
     description:
-      'Software engineer and open-source creator. This is my digital garden.',
-    feedUrl: 'https://www.taniarascia.com/rss.xml',
-    logo: 'https://www.taniarascia.com/logo.png',
+      'Software engineer and open source creator. This is my digital garden.',
   },
   plugins: [
     // ===================================================================================
@@ -19,6 +16,44 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: '/',
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allMarkdownRemark {
+              nodes {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  date
+                  updated
+                }
+              }
+            }
+          }
+        `,
+        resolvePages: ({ allSitePage, allMarkdownRemark }) => {
+          const dateBySlug = {}
+          allMarkdownRemark.nodes.forEach((node) => {
+            dateBySlug[node.fields.slug] =
+              node.frontmatter.updated ?? node.frontmatter.date
+          })
+
+          return allSitePage.nodes.map((page) => ({
+            ...page,
+            lastmod: dateBySlug[page.path],
+          }))
+        },
+        serialize: ({ path, lastmod }) => ({ url: path, lastmod }),
       },
     },
     {
@@ -53,19 +88,37 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
+              const siteUrl = site.siteMetadata.siteUrl
+
               return allMarkdownRemark.edges.map((edge) => {
+                // Feed readers can't resolve root-relative URLs, so make
+                // every internal link and image absolute
+                const html = edge.node.html.replace(
+                  /(href|src)="\//g,
+                  `$1="${siteUrl}/`
+                )
+
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
+                  description:
+                    edge.node.frontmatter.description || edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: siteUrl + edge.node.fields.slug,
+                  guid: siteUrl + edge.node.fields.slug,
+                  categories: edge.node.frontmatter.tags,
                   custom_elements: [
-                    { 'content:encoded': edge.node.html },
+                    { 'content:encoded': html },
                     { author: 'hello@taniarascia.com' },
                   ],
                 })
               })
             },
+            setup: (options) => ({
+              ...options,
+              description: options.query.site.siteMetadata.description,
+              site_url: options.query.site.siteMetadata.siteUrl,
+              feed_url: `${options.query.site.siteMetadata.siteUrl}/rss.xml`,
+              generator: 'GatsbyJS',
+            }),
             query: `
               {
               allMarkdownRemark(
@@ -84,6 +137,8 @@ module.exports = {
                       title
                       date
                       template
+                      description
+                      tags
                     }
                   }
                 }

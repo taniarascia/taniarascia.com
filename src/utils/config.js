@@ -5,6 +5,11 @@ const config = {
   siteLogo: '/logo.png',
   description:
     'Software engineer and open source creator. This is my digital garden.',
+  profiles: [
+    'https://github.com/taniarascia',
+    'https://bsky.app/profile/tania.dev',
+    'https://taniarascia.substack.com',
+  ],
 }
 
 export default config

@@ -28,7 +28,7 @@ export default function Topics({ data }) {
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={title} customDescription={description} />
       <PageLayout>
         <Hero title={title} description={description} />
         {Object.entries(groupTags).map(([key, value]) => {

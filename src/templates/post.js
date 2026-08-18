@@ -12,8 +12,9 @@ import { Hero } from '../components/Hero'
 import config from '../utils/config'
 import { slugify } from '../utils/helpers'
 
-export default function PostTemplate({ data }) {
+export default function PostTemplate({ data, pageContext }) {
   const post = data.markdownRemark
+  const { previous, next } = pageContext
   const { title, date, dateISO, comments_off, thumbnail, tags, dated } =
     post.frontmatter
   const isNote = post.frontmatter.categories?.includes('Personal')
@@ -75,6 +76,30 @@ export default function PostTemplate({ data }) {
             __html: `<div class="introduction" id="introduction"></div>${post.html}`,
           }}
         />
+        {(previous || next) && (
+          <nav className="post-navigation" aria-label="More posts">
+            {previous && (
+              <Link
+                to={previous.fields.slug}
+                rel="prev"
+                className="post-navigation-link"
+              >
+                <span className="small">&larr; Older post</span>
+                {previous.frontmatter.title}
+              </Link>
+            )}
+            {next && (
+              <Link
+                to={next.fields.slug}
+                rel="next"
+                className="post-navigation-link post-navigation-next"
+              >
+                <span className="small">Newer post &rarr;</span>
+                {next.frontmatter.title}
+              </Link>
+            )}
+          </nav>
+        )}
         <AuthorCard />
         {!comments_off && (
           <section id="comments" className="comments">
@@ -102,6 +127,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         dateISO: date(formatString: "YYYY-MM-DD")
+        updatedISO: updated(formatString: "YYYY-MM-DD")
         tags
         categories
         description
@@ -114,7 +140,11 @@ export const pageQuery = graphql`
         }
         socialImage: thumbnail {
           childImageSharp {
-            gatsbyImageData(width: 150, height: 150, layout: FIXED)
+            original {
+              src
+              width
+              height
+            }
           }
         }
       }

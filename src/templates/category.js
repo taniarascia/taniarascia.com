@@ -22,7 +22,7 @@ export default function CategoryTemplate({ data, pageContext }) {
   return (
     <>
       <Helmet title={`${category} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={category} customDescription={description} />
 
       <PageLayout>
         <Hero

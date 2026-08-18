@@ -21,7 +21,7 @@ export default function TopicTemplate({ data, pageContext }) {
   return (
     <>
       <Helmet title={`${tag} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={tag} customDescription={description} />
 
       <PageLayout>
         <Hero

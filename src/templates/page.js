@@ -15,7 +15,7 @@ export default function PageTemplate({ data }) {
   return (
     <>
       <Helmet title={htmlTitle || `${title} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={title} customDescription={description} />
 
       <PageLayout>
         <Hero title={title} thumbnail={thumbnail} />

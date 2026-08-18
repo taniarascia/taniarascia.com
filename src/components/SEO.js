@@ -1,17 +1,29 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
-import { getSrc } from 'gatsby-plugin-image'
 
 import config from '../utils/config'
 
-export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
+// Facebook and LinkedIn reject og:image below 200px and render a text-only
+// card; fall back to the site logo so shares always carry an image
+const MIN_OG_IMAGE_SIZE = 200
+const LOGO_SIZE = 960
+
+export const SEO = ({
+  postNode,
+  postPath,
+  postSEO,
+  customTitle,
+  customDescription,
+}) => {
   const location = useLocation()
   const pageURL = `${config.siteUrl}${location.pathname}`
 
-  let title = config.siteTitle
+  let title = customTitle || config.siteTitle
   let description = customDescription || config.description
   let image = config.siteLogo
+  let imageWidth = LOGO_SIZE
+  let imageHeight = LOGO_SIZE
   let postURL
 
   if (postSEO) {
@@ -19,30 +31,41 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
     title = postMeta.title
     description = postMeta.description || postNode.excerpt
 
-    const thumbnailSrc = getSrc(
-      postMeta.socialImage?.childImageSharp?.gatsbyImageData
-    )
+    const original = postMeta.socialImage?.childImageSharp?.original
 
-    if (thumbnailSrc) {
-      image = thumbnailSrc
+    if (original && original.width >= MIN_OG_IMAGE_SIZE) {
+      image = original.src
+      imageWidth = original.width
+      imageHeight = original.height
     }
 
     postURL = `${config.siteUrl}${postPath}`
   }
 
   image = `${config.siteUrl}${image}`
+
+  const published = postNode?.frontmatter?.dateISO
+  const modified = postNode?.frontmatter?.updatedISO || published
+
   const schemaOrgJSONLD = [
     {
-      '@context': 'http://schema.org',
+      '@context': 'https://schema.org',
       '@type': 'WebSite',
       url: config.siteUrl,
       name: config.siteTitle,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: config.siteAuthor,
+      url: config.siteUrl,
+      sameAs: config.profiles,
     },
   ]
 
   if (postSEO) {
     schemaOrgJSONLD.push({
-      '@context': 'http://schema.org',
+      '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       url: postURL,
       name: title,
@@ -66,8 +89,8 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
         '@type': 'WebPage',
         '@id': postURL,
       },
-      datePublished: postNode.frontmatter.dateISO,
-      dateModified: postNode.frontmatter.dateISO,
+      datePublished: published,
+      dateModified: modified,
     })
   }
 
@@ -82,9 +105,28 @@ export const SEO = ({ postNode, postPath, postSEO, customDescription }) => {
       <meta property="og:url" content={postSEO ? postURL : pageURL} />
       <meta property="og:type" content={postSEO ? 'article' : 'website'} />
       <meta property="og:site_name" content={config.siteTitle} />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content={String(imageWidth)} />
+      <meta property="og:image:height" content={String(imageHeight)} />
+      <meta property="og:image:alt" content={title} />
+
+      {postSEO && (
+        <meta property="article:published_time" content={published} />
+      )}
+      {postSEO && <meta property="article:modified_time" content={modified} />}
+      {postSEO && postNode.frontmatter.categories?.[0] && (
+        <meta
+          property="article:section"
+          content={postNode.frontmatter.categories[0]}
+        />
+      )}
+      {postSEO &&
+        postNode.frontmatter.tags?.map((tag) => (
+          <meta property="article:tag" content={tag} key={tag} />
+        ))}
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />

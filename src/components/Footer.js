@@ -11,7 +11,7 @@ import { Heart } from '../assets/Heart'
 
 const links = [
   { url: 'https://taniarascia.substack.com', label: 'Email signup', Icon: Mail },
-  { url: 'https://www.taniarascia.com/rss.xml', label: 'RSS feed', Icon: Rss },
+  { url: '/rss.xml', label: 'RSS feed', Icon: Rss },
   { url: 'https://bsky.app/profile/tania.dev', label: 'Bluesky', Icon: Bluesky },
   {
     url: 'https://ko-fi.com/taniarascia',

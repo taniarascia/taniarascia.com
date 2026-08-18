@@ -28,7 +28,7 @@ export default function SeriesTemplate({ data, pageContext }) {
   return (
     <>
       <Helmet title={`${series} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={series} customDescription={description} />
 
       <PageLayout>
         <Hero

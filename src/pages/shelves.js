@@ -6,6 +6,7 @@ import { Layout } from '../components/Layout'
 import { Shelves } from '../components/Shelves'
 import { SEO } from '../components/SEO'
 import { PageLayout } from '../components/PageLayout'
+import search from '../assets/nav-search.png'
 import config from '../utils/config'
 
 export default function ShelvesPage() {
@@ -15,10 +16,10 @@ export default function ShelvesPage() {
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={title} customDescription={description} />
 
       <PageLayout>
-        <Hero title={title} description={description} />
+        <Hero title={title} description={description} icon={search} />
         <Shelves />
       </PageLayout>
     </>

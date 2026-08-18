@@ -190,6 +190,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       format: String
       dated: Boolean
       series: String
+      updated: Date @dateformat
     }
   `)
 }

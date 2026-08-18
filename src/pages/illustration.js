@@ -25,7 +25,7 @@ export default function Illustration() {
   return (
     <>
       <Helmet title={`${title} | ${config.siteTitle}`} />
-      <SEO customDescription={description} />
+      <SEO customTitle={title} customDescription={description} />
 
       <PageLayout>
         <Hero title={title} description={description} />

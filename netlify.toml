@@ -20,3 +20,28 @@
   from = "/notes/*"
   to = "/:splat"
   status = 301
+
+# Tag archives moved from /tags/<tag> to /topics/<tag>; keep a decade of
+# inbound links to the old namespace working
+[[redirects]]
+  from = "/tags/*"
+  to = "/topics/:splat"
+  status = 301
+
+# Post renamed after publication
+[[redirects]]
+  from = "/another-website-redesign"
+  to = "/making-the-internet-a-better-place"
+  status = 301
+
+# Old category archives that are now topics (only Technical and Personal are
+# real categories); linked from the React Router post's route examples
+[[redirects]]
+  from = "/categories/javascript"
+  to = "/topics/javascript"
+  status = 301
+
+[[redirects]]
+  from = "/categories/css"
+  to = "/topics/css"
+  status = 301

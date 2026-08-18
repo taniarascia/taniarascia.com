@@ -3,11 +3,8 @@ import { Link } from 'gatsby'
 
 import { ColorDropdown } from './ColorDropdown'
 import floppyLogo from '../assets/nav-floppy.png'
-import floppy from '../assets/floppylogo.png'
-import blog from '../assets/nav-blog.png'
-import projects from '../assets/nav-projects.png'
-import search from '../assets/nav-search.png'
 import { useSidebarImages } from '../utils/hooks/useSidebarImages'
+import { mainNavLinks, subNavLinks } from '../data/navLinks'
 import { Moon } from '../assets/Moon'
 import { Sun } from '../assets/Sun'
 import { Mail } from '../assets/Mail'
@@ -22,17 +19,8 @@ export const Sidebar = ({
   setCurrentColor,
 }) => {
   const { newMoon } = useSidebarImages()
-  const links = [
-    { url: '/blog', label: 'Blog', image: blog },
-    { url: '/shelves', label: 'Shelves', image: search },
-    { url: '/projects', label: 'Projects', image: projects },
-    { url: '/me', label: 'About me', image: floppy },
-  ]
-  const subLinks = [
-    { url: '/resume', label: 'Resume' },
-    { url: '/topics', label: 'Topics' },
-    { url: 'https://github.com/taniarascia/taniarascia.com', label: 'Source' },
-  ]
+  const links = mainNavLinks
+  const subLinks = subNavLinks
   const socialLinks = [
     {
       url: 'https://taniarascia.substack.com',
@@ -40,7 +28,11 @@ export const Sidebar = ({
       Icon: Mail,
     },
     { url: 'https://github.com/taniarascia', label: 'GitHub', Icon: GitHub },
-    { url: 'https://go.bsky.app/SmEWb8G', label: 'Bluesky', Icon: Bluesky },
+    {
+      url: 'https://bsky.app/profile/tania.dev',
+      label: 'Bluesky',
+      Icon: Bluesky,
+    },
     { url: '/rss.xml', label: 'RSS feed', Icon: Rss },
     {
       url: 'https://taniarascia.github.io/new-moon/',
